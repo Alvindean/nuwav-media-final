@@ -1,4 +1,4 @@
-name = "my-next-app"              # change this to your project name
+name = "nuwav-media-final"
 main = ".next/standalone/server.js"
 compatibility_date = "2025-08-04"
 
@@ -6,4 +6,4 @@ compatibility_date = "2025-08-04"
 command = "npm install && npm run build"
 
 [site]
-bucket = ".next/static"           # serve static assets
+bucket = ".next/static"

@@ -1,8 +1,7 @@
 name = "nuwavmedia1"
 compatibility_date = "2025-08-01"
 
-main = ".next/worker.js"
+main = ".vercel/output/static/_worker.js"
 
 [site]
-bucket = ".next"
-entry-point = "workers-site"
+bucket = ".vercel/output/static"

@@ -3,6 +3,3 @@ compatibility_date = "2025-08-04"
 
 [build]
 command = "npm install && npm run build"
-
-[site]
-bucket = ".next"

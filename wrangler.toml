@@ -1,6 +1,8 @@
 name = "nuwavmedia1"
-main = ".vercel/output/static/_worker.js"
-compatibility_date = "2024-11-01"
+compatibility_date = "2025-08-04"
 
-[site]
-bucket = ".vercel/output/static"
+# Tell wrangler where the worker entrypoint is after build
+main = ".vercel/output/static/_worker.js"
+
+[build]
+command = "npm install && npm run build"

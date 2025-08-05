@@ -1,0 +1,9 @@
+name = "your-project-name"
+compatibility_date = "2025-08-04"
+
+[build]
+command = "npm run build"
+upload.format = "service-worker"
+
+[site]
+bucket = ".next"

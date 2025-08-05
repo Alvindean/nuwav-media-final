@@ -29,7 +29,6 @@ export default function Home() {
 
   return (
     <div className={`min-h-screen transition-colors duration-300 ${darkMode ? "dark bg-gray-900 text-white" : "bg-white text-gray-900"}`}>
-      {/* Navigation */}
       <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${darkMode ? "bg-gray-900/95 backdrop-blur-sm" : "bg-white/95 backdrop-blur-sm"} border-b ${darkMode ? "border-gray-800" : "border-gray-200"}`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
@@ -41,7 +40,6 @@ export default function Home() {
                 NU WAV Media
               </span>
             </div>
-
             <button
               onClick={() => setDarkMode(!darkMode)}
               className={`p-2 rounded-lg transition-colors duration-200 ${darkMode ? "hover:bg-gray-800" : "hover:bg-gray-100"}`}
@@ -52,7 +50,6 @@ export default function Home() {
         </div>
       </nav>
 
-      {/* Hero Section */}
       <section className="relative h-screen overflow-hidden pt-16">
         {heroSlides.map((slide, index) => (
           <div
@@ -66,12 +63,8 @@ export default function Home() {
           >
             <div className="relative z-10 flex items-center justify-center h-full text-center text-white">
               <div className="max-w-4xl mx-auto px-4">
-                <h1 className="text-5xl md:text-7xl font-bold mb-6">
-                  {slide.title}
-                </h1>
-                <p className="text-xl md:text-2xl mb-8 opacity-90">
-                  {slide.subtitle}
-                </p>
+                <h1 className="text-5xl md:text-7xl font-bold mb-6">{slide.title}</h1>
+                <p className="text-xl md:text-2xl mb-8 opacity-90">{slide.subtitle}</p>
                 <button className="bg-black/30 backdrop-blur-md hover:bg-black/40 border-2 border-white/50 hover:border-yellow-400/70 text-white px-8 py-4 rounded-full text-lg font-bold transition-all duration-300 transform hover:scale-105">
                   {slide.cta} <ArrowRight className="inline-block ml-2 w-5 h-5" />
                 </button>
@@ -81,7 +74,6 @@ export default function Home() {
         ))}
       </section>
 
-      {/* Services Section */}
       <section className={`py-20 ${darkMode ? "bg-gray-800" : "bg-gray-50"}`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
@@ -90,7 +82,6 @@ export default function Home() {
               Specialized marketing expertise for high-value industries
             </p>
           </div>
-
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className={`p-8 rounded-2xl transition-all duration-300 hover:scale-105 ${darkMode ? "bg-gray-900 border border-gray-700" : "bg-white shadow-lg"}`}>
               <div className="w-16 h-16 bg-gradient-to-r from-blue-600 to-cyan-500 rounded-full flex items-center justify-center mb-6">
@@ -101,7 +92,6 @@ export default function Home() {
                 Premium marketing solutions for luxury real estate agents and developers.
               </p>
             </div>
-
             <div className={`p-8 rounded-2xl transition-all duration-300 hover:scale-105 ${darkMode ? "bg-gray-900 border border-gray-700" : "bg-white shadow-lg"}`}>
               <div className="w-16 h-16 bg-gradient-to-r from-purple-600 to-indigo-500 rounded-full flex items-center justify-center mb-6">
                 <Users className="w-8 h-8 text-white" />
@@ -111,7 +101,6 @@ export default function Home() {
                 Ethical marketing strategies for law firms and legal professionals.
               </p>
             </div>
-
             <div className={`p-8 rounded-2xl transition-all duration-300 hover:scale-105 ${darkMode ? "bg-gray-900 border border-gray-700" : "bg-white shadow-lg"}`}>
               <div className="w-16 h-16 bg-gradient-to-r from-emerald-600 to-teal-500 rounded-full flex items-center justify-center mb-6">
                 <Headphones className="w-8 h-8 text-white" />

@@ -4,21 +4,23 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build && npx @cloudflare/next-on-pages",
-    "deploy": "wrangler deploy"
+    "build": "next build",
+    "start": "next start",
+    "cf-build": "npx @cloudflare/next-on-pages",
+    "lint": "next lint"
   },
   "dependencies": {
+    "@cloudflare/next-on-pages": "^1.13.13",
+    "lucide-react": "^0.469.0",
     "next": "13.5.4",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "lucide-react": "^0.469.0"
+    "typescript": "5.9.2"
   },
   "devDependencies": {
-    "@cloudflare/next-on-pages": "^1.13.13",
-    "@types/node": "^20.19.9",
-    "@types/react": "^18.3.23",
-    "eslint": "^8.57.1",
-    "eslint-config-next": "13.5.4",
-    "typescript": "^5.9.2"
+    "@types/node": "20.19.9",
+    "@types/react": "18.3.23",
+    "eslint": "8.57.1",
+    "eslint-config-next": "13.5.4"
   }
 }

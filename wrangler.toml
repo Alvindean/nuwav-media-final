@@ -1,9 +1,7 @@
-{
-  "name": "nuwavmedia1",
-  "main": ".vercel/output/static/_worker.js",
-  "compatibility_date": "2025-08-04",
-  "compatibility_flags": ["nodejs_compat"],
-  "build": {
-    "command": "npm install && npx @cloudflare/next-on-pages"
-  }
-}
+name = "nuwavmedia1"
+main = ".vercel/output/static/_worker.js"
+compatibility_date = "2025-08-04"
+compatibility_flags = ["nodejs_compat"]
+
+[build]
+command = "npm install && npm run build && npx @cloudflare/next-on-pages"

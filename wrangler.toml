@@ -1,9 +1,9 @@
-name = "your-project-name"
+name = "my-next-app"              # change this to your project name
+main = ".next/standalone/server.js"
 compatibility_date = "2025-08-04"
 
 [build]
-command = "npm run build"
-upload.format = "service-worker"
+command = "npm install && npm run build"
 
 [site]
-bucket = ".next"
+bucket = ".next/static"           # serve static assets

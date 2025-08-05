@@ -4,14 +4,14 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build && npx @cloudflare/next-on-pages",
-    "start": "next start"
+    "build": "next build",
+    "deploy": "wrangler deploy"
   },
   "dependencies": {
-    "lucide-react": "^0.469.0",
     "next": "13.5.4",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "lucide-react": "^0.469.0"
   },
   "devDependencies": {
     "@cloudflare/next-on-pages": "^1.13.13",

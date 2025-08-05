@@ -1,8 +1,7 @@
 name = "nuwavmedia1"
 compatibility_date = "2025-08-04"
 
-# Wrangler will run the adapter automatically after next build
 main = ".vercel/output/static/_worker.js"
 
 [build]
-command = "npm install && npx @cloudflare/next-on-pages"
+command = "npm install && npm run build"

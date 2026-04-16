@@ -1,0 +1,20 @@
+{
+  "name": "deal-scout-worker",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Deal Scout API Worker — real estate lead aggregation over legal public-record sources.",
+  "main": "src/index.ts",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "db:init": "wrangler d1 execute deal_scout --file=./src/db/schema.sql",
+    "db:init:local": "wrangler d1 execute deal_scout --local --file=./src/db/schema.sql",
+    "ingest:hud-reo": "wrangler dev --test-scheduled --local",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20250109.0",
+    "typescript": "^5.9.2",
+    "wrangler": "^3.90.0"
+  }
+}

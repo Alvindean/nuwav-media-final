@@ -1,0 +1,42 @@
+name = "deal-scout"
+main = "src/index.ts"
+compatibility_date = "2025-08-04"
+compatibility_flags = ["nodejs_compat"]
+
+# Scheduled cron for per-source ingest.
+# Each cron hits the `scheduled` handler which dispatches by cron expression.
+[triggers]
+crons = [
+  "*/15 * * * *",   # every 15 min — hot sources (foreclosure auctions, expired)
+  "0 */6 * * *",    # every 6 hours — REO (HUD, Fannie, Freddie)
+  "0 4 * * *"       # daily 04:00 UTC — county bulk refreshes
+]
+
+# D1 database binding. Create with:
+#   wrangler d1 create deal_scout
+# then paste the returned database_id here.
+[[d1_databases]]
+binding = "DB"
+database_name = "deal_scout"
+database_id = "REPLACE_WITH_D1_DATABASE_ID"
+
+# KV for source cursors + rate-limit counters.
+[[kv_namespaces]]
+binding = "KV"
+id = "REPLACE_WITH_KV_ID"
+
+# R2 for raw feed snapshots (audit trail).
+[[r2_buckets]]
+binding = "SNAPSHOTS"
+bucket_name = "deal-scout-snapshots"
+
+# Feature flags + secrets are set via `wrangler secret put` (never committed):
+#   ANTHROPIC_API_KEY    (for Claude outreach drafting)
+#   RESEND_API_KEY       (for transactional email)
+#   ATTOM_API_KEY        (optional — licensed public-records)
+#   JWT_SIGNING_SECRET
+[vars]
+DEAL_SCOUT_ENV = "dev"
+# Hard gate for yellow-tier experimental sources. Must be "true" AND the
+# per-source flag set via secret for anything experimental to run.
+ENABLE_EXPERIMENTAL_SOURCES = "false"

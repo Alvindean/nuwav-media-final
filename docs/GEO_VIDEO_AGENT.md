@@ -100,6 +100,13 @@ Field notes:
 
 ## Editing & researching script content in the studio
 
+- **✍ NEW SCRIPT** (top bar): the fastest way in. Paste a plain-text script
+  (one sentence per beat) or hit **DICTATE** and speak it — every pause
+  becomes a beat. The built-in compiler (`lib/script-compiler.ts`) detects
+  countries/regions mentioned in each sentence, flies the camera there,
+  lights them up red, adds arcs between multi-country sentences, and
+  assigns captions, voiceover and b-roll automatically. Pasting a full
+  geo-video JSON into the same box loads it directly.
 - **SCRIPT · INSPECTOR** (right panel): click any scene to jump to it, then
   edit its label, caption, voiceover line, highlighted countries and b-roll
   media live. SAVE downloads the updated `.geo-video.json`.
@@ -107,6 +114,20 @@ Field notes:
   containing the schema rules and your current project JSON. Paste it into
   any AI agent together with a topic ("rewrite this for the Arctic shipping
   routes story") — it returns a new geo-video.json you LOAD back in.
+
+## Presentation details
+
+- Highlights are **red** by default (`highlightColor` overrides per scene)
+  and fade in/out at scene boundaries.
+- B-roll cards are time-windowed: `media.in` / `media.out` (seconds after
+  scene start) control when the card slides in and away; by default it
+  enters at 0.5s and leaves after ~3.2s so it never blocks the globe for a
+  whole beat.
+- Narration voice: the studio auto-picks the best browser voice available
+  (natural/neural > Google/Microsoft online > default) and the VIEW
+  CONTROLS panel has a voice picker. Voice quality is whatever the
+  viewer's browser ships — for broadcast narration, generate audio files
+  and reference them via `voiceover.src` (they get muxed into exports).
 
 ## Prompt template for an authoring agent
 

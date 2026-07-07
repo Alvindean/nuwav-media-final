@@ -11,12 +11,23 @@ import {
   DEFAULT_PROJECT,
   GeoScene,
   GeoVideoProject,
+  HIGHLIGHT_RED,
   cameraAt,
   featureMatches,
+  highlightAlphaAt,
+  mediaAlphaAt,
   projectDuration,
   sceneAt,
   visibleAt
 } from "../lib/geo-video";
+import { compileScript } from "../lib/script-compiler";
+
+function hexToRgb(hex: string): [number, number, number] {
+  const m = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+  return m
+    ? [parseInt(m[1], 16), parseInt(m[2], 16), parseInt(m[3], 16)]
+    : [255, 45, 85];
+}
 
 const CYAN = "#3fd8ff";
 const AMBER = "#ffb020";
@@ -95,6 +106,12 @@ export default function GeoVideoStudio() {
   const mediaImgs = useRef<Map<string, HTMLImageElement>>(new Map());
   const voAudios = useRef<Map<string, HTMLAudioElement>>(new Map());
   const spokenSceneRef = useRef<string | null>(null);
+  const [voices, setVoices] = useState<SpeechSynthesisVoice[]>([]);
+  const [voiceURI, setVoiceURI] = useState("");
+  const voiceURIRef = useRef(voiceURI);
+  voiceURIRef.current = voiceURI;
+  const voicesRef = useRef(voices);
+  voicesRef.current = voices;
   const audioCtxRef = useRef<AudioContext | null>(null);
   const audioDestRef = useRef<MediaStreamAudioDestinationNode | null>(null);
   const voSrcNodes = useRef<Map<HTMLAudioElement, MediaElementAudioSourceNode>>(
@@ -108,12 +125,18 @@ export default function GeoVideoStudio() {
     url: null,
     sizeMB: null
   });
+  const [scriptOpen, setScriptOpen] = useState(false);
+  const [scriptText, setScriptText] = useState("");
+  const [scriptTitle, setScriptTitle] = useState("");
+  const [dictating, setDictating] = useState(false);
+  const recRef = useRef<any>(null);
 
   const duration = useMemo(() => projectDuration(project), [project]);
   const { width: OUT_W, height: OUT_H, fps } = project.output;
   const accent = skin === "briefing" ? CYAN : "#9aa7b4";
   const scene = sceneAt(project, time);
   const caption = scene?.caption;
+  const mAlpha = scene ? mediaAlphaAt(scene, time) : 0;
   const itemCount =
     project.scenes.length * 2 + project.arcs.length + project.points.length;
 
@@ -150,6 +173,32 @@ export default function GeoVideoStudio() {
     setPlaying(false);
     setStatus(`Loaded ${name} · ${projectDuration(p).toFixed(1)}s`);
   };
+
+  // ---- narration voices ----------------------------------------------------
+  // Browser TTS voices vary wildly; prefer the "natural"/"neural" ones and
+  // Google/Microsoft online voices, which sound far better than the default.
+
+  useEffect(() => {
+    if (typeof window === "undefined" || !("speechSynthesis" in window)) return;
+    const score = (v: SpeechSynthesisVoice) =>
+      (/natural|neural|premium|enhanced/i.test(v.name) ? 8 : 0) +
+      (/online/i.test(v.name) ? 4 : 0) +
+      (/google/i.test(v.name) ? 3 : 0) +
+      (/aria|jenny|guy|ryan|libby/i.test(v.name) ? 2 : 0) +
+      (v.lang === "en-US" ? 1 : 0);
+    const load = () => {
+      const vs = window.speechSynthesis
+        .getVoices()
+        .filter((v) => v.lang?.toLowerCase().startsWith("en"))
+        .sort((a, b) => score(b) - score(a));
+      setVoices(vs);
+      setVoiceURI((prev) => prev || vs[0]?.voiceURI || "");
+    };
+    load();
+    window.speechSynthesis.addEventListener("voiceschanged", load);
+    return () =>
+      window.speechSynthesis.removeEventListener("voiceschanged", load);
+  }, []);
 
   // ---- media + voiceover assets -------------------------------------------
 
@@ -204,8 +253,12 @@ export default function GeoVideoStudio() {
           spokenSceneRef.current = sc.id;
           window.speechSynthesis.cancel();
           const u = new SpeechSynthesisUtterance(sc.voiceover.text);
-          u.rate = 1.02;
-          u.pitch = 0.9;
+          const v = voicesRef.current.find(
+            (x) => x.voiceURI === voiceURIRef.current
+          );
+          if (v) u.voice = v;
+          u.rate = 1.0;
+          u.pitch = 1.0;
           window.speechSynthesis.speak(u);
         }
       } else if (spokenSceneRef.current && (!sc || !sc.voiceover?.text)) {
@@ -357,14 +410,21 @@ export default function GeoVideoStudio() {
     [highlightFeatures]
   );
 
+  // Fade the red highlight in/out at scene boundaries. Bucketed to 8 steps so
+  // the hex layer only re-colours a handful of times per transition.
+  const rawHlAlpha = scene ? highlightAlphaAt(scene, time) : 0;
+  const hlAlpha = Math.round(rawHlAlpha * 8) / 8;
+  const [hr, hg, hb] = hexToRgb(scene?.highlightColor ?? HIGHLIGHT_RED);
+
   const hexColor = useCallback(
     (f: any) => {
-      if (highlightSet.has(f)) return "rgba(160,240,255,0.95)";
+      if (highlightSet.has(f) && hlAlpha > 0)
+        return `rgba(${hr},${hg},${hb},${0.35 + 0.6 * hlAlpha})`;
       return skin === "briefing"
         ? "rgba(64,216,255,0.55)"
         : "rgba(160,180,196,0.45)";
     },
-    [highlightSet, skin]
+    [highlightSet, skin, hlAlpha, hr, hg, hb]
   );
 
   const globeMaterial = useMemo(
@@ -448,6 +508,80 @@ export default function GeoVideoStudio() {
     }
   };
 
+  // ---- NEW SCRIPT: paste or dictate → compiled timeline --------------------
+
+  const startDictation = () => {
+    const SR =
+      (window as any).SpeechRecognition ||
+      (window as any).webkitSpeechRecognition;
+    if (!SR) {
+      setStatus("Dictation needs Chrome/Edge (Web Speech API not available)");
+      return;
+    }
+    const rec = new SR();
+    rec.continuous = true;
+    rec.interimResults = false;
+    rec.lang = "en-US";
+    rec.onresult = (e: any) => {
+      let txt = "";
+      for (let i = e.resultIndex; i < e.results.length; i++)
+        if (e.results[i].isFinal) txt += e.results[i][0].transcript.trim() + "\n";
+      if (txt) setScriptText((t) => (t ? t.replace(/\n?$/, "\n") : "") + txt);
+    };
+    rec.onerror = () => setDictating(false);
+    rec.onend = () => setDictating(false);
+    recRef.current = rec;
+    rec.start();
+    setDictating(true);
+    setStatus("Listening — each pause becomes a beat. Mention countries by name.");
+  };
+
+  const stopDictation = () => {
+    recRef.current?.stop();
+    setDictating(false);
+  };
+
+  const buildFromScript = () => {
+    const text = scriptText.trim();
+    if (!text) {
+      setStatus("Script is empty — paste or dictate some lines first");
+      return;
+    }
+    // Full geo-video JSON pasted? Load it directly.
+    if (text.startsWith("{")) {
+      try {
+        const parsed = JSON.parse(text);
+        if (Array.isArray(parsed.scenes)) {
+          loadProject(parsed, "pasted JSON");
+          setScriptOpen(false);
+          return;
+        }
+      } catch {
+        /* fall through to the plain-text compiler */
+      }
+    }
+    if (!countries.length) {
+      setStatus("Countries dataset still loading — try again in a second");
+      return;
+    }
+    try {
+      const compiled = compileScript(
+        text,
+        countries,
+        scriptTitle.trim() || "Voice-built briefing"
+      );
+      loadProject(compiled, "compiled script");
+      setScriptOpen(false);
+      setStatus(
+        `Script compiled — ${compiled.scenes.length} beats · ${projectDuration(
+          compiled
+        ).toFixed(1)}s. Press SPACE to preview.`
+      );
+    } catch (err: any) {
+      setStatus(`Could not compile script: ${err?.message ?? err}`);
+    }
+  };
+
   const handleFile = (e: React.ChangeEvent<HTMLInputElement>) => {
     const f = e.target.files?.[0];
     if (!f) return;
@@ -485,11 +619,15 @@ export default function GeoVideoStudio() {
         ctx.fill();
       }
 
-      // picture-in-picture stock media card (matches the DOM .media-card)
-      if (togglesRef.current.media && sc?.media) {
+      // picture-in-picture stock media card (matches the DOM .media-card),
+      // faded/slid by the same in/out envelope as the preview
+      const exportMAlpha = sc ? mediaAlphaAt(sc, t) : 0;
+      if (togglesRef.current.media && sc?.media && exportMAlpha > 0.01) {
+        ctx.save();
+        ctx.globalAlpha = exportMAlpha;
         const img = mediaImgs.current.get(sc.media.src);
         const mx = 48 * s;
-        const my = 150 * s;
+        const my = 150 * s + (1 - exportMAlpha) * 16 * s;
         const mw = W - 96 * s;
         const mh = mw * (9 / 16);
         ctx.fillStyle = "rgba(2,10,18,0.85)";
@@ -526,6 +664,7 @@ export default function GeoVideoStudio() {
           my + mh + 12 * s
         );
         ctx.textBaseline = "top";
+        ctx.restore();
       }
 
       const cap = sc?.caption;
@@ -731,6 +870,13 @@ export default function GeoVideoStudio() {
               </button>
             ))}
           </div>
+          <button
+            className="abtn script"
+            onClick={() => setScriptOpen(true)}
+            title="Paste or dictate a script — it becomes the timeline"
+          >
+            ✍ NEW SCRIPT
+          </button>
           <button className="abtn" onClick={() => fileRef.current?.click()}>
             ⤒ LOAD
           </button>
@@ -796,9 +942,14 @@ export default function GeoVideoStudio() {
               hexPolygonMargin={0.58}
               hexPolygonColor={hexColor}
               polygonsData={highlightFeatures}
-              polygonCapColor={() => "rgba(63,216,255,0.22)"}
-              polygonSideColor={() => "rgba(63,216,255,0.35)"}
-              polygonStrokeColor={() => "rgba(140,235,255,0.9)"}
+              polygonCapColor={() => `rgba(${hr},${hg},${hb},${0.3 * hlAlpha})`}
+              polygonSideColor={() => `rgba(${hr},${hg},${hb},${0.42 * hlAlpha})`}
+              polygonStrokeColor={() =>
+                `rgba(${Math.min(hr + 70, 255)},${Math.min(hg + 70, 255)},${Math.min(
+                  hb + 70,
+                  255
+                )},${0.95 * hlAlpha})`
+              }
               polygonAltitude={0.012}
               polygonsTransitionDuration={400}
               arcsData={visibleArcs}
@@ -846,7 +997,14 @@ export default function GeoVideoStudio() {
               </>
             )}
             {toggles.media && scene?.media && (
-              <div className="media-card">
+              <div
+                className="media-card"
+                style={{
+                  opacity: mAlpha,
+                  transform: `translateY(${(1 - mAlpha) * 16}px)`,
+                  visibility: mAlpha > 0.01 ? "visible" : "hidden"
+                }}
+              >
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img src={scene.media.src} alt={scene.media.label ?? "b-roll"} />
                 <div className="media-label">
@@ -964,6 +1122,21 @@ export default function GeoVideoStudio() {
                 <option value="draft">Draft</option>
               </select>
             </div>
+            {voices.length > 0 && (
+              <div className="ctl wide">
+                <label>NARRATION VOICE (BROWSER TTS)</label>
+                <select
+                  value={voiceURI}
+                  onChange={(e) => setVoiceURI(e.target.value)}
+                >
+                  {voices.slice(0, 16).map((v) => (
+                    <option key={v.voiceURI} value={v.voiceURI}>
+                      {v.name.replace(/^Microsoft |^Google /, "")} ({v.lang})
+                    </option>
+                  ))}
+                </select>
+              </div>
+            )}
             {(
               [
                 ["hud", "HUD"],
@@ -1093,14 +1266,78 @@ export default function GeoVideoStudio() {
                 ⧉ COPY AGENT BRIEF (RESEARCH / REWRITE SCRIPT)
               </button>
               <div className="ins-hint">
-                Paste the brief into any AI agent with a new topic — it returns
-                a full geo-video.json to LOAD. Edits here apply live; SAVE
+                New content: hit <b>✍ NEW SCRIPT</b> in the top bar to paste
+                or dictate a script — it compiles straight into a timeline.
+                For researched scripts, COPY AGENT BRIEF → paste into any AI
+                agent → LOAD the JSON it returns. Edits here apply live; SAVE
                 downloads the updated file.
               </div>
             </div>
           )}
         </aside>
       </div>
+
+      {/* ============ NEW SCRIPT MODAL ============ */}
+      {scriptOpen && (
+        <div className="script-overlay" onClick={() => setScriptOpen(false)}>
+          <div className="script-panel" onClick={(e) => e.stopPropagation()}>
+            <div className="script-title">
+              ✍ NEW SCRIPT — PASTE IT OR TALK IT IN
+            </div>
+            <div className="script-sub">
+              One sentence per beat. Name countries — “China”, “Europe”,
+              “the United States” — and the camera flies there and lights them
+              up in red, with captions, voiceover and b-roll auto-assigned.
+              Pasting a full <b>geo-video JSON</b> here works too.
+            </div>
+            <input
+              className="script-name"
+              placeholder="TITLE (optional) — e.g. Arctic shipping routes"
+              value={scriptTitle}
+              onChange={(e) => setScriptTitle(e.target.value)}
+            />
+            <textarea
+              className="script-text"
+              rows={9}
+              placeholder={
+                "PASTE YOUR SCRIPT HERE…\n\nGlobal supply lines are shifting north.\nRussia and China are racing to control the Arctic lanes.\nEurope scrambles to respond.\n…or press DICTATE and just speak — every pause becomes a beat."
+              }
+              value={scriptText}
+              onChange={(e) => setScriptText(e.target.value)}
+            />
+            <div className="script-actions">
+              <button
+                className={`abtn mic ${dictating ? "live" : ""}`}
+                onClick={dictating ? stopDictation : startDictation}
+              >
+                {dictating ? "■ STOP DICTATION" : "🎙 DICTATE"}
+              </button>
+              <span className="script-count">
+                {scriptText.trim()
+                  ? `${scriptText
+                      .split(/\n+/)
+                      .filter((l) => l.trim()).length} line(s)`
+                  : ""}
+              </span>
+              <button
+                className="abtn"
+                onClick={() => {
+                  setScriptText("");
+                  setScriptTitle("");
+                }}
+              >
+                CLEAR
+              </button>
+              <button className="abtn" onClick={() => setScriptOpen(false)}>
+                CANCEL
+              </button>
+              <button className="abtn build" onClick={buildFromScript}>
+                ⚡ BUILD TIMELINE
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* ============ TIMELINE ============ */}
       <footer className="timeline-wrap">
@@ -1361,6 +1598,86 @@ export default function GeoVideoStudio() {
         .abtn.export {
           border-color: ${AMBER};
           color: ${AMBER};
+        }
+        .abtn.script {
+          border-color: #35c96f;
+          color: #7be3a4;
+        }
+        .abtn.mic.live {
+          border-color: ${RED};
+          color: ${RED};
+          animation: blink 1s steps(2) infinite;
+        }
+        .abtn.build {
+          border-color: ${AMBER};
+          color: ${AMBER};
+        }
+
+        /* ---------- new script modal ---------- */
+        .script-overlay {
+          position: fixed;
+          inset: 0;
+          background: rgba(2, 6, 10, 0.78);
+          backdrop-filter: blur(3px);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          z-index: 50;
+        }
+        .script-panel {
+          width: min(680px, 92vw);
+          background: #071019;
+          border: 1px solid #1d4a63;
+          border-radius: 12px;
+          box-shadow: 0 0 60px #0a2a40cc;
+          padding: 20px;
+          display: flex;
+          flex-direction: column;
+          gap: 12px;
+        }
+        .script-title {
+          color: ${CYAN};
+          letter-spacing: 0.14em;
+          font-size: 13px;
+        }
+        .script-sub {
+          color: #6f93a6;
+          font-size: 11px;
+          line-height: 1.6;
+        }
+        .script-sub b {
+          color: #9fdcf2;
+        }
+        .script-name,
+        .script-text {
+          width: 100%;
+          box-sizing: border-box;
+          background: #04090f;
+          color: #e6f6ff;
+          border: 1px solid #16344a;
+          border-radius: 8px;
+          padding: 10px 12px;
+          font-family: inherit;
+          font-size: 12px;
+          resize: vertical;
+        }
+        .script-name:focus,
+        .script-text:focus {
+          outline: none;
+          border-color: ${CYAN};
+        }
+        .script-actions {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+        }
+        .script-count {
+          flex: 1;
+          color: #4d6d80;
+          font-size: 10px;
+        }
+        .ctl.wide {
+          grid-column: span 2;
         }
 
         /* ---------- main ---------- */

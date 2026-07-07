@@ -39,6 +39,8 @@ export interface GeoScene {
    * or the admin name ("China").
    */
   highlight?: string[];
+  /** Optional highlight colour override for this scene (default studio red). */
+  highlightColor?: string;
   /** Picture-in-picture stock media card shown above the caption. */
   media?: {
     /** Image or video URL — self-hosted under /public keeps exports taint-free. */
@@ -46,6 +48,11 @@ export interface GeoScene {
     /** Small technical label under the card, e.g. "MANUFACTURING CORRIDOR". */
     label?: string;
     kind?: "image" | "video";
+    /** Seconds after scene start before the card slides in (default 0.5). */
+    in?: number;
+    /** Seconds after scene start when the card slides out
+     *  (default: min(in + 3.2, scene length − 0.3) so it never hogs the frame). */
+    out?: number;
   };
   /** Narration for this scene. `src` (audio file) is muxed into exports;
    *  `text` falls back to live browser TTS (preview only). */
@@ -135,6 +142,33 @@ export const visibleAt = <T extends { start?: number; end?: number }>(
   items: T[],
   time: number
 ): T[] => items.filter((i) => time >= (i.start ?? 0) && time <= (i.end ?? Infinity));
+
+/** Studio default for country highlights — "light it up red". */
+export const HIGHLIGHT_RED = "#ff2d55";
+
+const ramp = (x: number) => Math.min(Math.max(x, 0), 1);
+
+/**
+ * B-roll visibility envelope: 0→1→0 within the scene so the card slides in,
+ * holds, and slides away instead of covering the globe for the whole beat.
+ */
+export function mediaAlphaAt(scene: GeoScene, time: number): number {
+  if (!scene.media) return 0;
+  const len = scene.end - scene.start;
+  const tIn = scene.media.in ?? 0.5;
+  const tOut = scene.media.out ?? Math.max(tIn + 0.8, Math.min(tIn + 3.2, len - 0.3));
+  const t = time - scene.start;
+  const FADE = 0.35;
+  if (t <= tIn || t >= tOut) return 0;
+  return Math.min(ramp((t - tIn) / FADE), ramp((tOut - t) / FADE));
+}
+
+/** Country-highlight fade: eases in at scene start and out before the cut. */
+export function highlightAlphaAt(scene: GeoScene, time: number): number {
+  const t = time - scene.start;
+  const FADE = 0.45;
+  return Math.min(ramp(t / FADE), ramp((scene.end - time) / FADE));
+}
 
 /** Case-insensitive match of a scene highlight entry against a Natural Earth feature. */
 export function featureMatches(feature: any, highlight: string[]): boolean {

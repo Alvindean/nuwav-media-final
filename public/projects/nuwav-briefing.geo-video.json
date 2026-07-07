@@ -1,0 +1,257 @@
+{
+  "version": 1,
+  "meta": {
+    "title": "Global Pressure Points — Briefing",
+    "slug": "nuwav-briefing-540-draft"
+  },
+  "output": {
+    "width": 540,
+    "height": 960,
+    "fps": 30
+  },
+  "skin": "briefing",
+  "scenes": [
+    {
+      "id": "establishing",
+      "label": "GLOBAL ESTABLISHING VIEW",
+      "start": 0,
+      "end": 3.4,
+      "camera": {
+        "from": {
+          "lat": 8,
+          "lng": -30,
+          "altitude": 2.6
+        },
+        "to": {
+          "lat": 14,
+          "lng": 30,
+          "altitude": 2.3
+        },
+        "ease": "inOut"
+      },
+      "caption": {
+        "text": "GLOBAL SUPPLY LINES ENTER A NEW ERA OF SCRUTINY"
+      }
+    },
+    {
+      "id": "china",
+      "label": "EAST ASIA · PRESSURE POINT",
+      "start": 3.4,
+      "end": 6.8,
+      "camera": {
+        "from": {
+          "lat": 20,
+          "lng": 95,
+          "altitude": 1.9
+        },
+        "to": {
+          "lat": 33,
+          "lng": 108,
+          "altitude": 1.15
+        },
+        "ease": "inOut"
+      },
+      "caption": {
+        "text": "CHINA BECOMES THE FIRST PRESSURE POINT"
+      }
+    },
+    {
+      "id": "strait",
+      "label": "TAIWAN STRAIT · ROUTES",
+      "start": 6.8,
+      "end": 10.2,
+      "camera": {
+        "from": {
+          "lat": 24,
+          "lng": 121,
+          "altitude": 1.1
+        },
+        "to": {
+          "lat": 25,
+          "lng": 125,
+          "altitude": 0.85
+        },
+        "ease": "inOut"
+      },
+      "caption": {
+        "text": "SEMICONDUCTOR ROUTES CONCENTRATE THE RISK",
+        "accent": "#ff9f0a"
+      }
+    },
+    {
+      "id": "usa",
+      "label": "UNITED STATES OF AMERICA",
+      "start": 10.2,
+      "end": 13.6,
+      "camera": {
+        "from": {
+          "lat": 30,
+          "lng": -80,
+          "altitude": 1.8
+        },
+        "to": {
+          "lat": 39,
+          "lng": -98,
+          "altitude": 1.25
+        },
+        "ease": "inOut"
+      },
+      "caption": {
+        "text": "WASHINGTON ANSWERS WITH EXPORT CONTROLS"
+      }
+    },
+    {
+      "id": "europe",
+      "label": "EUROPE · MACRO READABLE HOLD",
+      "start": 13.6,
+      "end": 16.6,
+      "camera": {
+        "from": {
+          "lat": 42,
+          "lng": -5,
+          "altitude": 1.6
+        },
+        "to": {
+          "lat": 50,
+          "lng": 12,
+          "altitude": 1.2
+        },
+        "ease": "inOut"
+      },
+      "caption": {
+        "text": "EUROPE HEDGES BETWEEN BOTH BLOCS",
+        "accent": "#ff9f0a"
+      }
+    },
+    {
+      "id": "pullback",
+      "label": "GLOBAL PULL-BACK · CLOSER",
+      "start": 16.6,
+      "end": 19.4,
+      "camera": {
+        "from": {
+          "lat": 30,
+          "lng": 60,
+          "altitude": 1.6
+        },
+        "to": {
+          "lat": 12,
+          "lng": -20,
+          "altitude": 2.6
+        },
+        "ease": "inOut"
+      },
+      "caption": {
+        "text": "THE MAP IS THE MESSAGE"
+      }
+    }
+  ],
+  "points": [
+    {
+      "lat": 39.9,
+      "lng": 116.4,
+      "label": "BEIJING",
+      "ring": true,
+      "start": 3.4,
+      "color": "#ff2d55"
+    },
+    {
+      "lat": 25.03,
+      "lng": 121.5,
+      "label": "TAIPEI",
+      "ring": true,
+      "start": 6.8,
+      "color": "#ffd60a"
+    },
+    {
+      "lat": 1.35,
+      "lng": 103.8,
+      "label": "SINGAPORE",
+      "start": 6.8
+    },
+    {
+      "lat": 37.56,
+      "lng": 126.9,
+      "label": "SEOUL",
+      "start": 6.8
+    },
+    {
+      "lat": 38.9,
+      "lng": -77,
+      "label": "WASHINGTON D.C.",
+      "ring": true,
+      "start": 10.2,
+      "color": "#ff2d55"
+    },
+    {
+      "lat": 37.77,
+      "lng": -122.4,
+      "label": "SAN FRANCISCO",
+      "start": 10.2
+    },
+    {
+      "lat": 50.1,
+      "lng": 8.68,
+      "label": "FRANKFURT",
+      "start": 13.6
+    },
+    {
+      "lat": 52.37,
+      "lng": 4.9,
+      "label": "AMSTERDAM",
+      "start": 13.6
+    }
+  ],
+  "arcs": [
+    {
+      "label": "TPE → SEL",
+      "startLat": 25.03,
+      "startLng": 121.5,
+      "endLat": 37.56,
+      "endLng": 126.9,
+      "start": 6.8
+    },
+    {
+      "label": "TPE → SIN",
+      "startLat": 25.03,
+      "startLng": 121.5,
+      "endLat": 1.35,
+      "endLng": 103.8,
+      "start": 6.8
+    },
+    {
+      "label": "TPE → SFO",
+      "startLat": 25.03,
+      "startLng": 121.5,
+      "endLat": 37.77,
+      "endLng": -122.4,
+      "start": 8.2,
+      "color": "#ffd60a"
+    },
+    {
+      "label": "DC → AMS",
+      "startLat": 38.9,
+      "startLng": -77,
+      "endLat": 52.37,
+      "endLng": 4.9,
+      "start": 10.2
+    },
+    {
+      "label": "DC → FRA",
+      "startLat": 38.9,
+      "startLng": -77,
+      "endLat": 50.1,
+      "endLng": 8.68,
+      "start": 11
+    },
+    {
+      "label": "FRA → PEK",
+      "startLat": 50.1,
+      "startLng": 8.68,
+      "endLat": 39.9,
+      "endLng": 116.4,
+      "start": 13.6,
+      "color": "#ff9f0a"
+    }
+  ]
+}

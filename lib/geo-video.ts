@@ -33,6 +33,26 @@ export interface GeoScene {
     /** Accent bar colour of the lower third. Defaults to the skin accent. */
     accent?: string;
   };
+  /**
+   * Countries to light up while this scene plays. Entries match Natural
+   * Earth codes/names case-insensitively: ISO_A3 ("CHN"), ADM0_A3, SOV_A3,
+   * or the admin name ("China").
+   */
+  highlight?: string[];
+  /** Picture-in-picture stock media card shown above the caption. */
+  media?: {
+    /** Image or video URL — self-hosted under /public keeps exports taint-free. */
+    src: string;
+    /** Small technical label under the card, e.g. "MANUFACTURING CORRIDOR". */
+    label?: string;
+    kind?: "image" | "video";
+  };
+  /** Narration for this scene. `src` (audio file) is muxed into exports;
+   *  `text` falls back to live browser TTS (preview only). */
+  voiceover?: {
+    text?: string;
+    src?: string;
+  };
 }
 
 export interface GeoPoint {
@@ -116,6 +136,16 @@ export const visibleAt = <T extends { start?: number; end?: number }>(
   time: number
 ): T[] => items.filter((i) => time >= (i.start ?? 0) && time <= (i.end ?? Infinity));
 
+/** Case-insensitive match of a scene highlight entry against a Natural Earth feature. */
+export function featureMatches(feature: any, highlight: string[]): boolean {
+  if (!highlight?.length) return false;
+  const p = feature?.properties ?? {};
+  const codes = [p.ISO_A3, p.ADM0_A3, p.SOV_A3, p.ADMIN, p.NAME, p.NAME_LONG]
+    .filter(Boolean)
+    .map((c: string) => String(c).toLowerCase());
+  return highlight.some((h) => codes.includes(h.toLowerCase()));
+}
+
 /**
  * Default demo project — a short geopolitical "briefing" clip in the style
  * of the reference edit (holographic globe, pressure-point captions).
@@ -139,7 +169,9 @@ export const DEFAULT_PROJECT: GeoVideoProject = {
         to: { lat: 14, lng: 30, altitude: 2.3 },
         ease: "inOut"
       },
-      caption: { text: "GLOBAL SUPPLY LINES ENTER A NEW ERA OF SCRUTINY" }
+      caption: { text: "GLOBAL SUPPLY LINES ENTER A NEW ERA OF SCRUTINY" },
+      media: { src: "/media/freight-network.svg", label: "GLOBAL FREIGHT NETWORK · B-ROLL" },
+      voiceover: { text: "Global supply lines are entering a new era of scrutiny." }
     },
     {
       id: "china",
@@ -151,7 +183,10 @@ export const DEFAULT_PROJECT: GeoVideoProject = {
         to: { lat: 33, lng: 108, altitude: 1.15 },
         ease: "inOut"
       },
-      caption: { text: "CHINA BECOMES THE FIRST PRESSURE POINT" }
+      caption: { text: "CHINA BECOMES THE FIRST PRESSURE POINT" },
+      highlight: ["CHN"],
+      media: { src: "/media/manufacturing.svg", label: "MANUFACTURING CORRIDOR · SHENZHEN" },
+      voiceover: { text: "China becomes the first pressure point." }
     },
     {
       id: "strait",
@@ -163,7 +198,10 @@ export const DEFAULT_PROJECT: GeoVideoProject = {
         to: { lat: 25, lng: 125, altitude: 0.85 },
         ease: "inOut"
       },
-      caption: { text: "SEMICONDUCTOR ROUTES CONCENTRATE THE RISK", accent: "#ff9f0a" }
+      caption: { text: "SEMICONDUCTOR ROUTES CONCENTRATE THE RISK", accent: "#ff9f0a" },
+      highlight: ["TWN"],
+      media: { src: "/media/semiconductor.svg", label: "ADVANCED NODE FABRICATION" },
+      voiceover: { text: "Semiconductor routes concentrate the risk." }
     },
     {
       id: "usa",
@@ -175,7 +213,10 @@ export const DEFAULT_PROJECT: GeoVideoProject = {
         to: { lat: 39, lng: -98, altitude: 1.25 },
         ease: "inOut"
       },
-      caption: { text: "WASHINGTON ANSWERS WITH EXPORT CONTROLS" }
+      caption: { text: "WASHINGTON ANSWERS WITH EXPORT CONTROLS" },
+      highlight: ["USA"],
+      media: { src: "/media/export-controls.svg", label: "EXPORT CONTROL BRIEFING · D.C." },
+      voiceover: { text: "Washington answers with export controls." }
     },
     {
       id: "europe",
@@ -187,7 +228,10 @@ export const DEFAULT_PROJECT: GeoVideoProject = {
         to: { lat: 50, lng: 12, altitude: 1.2 },
         ease: "inOut"
       },
-      caption: { text: "EUROPE HEDGES BETWEEN BOTH BLOCS", accent: "#ff9f0a" }
+      caption: { text: "EUROPE HEDGES BETWEEN BOTH BLOCS", accent: "#ff9f0a" },
+      highlight: ["DEU", "FRA", "NLD", "BEL", "ITA", "ESP", "POL"],
+      media: { src: "/media/europe-trade.svg", label: "EU TRADE POLICY DESK" },
+      voiceover: { text: "Europe hedges between both blocs." }
     },
     {
       id: "pullback",
@@ -199,7 +243,9 @@ export const DEFAULT_PROJECT: GeoVideoProject = {
         to: { lat: 12, lng: -20, altitude: 2.6 },
         ease: "inOut"
       },
-      caption: { text: "THE MAP IS THE MESSAGE" }
+      caption: { text: "THE MAP IS THE MESSAGE" },
+      media: { src: "/media/macro-hold.svg", label: "MACRO READABLE HOLD" },
+      voiceover: { text: "The map is the message." }
     }
   ],
   points: [

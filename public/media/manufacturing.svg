@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450"><defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#071827"/><stop offset="1" stop-color="#030a12"/>
+  </linearGradient>
+  <radialGradient id="vig" cx="0.5" cy="0.45" r="0.75">
+    <stop offset="0.6" stop-color="#000000" stop-opacity="0"/><stop offset="1" stop-color="#000000" stop-opacity="0.55"/>
+  </radialGradient>
+</defs>
+  <rect x="0" y="0" width="800" height="450" fill="url(#bg)"/>
+  <line x1="0" y1="0" x2="0" y2="450" stroke="#0e2a3f" stroke-width="1"/><line x1="50" y1="0" x2="50" y2="450" stroke="#0e2a3f" stroke-width="1"/><line x1="100" y1="0" x2="100" y2="450" stroke="#0e2a3f" stroke-width="1"/><line x1="150" y1="0" x2="150" y2="450" stroke="#0e2a3f" stroke-width="1"/><line x1="200" y1="0" x2="200" y2="450" stroke="#0e2a3f" stroke-width="1"/><line x1="250" y1="0" x2="250" y2="450" stroke="#0e2a3f" stroke-width="1"/><line x1="300" y1="0" x2="300" y2="450" stroke="#0e2a3f" stroke-width="1"/><line x1="350" y1="0" x2="350" y2="450" stroke="#0e2a3f" stroke-width="1"/><line x1="400" y1="0" x2="400" y2="450" stroke="#0e2a3f" stroke-width="1"/><line x1="450" y1="0" x2="450" y2="450" stroke="#0e2a3f" stroke-width="1"/><line x1="500" y1="0" x2="500" y2="450" stroke="#0e2a3f" stroke-width="1"/><line x1="550" y1="0" x2="550" y2="450" stroke="#0e2a3f" stroke-width="1"/><line x1="600" y1="0" x2="600" y2="450" stroke="#0e2a3f" stroke-width="1"/><line x1="650" y1="0" x2="650" y2="450" stroke="#0e2a3f" stroke-width="1"/><line x1="700" y1="0" x2="700" y2="450" stroke="#0e2a3f" stroke-width="1"/><line x1="750" y1="0" x2="750" y2="450" stroke="#0e2a3f" stroke-width="1"/><line x1="800" y1="0" x2="800" y2="450" stroke="#0e2a3f" stroke-width="1"/><line x1="0" y1="0" x2="800" y2="0" stroke="#0e2a3f" stroke-width="1"/><line x1="0" y1="50" x2="800" y2="50" stroke="#0e2a3f" stroke-width="1"/><line x1="0" y1="100" x2="800" y2="100" stroke="#0e2a3f" stroke-width="1"/><line x1="0" y1="150" x2="800" y2="150" stroke="#0e2a3f" stroke-width="1"/><line x1="0" y1="200" x2="800" y2="200" stroke="#0e2a3f" stroke-width="1"/><line x1="0" y1="250" x2="800" y2="250" stroke="#0e2a3f" stroke-width="1"/><line x1="0" y1="300" x2="800" y2="300" stroke="#0e2a3f" stroke-width="1"/><line x1="0" y1="350" x2="800" y2="350" stroke="#0e2a3f" stroke-width="1"/><line x1="0" y1="400" x2="800" y2="400" stroke="#0e2a3f" stroke-width="1"/><line x1="0" y1="450" x2="800" y2="450" stroke="#0e2a3f" stroke-width="1"/>
+  <rect x="0" y="0" width="800" height="450" fill="url(#vig)"/>
+  <rect x="14" y="14" width="772" height="422" fill="none" stroke="#3fd8ff" stroke-opacity="0.4" stroke-width="2"/>
+  <text x="30" y="44" font-family="monospace" font-size="18" fill="#3fd8ff" letter-spacing="4">MANUFACTURING CORRIDOR</text>
+  <text x="30" y="422" font-family="monospace" font-size="13" fill="#3fd8ff" fill-opacity="0.6" letter-spacing="3">SHENZHEN FEED · SHIFT 3 OUTPUT</text>
+  <circle cx="760" cy="38" r="6" fill="#ff2d55"/>
+  <text x="742" y="43" font-family="monospace" font-size="12" fill="#ff2d55" text-anchor="end">REC</text>
+  <path d="M 100 360 L 100 250 L 150 250 L 150 220 L 200 250 L 200 200 L 250 200 L 250 360 Z" fill="#0d3244" stroke="#3fd8ff" stroke-opacity="0.8"/>
+  <path d="M 270 360 L 270 230 L 330 230 L 330 190 L 390 230 L 390 360 Z" fill="#0d3244" stroke="#3fd8ff" stroke-opacity="0.8"/>
+  <rect x="415" y="205" width="26" height="155" fill="#0d3244" stroke="#3fd8ff" stroke-opacity="0.8"/>
+  <circle cx="428" cy="190" r="7" fill="#ff2d55"/>
+  <polyline points="470,330 520,300 560,315 610,260 660,275 710,225" stroke="#ffb020" stroke-width="3" fill="none"/>
+  <circle cx="470" cy="330" r="4" fill="#ffb020"/><circle cx="520" cy="300" r="4" fill="#ffb020"/><circle cx="560" cy="315" r="4" fill="#ffb020"/><circle cx="610" cy="260" r="4" fill="#ffb020"/><circle cx="660" cy="275" r="4" fill="#ffb020"/><circle cx="710" cy="225" r="4" fill="#ffb020"/>
+  <line x1="80" y1="360" x2="720" y2="360" stroke="#3fd8ff" stroke-opacity="0.8" stroke-width="2"/></svg>

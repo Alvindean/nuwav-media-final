@@ -9,8 +9,10 @@ import Globe, { GlobeMethods } from "react-globe.gl";
 import * as THREE from "three";
 import {
   DEFAULT_PROJECT,
+  GeoScene,
   GeoVideoProject,
   cameraAt,
+  featureMatches,
   projectDuration,
   sceneAt,
   visibleAt
@@ -35,6 +37,8 @@ interface Toggles {
   labels: boolean;
   points: boolean;
   grid: boolean;
+  media: boolean;
+  voice: boolean;
 }
 
 const PX_PER_SEC = 64;
@@ -82,8 +86,20 @@ export default function GeoVideoStudio() {
     routes: true,
     labels: true,
     points: true,
-    grid: true
+    grid: true,
+    media: true,
+    voice: true
   });
+  const togglesRef = useRef(toggles);
+  togglesRef.current = toggles;
+  const mediaImgs = useRef<Map<string, HTMLImageElement>>(new Map());
+  const voAudios = useRef<Map<string, HTMLAudioElement>>(new Map());
+  const spokenSceneRef = useRef<string | null>(null);
+  const audioCtxRef = useRef<AudioContext | null>(null);
+  const audioDestRef = useRef<MediaStreamAudioDestinationNode | null>(null);
+  const voSrcNodes = useRef<Map<HTMLAudioElement, MediaElementAudioSourceNode>>(
+    new Map()
+  );
   const [status, setStatus] = useState("Production exporter ready");
   const [stageScale, setStageScale] = useState(0.55);
   const [exportState, setExportState] = useState<ExportState>({
@@ -135,6 +151,70 @@ export default function GeoVideoStudio() {
     setStatus(`Loaded ${name} · ${projectDuration(p).toFixed(1)}s`);
   };
 
+  // ---- media + voiceover assets -------------------------------------------
+
+  useEffect(() => {
+    project.scenes.forEach((s) => {
+      const src = s.media?.src;
+      if (src && (s.media?.kind ?? "image") === "image" && !mediaImgs.current.has(src)) {
+        const img = new Image();
+        img.crossOrigin = "anonymous";
+        img.src = src;
+        mediaImgs.current.set(src, img);
+      }
+      const vo = s.voiceover?.src;
+      if (vo && !voAudios.current.has(vo)) {
+        const a = new Audio(vo);
+        a.crossOrigin = "anonymous";
+        a.preload = "auto";
+        voAudios.current.set(vo, a);
+      }
+    });
+  }, [project]);
+
+  /** Keep narration in sync with the playhead. Audio files seek/pause with
+   *  the timeline; text voiceovers use live browser TTS (one shot per scene). */
+  const syncVoice = useCallback(
+    (t: number, active: boolean) => {
+      const sc = sceneAt(project, t);
+      voAudios.current.forEach((a, src) => {
+        const owner = project.scenes.find((s) => s.voiceover?.src === src);
+        const shouldPlay =
+          active && toggles.voice && owner && sc?.id === owner.id;
+        if (shouldPlay && owner) {
+          const offset = t - owner.start;
+          if (a.paused) {
+            a.currentTime = Math.max(offset, 0);
+            a.play().catch(() => undefined);
+          }
+        } else if (!a.paused) {
+          a.pause();
+        }
+      });
+      if (typeof window === "undefined" || !("speechSynthesis" in window)) return;
+      if (!active || !toggles.voice) {
+        if (spokenSceneRef.current) {
+          window.speechSynthesis.cancel();
+          spokenSceneRef.current = null;
+        }
+        return;
+      }
+      if (sc && sc.voiceover?.text && !sc.voiceover.src) {
+        if (spokenSceneRef.current !== sc.id) {
+          spokenSceneRef.current = sc.id;
+          window.speechSynthesis.cancel();
+          const u = new SpeechSynthesisUtterance(sc.voiceover.text);
+          u.rate = 1.02;
+          u.pitch = 0.9;
+          window.speechSynthesis.speak(u);
+        }
+      } else if (spokenSceneRef.current && (!sc || !sc.voiceover?.text)) {
+        spokenSceneRef.current = null;
+      }
+    },
+    [project, toggles.voice]
+  );
+
   // ---- playback engine ----------------------------------------------------
 
   const applyCamera = useCallback(
@@ -145,8 +225,12 @@ export default function GeoVideoStudio() {
     [project]
   );
 
+  const syncVoiceRef = useRef(syncVoice);
+  syncVoiceRef.current = syncVoice;
+
   useEffect(() => {
     playingRef.current = playing;
+    if (!playing) syncVoiceRef.current(timeRef.current, false);
   }, [playing]);
 
   useEffect(() => {
@@ -160,6 +244,7 @@ export default function GeoVideoStudio() {
         if (timeRef.current >= duration) setPlaying(false);
         setTime(timeRef.current);
         applyCamera(timeRef.current);
+        syncVoiceRef.current(timeRef.current, true);
       }
       raf = requestAnimationFrame(tick);
     };
@@ -192,7 +277,8 @@ export default function GeoVideoStudio() {
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
-      if ((e.target as HTMLElement)?.tagName === "INPUT") return;
+      const tag = (e.target as HTMLElement)?.tagName;
+      if (tag === "INPUT" || tag === "TEXTAREA" || tag === "SELECT") return;
       if (e.code === "Space") {
         e.preventDefault();
         playingRef.current ? setPlaying(false) : play();
@@ -259,6 +345,28 @@ export default function GeoVideoStudio() {
     [visiblePoints, toggles.labels]
   );
 
+  const highlightList = scene?.highlight ?? [];
+  const highlightKey = `${scene?.id ?? ""}:${highlightList.join(",")}`;
+  const highlightFeatures = useMemo(
+    () => (highlightList.length ? countries.filter((f) => featureMatches(f, highlightList)) : []),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [countries, highlightKey]
+  );
+  const highlightSet = useMemo(
+    () => new Set(highlightFeatures),
+    [highlightFeatures]
+  );
+
+  const hexColor = useCallback(
+    (f: any) => {
+      if (highlightSet.has(f)) return "rgba(160,240,255,0.95)";
+      return skin === "briefing"
+        ? "rgba(64,216,255,0.55)"
+        : "rgba(160,180,196,0.45)";
+    },
+    [highlightSet, skin]
+  );
+
   const globeMaterial = useMemo(
     () =>
       new THREE.MeshPhongMaterial({
@@ -293,6 +401,51 @@ export default function GeoVideoStudio() {
         gaps.length ? `${gaps.length} gap(s) in scene track` : "timeline OK"
       }`
     );
+  };
+
+  /** Immutable patch of the scene under the playhead — powers the inspector. */
+  const updateScene = (id: string, patch: Partial<GeoScene>) => {
+    setProject((p) => ({
+      ...p,
+      scenes: p.scenes.map((s) => (s.id === id ? { ...s, ...patch } : s))
+    }));
+  };
+
+  /**
+   * "Research" hand-off: copies a complete authoring brief (schema notes +
+   * the current project JSON) so the user can paste it into any AI agent to
+   * rewrite the script, research a new topic, or extend the timeline.
+   */
+  const copyAgentBrief = async () => {
+    const brief = [
+      "You are a geo-video script editor. Below is my current *.geo-video.json",
+      "project for a vertical 540x960 @30fps globe briefing video.",
+      "",
+      "Rewrite or extend it for the topic I give you. Rules:",
+      "- Output ONLY valid JSON in the same schema (no commentary).",
+      "- Scenes are contiguous (each start == previous end); keep ~3-4s each.",
+      "- camera: real lat/lng; altitude 2.6=globe, 1.2=continent, 0.7=region.",
+      '- caption.text: ALL-CAPS lower third, under 60 chars.',
+      '- highlight: ISO_A3 codes of countries the script mentions ("CHN")',
+      "  so they light up on the globe.",
+      '- media: { src, label } — stock image/video URL for the scene topic',
+      "  (or keep the bundled /media/*.svg placeholders).",
+      "- voiceover.text: one spoken sentence per scene (browser TTS reads it;",
+      "  supply voiceover.src audio files for narration baked into exports).",
+      "- points/arcs: ringed points on key locations, arcs for routes, with",
+      "  start times matching when their scene begins.",
+      "",
+      "Research the topic first so coordinates, routes and claims are real.",
+      "",
+      "CURRENT PROJECT:",
+      JSON.stringify(project, null, 2)
+    ].join("\n");
+    try {
+      await navigator.clipboard.writeText(brief);
+      setStatus("Agent brief copied — paste it into your AI agent with a topic");
+    } catch {
+      setStatus("Clipboard unavailable — use SAVE and share the JSON instead");
+    }
   };
 
   const handleFile = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -332,6 +485,49 @@ export default function GeoVideoStudio() {
         ctx.fill();
       }
 
+      // picture-in-picture stock media card (matches the DOM .media-card)
+      if (togglesRef.current.media && sc?.media) {
+        const img = mediaImgs.current.get(sc.media.src);
+        const mx = 48 * s;
+        const my = 150 * s;
+        const mw = W - 96 * s;
+        const mh = mw * (9 / 16);
+        ctx.fillStyle = "rgba(2,10,18,0.85)";
+        ctx.fillRect(mx, my, mw, mh + 24 * s);
+        if (img && img.complete && img.naturalWidth > 0) {
+          const scale = Math.max(mw / img.naturalWidth, mh / img.naturalHeight);
+          const sw = mw / scale;
+          const sh = mh / scale;
+          try {
+            ctx.drawImage(
+              img,
+              (img.naturalWidth - sw) / 2,
+              (img.naturalHeight - sh) / 2,
+              sw,
+              sh,
+              mx,
+              my,
+              mw,
+              mh
+            );
+          } catch {
+            /* cross-origin taint — leave the card background */
+          }
+        }
+        ctx.strokeStyle = "rgba(63,216,255,0.6)";
+        ctx.lineWidth = 1.5 * s;
+        ctx.strokeRect(mx, my, mw, mh + 24 * s);
+        ctx.fillStyle = "rgba(63,216,255,0.9)";
+        ctx.font = `${11 * s}px monospace`;
+        ctx.textBaseline = "middle";
+        ctx.fillText(
+          (sc.media.label ?? "STOCK / B-ROLL").toUpperCase(),
+          mx + 10 * s,
+          my + mh + 12 * s
+        );
+        ctx.textBaseline = "top";
+      }
+
       const cap = sc?.caption;
       if (cap) {
         ctx.font = `800 ${28 * s}px Arial, sans-serif`;
@@ -369,11 +565,38 @@ export default function GeoVideoStudio() {
       setStatus("MediaRecorder not supported in this browser");
       return;
     }
-    const mime =
-      ["video/webm;codecs=vp9", "video/webm;codecs=vp8", "video/webm"].find(
-        (m) => MediaRecorder.isTypeSupported(m)
-      ) ?? "video/webm";
     const stream = canvas.captureStream(fps);
+
+    // Mux narration audio files (scene.voiceover.src) into the recording.
+    // Live TTS (voiceover.text) can't be captured — it stays preview-only.
+    const hasVoiceTracks =
+      toggles.voice && project.scenes.some((s) => s.voiceover?.src);
+    if (hasVoiceTracks) {
+      if (!audioCtxRef.current) {
+        audioCtxRef.current = new AudioContext();
+        audioDestRef.current =
+          audioCtxRef.current.createMediaStreamDestination();
+      }
+      const actx = audioCtxRef.current;
+      const dest = audioDestRef.current!;
+      voAudios.current.forEach((a) => {
+        if (!voSrcNodes.current.has(a)) {
+          const node = actx.createMediaElementSource(a);
+          node.connect(dest);
+          node.connect(actx.destination);
+          voSrcNodes.current.set(a, node);
+        }
+      });
+      await actx.resume().catch(() => undefined);
+      dest.stream.getAudioTracks().forEach((t) => stream.addTrack(t));
+    }
+
+    const mimeCandidates = hasVoiceTracks
+      ? ["video/webm;codecs=vp9,opus", "video/webm;codecs=vp8,opus", "video/webm"]
+      : ["video/webm;codecs=vp9", "video/webm;codecs=vp8", "video/webm"];
+    const mime =
+      mimeCandidates.find((m) => MediaRecorder.isTypeSupported(m)) ??
+      "video/webm";
     const rec = new MediaRecorder(stream, {
       mimeType: mime,
       videoBitsPerSecond: quality === "high" ? 16_000_000 : 8_000_000
@@ -397,6 +620,7 @@ export default function GeoVideoStudio() {
         timeRef.current = t;
         setTime(t);
         applyCamera(t);
+        syncVoiceRef.current(t, true);
         drawFrame(ctx, src, t);
         setExportState((s) => ({ ...s, progress: t / duration }));
         if (t < duration) requestAnimationFrame(step);
@@ -405,6 +629,7 @@ export default function GeoVideoStudio() {
       requestAnimationFrame(step);
     });
 
+    syncVoiceRef.current(timeRef.current, false);
     setExportState((s) => ({ ...s, phase: "ENCODING" }));
     setStatus("Finalising encoder…");
     rec.stop();
@@ -569,11 +794,13 @@ export default function GeoVideoStudio() {
               hexPolygonsData={countries}
               hexPolygonResolution={3}
               hexPolygonMargin={0.58}
-              hexPolygonColor={() =>
-                skin === "briefing"
-                  ? "rgba(64,216,255,0.55)"
-                  : "rgba(160,180,196,0.45)"
-              }
+              hexPolygonColor={hexColor}
+              polygonsData={highlightFeatures}
+              polygonCapColor={() => "rgba(63,216,255,0.22)"}
+              polygonSideColor={() => "rgba(63,216,255,0.35)"}
+              polygonStrokeColor={() => "rgba(140,235,255,0.9)"}
+              polygonAltitude={0.012}
+              polygonsTransitionDuration={400}
               arcsData={visibleArcs}
               arcColor={(a: any) => a.color ?? accent}
               arcStroke={0.55}
@@ -617,6 +844,16 @@ export default function GeoVideoStudio() {
                 <div className="hud-watermark">NUWAV · GEO-VIDEO</div>
                 {exporting && <div className="hud-rec" />}
               </>
+            )}
+            {toggles.media && scene?.media && (
+              <div className="media-card">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={scene.media.src} alt={scene.media.label ?? "b-roll"} />
+                <div className="media-label">
+                  <span>{scene.media.label ?? "STOCK / B-ROLL"}</span>
+                  <span className="media-src">SRC 02</span>
+                </div>
+              </div>
             )}
             {caption && (
               <div className="lower-third">
@@ -733,7 +970,9 @@ export default function GeoVideoStudio() {
                 ["routes", "ROUTES"],
                 ["labels", "LABELS"],
                 ["points", "POINTS"],
-                ["grid", "GRID"]
+                ["grid", "GRID"],
+                ["media", "B-ROLL"],
+                ["voice", "VOICE"]
               ] as const
             ).map(([key, label]) => (
               <div className="ctl" key={key}>
@@ -749,6 +988,117 @@ export default function GeoVideoStudio() {
               </div>
             ))}
           </div>
+
+          {/* ---- script / inspector ---- */}
+          <div className="section-title">✎ SCRIPT · INSPECTOR</div>
+          <div className="scene-list">
+            {project.scenes.map((s, i) => (
+              <button
+                key={s.id}
+                className={`scene-row ${scene?.id === s.id ? "on" : ""}`}
+                onClick={() => {
+                  setPlaying(false);
+                  seek(s.start + 0.01);
+                }}
+              >
+                <span className="scene-idx">{String(i + 1).padStart(2, "0")}</span>
+                <span className="scene-name">{s.label}</span>
+                <span className="scene-time">
+                  {s.start.toFixed(1)}–{s.end.toFixed(1)}s
+                </span>
+              </button>
+            ))}
+          </div>
+
+          {scene && (
+            <div className="inspector">
+              <div className="ins-field">
+                <label>SCENE LABEL</label>
+                <input
+                  value={scene.label}
+                  onChange={(e) => updateScene(scene.id, { label: e.target.value })}
+                />
+              </div>
+              <div className="ins-field">
+                <label>CAPTION</label>
+                <textarea
+                  rows={2}
+                  value={scene.caption?.text ?? ""}
+                  onChange={(e) =>
+                    updateScene(scene.id, {
+                      caption: e.target.value
+                        ? { ...scene.caption, text: e.target.value }
+                        : undefined
+                    })
+                  }
+                />
+              </div>
+              <div className="ins-field">
+                <label>VOICEOVER (SPOKEN LINE)</label>
+                <textarea
+                  rows={2}
+                  value={scene.voiceover?.text ?? ""}
+                  onChange={(e) =>
+                    updateScene(scene.id, {
+                      voiceover: e.target.value
+                        ? { ...scene.voiceover, text: e.target.value }
+                        : undefined
+                    })
+                  }
+                />
+              </div>
+              <div className="ins-field">
+                <label>HIGHLIGHT COUNTRIES (ISO A3, COMMA-SEP)</label>
+                <input
+                  value={(scene.highlight ?? []).join(", ")}
+                  onChange={(e) =>
+                    updateScene(scene.id, {
+                      highlight: e.target.value
+                        .split(",")
+                        .map((c) => c.trim())
+                        .filter(Boolean)
+                    })
+                  }
+                  placeholder="CHN, TWN, USA…"
+                />
+              </div>
+              <div className="ins-field">
+                <label>B-ROLL MEDIA URL</label>
+                <input
+                  value={scene.media?.src ?? ""}
+                  onChange={(e) =>
+                    updateScene(scene.id, {
+                      media: e.target.value
+                        ? { ...scene.media, src: e.target.value }
+                        : undefined
+                    })
+                  }
+                  placeholder="/media/… or https://…"
+                />
+              </div>
+              <div className="ins-field">
+                <label>B-ROLL LABEL</label>
+                <input
+                  value={scene.media?.label ?? ""}
+                  onChange={(e) =>
+                    scene.media &&
+                    updateScene(scene.id, {
+                      media: { ...scene.media, label: e.target.value }
+                    })
+                  }
+                  disabled={!scene.media}
+                />
+              </div>
+              <button className="brief-btn" onClick={copyAgentBrief}>
+                ⧉ COPY AGENT BRIEF (RESEARCH / REWRITE SCRIPT)
+              </button>
+              <div className="ins-hint">
+                Paste the brief into any AI agent with a new topic — it returns
+                a full geo-video.json to LOAD. Edits here apply live; SAVE
+                downloads the updated file.
+              </div>
+            </div>
+          )}
         </aside>
       </div>
 
@@ -836,6 +1186,25 @@ export default function GeoVideoStudio() {
                   {a.label ?? "ARC"}
                 </div>
               ))}
+            </div>
+            {/* voiceover track */}
+            <div className="track">
+              <div className="track-label">VO</div>
+              {project.scenes
+                .filter((s) => s.voiceover?.text || s.voiceover?.src)
+                .map((s) => (
+                  <div
+                    key={s.id}
+                    className="clip vo"
+                    style={{
+                      left: TRACK_LABEL_W + s.start * PX_PER_SEC,
+                      width: (s.end - s.start) * PX_PER_SEC - 2
+                    }}
+                    title={s.voiceover?.text ?? s.voiceover?.src}
+                  >
+                    🗣 {s.voiceover?.text ?? s.voiceover?.src}
+                  </div>
+                ))}
             </div>
             {/* playhead */}
             <div
@@ -1072,6 +1441,33 @@ export default function GeoVideoStudio() {
             opacity: 0.15;
           }
         }
+        .media-card {
+          position: absolute;
+          left: 48px;
+          right: 48px;
+          top: 150px;
+          background: rgba(2, 10, 18, 0.85);
+          border: 1.5px solid rgba(63, 216, 255, 0.6);
+          pointer-events: none;
+        }
+        .media-card img {
+          display: block;
+          width: 100%;
+          aspect-ratio: 16 / 9;
+          object-fit: cover;
+        }
+        .media-label {
+          display: flex;
+          justify-content: space-between;
+          padding: 5px 10px;
+          color: rgba(63, 216, 255, 0.9);
+          font-size: 11px;
+          letter-spacing: 0.1em;
+          text-transform: uppercase;
+        }
+        .media-src {
+          color: rgba(63, 216, 255, 0.45);
+        }
         .lower-third {
           position: absolute;
           left: 48px;
@@ -1274,6 +1670,98 @@ export default function GeoVideoStudio() {
           box-shadow: 0 0 8px ${CYAN};
         }
 
+        /* ---------- script / inspector ---------- */
+        .scene-list {
+          display: flex;
+          flex-direction: column;
+          gap: 4px;
+        }
+        .scene-row {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          background: #0a1622;
+          border: 1px solid #10283a;
+          border-radius: 6px;
+          padding: 6px 8px;
+          color: #9db8c6;
+          font-family: inherit;
+          font-size: 10px;
+          cursor: pointer;
+          text-align: left;
+        }
+        .scene-row:hover {
+          border-color: ${CYAN}66;
+        }
+        .scene-row.on {
+          border-color: ${AMBER};
+          color: #ffe9c4;
+        }
+        .scene-idx {
+          color: ${AMBER};
+        }
+        .scene-name {
+          flex: 1;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+        .scene-time {
+          color: #4d6d80;
+        }
+        .inspector {
+          display: flex;
+          flex-direction: column;
+          gap: 8px;
+        }
+        .ins-field label {
+          display: block;
+          color: #6f93a6;
+          font-size: 9px;
+          letter-spacing: 0.12em;
+          margin-bottom: 4px;
+        }
+        .ins-field input,
+        .ins-field textarea {
+          width: 100%;
+          box-sizing: border-box;
+          background: #071019;
+          color: #e6f6ff;
+          border: 1px solid #16344a;
+          border-radius: 6px;
+          padding: 6px 8px;
+          font-family: inherit;
+          font-size: 11px;
+          resize: vertical;
+        }
+        .ins-field input:focus,
+        .ins-field textarea:focus {
+          outline: none;
+          border-color: ${CYAN};
+        }
+        .ins-field input:disabled {
+          opacity: 0.4;
+        }
+        .brief-btn {
+          background: #241a08;
+          border: 1px solid ${AMBER};
+          color: ${AMBER};
+          padding: 10px;
+          border-radius: 8px;
+          cursor: pointer;
+          font-family: inherit;
+          font-size: 10px;
+          letter-spacing: 0.08em;
+        }
+        .brief-btn:hover {
+          background: #33240b;
+        }
+        .ins-hint {
+          color: #4d6d80;
+          font-size: 10px;
+          line-height: 1.5;
+        }
+
         /* ---------- timeline ---------- */
         .timeline-wrap {
           flex: none;
@@ -1362,6 +1850,11 @@ export default function GeoVideoStudio() {
           background: #10264a;
           border: 1px solid #26538f;
           color: #a9c8f2;
+        }
+        .clip.vo {
+          background: #0d3a2a;
+          border: 1px solid #1f7a55;
+          color: #a8ecc9;
         }
         .playhead {
           position: absolute;

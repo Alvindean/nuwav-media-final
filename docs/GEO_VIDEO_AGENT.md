@@ -48,7 +48,17 @@ Types live in [`lib/geo-video.ts`](../lib/geo-video.ts). Example:
       "caption": {                             // lower-third
         "text": "CHINA BECOMES THE FIRST PRESSURE POINT",
         "accent": "#ff2d55"                    // optional accent-bar colour
-      }
+      },
+      "highlight": ["CHN"],                    // countries that LIGHT UP on the
+                                               // globe (ISO_A3 / ADM0_A3 / name)
+      "media": {                               // stock b-roll card above caption
+        "src": "/media/manufacturing.svg",     // image or video URL (self-hosted
+        "label": "MANUFACTURING CORRIDOR"      //  under /public keeps exports clean)
+      },
+      "voiceover": {                           // narration for the scene
+        "text": "China becomes the first pressure point."
+        // "src": "/audio/scene-china.mp3"     // audio file — muxed into exports;
+      }                                        // text-only uses live browser TTS
     }
   ],
   "points": [                      // time-windowed markers
@@ -75,6 +85,28 @@ Field notes:
   radar rings.
 - Captions render as burned-in lower thirds in the export, matching the DOM
   preview.
+- `highlight` lights the named countries up while the scene plays: their hex
+  dots brighten and a glowing polygon cap is raised over the territory. Match
+  by ISO_A3 code ("CHN"), ADM0_A3, SOV_A3 or admin name ("China") —
+  case-insensitive.
+- `media` shows a 16:9 picture-in-picture stock card above the caption and
+  burns it into exports. Six themed placeholder stills ship under
+  `/public/media/`; agents can substitute any stock image/video URL that
+  matches the script line (self-hosted or CORS-enabled URLs export cleanly).
+- `voiceover.text` is read aloud by the browser's speech synthesis during
+  playback (toggle VOICE in view controls). `voiceover.src` audio files are
+  synced to the scene AND muxed into the exported webm; live TTS cannot be
+  captured, so provide `src` files when the narration must be in the file.
+
+## Editing & researching script content in the studio
+
+- **SCRIPT · INSPECTOR** (right panel): click any scene to jump to it, then
+  edit its label, caption, voiceover line, highlighted countries and b-roll
+  media live. SAVE downloads the updated `.geo-video.json`.
+- **COPY AGENT BRIEF**: copies a ready-to-paste research/rewrite prompt
+  containing the schema rules and your current project JSON. Paste it into
+  any AI agent together with a topic ("rewrite this for the Arctic shipping
+  routes story") — it returns a new geo-video.json you LOAD back in.
 
 ## Prompt template for an authoring agent
 

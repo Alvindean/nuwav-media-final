@@ -31,6 +31,13 @@
       },
       "caption": {
         "text": "GLOBAL SUPPLY LINES ENTER A NEW ERA OF SCRUTINY"
+      },
+      "media": {
+        "src": "/media/freight-network.svg",
+        "label": "GLOBAL FREIGHT NETWORK · B-ROLL"
+      },
+      "voiceover": {
+        "text": "Global supply lines are entering a new era of scrutiny."
       }
     },
     {
@@ -53,6 +60,16 @@
       },
       "caption": {
         "text": "CHINA BECOMES THE FIRST PRESSURE POINT"
+      },
+      "highlight": [
+        "CHN"
+      ],
+      "media": {
+        "src": "/media/manufacturing.svg",
+        "label": "MANUFACTURING CORRIDOR · SHENZHEN"
+      },
+      "voiceover": {
+        "text": "China becomes the first pressure point."
       }
     },
     {
@@ -76,6 +93,16 @@
       "caption": {
         "text": "SEMICONDUCTOR ROUTES CONCENTRATE THE RISK",
         "accent": "#ff9f0a"
+      },
+      "highlight": [
+        "TWN"
+      ],
+      "media": {
+        "src": "/media/semiconductor.svg",
+        "label": "ADVANCED NODE FABRICATION"
+      },
+      "voiceover": {
+        "text": "Semiconductor routes concentrate the risk."
       }
     },
     {
@@ -98,6 +125,16 @@
       },
       "caption": {
         "text": "WASHINGTON ANSWERS WITH EXPORT CONTROLS"
+      },
+      "highlight": [
+        "USA"
+      ],
+      "media": {
+        "src": "/media/export-controls.svg",
+        "label": "EXPORT CONTROL BRIEFING · D.C."
+      },
+      "voiceover": {
+        "text": "Washington answers with export controls."
       }
     },
     {
@@ -121,6 +158,22 @@
       "caption": {
         "text": "EUROPE HEDGES BETWEEN BOTH BLOCS",
         "accent": "#ff9f0a"
+      },
+      "highlight": [
+        "DEU",
+        "FRA",
+        "NLD",
+        "BEL",
+        "ITA",
+        "ESP",
+        "POL"
+      ],
+      "media": {
+        "src": "/media/europe-trade.svg",
+        "label": "EU TRADE POLICY DESK"
+      },
+      "voiceover": {
+        "text": "Europe hedges between both blocs."
       }
     },
     {
@@ -143,6 +196,13 @@
       },
       "caption": {
         "text": "THE MAP IS THE MESSAGE"
+      },
+      "media": {
+        "src": "/media/macro-hold.svg",
+        "label": "MACRO READABLE HOLD"
+      },
+      "voiceover": {
+        "text": "The map is the message."
       }
     }
   ],

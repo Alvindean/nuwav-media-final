@@ -9,3 +9,6 @@
 .DS_Store
 *.log
 .vercel
+
+# wrangler local dev state
+/.wrangler

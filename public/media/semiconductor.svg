@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450"><defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#071827"/><stop offset="1" stop-color="#030a12"/>
+  </linearGradient>
+  <radialGradient id="vig" cx="0.5" cy="0.45" r="0.75">
+    <stop offset="0.6" stop-color="#000000" stop-opacity="0"/><stop offset="1" stop-color="#000000" stop-opacity="0.55"/>
+  </radialGradient>
+</defs>
+  <rect x="0" y="0" width="800" height="450" fill="url(#bg)"/>
+  <line x1="0" y1="0" x2="0" y2="450" stroke="#0e2a3f" stroke-width="1"/><line x1="50" y1="0" x2="50" y2="450" stroke="#0e2a3f" stroke-width="1"/><line x1="100" y1="0" x2="100" y2="450" stroke="#0e2a3f" stroke-width="1"/><line x1="150" y1="0" x2="150" y2="450" stroke="#0e2a3f" stroke-width="1"/><line x1="200" y1="0" x2="200" y2="450" stroke="#0e2a3f" stroke-width="1"/><line x1="250" y1="0" x2="250" y2="450" stroke="#0e2a3f" stroke-width="1"/><line x1="300" y1="0" x2="300" y2="450" stroke="#0e2a3f" stroke-width="1"/><line x1="350" y1="0" x2="350" y2="450" stroke="#0e2a3f" stroke-width="1"/><line x1="400" y1="0" x2="400" y2="450" stroke="#0e2a3f" stroke-width="1"/><line x1="450" y1="0" x2="450" y2="450" stroke="#0e2a3f" stroke-width="1"/><line x1="500" y1="0" x2="500" y2="450" stroke="#0e2a3f" stroke-width="1"/><line x1="550" y1="0" x2="550" y2="450" stroke="#0e2a3f" stroke-width="1"/><line x1="600" y1="0" x2="600" y2="450" stroke="#0e2a3f" stroke-width="1"/><line x1="650" y1="0" x2="650" y2="450" stroke="#0e2a3f" stroke-width="1"/><line x1="700" y1="0" x2="700" y2="450" stroke="#0e2a3f" stroke-width="1"/><line x1="750" y1="0" x2="750" y2="450" stroke="#0e2a3f" stroke-width="1"/><line x1="800" y1="0" x2="800" y2="450" stroke="#0e2a3f" stroke-width="1"/><line x1="0" y1="0" x2="800" y2="0" stroke="#0e2a3f" stroke-width="1"/><line x1="0" y1="50" x2="800" y2="50" stroke="#0e2a3f" stroke-width="1"/><line x1="0" y1="100" x2="800" y2="100" stroke="#0e2a3f" stroke-width="1"/><line x1="0" y1="150" x2="800" y2="150" stroke="#0e2a3f" stroke-width="1"/><line x1="0" y1="200" x2="800" y2="200" stroke="#0e2a3f" stroke-width="1"/><line x1="0" y1="250" x2="800" y2="250" stroke="#0e2a3f" stroke-width="1"/><line x1="0" y1="300" x2="800" y2="300" stroke="#0e2a3f" stroke-width="1"/><line x1="0" y1="350" x2="800" y2="350" stroke="#0e2a3f" stroke-width="1"/><line x1="0" y1="400" x2="800" y2="400" stroke="#0e2a3f" stroke-width="1"/><line x1="0" y1="450" x2="800" y2="450" stroke="#0e2a3f" stroke-width="1"/>
+  <rect x="0" y="0" width="800" height="450" fill="url(#vig)"/>
+  <rect x="14" y="14" width="772" height="422" fill="none" stroke="#3fd8ff" stroke-opacity="0.4" stroke-width="2"/>
+  <text x="30" y="44" font-family="monospace" font-size="18" fill="#3fd8ff" letter-spacing="4">ADVANCED NODE FABRICATION</text>
+  <text x="30" y="422" font-family="monospace" font-size="13" fill="#3fd8ff" fill-opacity="0.6" letter-spacing="3">WAFER LINE A · YIELD 94.2%</text>
+  <circle cx="760" cy="38" r="6" fill="#ff2d55"/>
+  <text x="742" y="43" font-family="monospace" font-size="12" fill="#ff2d55" text-anchor="end">REC</text>
+  <rect x="330" y="150" width="140" height="140" fill="#0d3244" stroke="#3fd8ff" stroke-width="2"/>
+  <rect x="362" y="182" width="76" height="76" fill="#071827" stroke="#ffb020" stroke-width="2"/>
+  
+    <line x1="352" y1="150" x2="352" y2="96" stroke="#3fd8ff" stroke-width="2"/>
+    <line x1="352" y1="290" x2="352" y2="344" stroke="#3fd8ff" stroke-width="2"/>
+    <line x1="330" y1="172" x2="256" y2="172" stroke="#3fd8ff" stroke-width="2"/>
+    <line x1="470" y1="172" x2="544" y2="172" stroke="#3fd8ff" stroke-width="2"/>
+    <circle cx="352" cy="92" r="4" fill="#3fd8ff"/>
+    <circle cx="352" cy="348" r="4" fill="#3fd8ff"/>
+    <circle cx="252" cy="172" r="4" fill="#3fd8ff"/>
+    <circle cx="548" cy="172" r="4" fill="#3fd8ff"/>
+    <line x1="384" y1="150" x2="384" y2="96" stroke="#3fd8ff" stroke-width="2"/>
+    <line x1="384" y1="290" x2="384" y2="344" stroke="#3fd8ff" stroke-width="2"/>
+    <line x1="330" y1="204" x2="256" y2="204" stroke="#3fd8ff" stroke-width="2"/>
+    <line x1="470" y1="204" x2="544" y2="204" stroke="#3fd8ff" stroke-width="2"/>
+    <circle cx="384" cy="92" r="4" fill="#3fd8ff"/>
+    <circle cx="384" cy="348" r="4" fill="#3fd8ff"/>
+    <circle cx="252" cy="204" r="4" fill="#3fd8ff"/>
+    <circle cx="548" cy="204" r="4" fill="#3fd8ff"/>
+    <line x1="416" y1="150" x2="416" y2="96" stroke="#3fd8ff" stroke-width="2"/>
+    <line x1="416" y1="290" x2="416" y2="344" stroke="#3fd8ff" stroke-width="2"/>
+    <line x1="330" y1="236" x2="256" y2="236" stroke="#3fd8ff" stroke-width="2"/>
+    <line x1="470" y1="236" x2="544" y2="236" stroke="#3fd8ff" stroke-width="2"/>
+    <circle cx="416" cy="92" r="4" fill="#3fd8ff"/>
+    <circle cx="416" cy="348" r="4" fill="#3fd8ff"/>
+    <circle cx="252" cy="236" r="4" fill="#3fd8ff"/>
+    <circle cx="548" cy="236" r="4" fill="#3fd8ff"/>
+    <line x1="448" y1="150" x2="448" y2="96" stroke="#3fd8ff" stroke-width="2"/>
+    <line x1="448" y1="290" x2="448" y2="344" stroke="#3fd8ff" stroke-width="2"/>
+    <line x1="330" y1="268" x2="256" y2="268" stroke="#3fd8ff" stroke-width="2"/>
+    <line x1="470" y1="268" x2="544" y2="268" stroke="#3fd8ff" stroke-width="2"/>
+    <circle cx="448" cy="92" r="4" fill="#3fd8ff"/>
+    <circle cx="448" cy="348" r="4" fill="#3fd8ff"/>
+    <circle cx="252" cy="268" r="4" fill="#3fd8ff"/>
+    <circle cx="548" cy="268" r="4" fill="#3fd8ff"/>
+  <text x="400" y="226" font-family="monospace" font-size="16" fill="#ffb020" text-anchor="middle">3nm</text></svg>

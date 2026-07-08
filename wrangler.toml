@@ -1,7 +1,11 @@
 name = "nuwavmedia1"
-main = ".vercel/output/static/_worker.js"
 compatibility_date = "2025-08-04"
-compatibility_flags = ["nodejs_compat"]
+
+# The site is a fully static Next.js export (`output: 'export'` -> ./out).
+# Serve it with Workers Static Assets — no worker script, no next-on-pages.
+[assets]
+directory = "./out"
+not_found_handling = "404-page"
 
 [build]
-command = "npm install && npm run build && npx @cloudflare/next-on-pages"
+command = "npm install && npm run build"

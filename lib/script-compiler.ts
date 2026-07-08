@@ -71,6 +71,9 @@ const REGIONS: Record<string, Place> = {
     highlight: ["SAU", "ARE", "IRN", "IRQ", "ISR", "QAT", "KWT"]
   },
   "latin america": { name: "Latin America", lat: -15, lng: -60, altitude: 2.0, highlight: [] },
+  "south america": { name: "South America", lat: -15, lng: -60, altitude: 2.0, highlight: [] },
+  "central america": { name: "Central America", lat: 12, lng: -85, altitude: 1.4, highlight: [] },
+  "north america": { name: "North America", lat: 45, lng: -100, altitude: 2.0, highlight: [] },
   arctic: { name: "Arctic", lat: 78, lng: 0, altitude: 1.8, highlight: [] },
   "south china sea": { name: "South China Sea", lat: 14, lng: 114, altitude: 1.2, highlight: [] }
 };
@@ -111,25 +114,18 @@ function featureCenter(f: any): { lat: number; lng: number; span: number } | nul
 const spanToAltitude = (span: number) =>
   Math.min(1.9, Math.max(0.75, span * 0.028 + 0.55));
 
+/** Normalise for matching: lowercase, hyphens → spaces, strip other symbols. */
+const norm = (s: string) =>
+  s.toLowerCase().replace(/[-–—]/g, " ").replace(/[^\p{L}.'\s]/gu, " ");
+
+/**
+ * Longest-match-first detection with span blanking: "North Korea" wins over
+ * "Korea", "Papua New Guinea" over "Guinea", "South America" (region) over
+ * the "america"→USA alias. Results come back in sentence order, so the first
+ * place the script mentions is the camera target.
+ */
 function findPlaces(sentence: string, countries: any[]): Place[] {
-  const lower = ` ${sentence.toLowerCase().replace(/[^a-zÀ-ɏ.\s-]/g, " ")} `;
-  const places: Place[] = [];
-  const seen = new Set<string>();
-  const push = (p: Place) => {
-    if (!seen.has(p.name)) {
-      seen.add(p.name);
-      places.push(p);
-    }
-  };
-
-  const hasWord = (term: string) =>
-    lower.includes(` ${term} `) ||
-    lower.includes(` ${term}.`) ||
-    lower.includes(` ${term},`) ||
-    lower.includes(` ${term}'`);
-
-  for (const [term, region] of Object.entries(REGIONS))
-    if (hasWord(term)) push(region);
+  let text = ` ${norm(sentence)} `;
 
   const byName = (query: string): Place | null => {
     const f = countries.find((c) => {
@@ -153,21 +149,49 @@ function findPlaces(sentence: string, countries: any[]): Place[] {
     };
   };
 
-  for (const [alias, admin] of Object.entries(ALIASES)) {
-    if (hasWord(alias)) {
-      const p = byName(admin);
-      if (p) push(p);
-    }
-  }
-
+  const candidates: { term: string; resolve: () => Place | null }[] = [];
+  for (const [term, region] of Object.entries(REGIONS))
+    candidates.push({ term: norm(term).trim(), resolve: () => region });
+  for (const [alias, admin] of Object.entries(ALIASES))
+    candidates.push({ term: norm(alias).trim(), resolve: () => byName(admin) });
   for (const f of countries) {
-    const admin: string = f.properties?.ADMIN ?? "";
-    if (admin && hasWord(admin.toLowerCase())) {
-      const p = byName(admin);
-      if (p) push(p);
+    const p = f.properties ?? {};
+    const names = new Set(
+      [p.ADMIN, p.NAME].filter(Boolean).map((n: string) => norm(n).trim())
+    );
+    names.forEach((n) =>
+      candidates.push({ term: n, resolve: () => byName(p.ADMIN ?? n) })
+    );
+  }
+  candidates.sort((a, b) => b.term.length - a.term.length);
+
+  const findTerm = (term: string): number => {
+    let from = 0;
+    for (;;) {
+      const i = text.indexOf(term, from);
+      if (i === -1) return -1;
+      const before = text[i - 1] ?? " ";
+      const after = text[i + term.length] ?? " ";
+      if (/\s/.test(before) && /[\s.,']/.test(after)) return i;
+      from = i + 1;
+    }
+  };
+
+  const seen = new Set<string>();
+  const matches: { offset: number; place: Place }[] = [];
+  for (const c of candidates) {
+    if (c.term.length < 2) continue;
+    const idx = findTerm(c.term);
+    if (idx === -1) continue;
+    // blank the matched span so contained shorter terms can't re-match
+    text = text.slice(0, idx) + " ".repeat(c.term.length) + text.slice(idx + c.term.length);
+    const p = c.resolve();
+    if (p && !seen.has(p.name)) {
+      seen.add(p.name);
+      matches.push({ offset: idx, place: p });
     }
   }
-  return places;
+  return matches.sort((a, b) => a.offset - b.offset).map((m) => m.place);
 }
 
 const BUNDLED_STILLS = [
@@ -183,18 +207,40 @@ const truncate = (s: string, n: number) =>
   s.length <= n ? s : s.slice(0, n).replace(/\s+\S*$/, "") + "…";
 
 export function splitScript(text: string): string[] {
+  // Protect abbreviation periods (U.S., U.K., Dr. …) so they don't split beats.
+  const protect = (s: string) =>
+    s.replace(
+      /\b(U\.S\.A|U\.S|U\.K|U\.N|E\.U|Dr|Mr|Mrs|Ms|St|vs|No)\./gi,
+      (m) => m.replace(/\./g, "§")
+    );
+  const restore = (s: string) => s.replace(/§/g, ".");
+
   const lines = text
     .split(/\n+/)
     .map((l) => l.trim())
     .filter(Boolean);
-  const sentences =
+  const sentences = (
     lines.length > 1
       ? lines
-      : text
+      : protect(text)
           .split(/(?<=[.!?])\s+/)
-          .map((s) => s.trim())
-          .filter(Boolean);
-  return sentences.filter((s) => s.replace(/[^a-zA-Z]/g, "").length > 2);
+          .map((s) => restore(s.trim()))
+          .filter(Boolean)
+  ).filter((s) => s.replace(/[^\p{L}]/gu, "").length > 2);
+
+  // Dictated text often has no punctuation at all — chunk long run-on
+  // sentences into ~12-word beats instead of one giant scene.
+  const beats: string[] = [];
+  for (const s of sentences) {
+    const words = s.split(/\s+/);
+    if (words.length > 20) {
+      for (let i = 0; i < words.length; i += 12)
+        beats.push(words.slice(i, i + 12).join(" "));
+    } else {
+      beats.push(s);
+    }
+  }
+  return beats.filter((s) => s.replace(/[^\p{L}]/gu, "").length > 2);
 }
 
 export function compileScript(
@@ -213,7 +259,7 @@ export function compileScript(
 
   sentences.forEach((sentence, i) => {
     const words = sentence.split(/\s+/).length;
-    const dur = Math.min(6, Math.max(2.8, words * 0.34));
+    const dur = Math.min(8, Math.max(2.8, words * 0.34));
     const found = places(sentence);
     const target = found[0];
     const to = target

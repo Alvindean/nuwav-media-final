@@ -155,10 +155,16 @@ const ramp = (x: number) => Math.min(Math.max(x, 0), 1);
 export function mediaAlphaAt(scene: GeoScene, time: number): number {
   if (!scene.media) return 0;
   const len = scene.end - scene.start;
-  const tIn = scene.media.in ?? 0.5;
-  const tOut = scene.media.out ?? Math.max(tIn + 0.8, Math.min(tIn + 3.2, len - 0.3));
+  // Scale the entry point down on very short scenes so the card still shows,
+  // and clamp the exit before the cut so it never pops off mid-fade.
+  const tIn = scene.media.in ?? Math.min(0.5, Math.max(len * 0.15, 0.05));
+  const tOut = Math.min(
+    scene.media.out ?? Math.max(tIn + 0.8, Math.min(tIn + 3.2, len - 0.3)),
+    len - 0.05
+  );
+  if (tOut <= tIn) return 0;
   const t = time - scene.start;
-  const FADE = 0.35;
+  const FADE = Math.min(0.35, (tOut - tIn) / 2);
   if (t <= tIn || t >= tOut) return 0;
   return Math.min(ramp((t - tIn) / FADE), ramp((tOut - t) / FADE));
 }

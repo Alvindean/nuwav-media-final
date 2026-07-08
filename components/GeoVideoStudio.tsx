@@ -130,6 +130,13 @@ export default function GeoVideoStudio() {
   const [scriptTitle, setScriptTitle] = useState("");
   const [dictating, setDictating] = useState(false);
   const recRef = useRef<any>(null);
+  const scriptOpenRef = useRef(false);
+  scriptOpenRef.current = scriptOpen;
+  /** Synchronous re-entrancy + interaction lock for the export render pass. */
+  const exportingRef = useRef(false);
+  /** True while the user is dragging the timeline (suppresses follow-scroll). */
+  const scrubbingRef = useRef(false);
+  const lastExportUrlRef = useRef<string | null>(null);
 
   const duration = useMemo(() => projectDuration(project), [project]);
   const { width: OUT_W, height: OUT_H, fps } = project.output;
@@ -159,19 +166,80 @@ export default function GeoVideoStudio() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  /** Validate + repair incoming JSON so a partial file can never white-screen
+   *  the studio: missing meta/output get defaults, malformed scenes reject. */
   const loadProject = (p: any, name: string) => {
-    if (!p || !Array.isArray(p.scenes) || !p.output) {
-      setStatus(`Invalid geo-video.json (${name})`);
+    if (exportingRef.current) {
+      setStatus("Export in progress — wait for it to finish before loading");
       return;
     }
-    p.points = p.points ?? [];
-    p.arcs = p.arcs ?? [];
-    setProject(p as GeoVideoProject);
-    if (p.skin) setSkin(p.skin);
-    timeRef.current = 0;
-    setTime(0);
-    setPlaying(false);
-    setStatus(`Loaded ${name} · ${projectDuration(p).toFixed(1)}s`);
+    if (!p || !Array.isArray(p.scenes) || p.scenes.length === 0) {
+      setStatus(`Invalid geo-video.json (${name}) — needs a non-empty "scenes" array`);
+      return;
+    }
+    try {
+      const fallbackPov = { lat: 15, lng: 0, altitude: 2.2 };
+      const pov = (x: any, fb: typeof fallbackPov) => {
+        const out = {
+          lat: Number(x?.lat ?? fb.lat),
+          lng: Number(x?.lng ?? fb.lng),
+          altitude: Number(x?.altitude ?? fb.altitude)
+        };
+        if (![out.lat, out.lng, out.altitude].every(Number.isFinite))
+          throw new Error("camera has non-numeric lat/lng/altitude");
+        return out;
+      };
+      const scenes = p.scenes.map((s: any, i: number) => {
+        const start = Number(s?.start);
+        const end = Number(s?.end);
+        if (!Number.isFinite(start) || !Number.isFinite(end) || end <= start)
+          throw new Error(`scene ${i + 1} has invalid start/end`);
+        const from = pov(s?.camera?.from, fallbackPov);
+        return {
+          ...s,
+          id: String(s?.id ?? `s${i + 1}`),
+          label: String(s?.label ?? `SCENE ${i + 1}`),
+          start,
+          end,
+          camera: {
+            from,
+            to: pov(s?.camera?.to, from),
+            ease: s?.camera?.ease === "linear" ? "linear" : "inOut"
+          }
+        };
+      });
+      const out = p.output ?? {};
+      const num = (v: any, d: number) => (Number(v) > 0 ? Number(v) : d);
+      const clean: GeoVideoProject = {
+        version: 1,
+        meta: {
+          title: String(p.meta?.title ?? name),
+          slug:
+            String(p.meta?.slug ?? "untitled")
+              .toLowerCase()
+              .replace(/[^a-z0-9-]+/g, "-")
+              .replace(/^-|-$/g, "") || "untitled"
+        },
+        output: { width: num(out.width, 540), height: num(out.height, 960), fps: num(out.fps, 30) },
+        skin: p.skin === "draft" ? "draft" : "briefing",
+        scenes,
+        points: Array.isArray(p.points) ? p.points : [],
+        arcs: Array.isArray(p.arcs) ? p.arcs : []
+      };
+      // silence anything still narrating the previous project
+      voAudios.current.forEach((a) => a.pause());
+      if (typeof window !== "undefined" && "speechSynthesis" in window)
+        window.speechSynthesis.cancel();
+      spokenSceneRef.current = null;
+      setProject(clean);
+      setSkin(clean.skin ?? "briefing");
+      timeRef.current = 0;
+      setTime(0);
+      setPlaying(false);
+      setStatus(`Loaded ${name} · ${projectDuration(clean).toFixed(1)}s`);
+    } catch (err: any) {
+      setStatus(`Invalid geo-video.json (${name}): ${err?.message ?? err}`);
+    }
   };
 
   // ---- narration voices ----------------------------------------------------
@@ -231,10 +299,19 @@ export default function GeoVideoStudio() {
         const shouldPlay =
           active && toggles.voice && owner && sc?.id === owner.id;
         if (shouldPlay && owner) {
-          const offset = t - owner.start;
+          const offset = Math.max(t - owner.start, 0);
+          // Never restart a clip that already finished for this scene pass
+          // (short narration must not loop until the next cut).
+          if (offset >= (a.duration || Infinity)) {
+            if (!a.paused) a.pause();
+            return;
+          }
           if (a.paused) {
-            a.currentTime = Math.max(offset, 0);
+            a.currentTime = offset;
             a.play().catch(() => undefined);
+          } else if (Math.abs(a.currentTime - offset) > 0.4) {
+            // playhead jumped (seek/scrub while playing) — resync
+            a.currentTime = offset;
           }
         } else if (!a.paused) {
           a.pause();
@@ -261,7 +338,13 @@ export default function GeoVideoStudio() {
           u.pitch = 1.0;
           window.speechSynthesis.speak(u);
         }
-      } else if (spokenSceneRef.current && (!sc || !sc.voiceover?.text)) {
+      } else if (
+        spokenSceneRef.current &&
+        (!sc || !sc.voiceover?.text || sc.voiceover.src)
+      ) {
+        // moving into a scene without text TTS (or with file narration):
+        // stop any still-running speech so it can't talk over the next beat
+        window.speechSynthesis.cancel();
         spokenSceneRef.current = null;
       }
     },
@@ -307,19 +390,28 @@ export default function GeoVideoStudio() {
 
   const seek = useCallback(
     (t: number) => {
+      if (exportingRef.current) return; // transport is locked during export
       timeRef.current = Math.min(Math.max(t, 0), duration);
       setTime(timeRef.current);
       applyCamera(timeRef.current);
+      // playhead jumped: let TTS re-fire for the (possibly same) scene and
+      // let syncVoice resync audio-file narration to the new offset
+      spokenSceneRef.current = null;
+      if (typeof window !== "undefined" && "speechSynthesis" in window)
+        window.speechSynthesis.cancel();
+      if (playingRef.current) syncVoiceRef.current(timeRef.current, true);
     },
     [duration, applyCamera]
   );
 
   const play = () => {
+    if (exportingRef.current) return;
     if (timeRef.current >= duration) seek(0);
     setPlaying(true);
   };
 
   const jumpScene = (dir: 1 | -1) => {
+    if (exportingRef.current) return;
     const starts = project.scenes.map((s) => s.start);
     const next =
       dir === 1
@@ -332,6 +424,7 @@ export default function GeoVideoStudio() {
     const onKey = (e: KeyboardEvent) => {
       const tag = (e.target as HTMLElement)?.tagName;
       if (tag === "INPUT" || tag === "TEXTAREA" || tag === "SELECT") return;
+      if (scriptOpenRef.current || exportingRef.current) return;
       if (e.code === "Space") {
         e.preventDefault();
         playingRef.current ? setPlaying(false) : play();
@@ -362,7 +455,9 @@ export default function GeoVideoStudio() {
   // ---- follow timeline ----------------------------------------------------
 
   useEffect(() => {
-    if (!follow || !timelineRef.current) return;
+    // Never auto-scroll while the user is dragging — the scroll shifts the
+    // pointer→time mapping mid-drag and the playhead runs away.
+    if (!follow || scrubbingRef.current || !timelineRef.current) return;
     const el = timelineRef.current;
     const x = TRACK_LABEL_W + time * PX_PER_SEC;
     if (x < el.scrollLeft + TRACK_LABEL_W || x > el.scrollLeft + el.clientWidth - 80) {
@@ -384,18 +479,23 @@ export default function GeoVideoStudio() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
     [project, arcSig, toggles.routes]
   );
-  const visiblePoints = useMemo(
-    () => (toggles.points ? visibleAt(project.points, timeRef.current) : []),
+  const visibleNow = useMemo(
+    () => visibleAt(project.points, timeRef.current),
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [project, pointSig, toggles.points]
+    [project, pointSig]
+  );
+  const visiblePoints = useMemo(
+    () => (toggles.points ? visibleNow : []),
+    [visibleNow, toggles.points]
   );
   const rings = useMemo(
-    () => visiblePoints.filter((p) => p.ring),
-    [visiblePoints]
+    () => (toggles.points ? visibleNow.filter((p) => p.ring) : []),
+    [visibleNow, toggles.points]
   );
+  // labels follow the LABELS switch alone — POINTS off must not hide them
   const labels = useMemo(
-    () => (toggles.labels ? visiblePoints.filter((p) => p.label) : []),
-    [visiblePoints, toggles.labels]
+    () => (toggles.labels ? visibleNow.filter((p) => p.label) : []),
+    [visibleNow, toggles.labels]
   );
 
   const highlightList = scene?.highlight ?? [];
@@ -446,9 +546,11 @@ export default function GeoVideoStudio() {
       type: "application/json"
     });
     const a = document.createElement("a");
-    a.href = URL.createObjectURL(blob);
+    const url = URL.createObjectURL(blob);
+    a.href = url;
     a.download = `${project.meta.slug}.geo-video.json`;
     a.click();
+    setTimeout(() => URL.revokeObjectURL(url), 10_000);
     setStatus(`Saved ${project.meta.slug}.geo-video.json`);
   };
 
@@ -541,24 +643,35 @@ export default function GeoVideoStudio() {
     setDictating(false);
   };
 
+  /** Single close path so the microphone can never be left running. */
+  const closeScriptPanel = () => {
+    stopDictation();
+    setScriptOpen(false);
+  };
+
   const buildFromScript = () => {
     const text = scriptText.trim();
     if (!text) {
       setStatus("Script is empty — paste or dictate some lines first");
       return;
     }
-    // Full geo-video JSON pasted? Load it directly.
+    // Looks like JSON? Load it or report the parse error — never compile
+    // half-pasted JSON into a nonsense caption.
     if (text.startsWith("{")) {
       try {
         const parsed = JSON.parse(text);
         if (Array.isArray(parsed.scenes)) {
           loadProject(parsed, "pasted JSON");
-          setScriptOpen(false);
-          return;
+          closeScriptPanel();
+        } else {
+          setStatus(
+            'Pasted JSON has no "scenes" array — paste a full geo-video.json or plain text'
+          );
         }
-      } catch {
-        /* fall through to the plain-text compiler */
+      } catch (err: any) {
+        setStatus(`Looks like JSON but failed to parse: ${err?.message ?? err}`);
       }
+      return;
     }
     if (!countries.length) {
       setStatus("Countries dataset still loading — try again in a second");
@@ -571,7 +684,7 @@ export default function GeoVideoStudio() {
         scriptTitle.trim() || "Voice-built briefing"
       );
       loadProject(compiled, "compiled script");
-      setScriptOpen(false);
+      closeScriptPanel();
       setStatus(
         `Script compiled — ${compiled.scenes.length} beats · ${projectDuration(
           compiled
@@ -598,6 +711,7 @@ export default function GeoVideoStudio() {
       const W = ctx.canvas.width;
       const H = ctx.canvas.height;
       const s = W / OUT_W;
+      ctx.textBaseline = "top"; // all overlay geometry assumes top baseline
       ctx.fillStyle = "#02070d";
       ctx.fillRect(0, 0, W, H);
       ctx.drawImage(src, 0, 0, W, H);
@@ -669,10 +783,12 @@ export default function GeoVideoStudio() {
 
       const cap = sc?.caption;
       if (cap) {
-        ctx.font = `800 ${28 * s}px Arial, sans-serif`;
-        const maxW = W - 130 * s;
+        // Same metrics as the DOM lower-third (26px / 1.25 line-height /
+        // 48+7+16 insets) so export line breaks match the approved preview.
+        ctx.font = `800 ${26 * s}px Arial, sans-serif`;
+        const maxW = W - 135 * s;
         const lines = wrapText(ctx, cap.text.toUpperCase(), maxW);
-        const lh = 36 * s;
+        const lh = 32.5 * s;
         const boxH = lines.length * lh + 24 * s;
         const y0 = H - 120 * s - boxH;
         ctx.fillStyle = "rgba(2,10,18,0.72)";
@@ -681,7 +797,7 @@ export default function GeoVideoStudio() {
         ctx.fillRect(48 * s, y0, 7 * s, boxH);
         ctx.fillStyle = "#f2f7fa";
         lines.forEach((l, i) =>
-          ctx.fillText(l, 70 * s, y0 + 14 * s + i * lh)
+          ctx.fillText(l, 71 * s, y0 + 12 * s + i * lh)
         );
       }
     },
@@ -689,10 +805,19 @@ export default function GeoVideoStudio() {
   );
 
   const handleExport = async () => {
-    if (exportState.phase === "RENDERING" || exportState.phase === "ENCODING")
-      return;
+    // Synchronous guard: React state lags behind awaits, a ref does not.
+    if (exportingRef.current) return;
     const globe = globeRef.current;
     if (!globe) return;
+    exportingRef.current = true;
+    try {
+      await runExport(globe);
+    } finally {
+      exportingRef.current = false;
+    }
+  };
+
+  const runExport = async (globe: GlobeMethods) => {
     const src = globe.renderer().domElement as HTMLCanvasElement;
     const mult = quality === "high" ? 2 : 1;
     const canvas = document.createElement("canvas");
@@ -773,7 +898,18 @@ export default function GeoVideoStudio() {
     setStatus("Finalising encoder…");
     rec.stop();
     const blob = await stopped;
+    // Sanity check: a background tab throttles rAF and produces a near-empty
+    // recording — call that out instead of reporting success.
+    if (blob.size < 30_000) {
+      setExportState({ phase: "ERROR", progress: 0, url: null, sizeMB: null });
+      setStatus(
+        "Export produced an almost-empty file — keep this tab visible and focused during the render pass, then try again."
+      );
+      return;
+    }
+    if (lastExportUrlRef.current) URL.revokeObjectURL(lastExportUrlRef.current);
     const url = URL.createObjectURL(blob);
+    lastExportUrlRef.current = url;
     setExportState({
       phase: "DONE",
       progress: 1,
@@ -787,9 +923,22 @@ export default function GeoVideoStudio() {
     a.click();
   };
 
+  // Release the retained export blob when the studio unmounts.
+  useEffect(
+    () => () => {
+      if (lastExportUrlRef.current)
+        URL.revokeObjectURL(lastExportUrlRef.current);
+      recRef.current?.stop?.();
+      if (typeof window !== "undefined" && "speechSynthesis" in window)
+        window.speechSynthesis.cancel();
+    },
+    []
+  );
+
   // ---- timeline scrubbing --------------------------------------------------
 
   const scrubFromEvent = (e: React.PointerEvent) => {
+    if (exportingRef.current) return;
     const el = timelineRef.current;
     if (!el) return;
     const rect = el.getBoundingClientRect();
@@ -798,9 +947,15 @@ export default function GeoVideoStudio() {
   };
 
   const onTimelineDown = (e: React.PointerEvent) => {
+    if (exportingRef.current) return;
     (e.target as HTMLElement).setPointerCapture(e.pointerId);
+    scrubbingRef.current = true;
     setPlaying(false);
     scrubFromEvent(e);
+  };
+
+  const onTimelineUp = () => {
+    scrubbingRef.current = false;
   };
 
   // ---- render ---------------------------------------------------------------
@@ -830,9 +985,11 @@ export default function GeoVideoStudio() {
       <header className="topbar">
         <div className="path">
           <span className="dot" />
-          nuwav.studio/projects/{project.meta.slug}
-          <span className="path-dim">
-            ?src={project.meta.slug}.geo-video.json
+          <span className="path-text">
+            nuwav.studio/projects/{project.meta.slug}
+            <span className="path-dim">
+              ?src={project.meta.slug}.geo-video.json
+            </span>
           </span>
         </div>
         <div className="transport">
@@ -892,7 +1049,11 @@ export default function GeoVideoStudio() {
           >
             ◉ PREVIEW
           </button>
-          <button className="abtn export" onClick={handleExport}>
+          <button
+            className="abtn export"
+            onClick={handleExport}
+            disabled={exporting}
+          >
             ⇩ EXPORT
           </button>
           <input
@@ -1279,7 +1440,7 @@ export default function GeoVideoStudio() {
 
       {/* ============ NEW SCRIPT MODAL ============ */}
       {scriptOpen && (
-        <div className="script-overlay" onClick={() => setScriptOpen(false)}>
+        <div className="script-overlay" onClick={closeScriptPanel}>
           <div className="script-panel" onClick={(e) => e.stopPropagation()}>
             <div className="script-title">
               ✍ NEW SCRIPT — PASTE IT OR TALK IT IN
@@ -1328,7 +1489,7 @@ export default function GeoVideoStudio() {
               >
                 CLEAR
               </button>
-              <button className="abtn" onClick={() => setScriptOpen(false)}>
+              <button className="abtn" onClick={closeScriptPanel}>
                 CANCEL
               </button>
               <button className="abtn build" onClick={buildFromScript}>
@@ -1352,6 +1513,9 @@ export default function GeoVideoStudio() {
           ref={timelineRef}
           onPointerDown={onTimelineDown}
           onPointerMove={(e) => e.buttons === 1 && scrubFromEvent(e)}
+          onPointerUp={onTimelineUp}
+          onPointerCancel={onTimelineUp}
+          onPointerLeave={onTimelineUp}
         >
           <div className="tl-inner" style={{ width: timelineW }}>
             {/* ruler */}
@@ -1489,10 +1653,14 @@ export default function GeoVideoStudio() {
           align-items: center;
           gap: 8px;
           color: #7fb6cc;
+          max-width: 34vw;
+          min-width: 0;
+        }
+        .path-text {
           white-space: nowrap;
           overflow: hidden;
           text-overflow: ellipsis;
-          max-width: 34vw;
+          min-width: 0;
         }
         .path-dim {
           color: #3f6377;
@@ -1556,6 +1724,8 @@ export default function GeoVideoStudio() {
           display: flex;
           align-items: center;
           gap: 8px;
+          flex-wrap: wrap; /* keep EXPORT reachable on narrow screens */
+          row-gap: 6px;
         }
         .tabs {
           display: flex;
@@ -1590,6 +1760,10 @@ export default function GeoVideoStudio() {
         }
         .abtn:hover {
           border-color: ${CYAN};
+        }
+        .abtn:disabled {
+          opacity: 0.5;
+          cursor: wait;
         }
         .abtn.lit {
           border-color: ${CYAN};

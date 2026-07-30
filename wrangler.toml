@@ -1,7 +1,12 @@
 name = "nuwavmedia1"
-main = ".vercel/output/static/_worker.js"
 compatibility_date = "2025-08-04"
-compatibility_flags = ["nodejs_compat"]
+
+# Static site. Next.js `output: 'export'` writes plain HTML/CSS/JS to ./out and
+# Workers serves it directly. There is no Worker script, so no `main` and no
+# assets binding. https://developers.cloudflare.com/workers/static-assets/
+[assets]
+directory = "./out"
+not_found_handling = "404-page"
 
 [build]
-command = "npm install && npm run build && npx @cloudflare/next-on-pages"
+command = "npm install && npm run build"

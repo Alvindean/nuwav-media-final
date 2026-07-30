@@ -1,0 +1,636 @@
+<title>Vox Doc Factory — the production team, the stack, and what's missing</title>
+
+<style>
+  :root {
+    --bg: #FFF6E9;
+    --fs: 19px;
+    --ink: #33302B;
+    --green: #2E7D4F;
+    --green-bg: #E8F5EC;
+    --blue: #2A6BA8;
+    --blue-bg: #E7F0F9;
+    --purple: #6B4A9E;
+    --purple-bg: #F0EAF9;
+    --amber: #B5751A;
+    --amber-bg: #FBF0DC;
+    --red: #B23A2E;
+    --red-bg: #FBEAE7;
+    --grey: #6E6A63;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: Verdana, Tahoma, "Trebuchet MS", "Segoe UI", sans-serif;
+    font-size: var(--fs);
+    line-height: 1.75;
+    letter-spacing: 0.02em;
+    word-spacing: 0.06em;
+    text-align: left;
+    margin: 0;
+    padding: 28px 20px 90px;
+  }
+
+  .wrap { max-width: 760px; margin: 0 auto; }
+
+  /* ---------- controls ---------- */
+  .controls {
+    border: 2px dashed #D8CDB8;
+    border-radius: 14px;
+    padding: 16px 18px;
+    margin-bottom: 34px;
+    background: rgba(255,255,255,0.35);
+  }
+  .controls .row { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-bottom: 12px; }
+  .controls .row:last-child { margin-bottom: 0; }
+  .controls .lbl {
+    font-size: 0.78em; font-weight: bold; color: var(--grey);
+    letter-spacing: 0.08em; min-width: 118px;
+  }
+  button {
+    font-family: inherit; font-size: 0.85em; font-weight: bold;
+    padding: 9px 15px; border-radius: 9px; border: 2px solid #C9BCA2;
+    background: #fff; color: var(--ink); cursor: pointer; line-height: 1.2;
+  }
+  button:hover { border-color: var(--ink); }
+  button:focus-visible { outline: 3px solid var(--blue); outline-offset: 2px; }
+  .sw { width: 42px; height: 34px; padding: 0; }
+
+  /* ---------- headings ---------- */
+  h1 {
+    font-size: 2.05em; line-height: 1.25; margin: 0 0 6px;
+    text-wrap: balance; letter-spacing: 0.01em;
+  }
+  .kicker {
+    font-size: 0.82em; font-weight: bold; color: var(--grey);
+    letter-spacing: 0.12em; margin-bottom: 10px;
+  }
+  .sub { color: var(--grey); font-size: 0.95em; margin: 0 0 34px; }
+
+  h2 {
+    font-size: 1.35em; line-height: 1.4; margin: 52px 0 18px;
+    display: flex; gap: 14px; align-items: center; text-wrap: balance;
+  }
+  .num {
+    flex: 0 0 auto;
+    width: 42px; height: 42px; border-radius: 50%;
+    background: var(--ink); color: var(--bg);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.72em; font-weight: bold;
+  }
+  h3 { font-size: 1.02em; margin: 0 0 10px; }
+
+  p { margin: 0 0 14px; }
+  p:last-child { margin-bottom: 0; }
+
+  strong.hl {
+    background: #FFE9A3; padding: 1px 5px; border-radius: 4px; font-weight: bold;
+  }
+
+  /* ---------- cards ---------- */
+  .card {
+    border-left: 10px solid var(--grey);
+    background: #fff;
+    border-radius: 0 14px 14px 0;
+    padding: 20px 22px;
+    margin-bottom: 18px;
+  }
+  .card.green  { border-color: var(--green);  background: var(--green-bg); }
+  .card.blue   { border-color: var(--blue);   background: var(--blue-bg); }
+  .card.purple { border-color: var(--purple); background: var(--purple-bg); }
+  .card.amber  { border-color: var(--amber);  background: var(--amber-bg); }
+  .card.red    { border-color: var(--red);    background: var(--red-bg); }
+
+  .card .tag {
+    font-size: 0.72em; font-weight: bold; letter-spacing: 0.1em;
+    display: block; margin-bottom: 8px;
+  }
+  .green .tag  { color: var(--green); }
+  .blue .tag   { color: var(--blue); }
+  .purple .tag { color: var(--purple); }
+  .amber .tag  { color: var(--amber); }
+  .red .tag    { color: var(--red); }
+
+  .answer { font-size: 1.18em; line-height: 1.6; }
+
+  /* ---------- bars ---------- */
+  .bars { margin: 6px 0 4px; }
+  .bar-row { margin-bottom: 15px; }
+  .bar-lbl {
+    display: flex; justify-content: space-between; gap: 12px;
+    font-size: 0.86em; margin-bottom: 5px;
+  }
+  .bar-lbl b { font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .bar-track {
+    height: 24px; background: #EDE4D4; border-radius: 6px; overflow: hidden;
+  }
+  .bar-fill { height: 100%; border-radius: 6px; }
+  .f-green  { background: var(--green); }
+  .f-blue   { background: var(--blue); }
+  .f-purple { background: var(--purple); }
+  .f-amber  { background: var(--amber); }
+  .f-red    { background: var(--red); }
+  .f-grey   { background: #A79B86; }
+
+  /* ---------- team grid ---------- */
+  .roles { display: grid; gap: 12px; }
+  .role {
+    background: #fff; border-radius: 12px; padding: 14px 16px;
+    border-left: 8px solid var(--purple);
+    display: grid; grid-template-columns: 34px 1fr; gap: 14px; align-items: start;
+  }
+  .role .rn {
+    width: 34px; height: 34px; border-radius: 50%;
+    background: var(--purple-bg); color: var(--purple);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.78em; font-weight: bold;
+  }
+  .role b { display: block; margin-bottom: 2px; }
+  .role span { font-size: 0.88em; color: var(--grey); line-height: 1.6; }
+
+  /* ---------- stages ---------- */
+  .stage {
+    background: #fff; border-radius: 12px; padding: 16px 18px;
+    margin-bottom: 12px; border-left: 8px solid var(--blue);
+  }
+  .stage .st {
+    font-size: 0.74em; font-weight: bold; color: var(--blue);
+    letter-spacing: 0.1em; display: block; margin-bottom: 5px;
+  }
+  .stage .gate {
+    margin-top: 10px; padding: 9px 12px; border-radius: 8px;
+    background: var(--amber-bg); font-size: 0.87em;
+    border-left: 5px solid var(--amber); line-height: 1.6;
+  }
+
+  /* ---------- checklist ---------- */
+  .check { display: grid; gap: 10px; margin: 4px 0; }
+  .item {
+    display: grid; grid-template-columns: 32px 1fr; gap: 12px;
+    background: #fff; border-radius: 10px; padding: 12px 14px;
+    align-items: start; border-left: 7px solid var(--green);
+  }
+  .item.need { border-left-color: var(--red); }
+  .item.soft { border-left-color: var(--blue); }
+  .mk { font-size: 1.25em; line-height: 1.3; }
+  .item b { display: block; }
+  .item span { font-size: 0.87em; color: var(--grey); line-height: 1.6; }
+
+  /* ---------- q list ---------- */
+  ol.qs { padding-left: 0; list-style: none; counter-reset: q; margin: 0; }
+  ol.qs li {
+    counter-increment: q; position: relative;
+    padding: 12px 14px 12px 52px; background: #fff;
+    border-radius: 10px; margin-bottom: 10px;
+    border-left: 7px solid var(--amber); line-height: 1.6;
+  }
+  ol.qs li::before {
+    content: counter(q); position: absolute; left: 14px; top: 12px;
+    width: 26px; height: 26px; border-radius: 50%;
+    background: var(--amber); color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.72em; font-weight: bold;
+  }
+  ol.qs li em { font-style: normal; color: var(--green); font-weight: bold; }
+
+  /* ---------- code ---------- */
+  pre {
+    background: #2B2822; color: #F0E9DC;
+    padding: 16px 18px; border-radius: 12px;
+    overflow-x: auto; font-size: 0.78em; line-height: 1.65;
+    font-family: "Courier New", Courier, monospace;
+    letter-spacing: 0; word-spacing: 0;
+  }
+  code { font-family: "Courier New", Courier, monospace; font-size: 0.88em;
+         background: #EFE5D4; padding: 1px 5px; border-radius: 4px; }
+  pre code { background: none; padding: 0; font-size: 1em; color: inherit; }
+
+  /* ---------- table-ish rows ---------- */
+  .rows { display: grid; gap: 8px; }
+  .r2 {
+    display: grid; grid-template-columns: 1fr auto; gap: 14px;
+    background: #fff; border-radius: 9px; padding: 11px 14px;
+    font-size: 0.9em; align-items: center; border-left: 6px solid #D8CDB8;
+  }
+  .r2 b { font-variant-numeric: tabular-nums; white-space: nowrap; }
+
+  .foot {
+    margin-top: 26px; padding-top: 18px;
+    border-top: 2px dashed #D8CDB8;
+    font-size: 0.82em; color: var(--grey);
+  }
+  .foot a { color: var(--blue); }
+
+  @media (max-width: 560px) {
+    body { padding: 20px 14px 70px; }
+    h1 { font-size: 1.6em; }
+    .controls .lbl { min-width: 100%; }
+  }
+</style>
+
+<div class="wrap">
+
+  <!-- ============ CONTROLS ============ -->
+  <div class="controls">
+    <div class="row">
+      <span class="lbl">PAGE COLOUR</span>
+      <button class="sw" style="background:#FFF6E9" onclick="setBg('#FFF6E9')" title="Cream" aria-label="Cream background"></button>
+      <button class="sw" style="background:#E9F6EC" onclick="setBg('#E9F6EC')" title="Mint" aria-label="Mint background"></button>
+      <button class="sw" style="background:#E7F0F9" onclick="setBg('#E7F0F9')" title="Blue" aria-label="Blue background"></button>
+      <button class="sw" style="background:#FBEDF2" onclick="setBg('#FBEDF2')" title="Pink" aria-label="Pink background"></button>
+      <button class="sw" style="background:#EDEBE7" onclick="setBg('#EDEBE7')" title="Grey" aria-label="Grey background"></button>
+    </div>
+    <div class="row">
+      <span class="lbl">TEXT SIZE</span>
+      <button onclick="setFs('17px')">A&minus;</button>
+      <button onclick="setFs('19px')">A</button>
+      <button onclick="setFs('22px')">A+</button>
+      <button onclick="setFs('26px')">A++</button>
+    </div>
+  </div>
+
+  <div class="kicker">NU WAV MEDIA &middot; COWORK WORKFLOW &middot; 30 JULY 2026</div>
+  <h1>Vox Doc Factory</h1>
+  <p class="sub">A 12-role production team that takes a picked topic and returns a finished 15-minute documentary, scheduled on YouTube.</p>
+
+  <!-- ============ SHORT ANSWER ============ -->
+  <div class="card green">
+    <span class="tag">SHORT ANSWER</span>
+    <p class="answer">The team is built and the files are in the repo. It runs <strong class="hl">2 episodes a week</strong> inside your current Higgsfield plan &mdash; 3 a week needs a credit top-up or the hero shots moved to Google Flow.</p>
+    <p class="answer" style="margin-top:14px;">You have almost everything. <strong class="hl">Four things are missing</strong>, and only two of them cost money.</p>
+  </div>
+
+  <div class="card amber">
+    <span class="tag">ONE THING YOU SHOULD KNOW UP FRONT</span>
+    <p>Everything is hands-off <em>except</em> the CapCut assembly. A 15-minute timeline is about 200 shots, and CapCut has no API &mdash; so a person has to build it.</p>
+    <p style="margin-bottom:0;">There's a good fix for that, and it's in section 7.</p>
+  </div>
+
+  <!-- ============ 1 — THE BIG IDEA ============ -->
+  <h2><span class="num">1</span>Why this is affordable</h2>
+
+  <div class="card">
+    <p>A 15-minute video is 900 seconds. Generating 900 seconds of AI video would cost thousands of credits an episode.</p>
+    <p><strong class="hl">But that isn't what Vox actually is.</strong> Vox is photos, maps and charts with camera moves applied in the edit. Real generated motion is the exception.</p>
+    <p style="margin-bottom:0;">So the factory splits screen time three ways &mdash; and that split is the whole reason 2 to 3 episodes a week works.</p>
+  </div>
+
+  <div class="bars">
+    <div class="bar-row">
+      <div class="bar-lbl"><span>Stills with a camera move</span><b>70% &middot; ~0.4 credits/sec</b></div>
+      <div class="bar-track"><div class="bar-fill f-green" style="width:70%"></div></div>
+    </div>
+    <div class="bar-row">
+      <div class="bar-lbl"><span>Motion graphics &mdash; maps, charts, type</span><b>18% &middot; free</b></div>
+      <div class="bar-track"><div class="bar-fill f-blue" style="width:18%"></div></div>
+    </div>
+    <div class="bar-row">
+      <div class="bar-lbl"><span>Hero generated motion</span><b>12% &middot; ~2 credits/sec</b></div>
+      <div class="bar-track"><div class="bar-fill f-purple" style="width:12%"></div></div>
+    </div>
+  </div>
+
+  <div class="card blue">
+    <span class="tag">THE THREE RULES THAT KEEP CREDITS DOWN</span>
+    <p><strong class="hl">1. Turn the model's audio off.</strong> Every clip gets <code>sound: "off"</code>. We never use generated audio &mdash; ElevenLabs carries the whole track. Leaving it on is a surcharge on every single clip.</p>
+    <p><strong class="hl">2. Every moving shot starts from a still we already made.</strong> Image-to-video costs less than text-to-video, and it guarantees the clip matches everything around it.</p>
+    <p style="margin-bottom:0;"><strong class="hl">3. Generate at final size.</strong> Stills come out at 2K or 4K, so they never need upscaling. Upscaling costs more than the resolution did.</p>
+  </div>
+
+  <!-- ============ 2 — THE TEAM ============ -->
+  <h2><span class="num">2</span>The team &mdash; 12 roles</h2>
+
+  <div class="card">
+    <p style="margin-bottom:0;">Each one runs as a separate pass. They don't get collapsed together, because they each catch different mistakes and a single pass misses most of them.</p>
+  </div>
+
+  <div class="roles">
+    <div class="role"><span class="rn">1</span><div><b>Showrunner / EP</b><span>Owns the gates, the schedule and the go/no-go. Keeps the episode state file.</span></div></div>
+    <div class="role"><span class="rn">2</span><div><b>Research Producer</b><span>Sources, dated timeline, primary documents, the counter-arguments.</span></div></div>
+    <div class="role"><span class="rn">3</span><div><b>Fact-Checker</b><span>Re-derives every number independently. Anything unsourced gets cut, not softened.</span></div></div>
+    <div class="role"><span class="rn">4</span><div><b>Story Producer</b><span>The script &mdash; thesis, five-act arc, the register, the visual notes.</span></div></div>
+    <div class="role"><span class="rn">5</span><div><b>Narration Director</b><span>ElevenLabs voice, pacing, emphasis, pickup takes.</span></div></div>
+    <div class="role"><span class="rn">6</span><div><b>Art Director</b><span>Locks the Style Key &mdash; one visual language for the whole season.</span></div></div>
+    <div class="role"><span class="rn">7</span><div><b>Shot Designer</b><span>Shot list, durations, where the cuts land against the narration.</span></div></div>
+    <div class="role"><span class="rn">8</span><div><b>Motion Graphics</b><span>Maps, charts, timelines, kinetic type. Costs nothing &mdash; all free tools.</span></div></div>
+    <div class="role"><span class="rn">9</span><div><b>Generation Producer</b><span>Runs the Higgsfield jobs, holds the credit budget, logs actual spend.</span></div></div>
+    <div class="role"><span class="rn">10</span><div><b>Editor</b><span>Assembly, transitions, rhythm. This is the role that makes it look like Vox.</span></div></div>
+    <div class="role"><span class="rn">11</span><div><b>Colorist &amp; Finishing</b><span>The house grade, the grain, the loudness pass, captions.</span></div></div>
+    <div class="role"><span class="rn">12</span><div><b>Packaging &amp; Publishing</b><span>Title, thumbnail, description, chapters, the upload.</span></div></div>
+  </div>
+
+  <div class="card purple" style="margin-top:16px;">
+    <span class="tag">PLUS ONE STANDING ROLE</span>
+    <p style="margin-bottom:0;"><b>Performance Analyst.</b> 72 hours after each episode goes live, it reads the retention curve, finds the biggest drop-off, matches it to a line in the script, and hands one concrete change to the next episode. Three episodes of this and the pattern is usually obvious.</p>
+  </div>
+
+  <!-- ============ 3 — STAGES ============ -->
+  <h2><span class="num">3</span>The nine stages</h2>
+
+  <div class="card">
+    <p style="margin-bottom:0;">Each stage ends at a gate. A failed gate goes <strong class="hl">back one stage</strong> &mdash; it never goes forward "with a note".</p>
+  </div>
+
+  <div class="stage"><span class="st">STAGE 1</span><b>Intake &amp; Lock</b> &mdash; the topic comes in from your profitability system. Out comes a one-sentence thesis and the single question the episode answers.
+    <div class="gate"><b>Gate:</b> if the thesis needs two sentences, it's two videos. Split it.</div></div>
+
+  <div class="stage"><span class="st">STAGE 2</span><b>Research &amp; Fact Pack</b> &mdash; dated timeline, key numbers with sources, primary documents, two counter-arguments.
+    <div class="gate"><b>Fact Gate:</b> every on-screen claim has a named source with a URL and a date. Unsourced numbers get cut.</div></div>
+
+  <div class="stage"><span class="st">STAGE 3</span><b>Script</b> &mdash; 2,150 to 2,450 words in the five-act shape, every paragraph carrying a bracketed visual note.
+    <div class="gate"><b>Read-Aloud Gate:</b> read it out loud and time it. Under 11 minutes, it goes back.</div></div>
+
+  <div class="stage"><span class="st">STAGE 4</span><b>Narration</b> &mdash; the VO is made <em>before</em> any visuals. It's the spine; picture gets cut to it.
+    <div class="gate"><b>Runtime Gate:</b> the audio file has to be 11:00 or longer. Checked here, not at the end.</div></div>
+
+  <div class="stage"><span class="st">STAGE 5</span><b>Style Key</b> &mdash; palette, illustration treatment, typography, how archival is handled, six reference frames.
+    <div class="gate"><b>Style Lock:</b> nothing generates before this. It's what makes 200 frames look like one episode.</div></div>
+
+  <div class="stage"><span class="st">STAGE 6</span><b>Shot Design</b> &mdash; the shot list, built against the narration's word-level timestamps.
+    <div class="gate"><b>Boredom Audit:</b> any 15-second window with no new information gets a shot added.</div></div>
+
+  <div class="stage"><span class="st">STAGE 7</span><b>Generation</b> &mdash; the Higgsfield run, with the credit ledger.
+    <div class="gate"><b>Budget Gate:</b> over the ceiling, hero clips get downgraded to stills <em>before</em> generating.</div></div>
+
+  <div class="stage"><span class="st">STAGE 8</span><b>Edit, Grade, Finish</b> &mdash; assembly, the transition playbook, the house grade, loudness.
+    <div class="gate"><b>Retention Gate:</b> watch it once unpaused. Every second you wanted to skip gets fixed.</div></div>
+
+  <div class="stage"><span class="st">STAGE 9</span><b>Package &amp; Publish</b> &mdash; title, thumbnail, description with sources, chapters, upload.
+    <div class="gate"><b>Human Publish:</b> it lands private or scheduled. You flip it public.</div></div>
+
+  <!-- ============ 4 — MODELS ============ -->
+  <h2><span class="num">4</span>Which models, and why</h2>
+
+  <div class="card green">
+    <span class="tag">THE STILLS ENGINE &mdash; 70% OF THE EPISODE</span>
+    <p><b>Nano Banana Pro</b> at 2K for anything with text on it &mdash; chart labels, map legends, quote cards, title cards. It's the best text renderer in the catalogue, and Vox style is dense with on-screen labels. A model that garbles typography costs more in re-tries than it saves.</p>
+    <p><b>Seedream 4.5</b> for wide establishing plates. Renders to 4K on the basic tier.</p>
+    <p style="margin-bottom:0;"><b>Nano Banana 2</b> at 1K for background textures and paper grounds.</p>
+  </div>
+
+  <div class="card blue">
+    <span class="tag">THE MOTION ENGINE &mdash; 12 TO 18 CLIPS AN EPISODE</span>
+    <p><b>Kling 3.0 Turbo</b> at 720p, 5 seconds, started from a still we already made. This is the working hero shot &mdash; 10 to 14 of them per episode.</p>
+    <p><b>Kling 3.0</b> in standard mode with <strong class="hl">sound off</strong> for the 3 or 4 signature shots &mdash; act openers and the big reveal.</p>
+    <p style="margin-bottom:0;"><b>Seedance 2.0 Mini</b> when a subject has to stay identical across several shots.</p>
+  </div>
+
+  <div class="card amber">
+    <span class="tag">THE ONE TO AVOID</span>
+    <p><b>Veo 3.1 costs 40 to 70 credits a clip</b> &mdash; that's 15 to 35 stills for one shot.</p>
+    <p style="margin-bottom:0;">If the cold open genuinely needs it, <strong class="hl">generate it in Google Flow instead</strong>. You already pay for that, so at the margin it's free, and it takes the single most expensive line item out of the Higgsfield budget completely.</p>
+  </div>
+
+  <div class="card purple">
+    <span class="tag">UPSCALING &mdash; SELECTIVE, NOT ROUTINE</span>
+    <p>Stills never get upscaled. They're already generated above timeline resolution.</p>
+    <p>A 720p hero clip that lands <em>full-frame</em> goes through <b>Bytedance Video Upscale</b> to 1080p with the <code>aigc</code> preset &mdash; that preset is tuned for generated footage and handles the soft areas AI video produces far better than the default.</p>
+    <p style="margin-bottom:0;">A clip inside a split-screen or behind type gets nothing. It's displayed at under half size &mdash; the upscale is invisible. Budget about <strong class="hl">6 upscales an episode, not 15</strong>.</p>
+  </div>
+
+  <!-- ============ 5 — CREDITS ============ -->
+  <h2><span class="num">5</span>The credit math</h2>
+
+  <div class="card">
+    <p style="margin-bottom:0;">You're on <b>Ultra</b> with <b>2,879 credits</b> right now (I checked the live balance). The plan gives 3,000 a month.</p>
+  </div>
+
+  <h3 style="margin-top:22px;">What one episode costs</h3>
+  <div class="rows">
+    <div class="r2"><span>140 stills at ~2 credits</span><b>280 cr</b></div>
+    <div class="r2"><span>12 hero clips at ~10 credits</span><b>120 cr</b></div>
+    <div class="r2"><span>6 upscales at ~8 credits</span><b>48 cr</b></div>
+    <div class="r2" style="border-left-color:var(--green)"><span><b>Lean episode total</b></span><b>~448 cr</b></div>
+    <div class="r2"><span>From episode 4 on, with the reusable asset library</span><b>~350 cr</b></div>
+  </div>
+
+  <h3 style="margin-top:26px;">What that means per month, against 3,000 credits</h3>
+  <div class="bars">
+    <div class="bar-row">
+      <div class="bar-lbl"><span><b>2 a week</b> &mdash; 8 episodes</span><b>~3,000 cr &middot; fits</b></div>
+      <div class="bar-track"><div class="bar-fill f-green" style="width:100%"></div></div>
+    </div>
+    <div class="bar-row">
+      <div class="bar-lbl"><span>3 a week &mdash; 12 episodes</span><b>~4,400 cr &middot; over</b></div>
+      <div class="bar-track"><div class="bar-fill f-red" style="width:100%"></div></div>
+    </div>
+    <div class="bar-row">
+      <div class="bar-lbl"><span>3 a week, hero shots on Google Flow</span><b>~3,200 cr &middot; close</b></div>
+      <div class="bar-track"><div class="bar-fill f-amber" style="width:100%"></div></div>
+    </div>
+  </div>
+
+  <div class="card green">
+    <span class="tag">MY RECOMMENDATION</span>
+    <p><strong class="hl">Launch at 2 a week.</strong> That fits inside what you already pay for, with no top-up.</p>
+    <p style="margin-bottom:0;">Then measure the real spend on episodes 1 and 2 &mdash; the workflow logs the actual credits every run &mdash; and decide on 3 a week with real numbers instead of my estimates. If you want 3 a week from day one, move all the hero motion to Google Flow and treat Higgsfield as the stills engine.</p>
+  </div>
+
+  <div class="card amber">
+    <span class="tag">FLAGGING THIS HONESTLY</span>
+    <p style="margin-bottom:0;">Higgsfield doesn't publish a per-model credit table I could pull directly &mdash; the per-clip numbers above come from third-party pricing write-ups and are <b>estimates</b>. The balance figure is real. That's exactly why the workflow records actual spend on every episode: after two runs we'll have the truth instead of the estimate.</p>
+  </div>
+
+  <!-- ============ 6 — VOICE ============ -->
+  <h2><span class="num">6</span>The voice</h2>
+
+  <div class="card green">
+    <span class="tag">THE PICK &mdash; ADAM</span>
+    <p>Vox narrators are working journalists, not voice actors. The read is <strong class="hl">conversational, curious, mid-30s, warm</strong> &mdash; someone explaining a thing they find genuinely interesting.</p>
+    <p>It is <em>not</em> the deep documentary-trailer voice. That register makes an explainer sound pompous.</p>
+    <p style="margin-bottom:0;"><b>Adam</b> is the best-documented ElevenLabs voice for non-fiction and technical narration, and it holds up across a 15-minute read without going flat.</p>
+  </div>
+
+  <div class="card blue">
+    <span class="tag">SETTINGS</span>
+    <div class="rows">
+      <div class="r2"><span>Model</span><b>eleven_v3, Natural mode</b></div>
+      <div class="r2"><span>Stability</span><b>0.55</b></div>
+      <div class="r2"><span>Similarity</span><b>0.75</b></div>
+      <div class="r2"><span>Style</span><b>0.35</b></div>
+      <div class="r2"><span>Speaker boost</span><b>On</b></div>
+      <div class="r2"><span>Pace target</span><b>150&ndash;160 wpm</b></div>
+    </div>
+    <p style="margin-top:14px; margin-bottom:0;">If v3 drifts in tone between the top and bottom of a long script, fall back to <code>multilingual_v2</code> at 0.50. Over 15 minutes, consistency beats expressiveness.</p>
+  </div>
+
+  <div class="card purple">
+    <span class="tag">ALTERNATIVES, AND THE UPGRADE</span>
+    <p><b>Charlotte</b> for human-story episodes. <b>Alice</b> for a female-led channel identity. <b>Bill</b> for history-heavy episodes.</p>
+    <p><b>Pick one and stay with it.</b> At 2 to 3 uploads a week, the voice <em>is</em> the channel identity &mdash; alternating narrators reads as inconsistency, not variety.</p>
+    <p style="margin-bottom:0;"><strong class="hl">By episode 10, clone a voice.</strong> Your Pro plan includes Professional Voice Cloning. You get a voice nobody else on YouTube has, and you stop being exposed to a library voice getting retired mid-season.</p>
+  </div>
+
+  <div class="card">
+    <span class="tag">CHARACTER BUDGET &mdash; NOT A CONSTRAINT</span>
+    <p style="margin-bottom:0;">Pro gives 500,000 characters a month. One episode is ~13,000. Even at 3 a week with heavy re-recording, you'd use about <b>220,000 of 500,000</b> &mdash; with room left for shorts and channel IDs in the same voice.</p>
+  </div>
+
+  <!-- ============ 7 — TRANSITIONS ============ -->
+  <h2><span class="num">7</span>The transitions &mdash; and the CapCut problem</h2>
+
+  <div class="card">
+    <p>The difference between "AI slideshow" and "Vox documentary" is almost entirely <strong class="hl">how shots connect</strong>, not how they look.</p>
+    <p style="margin-bottom:0;">The rule underneath all of it: <b>a transition is a camera decision, not an effect.</b> Nothing in this workflow uses CapCut's built-in transition presets. Every move is built from position, scale, blur and speed keyframes on the clips themselves.</p>
+  </div>
+
+  <div class="card blue">
+    <span class="tag">THE TWELVE MOVES</span>
+    <p><b>1. Axial cut-in</b> &mdash; same angle, tighter. Snaps attention onto a number.<br>
+    <b>2. The slow push</b> &mdash; 100% to 106% across the shot. This is 70% of the episode.<br>
+    <b>3. Whip-pan match</b> &mdash; blur across the seam. Changes era without a title card.<br>
+    <b>4. Shape match cut</b> &mdash; a round thing cuts to a round thing. The moment people remember.<br>
+    <b>5. Speed-ramp punch</b> &mdash; compresses "and then twelve years passed".<br>
+    <b>6. Parallax layer slide</b> &mdash; three layers at three speeds. The paper-cutout look.<br>
+    <b>7. Track-back with blur</b> &mdash; <strong class="hl">the Vox signature.</strong> Pull from a detail to the whole, 4px of blur at the fastest point.<br>
+    <b>8. Map hand-off</b> &mdash; an Earth Studio zoom ends on a still with a matched horizon.<br>
+    <b>9. J-cut</b> &mdash; narration starts 12 frames before picture. Roughly every third cut.<br>
+    <b>10. L-cut</b> &mdash; sound holds into the next shot. Every act change.<br>
+    <b>11. Graphic wipe</b> &mdash; a growing chart bar covers frame and reveals the next shot.<br>
+    <b>12. Cut on motion</b> &mdash; the eye is already travelling, so it never sees the cut.</p>
+    <p style="margin-bottom:0;">Every one has its exact CapCut keyframe values written down in the repo, plus the placement rules &mdash; cut on the stressed syllable, never two identical moves in a row, and when the narrator pauses for effect the picture stops moving too.</p>
+  </div>
+
+  <div class="card red">
+    <span class="tag">THE HONEST PROBLEM</span>
+    <p>Everything else in this pipeline runs unattended. <strong class="hl">Stage 8 does not.</strong></p>
+    <p style="margin-bottom:0;">A 15-minute timeline is about 200 shots, each needing keyframed moves and cut timing against the narration. CapCut has no API and no scripting &mdash; so a person builds that timeline. Realistically <b>2 to 4 hours an episode</b> once the templates exist. That's 6 to 8 hours a week at two episodes.</p>
+  </div>
+
+  <h3 style="margin-top:24px;">Three ways to close that gap</h3>
+
+  <div class="card">
+    <span class="tag">OPTION A &mdash; HUMAN EDITOR</span>
+    <p style="margin-bottom:0;">$150&ndash;300 an episode, or your own 2&ndash;4 hours. Best quality &mdash; CapCut's real strength, the transition grammar, gets used properly.</p>
+  </div>
+
+  <div class="card">
+    <span class="tag">OPTION B &mdash; PROGRAMMATIC ASSEMBLY</span>
+    <p style="margin-bottom:0;">FFmpeg builds the whole timeline automatically from the shot list and the narration timings. Your <code>capcut-pro-editor</code> skill already has an auto mode doing exactly this. Genuinely hands-off &mdash; but the transitions are cruder than a human's.</p>
+  </div>
+
+  <div class="card green">
+    <span class="tag">OPTION C &mdash; HYBRID &middot; RECOMMENDED</span>
+    <p>Programmatic assembly builds the full rough cut &mdash; pushes, cuts landed on the narration's word timings, grade and captions applied. Then a human spends <strong class="hl">45 minutes</strong> upgrading the 15 to 20 transitions that actually carry the episode.</p>
+    <p style="margin-bottom:0;">You keep the thing that makes it look like Vox and you lose the three hours of mechanical timeline work. And Option B stays as the fallback &mdash; if a week gets busy, it still ships a publishable episode with nobody touching it.</p>
+  </div>
+
+  <!-- ============ 8 — STACK ============ -->
+  <h2><span class="num">8</span>What we have</h2>
+
+  <div class="check">
+    <div class="item"><span class="mk">&#10003;</span><div><b>Higgsfield &mdash; Ultra, 2,879 credits</b><span>Verified live. The stills and hero-motion engine.</span></div></div>
+    <div class="item"><span class="mk">&#10003;</span><div><b>ElevenLabs Pro</b><span>500k characters a month. Comfortable at any cadence.</span></div></div>
+    <div class="item"><span class="mk">&#10003;</span><div><b>CapCut Pro</b><span>Assembly, transitions, grade, captions, export.</span></div></div>
+    <div class="item"><span class="mk">&#10003;</span><div><b>Google Flow</b><span>Where the one expensive hero shot goes instead of burning 70 credits.</span></div></div>
+    <div class="item"><span class="mk">&#10003;</span><div><b>Google Drive</b><span>Asset store, and the folder that triggers the upload.</span></div></div>
+    <div class="item"><span class="mk">&#10003;</span><div><b>Make.com &mdash; Core, 10,000 ops/month</b><span>Verified. The publish scenario is ~300 ops a month. Not a constraint.</span></div></div>
+    <div class="item"><span class="mk">&#10003;</span><div><b>Google connected in Make</b><span>Both accounts. Verified live.</span></div></div>
+    <div class="item"><span class="mk">&#10003;</span><div><b>The topic-profitability system</b><span>Already built. It feeds Stage 1.</span></div></div>
+  </div>
+
+  <h2><span class="num">9</span>What's missing</h2>
+
+  <div class="card red">
+    <span class="tag">TWO HARD BLOCKERS &mdash; EPISODE 1 CAN'T SHIP WITHOUT THESE</span>
+    <p><b>1. YouTube isn't connected in Make.</b> I checked your connections &mdash; you have Facebook, Google, OpenAI, Printify, TikTok, Hunter and PhantomBuster. No YouTube. Without it there's no publish step. <strong class="hl">Five minutes to fix</strong>, but I need to know which channel.</p>
+    <p style="margin-bottom:0;"><b>2. A music licence.</b> A monetised channel can't run unlicensed music &mdash; Content ID will find it. <strong class="hl">Epidemic Sound</strong> is my pick, roughly $15&ndash;20/month personal. Deepest documentary-score catalogue and the most reliable channel whitelisting. Artlist is the alternative at ~$17&ndash;25.</p>
+  </div>
+
+  <div class="card amber">
+    <span class="tag">ONE TO APPLY FOR TODAY &mdash; IT TAKES DAYS</span>
+    <p style="margin-bottom:0;"><b>Google Earth Studio.</b> Free, but Google has to approve you and it isn't instant. This is the tool that makes the Vox map zoom, and there's no real substitute. <strong class="hl">Apply now</strong> so it's ready when episode 1 needs it.</p>
+  </div>
+
+  <div class="card blue">
+    <span class="tag">ARCHIVAL FOOTAGE &mdash; PROBABLY FREE</span>
+    <p>AI can't generate a real photograph of a real historical event, and faking one is both a fact problem and a credibility problem.</p>
+    <p><b>Start free.</b> Library of Congress, US National Archives, NASA, Wikimedia Commons, the Internet Archive and Prelinger &mdash; all public domain, and between them they cover most episodes.</p>
+    <p style="margin-bottom:0;">Only add <b>Storyblocks</b> (~$30/month) if three episodes in a row hit a wall. Don't pay for it up front.</p>
+  </div>
+
+  <div class="card">
+    <span class="tag">SMALL STUFF &mdash; FREE, JUST NEEDS SETTING UP</span>
+    <p style="margin-bottom:0;">A <b>Flourish</b> account for animated charts (free tier is genuinely enough) &middot; one <b>grotesque font family</b> with a licence that covers video &middot; a <b>Google Sheet</b> for the credit ledger and retention log &middot; and the <b>channel identity</b> &mdash; name, logo sting, brand colours &mdash; which I need before I can lock the Style Key.</p>
+  </div>
+
+  <!-- ============ 10 — QUESTIONS ============ -->
+  <h2><span class="num">10</span>Six things I need from you</h2>
+
+  <ol class="qs">
+    <li><b>Which YouTube channel does this publish to?</b> I need it to wire the Make scenario.</li>
+    <li><b>Do we already have a music licence?</b> If not &mdash; <em>Epidemic Sound.</em></li>
+    <li><b>Who builds the CapCut edit?</b> <em>My pick: Option C, the hybrid.</em></li>
+    <li><b>Male or female narrator?</b> <em>My pick: Adam &mdash; male, conversational.</em></li>
+    <li><b>2 or 3 episodes a week to start?</b> <em>My pick: 2, then decide with real numbers.</em></li>
+    <li><b>Channel name, logo and brand colours?</b> Needed before I can lock the Style Key.</li>
+  </ol>
+
+  <!-- ============ 11 — PROMPT ============ -->
+  <h2><span class="num">11</span>The Cowork prompt</h2>
+
+  <div class="card">
+    <p style="margin-bottom:0;">Paste this to run one episode. The full version, plus a single-stage version and the season-setup version, are in <code>COWORK-PROMPT.md</code> in the repo.</p>
+  </div>
+
+<pre><code>Run the vox-doc-factory skill to produce Episode [N].
+
+TOPIC:  [from the profitability system]
+THESIS: [one sentence]
+THE ONE QUESTION: [what the video answers, plainly]
+
+Runtime target 14:30. Hard floor 11:00. 1920x1080, 24fps.
+
+Run all 12 roles as separate passes. Do not collapse them.
+Stop at every gate and show me the deliverable before continuing.
+
+Budget: lean profile, ~450 credits. Call `balance` before and after
+and log the real number. Over 550 projected, downgrade hero clips
+to stills BEFORE generating, not after.
+
+Non-negotiables:
+  - sound off on every generated clip
+  - every hero clip is image-to-video from a still we already made
+  - nothing generates until the Style Key is locked
+  - every on-screen claim gets a named, dated source
+  - upload lands PRIVATE or SCHEDULED — I flip it public
+
+Deliver: the master in Drive, episode.json with real credit spend,
+metadata.json for the Make scenario, and a one-page build report
+in my usual format.</code></pre>
+
+  <!-- ============ NEXT STEP ============ -->
+  <h2><span class="num">&#9654;</span>Next step</h2>
+
+  <div class="card green">
+    <span class="tag">DO THIS WEEK</span>
+    <p><b>Today &mdash;</b> apply for Google Earth Studio. It's the only thing with a waiting period.</p>
+    <p><b>Today &mdash;</b> answer the six questions in section 10. Four of them have my recommendation already attached, so it's mostly yes-or-no.</p>
+    <p><b>Then &mdash;</b> connect YouTube in Make (5 minutes) and pick up Epidemic Sound.</p>
+    <p style="margin-bottom:0;"><b>Then I run season setup:</b> the Style Key and six reference frames for you to approve, the reusable asset library, the chart templates, the CapCut template project, the Make scenario, and a <strong class="hl">60-second test read</strong> of a real script excerpt so you can sign off the voice before we commit to it.</p>
+  </div>
+
+  <div class="card blue">
+    <span class="tag">WHERE THE FILES ARE</span>
+    <p style="margin-bottom:0;">Branch <code>claude/coldwork-vox-documentary-workflow-f89mm0</code>, under <code>.claude/skills/vox-doc-factory/</code>. The skill plus seven reference documents &mdash; script architecture, style bible, model routing and credit math, the transition playbook, the colour grade, the voice spec, publishing, and the stack checklist. Copy the folder to <code>~/.claude/skills/</code> to make it live in Cowork.</p>
+  </div>
+
+  <div class="foot">
+    <p><b>Sources.</b> Higgsfield balance, plan, model catalogue and parameters, and the Make.com plan and connection list were read live from your accounts on 30 July 2026. Per-model credit costs are estimates from third-party pricing write-ups &mdash; Higgsfield doesn't publish a per-model table &mdash; which is why the workflow logs actual spend every run.</p>
+    <p style="margin-bottom:0;">Reference reading:
+      <a href="https://www.premiumbeat.com/blog/replicating-vox-motion-graphic/">PremiumBeat &mdash; replicating the Vox motion-graphic look</a> &middot;
+      <a href="https://elevenlabsmagazine.com/elevenlabs-eleven-v3-model-complete-guide-2026/">ElevenLabs v3 guide</a> &middot;
+      <a href="https://aivoicereview.com/blog/best-elevenlabs-voices-2026">Best ElevenLabs voices by use case</a> &middot;
+      <a href="https://www.make.com/en/integrations/youtube/google-drive">Make &mdash; YouTube + Google Drive</a> &middot;
+      <a href="https://www.scopeful.org/tools/higgsfield">Higgsfield pricing overview</a>
+    </p>
+  </div>
+
+</div>
+
+<script>
+  function setBg(c) { document.documentElement.style.setProperty('--bg', c); }
+  function setFs(s) { document.documentElement.style.setProperty('--fs', s); }
+</script>

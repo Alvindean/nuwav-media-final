@@ -247,8 +247,26 @@ Naming: `EP07_SH034_still_map-hormuz_v2.png` — episode, shot, type, slug, vers
 
 ---
 
+## Run it
+
+**`RUN-EPISODE.md`** is the executable prompt — paste it into Cowork, replace three values,
+and it runs the whole pipeline. It also carries the one-time season-setup block and the
+toolchain check.
+
+Two scripts fill the gaps where no MCP exists:
+
+| Script | Fills | Verified |
+|---|---|---|
+| `scripts/elevenlabs_tts.py` | No ElevenLabs MCP — renders narration over the API | CLI verified; needs `ELEVENLABS_API_KEY` |
+| `scripts/assemble.py` | CapCut has no API — builds the timeline in ffmpeg | End to end: 1080p/24fps output, grade and grain confirmed, missing source skipped with exit 2 |
+
+`PLAYBOOK.template.md` seeds the channel's learning file. It is read before Stage 1 on
+every run.
+
 ## References
 
+- `references/self-healing.md` — recovery ladders and the learning loop
+- `references/thumbnail-ctr.md` — CTR benchmarks, the face problem, the A/B loop
 - `references/script-architecture.md` — the 5-act Vox structure with timecodes
 - `references/style-bible.md` — Style Key spec, palette method, archival treatment
 - `references/model-routing.md` — exact model + parameter routing and credit math

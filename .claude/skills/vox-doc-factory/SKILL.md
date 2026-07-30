@@ -257,3 +257,12 @@ Naming: `EP07_SH034_still_map-hormuz_v2.png` — episode, shot, type, slug, vers
 - `references/voice-spec.md` — ElevenLabs voice, settings, pickup process
 - `references/publishing.md` — Drive → Make.com → YouTube, metadata spec
 - `references/stack-checklist.md` — what we own, what is still missing
+
+## Sibling skills this pipeline calls
+
+- **`capcut-mastery`** — the craft layer behind Stage 8. Two doctrines, exact settings.
+- **`make-scenario-builder`** — builds and validates the Stage 9 publish scenario. Ships
+  with `blueprints/vox-doc-youtube-publish.json` already validated.
+- **`seal-team`** — when a stage hits a capability nobody has, this goes and acquires it
+  rather than handing the user a shopping list. Any role that finds itself about to say
+  "you'd need to go learn X" calls this instead.

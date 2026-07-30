@@ -19,13 +19,39 @@ Verified 2026-07-30 against live accounts where an API was reachable.
 
 ---
 
+## Gaps the team closed itself
+
+These were on the "ask Alvin" list. They aren't any more — `seal-team` acquired them.
+
+| Was | Now |
+|---|---|
+| "We need a Make scenario for publishing" | **Built.** `make-scenario-builder/blueprints/vox-doc-youtube-publish.json` — passes Make's schema validator, all module names verified against the live app catalogue. |
+| "The team needs to know CapCut properly" | **Built.** `capcut-mastery` — two doctrines (viral / cinematic) with exact keyframe values, speed-curve shapes, easing rules and blend modes. |
+| "What are the right ElevenLabs settings" | **Answered.** `voice-spec.md`, with the voice pick and the settings block. |
+| "Which Higgsfield models, at what cost" | **Answered.** `model-routing.md`, read from the live model catalogue. |
+
+**One thing the research surfaced that no tutorial mentions:** Make's YouTube `uploadVideo`
+module has a **required** `containsSyntheticMedia` field. For a channel with AI-generated
+visuals that must be `true`. The blueprint ships with it set correctly — it's the live
+enforcement risk for this exact kind of channel, and declaring it honestly costs nothing.
+
+---
+
 ## Blocking gaps — needed before episode 1 ships
 
-### 1. YouTube connection in Make.com ⚠️ **hard blocker**
+### 1. Authorise the YouTube connection in Make ⚠️ **credential, not information**
 Verified: Make has Facebook, Google, OpenAI, Printify, TikTok, Hunter and PhantomBuster
-connections. **No YouTube connection exists.** Without it there is no publish step.
-*Fix: 5 minutes — add the YouTube connection in Make and authorise the channel.*
-**Needed:** which YouTube channel is this publishing to?
+connections. **No YouTube connection exists**, and only you can grant it.
+
+The blueprint is built and waiting on the connection ID. Add a YouTube module in Make,
+click *Create a connection*, sign in with Google — a couple of minutes.
+
+**Watch the publishing-status trap:** if you go the own-credentials route, a Google Cloud
+project left in **Testing** status forces re-authorisation **every week**, which will
+silently break a hands-off pipeline. Set it to **In production**. Full setup steps,
+including the exact scopes and redirect URI, are in `make-scenario-builder/SKILL.md`.
+
+**Needed from you:** which YouTube channel is this publishing to?
 
 ### 2. Music and SFX licence ⚠️ **hard blocker**
 A monetised channel cannot use unlicensed music, and YouTube's Content ID will find it.
@@ -77,13 +103,16 @@ that produces the Vox map zoom, and there is no equivalent substitute.
 
 ## Open questions for Alvin
 
-1. **Which YouTube channel** does this publish to? (Needed to wire Make.)
-2. **Do we have a music licence** — Epidemic Sound, Artlist, or anything else?
-3. **Who assembles the CapCut edit?** This is the real hands-off question — see below.
-4. **Male or female narrator?** Recommendation is Adam (male, conversational).
-5. **2 or 3 episodes a week at launch?** Recommendation is 2, moving to 3 after the
-   ledger from episodes 1–2 shows the real credit burn.
-6. **Channel name, logo and brand colours** — needed to lock the Style Key.
+Every one of these is a **decision or a credential**. None of them is information — if it
+were, `seal-team` would have gone and got it instead of asking.
+
+1. **Which YouTube channel** does this publish to? *(credential — only you can authorise it)*
+2. **Do we have a music licence** — Epidemic Sound, Artlist, or anything else? *(money)*
+3. **Who assembles the CapCut edit?** Recommendation: the hybrid — see below. *(decision)*
+4. **Male or female narrator?** Recommendation: Adam, male, conversational. *(taste)*
+5. **2 or 3 episodes a week at launch?** Recommendation: 2, moving to 3 once the ledger
+   from episodes 1–2 shows the real burn. *(spend)*
+6. **Channel name, logo and brand colours** — needed to lock the Style Key. *(brand)*
 
 ---
 

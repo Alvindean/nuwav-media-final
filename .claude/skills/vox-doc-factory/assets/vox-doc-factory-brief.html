@@ -259,13 +259,89 @@
   <div class="card green">
     <span class="tag">SHORT ANSWER</span>
     <p class="answer">The team is built and the files are in the repo. It runs <strong class="hl">2 episodes a week</strong> inside your current Higgsfield plan &mdash; 3 a week needs a credit top-up or the hero shots moved to Google Flow.</p>
-    <p class="answer" style="margin-top:14px;">You have almost everything. <strong class="hl">Four things are missing</strong>, and only two of them cost money.</p>
+    <p class="answer" style="margin-top:14px;">You said don't hand me a shopping list &mdash; go get it. So I did. <strong class="hl">The Make scenario is built and validated. The CapCut knowledge is written down.</strong> What's left is six decisions only you can make.</p>
+  </div>
+
+  <div class="card purple">
+    <span class="tag">WHAT CHANGED AFTER YOUR NOTE</span>
+    <p>You were right, and it's a better way to build. I've added a <b>SEAL Team</b> skill &mdash; a unit whose whole job is closing capability gaps instead of reporting them.</p>
+    <p style="margin-bottom:0;">The rule it works by: <strong class="hl">escalate for money, credentials and decisions. Never for information.</strong> Section 2 has how it works, and section 3 has what it went and got.</p>
   </div>
 
   <div class="card amber">
     <span class="tag">ONE THING YOU SHOULD KNOW UP FRONT</span>
     <p>Everything is hands-off <em>except</em> the CapCut assembly. A 15-minute timeline is about 200 shots, and CapCut has no API &mdash; so a person has to build it.</p>
-    <p style="margin-bottom:0;">There's a good fix for that, and it's in section 7.</p>
+    <p style="margin-bottom:0;">There's a good fix for that, and it's in section 9.</p>
+  </div>
+
+  <!-- ============ SEAL TEAM ============ -->
+  <h2><span class="num">2</span>The SEAL Team</h2>
+
+  <div class="card">
+    <p>A capability gap is a mission, not a blocker. Five roles, one loop.</p>
+    <p style="margin-bottom:0;">The <b>Commander</b> writes a <strong class="hl">testable</strong> definition of done before anyone searches anything. Then <b>Recon</b> finds the sources, <b>Intel</b> extracts the real technique, <b>Breacher</b> builds the thing, and <b>Proof</b> tries to break it. The Commander is the only one who can call it done.</p>
+  </div>
+
+  <div class="card blue">
+    <span class="tag">THE SOURCE HIERARCHY &mdash; THIS IS THE IMPORTANT PART</span>
+    <p><b>Tier 1 &mdash; ask the live system.</b> APIs, MCP tools, schema dumps. Almost always skipped, almost always best.</p>
+    <p><b>Tier 2</b> &mdash; official docs and source code. Code is truth; docs are intent.<br>
+       <b>Tier 3</b> &mdash; GitHub issues, Stack Overflow, the subreddits where practitioners are.<br>
+       <b>Tier 4</b> &mdash; YouTube transcripts, pulled with <code>yt-dlp</code>, not watched.<br>
+       <b>Tier 5</b> &mdash; blogs. Last, because content farms rewrite each other, so three agreeing sources may be one source.</p>
+    <p style="margin-bottom:0;">Higher tier always wins a disagreement, and anything below Tier 2 gets <strong class="hl">labelled as an estimate</strong>.</p>
+  </div>
+
+  <div class="card green">
+    <span class="tag">TIER 1 PROVED ITSELF TWICE TODAY</span>
+    <p>The blogs disagreed about Higgsfield's models. One API call returned the real catalogue, with the real parameters, for <em>your</em> plan.</p>
+    <p style="margin-bottom:0;">And every Make tutorial describes the YouTube upload module. <strong class="hl">None of them mention that <code>containsSyntheticMedia</code> is a required field</strong> &mdash; which matters a lot for an AI-assisted channel. Reading the actual schema found it in one call. More on that in section 3.</p>
+  </div>
+
+  <div class="card amber">
+    <span class="tag">THE LOOP HAS TO TERMINATE</span>
+    <p style="margin-bottom:0;"><b>Three strikes.</b> After three failed loops the Commander stops and comes to you with what was tried, where exactly it breaks, and the options. A fourth loop is how an agent burns a day proving it can't do something. <strong class="hl">Not looping forever is a feature.</strong></p>
+  </div>
+
+  <!-- ============ WHAT IT WENT AND GOT ============ -->
+  <h2><span class="num">3</span>What it went and got</h2>
+
+  <div class="card green">
+    <span class="tag">MISSION 1 &mdash; THE MAKE SCENARIO &middot; BUILT AND VALIDATED</span>
+    <p>Not a description of a scenario. An actual blueprint JSON that <strong class="hl">passes Make's own schema validator</strong>, with every module name checked against your live account.</p>
+    <p>Drive watches the ready folder &rarr; downloads the master &rarr; finds the metadata file &rarr; uploads to YouTube as scheduled &rarr; sets the thumbnail &rarr; logs to a Sheet.</p>
+    <p style="margin-bottom:0;">You import it and fill in three IDs. That's it.</p>
+  </div>
+
+  <div class="card red">
+    <span class="tag">AND IT FOUND SOMETHING THAT MATTERS</span>
+    <p>YouTube's upload module has a <b>required</b> field called <code>containsSyntheticMedia</code>. For a channel with AI-generated visuals, that has to be <strong class="hl">true</strong>.</p>
+    <p style="margin-bottom:0;">This is the live enforcement risk for exactly the kind of channel we're building. Declaring it honestly costs nothing; not declaring it puts the channel at risk. The blueprint ships with it set correctly &mdash; and no tutorial I found even mentions the field exists.</p>
+  </div>
+
+  <div class="card amber">
+    <span class="tag">IT ALSO FOUND A TRAP THAT WOULD HAVE BITTEN YOU IN WEEK TWO</span>
+    <p style="margin-bottom:0;">If you connect YouTube using your own Google Cloud credentials, a project left in <b>Testing</b> status forces you to <strong class="hl">re-authorise every single week</strong>. That would silently break a hands-off pipeline &mdash; episodes would just stop appearing. Set the project to <b>In production</b>. The exact steps, scopes and redirect URI are in the repo.</p>
+  </div>
+
+  <div class="card green">
+    <span class="tag">MISSION 2 &mdash; CAPCUT MASTERY &middot; WRITTEN DOWN</span>
+    <p>Two doctrines, because they're genuinely different jobs and mixing them ruins both.</p>
+    <p><b>VIRAL</b> &mdash; cuts every 0.8&ndash;2 seconds, beat-synced to the waveform, built to survive the first 3 seconds.<br>
+    <b>CINEMATIC</b> &mdash; cuts every 3.5&ndash;4.5 seconds, driven by the narration, built to survive minute 8.</p>
+    <p style="margin-bottom:0;">Exact settings, not principles &mdash; which easing curve per move type, the two speed-curve shapes, when optical flow beats frame blending and when it smears, the parallax layer ratios, the J-cut and L-cut frame counts, blend modes and opacity ranges.</p>
+  </div>
+
+  <div class="card blue">
+    <span class="tag">THE NUMBERS IT'S ALL AIMED AT</span>
+    <div class="rows">
+      <div class="r2"><span>First 10&ndash;15 seconds &mdash; hook is working</span><b>&gt;70%</b></div>
+      <div class="r2"><span>First 10&ndash;15 seconds &mdash; exceptional</span><b>&gt;80%</b></div>
+      <div class="r2"><span>First 10&ndash;15 seconds &mdash; hook is broken</span><b>&lt;50%</b></div>
+      <div class="r2"><span>10&ndash;20 min video, overall retention</span><b>40&ndash;55%</b></div>
+      <div class="r2"><span>Retention editing lift (J/L cuts, 20&ndash;30s changes)</span><b>+20&ndash;30% AVD</b></div>
+    </div>
+    <p style="margin-top:14px; margin-bottom:0;">The first 30 seconds now works as a <strong class="hl">standalone ranking input</strong> &mdash; weighted separately from the rest of the video &mdash; and the first 3 seconds decide whether distribution opens up or gets throttled. That's why both doctrines spend so much effort there.</p>
   </div>
 
   <!-- ============ 1 — THE BIG IDEA ============ -->
@@ -300,7 +376,7 @@
   </div>
 
   <!-- ============ 2 — THE TEAM ============ -->
-  <h2><span class="num">2</span>The team &mdash; 12 roles</h2>
+  <h2><span class="num">4</span>The team &mdash; 12 roles</h2>
 
   <div class="card">
     <p style="margin-bottom:0;">Each one runs as a separate pass. They don't get collapsed together, because they each catch different mistakes and a single pass misses most of them.</p>
@@ -327,7 +403,7 @@
   </div>
 
   <!-- ============ 3 — STAGES ============ -->
-  <h2><span class="num">3</span>The nine stages</h2>
+  <h2><span class="num">5</span>The nine stages</h2>
 
   <div class="card">
     <p style="margin-bottom:0;">Each stage ends at a gate. A failed gate goes <strong class="hl">back one stage</strong> &mdash; it never goes forward "with a note".</p>
@@ -361,7 +437,7 @@
     <div class="gate"><b>Human Publish:</b> it lands private or scheduled. You flip it public.</div></div>
 
   <!-- ============ 4 — MODELS ============ -->
-  <h2><span class="num">4</span>Which models, and why</h2>
+  <h2><span class="num">6</span>Which models, and why</h2>
 
   <div class="card green">
     <span class="tag">THE STILLS ENGINE &mdash; 70% OF THE EPISODE</span>
@@ -391,7 +467,7 @@
   </div>
 
   <!-- ============ 5 — CREDITS ============ -->
-  <h2><span class="num">5</span>The credit math</h2>
+  <h2><span class="num">7</span>The credit math</h2>
 
   <div class="card">
     <p style="margin-bottom:0;">You're on <b>Ultra</b> with <b>2,879 credits</b> right now (I checked the live balance). The plan gives 3,000 a month.</p>
@@ -434,7 +510,7 @@
   </div>
 
   <!-- ============ 6 — VOICE ============ -->
-  <h2><span class="num">6</span>The voice</h2>
+  <h2><span class="num">8</span>The voice</h2>
 
   <div class="card green">
     <span class="tag">THE PICK &mdash; ADAM</span>
@@ -469,7 +545,7 @@
   </div>
 
   <!-- ============ 7 — TRANSITIONS ============ -->
-  <h2><span class="num">7</span>The transitions &mdash; and the CapCut problem</h2>
+  <h2><span class="num">9</span>The transitions &mdash; and the CapCut problem</h2>
 
   <div class="card">
     <p>The difference between "AI slideshow" and "Vox documentary" is almost entirely <strong class="hl">how shots connect</strong>, not how they look.</p>
@@ -518,7 +594,7 @@
   </div>
 
   <!-- ============ 8 — STACK ============ -->
-  <h2><span class="num">8</span>What we have</h2>
+  <h2><span class="num">10</span>What we have</h2>
 
   <div class="check">
     <div class="item"><span class="mk">&#10003;</span><div><b>Higgsfield &mdash; Ultra, 2,879 credits</b><span>Verified live. The stills and hero-motion engine.</span></div></div>
@@ -531,12 +607,21 @@
     <div class="item"><span class="mk">&#10003;</span><div><b>The topic-profitability system</b><span>Already built. It feeds Stage 1.</span></div></div>
   </div>
 
-  <h2><span class="num">9</span>What's missing</h2>
+  <h2><span class="num">11</span>What's missing</h2>
+
+  <div class="card green">
+    <span class="tag">FIRST &mdash; WHAT'S NO LONGER MISSING</span>
+    <p>These were on the list an hour ago. The SEAL Team closed them:</p>
+    <p style="margin-bottom:0;">&#10003; <b>The Make publish scenario</b> &mdash; built and validated<br>
+    &#10003; <b>CapCut craft knowledge</b> &mdash; written down with exact settings<br>
+    &#10003; <b>ElevenLabs settings</b> &mdash; voice picked, settings locked<br>
+    &#10003; <b>Which Higgsfield models, at what cost</b> &mdash; read from the live catalogue</p>
+  </div>
 
   <div class="card red">
-    <span class="tag">TWO HARD BLOCKERS &mdash; EPISODE 1 CAN'T SHIP WITHOUT THESE</span>
-    <p><b>1. YouTube isn't connected in Make.</b> I checked your connections &mdash; you have Facebook, Google, OpenAI, Printify, TikTok, Hunter and PhantomBuster. No YouTube. Without it there's no publish step. <strong class="hl">Five minutes to fix</strong>, but I need to know which channel.</p>
-    <p style="margin-bottom:0;"><b>2. A music licence.</b> A monetised channel can't run unlicensed music &mdash; Content ID will find it. <strong class="hl">Epidemic Sound</strong> is my pick, roughly $15&ndash;20/month personal. Deepest documentary-score catalogue and the most reliable channel whitelisting. Artlist is the alternative at ~$17&ndash;25.</p>
+    <span class="tag">TWO REAL BLOCKERS &mdash; NEITHER IS INFORMATION</span>
+    <p><b>1. Authorise YouTube in Make.</b> The blueprint is built and waiting on one connection ID. I can't grant an OAuth token on your behalf &mdash; that's a credential, and it's genuinely yours to give. <strong class="hl">A couple of minutes.</strong> I just need to know which channel.</p>
+    <p style="margin-bottom:0;"><b>2. A music licence.</b> A monetised channel can't run unlicensed music &mdash; Content ID will find it. <strong class="hl">Epidemic Sound</strong>, roughly $15&ndash;20/month. Deepest documentary-score catalogue and the most reliable channel whitelisting. Artlist is the alternative at ~$17&ndash;25. That's money, not information.</p>
   </div>
 
   <div class="card amber">
@@ -557,10 +642,14 @@
   </div>
 
   <!-- ============ 10 — QUESTIONS ============ -->
-  <h2><span class="num">10</span>Six things I need from you</h2>
+  <h2><span class="num">12</span>Six things I need from you</h2>
+
+  <div class="card">
+    <p style="margin-bottom:0;">Every one of these is a <strong class="hl">decision or a credential</strong>. None of them is information &mdash; if it were, the SEAL Team would have gone and got it instead of asking you.</p>
+  </div>
 
   <ol class="qs">
-    <li><b>Which YouTube channel does this publish to?</b> I need it to wire the Make scenario.</li>
+    <li><b>Which YouTube channel does this publish to?</b> <em>Credential &mdash; only you can grant it.</em></li>
     <li><b>Do we already have a music licence?</b> If not &mdash; <em>Epidemic Sound.</em></li>
     <li><b>Who builds the CapCut edit?</b> <em>My pick: Option C, the hybrid.</em></li>
     <li><b>Male or female narrator?</b> <em>My pick: Adam &mdash; male, conversational.</em></li>
@@ -569,7 +658,7 @@
   </ol>
 
   <!-- ============ 11 — PROMPT ============ -->
-  <h2><span class="num">11</span>The Cowork prompt</h2>
+  <h2><span class="num">13</span>The Cowork prompt</h2>
 
   <div class="card">
     <p style="margin-bottom:0;">Paste this to run one episode. The full version, plus a single-stage version and the season-setup version, are in <code>COWORK-PROMPT.md</code> in the repo.</p>
@@ -607,14 +696,19 @@ in my usual format.</code></pre>
   <div class="card green">
     <span class="tag">DO THIS WEEK</span>
     <p><b>Today &mdash;</b> apply for Google Earth Studio. It's the only thing with a waiting period.</p>
-    <p><b>Today &mdash;</b> answer the six questions in section 10. Four of them have my recommendation already attached, so it's mostly yes-or-no.</p>
+    <p><b>Today &mdash;</b> answer the six questions in section 12. Four of them have my recommendation already attached, so it's mostly yes-or-no.</p>
     <p><b>Then &mdash;</b> connect YouTube in Make (5 minutes) and pick up Epidemic Sound.</p>
     <p style="margin-bottom:0;"><b>Then I run season setup:</b> the Style Key and six reference frames for you to approve, the reusable asset library, the chart templates, the CapCut template project, the Make scenario, and a <strong class="hl">60-second test read</strong> of a real script excerpt so you can sign off the voice before we commit to it.</p>
   </div>
 
   <div class="card blue">
     <span class="tag">WHERE THE FILES ARE</span>
-    <p style="margin-bottom:0;">Branch <code>claude/coldwork-vox-documentary-workflow-f89mm0</code>, under <code>.claude/skills/vox-doc-factory/</code>. The skill plus seven reference documents &mdash; script architecture, style bible, model routing and credit math, the transition playbook, the colour grade, the voice spec, publishing, and the stack checklist. Copy the folder to <code>~/.claude/skills/</code> to make it live in Cowork.</p>
+    <p>Branch <code>claude/coldwork-vox-documentary-workflow-f89mm0</code>, under <code>.claude/skills/</code>. <b>Four skills now:</b></p>
+    <p style="margin-bottom:0;"><code>vox-doc-factory/</code> &mdash; the pipeline, plus eight references<br>
+    <code>seal-team/</code> &mdash; the capability acquisition unit<br>
+    <code>make-scenario-builder/</code> &mdash; plus the validated blueprint<br>
+    <code>capcut-mastery/</code> &mdash; the two editing doctrines<br><br>
+    Copy them to <code>~/.claude/skills/</code> to make them live in Cowork. All four are already registered in this session.</p>
   </div>
 
   <div class="foot">

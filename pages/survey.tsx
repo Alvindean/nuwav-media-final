@@ -3,172 +3,18 @@
 import React, { useState } from "react";
 import Head from "next/head";
 import { CheckCircle, Send } from "lucide-react";
+import { RELEASE, SECTIONS, type AnswerValue, type Answers, type Question } from "../lib/souldiesSurvey";
 
-// The release being surveyed.
-const RELEASE = {
-  label: "DezWorld Music Group",
-  artist: "Marvell Wilson, Jr.",
-  aSide: "You Are My Everything",
-  bSide: "There Go Our Song",
-  // Put a song preview here (e.g. "/survey/you-are-my-everything.mp3" in /public) to show a player.
-  previewUrl: ""
-};
-
-type Question = {
-  id: string;
-  prompt: string;
-  type: "single" | "multi" | "scale" | "text";
-  options?: string[];
-  scaleLabels?: [string, string];
-  placeholder?: string;
-  required?: boolean;
-};
-
-type Section = { title: string; intro?: string; questions: Question[] };
-
-const SECTIONS: Section[] = [
-  {
-    title: "You & the lowrider life",
-    questions: [
-      {
-        id: "lowrider_connection",
-        prompt: "How are you connected to lowrider culture?",
-        type: "single",
-        required: true,
-        options: [
-          "I own or build a lowrider",
-          "I'm in a car club",
-          "I go to shows and cruises",
-          "I'm a fan from the sidelines",
-          "Not really, I'm here for the music"
-        ]
-      },
-      {
-        id: "oldies_frequency",
-        prompt: "How often do you listen to oldies / souldies?",
-        type: "single",
-        required: true,
-        options: ["Every day", "A few times a week", "Now and then", "Rarely"]
-      },
-      {
-        id: "listen_where",
-        prompt: "Where do you hear oldies the most? (pick all that apply)",
-        type: "multi",
-        options: [
-          "Cruising in the car",
-          "Car shows & meets",
-          "Family parties & BBQs",
-          "Radio",
-          "Spotify / Apple Music",
-          "YouTube",
-          "TikTok / Instagram",
-          "Vinyl at home"
-        ]
-      },
-      {
-        id: "favorite_artists",
-        prompt: "Who's on your cruising playlist?",
-        type: "text",
-        placeholder: "e.g. The Delfonics, Brenton Wood, Smokey Robinson, Mary Wells..."
-      }
-    ]
-  },
-  {
-    title: "The song",
-    intro: `Give "${RELEASE.aSide}" a listen, then tell us what you think.`,
-    questions: [
-      {
-        id: "song_rating",
-        prompt: `Overall, how much do you like "${RELEASE.aSide}"?`,
-        type: "scale",
-        required: true,
-        scaleLabels: ["Not for me", "Instant classic"]
-      },
-      {
-        id: "cruise_fit",
-        prompt: "Would you play it while cruising low and slow?",
-        type: "single",
-        required: true,
-        options: ["Yes, on repeat", "Probably", "Maybe", "No"]
-      },
-      {
-        id: "sounds_like",
-        prompt: "How does it compare to the classics you love?",
-        type: "single",
-        options: [
-          "Sounds like a true oldie",
-          "Classic feel with a fresh touch",
-          "Too modern for oldies",
-          "Not sure"
-        ]
-      },
-      {
-        id: "best_part",
-        prompt: "What grabs you most? (pick all that apply)",
-        type: "multi",
-        options: ["The vocals", "The groove / bass", "The lyrics", "The horns & strings", "The slow-jam feel", "The vintage sound"]
-      },
-      {
-        id: "song_feedback",
-        prompt: "Anything you'd change or want more of?",
-        type: "text",
-        placeholder: "Your honest take"
-      }
-    ]
-  },
-  {
-    title: "Getting the music",
-    questions: [
-      {
-        id: "formats",
-        prompt: "How would you want this release? (pick all that apply)",
-        type: "multi",
-        options: ["45 RPM vinyl", "Streaming", "CD", "Cassette", "Digital download"]
-      },
-      {
-        id: "vinyl_price",
-        prompt: `What would you pay for the 45 ("${RELEASE.aSide}" / "${RELEASE.bSide}")?`,
-        type: "single",
-        options: ["Under $10", "$10–$15", "$15–$25", "$25+ for a signed copy", "I wouldn't buy vinyl"]
-      },
-      {
-        id: "extras",
-        prompt: "What else would you be into? (pick all that apply)",
-        type: "multi",
-        options: [
-          "Live performance at a car show",
-          "T-shirts & merch",
-          "Car club plaque / window decal",
-          "Music video with lowriders",
-          "Meet & greet with the artist"
-        ]
-      },
-      {
-        id: "discover_where",
-        prompt: "Where should we share it so people like you find it?",
-        type: "multi",
-        options: ["Car shows", "Car club pages", "Instagram", "TikTok", "YouTube", "Facebook", "Oldies radio", "Word of mouth"]
-      }
-    ]
-  },
-  {
-    title: "About you",
-    intro: "Optional, helps us know who's listening.",
-    questions: [
-      { id: "age", prompt: "Age range", type: "single", options: ["Under 25", "25–34", "35–44", "45–54", "55+"] },
-      { id: "location", prompt: "City / area", type: "text", placeholder: "e.g. East LA, San Diego, San Antonio" },
-      { id: "car_club", prompt: "Car club (if any)", type: "text", placeholder: "Club name" },
-      { id: "email", prompt: "Email for release news and a free download", type: "text", placeholder: "you@email.com" }
-    ]
-  }
-];
-
-type AnswerValue = string | string[] | number;
-type Answers = Record<string, AnswerValue>;
-
-// Where answers go. Replace with the real backend call once it's connected.
 async function submitSurvey(answers: Answers) {
-  console.log("Souldies survey submission", answers);
+  const res = await fetch("/api/survey", {
+    method: "POST",
+    headers: { "content-type": "application/json" },
+    body: JSON.stringify(answers)
+  });
+  if (!res.ok) {
+    const data = await res.json().catch(() => null);
+    throw new Error(data?.error || "Could not save your answers");
+  }
 }
 
 const theme = {
@@ -279,8 +125,8 @@ export default function Survey() {
       await submitSurvey(answers);
       setDone(true);
       window.scrollTo(0, 0);
-    } catch {
-      setError("Something went wrong. Please try again.");
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Something went wrong. Please try again.");
     } finally {
       setSubmitting(false);
     }
@@ -387,6 +233,9 @@ export default function Survey() {
             <CheckCircle size={48} color={theme.gold} />
             <h2 style={{ margin: "12px 0 6px" }}>Gracias, thank you!</h2>
             <p style={{ color: theme.muted, margin: 0 }}>Your answers are in. Keep it low and slow.</p>
+            <a href="/survey/results/" style={{ display: "inline-block", marginTop: 18, color: theme.gold }}>
+              See how everyone voted →
+            </a>
           </div>
         ) : (
           <form onSubmit={handleSubmit}>

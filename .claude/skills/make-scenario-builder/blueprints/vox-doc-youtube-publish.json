@@ -1,0 +1,119 @@
+{
+  "name": "Vox Doc — Drive to YouTube Publish",
+  "flow": [
+    {
+      "id": 1,
+      "module": "google-drive:watchFilesInAFolder",
+      "version": 4,
+      "parameters": {
+        "__IMTCONN__": 1591311,
+        "select": "select",
+        "folderId": "REPLACE_WITH_READY_TO_UPLOAD_FOLDER_ID",
+        "limit": 1,
+        "destination": "drive"
+      },
+      "mapper": {},
+      "metadata": {
+        "designer": { "x": 0, "y": 0 },
+        "notes": "Watches /Vox Docs/_READY_TO_UPLOAD/. Set the schedule to every 6 hours — polling is billed per check, and a 15-minute poll burns ~2,880 ops/month doing nothing."
+      }
+    },
+    {
+      "id": 2,
+      "module": "google-drive:downloadAFile",
+      "version": 4,
+      "parameters": { "__IMTCONN__": 1591311 },
+      "mapper": { "fileId": "{{1.id}}" },
+      "metadata": { "designer": { "x": 300, "y": 0 } }
+    },
+    {
+      "id": 3,
+      "module": "google-drive:searchForFilesFolders",
+      "version": 4,
+      "parameters": { "__IMTCONN__": 1591311 },
+      "mapper": { "query": "metadata.json", "limit": 1 },
+      "metadata": {
+        "designer": { "x": 600, "y": 0 },
+        "notes": "Finds the metadata.json the Packaging role wrote alongside the master."
+      }
+    },
+    {
+      "id": 4,
+      "module": "json:ParseJSON",
+      "version": 1,
+      "parameters": { "type": "" },
+      "mapper": { "json": "{{3.data}}" },
+      "metadata": {
+        "designer": { "x": 900, "y": 0 },
+        "notes": "metadata.json supplies: title, description, publishAt, tags, categoryId."
+      }
+    },
+    {
+      "id": 5,
+      "module": "youtube:uploadVideo",
+      "version": 4,
+      "parameters": { "__IMTCONN__": "REPLACE_WITH_YOUTUBE_CONNECTION_ID" },
+      "mapper": {
+        "title": "{{4.title}}",
+        "fileName": "{{1.name}}",
+        "data": "{{2.data}}",
+        "categoryId": "27",
+        "privacyStatus": "private",
+        "publishAt": "{{4.publishAt}}",
+        "description": "{{4.description}}",
+        "selfDeclaredMadeForKids": false,
+        "containsSyntheticMedia": true
+      },
+      "metadata": {
+        "designer": { "x": 1200, "y": 0 },
+        "notes": "categoryId 27 = Education. privacyStatus 'private' + publishAt = scheduled release; a human still flips it public or lets the schedule fire. containsSyntheticMedia is REQUIRED by the module and is true for AI-generated visuals — declare it honestly. Attach an error handler here: YouTube daily upload quota and transient auth expiry are the two realistic failures."
+      }
+    },
+    {
+      "id": 6,
+      "module": "youtube:setVideoThumbnail",
+      "version": 4,
+      "parameters": { "__IMTCONN__": "REPLACE_WITH_YOUTUBE_CONNECTION_ID" },
+      "mapper": { "videoId": "{{5.id}}" },
+      "metadata": {
+        "designer": { "x": 1500, "y": 0 },
+        "notes": "Map the thumbnail file data from /publish/thumbnail.png — add a Drive download module for it if the file isn't already in the bundle."
+      }
+    },
+    {
+      "id": 7,
+      "module": "google-sheets:addRow",
+      "version": 2,
+      "parameters": {
+        "__IMTCONN__": 1591311,
+        "mode": "select",
+        "insertUnformatted": false,
+        "valueInputOption": "USER_ENTERED",
+        "insertDataOption": "INSERT_ROWS"
+      },
+      "mapper": {
+        "spreadsheetId": "REPLACE_WITH_EPISODE_LOG_SHEET_ID",
+        "sheetId": "Episodes"
+      },
+      "metadata": {
+        "designer": { "x": 1800, "y": 0 },
+        "notes": "The episode ledger: title, video URL, upload date, runtime, credits spent. This is the log the cadence decision gets made from."
+      }
+    }
+  ],
+  "metadata": {
+    "instant": false,
+    "version": 1,
+    "scenario": {
+      "roundtrips": 1,
+      "maxErrors": 3,
+      "autoCommit": true,
+      "autoCommitTriggerLast": true,
+      "sequential": false,
+      "confidential": false,
+      "dataloss": false,
+      "dlq": false
+    },
+    "designer": { "orphans": [] }
+  }
+}

@@ -1,7 +1,30 @@
 ---
 name: humor-gate
-description: Pass/fail quality gate for humor in short-form videos. Locks the on-camera talent to ONE native humor style (Dolphin, Golden Retriever, Fox, Peacock, Panther, Powerhouse), then checks the script, the delivery and the edit against that style before anything publishes. Use when someone says "is this funny", "humor check", "run the humor gate", "this joke isn't landing", "make this script funnier", or before publishing any video that relies on a joke, bit or comedic beat.
+description: Humor detector and pass/fail gate for video scripts, captions, hooks and social copy. Load it AUTOMATICALLY whenever you are writing, drafting, rewriting or reviewing any script, hook, caption, ad, reel, short or talking-head copy, even if nobody mentions humor, and scan the draft for humor attempts (jokes, punchlines, sarcasm, exaggeration, callbacks, wordplay, act-outs, roasts, ironic asides, "lol"-style beats). When it finds any, it checks each one against the talent's locked charisma humor style (Dolphin, Golden Retriever, Fox, Peacock, Panther, Powerhouse) and flags or rewrites the ones in the wrong voice. Also use when someone says "is this funny", "humor check", "run the humor gate", "this joke isn't landing" or "make this funnier".
 ---
+
+## Step −1 — Detect (runs on every draft, silently)
+
+Whenever any script, hook, caption or copy is being written or reviewed, scan it before handing it back. Tag every line that is **trying to be funny**:
+
+| Signal | Examples |
+|---|---|
+| Setup → twist / punchline | "I tried meal prepping. Now I own 40 containers and zero meals." |
+| Exaggeration / hyperbole | "This took 900 years." |
+| Sarcasm / irony / ironic praise | "Love when the algorithm does that." |
+| Self-deprecation | "As a guy who can't parallel park…" |
+| Act-out / character voice / impression | "(as mom) 'Mijo, get a real job.'" |
+| Callback | re-using an earlier line for a laugh |
+| Wordplay / pun | |
+| Roast / tease of a person, group or competitor | |
+| Absurd specific detail | "…and a goat named Kevin." |
+| Comedic stage directions / edit notes | "(record scratch)", "*awkward zoom*", 💀😂 |
+| Rule-of-three with a broken third item | "fast, cheap and haunted" |
+
+Then:
+- **0 humor lines:** say nothing about humor and carry on. (Don't add jokes that weren't asked for.)
+- **1+ humor lines:** append a short **Humor Gate** block (format under *Scoring*) after the draft. If the talent's style isn't on file yet, ask once which person is on camera, or default to the style that the draft's non-joke lines already sound like and say so.
+- For each failing line, give the rewrite **in the talent's style** next to it, not a generic "funnier" version.
 
 # Humor Gate
 
@@ -31,6 +54,14 @@ Watch 2–3 clips of them being funny **off-camera** (voice memos, Zoom calls, p
 \*The sixth animal was hidden behind McCall in the frame; "Powerhouse" is our placeholder name. Dolphin and Powerhouse behaviors are our inference from her wall labels; the other four are from her videos. Have the talent take her quiz (comment QUIZ on @mccalljonesofficial) to confirm.
 
 Record: `HUMOR_STYLE: <style>` + one line of evidence ("does voices of his mom on every call" → Peacock).
+
+Store it in the talent's roster below (or their persona/voice file) so detection can look it up without asking:
+
+```
+## Talent roster
+# name | HUMOR_STYLE | evidence
+# (fill in, e.g.) Alvin | ? | take the quiz / review off-camera clips
+```
 
 ---
 

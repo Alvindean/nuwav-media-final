@@ -1,0 +1,34 @@
+{
+  "quoted_on": "2026-11-18",
+  "source": "Higgsfield estimate_image_cost / estimate_video_cost (quotes spend nothing). Account: Ultra plan. Free-trial unlimited generations: not available on this account right now.",
+  "images_9x16_default_settings": [
+    { "model": "gpt_image_2_6", "name": "GPT Image 2.6 Sunburst (low quality)", "credits": 0.25, "uses_alvin_element": true },
+    { "model": "gpt_image_2_6_flare", "name": "GPT Image 2.6 Flare", "credits": 0.25, "uses_alvin_element": true },
+    { "model": "gpt_image_2", "name": "GPT Image 2 (1k, low)", "credits": 0.5, "uses_alvin_element": true },
+    { "model": "soul_2", "name": "Higgsfield Soul 2.0 (2k)", "credits": 0.12, "uses_alvin_element": false, "note": "Needs a trained Soul character (5-20 photos), not the element" },
+    { "model": "seedream_v4_5", "name": "Seedream 4.5", "credits": 1, "uses_alvin_element": true },
+    { "model": "seedream_v5_lite", "name": "Seedream 5.0 lite", "credits": 1, "uses_alvin_element": true },
+    { "model": "gpt_image_2_6", "name": "GPT Image 2.6 Sunburst (high quality)", "credits": 1.5, "params": { "quality": "high" }, "uses_alvin_element": true },
+    { "model": "nano_banana_2", "name": "Nano Banana 2", "credits": 1.5, "uses_alvin_element": true },
+    { "model": "nano_banana_pro", "name": "Nano Banana Pro (2k)", "credits": 2, "uses_alvin_element": true },
+    { "model": "cinematic_studio_2_5", "name": "Cinema Studio Image 2.5", "credits": 2, "uses_alvin_element": true }
+  ],
+  "video_5s_9x16_default_settings": [
+    { "model": "grok_video_v15_lite", "credits": 5, "character_input": "start image only" },
+    { "model": "cinematic_studio_video_v2", "credits": 7.5, "character_input": "Alvin element" },
+    { "model": "kling3_0_turbo", "credits": 7.5, "character_input": "start image only" },
+    { "model": "wan2_6", "credits": 7.5, "character_input": "start image only" },
+    { "model": "kling3_0", "credits": 8.75, "character_input": "Alvin element + start image" },
+    { "model": "gemini_omni_flash_1_2", "credits": 11.25, "character_input": "references" },
+    { "model": "kling_4_0_flash", "credits": 15, "character_input": "references / start image" },
+    { "model": "seedance_2_0", "credits": 22.5, "character_input": "Alvin element" },
+    { "model": "cinematic_studio_3_0", "credits": 25, "character_input": "Alvin element" },
+    { "model": "seedance_2_5", "credits": 35, "character_input": "references", "note": "The quality bar (what FilmWizard uses)" }
+  ],
+  "open_models_on_rented_gpu": {
+    "note": "Higgsfield GPU rental bills per GPU hour; these are the open-weight models it lists. The same open weights are what can run free on a local PC.",
+    "models": ["wan-2-2-t2v-a14b (Apache-2.0, 80 GB VRAM)", "ltx-video (24 GB VRAM)", "qwen-image (Apache-2.0, 48 GB VRAM)", "minimax-h3 (80 GB VRAM)"],
+    "lora_base_models_seen": ["z-image-turbo", "z-image-base", "flux-2-klein-base-4b", "wan-2-1-i2v-14b-480p", "wan-2-2-i2v-a14b", "qwen-image-edit-2511"],
+    "gpu_credits_per_hour": { "L40S": 71, "RTX-PRO-6000": 98, "H100": 120, "H200": 134, "B200": 176, "B300": 197 }
+  }
+}

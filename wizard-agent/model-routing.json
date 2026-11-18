@@ -1,0 +1,71 @@
+{
+  "version": 1,
+  "quoted_on": "2026-11-18",
+  "quote_basis": "Higgsfield estimate_video_cost / estimate_image_cost, 5-second 9:16 clip, default resolution. Quotes spend nothing. Credit-to-dollar rate depends on the Higgsfield plan and is not stated here.",
+  "rule": "Best model thinks, cheap model renders. Build each ad mostly from stills; animate only the beats that need motion.",
+  "tiers": {
+    "think": {
+      "use_for": "hooks, scripts, comedy timing, lyrics, shot prompts, carousel copy, QA",
+      "model": "Claude (the Wizard Agent itself, best available model)",
+      "credits": 0
+    },
+    "still": {
+      "use_for": "every still frame, carousel slide art, start frames for clips",
+      "model": "gpt_image_2_6",
+      "provider": "Higgsfield generate_image",
+      "credits_per_unit": 0.25,
+      "unit": "image"
+    },
+    "clip_draft": {
+      "use_for": "drafts, previews, simple motion (zoom, pan, small action)",
+      "model": "grok_video_v15_lite",
+      "provider": "Higgsfield generate_video",
+      "credits_per_unit": 5,
+      "unit": "5s clip"
+    },
+    "clip_standard": {
+      "use_for": "default final motion beats, image-to-video from a still",
+      "model": "kling3_0_turbo",
+      "alt_model": "wan2_6",
+      "provider": "Higgsfield generate_video",
+      "credits_per_unit": 7.5,
+      "unit": "5s clip"
+    },
+    "clip_hero": {
+      "use_for": "one premium shot per ad, only when the client approves the spend",
+      "model": "kling_4_0_flash",
+      "alt_model": "cinematic_studio_3_0 (25 credits)",
+      "provider": "Higgsfield generate_video",
+      "credits_per_unit": 15,
+      "unit": "5s clip",
+      "needs_approval": true
+    },
+    "talking_head": {
+      "use_for": "client clone / presenter speaking to camera (lip-sync)",
+      "model": "intone",
+      "provider": "Higgsfield generate_video",
+      "credits_per_unit": null,
+      "unit": "clip",
+      "note": "Not quoted: the estimate needs a real voice recording (audio_references). Quote it per job before generating."
+    },
+    "text_only": {
+      "use_for": "kinetic text, captions over a color or blurred background, assembled in the edit",
+      "model": "none",
+      "credits_per_unit": 0,
+      "unit": "beat"
+    },
+    "carousel": {
+      "use_for": "turning a template's slides into an editable branded carousel",
+      "model": "Canva (generate-design / autofill-design with the client's brand kit)",
+      "credits_per_unit": 0,
+      "unit": "design",
+      "note": "Canva cost depends on the user's Canva plan, not Higgsfield credits."
+    }
+  },
+  "budgets": {
+    "max_clip_beats_per_reel": 3,
+    "max_hero_beats_per_reel": 1,
+    "max_credits_per_reel_standard": 30,
+    "note": "Validator enforces these. Credits are computed at the template's own tiers, with every clip counted as one 5s unit."
+  }
+}

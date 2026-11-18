@@ -12,22 +12,22 @@
   "hook": {
     "pattern": "Freeze one ordinary image and contrast what the viewer sees with what the expert sees.",
     "examples": [
-      "You see a {{subject}}. {{pro_role}} sees 3 things.",
-      "Look at this {{subject}} for 3 seconds. What did you miss?",
-      "This {{subject}} tells {{pro_role}} everything."
+      "You see a {{subject}}. We see three things.",
+      "What did you miss in this {{subject}}?",
+      "This {{subject}} tells our {{pro_role}} everything."
     ]
   },
   "variables": [
     { "name": "brand", "description": "Team, brand or business name", "example": "Riverside Royals" },
-    { "name": "subject", "description": "The ordinary thing in the frame", "example": "corner kick setup" },
-    { "name": "pro_role", "description": "Who is looking, by role, not a real named person", "example": "our head coach" },
-    { "name": "detail_1", "description": "First thing the pro notices", "example": "The keeper's weight is on his heels" },
-    { "name": "detail_2", "description": "Second thing the pro notices", "example": "Two defenders are marking the same runner" },
-    { "name": "detail_3", "description": "Third thing, the one that only makes sense in motion", "example": "The late run to the near post nobody tracks" },
-    { "name": "takeaway", "description": "The lesson in one line", "example": "Goals are decided before the ball is kicked" }
+    { "name": "subject", "description": "The ordinary thing in the frame, lowercase, 3 words or fewer", "example": "corner kick setup" },
+    { "name": "pro_role", "description": "Who is looking, by lowercase role title, not a real named person, 3 words or fewer", "example": "head coach" },
+    { "name": "detail_1", "description": "First thing the pro notices, 10 words or fewer", "example": "The keeper's weight is on his heels" },
+    { "name": "detail_2", "description": "Second thing the pro notices, 10 words or fewer", "example": "Two defenders are marking the same runner" },
+    { "name": "detail_3", "description": "Third thing, the one that only makes sense in motion, 10 words or fewer", "example": "The late run to the near post nobody tracks" },
+    { "name": "takeaway", "description": "The lesson in one line, 9 words or fewer", "example": "Goals are decided before the ball is kicked" }
   ],
   "beats": [
-    { "seconds": 3, "purpose": "hook: the frozen frame", "on_screen_text": "You see a {{subject}}. We see 3 things.", "voiceover": "You see a {{subject}}. {{pro_role}} sees three things.", "visual": { "tier": "still", "prompt": "Vertical 9:16 wide photo of a {{subject}} in its real setting, frozen moment, natural light, slightly desaturated like a paused frame, no visible logos" } },
+    { "seconds": 3, "purpose": "hook: the frozen frame", "on_screen_text": "You see a {{subject}}. We see 3 things.", "voiceover": "You see a {{subject}}. We see three things.", "visual": { "tier": "still", "prompt": "Vertical 9:16 wide photo of a {{subject}} in its real setting, frozen moment, natural light, slightly desaturated like a paused frame, no visible logos" } },
     { "seconds": 4, "purpose": "detail 1 circled", "on_screen_text": "1. {{detail_1}}", "voiceover": "One: {{detail_1}}.", "visual": { "tier": "still", "prompt": "Vertical tight crop of the same {{subject}} scene focused on '{{detail_1}}', same light and color as the wide frame, room for a drawn circle overlay" } },
     { "seconds": 4, "purpose": "detail 2 circled", "on_screen_text": "2. {{detail_2}}", "voiceover": "Two: {{detail_2}}.", "visual": { "tier": "still", "prompt": "Vertical tight crop of the same {{subject}} scene focused on '{{detail_2}}', same light and color, room for an arrow overlay" } },
     { "seconds": 5, "purpose": "detail 3 unfreezes into motion: the payoff", "on_screen_text": "3. {{detail_3}}", "voiceover": "And three, the one everyone misses: {{detail_3}}.", "visual": { "tier": "clip_hero", "prompt": "Vertical 9:16 cinematic shot: the frozen {{subject}} scene comes to life, color returns, camera glides to reveal '{{detail_3}}' in motion, dynamic but smooth, golden natural light" } },

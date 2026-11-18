@@ -16,7 +16,7 @@
   "hook": {
     "pattern": "Lead with the three-word slogan alone on a slide, then promise to show how it becomes a stadium anthem.",
     "examples": [
-      "Three words. One anthem. Swipe to hear it grow.",
+      "Three words. One anthem. Swipe to watch it grow.",
       "Every anthem starts as three words on a napkin.",
       "{{slogan}}. Watch it become our anthem."
     ]
@@ -44,8 +44,13 @@
     },
     {
       "name": "moment",
-      "description": "When fans will chant it, lowercase, 6 words or fewer",
-      "example": "home opener, Saturday 7 PM"
+      "description": "When fans will chant it, lowercase, with its own article if it needs one, 6 words or fewer",
+      "example": "the home opener, Saturday 7 PM"
+    },
+    {
+      "name": "disclosure",
+      "description": "Fine-print line from the compliance pack that matches the client's niche, shown small on screen",
+      "example": "Photos shared with parent permission."
     }
   ],
   "carousel": {
@@ -68,7 +73,7 @@
       {
         "headline": "Step 3: say who we are",
         "body": "{{line_three}}. This line is for the people in the seats.",
-        "visual_prompt": "Photo collage of {{brand}} fans of all ages in team colors, warm light"
+        "visual_prompt": "Client-supplied real photo collage of {{brand}} fans of all ages in team colors, shared with consent, warm light"
       },
       {
         "headline": "Step 4: back to the top",
@@ -82,12 +87,12 @@
       },
       {
         "headline": "Chant it with us",
-        "body": "See you at the {{moment}}. Save this and learn it before then.",
+        "body": "See you at {{moment}}. Save this and learn it before then. {{disclosure}}",
         "visual_prompt": "End card with {{brand}} logo, date in large type, stadium photo behind"
       }
     ]
   },
-  "cta": "Save this, learn the words, and chant it with us at the {{moment}}.",
+  "cta": "Save this, learn the words, and chant it with us at {{moment}}.",
   "craft": {
     "technique": "Bookended four-line chant (ABCA) built from a three-beat slogan",
     "notes": "The slogan needs three strong stresses so each word gets a stomp: RISE to-GE-ther NOW puts the stresses on beats 1, 2 and 3, with beat 4 as a rest. Line two end-rhymes on the same open vowel (now / town), line three names the community and keeps the rhyme (crowd), and line four repeats the slogan: title placement at top and bottom. Suggested tempo/feel: 80-90 BPM stomp-stomp-stomp-rest, chanted not sung, low voices in unison."
@@ -96,5 +101,9 @@
     "Borrow a real club's chant or a real stadium song's rhythm and words",
     "Pick a slogan with weak syllables on the beat (it won't chant)",
     "Make it about beating a named rival; make it about who you are"
+  ],
+  "compliance": [
+    "Youth teams and rec leagues: show anyone under 18 only with a parent or guardian's written consent, and never aim the post at children under 13",
+    "Fan photos are real and client-supplied with consent; never a generated person shown as a real fan"
   ]
 }

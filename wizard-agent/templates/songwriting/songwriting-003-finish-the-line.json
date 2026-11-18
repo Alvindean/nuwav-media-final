@@ -73,7 +73,7 @@
     {
       "seconds": 4,
       "purpose": "line two stops before the title word",
-      "on_screen_text": "{{line_two}} ...",
+      "on_screen_text": "{{line_two}}...",
       "voiceover": "{{line_two}}...",
       "visual": {
         "tier": "text_only",
@@ -93,7 +93,7 @@
     {
       "seconds": 4,
       "purpose": "reveal title word plus where to hear it",
-      "on_screen_text": "{{song_title}}. {{listen_link}}",
+      "on_screen_text": "{{song_title}}. Listen: {{listen_link}}",
       "voiceover": "{{song_title}}. Full song: {{listen_link}}.",
       "visual": {
         "tier": "real_photo",
@@ -102,12 +102,6 @@
     }
   ],
   "cta": "Duet this and finish the line. Full song '{{song_title}}': {{listen_link}}.",
-  "music": {
-    "tier": "music",
-    "bpm": 80,
-    "feel": "half-time R&B pop, sparse keys, deep kick",
-    "vocals": true
-  },
   "carousel": {
     "slides": [
       {
@@ -122,7 +116,7 @@
       },
       {
         "headline": "Line two",
-        "body": "{{line_two}} ...",
+        "body": "{{line_two}}...",
         "visual_prompt": "Lyric slide, highlight stops one word short, a blank glowing underline where the last word goes"
       },
       {
@@ -132,7 +126,7 @@
       },
       {
         "headline": "Why your brain knew it",
-        "body": "Line one ends on a sound, the title rhymes with it, and it lands on beat one. Your ear predicts the rhyme.",
+        "body": "Line one ends on a sound, the title rhymes with it, and it lands on a strong beat. Your ear predicts the rhyme.",
         "visual_prompt": "Simple diagram slide, the two lyric lines with the rhyming sounds circled and beat numbers above"
       },
       {
@@ -149,7 +143,7 @@
   },
   "craft": {
     "technique": "Withheld title word (missing-rhyme karaoke)",
-    "notes": "Title placement: the title is the last word of the couplet and the end-rhyme partner of line one, so the ear predicts it (night / daylight). Keep each sung line to one breath, about 8 syllables. Stress the final syllable before the title on beat 4 so the title lands on the next beat 1, then cut the audio for exactly one beat. Tempo/feel: 80 BPM, half-time pop or R&B, sparse keys and a deep kick so the silence feels intentional."
+    "notes": "The artist's own master plays under all beats; nothing is generated, no AI vocal or backing track, and every sung voiceover line is the artist's real vocal from that master (the spoken hook is recorded by the artist). Title placement: the title is the last word of the couplet and the end-rhyme partner of line one, so the ear predicts it (night / daylight). Keep each sung line to one breath, about 8 syllables. Mute the master for the silent gap just before the title word, then bring it back on the reveal. Beat seconds are a guide (about ±1s): cut the edit to the master so the gap sits where the title would be sung. Best on half-time songs around 70-90 BPM with sparse arrangements, so the silence feels intentional."
   },
   "do_not": [
     "Use someone else's lyrics, even a famous line people would know",

@@ -19,7 +19,7 @@
     "pattern": "A single voice shouts the call to camera, then a beat of silence that dares the viewer to answer.",
     "examples": [
       "When I say {{call_word}}, you say {{response_word}}.",
-      "{{call_word}}! ... we can't hear you.",
+      "{{call_word}}! We can't hear you.",
       "Only real {{crew_name}} fans know what comes next."
     ]
   },
@@ -58,7 +58,7 @@
       "voiceover": "When I say {{call_word}}, you say {{response_word}}!",
       "visual": {
         "tier": "still",
-        "prompt": "Vertical 9:16 low-angle photo of a {{crew_name}} leader mid-shout to camera, fist raised, bright lights behind, high contrast night lighting"
+        "prompt": "Vertical 9:16 low-angle photo of the {{crew_name}} chant leader mid-shout to camera, fist raised, bright lights behind, high contrast night lighting"
       }
     },
     {
@@ -78,7 +78,7 @@
       "voiceover": "{{response_word}}!",
       "visual": {
         "tier": "clip_standard",
-        "prompt": "Vertical shot of a {{crew_name}} crowd throwing arms up and shouting together, handheld energy, colored rim lights, slight slow motion, 9:16"
+        "prompt": "Vertical shot of the {{crew_name}} crowd throwing arms up and shouting together, handheld energy, colored rim lights, slight slow motion, 9:16"
       }
     },
     {
@@ -94,7 +94,7 @@
     {
       "seconds": 3,
       "purpose": "louder response, more voices",
-      "on_screen_text": "{{response_word}}!!",
+      "on_screen_text": "{{response_word}}! Louder!",
       "voiceover": "{{response_word}}!",
       "visual": {
         "tier": "clip_draft",
@@ -121,7 +121,7 @@
   },
   "craft": {
     "technique": "Call-and-response chant with a planted rest",
-    "notes": "The call is two stressed syllables landing on beats 1 and 2; the response is one stressed syllable on beat 3, followed by a full beat of silence (beat 4) so it rings. Repeat the pair twice, the second time a half step higher and with more voices: repetition plus escalation. Keep the response a single word that is easy to shout with an open vowel (O, A). Tempo/feel: 94 BPM stomp-clap, marching snare or 808 stomp, no melody needed, the chant IS the hook."
+    "notes": "The call is two stressed syllables aimed at beats 1 and 2; the response is one stressed syllable on beat 3, followed by a beat of silence so it rings. Repeat the pair twice, the second time a half step higher and with more voices: repetition plus escalation. Keep the response a single word that is easy to shout with an open vowel (O, A). Tempo/feel: 94 BPM stomp-clap, marching snare or 808 stomp, no melody needed, the chant IS the hook. Beat seconds are a guide (about ±1s): the edit is cut to the track, so aim the stresses at the downbeats rather than promising exact bar placement."
   },
   "do_not": [
     "Use a real team's or school's existing chant",

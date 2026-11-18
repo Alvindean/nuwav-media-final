@@ -107,8 +107,8 @@
       },
       {
         "headline": "Hear it in the song",
-        "body": "{{song_title}} by {{artist_name}}. {{listen_link}}",
-        "visual_prompt": "Cover-art end card, {{song_title}} title over a photo of a {{key_object}} in window light"
+        "body": "{{song_title}} by {{artist_name}}. Listen: {{listen_link}}",
+        "visual_prompt": "Cover-art end card, {{song_title}} title over a photo of the {{key_object}} in window light"
       }
     ]
   },

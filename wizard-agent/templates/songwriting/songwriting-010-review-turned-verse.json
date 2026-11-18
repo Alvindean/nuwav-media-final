@@ -59,6 +59,11 @@
       "name": "offer",
       "description": "Next step for new customers, capitalized, 6 words or fewer because it is spoken",
       "example": "Book a new-patient visit online"
+    },
+    {
+      "name": "disclosure",
+      "description": "Fine-print line from the compliance pack that matches the client's niche, shown small on screen",
+      "example": "Results vary. Consult a licensed provider."
     }
   ],
   "beats": [
@@ -105,7 +110,7 @@
     {
       "seconds": 3,
       "purpose": "CTA with real-review label",
-      "on_screen_text": "Real review. {{offer}}",
+      "on_screen_text": "Real review. {{offer}} {{disclosure}}",
       "voiceover": "Real words from {{reviewer_first_name}}. {{offer}}.",
       "visual": {
         "tier": "text_only",
@@ -144,7 +149,7 @@
       },
       {
         "headline": "How we found the hook",
-        "body": "No rewrites. We looped the words {{reviewer_first_name}} already stressed, so the rhythm was hers.",
+        "body": "No rewrites. We looped the words {{reviewer_first_name}} already stressed, so the rhythm came straight from the review.",
         "visual_prompt": "Simple diagram slide, the hook words with stressed syllables in bold and beat numbers above"
       },
       {
@@ -154,7 +159,7 @@
       },
       {
         "headline": "Your words could be next",
-        "body": "{{offer}}",
+        "body": "{{offer}}. {{disclosure}}",
         "visual_prompt": "End card with {{brand}} logo, stars and the offer in large type"
       }
     ]
@@ -174,6 +179,7 @@
     "Dental and chiropractor: never reveal patient health information beyond what the patient authorized in writing (HIPAA); no claims of guaranteed or typical results",
     "Financial advisor: testimonials must follow the SEC Marketing Rule (disclose whether the person is a client and any compensation); no performance or income claims",
     "Real estate: include brokerage name and license info per state rules; no implied guaranteed sale price or timeline",
-    "The review screenshot and staff photos are real and client-supplied; never a generated reviewer, customer or staff member"
+    "The review screenshot and staff photos are real and client-supplied; never a generated reviewer, customer or staff member",
+    "Show the {{disclosure}} fine print for the client's niche (medical, financial or real estate pack line) on the CTA beat and the last slide"
   ]
 }

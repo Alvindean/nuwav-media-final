@@ -68,7 +68,7 @@
       "voiceover": "{{signature_item}}, {{rhyme_line}}.",
       "visual": {
         "tier": "clip_draft",
-        "prompt": "Close-up hands making the {{signature_item}} at {{brand}}, quick rhythmic motion timed to a beat, warm practical light, shallow depth of field, vertical 9:16"
+        "prompt": "Close-up of hands at work on the signature service or dish at {{brand}}, quick rhythmic motion, warm practical light, shallow depth of field, vertical 9:16"
       }
     },
     {
@@ -101,7 +101,7 @@
   },
   "craft": {
     "technique": "Name-on-the-downbeat jingle (A-B-A-A, title bookends)",
-    "notes": "Four sung lines in an A-B-A-A shape: A lines carry the name, the B line carries the signature item. Put the stressed syllable of {{brand}} exactly on beat 1 of the bar every time it is sung: five times in 15s (twice in the hook, twice in line three, once in the button). Title placement: the name is the first and last thing sung, so it bookends. The B line uses one end rhyme ({{signature_item}} / {{rhyme_line}}) so the ear has a reason to stay. Keep every sung line to one breath, about 8 syllables. Tempo/feel: 104 BPM, four-on-the-floor kick with handclaps on 2 and 4; leave a one-beat rest before each sung name so it hits like a stamp."
+    "notes": "Four sung lines in an A-B-A-A shape: A lines carry the name, the B line carries the signature item. Aim the stressed syllable of {{brand}} at the downbeat each time it is sung: five times in 15s (twice in the hook, twice in line three, once in the button). Title placement: the name is the first and last thing sung, so it bookends. The B line uses one end rhyme ({{signature_item}} / {{rhyme_line}}) so the ear has a reason to stay. Keep every sung line to one breath, about 8 syllables. Tempo/feel: 104 BPM, four-on-the-floor kick with handclaps on 2 and 4; leave a short rest before each sung name so it hits like a stamp. Beat seconds are a guide (about ±1s): the edit is cut to the track, so aim the stresses at the downbeats rather than promising exact bar placement."
   },
   "do_not": [
     "Bury the brand name mid-line where it lands on a weak beat",

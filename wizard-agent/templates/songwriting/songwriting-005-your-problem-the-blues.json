@@ -63,6 +63,11 @@
       "name": "offer",
       "description": "Low-risk next step, capitalized, 6 words or fewer because it is spoken in 2 seconds",
       "example": "Free diagnostic this month"
+    },
+    {
+      "name": "disclosure",
+      "description": "Fine-print line from the compliance pack that matches the client's niche, shown small on screen",
+      "example": "Not financial advice. Terms apply."
     }
   ],
   "beats": [
@@ -119,7 +124,7 @@
     {
       "seconds": 2,
       "purpose": "ring-out: CTA over the held major chord (half a bar)",
-      "on_screen_text": "{{offer}}",
+      "on_screen_text": "{{offer}} {{disclosure}}",
       "voiceover": "{{offer}}.",
       "visual": {
         "tier": "text_only",
@@ -152,9 +157,9 @@
         "visual_prompt": "Empty wallet or stack of confusing paperwork on a table, warm lamp"
       },
       {
-        "headline": "Before you pay anyone to fix it",
-        "body": "Ask three things: what is wrong, what it costs in writing, and what happens if you wait.",
-        "visual_prompt": "Clean checklist slide with three ticked boxes on a warm paper background, blue accent"
+        "headline": "Why the blues shape works",
+        "body": "Say the {{pain_short}} problem, say it again, then twist it. The repeat sets up the twist, so bar 3 stings twice as hard.",
+        "visual_prompt": "Blues lyric sheet on a worn music stand, lines one and two marked A and A, line three marked B in red ink, blue lamp light"
       },
       {
         "headline": "One tip from {{brand}}",
@@ -168,14 +173,14 @@
       },
       {
         "headline": "End the song",
-        "body": "{{offer}} at {{brand}}.",
+        "body": "{{offer}} at {{brand}}. {{disclosure}}",
         "visual_prompt": "Clean end card with {{brand}} logo and the offer, brand colors"
       }
     ]
   },
   "craft": {
     "technique": "Compressed 4-bar AAB blues with a major turnaround",
-    "notes": "The 12-bar AAB shape squeezed to one bar per line. At 60 BPM one bar of 4 is 4 seconds: a three-beat pickup (3s) carries the hook, bar 1 states the problem (A), bar 2 repeats it harder (A), bar 3 twists it with a worse detail that rhymes with A (B), bar 4 is the turnaround where the brand enters and the chord goes from dominant to bright major, then the CTA rides a half-bar ring-out (2s): 3 + 16 + 2 = 21 seconds. Stress the pain word on beat 1 of each bar and keep each sung line to one breath, about 8 syllables. Tempo/feel: 60 BPM slow 12/8 shuffle, slide guitar or harmonica, a quick drum fill into the major bar."
+    "notes": "The 12-bar AAB shape squeezed to one bar per line. At 60 BPM one bar of 4 is about 4 seconds: a three-beat pickup (3s) carries the hook, bar 1 states the problem (A), bar 2 repeats it harder (A), bar 3 twists it with a worse detail that rhymes with A (B), bar 4 is the turnaround where the brand enters and the chord goes from dominant to bright major, then the CTA rides a half-bar ring-out (2s): 3 + 16 + 2 = 21 seconds. Aim the pain word at the start of each bar and keep each sung line to one breath, about 8 syllables. Beat seconds are a guide (about ±1s): the edit is cut to the track. Tempo/feel: 60 BPM slow 12/8 shuffle, slide guitar or harmonica, a quick drum fill into the major bar."
   },
   "do_not": [
     "Mock the customer; laugh at the problem, not the person",
@@ -187,6 +192,7 @@
     "Insurance and mortgage: no promised rates, approvals or savings amounts; include license number (NMLS for mortgage) and 'terms and eligibility apply'",
     "Dental: do not guarantee pain-free or specific results; pain points must not reveal any real patient's information",
     "The tip slide is general information, not legal, financial or medical advice, and says so where the niche requires it",
-    "Team photos are real staff, client-supplied, with consent; never a generated person shown as staff"
+    "Team photos are real staff, client-supplied, with consent; never a generated person shown as staff",
+    "Show the {{disclosure}} fine print for the client's niche on the CTA beat and the last slide (financial, legal or medical pack line)"
   ]
 }

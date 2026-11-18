@@ -106,7 +106,7 @@
   },
   "craft": {
     "technique": "Cold-open chorus (hook-first edit)",
-    "notes": "The chorus audio is the artist's own master; the music block only generates the short filtered pad under the spoken story line, so set bpm to the master's real tempo. Start the master one beat before the chorus downbeat so the first syllable the viewer hears is the title, on a stressed beat 1. Choose the chorus line where the title repeats or sits at the end of the phrase; a line with an internal rhyme (crowns / down, gold / told) gives the ear a second hook. Cut to the pad for the spoken line, then slam the master back for the release card. Works best on 90-130 BPM tracks with a big chorus lift."
+    "notes": "The chorus audio is the artist's own master; the music block only generates the short filtered pad under the spoken story line, so set bpm to the master's real tempo. Start the master just before the chorus downbeat so the first word the viewer hears is the title. Choose the chorus line where the title repeats or sits at the end of the phrase; a line with an internal rhyme (crowns / down, gold / told) gives the ear a second hook. Cut to the pad for the spoken line, then bring the master back for the release card. Beat seconds are a guide (about ±1s): the edit is cut to the master's phrasing, not to exact bars. Works best on 90-130 BPM tracks with a big chorus lift."
   },
   "do_not": [
     "Open with 'Hey guys, new song coming out'",

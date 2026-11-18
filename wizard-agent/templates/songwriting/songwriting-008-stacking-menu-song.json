@@ -121,7 +121,7 @@
   "music": {
     "tier": "music",
     "bpm": 100,
-    "feel": "playful accordion and guitar polka-pop, kick on every beat, pushing faster each round",
+    "feel": "playful accordion and guitar polka-pop, steady kick on every beat",
     "vocals": true
   },
   "carousel": {
@@ -160,7 +160,7 @@
   },
   "craft": {
     "technique": "Cumulative (stacking) list song",
-    "notes": "Each round adds one new item at the front and repeats the rest in reverse order, always ending on 'and one {{item_one}}' so the signature item is the resolving title line every time. Keep each item 2-4 syllables and place each item's stressed syllable on a downbeat; speed up slightly each round (a classic stacking-song trick) so the last round feels like a tongue-twister win. Tempo/feel: start at 100 BPM and push to about 120 BPM by round four, accordion, guitar or ukulele strum with a kick on every beat."
+    "notes": "Each round adds one new item at the front and repeats the rest in reverse order, always ending on 'and one {{item_one}}' so the signature item is the resolving title line every time. Keep each item 2-4 syllables and aim each item's stressed syllable at a beat. The track stays at a single tempo (100 BPM, the music.bpm value); each round feels faster because more items are packed into the same bars, so the last round lands like a tongue-twister win. If you want a real speed-up, do it in the edit, not in the music block. Beat seconds are a guide (about ±1s): the edit is cut to the track. Tempo/feel: 100 BPM, accordion, guitar or ukulele strum with a kick on every beat."
   },
   "do_not": [
     "Use more than four items; the joke dies if the viewer can't keep up",

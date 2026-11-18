@@ -1,0 +1,106 @@
+{
+  "id": "reveal-005-peel-back-the-layers",
+  "version": 1,
+  "name": "Peel Back the Layers",
+  "category": "reveal",
+  "format": "carousel",
+  "goal": "awareness",
+  "aspect_ratio": "4:5",
+  "best_for": [
+    "restaurant",
+    "apparel brand",
+    "independent musician",
+    "luxury brand",
+    "skincare brand"
+  ],
+  "why_it_works": "Each swipe removes one cover and shows a little more, so the reader keeps swiping to finish the picture. Carousels that hold attention across every slide get shown to more people, and the full reveal on the last slide rewards the effort.",
+  "hook": {
+    "pattern": "First slide is almost fully covered, with one tiny visible corner and the line 'swipe to uncover'.",
+    "examples": [
+      "Something new from {{brand}}. Swipe to uncover it.",
+      "You can see one corner. Can you guess the rest?",
+      "Five swipes until you see it. No skipping."
+    ]
+  },
+  "variables": [
+    {
+      "name": "brand",
+      "description": "Brand, restaurant or artist name",
+      "example": "Velvet Hour"
+    },
+    {
+      "name": "product",
+      "description": "What is being revealed",
+      "example": "spring capsule collection"
+    },
+    {
+      "name": "layer_one",
+      "description": "First hint (color, texture or sound)",
+      "example": "washed sage linen"
+    },
+    {
+      "name": "layer_two",
+      "description": "Second hint (detail or ingredient)",
+      "example": "hand-stitched collar"
+    },
+    {
+      "name": "layer_three",
+      "description": "Third hint (the story or who made it)",
+      "example": "cut and sewn in our own studio"
+    },
+    {
+      "name": "launch_date",
+      "description": "When it drops",
+      "example": "Friday at 10am"
+    }
+  ],
+  "carousel": {
+    "slides": [
+      {
+        "headline": "Swipe to uncover it",
+        "body": "Something new from {{brand}}. One corner is all you get.",
+        "visual_prompt": "4:5 frame almost fully covered by heavy paper, a small torn corner showing a sliver of the {{product}}, soft studio light"
+      },
+      {
+        "headline": "Layer one: {{layer_one}}",
+        "body": "That's the first clue.",
+        "visual_prompt": "Paper torn back a third of the way, revealing {{layer_one}} texture in close-up, soft studio light"
+      },
+      {
+        "headline": "Layer two: {{layer_two}}",
+        "body": "Getting warmer.",
+        "visual_prompt": "Paper torn halfway, showing {{layer_two}} in macro detail, same light and angle"
+      },
+      {
+        "headline": "Layer three",
+        "body": "{{layer_three}}",
+        "visual_prompt": "Paper mostly torn away, the {{product}} nearly visible, silhouette clear, same angle"
+      },
+      {
+        "headline": "Ready?",
+        "body": "One more swipe.",
+        "visual_prompt": "Single torn paper scrap in the center of a blank colored backdrop in {{brand}} colors"
+      },
+      {
+        "headline": "{{product}}",
+        "body": "Every layer, together.",
+        "visual_prompt": "The full {{product}} revealed, hero shot, clean backdrop, soft key light, 4:5"
+      },
+      {
+        "headline": "Drops {{launch_date}}",
+        "body": "Save this so you don't miss it.",
+        "visual_prompt": "{{brand}} logo and the launch date in large type over a blurred version of the hero shot"
+      }
+    ]
+  },
+  "cta": "Save this post and set a reminder: {{product}} drops {{launch_date}}.",
+  "craft": {
+    "technique": "Progressive unmasking",
+    "notes": "Keep the camera angle and light identical on every slide so the only change is how much is uncovered. Each slide's hint should be a sense (texture, color, sound, origin), not a sales claim."
+  },
+  "do_not": [
+    "Reveal the full product before the last two slides",
+    "Change the framing between slides; the reader loses the thread",
+    "Use for a product that looks ordinary once revealed"
+  ]
+}

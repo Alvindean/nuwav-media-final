@@ -1,0 +1,48 @@
+{
+  "id": "education-005-comment-reply-clinic",
+  "version": 1,
+  "name": "Comment Reply Clinic",
+  "category": "education",
+  "format": "reel",
+  "goal": "leads",
+  "duration_seconds": 20,
+  "aspect_ratio": "9:16",
+  "best_for": ["law firm", "med spa", "financial advisor", "real estate agent", "fitness coach"],
+  "why_it_works": "A question from a real-looking viewer is social proof that other people wonder the same thing, so the viewer feels safe being curious. A face answering directly feels like a free consultation, and asking for the next question turns the comments into a lead list.",
+  "hook": {
+    "pattern": "Open on a viewer's question shown as a comment card, so the first thing seen is a problem someone actually has.",
+    "examples": [
+      "Someone asked: {{viewer_question}}",
+      "Great question. Short answer: {{short_answer}}.",
+      "This comment deserves a real answer."
+    ]
+  },
+  "variables": [
+    { "name": "brand", "description": "Business name", "example": "Alder & Pike Law" },
+    { "name": "presenter_name", "description": "The client's own presenter (their face and voice only)", "example": "Dana, managing attorney" },
+    { "name": "viewer_question", "description": "A real or permitted viewer question, under 12 words", "example": "Do I need a will if I don't own a house?" },
+    { "name": "short_answer", "description": "The direct answer in under 8 words", "example": "Yes, if you have anything or anyone" },
+    { "name": "explanation", "description": "Two sentences of plain-language reasoning", "example": "A will also names a guardian for kids and decides who gets accounts, cars and keepsakes. Without one, state law decides for you." },
+    { "name": "key_rule", "description": "The one line to remember", "example": "No will means the state writes one for you" },
+    { "name": "offer", "description": "Next step for people with the same question", "example": "Book a free 15-minute will review" }
+  ],
+  "beats": [
+    { "seconds": 3, "purpose": "hook: the comment card", "on_screen_text": "{{viewer_question}}", "voiceover": "Someone asked: {{viewer_question}}", "visual": { "tier": "still", "prompt": "Vertical 9:16 flat graphic of a social media comment bubble with the text '{{viewer_question}}', anonymous avatar, soft blurred {{brand}} office background, clean modern UI style" } },
+    { "seconds": 10, "purpose": "the presenter answers to camera", "on_screen_text": "{{short_answer}}", "voiceover": "Short answer: {{short_answer}}. {{explanation}}", "visual": { "tier": "talking_head", "prompt": "Vertical 9:16 medium close-up of {{presenter_name}} speaking directly to camera in the {{brand}} office, soft key light, bookshelf or brand wall softly blurred, friendly confident expression" } },
+    { "seconds": 4, "purpose": "the rule to remember", "on_screen_text": "Remember: {{key_rule}}", "voiceover": "If you remember one thing: {{key_rule}}.", "visual": { "tier": "text_only", "prompt": "" } },
+    { "seconds": 3, "purpose": "call to action: ask the next question", "on_screen_text": "Drop your question below. {{offer}}", "voiceover": "Drop your question below, or {{offer}}.", "visual": { "tier": "text_only", "prompt": "" } }
+  ],
+  "cta": "Comment your question for the next reply, or {{offer}}.",
+  "craft": { "technique": "Answer first, reason second", "notes": "Give the short answer in the first words of the talking beat, then explain. Viewers who only wanted the answer still feel served; viewers who stay get the reasoning. Keep the comment card fictionalized or used with permission, and blur any handle." },
+  "do_not": [
+    "Show a real commenter's name or photo without their permission",
+    "Answer a question that depends on someone's specific facts as if one answer fits all",
+    "Use anyone's face or voice except the client's own presenter, with written consent"
+  ],
+  "compliance": [
+    "Law firm: label as attorney advertising where your state requires; add 'General information, not legal advice. No attorney-client relationship is formed'; never promise outcomes",
+    "Med spa: no guaranteed results; treatments by licensed providers; any before/after shown needs consent and an 'individual results vary' disclaimer",
+    "Financial advisor: general education, not individualized advice; no return promises; include firm disclosures",
+    "Real estate: follow fair housing rules and show brokerage name; no promises on price or timing"
+  ]
+}

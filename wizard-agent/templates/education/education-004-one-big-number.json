@@ -1,0 +1,48 @@
+{
+  "id": "education-004-one-big-number",
+  "version": 1,
+  "name": "One Big Number",
+  "category": "education",
+  "format": "reel",
+  "goal": "trust",
+  "duration_seconds": 18,
+  "aspect_ratio": "9:16",
+  "best_for": ["financial advisor", "insurance agent", "personal trainer", "podcast", "dental practice"],
+  "why_it_works": "A single surprising number on a blank screen is a puzzle the brain wants to solve: 'what is that the number of?' Withholding the meaning for one beat buys attention, and one memorable fact is far easier to repeat to a friend than a list of tips.",
+  "hook": {
+    "pattern": "Put one big number alone on screen with no context, then make the viewer wait one beat to learn what it measures.",
+    "examples": [
+      "{{big_number}}. Remember that number.",
+      "This number changes how you think about {{topic}}.",
+      "{{big_number}}. Most people guess way lower."
+    ]
+  },
+  "variables": [
+    { "name": "brand", "description": "Business or show name", "example": "Northline Wealth Partners" },
+    { "name": "topic", "description": "The subject area, a few words", "example": "saving for retirement" },
+    { "name": "big_number", "description": "The surprising, verifiable number", "example": "$0.79" },
+    { "name": "what_it_measures", "description": "What the number is, in one plain sentence", "example": "What $1 buys after 20 years of 3% inflation" },
+    { "name": "why_it_matters", "description": "Why the viewer should care, tied to their life", "example": "Cash sitting still quietly loses buying power every year" },
+    { "name": "action", "description": "One small thing the viewer can do today", "example": "Check how much of your savings is earning nothing" },
+    { "name": "source", "description": "Where the number comes from", "example": "calculated from a 3% annual inflation assumption" }
+  ],
+  "beats": [
+    { "seconds": 3, "purpose": "hook: the number alone", "on_screen_text": "{{big_number}}", "voiceover": "{{big_number}}. Remember that number.", "visual": { "tier": "text_only", "prompt": "" } },
+    { "seconds": 4, "purpose": "reveal what it measures", "on_screen_text": "{{what_it_measures}}", "voiceover": "That's {{what_it_measures}}.", "visual": { "tier": "still", "prompt": "Vertical 9:16 minimalist photo of an everyday object that represents '{{what_it_measures}}' on a plain surface, single soft side light, lots of negative space for text" } },
+    { "seconds": 5, "purpose": "why it matters to the viewer", "on_screen_text": "{{why_it_matters}}", "voiceover": "Why it matters: {{why_it_matters}}.", "visual": { "tier": "still", "prompt": "Vertical candid photo of a person at a kitchen table thinking about {{topic}}, laptop or paperwork, warm evening lamp light, mid shot" } },
+    { "seconds": 3, "purpose": "the one action", "on_screen_text": "Today: {{action}}", "voiceover": "One thing to do today: {{action}}.", "visual": { "tier": "text_only", "prompt": "" } },
+    { "seconds": 3, "purpose": "call to action with source", "on_screen_text": "Follow {{brand}} for more ({{source}})", "voiceover": "Follow {{brand}} for one number a week.", "visual": { "tier": "text_only", "prompt": "" } }
+  ],
+  "cta": "Follow {{brand}} for one number a week that changes how you see {{topic}}.",
+  "craft": { "technique": "Withheld context", "notes": "The number gets the whole screen and the whole first beat, with nothing else in frame. Choose a number that is surprising but checkable, and put the source on screen at the end so the surprise reads as fact, not clickbait." },
+  "do_not": [
+    "Use a number you cannot source or recalculate",
+    "Stack several numbers; one number per reel or it stops being memorable",
+    "Pick a scary number with no action attached; fear without a next step feels manipulative"
+  ],
+  "compliance": [
+    "Financial: no promises or projections of returns; figures are illustrative and must state the assumption; include required firm disclosures (e.g. 'Investment advisory services offered through...')",
+    "Insurance: no guaranteed premiums or coverage claims; say 'policies vary, terms apply' and show the agent license where required",
+    "Dental and health: cite the published source for any health statistic in the caption; general education, not medical advice"
+  ]
+}

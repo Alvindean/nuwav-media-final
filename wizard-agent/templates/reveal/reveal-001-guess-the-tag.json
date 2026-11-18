@@ -1,0 +1,159 @@
+{
+  "id": "reveal-001-guess-the-tag",
+  "version": 1,
+  "name": "Guess the Tag Before It Flips",
+  "category": "reveal",
+  "format": "both",
+  "goal": "sales",
+  "duration_seconds": 18,
+  "aspect_ratio": "9:16",
+  "best_for": [
+    "jewelry brand",
+    "luxury brand",
+    "real estate agent",
+    "custom auto shop",
+    "apparel brand"
+  ],
+  "why_it_works": "Asking someone to guess a number makes them commit to an answer in their head. Once they have a guess, they have to stay to find out if they were right, and the gap between their guess and the real {{price}} is what they remember.",
+  "hook": {
+    "pattern": "Show the item, hide the price, and dare the viewer to guess in the comments.",
+    "examples": [
+      "Guess what this {{item}} costs. Most people are way off.",
+      "Comment your guess before the tag flips.",
+      "Everyone guesses double. Let's see if you do."
+    ]
+  },
+  "variables": [
+    {
+      "name": "brand",
+      "description": "Business name",
+      "example": "Marlow & Finch"
+    },
+    {
+      "name": "item",
+      "description": "The thing whose price is hidden",
+      "example": "solid gold tennis bracelet"
+    },
+    {
+      "name": "price",
+      "description": "The real price, shown last",
+      "example": "$1,450"
+    },
+    {
+      "name": "clue_one",
+      "description": "First detail that hints at value",
+      "example": "hand-set by one jeweler, not a machine"
+    },
+    {
+      "name": "clue_two",
+      "description": "Second detail that hints at value",
+      "example": "lifetime free resizing and cleaning"
+    },
+    {
+      "name": "offer",
+      "description": "What the viewer gets for acting",
+      "example": "free engraving through Sunday"
+    }
+  ],
+  "beats": [
+    {
+      "seconds": 3,
+      "purpose": "hook: hidden price dare",
+      "on_screen_text": "Guess the price.",
+      "voiceover": "Guess what this {{item}} costs. Comment before the tag flips.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Vertical 9:16 product photo of the {{item}} on a dark velvet surface, single warm spotlight, a blank price tag face-down beside it, shallow depth of field"
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "clue one raises the stakes",
+      "on_screen_text": "Clue 1: {{clue_one}}",
+      "voiceover": "Clue one: {{clue_one}}.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Extreme close-up macro of the craft detail on the {{item}}, raking side light showing texture, dark background, vertical 9:16"
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "clue two lets them revise",
+      "on_screen_text": "Clue 2: {{clue_two}}",
+      "voiceover": "Clue two: {{clue_two}}. Want to change your guess?",
+      "visual": {
+        "tier": "still",
+        "prompt": "The {{item}} resting in an open {{brand}} box with care card visible, soft window light from the left, top-down vertical 9:16"
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "the flip: price revealed",
+      "on_screen_text": "{{price}}",
+      "voiceover": "It's {{price}}.",
+      "visual": {
+        "tier": "clip_draft",
+        "prompt": "Hand flips the face-down price tag next to the {{item}} to reveal the number, slow motion, warm spotlight, locked-off vertical 9:16 camera"
+      }
+    },
+    {
+      "seconds": 3,
+      "purpose": "call to action",
+      "on_screen_text": "{{offer}}",
+      "voiceover": "Closer than you thought? {{offer}} at {{brand}}.",
+      "visual": {
+        "tier": "text_only",
+        "prompt": ""
+      }
+    }
+  ],
+  "cta": "Drop your guess in the comments, then claim {{offer}} at {{brand}}.",
+  "carousel": {
+    "slides": [
+      {
+        "headline": "Guess the price",
+        "body": "Write your guess down before you swipe.",
+        "visual_prompt": "{{item}} on dark velvet, single warm spotlight, blank face-down price tag, 4:5"
+      },
+      {
+        "headline": "Clue one",
+        "body": "{{clue_one}}",
+        "visual_prompt": "Macro of the craft detail on the {{item}}, raking light, dark background"
+      },
+      {
+        "headline": "Clue two",
+        "body": "{{clue_two}}",
+        "visual_prompt": "{{item}} in an open {{brand}} box with care card, soft window light, top-down"
+      },
+      {
+        "headline": "Last chance to change your guess",
+        "body": "Most people guess about double.",
+        "visual_prompt": "The face-down tag in sharp focus, {{item}} blurred behind it"
+      },
+      {
+        "headline": "{{price}}",
+        "body": "That's the real number. No catch.",
+        "visual_prompt": "Price tag flipped face-up next to the {{item}}, bold number, warm light"
+      },
+      {
+        "headline": "Were you close?",
+        "body": "{{offer}}. Tell us your guess in the comments.",
+        "visual_prompt": "{{brand}} logo card on velvet with the offer in large clean type"
+      }
+    ]
+  },
+  "craft": {
+    "technique": "Commitment gap",
+    "notes": "Force a guess in the first line, then feed two value clues before the number so the guess drifts upward. The reveal lands best when the real price is lower than the clues made them expect."
+  },
+  "do_not": [
+    "Use this when the price is genuinely high and the clues cannot justify it; the reveal then reads as a rip-off",
+    "Hide fees, taxes or required add-ons behind the revealed number",
+    "Reveal the price in the caption or thumbnail and kill the tension"
+  ],
+  "compliance": [
+    "Real estate: the revealed price must be the current list price; include brokerage name and license number on screen per state rules",
+    "Real estate: follow Fair Housing rules; describe the property, never the kind of buyer it suits",
+    "Any niche: the price shown must be the real price a buyer pays, with required fees stated"
+  ]
+}

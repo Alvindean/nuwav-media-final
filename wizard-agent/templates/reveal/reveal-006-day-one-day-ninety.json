@@ -1,0 +1,175 @@
+{
+  "id": "reveal-006-day-one-day-ninety",
+  "version": 1,
+  "name": "Day One, Day Ninety",
+  "category": "reveal",
+  "format": "both",
+  "goal": "trust",
+  "duration_seconds": 20,
+  "aspect_ratio": "9:16",
+  "best_for": [
+    "fitness trainer",
+    "life coach",
+    "chiropractor",
+    "med spa",
+    "dental practice"
+  ],
+  "why_it_works": "People do not believe a promise, but they believe a timeline. Showing the plain starting point, the boring middle and then the result makes change feel reachable, and hiding day ninety until last keeps people watching to see if it worked.",
+  "hook": {
+    "pattern": "Show day one, cover day ninety with a blur or card, and promise the honest middle.",
+    "examples": [
+      "Day one vs day ninety. No filters, no tricks.",
+      "Here's day one. Day ninety is at the end.",
+      "Ninety days with {{brand}}. Here's what actually changed."
+    ]
+  },
+  "variables": [
+    {
+      "name": "brand",
+      "description": "Business or coach name",
+      "example": "Ironline Training"
+    },
+    {
+      "name": "client_label",
+      "description": "How the client is named on screen, with consent",
+      "example": "Marcus, 41, desk job"
+    },
+    {
+      "name": "goal_metric",
+      "description": "The one thing being tracked",
+      "example": "deadlift and daily back pain"
+    },
+    {
+      "name": "change_one",
+      "description": "First habit or treatment step",
+      "example": "three 40-minute sessions a week"
+    },
+    {
+      "name": "change_two",
+      "description": "Second habit or step",
+      "example": "a 10-minute mobility routine every morning"
+    },
+    {
+      "name": "change_three",
+      "description": "Third habit or step",
+      "example": "sleep before 11pm"
+    },
+    {
+      "name": "offer",
+      "description": "How to start",
+      "example": "free 20-minute assessment"
+    }
+  ],
+  "beats": [
+    {
+      "seconds": 3,
+      "purpose": "hook: split screen, right side hidden",
+      "on_screen_text": "Day 1 | Day 90 (end)",
+      "voiceover": "Day one. Day ninety is at the end.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Vertical 9:16 split screen: left side a plain photo of the client on day one in a {{brand}} studio, even light; right side the same frame blurred with a 'Day 90' card"
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "day one: the honest start",
+      "on_screen_text": "Day 1: {{client_label}}",
+      "voiceover": "This is {{client_label}} on day one. Goal: {{goal_metric}}.",
+      "visual": {
+        "tier": "still",
+        "prompt": "The client standing in a {{brand}} space, neutral expression, flat even front light, full body, same marked floor spot and camera height to be repeated later, vertical 9:16"
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "the boring middle: what changed",
+      "on_screen_text": "{{change_one}} / {{change_two}} / {{change_three}}",
+      "voiceover": "No magic. {{change_one}}, {{change_two}}, {{change_three}}.",
+      "visual": {
+        "tier": "text_only",
+        "prompt": ""
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "day forty-five check-in",
+      "on_screen_text": "Day 45",
+      "voiceover": "Day forty-five. Slower than they wanted.",
+      "visual": {
+        "tier": "still",
+        "prompt": "The client mid-session at {{brand}}, focused, natural light, candid medium shot, vertical 9:16"
+      }
+    },
+    {
+      "seconds": 3,
+      "purpose": "day ninety: the reveal",
+      "on_screen_text": "Day 90",
+      "voiceover": "Day ninety.",
+      "visual": {
+        "tier": "still",
+        "prompt": "The client on the same marked floor spot, same camera height and same flat light as the day-one photo, full body, vertical 9:16"
+      }
+    },
+    {
+      "seconds": 2,
+      "purpose": "call to action",
+      "on_screen_text": "{{offer}}",
+      "voiceover": "Start yours: {{offer}}.",
+      "visual": {
+        "tier": "text_only",
+        "prompt": ""
+      }
+    }
+  ],
+  "cta": "Book your {{offer}} with {{brand}}; results vary, and we'll tell you what's realistic for you.",
+  "carousel": {
+    "slides": [
+      {
+        "headline": "Day one vs day ninety",
+        "body": "Swipe for the honest middle. Day ninety is last.",
+        "visual_prompt": "Split frame: left the day-one photo, right a blurred panel labeled Day 90, {{brand}} colors"
+      },
+      {
+        "headline": "Day one",
+        "body": "{{client_label}}. Goal: {{goal_metric}}.",
+        "visual_prompt": "Day-one photo: same spot, flat even light, full body"
+      },
+      {
+        "headline": "What changed",
+        "body": "{{change_one}}. {{change_two}}. {{change_three}}.",
+        "visual_prompt": "Clean text slide with three simple icons, {{brand}} colors"
+      },
+      {
+        "headline": "Day forty-five",
+        "body": "Slower than expected. Kept going.",
+        "visual_prompt": "Candid mid-session photo at {{brand}}, natural light"
+      },
+      {
+        "headline": "Day ninety",
+        "body": "Same spot. Same light. No filters.",
+        "visual_prompt": "Day-ninety photo matching the day-one framing exactly"
+      },
+      {
+        "headline": "Your day one",
+        "body": "{{offer}}. Results vary from person to person.",
+        "visual_prompt": "{{brand}} logo card with the offer in large type"
+      }
+    ]
+  },
+  "craft": {
+    "technique": "Matched-frame timeline",
+    "notes": "Lock the day-one and day-ninety photos to the same spot, height, lens and light so the only variable is the person. Name the habits in plain words in the middle; the process is what makes the result believable."
+  },
+  "do_not": [
+    "Generate or AI-edit a client's before or after photo; use real, consented photos for those frames and only generate backgrounds or title cards",
+    "Change lighting, pose or clothing between before and after to exaggerate the result",
+    "Pick only your single best client and imply it is typical"
+  ],
+  "compliance": [
+    "Med spa and dental: written patient consent for every before/after image; add 'Results vary. Individual results not guaranteed.' on screen",
+    "Med spa and dental: name the actual treatment, number of sessions and provider type; no retouching of before/after photos",
+    "Chiropractor: no claims of curing conditions; describe what the patient reported, not a medical promise",
+    "Fitness and coaching: no guaranteed weight, income or timeline outcomes; state that results vary"
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "id": "education-001-myth-on-trial",
+  "version": 1,
+  "name": "Myth on Trial",
+  "category": "education",
+  "format": "reel",
+  "goal": "trust",
+  "duration_seconds": 20,
+  "aspect_ratio": "9:16",
+  "best_for": ["dentist", "chiropractor", "skincare brand", "fitness trainer", "auto shop"],
+  "why_it_works": "Everyone carries a few beliefs they never checked. Naming one out loud creates a small itch (am I wrong?), and watching it get tested on screen scratches it. The brand that corrects you gently becomes the brand you trust.",
+  "hook": {
+    "pattern": "State the myth as if it is true, stamp it ON TRIAL, and let the viewer wonder which side wins.",
+    "examples": [
+      "{{myth}}. Everyone says it. Let's test it.",
+      "You've heard {{myth}} your whole life. Is it true?",
+      "Myth on trial: {{myth}}."
+    ]
+  },
+  "variables": [
+    { "name": "brand", "description": "Business name", "example": "Bright Ridge Dental" },
+    { "name": "myth", "description": "The common belief, written the way customers say it", "example": "Brushing harder gets teeth cleaner" },
+    { "name": "why_people_believe", "description": "The honest reason the myth sounds right", "example": "Scrubbing works on pots, so it feels like it should work on teeth" },
+    { "name": "evidence", "description": "A simple, showable test or fact that settles it", "example": "Hard scrubbing wears gum lines back and leaves plaque in the grooves" },
+    { "name": "truth", "description": "The corrected rule in one short line", "example": "Soft bristles, small circles, two full minutes" },
+    { "name": "offer", "description": "What the viewer can do next", "example": "Book a free brushing check at your next cleaning" }
+  ],
+  "beats": [
+    { "seconds": 3, "purpose": "hook: state the myth and put it on trial", "on_screen_text": "MYTH ON TRIAL: {{myth}}", "voiceover": "{{myth}}. Let's put it on trial.", "visual": { "tier": "still", "prompt": "Vertical 9:16 photo of a wooden courtroom gavel resting beside an everyday object tied to the myth '{{myth}}', dramatic single overhead spotlight, dark background, room at top for bold text" } },
+    { "seconds": 4, "purpose": "the case for the myth, said fairly", "on_screen_text": "Why it sounds right", "voiceover": "It makes sense at first. {{why_people_believe}}.", "visual": { "tier": "still", "prompt": "Vertical candid photo of an ordinary person doing the habit behind '{{myth}}' at home, natural window light, mid shot, slightly worried expression" } },
+    { "seconds": 5, "purpose": "the evidence: show the test", "on_screen_text": "The evidence", "voiceover": "Here's what actually happens. {{evidence}}.", "visual": { "tier": "clip_draft", "prompt": "Vertical 9:16 macro close-up demonstrating '{{evidence}}', clean studio light, slow push-in, shallow depth of field, clinical but warm color" } },
+    { "seconds": 5, "purpose": "the verdict: the corrected rule", "on_screen_text": "VERDICT: {{truth}}", "voiceover": "Verdict: myth busted. {{truth}}.", "visual": { "tier": "still", "prompt": "Vertical photo of a {{brand}} professional demonstrating the right way, '{{truth}}', bright clean workspace, eye-level mid shot, confident relaxed posture" } },
+    { "seconds": 3, "purpose": "call to action", "on_screen_text": "{{offer}}", "voiceover": "Got another myth? Comment it. {{offer}}.", "visual": { "tier": "text_only", "prompt": "" } }
+  ],
+  "cta": "Comment the next myth you want tested, and {{offer}}.",
+  "craft": { "technique": "Steelman then verdict", "notes": "Argue the myth's side honestly for one beat before you knock it down. Viewers who believed it feel understood, not stupid, so they keep watching to the verdict instead of getting defensive and scrolling." },
+  "do_not": [
+    "Mock people who believed the myth; the viewer is one of them",
+    "Pick a myth so obscure nobody has heard it, or so obvious nobody believes it",
+    "Pile on three myths; one myth per reel, save the rest for a series"
+  ],
+  "compliance": [
+    "Dental and chiropractic: general education only, add 'Not medical advice, ask your provider' on screen; no diagnosis or cure claims",
+    "Any health claim in the evidence beat must be backed by a published source you can cite in the caption",
+    "Skincare: cosmetic claims only (look, feel); never say a product treats, heals or cures a condition"
+  ]
+}

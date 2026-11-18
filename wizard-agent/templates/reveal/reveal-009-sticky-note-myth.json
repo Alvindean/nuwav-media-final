@@ -1,0 +1,113 @@
+{
+  "id": "reveal-009-sticky-note-myth",
+  "version": 1,
+  "name": "The Sticky Note Myth",
+  "category": "reveal",
+  "format": "carousel",
+  "goal": "trust",
+  "aspect_ratio": "4:5",
+  "best_for": [
+    "law firm",
+    "financial advisor",
+    "insurance agent",
+    "mortgage broker",
+    "dental practice"
+  ],
+  "why_it_works": "Everyone carries a belief they have never checked. Showing that belief on a sticky note feels familiar, and holding the correction until the last slides makes the reader keep swiping to find out if they were wrong, which is the moment they start to trust the expert.",
+  "hook": {
+    "pattern": "A handwritten sticky note with a common belief, and the question 'True or false? Answer on the last slide.'",
+    "examples": [
+      "\"{{myth}}\" True or false? Answer on slide six.",
+      "We hear this every week. Most people believe it.",
+      "Before you decide anything, check this sticky note."
+    ]
+  },
+  "variables": [
+    {
+      "name": "firm_name",
+      "description": "Firm or practice name",
+      "example": "Alder & Pine Law"
+    },
+    {
+      "name": "myth",
+      "description": "The common belief, in the client's words",
+      "example": "If I'm hurt at work, I can't see my own doctor"
+    },
+    {
+      "name": "truth",
+      "description": "The accurate answer, stated carefully",
+      "example": "In many states you can choose your own doctor after the first visit; the rules depend on your state"
+    },
+    {
+      "name": "reason_one",
+      "description": "Why people believe the myth",
+      "example": "the first clinic you're sent to feels like your only option"
+    },
+    {
+      "name": "reason_two",
+      "description": "What it can cost to believe it",
+      "example": "people skip care or wait too long to ask"
+    },
+    {
+      "name": "next_step",
+      "description": "The free, low-pressure next step",
+      "example": "a free 15-minute call to check the rules where you live"
+    }
+  ],
+  "carousel": {
+    "slides": [
+      {
+        "headline": "True or false?",
+        "body": "\"{{myth}}\" The answer is on slide six.",
+        "visual_prompt": "Yellow handwritten sticky note reading the myth, stuck on a wooden desk next to a coffee mug, soft window light, 4:5"
+      },
+      {
+        "headline": "Most people say true",
+        "body": "We hear this from new clients every week.",
+        "visual_prompt": "Several sticky notes with the same myth on a corkboard, shallow depth of field"
+      },
+      {
+        "headline": "Why it sounds right",
+        "body": "Because {{reason_one}}.",
+        "visual_prompt": "Sticky note on a desk next to a stack of paperwork, warm desk lamp"
+      },
+      {
+        "headline": "What it can cost you",
+        "body": "{{reason_two}}.",
+        "visual_prompt": "Close-up of a calendar with days crossed off, cool light"
+      },
+      {
+        "headline": "Ready for the answer?",
+        "body": "Swipe once more.",
+        "visual_prompt": "Hand reaching to peel the sticky note off the desk, motion blur"
+      },
+      {
+        "headline": "The answer",
+        "body": "{{truth}}",
+        "visual_prompt": "Sticky note crumpled beside a clean notepad with the correct answer written neatly, bright daylight"
+      },
+      {
+        "headline": "Not sure about yours?",
+        "body": "{{next_step}} with {{firm_name}}.",
+        "visual_prompt": "{{firm_name}} logo card in calm brand colors with the next step in large type"
+      }
+    ]
+  },
+  "cta": "Book {{next_step}} with {{firm_name}}; this post is general information, not advice for your situation.",
+  "craft": {
+    "technique": "Delayed correction",
+    "notes": "State the myth in the client's own words, give it fair reasons, then correct it gently in one plain sentence. The tone is 'easy mistake', never 'you're dumb'; that respect is what earns the call."
+  },
+  "do_not": [
+    "Pick a myth whose real answer is 'it depends' without saying so",
+    "Shame the reader for believing it",
+    "Turn the answer into a promise of a result"
+  ],
+  "compliance": [
+    "Law firm: no guarantees or predictions of case outcomes; label as attorney advertising where your state bar requires; include 'This is general information, not legal advice'",
+    "Financial advisor: no promises of returns or income; include required firm disclosures and 'not individual investment advice'",
+    "Insurance: do not state coverage as universal; say policies and state rules vary; include license number",
+    "Mortgage: no rate or approval promises; include NMLS number and equal housing language",
+    "Dental: no claims of painless or guaranteed results; keep clinical statements accurate and general"
+  ]
+}

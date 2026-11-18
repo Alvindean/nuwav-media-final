@@ -1,0 +1,48 @@
+{
+  "id": "education-009-what-the-pro-sees",
+  "version": 1,
+  "name": "What the Pro Sees",
+  "category": "education",
+  "format": "reel",
+  "goal": "awareness",
+  "duration_seconds": 22,
+  "aspect_ratio": "9:16",
+  "best_for": ["sports team", "luxury watch brand", "lowrider car club", "real estate agent", "barber"],
+  "why_it_works": "Everyone loves borrowing an expert's eyes for a moment. Freezing one ordinary frame and pointing out what a trained eye catches makes the viewer feel smarter, and it shows mastery far better than claiming it. Next time they see that thing, they will remember who taught them to look.",
+  "hook": {
+    "pattern": "Freeze one ordinary image and contrast what the viewer sees with what the expert sees.",
+    "examples": [
+      "You see a {{subject}}. {{pro_role}} sees 3 things.",
+      "Look at this {{subject}} for 3 seconds. What did you miss?",
+      "This {{subject}} tells {{pro_role}} everything."
+    ]
+  },
+  "variables": [
+    { "name": "brand", "description": "Team, brand or business name", "example": "Riverside Royals" },
+    { "name": "subject", "description": "The ordinary thing in the frame", "example": "corner kick setup" },
+    { "name": "pro_role", "description": "Who is looking, by role, not a real named person", "example": "our head coach" },
+    { "name": "detail_1", "description": "First thing the pro notices", "example": "The keeper's weight is on his heels" },
+    { "name": "detail_2", "description": "Second thing the pro notices", "example": "Two defenders are marking the same runner" },
+    { "name": "detail_3", "description": "Third thing, the one that only makes sense in motion", "example": "The late run to the near post nobody tracks" },
+    { "name": "takeaway", "description": "The lesson in one line", "example": "Goals are decided before the ball is kicked" }
+  ],
+  "beats": [
+    { "seconds": 3, "purpose": "hook: the frozen frame", "on_screen_text": "You see a {{subject}}. We see 3 things.", "voiceover": "You see a {{subject}}. {{pro_role}} sees three things.", "visual": { "tier": "still", "prompt": "Vertical 9:16 wide photo of a {{subject}} in its real setting, frozen moment, natural light, slightly desaturated like a paused frame, no visible logos" } },
+    { "seconds": 4, "purpose": "detail 1 circled", "on_screen_text": "1. {{detail_1}}", "voiceover": "One: {{detail_1}}.", "visual": { "tier": "still", "prompt": "Vertical tight crop of the same {{subject}} scene focused on '{{detail_1}}', same light and color as the wide frame, room for a drawn circle overlay" } },
+    { "seconds": 4, "purpose": "detail 2 circled", "on_screen_text": "2. {{detail_2}}", "voiceover": "Two: {{detail_2}}.", "visual": { "tier": "still", "prompt": "Vertical tight crop of the same {{subject}} scene focused on '{{detail_2}}', same light and color, room for an arrow overlay" } },
+    { "seconds": 5, "purpose": "detail 3 unfreezes into motion: the payoff", "on_screen_text": "3. {{detail_3}}", "voiceover": "And three, the one everyone misses: {{detail_3}}.", "visual": { "tier": "clip_hero", "prompt": "Vertical 9:16 cinematic shot: the frozen {{subject}} scene comes to life, color returns, camera glides to reveal '{{detail_3}}' in motion, dynamic but smooth, golden natural light" } },
+    { "seconds": 3, "purpose": "the takeaway", "on_screen_text": "{{takeaway}}", "voiceover": "{{takeaway}}.", "visual": { "tier": "text_only", "prompt": "" } },
+    { "seconds": 3, "purpose": "call to action", "on_screen_text": "Follow {{brand}} to see what we see", "voiceover": "Follow {{brand}} and start seeing it too.", "visual": { "tier": "text_only", "prompt": "" } }
+  ],
+  "cta": "Follow {{brand}} for the next breakdown, and tell us what you spotted first.",
+  "craft": { "technique": "Freeze, annotate, unfreeze", "notes": "Keep the image frozen and desaturated for the first two details, drawing circles and arrows in the edit. The third detail is the only one that needs motion, so the frame unfreezing and the color returning is the reveal. That single moving shot earns the hero tier; everything else stays still." },
+  "do_not": [
+    "Use footage or likeness of real athletes, opponents or celebrities without rights and consent",
+    "Pick details only an expert could ever see; the viewer should be able to spot them once pointed out",
+    "Spend the hero clip if the client has not approved the extra credits; fall back to clip_standard"
+  ],
+  "compliance": [
+    "Real estate: describe the property, never the people or who a neighborhood is 'right for' (fair housing); show brokerage name; use only listing photos you have rights to",
+    "Real estate: no claims about future value or appreciation"
+  ]
+}

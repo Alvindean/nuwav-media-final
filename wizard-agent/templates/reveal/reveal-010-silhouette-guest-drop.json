@@ -92,8 +92,8 @@
       "on_screen_text": "{{guest_name}}",
       "voiceover": "It's {{guest_name}}, {{guest_role}}.",
       "visual": {
-        "tier": "clip_standard",
-        "prompt": "Studio front lights fade up on the guest seated at a mic, revealing their face, slow push-in, warm key light, vertical 9:16; use the guest's own approved photo as the start frame"
+        "tier": "real_photo",
+        "prompt": "The guest's own approved photo or footage seated at the mic, lights-up reveal made in the edit with a brightness ramp and slow push-in"
       }
     },
     {
@@ -116,5 +116,10 @@
     "Generate a face for a real guest; use their own approved photo or footage for the reveal frame",
     "Tease a guest who has not agreed to the announcement",
     "Make clues so obscure no one can guess; zero right answers kills the comments"
+  ],
+  "compliance": [
+    "Guests: written consent for their name, face and the announcement date before posting",
+    "Business coaches: no income, revenue or results promises in the clues or the guest intro; any result named is labelled not typical",
+    "Label the generated silhouette scenes as AI-generated where the platform requires it; never generate the guest's face"
   ]
 }

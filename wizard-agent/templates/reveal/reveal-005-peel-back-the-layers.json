@@ -45,7 +45,7 @@
     },
     {
       "name": "layer_three",
-      "description": "Third hint (the story or who made it)",
+      "description": "Third hint (the story or who made it), lowercase, reads after 'It's', 8 words or fewer",
       "example": "cut and sewn in our own studio"
     },
     {
@@ -73,7 +73,7 @@
       },
       {
         "headline": "Layer three",
-        "body": "{{layer_three}}",
+        "body": "It's {{layer_three}}.",
         "visual_prompt": "Paper mostly torn away, the {{product}} nearly visible, silhouette clear, same angle"
       },
       {
@@ -82,7 +82,7 @@
         "visual_prompt": "Single torn paper scrap in the center of a blank colored backdrop in {{brand}} colors"
       },
       {
-        "headline": "{{product}}",
+        "headline": "Meet the {{product}}",
         "body": "Every layer, together.",
         "visual_prompt": "The full {{product}} revealed, hero shot, clean backdrop, soft key light, 4:5"
       },
@@ -102,5 +102,10 @@
     "Reveal the full product before the last two slides",
     "Change the framing between slides; the reader loses the thread",
     "Use for a product that looks ordinary once revealed"
+  ],
+  "compliance": [
+    "Skincare: cosmetic claims only (looks, feels); no claims that it heals, treats or cures anything",
+    "Skincare: no before/after skin images unless they are real, consenting customers with a 'results vary' note",
+    "Label AI-generated product or texture images where the platform requires it; the final slide must show the real product"
   ]
 }

@@ -18,7 +18,7 @@
   "hook": {
     "pattern": "Open on the sealed package with a sensory sound and a promise about what is inside.",
     "examples": [
-      "The box is half the gift. Wait until you see inside.",
+      "The box is half the gift. Look inside.",
       "This is what {{brand}} sends when you order.",
       "Unboxing our {{product}} like it's your first time."
     ]
@@ -46,8 +46,8 @@
     },
     {
       "name": "offer",
-      "description": "First-order offer",
-      "example": "free gift wrap on first orders"
+      "description": "First-order offer, starts with a capital letter, 6 words or fewer",
+      "example": "Free gift wrap on first orders"
     }
   ],
   "beats": [
@@ -95,14 +95,14 @@
       "seconds": 3,
       "purpose": "call to action",
       "on_screen_text": "{{offer}}",
-      "voiceover": "Get yours with {{offer}}.",
+      "voiceover": "Get yours. {{offer}}.",
       "visual": {
         "tier": "text_only",
         "prompt": ""
       }
     }
   ],
-  "cta": "Order from {{brand}} today and get {{offer}}.",
+  "cta": "Order from {{brand}} today. {{offer}}.",
   "craft": {
     "technique": "Layered delay",
     "notes": "Each layer of packaging is a mini-reveal; give each its own beat and its own sound (crinkle, snap, slide). The product appears only in the final motion beat, in use, never sitting still on a white background."

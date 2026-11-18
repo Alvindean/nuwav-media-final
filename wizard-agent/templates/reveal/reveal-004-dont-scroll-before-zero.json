@@ -36,13 +36,13 @@
     },
     {
       "name": "final_detail",
-      "description": "The detail that appears at zero",
+      "description": "The detail that appears at zero, 6 words or fewer",
       "example": "a perfect rosetta in one pour"
     },
     {
       "name": "offer",
-      "description": "What the viewer can do next",
-      "example": "show this video for $1 off today"
+      "description": "What the viewer can do next, 6 words or fewer",
+      "example": "$1 off with this video today"
     }
   ],
   "beats": [
@@ -60,7 +60,7 @@
       "seconds": 4,
       "purpose": "the process, sped up",
       "on_screen_text": "7... 6... 5...",
-      "voiceover": "",
+      "voiceover": "Watch the hands.",
       "visual": {
         "tier": "clip_draft",
         "prompt": "Fast close-up of hands making the {{creation}}, steady overhead angle, warm practical light, vertical 9:16, motion slightly sped up"
@@ -79,7 +79,7 @@
     {
       "seconds": 3,
       "purpose": "zero: the reveal",
-      "on_screen_text": "0",
+      "on_screen_text": "Zero.",
       "voiceover": "",
       "visual": {
         "tier": "clip_standard",
@@ -90,7 +90,7 @@
       "seconds": 2,
       "purpose": "call to action",
       "on_screen_text": "{{offer}}",
-      "voiceover": "{{brand}}. {{offer}}.",
+      "voiceover": "{{offer}}.",
       "visual": {
         "tier": "text_only",
         "prompt": ""

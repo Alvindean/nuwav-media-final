@@ -37,7 +37,7 @@
       { "headline": "{{term_2}}", "body": "{{meaning_2}}", "visual_prompt": "4:5 dictionary-style card in {{brand}} colors with the word '{{term_2}}' large and a highlighted line on a blurred document behind" },
       { "headline": "{{term_3}}", "body": "{{meaning_3}}", "visual_prompt": "4:5 dictionary-style card in {{brand}} colors with the word '{{term_3}}' large and a highlighted line on a blurred document behind" },
       { "headline": "{{term_4}}: the one people miss", "body": "{{meaning_4}}", "visual_prompt": "4:5 dictionary-style card with the word '{{term_4}}' large and a red underline, a warning-yellow highlight on a blurred document behind" },
-      { "headline": "Still confused? That's normal.", "body": "These documents are written for lawyers and lenders, not you.", "visual_prompt": "4:5 candid photo of a person at a kitchen table reading a {{document_name}} with a relieved expression, warm lamp light" },
+      { "headline": "Still confused? That's normal.", "body": "Most fine print is written for whoever drafted it, not for you.", "visual_prompt": "4:5 candid photo of a person at a kitchen table reading a {{document_name}} with a relieved expression, warm lamp light" },
       { "headline": "Get a second set of eyes", "body": "{{offer}}", "visual_prompt": "4:5 clean {{brand}} logo card with the offer in large type and a save bookmark icon" }
     ]
   },

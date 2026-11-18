@@ -1,7 +1,7 @@
 {
   "id": "reveal-009-sticky-note-myth",
   "version": 1,
-  "name": "The Sticky Note Myth",
+  "name": "What's in the Envelope",
   "category": "reveal",
   "format": "carousel",
   "goal": "trust",
@@ -13,13 +13,13 @@
     "mortgage broker",
     "dental practice"
   ],
-  "why_it_works": "Everyone carries a belief they have never checked. Showing that belief on a sticky note feels familiar, and holding the correction until the last slides makes the reader keep swiping to find out if they were wrong, which is the moment they start to trust the expert.",
+  "why_it_works": "A sealed envelope is a small mystery people want solved. Two clues let the reader guess what is inside, opening it slide by slide keeps them swiping, and the item itself is useful enough to save, which makes the expert feel helpful before any call.",
   "hook": {
-    "pattern": "A handwritten sticky note with a common belief, and the question 'True or false? Answer on the last slide.'",
+    "pattern": "A sealed envelope labeled 'bring this to your appointment', two clues, and the item revealed only near the end.",
     "examples": [
-      "\"{{myth}}\" True or false? Answer on slide six.",
-      "We hear this every week. Most people believe it.",
-      "Before you decide anything, check this sticky note."
+      "What's in the envelope? Swipe to open it.",
+      "Bring this one thing to your {{appointment}}.",
+      "Two clues. One page. Guess what's inside."
     ]
   },
   "variables": [
@@ -29,79 +29,94 @@
       "example": "Alder & Pine Law"
     },
     {
-      "name": "myth",
-      "description": "The common belief, in the client's words",
-      "example": "If I'm hurt at work, I can't see my own doctor"
+      "name": "appointment",
+      "description": "The first meeting the reader is preparing for, lowercase, 4 words or fewer",
+      "example": "first injury consult"
     },
     {
-      "name": "truth",
-      "description": "The accurate answer, stated carefully",
-      "example": "In many states you can choose your own doctor after the first visit; the rules depend on your state"
+      "name": "clue_one",
+      "description": "First clue about the item, a full sentence starting with a capital letter, 8 words or fewer",
+      "example": "It fits on one sheet of paper"
     },
     {
-      "name": "reason_one",
-      "description": "Why people believe the myth",
-      "example": "the first clinic you're sent to feels like your only option"
+      "name": "clue_two",
+      "description": "Second clue, a full sentence starting with a capital letter, 8 words or fewer",
+      "example": "You can make it tonight at home"
     },
     {
-      "name": "reason_two",
-      "description": "What it can cost to believe it",
-      "example": "people skip care or wait too long to ask"
+      "name": "hidden_item",
+      "description": "The item inside the envelope, starts with a capital letter, 8 words or fewer",
+      "example": "A dated timeline of what happened"
+    },
+    {
+      "name": "why_it_matters",
+      "description": "Why the item helps, a full sentence starting with a capital letter, general and accurate, 14 words or fewer",
+      "example": "Details fade within weeks, and a dated record keeps your story clear"
+    },
+    {
+      "name": "also_bring",
+      "description": "Two or three other things to bring, starts with a capital letter",
+      "example": "Photos, receipts and every letter you've received"
     },
     {
       "name": "next_step",
-      "description": "The free, low-pressure next step",
-      "example": "a free 15-minute call to check the rules where you live"
+      "description": "The free, low-pressure next step, starts with a capital letter, 8 words or fewer",
+      "example": "Book a free 15-minute call"
     }
   ],
   "carousel": {
     "slides": [
       {
-        "headline": "True or false?",
-        "body": "\"{{myth}}\" The answer is on slide six.",
-        "visual_prompt": "Yellow handwritten sticky note reading the myth, stuck on a wooden desk next to a coffee mug, soft window light, 4:5"
+        "headline": "What's in the envelope?",
+        "body": "The one thing to bring to your {{appointment}}. Swipe to open it.",
+        "visual_prompt": "Sealed kraft envelope on a wooden desk labeled 'bring this', soft window light, coffee mug at the edge, 4:5"
       },
       {
-        "headline": "Most people say true",
-        "body": "We hear this from new clients every week.",
-        "visual_prompt": "Several sticky notes with the same myth on a corkboard, shallow depth of field"
+        "headline": "Clue one",
+        "body": "{{clue_one}}.",
+        "visual_prompt": "Same envelope, flap still sealed, a corner of one sheet of paper peeking out, same light and angle"
       },
       {
-        "headline": "Why it sounds right",
-        "body": "Because {{reason_one}}.",
-        "visual_prompt": "Sticky note on a desk next to a stack of paperwork, warm desk lamp"
+        "headline": "Clue two",
+        "body": "{{clue_two}}.",
+        "visual_prompt": "Same envelope beside a kitchen table pen and notepad, evening lamp light, same angle"
       },
       {
-        "headline": "What it can cost you",
-        "body": "{{reason_two}}.",
-        "visual_prompt": "Close-up of a calendar with days crossed off, cool light"
+        "headline": "Got a guess?",
+        "body": "Most people show up without it. Swipe once more.",
+        "visual_prompt": "Hand lifting the envelope flap halfway, paper inside still hidden, shallow depth of field"
       },
       {
-        "headline": "Ready for the answer?",
-        "body": "Swipe once more.",
-        "visual_prompt": "Hand reaching to peel the sticky note off the desk, motion blur"
+        "headline": "It's this",
+        "body": "{{hidden_item}}.",
+        "visual_prompt": "The single sheet pulled from the envelope, neat handwritten dated list, bright daylight, top-down"
       },
       {
-        "headline": "The answer",
-        "body": "{{truth}}",
-        "visual_prompt": "Sticky note crumpled beside a clean notepad with the correct answer written neatly, bright daylight"
+        "headline": "Why it matters",
+        "body": "{{why_it_matters}}.",
+        "visual_prompt": "Close-up of the dated list with a few dates circled, warm desk lamp"
       },
       {
-        "headline": "Not sure about yours?",
+        "headline": "Save this: bring these too",
+        "body": "{{also_bring}}. Put them in one envelope today.",
+        "visual_prompt": "Checklist card with three simple icons and tick boxes, calm brand colors, 4:5"
+      },
+      {
+        "headline": "Not sure what applies to you?",
         "body": "{{next_step}} with {{firm_name}}.",
         "visual_prompt": "{{firm_name}} logo card in calm brand colors with the next step in large type"
       }
     ]
   },
-  "cta": "Book {{next_step}} with {{firm_name}}; this post is general information, not advice for your situation.",
+  "cta": "{{next_step}} with {{firm_name}}. This post is general information, not advice for your situation.",
   "craft": {
-    "technique": "Delayed correction",
-    "notes": "State the myth in the client's own words, give it fair reasons, then correct it gently in one plain sentence. The tone is 'easy mistake', never 'you're dumb'; that respect is what earns the call."
+    "technique": "Sealed-object reveal",
+    "notes": "Keep the envelope, desk and angle identical on every slide so the only change is how far it opens. The clues should make the item guessable but not obvious, and the reveal must be something the reader can act on tonight."
   },
   "do_not": [
-    "Pick a myth whose real answer is 'it depends' without saying so",
-    "Shame the reader for believing it",
-    "Turn the answer into a promise of a result"
+    "Pick an item that only fits one rare situation",
+    "Turn the item or the reason into a promise of a result",
+    "Show a real client's documents or personal details on any slide"
   ],
   "compliance": [
     "Law firm: no guarantees or predictions of case outcomes; label as attorney advertising where your state bar requires; include 'This is general information, not legal advice'",

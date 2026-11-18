@@ -12,41 +12,45 @@
   "hook": {
     "pattern": "Promise three mistakes around a task the viewer is about to do, and tell them the last one costs the most.",
     "examples": [
-      "3 mistakes people make {{audience_task}}. Number 1 costs {{cost_of_mistake_1}}.",
-      "{{audience_task}} soon? Don't make mistake number 1.",
-      "Mistake 3 is annoying. Mistake 1 costs {{cost_of_mistake_1}}."
+      "3 mistakes people make {{audience_task}}.",
+      "Planning on {{audience_task}}? Skip mistake 1.",
+      "Mistake 1 can cost {{cost_of_mistake_1}}."
     ]
   },
   "variables": [
     { "name": "brand", "description": "Business name", "example": "Keystone Home Group" },
-    { "name": "audience_task", "description": "What the viewer is doing, as a short -ing phrase", "example": "selling your first home" },
-    { "name": "mistake_3", "description": "The mild, common mistake", "example": "Listing photos taken on a cloudy afternoon" },
-    { "name": "mistake_2", "description": "The middle mistake", "example": "Pricing to match the neighbor's asking price, not the sold price" },
-    { "name": "mistake_1", "description": "The costly mistake, the reason to watch", "example": "Skipping a pre-listing inspection" },
-    { "name": "cost_of_mistake_1", "description": "What mistake 1 typically costs, honest and specific", "example": "thousands in last-minute repair credits" },
-    { "name": "fix_1", "description": "The simple fix for mistake 1", "example": "Inspect before you list so repairs are on your schedule, not the buyer's" },
-    { "name": "offer", "description": "Lead magnet or next step", "example": "DM 'LIST' for our free pre-listing checklist" }
+    { "name": "audience_task", "description": "What the viewer is doing, as a short lowercase -ing phrase, 4 words or fewer", "example": "selling your first home" },
+    { "name": "mistake_3", "description": "The mild, common mistake, starting with a capital letter, 8 words or fewer", "example": "Listing photos taken on a cloudy afternoon" },
+    { "name": "mistake_2", "description": "The middle mistake, starting with a capital letter, 10 words or fewer", "example": "Pricing off the neighbor's asking price, not the sold price" },
+    { "name": "mistake_1", "description": "The costly mistake, the reason to watch, 5 words or fewer", "example": "Skipping a pre-listing inspection" },
+    { "name": "cost_of_mistake_1", "description": "What mistake 1 typically costs, honest and specific, lowercase, 5 words or fewer", "example": "thousands in repair credits" },
+    { "name": "cost_math", "description": "A worked number comparing the fix to the mistake, 12 words or fewer", "example": "A $400 inspection now vs. $6,000 in buyer repair credits later" },
+    { "name": "fix_1", "description": "The simple fix for mistake 1, starting with a verb, 10 words or fewer", "example": "Inspect before listing, so repairs happen on your schedule" },
+    { "name": "prevention_checklist", "description": "Three short checks the viewer can do before starting, comma separated, 15 words or fewer", "example": "Book the inspection, check recent sold prices, schedule photos on a sunny day" },
+    { "name": "offer", "description": "Lead magnet or next step, starting with a verb, 7 words or fewer", "example": "DM 'LIST' for our free pre-listing checklist" }
   ],
   "beats": [
-    { "seconds": 3, "purpose": "hook: promise the countdown and the price", "on_screen_text": "3 mistakes {{audience_task}}", "voiceover": "Three mistakes people make {{audience_task}}. Number one is the expensive one.", "visual": { "tier": "still", "prompt": "Vertical 9:16 photo of a large bold numeral 3 printed on a card held up in front of a scene tied to {{audience_task}}, soft daylight, shallow depth of field" } },
+    { "seconds": 3, "purpose": "hook: promise the countdown and the price", "on_screen_text": "3 mistakes {{audience_task}}", "voiceover": "Three mistakes people make {{audience_task}}. Number one stings.", "visual": { "tier": "still", "prompt": "Vertical 9:16 photo of a large bold numeral 3 printed on a card held up in front of a scene tied to {{audience_task}}, soft daylight, shallow depth of field" } },
     { "seconds": 4, "purpose": "mistake 3: quick and relatable", "on_screen_text": "3. {{mistake_3}}", "voiceover": "Three: {{mistake_3}}.", "visual": { "tier": "still", "prompt": "Vertical photo showing the mistake '{{mistake_3}}' in an everyday setting, slightly flat unflattering light, mid shot" } },
     { "seconds": 4, "purpose": "mistake 2: build stakes", "on_screen_text": "2. {{mistake_2}}", "voiceover": "Two: {{mistake_2}}.", "visual": { "tier": "still", "prompt": "Vertical photo illustrating '{{mistake_2}}', a person looking at paperwork or a screen with mild concern, desk lamp light, over-the-shoulder framing" } },
     { "seconds": 5, "purpose": "mistake 1: the costly one, with motion", "on_screen_text": "1. {{mistake_1}} = {{cost_of_mistake_1}}", "voiceover": "And number one: {{mistake_1}}. That can cost {{cost_of_mistake_1}}.", "visual": { "tier": "clip_draft", "prompt": "Vertical 9:16 slow push-in on a scene showing the consequence of '{{mistake_1}}', a frustrated person reading a bill or report, moody late-day light" } },
-    { "seconds": 5, "purpose": "the fix", "on_screen_text": "The fix: {{fix_1}}", "voiceover": "The fix is simple. {{fix_1}}.", "visual": { "tier": "still", "prompt": "Vertical photo of a {{brand}} professional calmly walking a client through the fix '{{fix_1}}', bright tidy office or on-site, warm light, eye-level two-shot" } },
-    { "seconds": 3, "purpose": "call to action", "on_screen_text": "{{offer}}", "voiceover": "Save this, and {{offer}}.", "visual": { "tier": "text_only", "prompt": "" } }
+    { "seconds": 5, "purpose": "the fix", "on_screen_text": "The fix: {{fix_1}}", "voiceover": "The fix: {{fix_1}}.", "visual": { "tier": "real_photo", "prompt": "Client-supplied photo of a real {{brand}} team member walking a client through the fix, bright tidy workspace, warm light, eye-level two-shot" } },
+    { "seconds": 3, "purpose": "call to action", "on_screen_text": "{{offer}}", "voiceover": "Save this. {{offer}}.", "visual": { "tier": "text_only", "prompt": "" } }
   ],
-  "cta": "Save this for later, and {{offer}}.",
+  "cta": "Save this for later. {{offer}}.",
   "carousel": {
     "slides": [
       { "headline": "3 mistakes {{audience_task}}", "body": "Number 1 costs the most. Swipe to the end.", "visual_prompt": "Bold title slide in {{brand}} colors with a large numeral 3 and a subtle background photo tied to {{audience_task}}" },
       { "headline": "Mistake 3", "body": "{{mistake_3}}", "visual_prompt": "Photo showing '{{mistake_3}}' in an everyday setting, flat light, large numeral 3 in the corner" },
       { "headline": "Mistake 2", "body": "{{mistake_2}}", "visual_prompt": "Photo of a person frowning at paperwork illustrating '{{mistake_2}}', large numeral 2 in the corner" },
       { "headline": "Mistake 1: the expensive one", "body": "{{mistake_1}}. It can cost {{cost_of_mistake_1}}.", "visual_prompt": "Moody photo showing the consequence of '{{mistake_1}}', large red numeral 1 in the corner" },
-      { "headline": "The fix", "body": "{{fix_1}}", "visual_prompt": "Bright photo of a {{brand}} professional helping a client, warm light, check mark graphic" },
+      { "headline": "Do the math", "body": "{{cost_math}}. Figures are typical, not guaranteed.", "visual_prompt": "Clean side-by-side number graphic in {{brand}} colors, small cost on the left, large cost on the right" },
+      { "headline": "The fix", "body": "{{fix_1}}", "visual_prompt": "Bright photo of a tidy workspace with a check mark graphic, warm light, calm mood" },
+      { "headline": "Your before-you-start checklist", "body": "{{prevention_checklist}}", "visual_prompt": "Clipboard-style checklist graphic in {{brand}} colors with three empty tick boxes and a save icon" },
       { "headline": "Want help with this?", "body": "{{offer}}", "visual_prompt": "Clean {{brand}} logo card with the offer in large type and a save icon" }
     ]
   },
-  "craft": { "technique": "Reverse countdown with a priced payoff", "notes": "Order the mistakes from cheapest to most expensive so tension rises, and put a concrete cost on number 1 only. One price is believable; three prices feel like a sales pitch. Keep mistakes 3 and 2 under four seconds each." },
+  "craft": { "technique": "Reverse countdown with a priced payoff", "notes": "Order the mistakes from cheapest to most expensive so tension rises, and put a concrete cost on number 1 only. One price is believable; three prices feel like a sales pitch. Keep mistakes 3 and 2 under four seconds each. The carousel adds the worked math and a checklist the reel has no room for." },
   "do_not": [
     "Inflate the cost of mistake 1; use a range you would defend to a client",
     "Make mistake 1 something only your paid service can fix; give a fix they could act on",

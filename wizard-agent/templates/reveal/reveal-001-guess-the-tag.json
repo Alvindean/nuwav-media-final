@@ -16,9 +16,9 @@
   ],
   "why_it_works": "Asking someone to guess a number makes them commit to an answer in their head. Once they have a guess, they have to stay to find out if they were right, and the gap between their guess and the real {{price}} is what they remember.",
   "hook": {
-    "pattern": "Show the item, hide the price, and dare the viewer to guess in the comments.",
+    "pattern": "Show the item, hide the price, and dare the viewer to guess before the tag flips.",
     "examples": [
-      "Guess what this {{item}} costs. Most people are way off.",
+      "Guess what this {{item}} costs.",
       "Comment your guess before the tag flips.",
       "Everyone guesses double. Let's see if you do."
     ]
@@ -31,28 +31,28 @@
     },
     {
       "name": "item",
-      "description": "The thing whose price is hidden",
+      "description": "The thing whose price is hidden, 5 words or fewer",
       "example": "solid gold tennis bracelet"
     },
     {
       "name": "price",
-      "description": "The real price, shown last",
+      "description": "The real price a buyer pays, shown last",
       "example": "$1,450"
     },
     {
       "name": "clue_one",
-      "description": "First detail that hints at value",
+      "description": "First detail that hints at value, lowercase, reads after 'It's', 8 words or fewer",
       "example": "hand-set by one jeweler, not a machine"
     },
     {
       "name": "clue_two",
-      "description": "Second detail that hints at value",
+      "description": "Second detail that hints at value, lowercase, reads after 'It comes with', 6 words or fewer",
       "example": "lifetime free resizing and cleaning"
     },
     {
       "name": "offer",
-      "description": "What the viewer gets for acting",
-      "example": "free engraving through Sunday"
+      "description": "What the viewer gets for acting, starts with a capital letter, 5 words or fewer",
+      "example": "Free engraving through Sunday"
     }
   ],
   "beats": [
@@ -60,7 +60,7 @@
       "seconds": 3,
       "purpose": "hook: hidden price dare",
       "on_screen_text": "Guess the price.",
-      "voiceover": "Guess what this {{item}} costs. Comment before the tag flips.",
+      "voiceover": "Guess what this {{item}} costs.",
       "visual": {
         "tier": "still",
         "prompt": "Vertical 9:16 product photo of the {{item}} on a dark velvet surface, single warm spotlight, a blank price tag face-down beside it, shallow depth of field"
@@ -70,7 +70,7 @@
       "seconds": 4,
       "purpose": "clue one raises the stakes",
       "on_screen_text": "Clue 1: {{clue_one}}",
-      "voiceover": "Clue one: {{clue_one}}.",
+      "voiceover": "Clue one: it's {{clue_one}}.",
       "visual": {
         "tier": "still",
         "prompt": "Extreme close-up macro of the craft detail on the {{item}}, raking side light showing texture, dark background, vertical 9:16"
@@ -80,7 +80,7 @@
       "seconds": 4,
       "purpose": "clue two lets them revise",
       "on_screen_text": "Clue 2: {{clue_two}}",
-      "voiceover": "Clue two: {{clue_two}}. Want to change your guess?",
+      "voiceover": "Clue two: {{clue_two}}. Changing your guess?",
       "visual": {
         "tier": "still",
         "prompt": "The {{item}} resting in an open {{brand}} box with care card visible, soft window light from the left, top-down vertical 9:16"
@@ -100,14 +100,14 @@
       "seconds": 3,
       "purpose": "call to action",
       "on_screen_text": "{{offer}}",
-      "voiceover": "Closer than you thought? {{offer}} at {{brand}}.",
+      "voiceover": "Close? {{offer}} at {{brand}}.",
       "visual": {
         "tier": "text_only",
         "prompt": ""
       }
     }
   ],
-  "cta": "Drop your guess in the comments, then claim {{offer}} at {{brand}}.",
+  "cta": "Comment your guess. {{offer}} at {{brand}}.",
   "carousel": {
     "slides": [
       {
@@ -117,12 +117,12 @@
       },
       {
         "headline": "Clue one",
-        "body": "{{clue_one}}",
+        "body": "It's {{clue_one}}.",
         "visual_prompt": "Macro of the craft detail on the {{item}}, raking light, dark background"
       },
       {
         "headline": "Clue two",
-        "body": "{{clue_two}}",
+        "body": "It comes with {{clue_two}}.",
         "visual_prompt": "{{item}} in an open {{brand}} box with care card, soft window light, top-down"
       },
       {
@@ -134,6 +134,16 @@
         "headline": "{{price}}",
         "body": "That's the real number. No catch.",
         "visual_prompt": "Price tag flipped face-up next to the {{item}}, bold number, warm light"
+      },
+      {
+        "headline": "What {{price}} actually covers",
+        "body": "The {{item}}, {{clue_two}}, and no fees added at checkout.",
+        "visual_prompt": "Clean itemized receipt-style card listing what the price includes, {{brand}} colors"
+      },
+      {
+        "headline": "Save this: how to judge any price",
+        "body": "Ask three things. What is it made of? Who made it? What do you get after you buy?",
+        "visual_prompt": "Simple three-item checklist card with small icons, warm neutral background, 4:5"
       },
       {
         "headline": "Were you close?",

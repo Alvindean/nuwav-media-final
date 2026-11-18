@@ -19,8 +19,8 @@
     "pattern": "Show day one, cover day ninety with a blur or card, and promise the honest middle.",
     "examples": [
       "Day one vs day ninety. No filters, no tricks.",
-      "Here's day one. Day ninety is at the end.",
-      "Ninety days with {{brand}}. Here's what actually changed."
+      "Day one is real. Day ninety is last.",
+      "Ninety days with {{brand}}. This is what changed."
     ]
   },
   "variables": [
@@ -31,32 +31,32 @@
     },
     {
       "name": "client_label",
-      "description": "How the client is named on screen, with consent",
+      "description": "How the client is named on screen, with written consent, 5 words or fewer",
       "example": "Marcus, 41, desk job"
     },
     {
       "name": "goal_metric",
-      "description": "The one thing being tracked",
-      "example": "deadlift and daily back pain"
+      "description": "The one thing being tracked, 4 words or fewer",
+      "example": "deadlift strength"
     },
     {
       "name": "change_one",
-      "description": "First habit or treatment step",
-      "example": "three 40-minute sessions a week"
+      "description": "First habit or treatment step, starts with a capital letter, 5 words or fewer",
+      "example": "Three workouts a week"
     },
     {
       "name": "change_two",
-      "description": "Second habit or step",
-      "example": "a 10-minute mobility routine every morning"
+      "description": "Second habit or step, starts with a capital letter, 5 words or fewer",
+      "example": "10 minutes of mobility daily"
     },
     {
       "name": "change_three",
-      "description": "Third habit or step",
-      "example": "sleep before 11pm"
+      "description": "Third habit or step, starts with a capital letter, 4 words or fewer",
+      "example": "Sleep by 11pm"
     },
     {
       "name": "offer",
-      "description": "How to start",
+      "description": "How to start, lowercase, reads after 'Start with a', 4 words or fewer",
       "example": "free 20-minute assessment"
     }
   ],
@@ -67,25 +67,25 @@
       "on_screen_text": "Day 1 | Day 90 (end)",
       "voiceover": "Day one. Day ninety is at the end.",
       "visual": {
-        "tier": "still",
-        "prompt": "Vertical 9:16 split screen: left side a plain photo of the client on day one in a {{brand}} studio, even light; right side the same frame blurred with a 'Day 90' card"
+        "tier": "real_photo",
+        "prompt": "Client-supplied, consented day-one photo on the left half; the right half is the same frame blurred with a Day 90 card added in the edit"
       }
     },
     {
       "seconds": 4,
       "purpose": "day one: the honest start",
-      "on_screen_text": "Day 1: {{client_label}}",
-      "voiceover": "This is {{client_label}} on day one. Goal: {{goal_metric}}.",
+      "on_screen_text": "Day 1. Goal: {{goal_metric}}",
+      "voiceover": "{{client_label}}. Day one.",
       "visual": {
-        "tier": "still",
-        "prompt": "The client standing in a {{brand}} space, neutral expression, flat even front light, full body, same marked floor spot and camera height to be repeated later, vertical 9:16"
+        "tier": "real_photo",
+        "prompt": "Client-supplied, consented day-one photo in the {{brand}} space, flat even front light, full body, marked floor spot and camera height noted for day ninety"
       }
     },
     {
       "seconds": 4,
       "purpose": "the boring middle: what changed",
       "on_screen_text": "{{change_one}} / {{change_two}} / {{change_three}}",
-      "voiceover": "No magic. {{change_one}}, {{change_two}}, {{change_three}}.",
+      "voiceover": "No magic. Just three habits.",
       "visual": {
         "tier": "text_only",
         "prompt": ""
@@ -97,8 +97,8 @@
       "on_screen_text": "Day 45",
       "voiceover": "Day forty-five. Slower than they wanted.",
       "visual": {
-        "tier": "still",
-        "prompt": "The client mid-session at {{brand}}, focused, natural light, candid medium shot, vertical 9:16"
+        "tier": "real_photo",
+        "prompt": "Client-supplied, consented candid photo or footage of the client mid-session at {{brand}}, natural light, medium shot"
       }
     },
     {
@@ -107,14 +107,14 @@
       "on_screen_text": "Day 90",
       "voiceover": "Day ninety.",
       "visual": {
-        "tier": "still",
-        "prompt": "The client on the same marked floor spot, same camera height and same flat light as the day-one photo, full body, vertical 9:16"
+        "tier": "real_photo",
+        "prompt": "Client-supplied, consented day-ninety photo on the same marked floor spot, same camera height and same flat light as day one, unretouched"
       }
     },
     {
       "seconds": 2,
       "purpose": "call to action",
-      "on_screen_text": "{{offer}}",
+      "on_screen_text": "Start with a {{offer}}",
       "voiceover": "Start yours: {{offer}}.",
       "visual": {
         "tier": "text_only",
@@ -122,18 +122,18 @@
       }
     }
   ],
-  "cta": "Book your {{offer}} with {{brand}}; results vary, and we'll tell you what's realistic for you.",
+  "cta": "Book a {{offer}} with {{brand}}. Results vary, and we'll tell you what's realistic for you.",
   "carousel": {
     "slides": [
       {
         "headline": "Day one vs day ninety",
         "body": "Swipe for the honest middle. Day ninety is last.",
-        "visual_prompt": "Split frame: left the day-one photo, right a blurred panel labeled Day 90, {{brand}} colors"
+        "visual_prompt": "Split frame: left the client's real day-one photo, right a blurred panel labeled Day 90, {{brand}} colors"
       },
       {
         "headline": "Day one",
         "body": "{{client_label}}. Goal: {{goal_metric}}.",
-        "visual_prompt": "Day-one photo: same spot, flat even light, full body"
+        "visual_prompt": "The client's real, consented day-one photo: same spot, flat even light, full body"
       },
       {
         "headline": "What changed",
@@ -143,16 +143,26 @@
       {
         "headline": "Day forty-five",
         "body": "Slower than expected. Kept going.",
-        "visual_prompt": "Candid mid-session photo at {{brand}}, natural light"
+        "visual_prompt": "The client's real candid mid-session photo at {{brand}}, natural light"
       },
       {
         "headline": "Day ninety",
         "body": "Same spot. Same light. No filters.",
-        "visual_prompt": "Day-ninety photo matching the day-one framing exactly"
+        "visual_prompt": "The client's real day-ninety photo matching the day-one framing exactly, unretouched"
+      },
+      {
+        "headline": "Save this: take your own day one",
+        "body": "Same spot, same light, same time of day. One photo every two weeks, no filters.",
+        "visual_prompt": "Simple checklist card with a phone, a tape mark on the floor and a calendar icon, {{brand}} colors"
+      },
+      {
+        "headline": "Your first week, step by step",
+        "body": "Book the assessment. Pick one habit, not three. Take your day-one photo.",
+        "visual_prompt": "Three numbered steps on a clean card, small icons, {{brand}} colors, 4:5"
       },
       {
         "headline": "Your day one",
-        "body": "{{offer}}. Results vary from person to person.",
+        "body": "Start with a {{offer}}. Results vary from person to person.",
         "visual_prompt": "{{brand}} logo card with the offer in large type"
       }
     ]
@@ -170,6 +180,7 @@
     "Med spa and dental: written patient consent for every before/after image; add 'Results vary. Individual results not guaranteed.' on screen",
     "Med spa and dental: name the actual treatment, number of sessions and provider type; no retouching of before/after photos",
     "Chiropractor: no claims of curing conditions; describe what the patient reported, not a medical promise",
-    "Fitness and coaching: no guaranteed weight, income or timeline outcomes; state that results vary"
+    "Fitness and coaching: no guaranteed weight, income or timeline outcomes; state that results vary",
+    "Before/after frames use real, consented client photos only (real_photo); never generate or AI-edit the client"
   ]
 }

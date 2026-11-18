@@ -11,9 +11,9 @@
     "independent musician",
     "record label",
     "podcast",
-    "sports team"
+    "club DJ"
   ],
-  "why_it_works": "Taking away the picture makes people listen harder, and the imagination fills the gap with its own image. When the cover art finally sharpens, it either matches what they pictured or surprises them, and both feel like a payoff.",
+  "why_it_works": "Taking away the picture makes people listen harder to the client's real track, and the imagination fills the gap with its own image. When the cover art finally sharpens, it either matches what they pictured or surprises them, and both feel like a payoff.",
   "hook": {
     "pattern": "Black screen, sound first, and a line telling the viewer to turn the sound on before the art appears.",
     "examples": [
@@ -30,7 +30,7 @@
     },
     {
       "name": "release_title",
-      "description": "Name of the single, episode or launch",
+      "description": "Name of the single, mix or episode, 4 words or fewer",
       "example": "Low Tide"
     },
     {
@@ -40,20 +40,25 @@
     },
     {
       "name": "sound_words",
-      "description": "Three words that describe the sound",
-      "example": "warm, slow, late-night"
+      "description": "Three words that describe the sound, starts with a capital letter",
+      "example": "Warm, slow, late-night"
     },
     {
       "name": "platform",
       "description": "Where to listen or watch",
       "example": "all streaming platforms"
+    },
+    {
+      "name": "audio_clip",
+      "description": "The client's own released audio (owned or licensed), the 15-20 seconds with the clearest drop or change",
+      "example": "the second chorus of Low Tide, 0:58 to 1:16"
     }
   ],
   "beats": [
     {
       "seconds": 3,
-      "purpose": "hook: sound before picture",
-      "on_screen_text": "Sound on.",
+      "purpose": "hook: sound before picture; {{audio_clip}} starts here and runs under the whole reel",
+      "on_screen_text": "Sound on. Real track.",
       "voiceover": "",
       "visual": {
         "tier": "still",
@@ -92,7 +97,7 @@
     },
     {
       "seconds": 3,
-      "purpose": "the reveal: art in focus",
+      "purpose": "the reveal: art in focus, timed to the drop in the real track",
       "on_screen_text": "{{release_title}} · {{release_date}}",
       "voiceover": "",
       "visual": {
@@ -103,7 +108,7 @@
     {
       "seconds": 2,
       "purpose": "call to action",
-      "on_screen_text": "{{platform}} · {{release_date}}",
+      "on_screen_text": "Out {{release_date}} on {{platform}}",
       "voiceover": "",
       "visual": {
         "tier": "text_only",
@@ -114,12 +119,17 @@
   "cta": "Pre-save {{release_title}} by {{artist_name}}; out {{release_date}} on {{platform}}.",
   "craft": {
     "technique": "Sensory withholding",
-    "notes": "Run the strongest 15 seconds of the original track under the whole reel and keep the screen nearly dark for the first half. Rack the art from blur to focus in steps, timed to the beat drops, so the eyes catch up to the ears."
+    "notes": "Use the client's own track, not generated music: lay {{audio_clip}} under the whole reel and keep the screen nearly dark for the first half. Rack the art from blur to focus in steps, timed to the drop, so the eyes catch up to the ears."
   },
   "do_not": [
-    "Use any audio the artist does not own or license; original music only",
+    "Use any audio the client does not own or license, or swap in generated music; the real track is the point",
     "Imitate a named artist's sound, voice or cover style",
     "Put lyrics on screen that are not the artist's own",
     "Choose a part of the track without a clear drop or change for the reveal to land on"
+  ],
+  "compliance": [
+    "Audio: the client must own or license the track, episode clip or mix used; keep the license or release record on file",
+    "No real artist's likeness, lyrics, melody or sound-alike other than the client's own work",
+    "Label the generated abstract visuals as AI-generated where the platform requires it"
   ]
 }

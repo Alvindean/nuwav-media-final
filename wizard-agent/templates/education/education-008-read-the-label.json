@@ -13,7 +13,7 @@
     "examples": [
       "Before you buy {{product_type}}, check these 3 spots.",
       "The front of the {{product_type}} is marketing. Flip it.",
-      "3 spots on a {{product_type}} label that tell the truth."
+      "3 spots on any {{product_type}} that don't lie."
     ]
   },
   "variables": [
@@ -36,7 +36,7 @@
       { "headline": "Spot 2: {{label_zone_2}}", "body": "{{zone_2_tip}}", "visual_prompt": "4:5 macro photo of {{label_zone_2}} on a {{product_type}} label, crisp focus, soft studio light, a single underline highlight" },
       { "headline": "Spot 3: {{label_zone_3}}", "body": "{{zone_3_tip}}", "visual_prompt": "4:5 macro photo of {{label_zone_3}} on a {{product_type}}, crisp focus, soft studio light, a single arrow highlight" },
       { "headline": "Red flag: walk away", "body": "{{red_flag}}", "visual_prompt": "4:5 photo of an unbranded generic {{product_type}} tag with the vague wording circled in red, cool flat light" },
-      { "headline": "Here's ours. Check it.", "body": "Every spot, answered right on the {{brand}} label.", "visual_prompt": "4:5 hero photo of the {{brand}} {{product_type}} with its label facing camera, all three spots circled in green, warm premium light" },
+      { "headline": "Now check ours", "body": "Every spot, answered right on the {{brand}} label.", "visual_prompt": "4:5 hero photo of the {{brand}} {{product_type}} with its label facing camera, all three spots circled in green, warm premium light" },
       { "headline": "Shop with your eyes open", "body": "{{offer}}", "visual_prompt": "4:5 clean {{brand}} logo card with the offer in large type and a save bookmark icon" }
     ]
   },

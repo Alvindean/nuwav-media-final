@@ -11,16 +11,15 @@
     "real estate agent",
     "home stager",
     "interior designer",
-    "mortgage broker",
     "short-term rental host"
   ],
-  "why_it_works": "An empty room is hard to love because buyers cannot picture living in it. Showing the bare space first, then the finished room, lets the viewer feel the jump from 'just walls' to 'my life here', and that feeling is what makes them book a showing.",
+  "why_it_works": "An empty room is hard to love because people cannot picture living in it. Showing the bare space first, then the finished room, lets the viewer feel the jump from 'just walls' to 'my life here', and that feeling is what makes them book a visit.",
   "hook": {
     "pattern": "Open on the barest, least flattering room and ask whether the viewer would walk past it.",
     "examples": [
       "Would you have walked past this room?",
       "Same {{property_type}}. Same square feet. Watch it change.",
-      "Empty rooms don't sell. Here's what we do instead."
+      "Empty rooms make people guess. Watch this one."
     ]
   },
   "variables": [
@@ -41,13 +40,13 @@
     },
     {
       "name": "standout_feature",
-      "description": "One real feature of the home",
+      "description": "One real, permanent feature of the home, lowercase, 5 words or fewer",
       "example": "floor-to-ceiling west windows"
     },
     {
-      "name": "showing_date",
-      "description": "Open house or showing date",
-      "example": "Saturday 1-4pm"
+      "name": "next_step",
+      "description": "The next step with a date, starts with a capital letter, 5 words or fewer",
+      "example": "Open house Saturday 1-4pm"
     }
   ],
   "beats": [
@@ -65,7 +64,7 @@
       "seconds": 4,
       "purpose": "second empty room",
       "on_screen_text": "Empty. Echoing.",
-      "voiceover": "Empty rooms make buyers guess.",
+      "voiceover": "Empty rooms make people guess.",
       "visual": {
         "tier": "still",
         "prompt": "Empty bedroom in the same {{property_type}}, bare window, cool flat light, wide vertical 9:16"
@@ -74,7 +73,7 @@
     {
       "seconds": 5,
       "purpose": "the reveal walk-through",
-      "on_screen_text": "Same room.",
+      "on_screen_text": "Same room. Staged.",
       "voiceover": "So we stopped making them guess.",
       "visual": {
         "tier": "clip_standard",
@@ -84,7 +83,7 @@
     {
       "seconds": 4,
       "purpose": "the detail that sells",
-      "on_screen_text": "{{standout_feature}}",
+      "on_screen_text": "The {{standout_feature}}",
       "voiceover": "And the {{standout_feature}} finally gets the spotlight.",
       "visual": {
         "tier": "still",
@@ -104,15 +103,15 @@
     {
       "seconds": 3,
       "purpose": "call to action",
-      "on_screen_text": "Open house: {{showing_date}}",
-      "voiceover": "See it in person {{showing_date}}. {{agent_name}}.",
+      "on_screen_text": "{{next_step}}",
+      "voiceover": "{{next_step}}. {{agent_name}}.",
       "visual": {
         "tier": "text_only",
         "prompt": ""
       }
     }
   ],
-  "cta": "Come see it in person {{showing_date}}; message {{agent_name}} to book a time.",
+  "cta": "{{next_step}}: message {{agent_name}} to book a time.",
   "carousel": {
     "slides": [
       {
@@ -121,34 +120,34 @@
         "visual_prompt": "Empty {{property_type}} living room, bare walls, flat overcast light"
       },
       {
-        "headline": "Empty rooms make buyers guess",
-        "body": "Most people can't picture their life in blank walls.",
-        "visual_prompt": "Empty bedroom in the same home, cool flat light"
+        "headline": "Same room, staged",
+        "body": "Same corner, same height. Labeled as staged.",
+        "visual_prompt": "Same living room, same angle, furnished and warmly lit, small 'Staged' label in the corner"
       },
       {
-        "headline": "Same room",
-        "body": "Labeled: virtually staged / professionally staged.",
-        "visual_prompt": "Same living room, same angle, furnished and warmly lit"
-      },
-      {
-        "headline": "{{standout_feature}}",
-        "body": "The feature that sold us on this home.",
+        "headline": "The {{standout_feature}}",
+        "body": "The detail the empty room was hiding.",
         "visual_prompt": "Close detail of {{standout_feature}}, golden-hour light"
       },
       {
+        "headline": "Save this: stage these three first",
+        "body": "Living room, main bedroom, entry. That's where people decide.",
+        "visual_prompt": "Three-item checklist card with simple room icons, brand colors, 4:5"
+      },
+      {
+        "headline": "Five things to fix before photos",
+        "body": "Bulbs to one color. Blinds open. Counters clear. Beds made tight. One plant per room.",
+        "visual_prompt": "Clean numbered checklist card, warm neutral background, brand colors"
+      },
+      {
         "headline": "{{neighborhood}}",
-        "body": "Walkable, quiet, and yours to tour.",
+        "body": "Come see the street in person.",
         "visual_prompt": "Exterior at twilight with warm windows"
       },
       {
-        "headline": "Open house {{showing_date}}",
+        "headline": "{{next_step}}",
         "body": "Message {{agent_name}} to book a time.",
         "visual_prompt": "Clean branded card with agent name and date in large type"
-      },
-      {
-        "headline": "Selling an empty home?",
-        "body": "Ask how we stage before we list.",
-        "visual_prompt": "Side-by-side thumbnail of empty and staged room, brand colors"
       }
     ]
   },
@@ -164,7 +163,6 @@
   "compliance": [
     "Real estate: label every virtually staged image 'Virtually staged'; never change walls, flooring, views or defects",
     "Real estate: include brokerage name and agent license number per state advertising rules; follow Fair Housing Act wording",
-    "Mortgage: do not show rates or payments without APR and required disclosures; include NMLS number",
     "Short-term rental: photos must match what guests will actually get"
   ]
 }

@@ -62,14 +62,19 @@
       "name": "offer",
       "description": "What the viewer gets for buying now",
       "example": "free lifetime polish with every pair"
+    },
+    {
+      "name": "disclosure",
+      "description": "Required fine-print line for the client's regulated niche, shown small on screen",
+      "example": "Results vary. These statements have not been evaluated by the FDA."
     }
   ],
   "carousel": {
     "slides": [
       {
         "headline": "The cheap one costs more",
-        "body": "A {{cheap_price}} {{product}} vs ours at {{our_price}}. Swipe for the math.",
-        "visual_prompt": "Two {{product}} side by side on cream linen, the left with a small bright price tag reading {{cheap_price}}, the right tagged {{our_price}}, soft daylight, 4:5 product flat lay"
+        "body": "Cheap {{product}}: {{cheap_price}}. Ours: {{our_price}}. Swipe for the math.",
+        "visual_prompt": "Two {{product}} side by side on cream linen, each with a small blank price tag, soft daylight, 4:5 product flat lay, prices added as text overlay in the edit"
       },
       {
         "headline": "Cheap: {{cheap_price}}",
@@ -84,12 +89,12 @@
       {
         "headline": "Now divide",
         "body": "Price divided by real uses.",
-        "visual_prompt": "Clean graphic slide with a big division sign between the two prices, {{brand}} colors, plenty of white space"
+        "visual_prompt": "Clean graphic slide with a big division sign between two blank number panels, {{brand}} colors, plenty of white space, numbers set as text overlay"
       },
       {
         "headline": "The real numbers",
         "body": "{{per_use_math}}",
-        "visual_prompt": "Two large numbers stacked in bold type, the {{brand}} one highlighted, minimal infographic style, 4:5"
+        "visual_prompt": "Two large empty number panels stacked, the {{brand}} one highlighted, minimal infographic style, 4:5, per-use figures set as text overlay"
       },
       {
         "headline": "Plus the hidden cost",
@@ -98,7 +103,7 @@
       },
       {
         "headline": "Buy once",
-        "body": "Order now and get {{offer}}.",
+        "body": "Order now and get {{offer}}. {{disclosure}}",
         "visual_prompt": "{{brand}} packaging open with the {{product}} inside, gift-style styling, warm light, logo visible, 4:5"
       }
     ]

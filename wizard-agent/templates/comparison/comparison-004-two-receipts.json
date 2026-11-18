@@ -11,8 +11,8 @@
     "auto shop",
     "dental office",
     "chiropractor",
-    "insurance agency",
-    "roofing contractor"
+    "roofing contractor",
+    "hvac company"
   ],
   "why_it_works": "The cheap fix wins on day one and loses over a year, but people judge on day one. Stacking a year of small repeat charges into one long receipt makes the slow cost feel sudden and physical, which is the only way most people notice it.",
   "hook": {
@@ -63,6 +63,11 @@
       "name": "offer",
       "description": "Low-friction next step",
       "example": "Free inspection and a written quote"
+    },
+    {
+      "name": "disclosure",
+      "description": "Required fine-print line for the client's regulated niche, shown small on screen",
+      "example": "Results vary. Consult a licensed provider."
     }
   ],
   "beats": [
@@ -83,7 +88,7 @@
       "voiceover": "Quick fix: {{cheap_path}}.",
       "visual": {
         "tier": "clip_draft",
-        "prompt": "Vertical top-down shot of a thermal receipt slowly printing and unrolling longer and longer across a counter, line items appearing, cool fluorescent light"
+        "prompt": "Vertical top-down shot of a thermal receipt slowly printing and unrolling longer and longer across a counter, cool fluorescent light, totals added as text overlay in the edit"
       }
     },
     {
@@ -93,7 +98,7 @@
       "voiceover": "Or fix it once: {{our_fix}}.",
       "visual": {
         "tier": "still",
-        "prompt": "Vertical photo of a {{brand}} professional explaining the fix to a customer, pointing at the part or chart, warm clean workspace light, both people relaxed"
+        "prompt": "Vertical photo of a professional from {{brand}} explaining the fix to a customer, pointing at the part or chart, warm clean workspace light, both people relaxed"
       }
     },
     {
@@ -119,7 +124,7 @@
     {
       "seconds": 3,
       "purpose": "call to action",
-      "on_screen_text": "{{offer}}",
+      "on_screen_text": "{{offer}} {{disclosure}}",
       "voiceover": "Get one receipt. {{offer}}.",
       "visual": {
         "tier": "text_only",
@@ -156,9 +161,9 @@
         "visual_prompt": "Simple worksheet graphic with three blank lines and a multiplication sign, pencil beside it, {{brand}} colors"
       },
       {
-        "headline": "Ask these before any quick fix",
-        "body": "Does it fix the cause or just the symptom? How often will I pay for it again? What does a day without it cost me?",
-        "visual_prompt": "Clean checklist graphic with three question boxes, hand-drawn tick marks, warm paper texture background"
+        "headline": "Same line, printed again",
+        "body": "Look down the long receipt: {{cheap_path}}, then the same line again. The repeat is the real price.",
+        "visual_prompt": "Close-up of a long thermal receipt with one identical line item circled several times in red marker, cool light, shallow focus"
       },
       {
         "headline": "What no receipt shows",
@@ -167,7 +172,7 @@
       },
       {
         "headline": "Get the short receipt",
-        "body": "{{offer}}",
+        "body": "{{offer}}. {{disclosure}}",
         "visual_prompt": "{{brand}} storefront or front desk, inviting warm light, logo visible"
       }
     ]
@@ -183,7 +188,7 @@
   ],
   "compliance": [
     "Label all totals as illustrative examples, not quotes or guaranteed savings",
-    "Dental and chiropractic: no promises of outcomes or that one visit fixes a condition for good; treatment needs vary by patient and must follow state board advertising rules",
-    "Insurance: no savings claims without a documented basis; name the licensed agency and state license number where required, and say coverage varies by policy"
+    "Dental and chiropractic: no promises of outcomes or that one visit fixes a condition for good; results vary by patient and ads must follow state board advertising rules",
+    "Never show a real patient's or customer's receipt, chart or account details without written consent"
   ]
 }

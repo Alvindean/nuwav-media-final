@@ -43,6 +43,11 @@
       "name": "reward",
       "description": "What people who get it right receive, 5 words or fewer",
       "example": "$5 off your next cut"
+    },
+    {
+      "name": "disclosure",
+      "description": "Required fine print for the client's niche, from compliance/packs.json; leave it short for unregulated niches",
+      "example": "Equal Housing Opportunity. Brokerage and license # shown."
     }
   ],
   "beats": [
@@ -89,7 +94,7 @@
     {
       "seconds": 3,
       "purpose": "reward and call to action",
-      "on_screen_text": "Got it right? {{reward}}.",
+      "on_screen_text": "Got it right? {{reward}}. {{disclosure}}",
       "voiceover": "Show your comment for {{reward}}.",
       "visual": {
         "tier": "text_only",
@@ -97,7 +102,7 @@
       }
     }
   ],
-  "cta": "Comment the change before the reveal, then show your comment at {{brand}} for {{reward}}.",
+  "cta": "Comment the change before the reveal. Show that comment in the shop for {{reward}}.",
   "craft": {
     "technique": "Controlled single variable",
     "notes": "Generate image B by editing image A, not by prompting a new image, or a dozen things will drift and the game breaks. The change should be findable in about four seconds: obvious once seen, invisible at first glance."
@@ -109,7 +114,7 @@
   ],
   "compliance": [
     "Real estate: only alter removable staging props, never walls, fixtures, views or anything that changes how the property is represented",
-    "Real estate: show the brokerage name and follow your state's advertising rules on every listing post",
+    "Real estate: follow fair housing rules, show the brokerage name and license number, and label edited room images as virtually staged",
     "Rewards: state any limits (one per person, end date) and that no purchase is needed to play"
   ]
 }

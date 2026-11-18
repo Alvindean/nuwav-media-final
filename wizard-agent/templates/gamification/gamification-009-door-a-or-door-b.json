@@ -18,7 +18,7 @@
   "hook": {
     "pattern": "Drop the viewer into a common money or life decision and ask what they'd do.",
     "examples": [
-      "{{scenario}}. A or B?",
+      "{{scenario}}. Door A or B?",
       "Two choices. Both sound smart. One ages better.",
       "Your move. Comment A or B before the answer."
     ]
@@ -65,21 +65,26 @@
       "example": "$10k at 6% is about $600 a year in interest. A $1,000 surprise on a 24% card is about $240 a year."
     },
     {
-      "name": "gut_check",
-      "description": "Three short questions a viewer asks themselves before choosing",
-      "example": "Could I cover a $1,000 surprise today? Is my income steady? What does waiting cost me?"
-    },
-    {
       "name": "offer",
       "description": "Low-pressure next step, starting with a capital, 5 words or fewer",
       "example": "Book a free 20-minute review"
+    },
+    {
+      "name": "flip_fact",
+      "description": "The one fact that flips the answer to the other door, a short sentence starting with a capital, 9 words or fewer",
+      "example": "If your job feels shaky, door B ages better."
+    },
+    {
+      "name": "disclosure",
+      "description": "Required fine print for the client's niche, from compliance/packs.json",
+      "example": "Not financial advice. Terms apply."
     }
   ],
   "beats": [
     {
       "seconds": 3,
       "purpose": "hook: the dilemma",
-      "on_screen_text": "{{scenario}}. A or B?",
+      "on_screen_text": "{{scenario}}. Door A or B?",
       "voiceover": "{{scenario}}. Your move?",
       "visual": {
         "tier": "still",
@@ -149,7 +154,7 @@
     {
       "seconds": 3,
       "purpose": "low-pressure next step",
-      "on_screen_text": "{{offer}}.",
+      "on_screen_text": "{{offer}}. {{disclosure}}",
       "voiceover": "Find your door. {{offer}}.",
       "visual": {
         "tier": "text_only",
@@ -196,13 +201,13 @@
         "visual_prompt": "Clean worked-math card in {{brand}} colors with two short calculations side by side"
       },
       {
-        "headline": "Ask yourself first",
-        "body": "{{gut_check}}",
-        "visual_prompt": "Save-worthy checklist card with three questions and tick boxes, {{brand}} colors"
+        "headline": "What flips the answer",
+        "body": "{{flip_fact}} Same bonus, different door.",
+        "visual_prompt": "The two-door hallway with a small toggle switch icon between doors A and B, {{brand}} colors"
       },
       {
         "headline": "The honest answer",
-        "body": "It depends on {{deciding_factor}}. Next step: {{offer}} with {{brand}}.",
+        "body": "It depends on {{deciding_factor}}. Next step: {{offer}} with {{brand}}. {{disclosure}}",
         "visual_prompt": "Both doors open side by side with a balance scale icon and the {{brand}} logo small"
       }
     ]

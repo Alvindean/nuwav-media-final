@@ -1,5 +1,5 @@
 {
-  "id": "lists-004-things-i-quit-as-a-pro",
+  "id": "lists-004-diy-wait-or-call-a-pro",
   "version": 1,
   "name": "DIY, Wait or Call a Pro",
   "category": "lists",
@@ -19,7 +19,7 @@
     "pattern": "Promise to sort common problems into three buckets: fix it yourself, let it wait, or call a pro now.",
     "examples": [
       "DIY, wait, or call a pro? Three {{profession}} problems.",
-      "Fix it, ignore it, or call? A {{profession}} sorts it.",
+      "Fix it, ignore it, or call? The {{profession}} sorts it.",
       "Three problems, three buckets. Only one needs me."
     ]
   },
@@ -63,6 +63,11 @@
       "name": "offer",
       "description": "Low-risk next step; 6 words or fewer",
       "example": "a free brake check this week"
+    },
+    {
+      "name": "disclosure",
+      "description": "Required fine print for the client's niche, from compliance/packs.json",
+      "example": "Results vary. Consult a licensed provider."
     }
   ],
   "beats": [
@@ -73,7 +78,7 @@
       "voiceover": "Three {{profession}} problems: DIY, wait, or call?",
       "visual": {
         "tier": "still",
-        "prompt": "Three labeled bins on a {{brand}} workbench reading DIY, WAIT and CALL, bright even light, centered framing, vertical 9:16"
+        "prompt": "Three labeled bins on the {{brand}} workbench reading DIY, WAIT and CALL, bright even light, centered framing, vertical 9:16"
       }
     },
     {
@@ -103,7 +108,7 @@
       "voiceover": "Call a pro today: {{call_item}}, because {{call_reason}}.",
       "visual": {
         "tier": "clip_draft",
-        "prompt": "Slow push-in on the source of {{call_item}} in a {{brand}} work bay, red CALL tag sliding into frame, tense practical light, vertical 9:16"
+        "prompt": "Slow push-in on the source of {{call_item}} in the {{brand}} work bay, red CALL tag sliding into frame, tense practical light, vertical 9:16"
       }
     },
     {
@@ -113,13 +118,13 @@
       "voiceover": "Not sure which bucket? Ask {{brand}} first.",
       "visual": {
         "tier": "still",
-        "prompt": "A {{profession}} at the {{brand}} counter listening to a customer, relaxed, warm window light, vertical 9:16"
+        "prompt": "The {{profession}} at the {{brand}} counter listening to a customer, relaxed, warm window light, vertical 9:16"
       }
     },
     {
       "seconds": 3,
       "purpose": "call to action",
-      "on_screen_text": "{{offer}}",
+      "on_screen_text": "{{offer}} {{disclosure}}",
       "voiceover": "Start here: {{offer}}.",
       "visual": {
         "tier": "text_only",
@@ -139,6 +144,7 @@
   ],
   "compliance": [
     "Dental: no diagnosis in the ad; the call-a-pro item invites a consultation, and DIY items stay within everyday home care",
-    "Healthcare providers: no claims of cures or guaranteed results, and no patient images without written consent"
+    "Healthcare providers: no claims of cures or guaranteed results, and no patient images without written consent",
+    "Dental and other health niches: results vary; show the required disclosure line on the final beat"
   ]
 }

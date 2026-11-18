@@ -11,7 +11,7 @@
     "auto shop",
     "podcast studio",
     "law firm",
-    "personal trainer"
+    "plumber"
   ],
   "why_it_works": "People choose DIY because it feels free, but they never price their own hours. A running clock makes the hidden cost visible: viewers watch time leak away on one side and finish fast on the other, and they do the math themselves without being lectured.",
   "hook": {
@@ -47,6 +47,11 @@
       "name": "offer",
       "description": "Low-friction next step",
       "example": "Free brake check, book online"
+    },
+    {
+      "name": "disclosure",
+      "description": "Required fine-print line for the client's regulated niche, shown small on screen",
+      "example": "Attorney advertising. Past results do not guarantee a similar outcome."
     }
   ],
   "beats": [
@@ -57,7 +62,7 @@
       "voiceover": "Same {{task}}. Two clocks. Go.",
       "visual": {
         "tier": "still",
-        "prompt": "Vertical 9:16 split screen, top half a cluttered home garage or desk at night, bottom half a clean professional {{brand}} workspace, a large digital stopwatch overlay at 00:00 on each half, high contrast"
+        "prompt": "Vertical 9:16 split screen, top half a cluttered home garage or desk at night, bottom half a clean professional {{brand}} workspace, a large blank stopwatch shape on each half with the running times added as overlay in the edit, high contrast"
       }
     },
     {
@@ -67,7 +72,7 @@
       "voiceover": "The DIY way: tutorials, guesswork, starting over.",
       "visual": {
         "tier": "clip_draft",
-        "prompt": "Vertical handheld shot of frustrated hands doing a {{task}} at home, phone propped up playing a tutorial, scattered tools, dim overhead bulb, small realistic struggle, no faces"
+        "prompt": "Vertical handheld shot of frustrated hands doing the {{task}} at home, phone propped up playing a tutorial, scattered tools, dim overhead bulb, small realistic struggle, no faces"
       }
     },
     {
@@ -77,7 +82,7 @@
       "voiceover": "The {{brand}} way: done in {{pro_time}}.",
       "visual": {
         "tier": "still",
-        "prompt": "Vertical photo of a {{brand}} professional finishing a {{task}} with the right tools, bright even shop light, calm focused posture, clean organized background"
+        "prompt": "Vertical photo of a professional from {{brand}} finishing the {{task}} with the right tools, bright even shop light, calm focused posture, clean organized background"
       }
     },
     {
@@ -93,7 +98,7 @@
     {
       "seconds": 5,
       "purpose": "call to action",
-      "on_screen_text": "{{offer}}",
+      "on_screen_text": "{{offer}} {{disclosure}}",
       "voiceover": "Keep your weekend. {{offer}}.",
       "visual": {
         "tier": "still",
@@ -104,7 +109,7 @@
   "cta": "Keep your weekend: {{offer}}.",
   "craft": {
     "technique": "Race clock",
-    "notes": "Keep both timers visible in every beat so the viewer always knows the score. Let the DIY side be relatable, not stupid: the viewer should see themselves in it and laugh, not feel mocked."
+    "notes": "Keep both timers visible in every beat as on-screen overlays so the viewer always knows the score. Let the DIY side be relatable, not stupid: the viewer should see themselves in it and laugh, not feel mocked."
   },
   "do_not": [
     "Exaggerate the DIY time; use what a real first-timer would honestly spend",
@@ -114,6 +119,6 @@
   "compliance": [
     "Law firms: do not imply DIY legal work always fails or that hiring the firm guarantees an outcome; include the attorney advertising label your state bar requires",
     "Law firms: no client results or time claims unless they are typical and documented",
-    "Personal trainers: no promised body-change timelines"
+    "Every time shown must be an honest, typical figure the business can back up"
   ]
 }

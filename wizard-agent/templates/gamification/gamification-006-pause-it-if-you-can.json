@@ -48,6 +48,11 @@
       "name": "reward",
       "description": "What the first correct commenters get, 4 words or fewer",
       "example": "a free sticker pack"
+    },
+    {
+      "name": "disclosure",
+      "description": "Required fine print: the giveaway line from compliance/packs.json, plus the client's niche line (fitness: results vary)",
+      "example": "No purchase necessary. Official rules at link. Results vary."
     }
   ],
   "beats": [
@@ -73,12 +78,12 @@
     },
     {
       "seconds": 1,
-      "purpose": "the flash frame",
+      "purpose": "the flash frame, number as an overlay",
       "on_screen_text": "{{hidden_number}}",
       "voiceover": "",
       "visual": {
         "tier": "still",
-        "prompt": "Single vertical 9:16 frame of {{location}} with the number {{hidden_number}} painted huge in white on the ground or a wall, motion blur at the edges"
+        "prompt": "Single vertical 9:16 frame of {{location}} with a clean blank wall or stretch of ground in the center where the number overlay lands, motion blur at the edges, no readable text"
       }
     },
     {
@@ -94,7 +99,7 @@
     {
       "seconds": 3,
       "purpose": "rules and reward",
-      "on_screen_text": "First 10 right get {{reward}}.",
+      "on_screen_text": "First 10 right get {{reward}}. {{disclosure}}",
       "voiceover": "First ten right get {{reward}}.",
       "visual": {
         "tier": "text_only",
@@ -105,7 +110,7 @@
   "cta": "Comment the number you caught. First ten right get {{reward}} from {{brand}}.",
   "craft": {
     "technique": "Single-frame flash",
-    "notes": "Place the flash right after the most exciting motion, when the eye is still tracking the action, so most people miss it on the first watch. Keep it a short number in huge type so a paused frame reads instantly on a phone."
+    "notes": "Place the flash right after the most exciting motion, when the eye is still tracking the action, so most people miss it on the first watch. Add the number in the edit as a huge overlay so a paused frame reads instantly on a phone; never let the video model draw it."
   },
   "do_not": [
     "Flash the number for under a second in the final edit; one full second is the floor or nobody can pause on it",
@@ -115,7 +120,7 @@
   "compliance": [
     "Official rules linked: eligibility, start and end dates, how winners are picked (first ten correct comments by timestamp) and prize value",
     "No purchase necessary; void where prohibited; say it is not sponsored or run by the platform",
-    "Fitness: no body or performance results promised; show safe form and a closed course for any stunt",
+    "Fitness: results vary; no guarantee of body or performance results; show safe form and a closed course for any stunt",
     "Avoid rapid strobing in the flash frame for photosensitive viewers"
   ]
 }

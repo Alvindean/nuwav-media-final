@@ -64,6 +64,11 @@
       "name": "offer",
       "description": "Low-friction way to start; 6 words or fewer",
       "example": "a free 15-minute studio tour"
+    },
+    {
+      "name": "disclosure",
+      "description": "Required fine print for the client's niche, from compliance/packs.json",
+      "example": "Equal Housing Opportunity. Brokerage and license # shown."
     }
   ],
   "beats": [
@@ -84,7 +89,7 @@
       "voiceover": "One: {{sign_1}}.",
       "visual": {
         "tier": "still",
-        "prompt": "A cramped home version of a {{current_setup}}, cluttered corner, single desk lamp, slightly frustrating mood, vertical 9:16"
+        "prompt": "A cramped home version of the {{current_setup}}, cluttered corner, single desk lamp, slightly frustrating mood, vertical 9:16"
       }
     },
     {
@@ -130,7 +135,7 @@
     {
       "seconds": 3,
       "purpose": "call to action",
-      "on_screen_text": "{{offer}}",
+      "on_screen_text": "{{offer}} {{disclosure}}",
       "voiceover": "Start small: {{offer}}.",
       "visual": {
         "tier": "text_only",
@@ -150,6 +155,7 @@
   ],
   "compliance": [
     "Real estate: no promises about home values, sale prices or timelines; include brokerage name and license info per state rules",
-    "Insurance: no guarantees of coverage or savings; signs describe situations, not policy advice; include license info where required"
+    "Insurance: no guarantees of coverage or savings; signs describe situations, not policy advice; include license info where required",
+    "Real estate: follow fair housing rules and show the brokerage and license line on the final beat"
   ]
 }

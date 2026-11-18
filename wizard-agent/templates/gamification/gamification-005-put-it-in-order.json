@@ -1,5 +1,5 @@
 {
-  "id": "gamification-005-two-truths-and-a-myth",
+  "id": "gamification-005-put-it-in-order",
   "version": 1,
   "name": "Put It in Order",
   "category": "gamification",
@@ -68,6 +68,11 @@
       "name": "consult_offer",
       "description": "Low-pressure next step, starting with a capital, 5 words or fewer",
       "example": "Book a same-week visit"
+    },
+    {
+      "name": "disclosure",
+      "description": "Required fine print for the client's niche, from compliance/packs.json",
+      "example": "Results vary. Consult a licensed provider."
     }
   ],
   "beats": [
@@ -134,7 +139,7 @@
     {
       "seconds": 3,
       "purpose": "low-pressure next step",
-      "on_screen_text": "{{consult_offer}}.",
+      "on_screen_text": "{{consult_offer}}. {{disclosure}}",
       "voiceover": "Stuck on step one? {{consult_offer}}.",
       "visual": {
         "tier": "text_only",
@@ -177,7 +182,7 @@
       },
       {
         "headline": "Your situation is different",
-        "body": "General info only. {{consult_offer}} with {{brand}}.",
+        "body": "General info only. {{consult_offer}} with {{brand}}. {{disclosure}}",
         "visual_prompt": "{{brand}} logo card with the offer in large type over a calm office photo"
       }
     ]

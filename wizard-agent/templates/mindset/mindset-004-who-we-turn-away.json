@@ -57,6 +57,11 @@
       "name": "next_step",
       "description": "How a good fit gets in touch, starting with a capital-letter verb, 5 words or fewer",
       "example": "Request a private consultation"
+    },
+    {
+      "name": "disclosure",
+      "description": "Fine-print disclosure line for the client's regulated niche (use the matching compliance pack's disclosure line)",
+      "example": "Results vary. Consult a licensed provider."
     }
   ],
   "cta": "Sound like you? {{next_step}} with {{brand}}.",
@@ -94,7 +99,7 @@
       },
       {
         "headline": "Sound like you?",
-        "body": "{{next_step}} with {{brand}}.",
+        "body": "{{next_step}} with {{brand}}. {{disclosure}}",
         "visual_prompt": "Clean card in {{brand}} colors with the next step in refined serif type"
       }
     ]
@@ -110,7 +115,7 @@
   ],
   "compliance": [
     "Med spa: only say you turn away unsuitable candidates if a licensed provider makes that call; no before/after or result claims without a clear 'individual results vary' disclaimer",
-    "Law firms: declining a case is fine, but don't imply a case has no merit; follow your state bar's advertising rules",
+    "Law firms: declining a case is fine, but don't imply a case has no merit or guarantee any outcome; follow your state bar's attorney advertising rules",
     "Coaches: no income or results promises; any result shown is labelled not typical"
   ]
 }

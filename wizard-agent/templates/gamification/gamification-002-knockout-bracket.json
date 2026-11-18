@@ -62,6 +62,11 @@
       "name": "final_day",
       "description": "When the final round posts",
       "example": "Thursday"
+    },
+    {
+      "name": "disclosure",
+      "description": "Required fine print: the giveaway line from compliance/packs.json, plus the client's niche line if regulated",
+      "example": "No purchase necessary. Official rules at link."
     }
   ],
   "carousel": {
@@ -83,7 +88,7 @@
       },
       {
         "headline": "How to vote",
-        "body": "One comment, two picks. Example: '1 and 4'. Most comments wins each round.",
+        "body": "One comment, two picks. Example: '1 and 4'. Most comments wins each round. {{disclosure}}",
         "visual_prompt": "Clean instruction card in {{brand}} colors with a sample comment bubble reading two numbers"
       },
       {

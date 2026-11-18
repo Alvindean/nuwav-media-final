@@ -57,6 +57,11 @@
       "name": "first_step",
       "description": "How the brand helps start, lowercase verb phrase, 7 words or fewer",
       "example": "grab our free 4-week starter plan"
+    },
+    {
+      "name": "disclosure",
+      "description": "Fine-print disclosure line for the client's regulated niche (use the matching compliance pack's disclosure line)",
+      "example": "Not financial advice. Terms apply."
     }
   ],
   "cta": "Start with one day: {{first_step}} from {{brand}}.",
@@ -89,7 +94,7 @@
       },
       {
         "headline": "Start with one day",
-        "body": "Start here: {{first_step}} from {{brand}}.",
+        "body": "Start here: {{first_step}} from {{brand}}. {{disclosure}}",
         "visual_prompt": "Clean lifestyle photo of {{habit}}, early evening light, vertical 4:5, {{brand}} logo small in corner"
       }
     ]

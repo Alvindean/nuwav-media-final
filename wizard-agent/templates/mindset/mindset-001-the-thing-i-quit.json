@@ -20,7 +20,7 @@
     "examples": [
       "I stopped {{old_habit}}. It cost me.",
       "We quit {{old_habit}}. Watch what happened.",
-      "Every {{trade}} does {{old_habit}}. We stopped."
+      "Most shops never stop {{old_habit}}. We did."
     ]
   },
   "variables": [
@@ -36,8 +36,8 @@
     },
     {
       "name": "old_habit",
-      "description": "The common industry habit the owner quit, lowercase, 5 words or fewer",
-      "example": "double-booking chairs for walk-ins"
+      "description": "The common industry habit the owner quit, lowercase, 3 words or fewer",
+      "example": "overbooking chairs"
     },
     {
       "name": "cost_of_quitting",
@@ -53,6 +53,11 @@
       "name": "offer",
       "description": "What the viewer can do now, starting with a capital-letter verb, 7 words or fewer",
       "example": "Book a slot that starts on time"
+    },
+    {
+      "name": "disclosure",
+      "description": "Fine-print disclosure line for the client's regulated niche (use the matching compliance pack's disclosure line)",
+      "example": "Results vary. These statements have not been evaluated by the FDA."
     }
   ],
   "beats": [
@@ -109,7 +114,7 @@
     {
       "seconds": 3,
       "purpose": "call to action",
-      "on_screen_text": "{{offer}}",
+      "on_screen_text": "{{offer}}. {{disclosure}}",
       "voiceover": "{{offer}} at {{brand}}.",
       "visual": {
         "tier": "text_only",

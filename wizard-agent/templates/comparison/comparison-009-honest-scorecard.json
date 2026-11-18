@@ -9,7 +9,7 @@
   "best_for": [
     "insurance agency",
     "financial advisor",
-    "personal trainer",
+    "driving school",
     "podcast production studio",
     "wedding photographer"
   ],
@@ -62,6 +62,11 @@
       "name": "offer",
       "description": "Next step",
       "example": "Get a free policy review"
+    },
+    {
+      "name": "disclosure",
+      "description": "Required fine-print line for the client's regulated niche, shown small on screen",
+      "example": "Not financial advice. Terms apply."
     }
   ],
   "carousel": {
@@ -87,14 +92,14 @@
         "visual_prompt": "Scorecard row with a check mark in the {{brand}} column, simple flat icon illustrating the third criterion, 4:5"
       },
       {
-        "headline": "Row 4: they win this one",
+        "headline": "Row 4: this one goes to them",
         "body": "{{losing_row}}. If that matters most, go that way.",
         "visual_prompt": "Scorecard row with the check mark in the generic column instead, highlighted with a small honest-badge sticker, flat design, 4:5"
       },
       {
         "headline": "Why we showed you that",
         "body": "A chart where one side wins everything is an ad, not a comparison.",
-        "visual_prompt": "Warm photo of a {{brand}} team member at a desk, open friendly posture, natural light, 4:5"
+        "visual_prompt": "Warm photo of a team member from {{brand}} at a desk, open friendly posture, natural light, 4:5"
       },
       {
         "headline": "The final score",
@@ -103,7 +108,7 @@
       },
       {
         "headline": "Score us yourself",
-        "body": "{{offer}}",
+        "body": "{{offer}}. {{disclosure}}",
         "visual_prompt": "{{brand}} logo card with the offer in large type, brand colors, plenty of white space, 4:5"
       }
     ]
@@ -121,6 +126,6 @@
   "compliance": [
     "Insurance: include the licensed agency name and state license number; say coverage and pricing vary by policy and carrier; no 'best rates' claims without proof",
     "Financial advisors: no performance, return or income promises; include required firm and registration disclosures; comparisons must be fair and balanced per your regulator's advertising rules",
-    "Personal trainers: no guaranteed body or health results"
+    "Every row must be true and checkable if a customer asks"
   ]
 }

@@ -73,6 +73,11 @@
       "name": "next_step",
       "description": "Where to see the kit in action; 6 words or fewer",
       "example": "Friday's show at The Lantern"
+    },
+    {
+      "name": "disclosure",
+      "description": "Required fine print for the client's niche, from compliance/packs.json",
+      "example": "Results vary. These statements have not been evaluated by the FDA."
     }
   ],
   "beats": [
@@ -83,7 +88,7 @@
       "voiceover": "My {{kit_name}}, ranked by how often I grab it.",
       "visual": {
         "tier": "clip_draft",
-        "prompt": "Overhead shot of a {{kit_name}} being unzipped and its contents spilled onto a wooden floor, hard top light, vertical 9:16"
+        "prompt": "Overhead shot of the {{kit_name}} being unzipped and its contents spilled onto a wooden floor, hard top light, vertical 9:16"
       }
     },
     {
@@ -129,7 +134,7 @@
     {
       "seconds": 3,
       "purpose": "call to action",
-      "on_screen_text": "Catch it live: {{next_step}}",
+      "on_screen_text": "Catch it live: {{next_step}} {{disclosure}}",
       "voiceover": "Catch it live: {{next_step}}.",
       "visual": {
         "tier": "still",
@@ -177,7 +182,7 @@
       },
       {
         "headline": "See it in action",
-        "body": "Catch it live: {{next_step}}.",
+        "body": "Catch it live: {{next_step}}. {{disclosure}}",
         "visual_prompt": "{{brand}} using the kit in a candid moment, dramatic light"
       }
     ]
@@ -193,6 +198,7 @@
   ],
   "compliance": [
     "Fitness and athletes: no claims that any gear guarantees weight loss, strength or body results",
-    "Disclose any paid, gifted or affiliate gear clearly, following FTC endorsement rules"
+    "Disclose any paid, gifted or affiliate gear clearly, following FTC endorsement rules",
+    "Fitness gear: results vary; no FDA, disease or body-result claims for any item shown"
   ]
 }

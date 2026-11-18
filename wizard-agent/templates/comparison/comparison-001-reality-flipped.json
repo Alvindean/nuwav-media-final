@@ -58,7 +58,7 @@
       "voiceover": "Expectation versus reality. You know how this usually ends.",
       "visual": {
         "tier": "still",
-        "prompt": "Vertical 9:16 split frame with bold labels EXPECTATION and REALITY, left half plain flat grey, right half covered by a torn paper strip, clean graphic style, {{brand}} accent color"
+        "prompt": "Vertical 9:16 split frame, left half plain flat grey, right half covered by a torn paper strip, clean graphic style, {{brand}} accent color, no text (labels added as overlay in the edit)"
       }
     },
     {

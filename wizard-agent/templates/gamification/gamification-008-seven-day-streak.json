@@ -31,8 +31,8 @@
     },
     {
       "name": "daily_task",
-      "description": "The small daily action, 6 words or fewer, lowercase so it reads mid-sentence",
-      "example": "a 5-minute walk after dinner"
+      "description": "The small daily action, 5 words or fewer, lowercase so it reads mid-sentence (put the article inside, e.g. 'a short walk')",
+      "example": "a short walk after dinner"
     },
     {
       "name": "why_task",
@@ -48,13 +48,18 @@
       "name": "start_day",
       "description": "When the streak starts",
       "example": "Monday"
+    },
+    {
+      "name": "disclosure",
+      "description": "Required fine print for the client's niche, from compliance/packs.json",
+      "example": "Results vary. These statements have not been evaluated by the FDA."
     }
   ],
   "beats": [
     {
       "seconds": 3,
       "purpose": "hook: the dare",
-      "on_screen_text": "7 days of {{daily_task}}. You in?",
+      "on_screen_text": "7 days: {{daily_task}}. You in?",
       "voiceover": "Seven days of {{daily_task}}. That's it.",
       "visual": {
         "tier": "still",
@@ -94,7 +99,7 @@
     {
       "seconds": 4,
       "purpose": "reward for finishers",
-      "on_screen_text": "Hit DAY 7: {{streak_reward}}.",
+      "on_screen_text": "Hit DAY 7: {{streak_reward}}. {{disclosure}}",
       "voiceover": "Reach day seven, get {{streak_reward}}.",
       "visual": {
         "tier": "still",

@@ -53,6 +53,11 @@
       "name": "first_step",
       "description": "A small, low-risk first step, lowercase, 5 words or fewer",
       "example": "a free 20-minute first call"
+    },
+    {
+      "name": "disclosure",
+      "description": "Fine-print disclosure line for the client's regulated niche (use the matching compliance pack's disclosure line)",
+      "example": "Not financial advice. Terms apply."
     }
   ],
   "beats": [
@@ -99,7 +104,7 @@
     {
       "seconds": 5,
       "purpose": "the small step",
-      "on_screen_text": "Start with {{first_step}}",
+      "on_screen_text": "Start with {{first_step}}. {{disclosure}}",
       "voiceover": "Start small: {{first_step}} with {{brand}}.",
       "visual": {
         "tier": "still",
@@ -142,7 +147,7 @@
       },
       {
         "headline": "Your move",
-        "body": "Start small: {{first_step}} with {{brand}}.",
+        "body": "Start small: {{first_step}} with {{brand}}. {{disclosure}}",
         "visual_prompt": "Logo card for {{brand}} with the first step in large type"
       }
     ]
@@ -158,7 +163,7 @@
   ],
   "compliance": [
     "Financial advisors and mortgage brokers: no promises of returns, savings, income or approval; add required firm disclosures and registration details",
-    "Dental and chiropractic: no promises of pain-free care or specific outcomes; describe the first visit, not results",
+    "Dental and chiropractic: no promises of pain-free care or specific outcomes; results vary, so describe the first visit, not results",
     "Mark any free consultation clearly with its real terms and any limits",
     "Coaches: no income or results promises; any result shown is labelled not typical"
   ]

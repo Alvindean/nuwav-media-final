@@ -7,7 +7,13 @@
   "goal": "sales",
   "duration_seconds": 24,
   "aspect_ratio": "9:16",
-  "best_for": ["sports team", "UGC creator", "luxury brand", "podcast", "independent athlete"],
+  "best_for": [
+    "sports team",
+    "UGC creator",
+    "luxury brand",
+    "podcast",
+    "independent athlete"
+  ],
   "why_it_works": "When the money is held equal, the only variable left is the decision, so the viewer has nothing to blame but the approach. That makes the lesson feel fair, and it positions {{brand}} as the smarter way to spend a budget the viewer already has.",
   "hook": {
     "pattern": "Fix the budget at one exact number, then split the screen into two ways of spending it.",
@@ -18,23 +24,104 @@
     ]
   },
   "variables": [
-    { "name": "brand", "description": "Your business or service", "example": "Fourth Quarter Media" },
-    { "name": "budget", "description": "The fixed amount compared", "example": "$2,000" },
-    { "name": "scattered_way", "description": "The common, scattered way to spend it", "example": "random boosted posts and a cheap logo pack" },
-    { "name": "focused_way", "description": "The focused way you offer", "example": "one game-day shoot that fed a month of posts" },
-    { "name": "result_line", "description": "Honest description of the difference, no invented metrics", "example": "30 usable clips vs 4 posts nobody saved" },
-    { "name": "offer", "description": "Next step", "example": "Book a free 15-minute content plan" }
+    {
+      "name": "brand",
+      "description": "Your business or service",
+      "example": "Fourth Quarter Media"
+    },
+    {
+      "name": "budget",
+      "description": "The fixed amount compared",
+      "example": "$2,000"
+    },
+    {
+      "name": "scattered_way",
+      "description": "The common, scattered way to spend it",
+      "example": "random boosted posts and a cheap logo pack"
+    },
+    {
+      "name": "focused_way",
+      "description": "The focused way you offer",
+      "example": "one game-day shoot that fed a month of posts"
+    },
+    {
+      "name": "result_line",
+      "description": "Honest description of the difference, no invented metrics",
+      "example": "30 usable clips vs 4 posts nobody saved"
+    },
+    {
+      "name": "offer",
+      "description": "Next step",
+      "example": "Book a free 15-minute content plan"
+    }
   ],
   "beats": [
-    { "seconds": 3, "purpose": "hook: fix the number", "on_screen_text": "{{budget}}. Two ways.", "voiceover": "{{budget}}, spent two ways.", "visual": { "tier": "still", "prompt": "Vertical 9:16 photo of a neat stack of cash split down the middle by a strip of tape on a dark table, one half lit cool blue, the other warm gold, top-down, crisp detail" } },
-    { "seconds": 5, "purpose": "the scattered way", "on_screen_text": "Way 1: {{scattered_way}}", "voiceover": "Way one: {{scattered_way}}.", "visual": { "tier": "still", "prompt": "Vertical collage-style photo of a phone screen with scattered unrelated posts, low engagement, cluttered overlapping frames, cool flat light, slightly chaotic composition" } },
-    { "seconds": 5, "purpose": "the focused way in motion", "on_screen_text": "Way 2: {{focused_way}}", "voiceover": "Way two: {{focused_way}}.", "visual": { "tier": "clip_standard", "prompt": "Vertical behind-the-scenes shot of a small crew filming {{focused_way}}, camera gimbal moving smoothly, stadium or studio lights, energetic but controlled, cinematic color" } },
-    { "seconds": 5, "purpose": "results side by side", "on_screen_text": "{{result_line}}", "voiceover": "End of the month: {{result_line}}.", "visual": { "tier": "still", "prompt": "Vertical split image, top a sparse feed with a few mismatched posts, bottom a consistent polished content grid in matching {{brand}} style, clean even light" } },
-    { "seconds": 3, "purpose": "the lesson", "on_screen_text": "Same money. Better decision.", "voiceover": "Same money. Better decision.", "visual": { "tier": "text_only", "prompt": "" } },
-    { "seconds": 3, "purpose": "call to action", "on_screen_text": "{{offer}}", "voiceover": "{{offer}} with {{brand}}.", "visual": { "tier": "text_only", "prompt": "" } }
+    {
+      "seconds": 3,
+      "purpose": "hook: fix the number",
+      "on_screen_text": "{{budget}}. Two ways.",
+      "voiceover": "{{budget}}, spent two ways.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Vertical 9:16 photo of a neat stack of cash split down the middle by a strip of tape on a dark table, one half lit cool blue, the other warm gold, top-down, crisp detail"
+      }
+    },
+    {
+      "seconds": 5,
+      "purpose": "the scattered way",
+      "on_screen_text": "Way 1: {{scattered_way}}",
+      "voiceover": "Way one: {{scattered_way}}.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Vertical collage-style photo of a phone screen with scattered unrelated posts, low engagement, cluttered overlapping frames, cool flat light, slightly chaotic composition"
+      }
+    },
+    {
+      "seconds": 5,
+      "purpose": "the focused way in motion",
+      "on_screen_text": "Way 2: {{focused_way}}",
+      "voiceover": "Way two: {{focused_way}}.",
+      "visual": {
+        "tier": "clip_standard",
+        "prompt": "Vertical behind-the-scenes shot of a small crew filming {{focused_way}}, camera gimbal moving smoothly, stadium or studio lights, energetic but controlled, cinematic color"
+      }
+    },
+    {
+      "seconds": 5,
+      "purpose": "results side by side",
+      "on_screen_text": "{{result_line}}",
+      "voiceover": "End of the month: {{result_line}}.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Vertical split image, top a sparse feed with a few mismatched posts, bottom a consistent polished content grid in matching {{brand}} style, clean even light"
+      }
+    },
+    {
+      "seconds": 3,
+      "purpose": "the lesson",
+      "on_screen_text": "Same money. Better decision.",
+      "voiceover": "Same money. Better decision.",
+      "visual": {
+        "tier": "text_only",
+        "prompt": ""
+      }
+    },
+    {
+      "seconds": 3,
+      "purpose": "call to action",
+      "on_screen_text": "{{offer}}",
+      "voiceover": "{{offer}}.",
+      "visual": {
+        "tier": "text_only",
+        "prompt": ""
+      }
+    }
   ],
   "cta": "Spend it the better way: {{offer}}.",
-  "craft": { "technique": "Controlled variable", "notes": "Say the exact budget number in the first two seconds and repeat it once on screen; a specific number reads as real. Keep the two sides parallel in length and framing so the only thing that differs is the decision." },
+  "craft": {
+    "technique": "Controlled variable",
+    "notes": "Say the exact budget number in the first two seconds and repeat it once on screen; a specific number reads as real. Keep the two sides parallel in length and framing so the only thing that differs is the decision."
+  },
   "do_not": [
     "Invent follower counts, revenue or view numbers; describe output you actually delivered",
     "Shame people who boosted posts; most viewers have done it",

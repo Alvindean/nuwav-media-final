@@ -11,7 +11,7 @@
     "barber shop",
     "med spa",
     "chiropractor",
-    "financial advisor",
+    "tattoo studio",
     "dental office"
   ],
   "why_it_works": "People pick service providers by how the appointment feels, not by credentials. Putting the viewer in the chair from first-person view lets them feel the rushed appointment and the attentive one in their own body, so trust is felt before any claim is made.",
@@ -31,8 +31,8 @@
     },
     {
       "name": "appointment",
-      "description": "The service",
-      "example": "a haircut"
+      "description": "The service, without an article (e.g. haircut, cleaning)",
+      "example": "haircut"
     },
     {
       "name": "rushed_moment",
@@ -53,6 +53,11 @@
       "name": "offer",
       "description": "Booking step",
       "example": "Book Chair B online"
+    },
+    {
+      "name": "disclosure",
+      "description": "Required fine-print line for the client's regulated niche, shown small on screen",
+      "example": "Results vary. Consult a licensed provider."
     }
   ],
   "beats": [
@@ -63,7 +68,7 @@
       "voiceover": "Same {{appointment}}. Two chairs.",
       "visual": {
         "tier": "still",
-        "prompt": "First-person POV vertical 9:16 photo looking at two empty service chairs side by side, left under harsh flat light labeled A, right under warm soft light labeled B, inviting {{brand}} interior"
+        "prompt": "First-person POV vertical 9:16 photo looking at two empty service chairs side by side, left under harsh flat light, right under warm soft light, inviting {{brand}} interior, chair labels added as overlay in the edit"
       }
     },
     {
@@ -93,7 +98,7 @@
       "voiceover": "Then the small stuff: {{detail_list}}.",
       "visual": {
         "tier": "still",
-        "prompt": "Vertical close-up detail photo of a careful finishing step during {{appointment}} at {{brand}}, warm light, tidy tools in soft focus, premium feel"
+        "prompt": "Vertical close-up detail photo of a careful finishing step during the {{appointment}} at {{brand}}, warm light, tidy tools in soft focus, premium feel"
       }
     },
     {
@@ -109,7 +114,7 @@
     {
       "seconds": 3,
       "purpose": "call to action",
-      "on_screen_text": "{{offer}}",
+      "on_screen_text": "{{offer}} {{disclosure}}",
       "voiceover": "{{offer}}.",
       "visual": {
         "tier": "text_only",
@@ -130,6 +135,6 @@
   "compliance": [
     "Med spa: no before/after results in this ad unless paired with 'results vary' and a documented patient consent; no promises of outcome",
     "Dental and chiropractic: no claims of cures or guaranteed relief; follow your state board's advertising rules",
-    "Financial advisors: no promises of returns or income; include required firm disclosures and do not imply the attentive meeting guarantees performance"
+    "Tattoo studios: show only real work and real clients who gave written consent"
   ]
 }

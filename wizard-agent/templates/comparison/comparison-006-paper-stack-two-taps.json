@@ -9,10 +9,9 @@
   "aspect_ratio": "9:16",
   "best_for": [
     "mortgage broker",
-    "law firm",
-    "dental office",
-    "real estate agent",
-    "insurance agency"
+    "insurance agency",
+    "tax preparer",
+    "moving company"
   ],
   "why_it_works": "Dreaded processes (paperwork, intake, appointments) stop people from even starting. Showing the old pile next to the new few-tap version shrinks the perceived effort, and lower effort is what turns 'someday' into 'today'.",
   "hook": {
@@ -58,6 +57,11 @@
       "name": "offer",
       "description": "Low-friction start",
       "example": "Start your pre-approval from your phone"
+    },
+    {
+      "name": "disclosure",
+      "description": "Required fine-print line for the client's regulated niche, shown small on screen",
+      "example": "Not financial advice. Terms apply."
     }
   ],
   "beats": [
@@ -108,13 +112,13 @@
       "voiceover": "Plus {{human_touch}}.",
       "visual": {
         "tier": "still",
-        "prompt": "Vertical portrait of a friendly {{brand}} professional on a phone call at a bright office desk, genuine smile, natural window light"
+        "prompt": "Vertical portrait of a friendly professional from {{brand}} on a phone call at a bright office desk, genuine smile, natural window light"
       }
     },
     {
       "seconds": 3,
       "purpose": "call to action",
-      "on_screen_text": "{{offer}}",
+      "on_screen_text": "{{offer}} {{disclosure}}",
       "voiceover": "{{offer}}.",
       "visual": {
         "tier": "text_only",
@@ -146,9 +150,9 @@
         "visual_prompt": "Neat checklist card on a desk with three tick boxes beside a phone, clean {{brand}} colors, top-down"
       },
       {
-        "headline": "Ask any provider these three questions",
-        "body": "Can I start from my phone? Who calls me back, and how fast? What happens if I get stuck halfway?",
-        "visual_prompt": "Simple graphic of three question cards fanned out on a clean desk, soft daylight, minimal style"
+        "headline": "Where the stack went",
+        "body": "Every page in that pile is still there, just as photos from your phone. Nothing skipped, no printer.",
+        "visual_prompt": "Paper forms dissolving into small photo thumbnails flowing onto a phone screen, clean desk, soft daylight, minimal style"
       },
       {
         "headline": "Still a real person",
@@ -157,7 +161,7 @@
       },
       {
         "headline": "Start from your couch",
-        "body": "{{offer}}",
+        "body": "{{offer}}. {{disclosure}}",
         "visual_prompt": "{{brand}} logo card with the offer in large type, clean brand colors"
       }
     ]
@@ -173,8 +177,7 @@
   ],
   "compliance": [
     "Mortgage: no guarantees of approval, rates or closing times; show the company NMLS number and Equal Housing Opportunity logo",
-    "Law firms: no guaranteed outcomes; include the attorney advertising label and responsible attorney where your state bar requires",
-    "Dental: describe digital tools accurately and make no outcome promises",
-    "Real estate and insurance: show license name and number as your state requires; insurance coverage and pricing vary by policy"
+    "Insurance and tax services: show license name and number as your state requires; coverage, pricing and refunds vary by case",
+    "Never show a real application, client file or personal data on screen"
   ]
 }

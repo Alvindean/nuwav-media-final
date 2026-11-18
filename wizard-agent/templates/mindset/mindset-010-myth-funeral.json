@@ -48,6 +48,11 @@
       "name": "today_step",
       "description": "One small thing to do today, starting with a capital-letter verb, 6 words or fewer",
       "example": "Book a free 10-minute brake check"
+    },
+    {
+      "name": "disclosure",
+      "description": "Fine-print disclosure line for the client's regulated niche (use the matching compliance pack's disclosure line)",
+      "example": "Results vary. Consult a licensed provider."
     }
   ],
   "beats": [
@@ -104,7 +109,7 @@
     {
       "seconds": 4,
       "purpose": "call to action",
-      "on_screen_text": "{{today_step}}",
+      "on_screen_text": "{{today_step}}. {{disclosure}}",
       "voiceover": "{{today_step}} at {{brand}}.",
       "visual": {
         "tier": "still",

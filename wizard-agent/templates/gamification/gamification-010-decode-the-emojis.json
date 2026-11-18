@@ -1,5 +1,5 @@
 {
-  "id": "gamification-010-finish-the-line",
+  "id": "gamification-010-decode-the-emojis",
   "version": 1,
   "name": "Decode the Emojis",
   "category": "gamification",
@@ -31,7 +31,7 @@
     },
     {
       "name": "emoji_clue",
-      "description": "Three to five emojis that spell out the title; check they render on iPhone and Android",
+      "description": "Three to five emojis that spell out the title, added in the edit as an on-screen overlay; check they render on iPhone and Android",
       "example": "🎙️ 5️⃣0️⃣ 🎉"
     },
     {
@@ -53,17 +53,22 @@
       "name": "deadline",
       "description": "When guesses close and the answer drops, 4 words or fewer",
       "example": "Thursday at midnight"
+    },
+    {
+      "name": "disclosure",
+      "description": "Required fine print: the giveaway line from compliance/packs.json, plus the client's niche line if regulated",
+      "example": "No purchase necessary. Official rules at link."
     }
   ],
   "beats": [
     {
       "seconds": 3,
-      "purpose": "hook: the emojis appear",
+      "purpose": "hook: the emojis appear as an overlay",
       "on_screen_text": "{{emoji_clue}}",
       "voiceover": "Decode these emojis. Go.",
       "visual": {
-        "tier": "clip_draft",
-        "prompt": "Vertical 9:16 bold graphic where the emojis {{emoji_clue}} pop in one by one, huge, on a flat {{brand}} color background"
+        "tier": "still",
+        "prompt": "Vertical 9:16 flat {{brand}} color background with soft paper texture, empty center left clear for the emoji overlay, no text or symbols"
       }
     },
     {
@@ -89,11 +94,11 @@
     {
       "seconds": 4,
       "purpose": "thinking time",
-      "on_screen_text": "Comment your guess.",
+      "on_screen_text": "{{emoji_clue}} Comment your guess.",
       "voiceover": "Comment your full guess before {{deadline}}.",
       "visual": {
         "tier": "still",
-        "prompt": "The emojis {{emoji_clue}} large on the {{brand}} color background with a faint question mark behind them, vertical 9:16"
+        "prompt": "The same flat {{brand}} color background with a faint question mark shape behind the overlay area, no text or emojis drawn, vertical 9:16"
       }
     },
     {
@@ -109,7 +114,7 @@
     {
       "seconds": 3,
       "purpose": "the prize",
-      "on_screen_text": "Prize: {{feature_prize}}.",
+      "on_screen_text": "Prize: {{feature_prize}}. {{disclosure}}",
       "voiceover": "The winner gets {{feature_prize}}.",
       "visual": {
         "tier": "text_only",
@@ -120,7 +125,7 @@
   "cta": "Comment your guess by {{deadline}}. One right answer, drawn at random, gets {{feature_prize}} from {{brand}}. Official rules in our bio.",
   "craft": {
     "technique": "Rebus decode",
-    "notes": "Aim for a puzzle about one in five people crack: one emoji should be literal, one a pun, one a number. Post the answer and the screen-recorded draw together so the follow-up is its own piece of content."
+    "notes": "Aim for a puzzle about one in five people crack: one emoji should be literal, one a pun, one a number. The emojis are always a text overlay in the edit, never drawn by an image or video model. Post the answer and the screen-recorded draw together so the follow-up is its own piece of content."
   },
   "do_not": [
     "Use emojis that only render on one kind of phone",

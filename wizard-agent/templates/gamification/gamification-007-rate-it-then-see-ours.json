@@ -62,6 +62,11 @@
       "name": "tour_offer",
       "description": "The next step for interested viewers",
       "example": "DM 'TOUR' for a private showing this weekend"
+    },
+    {
+      "name": "disclosure",
+      "description": "Required fine print for the client's niche, from compliance/packs.json; leave it short for unregulated niches",
+      "example": "Equal Housing Opportunity. Brokerage and license # shown."
     }
   ],
   "carousel": {
@@ -98,7 +103,7 @@
       },
       {
         "headline": "Want to see it in person?",
-        "body": "{{tour_offer}}.",
+        "body": "{{tour_offer}}. {{disclosure}}",
         "visual_prompt": "Inviting doorway or entrance shot of the {{item_type}} space with {{brand}} logo card overlay"
       }
     ]

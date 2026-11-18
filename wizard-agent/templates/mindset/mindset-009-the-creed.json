@@ -53,6 +53,11 @@
       "name": "gathering",
       "description": "Where fans can show up or belong, a proper name starting with a capital letter, 7 words or fewer",
       "example": "Sunday cruise night on Mission Avenue"
+    },
+    {
+      "name": "disclosure",
+      "description": "Fine-print disclosure line for the client's regulated niche (use the matching compliance pack's disclosure line)",
+      "example": "Results vary. These statements have not been evaluated by the FDA."
     }
   ],
   "beats": [
@@ -69,7 +74,7 @@
     {
       "seconds": 4,
       "purpose": "second line",
-      "on_screen_text": "{{creed_line_two}}",
+      "on_screen_text": "Who {{creed_line_two}}.",
       "voiceover": "Who {{creed_line_two}}.",
       "visual": {
         "tier": "still",
@@ -79,7 +84,7 @@
     {
       "seconds": 4,
       "purpose": "third line",
-      "on_screen_text": "{{creed_line_three}}",
+      "on_screen_text": "Who {{creed_line_three}}.",
       "voiceover": "Who {{creed_line_three}}.",
       "visual": {
         "tier": "clip_draft",
@@ -109,7 +114,7 @@
     {
       "seconds": 4,
       "purpose": "invite into the identity",
-      "on_screen_text": "Sound like you? You're in.",
+      "on_screen_text": "Sound like you? You're in. {{disclosure}}",
       "voiceover": "Sound like you? You're already one of us.",
       "visual": {
         "tier": "text_only",
@@ -126,38 +131,38 @@
         "visual_prompt": "Bold title card styled like a printed banner in {{brand}} colors, textured paper"
       },
       {
-        "headline": "We're the people who...",
-        "body": "{{creed_line_one}}.",
+        "headline": "Line one",
+        "body": "We {{creed_line_one}}.",
         "visual_prompt": "Member of {{brand}} standing proudly, dusk rim light, low angle"
       },
       {
-        "headline": "Who...",
-        "body": "{{creed_line_two}}.",
+        "headline": "Line two",
+        "body": "We {{creed_line_two}}.",
         "visual_prompt": "Group of {{brand}} members together, golden hour, candid"
       },
       {
-        "headline": "Who...",
-        "body": "{{creed_line_three}}.",
-        "visual_prompt": "Families and kids at a {{brand}} gathering, warm evening light"
+        "headline": "Line three",
+        "body": "We {{creed_line_three}}.",
+        "visual_prompt": "Families and kids together at the {{brand}} gathering, warm evening light"
       },
       {
-        "headline": "And we never...",
-        "body": "{{refusal_line}}.",
+        "headline": "The line we never cross",
+        "body": "We {{refusal_line}}.",
         "visual_prompt": "Simple bold type card, dark background, one line of text"
       },
       {
-        "headline": "Write your own line",
-        "body": "Start with a verb. Name an action, not an adjective. Keep it under six words.",
+        "headline": "Add your line below ours",
+        "body": "Start with a verb, the way we wrote {{creed_line_one}}. Say what you do, not what you are.",
         "visual_prompt": "Hand writing a short line on a blank index card with a marker, {{brand}} colors, top-down"
       },
       {
-        "headline": "How to join, in three steps",
-        "body": "1. Come to {{gathering}}. 2. Say hi to one member. 3. Come back next time.",
+        "headline": "Your first night with {{brand}}",
+        "body": "Show up at {{gathering}}. Find one member. Ask how they joined.",
         "visual_prompt": "Simple numbered checklist card in {{brand}} colors, bold type, textured paper"
       },
       {
         "headline": "Where to find us",
-        "body": "{{gathering}}.",
+        "body": "{{gathering}}. {{disclosure}}",
         "visual_prompt": "Wide shot of the {{gathering}} with lights on, people arriving"
       }
     ]
@@ -172,7 +177,7 @@
     "Show street racing, unsafe stunts or alcohol with driving"
   ],
   "compliance": [
-    "Fitness trainers: creed lines describe habits, never weight, body or health results",
+    "Fitness trainers: creed lines describe habits, never weight, body or health results, and no guarantee of any result",
     "Car clubs and teams: never show street racing, unsafe stunts or alcohol near driving",
     "Any real member shown must be a real photo with their consent, never a generated stand-in"
   ]

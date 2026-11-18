@@ -36,13 +36,13 @@
     },
     {
       "name": "code_word",
-      "description": "The single entry word hidden in one beat",
+      "description": "The single entry word, added in the edit as an on-screen overlay for one full second, never drawn by the video model",
       "example": "OVERTIME"
     },
     {
       "name": "hiding_spot",
-      "description": "Where the word appears in frame",
-      "example": "written on the coffee mug on the desk"
+      "description": "The blank surface in frame where the word overlay is pinned",
+      "example": "the blank coffee mug on the desk"
     },
     {
       "name": "prize",
@@ -53,6 +53,11 @@
       "name": "winner_date",
       "description": "When the winner is picked",
       "example": "Sunday night"
+    },
+    {
+      "name": "disclosure",
+      "description": "Required fine print: the giveaway line from compliance/packs.json, plus the client's niche line (fitness: results vary)",
+      "example": "No purchase necessary. Official rules at link. Results vary."
     }
   ],
   "beats": [
@@ -78,12 +83,12 @@
     },
     {
       "seconds": 3,
-      "purpose": "the one beat with the word",
-      "on_screen_text": "",
+      "purpose": "the one beat with the word, as an overlay",
+      "on_screen_text": "{{code_word}}",
       "voiceover": "Did you see it?",
       "visual": {
         "tier": "clip_draft",
-        "prompt": "Quick handheld pan across {{setting}} that passes {{hiding_spot}} with the word {{code_word}} clearly legible for about one second, then keeps moving, vertical 9:16"
+        "prompt": "Quick handheld pan across {{setting}} that slows past {{hiding_spot}} for about one second, then keeps moving, no readable text anywhere in frame, vertical 9:16"
       }
     },
     {
@@ -99,7 +104,7 @@
     {
       "seconds": 4,
       "purpose": "rules",
-      "on_screen_text": "Comment the word. Random draw {{winner_date}}.",
+      "on_screen_text": "Comment the word. Random draw {{winner_date}}. {{disclosure}}",
       "voiceover": "Comment the word. One random winner, drawn {{winner_date}}.",
       "visual": {
         "tier": "text_only",
@@ -110,17 +115,18 @@
   "cta": "Comment the hidden word and follow {{brand}}. One random winner gets {{prize}}, drawn {{winner_date}}. Official rules in our bio.",
   "craft": {
     "technique": "Watch-to-enter",
-    "notes": "Put the word in the middle of the video, not the end, so people who bail early have to come back. The decoy beats after it plant doubt and trigger the rewatch. Never say the word out loud."
+    "notes": "Put the word in the middle of the video, not the end, so people who bail early have to come back. The word is a text overlay pinned to the hiding spot in the edit for one full second, so it is always spelled right. The decoy beats after it plant doubt and trigger the rewatch. Never say the word out loud."
   },
   "do_not": [
     "Say the code word in the voiceover or caption",
-    "Show the word so briefly nobody can read it; one full second minimum",
-    "Pick a winner any way but the stated random draw; screen-record the draw"
+    "Show the word overlay so briefly nobody can read it; one full second minimum",
+    "Pick a winner any way but the stated random draw; screen-record the draw",
+    "Ask the video model to draw the code word; it will misspell it"
   ],
   "compliance": [
     "Official rules linked: eligibility (age and location), start and end dates, how the winner is picked (random draw from correct comments) and prize value",
     "No purchase necessary; void where prohibited",
     "Say the promotion is not sponsored or run by the platform, and follow its promotion rules (no tagging-to-enter where banned)",
-    "Fitness: no body or weight-loss results promised with the prize or in the video"
+    "Fitness: results vary; no guarantee of body or weight-loss results with the prize or in the video"
   ]
 }

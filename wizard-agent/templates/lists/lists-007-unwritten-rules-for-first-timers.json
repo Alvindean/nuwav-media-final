@@ -1,5 +1,5 @@
 {
-  "id": "lists-007-words-only-insiders-use",
+  "id": "lists-007-unwritten-rules-for-first-timers",
   "version": 1,
   "name": "Unwritten Rules for First-Timers",
   "category": "lists",
@@ -94,11 +94,11 @@
     {
       "seconds": 3,
       "purpose": "hook: speak to the nervous first-timer",
-      "on_screen_text": "4 unwritten rules at a {{scene}}",
+      "on_screen_text": "4 unwritten rules at your first {{scene}}",
       "voiceover": "First {{scene}}? Four unwritten rules.",
       "visual": {
         "tier": "still",
-        "prompt": "Vertical photo from the edge of a {{scene}}, regulars gathered in soft focus, a first-timer's point of view, warm rim light, 9:16"
+        "prompt": "Vertical photo from the edge of the {{scene}}, regulars gathered in soft focus, a first-timer's point of view, warm rim light, 9:16"
       }
     },
     {
@@ -108,7 +108,7 @@
       "voiceover": "Rule one: {{rule_1}}.",
       "visual": {
         "tier": "still",
-        "prompt": "Close detail shot at a {{scene}} that shows rule one in action, shallow depth of field, golden light, vertical"
+        "prompt": "Close detail shot at the {{scene}} that shows rule one in action, shallow depth of field, golden light, vertical"
       }
     },
     {
@@ -128,7 +128,7 @@
       "voiceover": "Rule three: {{rule_3}}.",
       "visual": {
         "tier": "still",
-        "prompt": "Two people chatting warmly beside the centerpiece of a {{scene}}, candid, natural light, vertical 9:16"
+        "prompt": "Two people chatting warmly beside the centerpiece of the {{scene}}, candid, natural light, vertical 9:16"
       }
     },
     {
@@ -138,7 +138,7 @@
       "voiceover": "Rule four, the one newcomers break: {{rule_4}}.",
       "visual": {
         "tier": "clip_draft",
-        "prompt": "Energetic moment at a {{scene}} that shows why rule four exists, crowd stepping back and reacting, handheld feel, golden hour, vertical 9:16"
+        "prompt": "Energetic moment at the {{scene}} that shows why rule four exists, crowd stepping back and reacting, handheld feel, golden hour, vertical 9:16"
       }
     },
     {
@@ -156,29 +156,29 @@
   "carousel": {
     "slides": [
       {
-        "headline": "4 unwritten rules at a {{scene}}",
+        "headline": "4 unwritten rules at your first {{scene}}",
         "body": "Save this before your first visit.",
-        "visual_prompt": "Golden-hour view of a {{scene}} from the entrance, people in soft focus, bold title text"
+        "visual_prompt": "Golden-hour view of the {{scene}} from the entrance, people in soft focus, bold title text"
       },
       {
         "headline": "Rule 1: {{rule_1}}",
         "body": "{{why_1}}",
-        "visual_prompt": "Close detail shot that shows rule one in action at a {{scene}}, shallow depth of field"
+        "visual_prompt": "Close detail shot that shows rule one in action at the {{scene}}, shallow depth of field"
       },
       {
         "headline": "Rule 2: {{rule_2}}",
         "body": "{{why_2}}",
-        "visual_prompt": "Wide shot of the layout of a {{scene}} with the right spot highlighted"
+        "visual_prompt": "Wide shot of the layout of the {{scene}} with the right spot highlighted"
       },
       {
         "headline": "Rule 3: {{rule_3}}",
         "body": "{{why_3}}",
-        "visual_prompt": "Two people chatting warmly beside the centerpiece of a {{scene}}"
+        "visual_prompt": "Two people chatting warmly beside the centerpiece of the {{scene}}"
       },
       {
         "headline": "Rule 4: {{rule_4}}",
         "body": "{{why_4}} This is the one newcomers break.",
-        "visual_prompt": "Action moment at a {{scene}} with the crowd stepping back"
+        "visual_prompt": "Action moment at the {{scene}} with the crowd stepping back"
       },
       {
         "headline": "What to bring",
@@ -188,7 +188,7 @@
       {
         "headline": "Your first ten minutes",
         "body": "{{first_move}} Regulars would rather explain than watch you guess.",
-        "visual_prompt": "A newcomer being welcomed at a {{brand}} table, warm candid light"
+        "visual_prompt": "A newcomer being welcomed at the {{brand}} table, warm candid light"
       },
       {
         "headline": "Try the rules for real",

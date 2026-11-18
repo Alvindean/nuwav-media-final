@@ -54,11 +54,11 @@
     {
       "seconds": 3,
       "purpose": "hook: pick a side",
-      "on_screen_text": "A or B? Pick now.",
-      "voiceover": "A or B. Pick before you scroll.",
+      "on_screen_text": "Cup A or cup B? Pick now.",
+      "voiceover": "Cup A or cup B. Pick before you scroll.",
       "visual": {
         "tier": "still",
-        "prompt": "Vertical 9:16 photo of two identical unmarked {{product}} samples labeled only A and B on a wooden counter, clean even light, centered symmetrical framing, slight shallow depth of field"
+        "prompt": "Vertical 9:16 photo of two identical unmarked {{product}} samples on a wooden counter, each with a blank card in front, clean even light, centered symmetrical framing, slight shallow depth of field, A and B added as overlay in the edit"
       }
     },
     {
@@ -88,7 +88,7 @@
       "voiceover": "B was {{brand}}. A was {{option_b}}.",
       "visual": {
         "tier": "still",
-        "prompt": "Vertical photo of a hand lifting a card under sample B to reveal the {{brand}} logo, warm spotlight on B, sample A slightly out of focus"
+        "prompt": "Vertical photo of a hand lifting a blank card under the right-hand sample, warm spotlight on it, the left sample slightly out of focus, the {{brand}} name added as overlay in the edit"
       }
     },
     {

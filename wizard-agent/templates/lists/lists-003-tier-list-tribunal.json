@@ -64,6 +64,11 @@
       "name": "f_tier_item",
       "description": "The bottom pick",
       "example": "vibration plates"
+    },
+    {
+      "name": "disclosure",
+      "description": "Required fine print for the client's niche, from compliance/packs.json",
+      "example": "Results vary. These statements have not been evaluated by the FDA."
     }
   ],
   "beats": [
@@ -120,7 +125,7 @@
     {
       "seconds": 3,
       "purpose": "real question and call to action",
-      "on_screen_text": "Where would you put it?",
+      "on_screen_text": "Where would you put it? {{disclosure}}",
       "voiceover": "Where would you put {{hot_take_item}}? Comment below.",
       "visual": {
         "tier": "text_only",
@@ -140,6 +145,7 @@
   ],
   "compliance": [
     "Skincare and fitness claims: no promises of medical or weight-loss results; rank on experience and ease, not health outcomes",
-    "Fitness: no unrealistic body images or shaming language about anyone who uses a low-tier option"
+    "Fitness: no unrealistic body images or shaming language about anyone who uses a low-tier option",
+    "Fitness and skincare: results vary; no guarantee of any body or skin result, no FDA-style treatment or disease claims, and show the disclosure line on screen"
   ]
 }

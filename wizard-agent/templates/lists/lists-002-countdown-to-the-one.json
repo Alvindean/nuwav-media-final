@@ -133,7 +133,7 @@
       "voiceover": "Why it wins: {{winner_reason}}.",
       "visual": {
         "tier": "still",
-        "prompt": "A regular customer's hands holding {{number_one}} at a {{brand}} table, candid, natural light, vertical"
+        "prompt": "A regular customer's hands holding {{number_one}} at the {{brand}} table, candid, natural light, vertical"
       }
     },
     {

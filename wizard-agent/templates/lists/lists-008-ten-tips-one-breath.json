@@ -58,6 +58,11 @@
       "name": "lead_magnet",
       "description": "Free full version to send people to; 5 words or fewer",
       "example": "the free printable routine card"
+    },
+    {
+      "name": "disclosure",
+      "description": "Required fine print for the client's niche, from compliance/packs.json",
+      "example": "Results vary. These statements have not been evaluated by the FDA."
     }
   ],
   "beats": [
@@ -114,7 +119,7 @@
     {
       "seconds": 3,
       "purpose": "call to action",
-      "on_screen_text": "Missed one? Save this.",
+      "on_screen_text": "Missed one? Save this. {{disclosure}}",
       "voiceover": "Missed one? Grab {{lead_magnet}}.",
       "visual": {
         "tier": "text_only",
@@ -135,6 +140,7 @@
   "compliance": [
     "Skincare: tips are general care, not treatment; no claims to cure acne or other conditions",
     "Financial advisor: tips are general education, not personalized advice; no return or income promises; follow FINRA/SEC advertising rules",
-    "Fitness: no guaranteed weight-loss or body-change claims"
+    "Fitness: no guaranteed weight-loss or body-change claims",
+    "Fitness and skincare: results vary; tips are general care, with no FDA, disease or treatment claims"
   ]
 }

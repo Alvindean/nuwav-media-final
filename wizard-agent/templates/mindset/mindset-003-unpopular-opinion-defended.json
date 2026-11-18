@@ -58,6 +58,11 @@
       "name": "discussion_prompt",
       "description": "A genuine question that invites comments, starting with a capital letter, 7 words or fewer",
       "example": "What do you ask before hiring?"
+    },
+    {
+      "name": "disclosure",
+      "description": "Fine-print disclosure line for the client's regulated niche (use the matching compliance pack's disclosure line)",
+      "example": "Attorney advertising. Past results do not guarantee a similar outcome."
     }
   ],
   "beats": [
@@ -114,7 +119,7 @@
     {
       "seconds": 3,
       "purpose": "invite the argument",
-      "on_screen_text": "{{discussion_prompt}}",
+      "on_screen_text": "{{discussion_prompt}} {{disclosure}}",
       "voiceover": "{{discussion_prompt}} Tell me below.",
       "visual": {
         "tier": "text_only",

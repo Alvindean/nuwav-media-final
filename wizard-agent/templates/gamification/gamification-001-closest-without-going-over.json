@@ -7,7 +7,13 @@
   "goal": "engagement",
   "duration_seconds": 19,
   "aspect_ratio": "9:16",
-  "best_for": ["bakery", "florist", "jewelry brand", "custom auto shop", "candle maker"],
+  "best_for": [
+    "bakery",
+    "florist",
+    "jewelry brand",
+    "custom auto shop",
+    "candle maker"
+  ],
   "why_it_works": "Counting is a puzzle anyone can try in a few seconds, and an estimate feels like skill rather than luck. The 'without going over' rule makes people slow down and actually look at the work, so they notice how much went into it, and the held-back answer brings them back for the follow-up post.",
   "hook": {
     "pattern": "Show one finished piece and dare the viewer to estimate how many small parts went into it.",
@@ -18,35 +24,153 @@
     ]
   },
   "variables": [
-    { "name": "brand", "description": "Business name", "example": "Sugar & Stone Bakery" },
-    { "name": "item", "description": "The single finished piece being counted, 3 words or fewer", "example": "birthday cake" },
-    { "name": "count_unit", "description": "The small parts people count, plural, 4 words or fewer", "example": "hand-piped sugar flowers" },
-    { "name": "clue", "description": "One honest clue, a short sentence starting with a capital, 7 words or fewer", "example": "More than the candles on a 50th" },
-    { "name": "anchor_number", "description": "A reference number to guess over or under", "example": "100" },
-    { "name": "prize", "description": "What the closest guess wins, with its value in the official rules, 4 words or fewer", "example": "a free six-inch cake" },
-    { "name": "deadline", "description": "When guesses close and the real count drops, 4 words or fewer", "example": "Friday at 6 pm" },
-    { "name": "rules_link", "description": "Where the official rules live", "example": "the link in our bio" }
+    {
+      "name": "brand",
+      "description": "Business name",
+      "example": "Sugar & Stone Bakery"
+    },
+    {
+      "name": "item",
+      "description": "The single finished piece being counted, 3 words or fewer",
+      "example": "birthday cake"
+    },
+    {
+      "name": "count_unit",
+      "description": "The small parts people count, plural, 4 words or fewer",
+      "example": "hand-piped sugar flowers"
+    },
+    {
+      "name": "clue",
+      "description": "One honest clue, a short sentence starting with a capital, 7 words or fewer",
+      "example": "More than the candles on a 50th"
+    },
+    {
+      "name": "anchor_number",
+      "description": "A reference number to guess over or under",
+      "example": "100"
+    },
+    {
+      "name": "prize",
+      "description": "What the closest guess wins, with its value in the official rules, 4 words or fewer",
+      "example": "a free six-inch cake"
+    },
+    {
+      "name": "deadline",
+      "description": "When guesses close and the real count drops, 4 words or fewer",
+      "example": "Friday at 6 pm"
+    },
+    {
+      "name": "rules_link",
+      "description": "Where the official rules live",
+      "example": "the link in our bio"
+    },
+    {
+      "name": "disclosure",
+      "description": "Required fine print: the giveaway line from compliance/packs.json, plus the client's niche line if regulated",
+      "example": "No purchase necessary. Official rules at link."
+    }
   ],
   "beats": [
-    { "seconds": 3, "purpose": "hook: the counting dare", "on_screen_text": "How many {{count_unit}}? Guess.", "voiceover": "Guess how many {{count_unit}} it took.", "visual": { "tier": "still", "prompt": "Vertical 9:16 hero photo of the {{item}} from {{brand}} on a plain pedestal, every {{count_unit}} visible, even soft light, clean background" } },
-    { "seconds": 4, "purpose": "give one fair clue", "on_screen_text": "Clue: {{clue}}", "voiceover": "One clue. {{clue}}.", "visual": { "tier": "still", "prompt": "Macro detail of the {{item}} showing a dense patch of {{count_unit}}, raking side light, shallow depth of field, vertical 9:16" } },
-    { "seconds": 3, "purpose": "anchor the guess", "on_screen_text": "Over or under {{anchor_number}}?", "voiceover": "Over or under {{anchor_number}}?", "visual": { "tier": "text_only", "prompt": "" } },
-    { "seconds": 4, "purpose": "slow turn so they can count", "on_screen_text": "Count fast. Comment one number.", "voiceover": "Count fast, then comment one number.", "visual": { "tier": "clip_draft", "prompt": "Slow 360 turntable rotation of the {{item}} on the pedestal, every side of the {{count_unit}} shown once, soft even light, vertical 9:16" } },
-    { "seconds": 3, "purpose": "the rule and the prize", "on_screen_text": "Closest without going over wins.", "voiceover": "Closest without going over wins {{prize}}.", "visual": { "tier": "text_only", "prompt": "" } },
-    { "seconds": 2, "purpose": "deadline", "on_screen_text": "Count drops {{deadline}}.", "voiceover": "Count drops {{deadline}}.", "visual": { "tier": "text_only", "prompt": "" } }
+    {
+      "seconds": 3,
+      "purpose": "hook: the counting dare",
+      "on_screen_text": "How many {{count_unit}}? Guess.",
+      "voiceover": "Guess how many {{count_unit}} it took.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Vertical 9:16 hero photo of the {{item}} from {{brand}} on a plain pedestal, every {{count_unit}} visible, even soft light, clean background"
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "give one fair clue",
+      "on_screen_text": "Clue: {{clue}}",
+      "voiceover": "One clue. {{clue}}.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Macro detail of the {{item}} showing a dense patch of {{count_unit}}, raking side light, shallow depth of field, vertical 9:16"
+      }
+    },
+    {
+      "seconds": 3,
+      "purpose": "anchor the guess",
+      "on_screen_text": "Over or under {{anchor_number}}?",
+      "voiceover": "Over or under {{anchor_number}}?",
+      "visual": {
+        "tier": "text_only",
+        "prompt": ""
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "slow turn so they can count",
+      "on_screen_text": "Count fast. Comment one number.",
+      "voiceover": "Count fast, then comment one number.",
+      "visual": {
+        "tier": "clip_draft",
+        "prompt": "Slow 360 turntable rotation of the {{item}} on the pedestal, every side of the {{count_unit}} shown once, soft even light, vertical 9:16"
+      }
+    },
+    {
+      "seconds": 3,
+      "purpose": "the rule and the prize",
+      "on_screen_text": "Closest without going over wins.",
+      "voiceover": "Closest without going over wins {{prize}}.",
+      "visual": {
+        "tier": "text_only",
+        "prompt": ""
+      }
+    },
+    {
+      "seconds": 2,
+      "purpose": "deadline",
+      "on_screen_text": "Count drops {{deadline}}. {{disclosure}}",
+      "voiceover": "Count drops {{deadline}}.",
+      "visual": {
+        "tier": "text_only",
+        "prompt": ""
+      }
+    }
   ],
   "cta": "Comment one number by {{deadline}}. Closest without going over wins {{prize}}. Official rules: {{rules_link}}.",
   "carousel": {
     "slides": [
-      { "headline": "How many {{count_unit}}?", "body": "Closest without going over wins {{prize}}.", "visual_prompt": "Hero photo of the {{item}} on a plain pedestal, every part visible, soft even light, 4:5" },
-      { "headline": "Clue one", "body": "{{clue}}.", "visual_prompt": "Macro detail of a dense patch of {{count_unit}} on the {{item}}, raking side light" },
-      { "headline": "Over or under {{anchor_number}}?", "body": "Lock one number in the comments before you swipe.", "visual_prompt": "Bold type card in {{brand}} colors with the anchor number huge and a question mark" },
-      { "headline": "The estimator's trick", "body": "Count one small patch, count how many patches, then multiply. It beats guessing every time.", "visual_prompt": "The {{item}} photo with a thin grid drawn over it and one square highlighted" },
-      { "headline": "How the winner is picked", "body": "Closest without going over. A tie goes to a random draw. Official rules: {{rules_link}}.", "visual_prompt": "Clean rules card in {{brand}} colors with a number line and a stop marker" },
-      { "headline": "Real count drops {{deadline}}", "body": "We post the count and the winner together. No purchase necessary.", "visual_prompt": "{{brand}} logo card with the prize photo inset and the deadline in large type" }
+      {
+        "headline": "How many {{count_unit}}?",
+        "body": "Closest without going over wins {{prize}}.",
+        "visual_prompt": "Hero photo of the {{item}} on a plain pedestal, every part visible, soft even light, 4:5"
+      },
+      {
+        "headline": "Clue one",
+        "body": "{{clue}}.",
+        "visual_prompt": "Macro detail of a dense patch of {{count_unit}} on the {{item}}, raking side light"
+      },
+      {
+        "headline": "Over or under {{anchor_number}}?",
+        "body": "Lock one number in the comments before you swipe.",
+        "visual_prompt": "Bold type card in {{brand}} colors with the anchor number huge and a question mark"
+      },
+      {
+        "headline": "The estimator's trick",
+        "body": "Count one small patch, count how many patches, then multiply. It beats guessing every time.",
+        "visual_prompt": "The {{item}} photo with a thin grid drawn over it and one square highlighted"
+      },
+      {
+        "headline": "How the winner is picked",
+        "body": "Closest without going over. A tie goes to a random draw. Official rules: {{rules_link}}.",
+        "visual_prompt": "Clean rules card in {{brand}} colors with a number line and a stop marker"
+      },
+      {
+        "headline": "Real count drops {{deadline}}",
+        "body": "We post the count and the winner together. {{disclosure}}",
+        "visual_prompt": "{{brand}} logo card with the prize photo inset and the deadline in large type"
+      }
     ]
   },
-  "craft": { "technique": "Estimation jar with an anchor", "notes": "The anchor number gives people a reference point so guesses cluster and the comments start comparing. Never show the real count in the ad; post it with the winner in a follow-up, which turns one ad into a two-post series." },
+  "craft": {
+    "technique": "Estimation jar with an anchor",
+    "notes": "The anchor number gives people a reference point so guesses cluster and the comments start comparing. Never show the real count in the ad; post it with the winner in a follow-up, which turns one ad into a two-post series."
+  },
   "do_not": [
     "Change the real count after guesses come in",
     "Hide parts of the piece so nobody could estimate fairly",

@@ -68,6 +68,11 @@
       "name": "offer",
       "description": "Low-risk next step",
       "example": "free second-opinion inspection"
+    },
+    {
+      "name": "disclosure",
+      "description": "Required fine print for the client's niche, from compliance/packs.json",
+      "example": "Attorney advertising. Past results do not guarantee a similar outcome."
     }
   ],
   "beats": [
@@ -78,7 +83,7 @@
       "voiceover": "Three red flags your {{provider_type}} hopes you never notice.",
       "visual": {
         "tier": "still",
-        "prompt": "Vertical split frame: left half washed in red light, right half in green light, an empty customer chair in the middle of a {{brand}} waiting area, centered framing, 9:16"
+        "prompt": "Vertical split frame: left half washed in red light, right half in green light, an empty customer chair in the middle of the {{brand}} waiting area, centered framing, 9:16"
       }
     },
     {
@@ -124,8 +129,8 @@
     {
       "seconds": 3,
       "purpose": "call to action",
-      "on_screen_text": "{{offer}}",
-      "voiceover": "Want a green-flag opinion? {{offer}}.",
+      "on_screen_text": "{{offer}} {{disclosure}}",
+      "voiceover": "Green-flag opinion? Book your {{offer}}.",
       "visual": {
         "tier": "text_only",
         "prompt": ""
@@ -156,9 +161,9 @@
         "visual_prompt": "Wall clock above an unsigned form, red shadows, quiet office"
       },
       {
-        "headline": "Three questions to ask out loud",
-        "body": "Can I get that in writing? Can I see what you found? What can safely wait?",
-        "visual_prompt": "Clean checklist card with three numbered questions, red and green accents, {{brand}} colors"
+        "headline": "Test flag #2 at your next visit",
+        "body": "Ask your {{provider_type}} to show you what they found before you say yes. A green-flag {{provider_type}} says sure.",
+        "visual_prompt": "Close-up of a hand holding up a worn part or marked-up page across the {{brand}} counter, green accent light"
       },
       {
         "headline": "The 24-hour test",
@@ -167,7 +172,7 @@
       },
       {
         "headline": "Get a second opinion",
-        "body": "{{offer}}. No pressure, no same-day deadline.",
+        "body": "Book your {{offer}}. No pressure, no same-day deadline. {{disclosure}}",
         "visual_prompt": "{{brand}} brand-color card with the offer in large type"
       }
     ]

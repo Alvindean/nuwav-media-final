@@ -77,6 +77,11 @@
       "name": "offer",
       "description": "Lead magnet or consult",
       "example": "free 20-minute document review"
+    },
+    {
+      "name": "disclosure",
+      "description": "Required fine print for the client's niche, from compliance/packs.json",
+      "example": "Not financial advice. Terms apply."
     }
   ],
   "cta": "Bring the list to us: {{offer}}.",
@@ -124,7 +129,7 @@
       },
       {
         "headline": "Bring these to {{brand}}",
-        "body": "We'll answer all seven in writing: {{offer}}.",
+        "body": "We'll answer all seven in writing: {{offer}}. {{disclosure}}",
         "visual_prompt": "{{brand}} logo card with the offer in large type and a phone-friendly booking line"
       }
     ]

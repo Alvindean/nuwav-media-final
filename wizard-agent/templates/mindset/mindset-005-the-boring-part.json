@@ -47,7 +47,7 @@
     {
       "name": "highlight_moment",
       "description": "The payoff the work leads to, lowercase, 8 words or fewer",
-      "example": "the last-minute winner on Saturday"
+      "example": "the last-minute goal on Saturday"
     },
     {
       "name": "follow_line",

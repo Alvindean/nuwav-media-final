@@ -1,0 +1,45 @@
+{
+  "id": "gamification-010-finish-the-line",
+  "version": 1,
+  "name": "Finish the Line, Get Featured",
+  "category": "gamification",
+  "format": "reel",
+  "goal": "awareness",
+  "duration_seconds": 18,
+  "aspect_ratio": "9:16",
+  "best_for": ["podcast", "independent musician", "life coach", "sports team", "UGC creator"],
+  "why_it_works": "An unfinished sentence nags at the brain until someone completes it. Offering to feature the best answer turns a throwaway comment into a shot at being seen, so people write real, funny, specific answers, and the best ones become free content for the next post.",
+  "hook": {
+    "pattern": "Put an unfinished line on screen with a blank, and promise the best ending gets featured.",
+    "examples": [
+      "{{opening_line}} ... Finish it. Best answer gets featured.",
+      "Fill in the blank. The winner goes on {{feature_prize}}.",
+      "I started the sentence. You finish it."
+    ]
+  },
+  "variables": [
+    { "name": "brand", "description": "Show, artist, coach or team name", "example": "Back Booth Radio" },
+    { "name": "opening_line", "description": "The open-ended sentence with a blank at the end", "example": "The worst advice I ever got was ___" },
+    { "name": "host_example", "description": "Your own answer, to show the bar", "example": "'Just wing the first episode.' I did. It's still online." },
+    { "name": "feature_prize", "description": "How the winning answer gets featured", "example": "read out loud on Episode 50" },
+    { "name": "deadline", "description": "When comments close", "example": "Thursday at midnight" }
+  ],
+  "beats": [
+    { "seconds": 3, "purpose": "hook: the unfinished line", "on_screen_text": "{{opening_line}}", "voiceover": "Finish this sentence.", "visual": { "tier": "still", "prompt": "Vertical 9:16 moody studio shot of an empty microphone on a boom arm, one warm practical lamp, deep shadows, haze in the light, {{brand}} sign soft in the background" } },
+    { "seconds": 4, "purpose": "show your own answer to set the bar", "on_screen_text": "Mine: {{host_example}}", "voiceover": "Here's mine. {{host_example}}", "visual": { "tier": "clip_draft", "prompt": "Slow push-in on the microphone in the same moody studio, lamp flickering gently, vertical 9:16" } },
+    { "seconds": 4, "purpose": "challenge them to beat it", "on_screen_text": "Yours is better. Prove it.", "voiceover": "Yours is better. Prove it.", "visual": { "tier": "text_only", "prompt": "" } },
+    { "seconds": 4, "purpose": "the prize", "on_screen_text": "Most-liked answer: {{feature_prize}}.", "voiceover": "The most-liked answer gets {{feature_prize}}.", "visual": { "tier": "still", "prompt": "Vertical 9:16 shot of a phone on a stand showing a blurred comment, next to the studio mic, spotlight on the phone, warm haze" } },
+    { "seconds": 3, "purpose": "deadline and call to action", "on_screen_text": "Comments close {{deadline}}.", "voiceover": "Comments close {{deadline}}. Go.", "visual": { "tier": "text_only", "prompt": "" } }
+  ],
+  "cta": "Finish the line in the comments. The most-liked answer gets {{feature_prize}} on {{brand}}. Closes {{deadline}}.",
+  "craft": { "technique": "Open loop with a status prize", "notes": "Your own answer must be specific and a little self-deprecating so people feel safe to be honest. Let likes pick the winner: it doubles engagement because people come back to like their favorites." },
+  "do_not": [
+    "Use a line that invites cruelty about a real person or group",
+    "Feature a commenter's answer without asking first",
+    "For musicians: drop a fan's line into a released song without a written OK"
+  ],
+  "compliance": [
+    "Get the commenter's permission and credit them before featuring their words on air, on screen or in a song",
+    "Musicians: if a fan's line goes into a released track, get a short written release covering credit and any songwriting share"
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "id": "comparison-009-honest-scorecard",
+  "version": 1,
+  "name": "The Honest Scorecard",
+  "category": "comparison",
+  "format": "carousel",
+  "goal": "trust",
+  "aspect_ratio": "4:5",
+  "best_for": ["insurance agency", "financial advisor", "personal trainer", "podcast production studio", "wedding photographer"],
+  "why_it_works": "Every comparison chart where one side wins every row looks rigged. Admitting one row where the typical option wins makes every other row believable, because conceding a point is something only a confident, honest brand would do.",
+  "hook": {
+    "pattern": "Promise a comparison chart where you don't win every row.",
+    "examples": [
+      "{{brand}} vs the usual way. We lose one row. Honestly.",
+      "A comparison chart where we don't win everything.",
+      "Before you choose a {{service}}, score them on these five things."
+    ]
+  },
+  "variables": [
+    { "name": "brand", "description": "Business name", "example": "Harborline Insurance Group" },
+    { "name": "service", "description": "What the viewer is choosing", "example": "insurance agent" },
+    { "name": "typical_option", "description": "The usual alternative, described generically", "example": "buying online by yourself" },
+    { "name": "row_one", "description": "First criterion and the honest result", "example": "Someone answers when you have a claim: us" },
+    { "name": "row_two", "description": "Second criterion and the honest result", "example": "Policies compared across several carriers: us" },
+    { "name": "row_three", "description": "Third criterion and the honest result", "example": "Yearly review without you asking: us" },
+    { "name": "losing_row", "description": "The row the typical option honestly wins", "example": "Fastest at 2 a.m. with no conversation: buying online wins" },
+    { "name": "offer", "description": "Next step", "example": "Get a free policy review" }
+  ],
+  "carousel": {
+    "slides": [
+      { "headline": "A chart where we don't win everything", "body": "{{brand}} vs {{typical_option}}, scored honestly.", "visual_prompt": "Clean scorecard graphic with two column headers, {{brand}} and a generic option, empty rows, {{brand}} colors, 4:5" },
+      { "headline": "Row 1", "body": "{{row_one}}.", "visual_prompt": "Scorecard row with a check mark in the {{brand}} column, simple icon of a phone being answered, flat design, 4:5" },
+      { "headline": "Row 2", "body": "{{row_two}}.", "visual_prompt": "Scorecard row with a check mark in the {{brand}} column, icon of documents side by side, flat design, 4:5" },
+      { "headline": "Row 3", "body": "{{row_three}}.", "visual_prompt": "Scorecard row with a check mark in the {{brand}} column, calendar icon, flat design, 4:5" },
+      { "headline": "Row 4: they win this one", "body": "{{losing_row}}. If that matters most, go that way.", "visual_prompt": "Scorecard row with the check mark in the generic column instead, highlighted with a small honest-badge sticker, flat design, 4:5" },
+      { "headline": "Why we showed you that", "body": "A chart where one side wins everything is an ad, not a comparison.", "visual_prompt": "Warm photo of a {{brand}} team member at a desk, open friendly posture, natural light, 4:5" },
+      { "headline": "The final score", "body": "3 to 1. You decide what matters to you.", "visual_prompt": "Completed scorecard graphic showing 3 checks for {{brand}} and 1 for the generic option, clean layout, 4:5" },
+      { "headline": "Score us yourself", "body": "{{offer}}", "visual_prompt": "{{brand}} logo card with the offer in large type, brand colors, plenty of white space, 4:5" }
+    ]
+  },
+  "cta": "Score us yourself: {{offer}}.",
+  "craft": { "technique": "Strategic concession", "notes": "Put the losing row fourth, after three wins, so it reads as honesty rather than weakness. Give it the same visual weight as the wins; hiding it in small type ruins the effect. Close by handing the decision back to the viewer." },
+  "do_not": [
+    "Name a real competitor in any column",
+    "Pick a fake weakness (like 'we care too much'); the conceded row must be real",
+    "Claim any row you can't back up if a customer asks"
+  ],
+  "compliance": [
+    "Insurance: include the licensed agency name and state license number; say coverage and pricing vary by policy and carrier; no 'best rates' claims without proof",
+    "Financial advisors: no performance, return or income promises; include required firm and registration disclosures; comparisons must be fair and balanced per your regulator's advertising rules",
+    "Personal trainers: no guaranteed body or health results"
+  ]
+}

@@ -1,0 +1,214 @@
+{
+  "id": "lists-007-words-only-insiders-use",
+  "version": 1,
+  "name": "Five Words Only Insiders Use",
+  "category": "lists",
+  "format": "both",
+  "goal": "awareness",
+  "duration_seconds": 24,
+  "aspect_ratio": "9:16",
+  "best_for": [
+    "lowrider car club",
+    "barber shop",
+    "independent musician",
+    "coffee shop",
+    "sports team"
+  ],
+  "why_it_works": "Insider vocabulary signals belonging. Teaching outsiders the words makes them feel let in, and makes insiders proud and eager to share or correct you in the comments. {{brand}} becomes the gatekeeper who opens the gate.",
+  "hook": {
+    "pattern": "Promise the secret language of a scene, and hint the viewer will sound like a local after.",
+    "examples": [
+      "Five words you'll only hear inside a {{scene}}.",
+      "If you know word number five, you're one of us.",
+      "Say these at a {{scene}} and people will think you're a regular."
+    ]
+  },
+  "variables": [
+    {
+      "name": "brand",
+      "description": "Business, club or artist name",
+      "example": "Southside Bounce Car Club"
+    },
+    {
+      "name": "scene",
+      "description": "The world the words belong to",
+      "example": "lowrider car show"
+    },
+    {
+      "name": "word_1",
+      "description": "First insider word",
+      "example": "three-wheel motion"
+    },
+    {
+      "name": "meaning_1",
+      "description": "Plain meaning",
+      "example": "a car lifted so one wheel hangs in the air"
+    },
+    {
+      "name": "word_2",
+      "description": "Second insider word",
+      "example": "juice"
+    },
+    {
+      "name": "meaning_2",
+      "description": "Plain meaning",
+      "example": "the hydraulic setup"
+    },
+    {
+      "name": "word_3",
+      "description": "Third insider word",
+      "example": "laid out"
+    },
+    {
+      "name": "meaning_3",
+      "description": "Plain meaning",
+      "example": "dropped all the way to the ground"
+    },
+    {
+      "name": "word_4",
+      "description": "Fourth insider word",
+      "example": "candy"
+    },
+    {
+      "name": "meaning_4",
+      "description": "Plain meaning",
+      "example": "deep, layered translucent paint"
+    },
+    {
+      "name": "word_5",
+      "description": "The deepest-cut word, saved for last",
+      "example": "the hop pit"
+    },
+    {
+      "name": "meaning_5",
+      "description": "Plain meaning",
+      "example": "where cars compete to jump highest"
+    },
+    {
+      "name": "event",
+      "description": "Where to hear the words in person",
+      "example": "our Sunday meet at Elm Park"
+    }
+  ],
+  "beats": [
+    {
+      "seconds": 3,
+      "purpose": "hook: the secret language",
+      "on_screen_text": "5 words only {{scene}} people use",
+      "voiceover": "Five words you'll only hear inside a {{scene}}.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Vertical photo inside a {{scene}} at golden hour, people gathered in soft focus, one detail in sharp focus in the foreground, warm rim light, 9:16"
+      }
+    },
+    {
+      "seconds": 3,
+      "purpose": "word 1",
+      "on_screen_text": "{{word_1}} = {{meaning_1}}",
+      "voiceover": "{{word_1}}: {{meaning_1}}.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Close detail shot illustrating {{word_1}} at a {{scene}}, shallow depth of field, golden light, vertical"
+      }
+    },
+    {
+      "seconds": 3,
+      "purpose": "word 2",
+      "on_screen_text": "{{word_2}} = {{meaning_2}}",
+      "voiceover": "{{word_2}}: {{meaning_2}}.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Close detail shot illustrating {{word_2}}, gritty texture, hard side light, vertical"
+      }
+    },
+    {
+      "seconds": 3,
+      "purpose": "word 3",
+      "on_screen_text": "{{word_3}} = {{meaning_3}}",
+      "voiceover": "{{word_3}}: {{meaning_3}}.",
+      "visual": {
+        "tier": "text_only",
+        "prompt": ""
+      }
+    },
+    {
+      "seconds": 3,
+      "purpose": "word 4",
+      "on_screen_text": "{{word_4}} = {{meaning_4}}",
+      "voiceover": "{{word_4}}: {{meaning_4}}.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Extreme close-up illustrating {{word_4}}, rich color, glossy reflections, vertical"
+      }
+    },
+    {
+      "seconds": 5,
+      "purpose": "word 5, the deep cut, in motion",
+      "on_screen_text": "{{word_5}} = {{meaning_5}}",
+      "voiceover": "And if you know {{word_5}}, you're one of us. {{meaning_5}}.",
+      "visual": {
+        "tier": "clip_standard",
+        "prompt": "Energetic wide shot of {{word_5}} in action at a {{scene}}, crowd reacting in the background, handheld feel, golden hour, vertical 9:16"
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "invite them in",
+      "on_screen_text": "Hear them live: {{event}}",
+      "voiceover": "Come hear them for real at {{event}}. Bring a friend who doesn't know yet.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Welcoming group of {{brand}} members waving the camera in at {{event}}, candid, golden light, vertical"
+      }
+    }
+  ],
+  "cta": "Hear them live at {{event}}. Follow {{brand}} and tag a friend who needs the dictionary.",
+  "carousel": {
+    "slides": [
+      {
+        "headline": "5 words only {{scene}} people use",
+        "body": "Learn these and you'll sound like a regular.",
+        "visual_prompt": "Golden-hour scene of a {{scene}} with people in soft focus, bold title text"
+      },
+      {
+        "headline": "{{word_1}}",
+        "body": "{{meaning_1}}.",
+        "visual_prompt": "Close detail shot illustrating {{word_1}}, shallow depth of field"
+      },
+      {
+        "headline": "{{word_2}}",
+        "body": "{{meaning_2}}.",
+        "visual_prompt": "Close detail shot illustrating {{word_2}}, gritty texture"
+      },
+      {
+        "headline": "{{word_3}}",
+        "body": "{{meaning_3}}.",
+        "visual_prompt": "Detail shot illustrating {{word_3}}, low angle"
+      },
+      {
+        "headline": "{{word_4}}",
+        "body": "{{meaning_4}}.",
+        "visual_prompt": "Glossy extreme close-up illustrating {{word_4}}"
+      },
+      {
+        "headline": "{{word_5}}: the deep cut",
+        "body": "{{meaning_5}}. Know this one and you're in.",
+        "visual_prompt": "Wide action shot illustrating {{word_5}} with a crowd reacting"
+      },
+      {
+        "headline": "Hear them for real",
+        "body": "{{event}}. Bring a friend.",
+        "visual_prompt": "Group of {{brand}} members waving the viewer in, warm candid light"
+      }
+    ]
+  },
+  "craft": {
+    "technique": "Glossary with a gatekeeper finale",
+    "notes": "Order the words from easiest to deepest cut, so insiders nod along early and outsiders feel the payoff at the end. The last word is framed as a membership test, which drives comments from insiders adding words you left out."
+  },
+  "do_not": [
+    "Use slang that belongs to a culture the brand is not part of",
+    "Define a word wrong; insiders will correct you publicly and not kindly",
+    "Include words with offensive or gang-related meanings"
+  ]
+}

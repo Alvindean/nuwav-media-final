@@ -1,0 +1,159 @@
+{
+  "id": "mindset-002-belief-swap",
+  "version": 1,
+  "name": "Belief Swap Card",
+  "category": "mindset",
+  "format": "both",
+  "goal": "leads",
+  "duration_seconds": 22,
+  "aspect_ratio": "4:5",
+  "best_for": [
+    "financial advisor",
+    "dental office",
+    "chiropractor",
+    "mortgage broker",
+    "coach"
+  ],
+  "why_it_works": "Most people do not avoid a service because of price; they avoid it because of a belief they never examined. Naming that belief out loud makes the viewer feel caught, and replacing it with a calmer, truer one gives them a reason to act without feeling pushed.",
+  "hook": {
+    "pattern": "State the limiting belief in the customer's own words, then cross it out on screen.",
+    "examples": [
+      "\"I'll {{action}} when I {{false_condition}}.\" That's backwards.",
+      "You don't need to {{false_condition}} first.",
+      "The sentence keeping people from {{action}}: \"{{old_belief}}\""
+    ]
+  },
+  "variables": [
+    {
+      "name": "brand",
+      "description": "Business or practice name",
+      "example": "Northline Planning"
+    },
+    {
+      "name": "action",
+      "description": "What the customer keeps putting off",
+      "example": "talk to a planner"
+    },
+    {
+      "name": "false_condition",
+      "description": "The condition they think must come first",
+      "example": "have more money saved"
+    },
+    {
+      "name": "old_belief",
+      "description": "The full limiting belief as a customer would say it",
+      "example": "Planning is for people who are already rich"
+    },
+    {
+      "name": "new_belief",
+      "description": "The truer replacement belief",
+      "example": "Planning is how people stop guessing"
+    },
+    {
+      "name": "first_step",
+      "description": "A small, low-risk first step",
+      "example": "a free 20-minute first call"
+    }
+  ],
+  "beats": [
+    {
+      "seconds": 3,
+      "purpose": "hook: the belief, quoted",
+      "on_screen_text": "\"{{old_belief}}\"",
+      "voiceover": "\"{{old_belief}}.\" We hear it every week.",
+      "visual": {
+        "tier": "text_only",
+        "prompt": ""
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "cross it out",
+      "on_screen_text": "{{old_belief}}",
+      "voiceover": "Here's the problem with that.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Vertical 4:5 graphic card: the sentence '{{old_belief}}' handwritten in marker on cream paper, a single bold red line striking through it, soft overhead daylight, flat lay"
+      }
+    },
+    {
+      "seconds": 5,
+      "purpose": "why the belief is backwards",
+      "on_screen_text": "You don't need to {{false_condition}} first.",
+      "voiceover": "You don't need to {{false_condition}} before you {{action}}. That's what the first step is for.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Vertical 4:5 photo of a calm professional at {{brand}} across a small table from a client, open notebook, warm window light, friendly not salesy, faces softly lit"
+      }
+    },
+    {
+      "seconds": 5,
+      "purpose": "the new belief",
+      "on_screen_text": "{{new_belief}}",
+      "voiceover": "{{new_belief}}.",
+      "visual": {
+        "tier": "text_only",
+        "prompt": ""
+      }
+    },
+    {
+      "seconds": 5,
+      "purpose": "the small step",
+      "on_screen_text": "Start with {{first_step}}",
+      "voiceover": "Start small: {{first_step}} with {{brand}}.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Vertical 4:5 photo of a phone on a desk showing a calendar booking screen, a coffee cup beside it, morning light, clean tidy desk, {{brand}} logo card in soft focus"
+      }
+    }
+  ],
+  "cta": "Start small: {{first_step}} with {{brand}}.",
+  "carousel": {
+    "slides": [
+      {
+        "headline": "The sentence we hear every week",
+        "body": "\"{{old_belief}}\"",
+        "visual_prompt": "Cream paper card with '{{old_belief}}' handwritten in marker, flat lay, soft daylight"
+      },
+      {
+        "headline": "It sounds sensible",
+        "body": "It feels like waiting is the responsible choice.",
+        "visual_prompt": "Person looking at a closed laptop, hesitant, soft window light, vertical 4:5"
+      },
+      {
+        "headline": "It's backwards",
+        "body": "You don't need to {{false_condition}} before you {{action}}.",
+        "visual_prompt": "Same card, now with a bold red line struck through the sentence"
+      },
+      {
+        "headline": "Try this instead",
+        "body": "{{new_belief}}",
+        "visual_prompt": "Clean bold type card in {{brand}} colors with the new belief centered"
+      },
+      {
+        "headline": "What the first step looks like",
+        "body": "A plain conversation. No pressure, no homework.",
+        "visual_prompt": "Calm consultation scene at {{brand}}, two people at a small table, warm light"
+      },
+      {
+        "headline": "Your move",
+        "body": "{{first_step}} with {{brand}}.",
+        "visual_prompt": "Logo card for {{brand}} with the first step in large type"
+      }
+    ]
+  },
+  "craft": {
+    "technique": "Quote, strike, replace",
+    "notes": "Quote the old belief exactly as a customer would say it, with no jargon, so the viewer hears their own voice. The strike-through is the visual turn. The new belief must be short enough to remember after one read."
+  },
+  "do_not": [
+    "Mock the viewer for believing the old thing",
+    "Make the new belief a promise of results",
+    "Use more than one belief per post"
+  ],
+  "compliance": [
+    "Financial advisors and mortgage brokers: no promises of returns, savings, income or approval; add required firm disclosures and registration details",
+    "Dental and chiropractic: no promises of pain-free care or specific outcomes; describe the first visit, not results",
+    "Mark any free consultation clearly with its real terms and any limits"
+  ]
+}

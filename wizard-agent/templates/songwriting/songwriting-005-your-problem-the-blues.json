@@ -1,0 +1,164 @@
+{
+  "id": "songwriting-005-your-problem-the-blues",
+  "version": 1,
+  "name": "Your Problem, the Blues",
+  "category": "songwriting",
+  "format": "both",
+  "goal": "leads",
+  "duration_seconds": 24,
+  "aspect_ratio": "9:16",
+  "best_for": [
+    "auto shop",
+    "insurance agency",
+    "mortgage broker",
+    "personal injury law firm",
+    "dental office"
+  ],
+  "why_it_works": "Everyone already sings about their problems in their head. Turning the customer's exact frustration into a slow blues verse makes them laugh and feel seen at once, and the twelve-bar shape promises a resolution, which is where {{brand}} walks in.",
+  "hook": {
+    "pattern": "Sing the customer's everyday frustration in a dead-serious blues voice; the mismatch between drama and problem stops the scroll.",
+    "examples": [
+      "Woke up this morning... {{pain_point}}.",
+      "We wrote a blues song about {{pain_point}}. Sorry.",
+      "If {{pain_point}} had a soundtrack, it would sound like this."
+    ]
+  },
+  "variables": [
+    {
+      "name": "brand",
+      "description": "Business name",
+      "example": "Ramos Auto Repair"
+    },
+    {
+      "name": "pain_point",
+      "description": "The everyday problem in the customer's words",
+      "example": "my check-engine light came on again"
+    },
+    {
+      "name": "pain_detail",
+      "description": "A specific, relatable detail that makes it worse",
+      "example": "and the last shop just shrugged and took my cash"
+    },
+    {
+      "name": "fix_line",
+      "description": "The plain promise of what the business does, true and provable",
+      "example": "we show you the problem before we fix a thing"
+    },
+    {
+      "name": "offer",
+      "description": "Low-risk next step",
+      "example": "free diagnostic check this month"
+    }
+  ],
+  "beats": [
+    {
+      "seconds": 3,
+      "purpose": "hook: first sung line of the blues",
+      "on_screen_text": "Woke up this morning...",
+      "voiceover": "Woke up this morning...",
+      "visual": {
+        "tier": "still",
+        "prompt": "Vertical 9:16 photo of a frustrated person in a parked car at dawn, forehead on the steering wheel, cool blue light, moody and cinematic"
+      }
+    },
+    {
+      "seconds": 5,
+      "purpose": "A line: the pain",
+      "on_screen_text": "{{pain_point}}",
+      "voiceover": "{{pain_point}}.",
+      "visual": {
+        "tier": "clip_draft",
+        "prompt": "Vertical slow zoom on a glowing dashboard warning light or a confusing paper bill, shallow focus, blue tint, 9:16"
+      }
+    },
+    {
+      "seconds": 5,
+      "purpose": "A line repeated, sung harder",
+      "on_screen_text": "{{pain_point}}...",
+      "voiceover": "I said {{pain_point}}.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Same person now dramatically singing to the sky, rain on the windshield, blues club lighting gag, vertical"
+      }
+    },
+    {
+      "seconds": 5,
+      "purpose": "B line: the twist detail",
+      "on_screen_text": "{{pain_detail}}",
+      "voiceover": "{{pain_detail}}.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Vertical photo of an empty wallet held upside down, a single coin falling, warm desk lamp light"
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "resolution: the brand enters, key goes major",
+      "on_screen_text": "{{brand}}: {{fix_line}}",
+      "voiceover": "Then I found {{brand}}: {{fix_line}}.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Bright vertical photo inside {{brand}}, smiling staff member handing back keys or paperwork, clean daylight, brand colors, eye-level"
+      }
+    },
+    {
+      "seconds": 2,
+      "purpose": "CTA",
+      "on_screen_text": "{{offer}}",
+      "voiceover": "{{offer}}.",
+      "visual": {
+        "tier": "text_only",
+        "prompt": ""
+      }
+    }
+  ],
+  "cta": "Stop singing the blues: {{offer}} at {{brand}}.",
+  "carousel": {
+    "slides": [
+      {
+        "headline": "The {{pain_point}} blues",
+        "body": "A song in four verses. Swipe if you've lived it.",
+        "visual_prompt": "Moody title slide, old blues record label design with the title, deep blue tones"
+      },
+      {
+        "headline": "Verse one",
+        "body": "Woke up this morning... {{pain_point}}.",
+        "visual_prompt": "Person staring at the problem in blue morning light, vertical"
+      },
+      {
+        "headline": "Verse two",
+        "body": "I said {{pain_point}}... it's not going away.",
+        "visual_prompt": "Same person dramatically singing in the rain, film grain"
+      },
+      {
+        "headline": "Verse three",
+        "body": "{{pain_detail}}.",
+        "visual_prompt": "Empty wallet or stack of confusing paperwork on a table, warm lamp"
+      },
+      {
+        "headline": "Then the key changes",
+        "body": "{{brand}}: {{fix_line}}.",
+        "visual_prompt": "Bright, warm photo of the {{brand}} team helping a customer"
+      },
+      {
+        "headline": "End the song",
+        "body": "{{offer}}",
+        "visual_prompt": "Clean end card with {{brand}} logo and the offer, brand colors"
+      }
+    ]
+  },
+  "craft": {
+    "technique": "AAB twelve-bar blues verse with major-key resolution",
+    "notes": "Classic blues shape: line A states the problem, line A repeats it (sung harder, with 'I said' pickup), line B twists it with a worse detail and rhymes with A. Stress the pain word on beat 1 of each bar (WOKE up this MORN-ing). The brand enters on the turnaround and the music shifts from minor/dominant to a bright major chord, so the solution literally sounds like relief. Tempo/feel: 66-72 BPM slow shuffle, triplet swing, slide guitar or harmonica, then a quick drum fill into a brighter final bar."
+  },
+  "do_not": [
+    "Mock the customer; laugh at the problem, not the person",
+    "Name or imply a specific real competitor as the 'last shop'",
+    "Promise a fix, outcome or price you can't guarantee"
+  ],
+  "compliance": [
+    "Law firms: no guarantees or implied outcomes ('we'll win your case'); include required attorney-advertising disclaimer and follow your state bar rules",
+    "Insurance and mortgage: no promised rates, approvals or savings amounts; include license number (NMLS for mortgage) and 'terms and eligibility apply'",
+    "Dental: do not guarantee pain-free or specific results; pain points must not reveal any real patient's information"
+  ]
+}

@@ -1,0 +1,179 @@
+{
+  "id": "lists-009-whats-in-the-kit-ranked",
+  "version": 1,
+  "name": "My Kit, Ranked by Daily Use",
+  "category": "lists",
+  "format": "both",
+  "goal": "awareness",
+  "duration_seconds": 20,
+  "aspect_ratio": "9:16",
+  "best_for": [
+    "athlete",
+    "independent musician",
+    "UGC creator",
+    "barber shop",
+    "fitness trainer"
+  ],
+  "why_it_works": "Gear lists are voyeuristic: people love seeing what a working pro actually carries. Ranking by how often each item is used, not how expensive it is, makes the list honest and relatable, and the cheap item that ranks first becomes the shareable surprise.",
+  "hook": {
+    "pattern": "Open the bag on camera and promise the ranking will surprise.",
+    "examples": [
+      "Everything in my {{kit_name}}, ranked by how often I use it.",
+      "My most-used piece of gear cost {{cheap_price}}.",
+      "Dumping my {{kit_name}}. Number one will embarrass me."
+    ]
+  },
+  "variables": [
+    {
+      "name": "brand",
+      "description": "Creator, athlete, artist or business",
+      "example": "Nova Reyes Music"
+    },
+    {
+      "name": "kit_name",
+      "description": "The bag or kit",
+      "example": "gig bag"
+    },
+    {
+      "name": "item_4",
+      "description": "Least-used item that still earns its place",
+      "example": "backup cable"
+    },
+    {
+      "name": "item_3",
+      "description": "Third",
+      "example": "in-ear monitors"
+    },
+    {
+      "name": "item_2",
+      "description": "Second",
+      "example": "capo"
+    },
+    {
+      "name": "item_1",
+      "description": "Most-used item, ideally cheap or humble",
+      "example": "a plastic pick tin"
+    },
+    {
+      "name": "cheap_price",
+      "description": "Price of the number one item",
+      "example": "$3"
+    },
+    {
+      "name": "item_1_story",
+      "description": "Why it is used the most, one line",
+      "example": "every set, every rehearsal, never left behind"
+    },
+    {
+      "name": "next_step",
+      "description": "Where to see the kit in action",
+      "example": "the next show at The Lantern, Friday"
+    }
+  ],
+  "beats": [
+    {
+      "seconds": 3,
+      "purpose": "hook: the bag dump",
+      "on_screen_text": "My {{kit_name}}, ranked by use",
+      "voiceover": "Everything in my {{kit_name}}, ranked by how often I use it.",
+      "visual": {
+        "tier": "clip_draft",
+        "prompt": "Overhead shot of a {{kit_name}} being unzipped and its contents spilled onto a wooden floor, hard top light, vertical 9:16"
+      }
+    },
+    {
+      "seconds": 3,
+      "purpose": "number 4",
+      "on_screen_text": "#4 {{item_4}}",
+      "voiceover": "Four: {{item_4}}. Rarely, but when I need it, I need it.",
+      "visual": {
+        "tier": "still",
+        "prompt": "{{item_4}} isolated on a wooden floor, top-down, hard light, a small number 4 tag beside it, vertical"
+      }
+    },
+    {
+      "seconds": 3,
+      "purpose": "number 3",
+      "on_screen_text": "#3 {{item_3}}",
+      "voiceover": "Three: {{item_3}}.",
+      "visual": {
+        "tier": "still",
+        "prompt": "{{item_3}} isolated top-down, same floor and light, number 3 tag, vertical"
+      }
+    },
+    {
+      "seconds": 3,
+      "purpose": "number 2",
+      "on_screen_text": "#2 {{item_2}}",
+      "voiceover": "Two: {{item_2}}.",
+      "visual": {
+        "tier": "text_only",
+        "prompt": ""
+      }
+    },
+    {
+      "seconds": 5,
+      "purpose": "number 1, the humble winner",
+      "on_screen_text": "#1 {{item_1}} ({{cheap_price}})",
+      "voiceover": "Number one costs {{cheap_price}}. {{item_1}}. {{item_1_story}}.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Hand holding {{item_1}} up to the camera, worn and well used, everything else blurred on the floor behind, warm light, vertical 9:16"
+      }
+    },
+    {
+      "seconds": 3,
+      "purpose": "call to action",
+      "on_screen_text": "See it in action: {{next_step}}",
+      "voiceover": "See it all in action: {{next_step}}.",
+      "visual": {
+        "tier": "still",
+        "prompt": "{{brand}} in action using the kit, candid moment, dramatic stage or field light, vertical"
+      }
+    }
+  ],
+  "cta": "See the kit in action: {{next_step}}. Follow {{brand}}.",
+  "carousel": {
+    "slides": [
+      {
+        "headline": "My {{kit_name}}, ranked by daily use",
+        "body": "Not by price. By how often I actually grab it.",
+        "visual_prompt": "Overhead flat lay of a full {{kit_name}} spilled onto a wooden floor, hard top light"
+      },
+      {
+        "headline": "#4 {{item_4}}",
+        "body": "Rarely used, never left behind.",
+        "visual_prompt": "{{item_4}} isolated top-down with a number 4 tag"
+      },
+      {
+        "headline": "#3 {{item_3}}",
+        "body": "Weekly, without fail.",
+        "visual_prompt": "{{item_3}} isolated top-down with a number 3 tag"
+      },
+      {
+        "headline": "#2 {{item_2}}",
+        "body": "Almost every day.",
+        "visual_prompt": "{{item_2}} isolated top-down with a number 2 tag"
+      },
+      {
+        "headline": "#1 {{item_1}}, {{cheap_price}}",
+        "body": "{{item_1_story}}.",
+        "visual_prompt": "Worn {{item_1}} held up to camera, everything else blurred behind"
+      },
+      {
+        "headline": "See it in action",
+        "body": "{{next_step}}.",
+        "visual_prompt": "{{brand}} using the kit in a candid moment, dramatic light"
+      }
+    ]
+  },
+  "craft": {
+    "technique": "Inverse-price ranking",
+    "notes": "Ranking by use instead of price lets the cheapest, most beaten-up item win, which is both honest and funny. The worn texture of number one is the visual payoff, so the still must show real wear, not a fresh product shot."
+  },
+  "do_not": [
+    "Turn the list into undisclosed sponsored placements; disclose any paid or gifted gear",
+    "Show real brand logos prominently on the gear",
+    "Rank by price; it kills the twist"
+  ]
+}

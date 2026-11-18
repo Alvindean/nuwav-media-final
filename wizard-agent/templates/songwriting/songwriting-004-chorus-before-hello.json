@@ -1,0 +1,105 @@
+{
+  "id": "songwriting-004-chorus-before-hello",
+  "version": 1,
+  "name": "Chorus Before Hello",
+  "category": "songwriting",
+  "format": "reel",
+  "goal": "awareness",
+  "duration_seconds": 15,
+  "aspect_ratio": "9:16",
+  "best_for": [
+    "independent musician",
+    "indie label",
+    "songwriter",
+    "producer",
+    "worship leader"
+  ],
+  "why_it_works": "Most artist promos open with a pitch; this opens with the best eight seconds of the song. The ear decides in two seconds whether to stay, so leading with the chorus gives the song its only real chance, and the release date rides on a feeling already earned.",
+  "hook": {
+    "pattern": "Drop straight into the loudest line of the chorus, title in the first three seconds, no talking.",
+    "examples": [
+      "{{song_title}}. That's the whole pitch.",
+      "This chorus has been stuck in my head for a year.",
+      "Eight seconds of {{song_title}}. Out {{release_date}}."
+    ]
+  },
+  "variables": [
+    {
+      "name": "artist_name",
+      "description": "Artist or band name",
+      "example": "Rae Calder"
+    },
+    {
+      "name": "song_title",
+      "description": "Song title, as sung in the chorus",
+      "example": "Paper Crowns"
+    },
+    {
+      "name": "chorus_line",
+      "description": "The single best chorus line, containing the title",
+      "example": "we wore paper crowns and called it gold"
+    },
+    {
+      "name": "story_line",
+      "description": "One honest sentence about where the song came from",
+      "example": "Wrote it in my car after my last shift"
+    },
+    {
+      "name": "release_date",
+      "description": "Release date",
+      "example": "Friday, March 6"
+    }
+  ],
+  "beats": [
+    {
+      "seconds": 3,
+      "purpose": "hook: chorus already in, title on screen",
+      "on_screen_text": "{{song_title}}",
+      "voiceover": "",
+      "visual": {
+        "tier": "clip_standard",
+        "prompt": "Vertical 9:16 performance shot of {{artist_name}} singing full voice into a vintage mic, single hard spotlight, haze, camera slowly orbiting"
+      }
+    },
+    {
+      "seconds": 5,
+      "purpose": "chorus continues with lyric on screen",
+      "on_screen_text": "{{chorus_line}}",
+      "voiceover": "",
+      "visual": {
+        "tier": "still",
+        "prompt": "Vertical close-up portrait of {{artist_name}}, eyes closed mid-note, warm tungsten light, film grain, lyrics space in lower third"
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "music dips, one honest line",
+      "on_screen_text": "{{story_line}}",
+      "voiceover": "{{story_line}}.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Vertical photo of a parked car at night, notebook and phone on the dashboard, streetlight glow, quiet and real"
+      }
+    },
+    {
+      "seconds": 3,
+      "purpose": "release card",
+      "on_screen_text": "{{song_title}} | {{release_date}}",
+      "voiceover": "{{song_title}}. {{release_date}}.",
+      "visual": {
+        "tier": "text_only",
+        "prompt": ""
+      }
+    }
+  ],
+  "cta": "Pre-save {{song_title}} by {{artist_name}}, out {{release_date}}.",
+  "craft": {
+    "technique": "Cold-open chorus (hook-first edit)",
+    "notes": "Start the audio one beat before the chorus downbeat so the first syllable the viewer hears is the title, on a stressed beat 1. Choose the chorus line where the title repeats or sits at the end of the phrase; a line with an internal rhyme (crowns/down, gold/told) gives the ear a second hook. Cut the music to a filtered pad for the spoken story line, then slam back for the release card. Tempo/feel: whatever the song is; the edit works best on 90-130 BPM tracks with a big chorus lift."
+  },
+  "do_not": [
+    "Open with 'Hey guys, new song coming out'",
+    "Use an intro or verse; only the strongest chorus line earns the first 3 seconds",
+    "Describe the song as sounding like a named famous artist"
+  ]
+}

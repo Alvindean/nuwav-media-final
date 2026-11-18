@@ -1,0 +1,130 @@
+{
+  "id": "mindset-005-the-boring-part",
+  "version": 1,
+  "name": "The Boring Part Nobody Posts",
+  "category": "mindset",
+  "format": "reel",
+  "goal": "awareness",
+  "duration_seconds": 24,
+  "aspect_ratio": "9:16",
+  "best_for": [
+    "sports team",
+    "athlete",
+    "independent musician",
+    "lowrider car club",
+    "restaurant"
+  ],
+  "why_it_works": "Everyone posts the highlight, so the highlight stopped meaning anything. Showing the repetitive, unglamorous work behind it is rarer and more believable, and it makes the eventual highlight feel earned. Viewers respect effort they can see more than talent they're told about.",
+  "hook": {
+    "pattern": "Promise the opposite of a highlight reel: say outright that this is the dull part, and dare them to watch.",
+    "examples": [
+      "This is the boring part. It's also the whole secret.",
+      "Nobody posts this part of {{craft_name}}.",
+      "{{repetition_count}} times. Same thing. Watch."
+    ]
+  },
+  "variables": [
+    {
+      "name": "brand",
+      "description": "Team, artist, club or business name",
+      "example": "Southside Strikers"
+    },
+    {
+      "name": "craft_name",
+      "description": "The thing being practiced",
+      "example": "a corner kick"
+    },
+    {
+      "name": "boring_task",
+      "description": "The repetitive task shown on camera",
+      "example": "the same corner, struck at an empty net"
+    },
+    {
+      "name": "repetition_count",
+      "description": "How many times it gets repeated",
+      "example": "Two hundred"
+    },
+    {
+      "name": "highlight_moment",
+      "description": "The payoff the work leads to",
+      "example": "the last-minute winner on Saturday"
+    },
+    {
+      "name": "follow_line",
+      "description": "Why to follow or show up",
+      "example": "come see what two hundred reps look like live"
+    }
+  ],
+  "beats": [
+    {
+      "seconds": 3,
+      "purpose": "hook: this is the boring part",
+      "on_screen_text": "This is the boring part.",
+      "voiceover": "This is the boring part.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Vertical 9:16 wide shot of a lone member of {{brand}} doing {{boring_task}}, empty practice space, flat overcast or fluorescent light, deliberately unglamorous"
+      }
+    },
+    {
+      "seconds": 5,
+      "purpose": "the repetition, in motion",
+      "on_screen_text": "{{repetition_count}} times.",
+      "voiceover": "{{repetition_count}} times. Same thing.",
+      "visual": {
+        "tier": "clip_standard",
+        "prompt": "Vertical 9:16 locked-off shot of {{boring_task}} repeated, same framing, plain light, steady rhythm, no cinematic tricks"
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "the detail nobody sees",
+      "on_screen_text": "Tiny fix. Again.",
+      "voiceover": "Each time, one tiny fix.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Vertical 9:16 tight close-up of hands, feet or tools mid-task for {{craft_name}}, sweat or wear visible, natural light, honest texture"
+      }
+    },
+    {
+      "seconds": 3,
+      "purpose": "the belief",
+      "on_screen_text": "Boring is where good comes from.",
+      "voiceover": "Boring is where good comes from.",
+      "visual": {
+        "tier": "text_only",
+        "prompt": ""
+      }
+    },
+    {
+      "seconds": 5,
+      "purpose": "the payoff",
+      "on_screen_text": "{{highlight_moment}}",
+      "voiceover": "That's how you get {{highlight_moment}}.",
+      "visual": {
+        "tier": "clip_hero",
+        "prompt": "Vertical 9:16 cinematic shot of {{highlight_moment}} for {{brand}}, crowd or audience reacting, golden or stadium light, dynamic camera move, high energy"
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "call to action",
+      "on_screen_text": "{{follow_line}}",
+      "voiceover": "{{follow_line}}. {{brand}}.",
+      "visual": {
+        "tier": "text_only",
+        "prompt": ""
+      }
+    }
+  ],
+  "cta": "{{follow_line}}. {{brand}}.",
+  "craft": {
+    "technique": "Grind then glory",
+    "notes": "Keep the first three beats visibly plain: flat light, locked camera, no music swell. The contrast only works if the payoff is the first beautiful shot in the reel, so spend the one hero clip there and nowhere else."
+  },
+  "do_not": [
+    "Glamorize the boring part with slow motion or drama, which kills the contrast",
+    "Use 'grind' or 'no days off' hustle slogans",
+    "Show unsafe training or driving practices"
+  ]
+}

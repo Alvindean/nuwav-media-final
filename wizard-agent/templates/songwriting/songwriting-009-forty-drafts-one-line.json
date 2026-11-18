@@ -1,0 +1,111 @@
+{
+  "id": "songwriting-009-forty-drafts-one-line",
+  "version": 1,
+  "name": "Forty Drafts of One Line",
+  "category": "songwriting",
+  "format": "carousel",
+  "goal": "trust",
+  "aspect_ratio": "4:5",
+  "best_for": [
+    "independent musician",
+    "songwriter",
+    "podcast host",
+    "business coach",
+    "copywriter"
+  ],
+  "why_it_works": "People trust craft they can see. Showing the bad drafts of one lyric before the final line proves the work and lets readers judge each version, and feeling smart about which line is better makes them invested in the finished song.",
+  "hook": {
+    "pattern": "Show the finished line crossed out with a big draft count, then promise to walk through how it got there.",
+    "examples": [
+      "This one line took me {{draft_count}} drafts.",
+      "Draft one was terrible. Swipe for the line that made the song.",
+      "Which draft would you have kept?"
+    ]
+  },
+  "variables": [
+    {
+      "name": "artist_name",
+      "description": "Writer, artist or creator name",
+      "example": "Theo Marsh"
+    },
+    {
+      "name": "draft_count",
+      "description": "How many drafts it really took",
+      "example": "41"
+    },
+    {
+      "name": "draft_one",
+      "description": "An honest early, flat version of the line",
+      "example": "I miss you when you're gone"
+    },
+    {
+      "name": "draft_two",
+      "description": "A better but still weak middle draft",
+      "example": "the house is quiet since you left"
+    },
+    {
+      "name": "final_line",
+      "description": "The finished lyric line",
+      "example": "your coffee cup still keeps the shape of morning"
+    },
+    {
+      "name": "song_title",
+      "description": "Song the line is from",
+      "example": "Shape of Morning"
+    },
+    {
+      "name": "listen_link",
+      "description": "Where to hear it",
+      "example": "link in bio"
+    }
+  ],
+  "carousel": {
+    "slides": [
+      {
+        "headline": "{{draft_count}} drafts. One line.",
+        "body": "Swipe to watch a lyric get rewritten until it hurts right.",
+        "visual_prompt": "4:5 photo of a messy notebook page full of crossed-out lines, desk lamp, coffee ring stain, top-down"
+      },
+      {
+        "headline": "Draft 1",
+        "body": "\"{{draft_one}}\". True, but you've heard it a thousand times.",
+        "visual_prompt": "Notebook close-up with the first line written then crossed out in red"
+      },
+      {
+        "headline": "Draft 12",
+        "body": "\"{{draft_two}}\". Better. There's a picture now, but no surprise.",
+        "visual_prompt": "Close-up of a second line written neater, half crossed out, pencil resting on it"
+      },
+      {
+        "headline": "The rule that fixed it",
+        "body": "Show one object, not the feeling. Stress the object on the downbeat.",
+        "visual_prompt": "Single object photo on an empty table in morning window light, still life, 4:5"
+      },
+      {
+        "headline": "Draft {{draft_count}}",
+        "body": "\"{{final_line}}\"",
+        "visual_prompt": "Clean handwritten final line on a fresh page, circled, soft morning light"
+      },
+      {
+        "headline": "Why it works",
+        "body": "Concrete object, internal echo (cup / shape), and the key word lands on beat one.",
+        "visual_prompt": "Simple diagram slide: the lyric with stressed syllables in bold and beat numbers above"
+      },
+      {
+        "headline": "Hear it in the song",
+        "body": "{{song_title}} by {{artist_name}}. {{listen_link}}",
+        "visual_prompt": "Cover-art end card, {{song_title}} title over a photo of a coffee cup in window light"
+      }
+    ]
+  },
+  "cta": "Hear the line in '{{song_title}}': {{listen_link}}. Comment which draft you'd have kept.",
+  "craft": {
+    "technique": "Draft ladder (show the rewrite, teach the device)",
+    "notes": "The finished line should beat the drafts on three visible devices: a concrete image instead of an abstract feeling, an internal echo (consonance or assonance inside the line, e.g. cup / keeps / shape), and the most important word on a stressed downbeat. Spell those out on the 'Why it works' slide so readers learn something. Suggested tempo/feel if posted with audio: 70-80 BPM, solo acoustic guitar or piano, the final line sung once over the last slide."
+  },
+  "do_not": [
+    "Invent a fake draft count; use the real number or say 'dozens'",
+    "Quote or rewrite a famous song's lyric as the 'bad draft'",
+    "Make the drafts so bad they feel staged"
+  ]
+}

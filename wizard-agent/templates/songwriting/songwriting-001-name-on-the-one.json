@@ -1,0 +1,105 @@
+{
+  "id": "songwriting-001-name-on-the-one",
+  "version": 1,
+  "name": "Name on the One",
+  "category": "songwriting",
+  "format": "reel",
+  "goal": "awareness",
+  "duration_seconds": 15,
+  "aspect_ratio": "9:16",
+  "best_for": [
+    "coffee shop",
+    "barber shop",
+    "auto shop",
+    "restaurant",
+    "food truck"
+  ],
+  "why_it_works": "A name heard three times on a strong beat sticks without the viewer trying. The brain stores rhythm before meaning, so {{brand}} gets remembered as a sound, and people hum it later without knowing why.",
+  "hook": {
+    "pattern": "Open cold on the sung brand name over a hard downbeat, no intro, then the one-line promise.",
+    "examples": [
+      "{{brand}}! {{brand}}! You know the name now.",
+      "We wrote {{brand}} a theme song. It is stuck in your head.",
+      "Fifteen seconds. One song. You will hum {{brand}} tonight."
+    ]
+  },
+  "variables": [
+    {
+      "name": "brand",
+      "description": "Business name, ideally 2-3 syllables when sung",
+      "example": "Mel's Fade"
+    },
+    {
+      "name": "signature_item",
+      "description": "The one thing they are known for",
+      "example": "skin fade with a hot towel"
+    },
+    {
+      "name": "rhyme_line",
+      "description": "A short line that rhymes with the brand name or signature item",
+      "example": "fresh as the day you were made"
+    },
+    {
+      "name": "neighborhood",
+      "description": "Street or neighborhood people know",
+      "example": "Fifth and Main"
+    },
+    {
+      "name": "offer",
+      "description": "Simple reason to come in this week",
+      "example": "walk-ins till 8 every Friday"
+    }
+  ],
+  "beats": [
+    {
+      "seconds": 3,
+      "purpose": "hook: sung brand name on the downbeat",
+      "on_screen_text": "{{brand}}!",
+      "voiceover": "{{brand}}! {{brand}}!",
+      "visual": {
+        "tier": "still",
+        "prompt": "Vertical 9:16 photo of the {{brand}} storefront sign at golden hour, bold front-on framing, warm light, sign fills the upper third, street at {{neighborhood}} softly blurred"
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "verse line: what they do, rhymed",
+      "on_screen_text": "{{signature_item}}",
+      "voiceover": "{{signature_item}}, {{rhyme_line}}.",
+      "visual": {
+        "tier": "clip_draft",
+        "prompt": "Close-up hands making the {{signature_item}} at {{brand}}, quick rhythmic motion timed to a beat, warm practical light, shallow depth of field, vertical 9:16"
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "repeat the name with the place",
+      "on_screen_text": "{{brand}} on {{neighborhood}}",
+      "voiceover": "{{brand}}, {{brand}}, down on {{neighborhood}}.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Vertical wide shot inside {{brand}}, regulars laughing at the counter, bright natural window light, brand colors visible, eye-level framing"
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "button: last sung name plus offer",
+      "on_screen_text": "{{offer}}",
+      "voiceover": "{{brand}}! {{offer}}.",
+      "visual": {
+        "tier": "text_only",
+        "prompt": ""
+      }
+    }
+  ],
+  "cta": "Come hear it in person: {{offer}} at {{brand}}.",
+  "craft": {
+    "technique": "Name-on-the-downbeat jingle (title-first AABA)",
+    "notes": "Put the stressed syllable of {{brand}} exactly on beat 1 of the bar, every time it appears (three times in 15s). Title placement: first word and last word of the song, so it bookends. The middle line uses one internal rhyme ({{signature_item}} / {{rhyme_line}}) so the ear has a reason to stay. Tempo/feel: 100-108 BPM, four-on-the-floor kick with handclaps on 2 and 4, bright and bouncy; leave a one-beat rest before each sung name so it hits like a stamp."
+  },
+  "do_not": [
+    "Bury the brand name mid-line where it lands on a weak beat",
+    "Use a melody that sounds like a famous jingle or real song",
+    "Cram more than one selling point into 15 seconds"
+  ]
+}

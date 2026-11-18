@@ -1,0 +1,148 @@
+{
+  "id": "lists-005-questions-before-you-sign",
+  "version": 1,
+  "name": "Seven Questions Before You Sign",
+  "category": "lists",
+  "format": "carousel",
+  "goal": "leads",
+  "aspect_ratio": "4:5",
+  "best_for": [
+    "mortgage broker",
+    "insurance agency",
+    "real estate agent",
+    "law firm",
+    "financial advisor"
+  ],
+  "why_it_works": "People feel outmatched in paperwork-heavy decisions. A checklist of questions hands them leverage, and it is built to be saved and screenshotted right before a meeting. The brand that gives you the questions is the one you trust to answer them.",
+  "hook": {
+    "pattern": "Give the viewer a script to use on any provider before committing.",
+    "examples": [
+      "Seven questions to ask before you sign any {{document}}.",
+      "Screenshot this before your {{meeting_type}}.",
+      "If they can't answer number four, don't sign."
+    ]
+  },
+  "variables": [
+    {
+      "name": "brand",
+      "description": "Business name",
+      "example": "Rivera Home Lending"
+    },
+    {
+      "name": "document",
+      "description": "The thing being signed",
+      "example": "mortgage"
+    },
+    {
+      "name": "meeting_type",
+      "description": "The appointment the viewer is heading into",
+      "example": "lender call"
+    },
+    {
+      "name": "question_1",
+      "description": "First question",
+      "example": "What is my total cost over the first five years?"
+    },
+    {
+      "name": "question_2",
+      "description": "Second question",
+      "example": "Which fees are negotiable?"
+    },
+    {
+      "name": "question_3",
+      "description": "Third question",
+      "example": "What happens if I pay early?"
+    },
+    {
+      "name": "question_4",
+      "description": "The question weak providers dodge",
+      "example": "Who do I call if something goes wrong after closing?"
+    },
+    {
+      "name": "question_5",
+      "description": "Fifth question",
+      "example": "What would make this rate change before closing?"
+    },
+    {
+      "name": "question_6",
+      "description": "Sixth question",
+      "example": "What do you earn on this, and how?"
+    },
+    {
+      "name": "question_7",
+      "description": "Seventh question",
+      "example": "What would you do in my position, and why?"
+    },
+    {
+      "name": "offer",
+      "description": "Lead magnet or consult",
+      "example": "free 20-minute document review"
+    }
+  ],
+  "cta": "Bring the list to us: {{offer}}.",
+  "carousel": {
+    "slides": [
+      {
+        "headline": "7 questions before you sign any {{document}}",
+        "body": "Screenshot this before your {{meeting_type}}.",
+        "visual_prompt": "Clean title card: a pen hovering over a signature line, shallow depth of field, {{brand}} colors, 4:5"
+      },
+      {
+        "headline": "1. Ask the long-term cost",
+        "body": "{{question_1}}",
+        "visual_prompt": "Large numeral 1 over a soft-focus calculator and paperwork, neutral light"
+      },
+      {
+        "headline": "2. Ask what bends",
+        "body": "{{question_2}}",
+        "visual_prompt": "Large numeral 2 over a fee sheet with one line circled in pen"
+      },
+      {
+        "headline": "3. Ask about the exit",
+        "body": "{{question_3}}",
+        "visual_prompt": "Large numeral 3 over an open door in a bright office hallway"
+      },
+      {
+        "headline": "4. The one they dodge",
+        "body": "{{question_4}} If the answer is vague, pause.",
+        "visual_prompt": "Large numeral 4 in red over an empty office chair, slightly cooler light"
+      },
+      {
+        "headline": "5. Ask what can change",
+        "body": "{{question_5}}",
+        "visual_prompt": "Large numeral 5 over a calendar with a date circled"
+      },
+      {
+        "headline": "6. Ask how they get paid",
+        "body": "{{question_6}}",
+        "visual_prompt": "Large numeral 6 over two coffee cups on a meeting table"
+      },
+      {
+        "headline": "7. Ask what they'd do",
+        "body": "{{question_7}}",
+        "visual_prompt": "Large numeral 7 over a person listening across a desk, warm light"
+      },
+      {
+        "headline": "Bring these to {{brand}}",
+        "body": "We'll answer all seven in writing: {{offer}}.",
+        "visual_prompt": "{{brand}} logo card with the offer in large type and a phone-friendly booking line"
+      }
+    ]
+  },
+  "craft": {
+    "technique": "Save-bait checklist with a planted weak point",
+    "notes": "One question is flagged as the dodge (slide 4, in red). That single tension point turns a dry list into a test the viewer wants to run. The final slide has the brand volunteer to be tested, which is the trust move."
+  },
+  "do_not": [
+    "Include questions {{brand}} cannot answer cleanly in writing",
+    "Turn questions into disguised sales claims",
+    "Put more than one question per slide"
+  ],
+  "compliance": [
+    "Mortgage: no rate or approval promises; any rate shown needs APR and required disclosures; include NMLS ID and Equal Housing Opportunity",
+    "Insurance: no coverage or savings guarantees; include license number where your state requires",
+    "Law firms: questions are general information, not legal advice; add an attorney-advertising label if your state requires",
+    "Financial advisor: no return promises; follow FINRA/SEC advertising rules and disclose how you are compensated if asked in slide 6",
+    "Real estate: include brokerage name and license info per state rules"
+  ]
+}

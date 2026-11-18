@@ -1,0 +1,61 @@
+{
+  "id": "comedy-007-jargon-to-human-dictionary",
+  "version": 1,
+  "name": "The Jargon-to-Human Dictionary",
+  "category": "comedy",
+  "format": "carousel",
+  "goal": "trust",
+  "aspect_ratio": "4:5",
+  "best_for": ["mortgage broker", "law firm", "financial advisor", "insurance agency", "independent record label"],
+  "why_it_works": "Industry jargon makes people feel shut out. A mock dictionary that gives the stiff official definition and then the honest human one makes viewers laugh with relief and feel smarter, and it positions the brand as the translator on their side. People save and share 'finally someone said it' slides.",
+  "hook": {
+    "pattern": "Promise to translate the words your industry uses to confuse people, in dictionary format.",
+    "examples": [
+      "{{industry}} words, translated into human.",
+      "What your {{industry}} pro says vs. what they mean.",
+      "A dictionary for every {{industry}} word that made you nod politely."
+    ]
+  },
+  "variables": [
+    { "name": "brand", "description": "Business name", "example": "Keystone Home Loans" },
+    { "name": "industry", "description": "The field, as customers say it", "example": "mortgage" },
+    { "name": "term_1", "description": "First jargon term", "example": "Escrow" },
+    { "name": "plain_1", "description": "Honest plain-language meaning, with a light joke", "example": "A neutral middle person holds the money so nobody has to trust anybody yet. Romantic." },
+    { "name": "term_2", "description": "Second jargon term", "example": "Pre-approval" },
+    { "name": "plain_2", "description": "Honest meaning of term two", "example": "A lender looked at your paperwork and said 'probably.' It's a strong probably." },
+    { "name": "term_3", "description": "Third jargon term", "example": "Points" },
+    { "name": "plain_3", "description": "Honest meaning of term three", "example": "Paying more now to pay less later. Like buying the big pack of paper towels." },
+    { "name": "inside_term", "description": "A harmless made-up phrase the team uses internally (self-deprecating)", "example": "A Tuesday Folder" },
+    { "name": "inside_meaning", "description": "What the made-up phrase means", "example": "The file our team double-checks so many times it gets its own coffee." },
+    { "name": "offer", "description": "What the viewer gets for acting", "example": "a free 20-minute plain-English rate review" }
+  ],
+  "carousel": {
+    "slides": [
+      { "headline": "{{industry}} words, translated into human", "body": "Swipe. You'll never nod politely at these again.", "visual_prompt": "4:5 vintage dictionary page aesthetic, cream paper texture, bold serif title in {{brand}} colors, a single bookmark ribbon" },
+      { "headline": "{{term_1}}", "body": "Official: a very serious definition you'd skim. Human: {{plain_1}}", "visual_prompt": "4:5 dictionary entry layout with the word {{term_1}} in large bold serif, phonetic spelling, a small hand-drawn doodle in the margin, cream paper" },
+      { "headline": "{{term_2}}", "body": "Official: also very serious. Human: {{plain_2}}", "visual_prompt": "4:5 dictionary entry layout for {{term_2}}, same cream paper and serif style, a tiny hand-drawn thumbs-up doodle in the margin" },
+      { "headline": "{{term_3}}", "body": "Official: you guessed it. Human: {{plain_3}}", "visual_prompt": "4:5 dictionary entry layout for {{term_3}}, same style, margin doodle that visually illustrates the plain-language meaning" },
+      { "headline": "Bonus: a word we made up", "body": "{{inside_term}}: {{inside_meaning}}", "visual_prompt": "4:5 dictionary entry layout with a red 'NOT A REAL WORD' rubber stamp over {{inside_term}}, same cream paper, playful" },
+      { "headline": "Still nodding politely? That's fine.", "body": "Asking what a word means is the smartest question in {{industry}}. We answer it all day.", "visual_prompt": "4:5 warm candid photo of a {{brand}} team member explaining a printed page to someone across a desk, natural light, faces friendly" },
+      { "headline": "Get the human version", "body": "{{offer}} from {{brand}}. No nodding required.", "visual_prompt": "4:5 clean end card on {{brand}} brand color, logo, offer text in large serif type, dictionary ribbon motif" }
+    ]
+  },
+  "cta": "Save this for your next meeting. Then book {{offer}}.",
+  "craft": {
+    "technique": "Mock dictionary: official vs. human definition (incongruity) with a self-own bonus",
+    "notes": "Setup: the dictionary format and the stiff 'Official:' line on every slide set up a formal pattern. Turn: each 'Human:' line breaks the formality with an honest, slightly cheeky meaning, and it ends on an unexpected small comparison (paper towels, romance) as the punch word. Tag: the bonus slide turns the joke on the brand itself with a made-up internal word, which is the self-deprecating tag that earns trust. Timing in a carousel lives in the swipe: put the punch word as the very last words on each slide so the 'pause' is the moment before the next swipe, and keep the 'Official:' lines short so the reader gets to the turn fast."
+  },
+  "do_not": [
+    "Make a 'human' definition inaccurate just to get a laugh; it must still be correct",
+    "Joke about people who didn't know the word; the joke is on the jargon",
+    "Use more than three real terms before the bonus slide",
+    "Give personalized advice in a definition"
+  ],
+  "compliance": [
+    "Mortgage: definitions are general education, not a rate offer; no rate, payment or approval promises; show NMLS ID and Equal Housing Opportunity on the end card",
+    "Law firms: definitions are general information, not legal advice; label as attorney advertising where your state bar requires",
+    "Financial advisors: no return or performance claims inside any definition; include required firm disclosures in the caption",
+    "Insurance: definitions must not imply any specific coverage; add 'coverage varies by policy and state'",
+    "Have a licensed professional at the business check every definition for accuracy before posting"
+  ]
+}

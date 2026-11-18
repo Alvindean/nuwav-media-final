@@ -1,0 +1,57 @@
+{
+  "id": "gamification-001-closest-without-going-over",
+  "version": 1,
+  "name": "Closest Without Going Over",
+  "category": "gamification",
+  "format": "both",
+  "goal": "engagement",
+  "duration_seconds": 18,
+  "aspect_ratio": "9:16",
+  "best_for": ["jewelry brand", "luxury brand", "apparel brand", "auto shop", "coffee shop"],
+  "why_it_works": "A price is a number everyone has an opinion on, so guessing costs nothing and feels like winning. The 'without going over' rule makes people think about value instead of throwing out a random number, and holding the answer back gives them a reason to come back for the reveal post.",
+  "hook": {
+    "pattern": "Show the item with the price tag face-down and dare the viewer to guess it.",
+    "examples": [
+      "Guess the price. Closest without going over wins it.",
+      "This {{product}} has a price. You have one guess.",
+      "Nobody has guessed this price right yet. Your turn."
+    ]
+  },
+  "variables": [
+    { "name": "brand", "description": "Business name", "example": "Marlow Fine Jewelry" },
+    { "name": "product", "description": "The single item people will price", "example": "hand-forged gold signet ring" },
+    { "name": "clue", "description": "One honest clue that hints at the value", "example": "it took 11 hours at the bench" },
+    { "name": "decoy_price", "description": "An anchor price to guess higher or lower against", "example": "$400" },
+    { "name": "real_price", "description": "The actual price, revealed only in the carousel or follow-up post", "example": "$640" },
+    { "name": "prize", "description": "What the closest guess wins", "example": "the ring itself, sized to fit" },
+    { "name": "deadline", "description": "When guesses close and the answer drops", "example": "Friday at 6 pm" }
+  ],
+  "beats": [
+    { "seconds": 3, "purpose": "hook: hidden price, open dare", "on_screen_text": "Guess the price. Closest wins it.", "voiceover": "Guess the price. Closest without going over wins it.", "visual": { "tier": "still", "prompt": "Vertical 9:16 close-up of {{product}} on a dark velvet pedestal, single hard spotlight from above, a small white price tag lying face-down beside it, deep black background" } },
+    { "seconds": 4, "purpose": "give one fair clue", "on_screen_text": "Clue: {{clue}}", "voiceover": "One clue. {{clue}}.", "visual": { "tier": "still", "prompt": "Macro detail shot of {{product}} showing the craftsmanship, raking side light that picks out texture, shallow depth of field, vertical 9:16" } },
+    { "seconds": 4, "purpose": "anchor the guess", "on_screen_text": "Higher or lower than {{decoy_price}}?", "voiceover": "Is it higher or lower than {{decoy_price}}?", "visual": { "tier": "text_only", "prompt": "" } },
+    { "seconds": 4, "purpose": "slow showcase while they think", "on_screen_text": "Comment your number.", "voiceover": "Put your number in the comments.", "visual": { "tier": "clip_draft", "prompt": "Slow 360 turntable rotation of {{product}} on the velvet pedestal, spotlight glinting off the surface, black background, vertical 9:16" } },
+    { "seconds": 3, "purpose": "rules and stakes", "on_screen_text": "Closest wins {{prize}}. Answer drops {{deadline}}.", "voiceover": "Closest wins {{prize}}. Answer drops {{deadline}}.", "visual": { "tier": "text_only", "prompt": "" } }
+  ],
+  "cta": "Comment your guess. Closest without going over wins {{prize}}. Answer drops {{deadline}}.",
+  "carousel": {
+    "slides": [
+      { "headline": "Guess the price", "body": "Closest without going over wins it.", "visual_prompt": "Hero photo of {{product}} on a dark velvet pedestal, price tag face-down, single spotlight, 4:5" },
+      { "headline": "Clue one", "body": "{{clue}}", "visual_prompt": "Macro craftsmanship detail of {{product}}, raking side light, shallow focus" },
+      { "headline": "Higher or lower?", "body": "Than {{decoy_price}}. Lock your guess in the comments first.", "visual_prompt": "Bold type card in {{brand}} colors with a large question mark beside the anchor price" },
+      { "headline": "Last chance to change your answer", "body": "Swipe only if you already commented.", "visual_prompt": "The price tag on the pedestal starting to flip, motion-blurred edge, spotlight" },
+      { "headline": "The real price", "body": "{{real_price}}. Closest guess wins {{prize}}.", "visual_prompt": "Price tag turned face-up next to {{product}}, number clearly readable, warm spotlight" },
+      { "headline": "Winner picked {{deadline}}", "body": "Follow {{brand}} so you see if it's you.", "visual_prompt": "{{brand}} logo card with the prize photo inset and the deadline in large type" }
+    ]
+  },
+  "craft": { "technique": "Anchor plus withheld answer", "notes": "The decoy price gives people a reference point so guesses cluster and arguments start in the comments. The reel never shows the real price; the carousel or a follow-up post does, which turns one ad into a two-post series." },
+  "do_not": [
+    "Reveal the price in the reel itself; it kills the reason to comment",
+    "Use a fake or inflated 'real price' to make the item look like a steal",
+    "Run the prize without stating the end date and how the winner is chosen"
+  ],
+  "compliance": [
+    "Giveaways: state 'no purchase necessary', eligibility (age and location), the end date and how the winner is picked",
+    "Say the promotion is not sponsored or run by the platform"
+  ]
+}

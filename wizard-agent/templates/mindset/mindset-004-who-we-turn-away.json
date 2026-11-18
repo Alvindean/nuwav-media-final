@@ -1,0 +1,115 @@
+{
+  "id": "mindset-004-who-we-turn-away",
+  "version": 1,
+  "name": "Who We Turn Away",
+  "category": "mindset",
+  "format": "carousel",
+  "goal": "leads",
+  "aspect_ratio": "4:5",
+  "best_for": [
+    "luxury brand",
+    "jewelry brand",
+    "med spa",
+    "law firm",
+    "coach"
+  ],
+  "why_it_works": "Saying who you are not for makes the right buyer feel chosen. Exclusion is a strong identity signal: when a brand turns some people away politely, the people it keeps feel the standard is real, and the post filters leads before they ever call.",
+  "hook": {
+    "pattern": "Open with a polite refusal: the brand states plainly that it is not for everyone, then lists who.",
+    "examples": [
+      "We're not for everyone. Here's who we turn away.",
+      "Five people we politely say no to.",
+      "If this is you, {{brand}} isn't your fit."
+    ]
+  },
+  "variables": [
+    {
+      "name": "brand",
+      "description": "Business name",
+      "example": "Atelier Mara"
+    },
+    {
+      "name": "wrong_fit_one",
+      "description": "First type of customer you turn away",
+      "example": "someone who wants it by Friday"
+    },
+    {
+      "name": "wrong_fit_two",
+      "description": "Second type",
+      "example": "someone shopping only on price"
+    },
+    {
+      "name": "wrong_fit_three",
+      "description": "Third type",
+      "example": "someone who wants a copy of another designer's piece"
+    },
+    {
+      "name": "right_fit",
+      "description": "Who you are actually for",
+      "example": "people who want one piece they'll keep for forty years"
+    },
+    {
+      "name": "standard",
+      "description": "The standard that explains the refusals",
+      "example": "every piece is drawn, cast and set by the same two hands"
+    },
+    {
+      "name": "next_step",
+      "description": "How a good fit gets in touch",
+      "example": "request a private consultation"
+    }
+  ],
+  "cta": "Sound like you? {{next_step}} with {{brand}}.",
+  "carousel": {
+    "slides": [
+      {
+        "headline": "We turn people away",
+        "body": "Politely. On purpose. Here's who.",
+        "visual_prompt": "Minimal luxury title card, deep charcoal background, a single {{brand}} product on a plinth under soft spotlight, vertical 4:5"
+      },
+      {
+        "headline": "Not for: in a hurry",
+        "body": "If you're {{wrong_fit_one}}, we'll point you elsewhere.",
+        "visual_prompt": "An hourglass on a marble surface, sand half run, soft side light, quiet luxury mood"
+      },
+      {
+        "headline": "Not for: price first",
+        "body": "If you're {{wrong_fit_two}}, we're not the cheapest.",
+        "visual_prompt": "A plain price tag turned face down on linen, soft natural light, close-up"
+      },
+      {
+        "headline": "Not for: copies",
+        "body": "If you're {{wrong_fit_three}}, we won't make it.",
+        "visual_prompt": "Blank sketchbook page with a pencil resting on it at the {{brand}} studio bench, warm lamp light"
+      },
+      {
+        "headline": "Why we say no",
+        "body": "Because {{standard}}.",
+        "visual_prompt": "Close-up of hands at work in the {{brand}} studio, tools and materials, shallow depth of field, warm light"
+      },
+      {
+        "headline": "Who we're for",
+        "body": "{{right_fit}}.",
+        "visual_prompt": "Elegant lifestyle shot of a client admiring a finished {{brand}} piece, soft window light, face out of frame"
+      },
+      {
+        "headline": "Sound like you?",
+        "body": "{{next_step}} with {{brand}}.",
+        "visual_prompt": "Clean card in {{brand}} colors with the next step in refined serif type"
+      }
+    ]
+  },
+  "craft": {
+    "technique": "Velvet rope",
+    "notes": "Each refusal must be warm, not snobbish: say what you'll do instead (point them elsewhere). The 'why we say no' slide is the pivot that turns rules into a standard. Three refusals is the sweet spot; more starts to feel like a lecture."
+  },
+  "do_not": [
+    "Sound contemptuous of the people you turn away",
+    "Exclude anyone on protected traits such as age, race, religion or disability",
+    "Use refusals you don't actually enforce"
+  ],
+  "compliance": [
+    "Med spa: only say you turn away unsuitable candidates if a licensed provider makes that call; no before/after or result claims without a clear 'individual results vary' disclaimer",
+    "Law firms: declining a case is fine, but don't imply a case has no merit; follow your state bar's advertising rules"
+  ]
+}

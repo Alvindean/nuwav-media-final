@@ -1,0 +1,140 @@
+{
+  "id": "mindset-003-unpopular-opinion-defended",
+  "version": 1,
+  "name": "Unpopular Opinion, Defended",
+  "category": "mindset",
+  "format": "reel",
+  "goal": "engagement",
+  "duration_seconds": 24,
+  "aspect_ratio": "9:16",
+  "best_for": [
+    "law firm",
+    "real estate agent",
+    "podcast",
+    "independent musician",
+    "financial advisor"
+  ],
+  "why_it_works": "A contrarian opener triggers a small argument in the viewer's head, and people stay to see if you can back it up. Defending it with three plain reasons turns the provocation into earned authority, and the disagreement in the comments spreads the post further.",
+  "hook": {
+    "pattern": "Lead with a short opinion most of your industry would argue with, said flatly with no hedging.",
+    "examples": [
+      "Unpopular opinion: {{contrarian_take}}.",
+      "Most {{industry}} pros won't say this: {{contrarian_take}}.",
+      "I'll get comments for this. {{contrarian_take}}."
+    ]
+  },
+  "variables": [
+    {
+      "name": "brand",
+      "description": "Business, firm, show or artist name",
+      "example": "Ridge & Vale Law"
+    },
+    {
+      "name": "industry",
+      "description": "The industry or field",
+      "example": "lawyers"
+    },
+    {
+      "name": "contrarian_take",
+      "description": "The short opinion others would argue with",
+      "example": "you shouldn't hire the lawyer with the most billboards"
+    },
+    {
+      "name": "reason_one",
+      "description": "First plain reason",
+      "example": "billboards measure ad budget, not trial experience"
+    },
+    {
+      "name": "reason_two",
+      "description": "Second plain reason",
+      "example": "big-volume firms often hand your case to whoever is free"
+    },
+    {
+      "name": "reason_three",
+      "description": "Third plain reason",
+      "example": "the right question is who will actually work your file"
+    },
+    {
+      "name": "discussion_prompt",
+      "description": "A question that invites comments",
+      "example": "What did you wish you'd asked before hiring?"
+    }
+  ],
+  "beats": [
+    {
+      "seconds": 3,
+      "purpose": "hook: the opinion",
+      "on_screen_text": "Unpopular opinion:",
+      "voiceover": "Unpopular opinion: {{contrarian_take}}.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Vertical 9:16 portrait of the host or owner of {{brand}} sitting on a stool against a dark plain wall, one hard key light from the side, slight smirk, looking straight into the lens"
+      }
+    },
+    {
+      "seconds": 3,
+      "purpose": "restate it on screen",
+      "on_screen_text": "{{contrarian_take}}",
+      "voiceover": "",
+      "visual": {
+        "tier": "text_only",
+        "prompt": ""
+      }
+    },
+    {
+      "seconds": 5,
+      "purpose": "reason one",
+      "on_screen_text": "1. {{reason_one}}",
+      "voiceover": "One: {{reason_one}}.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Vertical 9:16 photo illustrating the first reason for {{industry}}, real-world setting, natural light, documentary style, no text in image"
+      }
+    },
+    {
+      "seconds": 5,
+      "purpose": "reason two",
+      "on_screen_text": "2. {{reason_two}}",
+      "voiceover": "Two: {{reason_two}}.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Vertical 9:16 photo of a busy, impersonal office or crowded scene related to {{industry}}, cool light, slightly chaotic, documentary style"
+      }
+    },
+    {
+      "seconds": 5,
+      "purpose": "reason three, the real point",
+      "on_screen_text": "3. {{reason_three}}",
+      "voiceover": "Three, and this is the real one: {{reason_three}}.",
+      "visual": {
+        "tier": "clip_draft",
+        "prompt": "Vertical 9:16 slow push-in on the host of {{brand}} leaning forward toward camera, same dark wall and side light, serious calm expression"
+      }
+    },
+    {
+      "seconds": 3,
+      "purpose": "invite the argument",
+      "on_screen_text": "{{discussion_prompt}}",
+      "voiceover": "{{discussion_prompt}} Tell me below.",
+      "visual": {
+        "tier": "text_only",
+        "prompt": ""
+      }
+    }
+  ],
+  "cta": "{{discussion_prompt}} Tell {{brand}} in the comments.",
+  "craft": {
+    "technique": "Provoke then prove",
+    "notes": "The opinion must be defensible, not edgy for its own sake. Order the reasons so the strongest is last and say so out loud. End on a real question so the disagreement goes into the comments instead of the unfollow button."
+  },
+  "do_not": [
+    "Pick a take you can't defend with facts",
+    "Attack a named competitor or person",
+    "Hedge the hook with 'maybe' or 'I think'"
+  ],
+  "compliance": [
+    "Law firms: no guarantees of outcomes, no 'specialist' or 'expert' claims unless certified, and follow your state bar's advertising rules (some require an 'attorney advertising' label)",
+    "Real estate: include brokerage name and license details where required; no claims about market direction presented as fact",
+    "Financial advisors: opinions are not advice; add the firm's required disclosure and avoid any return or income promise"
+  ]
+}

@@ -1,0 +1,139 @@
+{
+  "id": "lists-006-every-price-point-ranked",
+  "version": 1,
+  "name": "Every Price Point, Honestly Ranked",
+  "category": "lists",
+  "format": "carousel",
+  "goal": "sales",
+  "aspect_ratio": "4:5",
+  "best_for": [
+    "jewelry brand",
+    "luxury brand",
+    "apparel brand",
+    "auto detailing shop",
+    "barber shop"
+  ],
+  "why_it_works": "Shoppers fear overpaying and fear buying cheap. Walking up the price ladder and saying where the value actually peaks feels like insider honesty, especially when the brand admits its top tier is not for everyone. That candor is what makes the recommended tier convert.",
+  "hook": {
+    "pattern": "Rank your own tiers by value, not by price, and admit where the sweet spot is.",
+    "examples": [
+      "What every price of {{product_category}} actually gets you.",
+      "Our cheapest and priciest {{product_category}}, ranked honestly.",
+      "Most people should skip our top tier. Here's why."
+    ]
+  },
+  "variables": [
+    {
+      "name": "brand",
+      "description": "Brand name",
+      "example": "Halden Fine Jewelry"
+    },
+    {
+      "name": "product_category",
+      "description": "What is being priced",
+      "example": "engagement band"
+    },
+    {
+      "name": "tier_1_price",
+      "description": "Entry price",
+      "example": "$300"
+    },
+    {
+      "name": "tier_1_gets",
+      "description": "What the entry tier really gets you",
+      "example": "solid gold, simple finish, lasts with care"
+    },
+    {
+      "name": "tier_2_price",
+      "description": "Mid price",
+      "example": "$900"
+    },
+    {
+      "name": "tier_2_gets",
+      "description": "What the mid tier adds",
+      "example": "hand-set stones and a lifetime resize"
+    },
+    {
+      "name": "tier_3_price",
+      "description": "Upper price",
+      "example": "$2,000"
+    },
+    {
+      "name": "tier_3_gets",
+      "description": "What the upper tier adds",
+      "example": "custom design and heavier metal"
+    },
+    {
+      "name": "tier_4_price",
+      "description": "Top price",
+      "example": "$5,000"
+    },
+    {
+      "name": "tier_4_gets",
+      "description": "What the top tier adds and who it is for",
+      "example": "rare stones; for collectors, not first-timers"
+    },
+    {
+      "name": "sweet_spot",
+      "description": "Which tier you recommend for most people",
+      "example": "the $900 band"
+    },
+    {
+      "name": "offer",
+      "description": "Next step",
+      "example": "book a try-on and we'll tell you honestly"
+    }
+  ],
+  "cta": "Find your tier: {{offer}}.",
+  "carousel": {
+    "slides": [
+      {
+        "headline": "What every price actually gets you",
+        "body": "Our {{product_category}} lineup, ranked by value, not price.",
+        "visual_prompt": "Four {{brand}} products in a row on linen, ascending height, soft north-window light, 4:5"
+      },
+      {
+        "headline": "{{tier_1_price}}: the honest entry",
+        "body": "{{tier_1_gets}}.",
+        "visual_prompt": "Single entry-tier {{product_category}} on plain linen, clean natural light, macro detail"
+      },
+      {
+        "headline": "{{tier_2_price}}: where value jumps",
+        "body": "{{tier_2_gets}}.",
+        "visual_prompt": "Mid-tier {{product_category}} with a small gold star marker, close macro detail"
+      },
+      {
+        "headline": "{{tier_3_price}}: diminishing returns start",
+        "body": "{{tier_3_gets}}. Nice, not necessary.",
+        "visual_prompt": "Upper-tier {{product_category}} on dark velvet, focused spotlight"
+      },
+      {
+        "headline": "{{tier_4_price}}: not for most people",
+        "body": "{{tier_4_gets}}.",
+        "visual_prompt": "Top-tier {{product_category}} in a dramatic low-key spotlight, black background"
+      },
+      {
+        "headline": "Our honest pick",
+        "body": "For most people: {{sweet_spot}}.",
+        "visual_prompt": "The recommended {{product_category}} held in a hand, warm daylight, lifestyle framing"
+      },
+      {
+        "headline": "Not sure? Ask us.",
+        "body": "{{offer}}.",
+        "visual_prompt": "{{brand}} logo card on linen texture with the offer in serif type"
+      }
+    ]
+  },
+  "craft": {
+    "technique": "Value ladder with an anti-upsell",
+    "notes": "Rank by value per dollar and mark the exact slide where returns diminish. Telling people to skip the top tier is the credibility move; the top tier still gets its own spotlight slide so aspirational buyers self-select."
+  },
+  "do_not": [
+    "Invent tiers you do not sell",
+    "Recommend the most expensive tier as the sweet spot",
+    "Use words like investment or appreciates in value for jewelry or luxury goods"
+  ],
+  "compliance": [
+    "Jewelry: state metal purity and stone origin accurately; follow FTC jewelry guides on terms like natural, lab-grown and solid gold"
+  ]
+}

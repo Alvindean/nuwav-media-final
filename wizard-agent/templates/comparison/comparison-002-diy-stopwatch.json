@@ -1,0 +1,46 @@
+{
+  "id": "comparison-002-diy-stopwatch",
+  "version": 1,
+  "name": "The DIY Stopwatch",
+  "category": "comparison",
+  "format": "reel",
+  "goal": "leads",
+  "duration_seconds": 21,
+  "aspect_ratio": "9:16",
+  "best_for": ["auto shop", "podcast studio", "law firm", "personal trainer"],
+  "why_it_works": "People choose DIY because it feels free, but they never price their own hours. A running clock makes the hidden cost visible: viewers watch time leak away on one side and finish fast on the other, and they do the math themselves without being lectured.",
+  "hook": {
+    "pattern": "Put two clocks on screen and start them at the same moment: a race the viewer has to watch to the end.",
+    "examples": [
+      "Same {{task}}. Two clocks. Guess which one finishes first.",
+      "Doing {{task}} yourself is free. Watch what it costs.",
+      "I timed a weekend {{task}} against a pro. Not close."
+    ]
+  },
+  "variables": [
+    { "name": "brand", "description": "Business name", "example": "Torque & Sons Auto" },
+    { "name": "task", "description": "The job people try to do themselves", "example": "brake pad swap" },
+    { "name": "diy_time", "description": "Typical honest time for a first-timer", "example": "6 hours and two parts-store trips" },
+    { "name": "pro_time", "description": "Honest time for the pro", "example": "45 minutes" },
+    { "name": "offer", "description": "Low-friction next step", "example": "Free brake check, book online" }
+  ],
+  "beats": [
+    { "seconds": 3, "purpose": "hook: two clocks start", "on_screen_text": "DIY vs {{brand}}: GO", "voiceover": "Same {{task}}. Two clocks. Go.", "visual": { "tier": "still", "prompt": "Vertical 9:16 split screen, top half a cluttered home garage or desk at night, bottom half a clean professional {{brand}} workspace, a large digital stopwatch overlay at 00:00 on each half, high contrast" } },
+    { "seconds": 5, "purpose": "the DIY struggle", "on_screen_text": "DIY: {{diy_time}}", "voiceover": "The DIY way: video tutorials, wrong part, try again.", "visual": { "tier": "clip_draft", "prompt": "Vertical handheld shot of frustrated hands doing a {{task}} at home, phone propped up playing a tutorial, scattered tools, dim overhead bulb, small realistic struggle, no faces" } },
+    { "seconds": 4, "purpose": "the pro side", "on_screen_text": "Pro: {{pro_time}}", "voiceover": "The {{brand}} way: done in {{pro_time}}.", "visual": { "tier": "still", "prompt": "Vertical photo of a {{brand}} professional finishing a {{task}} with the right tools, bright even shop light, calm focused posture, clean organized background" } },
+    { "seconds": 4, "purpose": "tally the gap", "on_screen_text": "{{diy_time}} vs {{pro_time}}", "voiceover": "Your weekend, or {{pro_time}}.", "visual": { "tier": "text_only", "prompt": "" } },
+    { "seconds": 5, "purpose": "call to action", "on_screen_text": "{{offer}}", "voiceover": "Keep your weekend. {{offer}}.", "visual": { "tier": "still", "prompt": "Vertical photo of a relaxed customer picking up keys or a finished deliverable at the {{brand}} front desk, warm friendly light, {{brand}} logo visible on the wall" } }
+  ],
+  "cta": "Keep your weekend: {{offer}}.",
+  "craft": { "technique": "Race clock", "notes": "Keep both timers visible in every beat so the viewer always knows the score. Let the DIY side be relatable, not stupid: the viewer should see themselves in it and laugh, not feel mocked." },
+  "do_not": [
+    "Exaggerate the DIY time; use what a real first-timer would honestly spend",
+    "Make the DIY person look dumb; that insults the exact viewer you want to book",
+    "Show unsafe DIY work as if it were normal"
+  ],
+  "compliance": [
+    "Law firms: do not imply DIY legal work always fails or that hiring the firm guarantees an outcome; include the attorney advertising label your state bar requires",
+    "Law firms: no client results or time claims unless they are typical and documented",
+    "Personal trainers: no promised body-change timelines"
+  ]
+}

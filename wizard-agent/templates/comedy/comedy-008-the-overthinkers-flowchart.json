@@ -1,0 +1,56 @@
+{
+  "id": "comedy-008-the-overthinkers-flowchart",
+  "version": 1,
+  "name": "The Overthinker's Flowchart",
+  "category": "comedy",
+  "format": "carousel",
+  "goal": "leads",
+  "aspect_ratio": "4:5",
+  "best_for": ["dental office", "med spa", "life coach", "real estate agent", "barber shop"],
+  "why_it_works": "Everyone has stalled on booking something for months. A flowchart that loops viewers back to the start no matter what they answer is relatable exaggeration: they see their own procrastination drawn out and laugh at themselves. The exit from the loop is the easiest possible first step, so the CTA feels like relief, not pressure.",
+  "hook": {
+    "pattern": "Pose the yes/no question your audience has been avoiding, in flowchart form.",
+    "examples": [
+      "Should I finally book {{service}}? A flowchart.",
+      "The official flowchart for putting off {{service}} one more month.",
+      "Thinking about {{service}}? Follow the arrows. Good luck."
+    ]
+  },
+  "variables": [
+    { "name": "brand", "description": "Business name", "example": "Bright Harbor Dental" },
+    { "name": "service", "description": "The thing people put off booking", "example": "that dental cleaning" },
+    { "name": "stall_excuse_1", "description": "First relatable stall", "example": "Maybe after the holidays?" },
+    { "name": "stall_excuse_2", "description": "Second relatable stall, more elaborate", "example": "I'll floss really hard for two weeks first so they don't know." },
+    { "name": "absurd_branch", "description": "Ridiculous decision box that shows the loop has gone too far", "example": "Have you consulted the group chat, your horoscope and a magic 8-ball?" },
+    { "name": "easy_first_step", "description": "The low-effort way to finally book", "example": "Book online in 60 seconds. Pick any open time this week." }
+  ],
+  "carousel": {
+    "slides": [
+      { "headline": "Should I finally book {{service}}?", "body": "A scientific flowchart. Start at the top. Be honest.", "visual_prompt": "4:5 hand-drawn whiteboard flowchart aesthetic, marker lines, one START box at top with the question, {{brand}} accent color arrows, off-white board texture" },
+      { "headline": "Have you been meaning to?", "body": "YES: go to the next slide. NO: you're on slide two, so yes.", "visual_prompt": "4:5 marker-drawn decision diamond with YES and NO arrows that both curve the same direction, whiteboard texture, playful" },
+      { "headline": "Then you thought…", "body": "\"{{stall_excuse_1}}\" Arrow points to the next box.", "visual_prompt": "4:5 marker-drawn box with a thought bubble, small doodle of a calendar with pages flying off, whiteboard texture" },
+      { "headline": "Then you planned…", "body": "\"{{stall_excuse_2}}\" Arrow points to the next box.", "visual_prompt": "4:5 marker-drawn box with an elaborate scribbled plan, tiny doodled stick figure looking determined, whiteboard texture" },
+      { "headline": "Decision box", "body": "{{absurd_branch}}", "visual_prompt": "4:5 oversized marker-drawn decision diamond crammed with tiny doodles of a phone, stars and a magic 8-ball, arrows tangled around it, whiteboard" },
+      { "headline": "Return to slide one.", "body": "Every arrow goes back to the start. Ask us how we know.", "visual_prompt": "4:5 whiteboard flowchart where every arrow loops back to the START box, a single big red marker circle around the loop, comic tone" },
+      { "headline": "Or skip the chart entirely", "body": "{{easy_first_step}}", "visual_prompt": "4:5 the whiteboard has been erased except one clean marker arrow pointing off the board to a bright {{brand}} booking button drawn in brand color" },
+      { "headline": "{{brand}}: exit the loop", "body": "No judgment about how long it's been. We mean it.", "visual_prompt": "4:5 warm candid photo of a smiling {{brand}} front desk team member, welcoming gesture, bright clean light, brand colors visible" }
+    ]
+  },
+  "cta": "{{easy_first_step}} Exit the loop with {{brand}}.",
+  "craft": {
+    "technique": "Relatable exaggeration in a looping flowchart (circular structure)",
+    "notes": "Setup: a fake-scientific flowchart and an honest yes/no question; the 'NO' arrow already points to the same place as 'YES', the first small laugh. Escalation: two stall excuses the viewer has actually thought, then an absurd decision box that pushes it into ridiculous territory. Turn: 'Return to slide one': the reveal that every path loops, which is the core joke about our own procrastination. Tag: 'Ask us how we know' admits the brand team does it too (punching at self), then the clean exit arrow. Timing in a carousel: the loop slide must be a hard visual surprise, so keep slides two to five visually busy and make the loop slide one big red circle; the swipe before it is the pause."
+  },
+  "do_not": [
+    "Shame people for how long they've waited; the joke is on everyone, including the team",
+    "Use fear, pain or health scares as the stall excuses",
+    "Make the exit step anything harder than one tap or one call",
+    "Add a branch that implies a medical or financial outcome"
+  ],
+  "compliance": [
+    "Dental: no promises of 'painless' or specific results; no clinical claims in any flowchart box",
+    "Med spa: no before/after images or result claims; any treatment named must be described as performed by licensed providers; add 'results vary' if a treatment is named",
+    "Real estate: include brokerage name and license number where your state requires; no wording about who a neighborhood is 'for' (fair housing)",
+    "Life coach: no income, health or life-outcome promises in the exit step"
+  ]
+}

@@ -1,0 +1,160 @@
+{
+  "id": "lists-002-countdown-to-the-one",
+  "version": 1,
+  "name": "Five to One Menu Countdown",
+  "category": "lists",
+  "format": "reel",
+  "goal": "sales",
+  "duration_seconds": 24,
+  "aspect_ratio": "9:16",
+  "best_for": [
+    "coffee shop",
+    "restaurant",
+    "barber shop",
+    "apparel brand",
+    "jewelry brand"
+  ],
+  "why_it_works": "A countdown creates an open loop: viewers stay to find out what number one is, and every lower slot raises the stakes. By the time {{number_one}} appears, the viewer has watched four good options lose to it, so it feels earned instead of advertised.",
+  "hook": {
+    "pattern": "Announce a ranked countdown of your own lineup and tease that number one surprises people.",
+    "examples": [
+      "Our five best sellers, ranked. Number one is not what you think.",
+      "Ranking everything we sell. The winner beat our signature.",
+      "Five to one: what regulars actually order at {{brand}}."
+    ]
+  },
+  "variables": [
+    {
+      "name": "brand",
+      "description": "Business name",
+      "example": "Pilar Coffee House"
+    },
+    {
+      "name": "item_5",
+      "description": "Fifth place item",
+      "example": "cold brew tonic"
+    },
+    {
+      "name": "item_4",
+      "description": "Fourth place item",
+      "example": "cardamom bun"
+    },
+    {
+      "name": "item_3",
+      "description": "Third place item",
+      "example": "oat honey latte"
+    },
+    {
+      "name": "item_2",
+      "description": "Second place item, the one people expect to win",
+      "example": "house espresso"
+    },
+    {
+      "name": "number_one",
+      "description": "The actual winner",
+      "example": "brown butter cortado"
+    },
+    {
+      "name": "winner_reason",
+      "description": "One concrete reason it wins",
+      "example": "regulars order it twice a day"
+    },
+    {
+      "name": "offer",
+      "description": "Reason to come try number one",
+      "example": "half off the cortado before 9am this week"
+    }
+  ],
+  "beats": [
+    {
+      "seconds": 3,
+      "purpose": "hook: tease the surprise",
+      "on_screen_text": "Our top 5, ranked. #1 isn't what you think.",
+      "voiceover": "Our five best sellers, ranked. Number one is not what you think.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Five {{brand}} products lined up on a wooden counter, the end spot covered by a folded cloth, warm morning light, low angle, vertical 9:16"
+      }
+    },
+    {
+      "seconds": 2,
+      "purpose": "number 5",
+      "on_screen_text": "#5 {{item_5}}",
+      "voiceover": "Five: {{item_5}}.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Hero close-up of {{item_5}} on a plain surface with a large number 5 shadow behind it, soft side light, vertical"
+      }
+    },
+    {
+      "seconds": 2,
+      "purpose": "number 4",
+      "on_screen_text": "#4 {{item_4}}",
+      "voiceover": "Four: {{item_4}}.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Hero close-up of {{item_4}}, same surface and light as the previous shot, large number 4 shadow, vertical"
+      }
+    },
+    {
+      "seconds": 2,
+      "purpose": "number 3",
+      "on_screen_text": "#3 {{item_3}}",
+      "voiceover": "Three: {{item_3}}.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Hero close-up of {{item_3}}, matching set, large number 3 shadow, vertical"
+      }
+    },
+    {
+      "seconds": 3,
+      "purpose": "number 2: the expected winner loses",
+      "on_screen_text": "#2 {{item_2}}",
+      "voiceover": "Two is {{item_2}}. Everyone guesses this one.",
+      "visual": {
+        "tier": "still",
+        "prompt": "{{item_2}} in a slightly brighter spotlight, a hand reaching toward it then stopping, vertical 9:16"
+      }
+    },
+    {
+      "seconds": 5,
+      "purpose": "number 1 reveal in motion",
+      "on_screen_text": "#1 {{number_one}}",
+      "voiceover": "Number one: {{number_one}}.",
+      "visual": {
+        "tier": "clip_standard",
+        "prompt": "The cloth is pulled away to reveal {{number_one}} on the {{brand}} counter, steam or sparkle catching warm light, slow push-in, vertical 9:16"
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "why it won",
+      "on_screen_text": "{{winner_reason}}",
+      "voiceover": "Why? {{winner_reason}}.",
+      "visual": {
+        "tier": "still",
+        "prompt": "A regular customer's hands holding {{number_one}} at a {{brand}} table, candid, natural light, vertical"
+      }
+    },
+    {
+      "seconds": 3,
+      "purpose": "call to action",
+      "on_screen_text": "{{offer}}",
+      "voiceover": "Come see why: {{offer}}.",
+      "visual": {
+        "tier": "text_only",
+        "prompt": ""
+      }
+    }
+  ],
+  "cta": "Taste number one: {{offer}}.",
+  "craft": {
+    "technique": "Descending countdown with a subverted favorite",
+    "notes": "Lower slots move fast (2 seconds each) so the pace accelerates toward the top. Number two must be the thing people expect to win; dethroning it is what makes number one feel like news. Spend the one motion beat on the reveal and nowhere else."
+  },
+  "do_not": [
+    "Rank something you are trying to clear out as number one",
+    "Let the lower slots run long; momentum is the whole format",
+    "Fake the ranking; base it on real sales or real regular orders"
+  ]
+}

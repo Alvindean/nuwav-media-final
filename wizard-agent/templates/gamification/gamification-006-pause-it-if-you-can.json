@@ -1,0 +1,41 @@
+{
+  "id": "gamification-006-pause-it-if-you-can",
+  "version": 1,
+  "name": "Pause It If You Can",
+  "category": "gamification",
+  "format": "reel",
+  "goal": "engagement",
+  "duration_seconds": 16,
+  "aspect_ratio": "9:16",
+  "best_for": ["sports team", "athlete", "fitness trainer", "lowrider car club", "barber shop"],
+  "why_it_works": "Daring people to freeze a single frame turns watching into a reflex test. They replay, scrub and screenshot, which the algorithm reads as deep interest, and the first person to post the right number gets to feel fast and sharp in front of everyone.",
+  "hook": {
+    "pattern": "Tell viewers a number flashes for one frame and challenge them to catch it.",
+    "examples": [
+      "A number flashes in this clip. Pause on it.",
+      "Only the fastest thumbs catch the number. Try.",
+      "Screenshot the flash. First ten right win."
+    ]
+  },
+  "variables": [
+    { "name": "brand", "description": "Team, athlete, gym or club name", "example": "Eastside Lowrider Club" },
+    { "name": "action", "description": "The fast, visual action in the clip", "example": "a candy-red '64 hopping three feet off the pavement" },
+    { "name": "location", "description": "Where it happens", "example": "a sunset parking lot on Whittier Boulevard" },
+    { "name": "hidden_number", "description": "The number that flashes for one beat", "example": "47" },
+    { "name": "reward", "description": "What the first correct commenters get", "example": "a club sticker pack mailed free" }
+  ],
+  "beats": [
+    { "seconds": 3, "purpose": "hook: the dare", "on_screen_text": "A number flashes. Pause on it.", "voiceover": "A number flashes in this clip. Pause on it.", "visual": { "tier": "still", "prompt": "Vertical 9:16 dramatic low-angle photo of {{action}} at {{location}}, golden hour backlight, motion frozen mid-moment, crisp detail" } },
+    { "seconds": 5, "purpose": "fast action, eyes busy", "on_screen_text": "Watch.", "voiceover": "", "visual": { "tier": "clip_standard", "prompt": "Fast, energetic vertical 9:16 sequence of {{action}} at {{location}}, quick camera moves, golden hour light, high contrast, real-world physics" } },
+    { "seconds": 1, "purpose": "the flash frame", "on_screen_text": "{{hidden_number}}", "voiceover": "", "visual": { "tier": "still", "prompt": "Single vertical 9:16 frame of {{location}} with the number {{hidden_number}} painted huge in white on the ground or a wall, motion blur at the edges" } },
+    { "seconds": 4, "purpose": "aftermath, plant doubt", "on_screen_text": "Did you catch it?", "voiceover": "Did you catch it? Be honest.", "visual": { "tier": "still", "prompt": "Vertical 9:16 aftermath shot at {{location}}, dust or chalk hanging in the golden light, the crew or team reacting in silhouette" } },
+    { "seconds": 3, "purpose": "rules and reward", "on_screen_text": "Comment the number. First 10 right get {{reward}}.", "voiceover": "Comment the number. First ten right get {{reward}}.", "visual": { "tier": "text_only", "prompt": "" } }
+  ],
+  "cta": "Comment the number you caught. First ten right get {{reward}} from {{brand}}.",
+  "craft": { "technique": "Single-frame flash", "notes": "Place the flash right after the most exciting motion, when the eye is still tracking the action, so most people miss it on the first watch. Keep it a short number in huge type so a paused frame reads instantly on a phone." },
+  "do_not": [
+    "Flash the number for under a second in the final edit; one full second is the floor or nobody can pause on it",
+    "Use a flash frame of bright strobing light; avoid rapid flashing that can trigger photosensitive viewers",
+    "Show unsafe stunts without a closed course or safety note"
+  ]
+}

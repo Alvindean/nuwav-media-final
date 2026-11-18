@@ -1,0 +1,140 @@
+{
+  "id": "lists-008-ten-tips-one-breath",
+  "version": 1,
+  "name": "Ten Tips in One Breath",
+  "category": "lists",
+  "format": "reel",
+  "goal": "engagement",
+  "duration_seconds": 23,
+  "aspect_ratio": "9:16",
+  "best_for": [
+    "fitness trainer",
+    "skincare brand",
+    "financial advisor",
+    "podcast",
+    "UGC creator"
+  ],
+  "why_it_works": "Speed is the hook: ten tips in about twenty seconds feels like a dare to keep up. Viewers rewatch to catch what they missed and save it to read slowly later, both of which feed the algorithm. Density reads as expertise.",
+  "hook": {
+    "pattern": "Challenge the viewer to keep up with a rapid list delivered at breakneck pace.",
+    "examples": [
+      "Ten {{topic}} tips in twenty seconds. Keep up.",
+      "Ten {{topic}} rules, one breath. Go.",
+      "Pause on whichever one you're breaking."
+    ]
+  },
+  "variables": [
+    {
+      "name": "brand",
+      "description": "Creator or business name",
+      "example": "Marlo Skin Studio"
+    },
+    {
+      "name": "topic",
+      "description": "Subject of the tips",
+      "example": "skincare"
+    },
+    {
+      "name": "tips_1_to_3",
+      "description": "Tips 1-3 as short phrases, separated by slashes",
+      "example": "pat, don't rub / sunscreen is the last step / two fingers of SPF for your face"
+    },
+    {
+      "name": "tips_4_to_6",
+      "description": "Tips 4-6",
+      "example": "wash pillowcases weekly / one new product at a time / patch test behind the ear"
+    },
+    {
+      "name": "tips_7_to_9",
+      "description": "Tips 7-9",
+      "example": "moisturize damp skin / don't skip your neck / retinol at night only"
+    },
+    {
+      "name": "tip_10",
+      "description": "The tenth tip, the one that matters most",
+      "example": "consistency beats expensive"
+    },
+    {
+      "name": "lead_magnet",
+      "description": "Free full version to send people to",
+      "example": "the free printable routine card"
+    }
+  ],
+  "beats": [
+    {
+      "seconds": 2,
+      "purpose": "hook: the dare",
+      "on_screen_text": "10 {{topic}} tips. 20 seconds.",
+      "voiceover": "Ten {{topic}} tips in twenty seconds. Keep up.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Creator from {{brand}} facing camera mid-inhale, a stopwatch held up beside their face, bright ring light, plain wall, tight vertical 9:16"
+      }
+    },
+    {
+      "seconds": 5,
+      "purpose": "tips 1-3",
+      "on_screen_text": "{{tips_1_to_3}}",
+      "voiceover": "{{tips_1_to_3}}.",
+      "visual": {
+        "tier": "text_only",
+        "prompt": ""
+      }
+    },
+    {
+      "seconds": 5,
+      "purpose": "tips 4-6 over a visual",
+      "on_screen_text": "{{tips_4_to_6}}",
+      "voiceover": "{{tips_4_to_6}}.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Flat lay of everyday {{topic}} essentials on a bright surface, organized grid, top-down, even daylight, vertical"
+      }
+    },
+    {
+      "seconds": 5,
+      "purpose": "tips 7-9",
+      "on_screen_text": "{{tips_7_to_9}}",
+      "voiceover": "{{tips_7_to_9}}.",
+      "visual": {
+        "tier": "text_only",
+        "prompt": ""
+      }
+    },
+    {
+      "seconds": 3,
+      "purpose": "tip 10 lands slow",
+      "on_screen_text": "10. {{tip_10}}",
+      "voiceover": "And ten... {{tip_10}}.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Same creator exhaling, relaxed smile, stopwatch lowered, soft light, vertical 9:16"
+      }
+    },
+    {
+      "seconds": 3,
+      "purpose": "call to action",
+      "on_screen_text": "Missed one? Save this.",
+      "voiceover": "Missed one? Save this, or grab {{lead_magnet}} at the link.",
+      "visual": {
+        "tier": "text_only",
+        "prompt": ""
+      }
+    }
+  ],
+  "cta": "Save this, and get {{lead_magnet}} from the link in bio.",
+  "craft": {
+    "technique": "Speed run with a hard brake",
+    "notes": "Nine tips fly by in kinetic text at a pace slightly too fast to read, then the tenth slows down completely. The tempo change tells the viewer which tip matters most without saying so. Captions carry the speed; voiceover can be sped up 1.2x in the edit."
+  },
+  "do_not": [
+    "Make any single tip need a caveat; if it needs one, cut it",
+    "Put the most important tip anywhere but last",
+    "Use tiny fonts; the fast section must still be readable on pause"
+  ],
+  "compliance": [
+    "Skincare: tips are general care, not treatment; no claims to cure acne or other conditions",
+    "Financial advisor: tips are general education, not personalized advice; no return or income promises; follow FINRA/SEC advertising rules",
+    "Fitness: no guaranteed weight-loss or body-change claims"
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "id": "gamification-005-two-truths-and-a-myth",
+  "version": 1,
+  "name": "Two Truths and a Myth",
+  "category": "gamification",
+  "format": "both",
+  "goal": "trust",
+  "duration_seconds": 22,
+  "aspect_ratio": "9:16",
+  "best_for": ["law firm", "dental practice", "chiropractor", "financial advisor", "insurance agent"],
+  "why_it_works": "People love proving they know better, and a three-way pick is easy enough to answer without thinking. When the myth turns out to be the one they believed, the professional who corrected them gains instant credibility without ever sounding like an ad.",
+  "hook": {
+    "pattern": "Promise three statements, one false, and say the false one costs people.",
+    "examples": [
+      "Two of these are true. One costs people thousands. Which?",
+      "Most people pick the wrong one. Let's see if you do.",
+      "Three {{topic}} facts. One is a myth. Comment your number."
+    ]
+  },
+  "variables": [
+    { "name": "brand", "description": "Practice or firm name", "example": "Reyes Family Dental" },
+    { "name": "topic", "description": "The subject area", "example": "teeth" },
+    { "name": "truth_one", "description": "A true, surprising statement", "example": "Brushing right after coffee can wear enamel" },
+    { "name": "truth_two", "description": "A second true statement", "example": "Gums can bleed with no pain at all" },
+    { "name": "myth", "description": "The common belief that is false", "example": "If it doesn't hurt, there's no cavity" },
+    { "name": "myth_fix", "description": "One plain sentence on what's actually true", "example": "Most early cavities don't hurt; that's why checkups find them" },
+    { "name": "consult_offer", "description": "Low-pressure next step", "example": "book a free 15-minute check-in" }
+  ],
+  "beats": [
+    { "seconds": 3, "purpose": "hook: one of three is false", "on_screen_text": "2 truths. 1 myth. Which one?", "voiceover": "Two of these are true. One is a myth that costs people.", "visual": { "tier": "still", "prompt": "Vertical 9:16 clean, bright office at {{brand}}, a desk with three numbered index cards face-down, soft window light, no people" } },
+    { "seconds": 3, "purpose": "statement 1", "on_screen_text": "1. {{truth_one}}", "voiceover": "One. {{truth_one}}.", "visual": { "tier": "text_only", "prompt": "" } },
+    { "seconds": 3, "purpose": "statement 2", "on_screen_text": "2. {{myth}}", "voiceover": "Two. {{myth}}.", "visual": { "tier": "text_only", "prompt": "" } },
+    { "seconds": 3, "purpose": "statement 3", "on_screen_text": "3. {{truth_two}}", "voiceover": "Three. {{truth_two}}.", "visual": { "tier": "text_only", "prompt": "" } },
+    { "seconds": 3, "purpose": "lock in before reveal", "on_screen_text": "Comment 1, 2 or 3. Now.", "voiceover": "Comment your number now.", "visual": { "tier": "text_only", "prompt": "" } },
+    { "seconds": 4, "purpose": "reveal and correct", "on_screen_text": "#2 is the myth. {{myth_fix}}", "voiceover": "Number two is the myth. {{myth_fix}}.", "visual": { "tier": "still", "prompt": "The same desk at {{brand}}, card number two flipped face-up with a red X stamped on it, the other two cards with green checks, soft window light, vertical 9:16" } },
+    { "seconds": 3, "purpose": "low-pressure next step", "on_screen_text": "Questions? {{consult_offer}}.", "voiceover": "Got questions about your own situation? {{consult_offer}}.", "visual": { "tier": "text_only", "prompt": "" } }
+  ],
+  "cta": "Comment your number, then {{consult_offer}} with {{brand}} if it hit close to home.",
+  "carousel": {
+    "slides": [
+      { "headline": "Two truths. One myth.", "body": "Comment your pick before you swipe to the answer.", "visual_prompt": "Three numbered index cards face-down on a clean desk at {{brand}}, soft window light, 4:5" },
+      { "headline": "1. {{truth_one}}", "body": "True or false?", "visual_prompt": "Single index card with a large number 1 in {{brand}} colors" },
+      { "headline": "2. {{myth}}", "body": "True or false?", "visual_prompt": "Single index card with a large number 2 in {{brand}} colors" },
+      { "headline": "3. {{truth_two}}", "body": "True or false?", "visual_prompt": "Single index card with a large number 3 in {{brand}} colors" },
+      { "headline": "Locked in?", "body": "Comment 1, 2 or 3, then swipe.", "visual_prompt": "Bold type card with a padlock icon and a comment bubble" },
+      { "headline": "Number 2 is the myth", "body": "{{myth_fix}}", "visual_prompt": "Card number two flipped with a red X, cards one and three with green checks" },
+      { "headline": "Your situation is different", "body": "General info only. {{consult_offer}}.", "visual_prompt": "{{brand}} logo card with the offer in large type and a calm office photo behind" }
+    ]
+  },
+  "craft": { "technique": "Buried myth", "notes": "Put the myth in the middle slot and phrase it in the exact words people use, so it sounds the most familiar. Rotate the myth's position in future posts so regular viewers can't game it." },
+  "do_not": [
+    "Use a myth so obvious nobody believed it; the payoff needs the 'wait, really?' moment",
+    "Shame people who got it wrong in replies",
+    "Answer individual cases in the comments; move them to a private consult"
+  ],
+  "compliance": [
+    "Law firms: no promises or predictions of case outcomes; label as attorney advertising where your state bar requires it; general information, not legal advice",
+    "Dental, chiropractic: no cure or guaranteed-result claims; treatment statements must be supported and say results vary",
+    "Financial advisors: no return or income promises; say it is educational, not personalized advice; follow your firm's compliance review before posting",
+    "Insurance: never imply a claim will be approved or a policy covers something without checking the policy terms; include license number where required"
+  ]
+}

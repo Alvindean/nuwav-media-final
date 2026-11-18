@@ -1,0 +1,60 @@
+{
+  "id": "comparison-004-two-receipts",
+  "version": 1,
+  "name": "Two Receipts, One Year",
+  "category": "comparison",
+  "format": "both",
+  "goal": "trust",
+  "duration_seconds": 24,
+  "aspect_ratio": "9:16",
+  "best_for": ["auto shop", "dental office", "chiropractor", "insurance agency", "roofing contractor"],
+  "why_it_works": "The cheap fix wins on day one and loses over a year, but people judge on day one. Stacking a year of small repeat charges into one long receipt makes the slow cost feel sudden and physical, which is the only way most people notice it.",
+  "hook": {
+    "pattern": "Show two receipts of wildly different length and ask which one was the 'cheap' choice.",
+    "examples": [
+      "One of these receipts was the cheap option. Guess which.",
+      "Two ways to handle {{problem}}. Here's what each cost by December.",
+      "The short receipt was the expensive choice. Let me explain."
+    ]
+  },
+  "variables": [
+    { "name": "brand", "description": "Business name", "example": "Northgate Auto Care" },
+    { "name": "problem", "description": "The recurring problem", "example": "a squealing serpentine belt" },
+    { "name": "cheap_path", "description": "The quick, cheap fix people pick", "example": "cheap belt and a spray, redone every few months" },
+    { "name": "cheap_total", "description": "Illustrative one-year total of the cheap path", "example": "$640 over 4 visits" },
+    { "name": "our_fix", "description": "Your real fix", "example": "belt, tensioner and pulley replaced once" },
+    { "name": "our_total", "description": "Illustrative one-year total of your fix", "example": "$410, one visit" },
+    { "name": "hidden_cost", "description": "Cost that never appears on a receipt", "example": "four mornings without a car" },
+    { "name": "offer", "description": "Low-friction next step", "example": "Free inspection and a written quote" }
+  ],
+  "beats": [
+    { "seconds": 3, "purpose": "hook: two receipts", "on_screen_text": "Which was the cheap option?", "voiceover": "One of these was the cheap option.", "visual": { "tier": "still", "prompt": "Vertical 9:16 photo of two paper receipts on a dark counter, one very long and curling off the edge, one short and neat with a small {{brand}} logo, top-down, dramatic single light" } },
+    { "seconds": 5, "purpose": "the cheap path adds up", "on_screen_text": "{{cheap_path}}", "voiceover": "The quick fix for {{problem}}: {{cheap_path}}.", "visual": { "tier": "clip_draft", "prompt": "Vertical top-down shot of a thermal receipt slowly printing and unrolling longer and longer across a counter, line items appearing, cool fluorescent light" } },
+    { "seconds": 5, "purpose": "your fix", "on_screen_text": "{{our_fix}}", "voiceover": "Or fix it once: {{our_fix}}.", "visual": { "tier": "still", "prompt": "Vertical photo of a {{brand}} professional explaining the fix to a customer, pointing at the part or chart, warm clean workspace light, both people relaxed" } },
+    { "seconds": 4, "purpose": "the totals", "on_screen_text": "{{cheap_total}} vs {{our_total}}", "voiceover": "By year end: {{cheap_total}} versus {{our_total}}.", "visual": { "tier": "text_only", "prompt": "" } },
+    { "seconds": 4, "purpose": "the cost not on any receipt", "on_screen_text": "Not on the receipt: {{hidden_cost}}", "voiceover": "And the part no receipt shows: {{hidden_cost}}.", "visual": { "tier": "still", "prompt": "Vertical photo of an empty driveway or empty chair at dawn, quiet and slightly lonely mood, soft blue morning light, symbolic of {{hidden_cost}}" } },
+    { "seconds": 3, "purpose": "call to action", "on_screen_text": "{{offer}}", "voiceover": "Get one receipt. {{offer}}.", "visual": { "tier": "text_only", "prompt": "" } }
+  ],
+  "cta": "Get the short receipt: {{offer}}.",
+  "carousel": {
+    "slides": [
+      { "headline": "Two receipts. One was 'cheap.'", "body": "A year of handling {{problem}} two different ways.", "visual_prompt": "Long curling receipt next to a short neat {{brand}} receipt, top-down, dark counter, single dramatic light" },
+      { "headline": "The quick fix", "body": "{{cheap_path}}.", "visual_prompt": "Close-up of a long receipt with repeated line items, cool light, shallow focus" },
+      { "headline": "The one-time fix", "body": "{{our_fix}}.", "visual_prompt": "{{brand}} professional explaining a fix to a customer, warm workspace light" },
+      { "headline": "The year-end totals", "body": "{{cheap_total}} vs {{our_total}}. Illustrative example; your numbers will vary.", "visual_prompt": "Bold two-number infographic in {{brand}} colors, the smaller total highlighted" },
+      { "headline": "What no receipt shows", "body": "{{hidden_cost}}.", "visual_prompt": "Empty driveway or empty chair at dawn, soft blue light, quiet mood" },
+      { "headline": "Get the short receipt", "body": "{{offer}}", "visual_prompt": "{{brand}} storefront or front desk, inviting warm light, logo visible" }
+    ]
+  },
+  "craft": { "technique": "Accumulation visual", "notes": "The long receipt is the whole idea: let it physically grow on screen so the cost feels like it piles up. Say the totals out loud only once, in the text-only beat, so the number lands without clutter around it." },
+  "do_not": [
+    "Present illustrative totals as guaranteed savings",
+    "Suggest a cheaper option is unsafe unless that is documented",
+    "Pack more than one problem into a single ad"
+  ],
+  "compliance": [
+    "Label all totals as illustrative examples, not quotes or guaranteed savings",
+    "Dental and chiropractic: no promises of outcomes or that one visit fixes a condition for good; treatment needs vary by patient and must follow state board advertising rules",
+    "Insurance: no savings claims without a documented basis; name the licensed agency and state license number where required, and say coverage varies by policy"
+  ]
+}

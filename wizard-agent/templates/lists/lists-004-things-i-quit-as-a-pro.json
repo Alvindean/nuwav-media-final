@@ -1,0 +1,144 @@
+{
+  "id": "lists-004-things-i-quit-as-a-pro",
+  "version": 1,
+  "name": "Things I Quit Doing as a Pro",
+  "category": "lists",
+  "format": "reel",
+  "goal": "trust",
+  "duration_seconds": 21,
+  "aspect_ratio": "9:16",
+  "best_for": [
+    "dental practice",
+    "chiropractor",
+    "barber shop",
+    "business coach",
+    "auto shop"
+  ],
+  "why_it_works": "Admitting what you used to do wrong is disarming. It shows growth, signals insider standards, and quietly tells the viewer what other providers may still be doing. Confession beats claims because the viewer cannot argue with your own past.",
+  "hook": {
+    "pattern": "Confess a number of habits you dropped after years in the trade.",
+    "examples": [
+      "{{years}} years as a {{profession}}. Three things I quit doing.",
+      "I used to do this to every client. Never again.",
+      "Three habits I dropped as a {{profession}}, and why you should care."
+    ]
+  },
+  "variables": [
+    {
+      "name": "brand",
+      "description": "Business or practice name",
+      "example": "Kingsway Barber Co."
+    },
+    {
+      "name": "profession",
+      "description": "The trade, in plain words",
+      "example": "barber"
+    },
+    {
+      "name": "years",
+      "description": "Years in the trade",
+      "example": "12"
+    },
+    {
+      "name": "quit_1",
+      "description": "First habit you stopped",
+      "example": "using clipper guards on every fade"
+    },
+    {
+      "name": "why_1",
+      "description": "Why you stopped, one line",
+      "example": "it leaves a line nobody asked for"
+    },
+    {
+      "name": "quit_2",
+      "description": "Second habit you stopped",
+      "example": "rushing the neckline to stay on schedule"
+    },
+    {
+      "name": "why_2",
+      "description": "Why you stopped",
+      "example": "the neckline is what people see all week"
+    },
+    {
+      "name": "quit_3",
+      "description": "Third habit you stopped, the most surprising",
+      "example": "saying yes to every walk-in"
+    },
+    {
+      "name": "why_3",
+      "description": "Why you stopped",
+      "example": "a tired chair gives worse cuts"
+    },
+    {
+      "name": "offer",
+      "description": "Next step",
+      "example": "book a 45-minute slot online"
+    }
+  ],
+  "beats": [
+    {
+      "seconds": 3,
+      "purpose": "hook: the confession",
+      "on_screen_text": "{{years}} years. 3 things I quit.",
+      "voiceover": "{{years}} years as a {{profession}}. Three things I quit doing.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Seated portrait of a {{profession}} in their {{brand}} workspace, arms crossed, slight half-smile, tools blurred behind, moody side light, vertical 9:16"
+      }
+    },
+    {
+      "seconds": 5,
+      "purpose": "quit number 1",
+      "on_screen_text": "1. {{quit_1}}",
+      "voiceover": "One: {{quit_1}}. Because {{why_1}}.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Close-up of the tools of a {{profession}} laid out on a towel, one item pushed aside, overhead light, vertical"
+      }
+    },
+    {
+      "seconds": 5,
+      "purpose": "quit number 2 with motion",
+      "on_screen_text": "2. {{quit_2}}",
+      "voiceover": "Two: {{quit_2}}. {{why_2}}.",
+      "visual": {
+        "tier": "clip_draft",
+        "prompt": "Slow, steady close-up of a {{profession}}'s hands doing careful detail work at {{brand}}, shallow depth of field, warm light, vertical 9:16"
+      }
+    },
+    {
+      "seconds": 5,
+      "purpose": "quit number 3, the surprising one",
+      "on_screen_text": "3. {{quit_3}}",
+      "voiceover": "Three, and this one costs me money: {{quit_3}}. {{why_3}}.",
+      "visual": {
+        "tier": "still",
+        "prompt": "An appointment book or tablet calendar on the {{brand}} counter with spaced-out bookings, natural light, vertical"
+      }
+    },
+    {
+      "seconds": 3,
+      "purpose": "call to action",
+      "on_screen_text": "{{offer}}",
+      "voiceover": "If that's how you want it done: {{offer}}.",
+      "visual": {
+        "tier": "text_only",
+        "prompt": ""
+      }
+    }
+  ],
+  "cta": "Get it done the slow, right way: {{offer}}.",
+  "craft": {
+    "technique": "Escalating confession",
+    "notes": "Order the quits so the last one costs the pro something (money, time, convenience). A habit you dropped at your own expense is the strongest proof you care about the client. Keep each why to one plain sentence."
+  },
+  "do_not": [
+    "Frame a quit as something competitors still do by name",
+    "Confess anything that implies past harm to a patient or client",
+    "Pick habits only other pros would understand"
+  ],
+  "compliance": [
+    "Dental and chiropractic: describe process changes only; no claims of cures, pain elimination or guaranteed results",
+    "Healthcare providers: no patient stories or images without written consent; follow your state board's advertising rules"
+  ]
+}

@@ -1,0 +1,182 @@
+{
+  "id": "comedy-004-brochure-vs-tuesday",
+  "version": 1,
+  "name": "The Brochure vs. Our Actual Tuesday",
+  "category": "comedy",
+  "format": "both",
+  "goal": "trust",
+  "duration_seconds": 23,
+  "aspect_ratio": "9:16",
+  "best_for": [
+    "law firm",
+    "financial advisor",
+    "med spa",
+    "real estate agent",
+    "podcast studio"
+  ],
+  "why_it_works": "Polished professional brands feel distant. Laughing at your own stock-photo image first makes you look confident and real, and the small, harmless chaos of a normal Tuesday is relatable. Then the one thing that never slips lands as sincere, because you already proved you won't oversell.",
+  "hook": {
+    "pattern": "Split the screen: what people imagine your kind of business looks like vs. a real, slightly chaotic day.",
+    "examples": [
+      "What you think a {{business_type}} looks like vs. our Tuesday.",
+      "The brochure version of {{brand}} vs. the real one.",
+      "Stock photo {{business_type}} vs. actual {{business_type}}."
+    ]
+  },
+  "variables": [
+    {
+      "name": "brand",
+      "description": "Business name",
+      "example": "Harlow & Pike Law"
+    },
+    {
+      "name": "business_type",
+      "description": "The kind of business, as people would say it",
+      "example": "law firm"
+    },
+    {
+      "name": "brochure_cliche",
+      "description": "The glossy stock-photo cliche of the industry",
+      "example": "five people laughing at one salad in a glass boardroom"
+    },
+    {
+      "name": "tuesday_reality_1",
+      "description": "A harmless, self-deprecating real detail",
+      "example": "the printer has jammed. The printer has a name. It's Gerald."
+    },
+    {
+      "name": "tuesday_reality_2",
+      "description": "A second real detail, slightly bigger",
+      "example": "a 20-minute team debate about which lunch place is 'close'"
+    },
+    {
+      "name": "callback_tag",
+      "description": "A short callback to the first Tuesday detail",
+      "example": "Gerald is still jammed."
+    },
+    {
+      "name": "the_standard",
+      "description": "The one thing that never slips, stated as a process, not a result",
+      "example": "every client call returned the same business day"
+    },
+    {
+      "name": "offer",
+      "description": "What the viewer gets for acting",
+      "example": "a free 15-minute consult"
+    }
+  ],
+  "beats": [
+    {
+      "seconds": 3,
+      "purpose": "hook: the split premise",
+      "on_screen_text": "A {{business_type}} in the brochure vs. our Tuesday",
+      "voiceover": "What you think a {{business_type}} looks like. Versus our Tuesday.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Vertical 9:16 split screen: top half a glossy, overlit stock-photo style office with posed smiling professionals, bottom half the real {{brand}} office, lived-in, warm natural light, coffee cups on desks"
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "setup: the brochure cliche",
+      "on_screen_text": "Brochure: {{brochure_cliche}}",
+      "voiceover": "The brochure: {{brochure_cliche}}.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Vertical overly perfect stock-style photo of {{brochure_cliche}}, harsh bright white light, impossibly clean glass office, exaggerated posed smiles, slightly too saturated"
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "contrast: Tuesday reality one",
+      "on_screen_text": "Tuesday: {{tuesday_reality_1}}",
+      "voiceover": "Tuesday: {{tuesday_reality_1}}",
+      "visual": {
+        "tier": "still",
+        "prompt": "Vertical candid documentary photo inside {{brand}} showing {{tuesday_reality_1}}, real staff in everyday work clothes, natural window light, slightly messy desk, warm and human"
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "escalate: Tuesday reality two",
+      "on_screen_text": "Also Tuesday: {{tuesday_reality_2}}",
+      "voiceover": "Also Tuesday: {{tuesday_reality_2}}.",
+      "visual": {
+        "tier": "clip_draft",
+        "prompt": "Vertical handheld clip, a small group of {{brand}} staff in a lively, friendly debate around a desk about {{tuesday_reality_2}}, gestures, laughter, natural office light, documentary feel"
+      }
+    },
+    {
+      "seconds": 5,
+      "purpose": "turn: the thing that never changes",
+      "on_screen_text": "What's the same every day: {{the_standard}}",
+      "voiceover": "What doesn't change, Tuesday or not: {{the_standard}}.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Vertical calm medium shot of a {{brand}} team member focused at their desk with a client file or phone, quiet focused light, the chaos softly blurred behind them, sincere mood"
+      }
+    },
+    {
+      "seconds": 3,
+      "purpose": "tag plus CTA",
+      "on_screen_text": "{{callback_tag}} {{offer}}.",
+      "voiceover": "{{callback_tag}} Book {{offer}}.",
+      "visual": {
+        "tier": "text_only",
+        "prompt": ""
+      }
+    }
+  ],
+  "cta": "Book {{offer}} with {{brand}}. Real people, real Tuesdays.",
+  "carousel": {
+    "slides": [
+      {
+        "headline": "The brochure vs. our Tuesday",
+        "body": "What you picture when you hear {{business_type}}. And what it's actually like here.",
+        "visual_prompt": "Bold split title card: glossy stock office on the left, real {{brand}} office on the right, brand colors"
+      },
+      {
+        "headline": "Brochure",
+        "body": "{{brochure_cliche}}.",
+        "visual_prompt": "Overly perfect stock-style photo of {{brochure_cliche}}, harsh white light, posed smiles"
+      },
+      {
+        "headline": "Our Tuesday",
+        "body": "{{tuesday_reality_1}}",
+        "visual_prompt": "Candid photo inside {{brand}} showing {{tuesday_reality_1}}, warm natural light"
+      },
+      {
+        "headline": "Also our Tuesday",
+        "body": "{{tuesday_reality_2}}.",
+        "visual_prompt": "Candid photo of {{brand}} staff in a friendly debate about {{tuesday_reality_2}}"
+      },
+      {
+        "headline": "What never changes",
+        "body": "{{the_standard}}. Tuesday or not.",
+        "visual_prompt": "Calm, focused {{brand}} team member at a desk, quiet light, sincere mood"
+      },
+      {
+        "headline": "Come see a real Tuesday",
+        "body": "{{offer}}.",
+        "visual_prompt": "Warm {{brand}} logo card on brand color with the offer in large type"
+      }
+    ]
+  },
+  "craft": {
+    "technique": "Self-deprecating expectation vs. reality with a sincere turn",
+    "notes": "Setup: the brochure cliche, shot deliberately too glossy so the audience laughs at the stock-photo look, not at anyone. Escalation: two Tuesday details that climb from small (a printer with a name) to bigger (a whole team debate), each one at the brand's own expense. Turn: the music drops out and the tone goes sincere for the one standard that never slips. Tag: a callback to the first reality detail (the callback_tag, e.g. 'Gerald is still jammed.') so the ad ends on a laugh, not a lecture. Timing: hard cut from brochure to Tuesday on the downbeat; leave a full beat of quiet before the turn line, and land the tag within half a second after it so the sincerity doesn't overstay."
+  },
+  "do_not": [
+    "Make the 'reality' look incompetent with client work, files or money; the chaos is only about printers, lunch and office life",
+    "Mock a competitor's office or real stock photos from a named source",
+    "State the standard as an outcome (wins, returns, results); keep it a process",
+    "Show real client names, files or screens in any frame"
+  ],
+  "compliance": [
+    "Law firms: no outcome or settlement claims; the standard must be about service (response time), not results; label as attorney advertising where your state bar requires; no actors posing as clients without a disclaimer",
+    "Financial advisors: no performance, return or income claims; follow SEC/FINRA marketing rules; include required firm disclosures in the caption",
+    "Med spa: show no treatments, before/after or results in this ad; any staff shown in a treatment room must be licensed for what is depicted",
+    "Real estate: include brokerage name and license number where the state requires; avoid any wording about who a neighborhood is 'for' (fair housing)",
+    "Remove client files, screens and documents from every frame before rendering or filming"
+  ]
+}

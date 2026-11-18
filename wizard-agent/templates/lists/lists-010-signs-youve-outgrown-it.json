@@ -1,0 +1,155 @@
+{
+  "id": "lists-010-signs-youve-outgrown-it",
+  "version": 1,
+  "name": "Signs You've Outgrown Your Setup",
+  "category": "lists",
+  "format": "reel",
+  "goal": "leads",
+  "duration_seconds": 27,
+  "aspect_ratio": "9:16",
+  "best_for": [
+    "podcast",
+    "independent musician",
+    "real estate agent",
+    "insurance agency",
+    "apparel brand",
+    "luxury brand"
+  ],
+  "why_it_works": "A self-diagnosis checklist makes the viewer count along. Each sign they recognize raises the score in their head, and by the end they have talked themselves into needing an upgrade. Nobody likes being sold to, but everyone likes scoring themselves.",
+  "hook": {
+    "pattern": "Ask the viewer to keep score of how many signs apply to them.",
+    "examples": [
+      "Count how many of these apply to you.",
+      "Four signs you've outgrown your {{current_setup}}. Three means it's time.",
+      "If number three made you wince, we need to talk."
+    ]
+  },
+  "variables": [
+    {
+      "name": "brand",
+      "description": "Business or service name",
+      "example": "Low End Studio"
+    },
+    {
+      "name": "current_setup",
+      "description": "What the viewer has outgrown",
+      "example": "bedroom recording setup"
+    },
+    {
+      "name": "sign_1",
+      "description": "First, mild sign",
+      "example": "you re-record vocals because of the neighbor's dog"
+    },
+    {
+      "name": "sign_2",
+      "description": "Second sign",
+      "example": "your mixes sound different in the car every time"
+    },
+    {
+      "name": "sign_3",
+      "description": "Third, the painful one",
+      "example": "you turned down a feature because you couldn't deliver stems"
+    },
+    {
+      "name": "sign_4",
+      "description": "Fourth, the ambition sign",
+      "example": "you're already planning the next project before this one is out"
+    },
+    {
+      "name": "upgrade",
+      "description": "What the brand offers as the next step",
+      "example": "a day of studio time with an engineer"
+    },
+    {
+      "name": "offer",
+      "description": "Low-friction way to start",
+      "example": "free 15-minute studio tour"
+    }
+  ],
+  "beats": [
+    {
+      "seconds": 3,
+      "purpose": "hook: keep score",
+      "on_screen_text": "Count how many apply to you.",
+      "voiceover": "Count how many of these apply to you.",
+      "visual": {
+        "tier": "text_only",
+        "prompt": ""
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "sign 1",
+      "on_screen_text": "1. {{sign_1}}",
+      "voiceover": "One: {{sign_1}}.",
+      "visual": {
+        "tier": "still",
+        "prompt": "A cramped home version of a {{current_setup}}, cluttered corner, single desk lamp, slightly frustrating mood, vertical 9:16"
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "sign 2",
+      "on_screen_text": "2. {{sign_2}}",
+      "voiceover": "Two: {{sign_2}}.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Close-up of a person's tired face lit by a screen late at night, shallow depth of field, cool light, vertical"
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "sign 3, the painful one",
+      "on_screen_text": "3. {{sign_3}}",
+      "voiceover": "Three, and this one stings: {{sign_3}}.",
+      "visual": {
+        "tier": "still",
+        "prompt": "A phone on a desk showing an unanswered message notification, the room dark around it, single light source, vertical"
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "sign 4, the ambition",
+      "on_screen_text": "4. {{sign_4}}",
+      "voiceover": "Four: {{sign_4}}.",
+      "visual": {
+        "tier": "still",
+        "prompt": "A notebook full of plans and sketches open on a desk, morning light coming in, hopeful mood, vertical"
+      }
+    },
+    {
+      "seconds": 5,
+      "purpose": "the scoreboard and the upgrade",
+      "on_screen_text": "3 or more? Time for {{upgrade}}.",
+      "voiceover": "Three or more? You're ready for {{upgrade}} at {{brand}}.",
+      "visual": {
+        "tier": "clip_standard",
+        "prompt": "Slow reveal walk-through of a polished {{brand}} space, warm practical lights coming on one by one, wide to medium, vertical 9:16"
+      }
+    },
+    {
+      "seconds": 3,
+      "purpose": "call to action",
+      "on_screen_text": "{{offer}}",
+      "voiceover": "Start small: {{offer}}.",
+      "visual": {
+        "tier": "text_only",
+        "prompt": ""
+      }
+    }
+  ],
+  "cta": "Scored three or more? Start with a {{offer}}.",
+  "craft": {
+    "technique": "Self-scoring checklist with a threshold",
+    "notes": "Giving a threshold (three or more) before the list starts turns passive watching into counting. Order the signs mild, mild, painful, aspirational: the painful one creates the need and the aspirational one leaves the viewer feeling capable, not ashamed, right before the offer."
+  },
+  "do_not": [
+    "Shame the viewer's current situation; signs should feel familiar, not insulting",
+    "Use signs that apply to everyone; the list loses meaning",
+    "Promise outcomes from the upgrade"
+  ],
+  "compliance": [
+    "Real estate: no promises about home values, sale prices or timelines; include brokerage name and license info per state rules",
+    "Insurance: no guarantees of coverage or savings; signs describe situations, not policy advice; include license info where required"
+  ]
+}

@@ -1,0 +1,139 @@
+{
+  "id": "mindset-010-myth-funeral",
+  "version": 1,
+  "name": "The Myth Funeral",
+  "category": "mindset",
+  "format": "reel",
+  "goal": "awareness",
+  "duration_seconds": 25,
+  "aspect_ratio": "9:16",
+  "best_for": [
+    "auto shop",
+    "mortgage broker",
+    "chiropractor",
+    "podcast",
+    "insurance agent"
+  ],
+  "why_it_works": "A mock funeral for a bad belief is funny enough to stop the scroll and clear enough to remember. Burying the myth gives the viewer a ritual for letting go of it, and the eulogy format lets you explain why it was wrong without sounding like a lecture.",
+  "hook": {
+    "pattern": "Open on a tiny tombstone with the myth carved on it and a solemn 'We are gathered here today...'",
+    "examples": [
+      "We are gathered here to bury \"{{myth}}\".",
+      "Rest in peace, \"{{myth}}\". You cost people a lot.",
+      "Today we say goodbye to a {{industry}} myth."
+    ]
+  },
+  "variables": [
+    {
+      "name": "brand",
+      "description": "Business or show name",
+      "example": "Ironside Auto"
+    },
+    {
+      "name": "industry",
+      "description": "Industry or field",
+      "example": "car care"
+    },
+    {
+      "name": "myth",
+      "description": "The myth being buried, as people say it",
+      "example": "you need an oil change every 3,000 miles"
+    },
+    {
+      "name": "born_when",
+      "description": "Where or when the myth came from",
+      "example": "engines and oils from decades ago"
+    },
+    {
+      "name": "what_it_cost",
+      "description": "What believing it cost people",
+      "example": "a lot of oil changes nobody needed"
+    },
+    {
+      "name": "truth",
+      "description": "The truth that replaces it",
+      "example": "check your owner's manual; most modern cars go much longer"
+    },
+    {
+      "name": "offer",
+      "description": "What the viewer can do now",
+      "example": "ask us what your car actually needs, free"
+    }
+  ],
+  "beats": [
+    {
+      "seconds": 3,
+      "purpose": "hook: the tombstone",
+      "on_screen_text": "R.I.P. \"{{myth}}\"",
+      "voiceover": "We are gathered here today to bury \"{{myth}}\".",
+      "visual": {
+        "tier": "still",
+        "prompt": "Vertical 9:16 close-up of a small grey stone tombstone engraved 'R.I.P.' sitting on a workbench at {{brand}}, a single lily beside it, moody side light, tongue-in-cheek solemn"
+      }
+    },
+    {
+      "seconds": 5,
+      "purpose": "the life story",
+      "on_screen_text": "Born: {{born_when}}",
+      "voiceover": "It was born in {{born_when}}. It made sense back then.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Vertical 9:16 vintage-style photo of an old-fashioned {{industry}} scene, sepia tones, film grain, nostalgic, no recognizable brands"
+      }
+    },
+    {
+      "seconds": 5,
+      "purpose": "what it cost",
+      "on_screen_text": "It cost us {{what_it_cost}}.",
+      "voiceover": "But it cost all of us {{what_it_cost}}.",
+      "visual": {
+        "tier": "text_only",
+        "prompt": ""
+      }
+    },
+    {
+      "seconds": 5,
+      "purpose": "the mourners",
+      "on_screen_text": "Few will miss it.",
+      "voiceover": "Few will miss it.",
+      "visual": {
+        "tier": "clip_draft",
+        "prompt": "Vertical 9:16 comedic shot of the {{brand}} team standing in a line in work clothes holding tiny paper hats over their hearts, deadpan faces, slow push-in, shop lighting"
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "the truth that replaces it",
+      "on_screen_text": "{{truth}}",
+      "voiceover": "In its place: {{truth}}.",
+      "visual": {
+        "tier": "text_only",
+        "prompt": ""
+      }
+    },
+    {
+      "seconds": 3,
+      "purpose": "call to action",
+      "on_screen_text": "{{offer}}",
+      "voiceover": "{{offer}} at {{brand}}.",
+      "visual": {
+        "tier": "text_only",
+        "prompt": ""
+      }
+    }
+  ],
+  "cta": "{{offer}} at {{brand}}.",
+  "craft": {
+    "technique": "Mock eulogy",
+    "notes": "Play it completely straight: solemn voice, slow pace, one lily. The humor comes from the gap between the ceremony and how small the myth is. Give the myth a fair 'it made sense back then' line so viewers who believed it don't feel stupid."
+  },
+  "do_not": [
+    "Mock customers who believed the myth",
+    "Bury a myth that is actually still true for some cases without saying so",
+    "Use real funeral imagery that could feel disrespectful, such as a real cemetery or a casket"
+  ],
+  "compliance": [
+    "Mortgage and insurance: state the truth generally and add 'terms vary by lender/policy'; no rate, approval or savings promises",
+    "Chiropractors: no claims to cure or treat conditions beyond your license; avoid outcome guarantees"
+  ]
+}

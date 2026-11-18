@@ -1,0 +1,130 @@
+{
+  "id": "mindset-001-the-thing-i-quit",
+  "version": 1,
+  "name": "The Thing I Quit",
+  "category": "mindset",
+  "format": "reel",
+  "goal": "trust",
+  "duration_seconds": 24,
+  "aspect_ratio": "9:16",
+  "best_for": [
+    "barber",
+    "coffee shop",
+    "auto shop",
+    "fitness trainer",
+    "coach"
+  ],
+  "why_it_works": "Quitting something is more believable than adding something. When an owner admits they stopped a common industry habit, the viewer reads it as a values choice with a cost, and a cost is proof the owner means it. It also quietly signals that competitors still do the old thing.",
+  "hook": {
+    "pattern": "Open on the confession: name the specific habit you stopped, then hint it cost you money.",
+    "examples": [
+      "I stopped {{old_habit}}. It cost me customers at first.",
+      "We quit {{old_habit}} last year. Here's what happened.",
+      "Every {{trade}} does {{old_habit}}. We stopped."
+    ]
+  },
+  "variables": [
+    {
+      "name": "brand",
+      "description": "Business name",
+      "example": "Eastside Cuts"
+    },
+    {
+      "name": "trade",
+      "description": "What kind of business this is, in plain words",
+      "example": "barbershop"
+    },
+    {
+      "name": "old_habit",
+      "description": "The common industry habit the owner quit",
+      "example": "double-booking chairs to squeeze in walk-ins"
+    },
+    {
+      "name": "cost_of_quitting",
+      "description": "What quitting cost them at first",
+      "example": "we turned away about ten walk-ins a week"
+    },
+    {
+      "name": "what_changed",
+      "description": "The concrete result after quitting",
+      "example": "nobody waits past their slot, and regulars rebook before they leave"
+    },
+    {
+      "name": "offer",
+      "description": "What the viewer can do now",
+      "example": "book a slot that actually starts on time"
+    }
+  ],
+  "beats": [
+    {
+      "seconds": 3,
+      "purpose": "hook: the confession",
+      "on_screen_text": "I stopped {{old_habit}}.",
+      "voiceover": "I stopped {{old_habit}}.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Vertical 9:16 portrait of the owner of {{brand}} leaning on the counter of their {{trade}}, arms crossed, direct eye contact, late afternoon window light, slightly serious expression, shallow depth of field"
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "name why everyone does it",
+      "on_screen_text": "Every {{trade}} does it.",
+      "voiceover": "Every {{trade}} does it. It looks like more money.",
+      "visual": {
+        "tier": "text_only",
+        "prompt": ""
+      }
+    },
+    {
+      "seconds": 5,
+      "purpose": "the cost, said honestly",
+      "on_screen_text": "It cost us at first",
+      "voiceover": "And at first, quitting hurt: {{cost_of_quitting}}.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Vertical 9:16 photo of an empty chair or station inside {{brand}}, a clock visible on the wall, cool muted light, quiet mood, no people"
+      }
+    },
+    {
+      "seconds": 5,
+      "purpose": "what changed, shown not told",
+      "on_screen_text": "{{what_changed}}",
+      "voiceover": "But now {{what_changed}}.",
+      "visual": {
+        "tier": "clip_draft",
+        "prompt": "Vertical 9:16 slow push-in on a relaxed customer mid-service at {{brand}}, warm practical lighting, calm unhurried motion, candid feel"
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "the belief underneath",
+      "on_screen_text": "Less, done right, beats more, done fast.",
+      "voiceover": "Less, done right, beats more, done fast.",
+      "visual": {
+        "tier": "text_only",
+        "prompt": ""
+      }
+    },
+    {
+      "seconds": 3,
+      "purpose": "call to action",
+      "on_screen_text": "{{offer}}",
+      "voiceover": "{{offer}} at {{brand}}.",
+      "visual": {
+        "tier": "text_only",
+        "prompt": ""
+      }
+    }
+  ],
+  "cta": "{{offer}} at {{brand}}.",
+  "craft": {
+    "technique": "Confession with a price tag",
+    "notes": "The cost beat is what makes the claim believable, so never skip it or soften it into a humblebrag. Say one real number if you have one. Keep the result beat visual: show the calm, don't describe it."
+  },
+  "do_not": [
+    "Pick a habit nobody actually does, or the confession has no stakes",
+    "Insult other shops that still do it; the contrast is implied",
+    "Claim a result you cannot show on camera or back with a number"
+  ]
+}

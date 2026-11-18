@@ -18,7 +18,7 @@
   "hook": {
     "pattern": "POV caption that names the product as the narrator, voiced like a nature documentary or a soap opera.",
     "examples": [
-      "POV: you're a {{product}} and you have standards.",
+      "POV: you're the {{product}} and you have standards.",
       "POV: you're the {{product}}. It's a lot.",
       "This {{product}} has been through things."
     ]
@@ -58,6 +58,11 @@
       "name": "offer",
       "description": "What the viewer gets for acting; starts with a capital letter (8 words or fewer)",
       "example": "Sunday show and shine, free entry"
+    },
+    {
+      "name": "disclosure",
+      "description": "Required fine print for the client's niche, copied from the matching pack in compliance/packs.json",
+      "example": "Results vary. These statements have not been evaluated by the FDA."
     }
   ],
   "beats": [
@@ -114,7 +119,7 @@
     {
       "seconds": 3,
       "purpose": "call to action",
-      "on_screen_text": "{{offer}}",
+      "on_screen_text": "{{offer}} {{disclosure}}",
       "voiceover": "{{offer}}. Treat it right.",
       "visual": {
         "tier": "text_only",
@@ -134,7 +139,7 @@
     "Claim results for the care step that the brand can't stand behind"
   ],
   "compliance": [
-    "Skincare: the product's lines and the care step make no skin results, cure or treatment claims; no before/after images",
+    "Skincare: the product's lines and the care step make no skin results, cure or treatment claims; no before/after images; results vary, and nothing may read as a guarantee",
     "Jewelry: describe materials accurately (karat, plating, stone type); no implied investment value",
     "The fear object must be a generic item, never a real competitor, store or branded product"
   ]

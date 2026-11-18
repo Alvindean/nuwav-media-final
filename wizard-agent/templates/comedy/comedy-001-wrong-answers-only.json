@@ -18,9 +18,9 @@
   "hook": {
     "pattern": "Put the 'wrong answers only' prompt on screen about the one service people misunderstand, asked to your own team.",
     "examples": [
-      "Wrong answers only: what does a {{service}} actually do?",
-      "Our team explains a {{service}}. Wrong answers only.",
-      "Wrong answers only. Go. What happens at a {{service}}?"
+      "Wrong answers only: what does our {{service}} actually do?",
+      "Our team explains the {{service}}. Wrong answers only.",
+      "Wrong answers only. Go. What happens during your {{service}}?"
     ]
   },
   "variables": [
@@ -36,22 +36,22 @@
     },
     {
       "name": "wrong_answer_1",
-      "description": "First wrong answer: mild, almost plausible (10 words or fewer, spoken)",
+      "description": "First wrong answer: mild, almost plausible (10 words or fewer, spoken, no end punctuation)",
       "example": "We ask the brakes how they're feeling"
     },
     {
       "name": "wrong_answer_2",
-      "description": "Second wrong answer: clearly silly (10 words or fewer, spoken)",
+      "description": "Second wrong answer: clearly silly (10 words or fewer, spoken, no end punctuation)",
       "example": "We test them by yelling STOP really loud"
     },
     {
       "name": "wrong_answer_3",
-      "description": "Third wrong answer: the biggest, most physical one, staged safely (10 words or fewer, spoken)",
-      "example": "We hug each tire until it feels supported. Trust exercise."
+      "description": "Third wrong answer: the biggest, most physical one, staged safely (10 words or fewer, spoken, no end punctuation)",
+      "example": "We hug each tire. It's a trust exercise"
     },
     {
       "name": "real_answer",
-      "description": "The true, plain-language answer in one sentence (10 words or fewer, spoken)",
+      "description": "The true, plain-language answer in one sentence (10 words or fewer, spoken, no end punctuation)",
       "example": "We check pads, rotors and fluid in 20 minutes"
     },
     {
@@ -63,14 +63,19 @@
       "name": "offer",
       "description": "What the viewer gets for acting",
       "example": "free brake check this month"
+    },
+    {
+      "name": "disclosure",
+      "description": "Required fine print for the client's niche, copied from the matching pack in compliance/packs.json",
+      "example": "Attorney advertising. Past results do not guarantee a similar outcome."
     }
   ],
   "beats": [
     {
       "seconds": 3,
       "purpose": "hook: the prompt",
-      "on_screen_text": "Wrong answers only: what does a {{service}} do?",
-      "voiceover": "Wrong answers only. What does a {{service}} actually do?",
+      "on_screen_text": "Wrong answers only: what's our {{service}} for?",
+      "voiceover": "Wrong answers only. What does our {{service}} actually do?",
       "visual": {
         "tier": "still",
         "prompt": "Vertical 9:16 photo inside {{brand}}, a team member holding a handwritten cardboard sign reading WRONG ANSWERS ONLY, workplace softly blurred behind, bright natural light, centered medium shot"
@@ -119,7 +124,7 @@
     {
       "seconds": 3,
       "purpose": "tag: callback plus CTA",
-      "on_screen_text": "{{callback_tag}} {{brand}}: {{offer}}.",
+      "on_screen_text": "{{callback_tag}} {{brand}}: {{offer}}. {{disclosure}}",
       "voiceover": "{{callback_tag}} Book now: {{offer}}.",
       "visual": {
         "tier": "text_only",

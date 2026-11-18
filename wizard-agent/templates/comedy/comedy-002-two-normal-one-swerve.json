@@ -58,6 +58,11 @@
       "name": "offer",
       "description": "What the viewer gets for acting; starts with a capital letter (8 words or fewer)",
       "example": "Friday chairs open at 9am"
+    },
+    {
+      "name": "disclosure",
+      "description": "Required fine print for the client's niche, copied from the matching pack in compliance/packs.json",
+      "example": "Results vary. These statements have not been evaluated by the FDA."
     }
   ],
   "beats": [
@@ -108,13 +113,13 @@
       "voiceover": "{{swerve_reason}}",
       "visual": {
         "tier": "still",
-        "prompt": "Vertical medium shot of a {{brand}} team member looking straight into the lens, arms crossed, zero smile, shop behind them softly lit"
+        "prompt": "Vertical medium shot of a team member from {{brand}} looking straight into the lens, arms crossed, zero smile, shop behind them softly lit"
       }
     },
     {
       "seconds": 3,
       "purpose": "call to action",
-      "on_screen_text": "{{brand}}: {{offer}}",
+      "on_screen_text": "{{brand}}: {{offer}} {{disclosure}}",
       "voiceover": "{{offer}}.",
       "visual": {
         "tier": "text_only",
@@ -134,7 +139,7 @@
     "Let the swerve be random with no link back; the tag must return to the brand"
   ],
   "compliance": [
-    "Fitness trainers: the swerve and the tag must never joke about bodies, weight or appearance, and no item may promise a body or fitness result",
+    "Fitness trainers: the swerve and the tag must never joke about bodies, weight or appearance, and no item may promise a body or fitness result; results vary, so never imply a guaranteed look or fitness result",
     "Keep the swerve harmless and legal; nothing a viewer could copy that is unsafe"
   ]
 }

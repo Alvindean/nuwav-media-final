@@ -73,6 +73,11 @@
       "name": "offer",
       "description": "What the viewer gets for acting; starts with a capital letter (6 words or fewer)",
       "example": "Walk-ins welcome Saturdays"
+    },
+    {
+      "name": "disclosure",
+      "description": "Required fine print for the client's niche, copied from the matching pack in compliance/packs.json",
+      "example": "Results vary. Consult a licensed provider."
     }
   ],
   "beats": [
@@ -113,7 +118,7 @@
       "voiceover": "No more excuses.",
       "visual": {
         "tier": "still",
-        "prompt": "Vertical dramatic photo of a {{brand}} team member turning to camera in slow-motion style pose, tool or headset in hand, rim light, smoke, poster-like composition"
+        "prompt": "Vertical dramatic photo of a team member from {{brand}} turning to camera in slow-motion style pose, tool or headset in hand, rim light, smoke, poster-like composition"
       }
     },
     {
@@ -139,7 +144,7 @@
     {
       "seconds": 3,
       "purpose": "call to action",
-      "on_screen_text": "Now showing at {{brand}}: {{offer}}",
+      "on_screen_text": "Now showing at {{brand}}: {{offer}} {{disclosure}}",
       "voiceover": "Now showing: {{offer}}.",
       "visual": {
         "tier": "text_only",
@@ -152,7 +157,7 @@
     "slides": [
       {
         "headline": "In a world where nobody books {{errand}}",
-        "body": "A {{brand}} production.",
+        "body": "Presented by {{brand}}.",
         "visual_prompt": "Vertical blockbuster-style poster: lone silhouette in front of {{brand}} at dusk, lens flare, teal and orange grade"
       },
       {
@@ -187,7 +192,7 @@
       },
       {
         "headline": "Now showing",
-        "body": "Now showing: {{offer}}.",
+        "body": "Now showing: {{offer}}. {{disclosure}}",
         "visual_prompt": "Theater marquee style end card with {{brand}} name and the offer in light-bulb letters"
       }
     ]
@@ -203,7 +208,7 @@
     "Exaggerate the danger of skipping the errand into a scare tactic"
   ],
   "compliance": [
-    "Dental: frame the errand as a routine visit; no clinical claims, no 'painless' promises, and no scare tactics about what happens if you wait",
+    "Dental: frame the errand as a routine visit; no clinical claims, no 'painless' promises, and no scare tactics about what happens if you wait; results vary, so make no guarantee about the visit",
     "Auto: if the overdue sign mentions warning lights, it is a joke, not safety advice; do not suggest it is safe to ignore real warning lights",
     "Podcasts and sports teams: no real movie, studio, franchise, league logo or narrator sound-alike"
   ]

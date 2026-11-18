@@ -63,6 +63,11 @@
       "name": "offer",
       "description": "What the viewer gets for acting",
       "example": "$10 student tickets Friday"
+    },
+    {
+      "name": "disclosure",
+      "description": "Required fine print for the client's niche, copied from the matching pack in compliance/packs.json",
+      "example": "Results vary. These statements have not been evaluated by the FDA."
     }
   ],
   "beats": [
@@ -129,7 +134,7 @@
     {
       "seconds": 3,
       "purpose": "tag plus CTA",
-      "on_screen_text": "{{offer}}. {{callback_tag}}",
+      "on_screen_text": "{{offer}}. {{callback_tag}} {{disclosure}}",
       "voiceover": "{{offer}}. We'll try to keep it reasonable.",
       "visual": {
         "tier": "text_only",
@@ -149,7 +154,7 @@
     "Forget to state the real promise again at the snap-back"
   ],
   "compliance": [
-    "Fitness trainers: no escalation step may show or promise a body, weight or performance result, and no step may involve unsafe exercise",
+    "Fitness trainers: no escalation step may show or promise a body, weight or performance result, and no step may involve unsafe exercise; results vary, and no step may read as a guarantee",
     "Sports teams: no real league, rival team or player likeness without permission",
     "Every escalation step must be safe and legal; nothing a viewer could copy that is dangerous"
   ]

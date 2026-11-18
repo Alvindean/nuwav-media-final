@@ -46,7 +46,7 @@
     {
       "name": "jargon_party",
       "description": "A kid's birthday party line in jargon, the biggest of the three (18 words or fewer)",
-      "example": "The cake is pre-approved. Candles are subject to appraisal. Closing on the piñata is Saturday."
+      "example": "The cake has cleared underwriting. Candles are subject to appraisal. Closing on the piñata is Saturday."
     },
     {
       "name": "jargon_self_own",
@@ -72,13 +72,18 @@
       "name": "offer",
       "description": "What the viewer gets for acting (10 words or fewer)",
       "example": "a free 20-minute plain-English rate review"
+    },
+    {
+      "name": "disclosure",
+      "description": "Required fine print for the client's niche, copied from the matching pack in compliance/packs.json",
+      "example": "Not financial advice. Terms apply."
     }
   ],
   "carousel": {
     "slides": [
       {
         "headline": "If we talked like this everywhere",
-        "body": "A {{brand}} public service announcement. Swipe carefully.",
+        "body": "A public service announcement from {{brand}}. Swipe carefully.",
         "visual_prompt": "4:5 bold title card in {{brand}} colors, a serious office memo look with a big red stamp reading OFF THE CLOCK"
       },
       {
@@ -104,7 +109,7 @@
       {
         "headline": "With you, we switch it off",
         "body": "{{plain_promise}}",
-        "visual_prompt": "4:5 warm candid photo of a {{brand}} team member explaining a printed page to a client across a desk, both smiling, natural light"
+        "visual_prompt": "4:5 warm candid photo of a team member from {{brand}} explaining a printed page to a client across a desk, both smiling, natural light"
       },
       {
         "headline": "The one word worth knowing",
@@ -113,7 +118,7 @@
       },
       {
         "headline": "Talk to a human",
-        "body": "Book {{offer}} with {{brand}}.",
+        "body": "Book {{offer}} with {{brand}}. {{disclosure}}",
         "visual_prompt": "4:5 clean end card on {{brand}} brand color, logo, offer text in large friendly type, a small speech bubble icon"
       }
     ]

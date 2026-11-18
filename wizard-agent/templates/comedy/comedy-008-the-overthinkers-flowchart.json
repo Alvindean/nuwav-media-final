@@ -52,6 +52,11 @@
       "name": "easy_first_step",
       "description": "The low-effort way to finally book",
       "example": "Book online in 60 seconds. Pick any open time this week."
+    },
+    {
+      "name": "disclosure",
+      "description": "Required fine print for the client's niche, copied from the matching pack in compliance/packs.json",
+      "example": "Results vary. Consult a licensed provider."
     }
   ],
   "carousel": {
@@ -93,7 +98,7 @@
       },
       {
         "headline": "{{brand}}: exit the loop",
-        "body": "No judgment about how long it's been. We mean it.",
+        "body": "No judgment about how long it's been. We mean it. {{disclosure}}",
         "visual_prompt": "4:5 warm candid photo of a smiling {{brand}} front desk team member, welcoming gesture, bright clean light, brand colors visible"
       }
     ]

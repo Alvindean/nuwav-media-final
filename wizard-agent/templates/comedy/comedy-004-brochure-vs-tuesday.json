@@ -18,7 +18,7 @@
   "hook": {
     "pattern": "Split the screen: what people imagine your kind of business looks like vs. a real, slightly chaotic day.",
     "examples": [
-      "A {{business_type}} in the brochure vs. our Tuesday.",
+      "The brochure {{business_type}} vs. our actual Tuesday.",
       "{{brand}}: brochure vs. real life.",
       "Stock photo {{business_type}} vs. actual {{business_type}}."
     ]
@@ -36,18 +36,18 @@
     },
     {
       "name": "brochure_cliche",
-      "description": "The glossy stock-photo cliche of the industry (10 words or fewer, spoken)",
-      "example": "five people laughing at one salad in a glass boardroom"
+      "description": "The glossy stock-photo cliche of the industry, starting with a capital letter (10 words or fewer, spoken)",
+      "example": "Five people laughing at one salad in a glass boardroom"
     },
     {
       "name": "tuesday_reality_1",
-      "description": "A harmless, self-deprecating real detail (11 words or fewer, spoken)",
-      "example": "the printer has jammed. The printer has a name. It's Gerald."
+      "description": "A harmless, self-deprecating real detail, starting with a capital letter (11 words or fewer, spoken)",
+      "example": "The printer has jammed. The printer has a name. It's Gerald."
     },
     {
       "name": "tuesday_reality_2",
-      "description": "A second real detail, slightly bigger (11 words or fewer, spoken)",
-      "example": "a 20-minute team debate about which lunch place is 'close'"
+      "description": "A second real detail, slightly bigger, starting with a capital letter (11 words or fewer, spoken)",
+      "example": "A 20-minute team debate about which lunch place is 'close'"
     },
     {
       "name": "callback_tag",
@@ -56,8 +56,8 @@
     },
     {
       "name": "the_standard",
-      "description": "The one thing that never slips, stated as a process, not a result (9 words or fewer, spoken)",
-      "example": "every client call returned the same business day"
+      "description": "The one thing that never slips, stated as a process, not a result, starting with a capital letter (9 words or fewer, spoken)",
+      "example": "Every client call returned the same business day"
     },
     {
       "name": "standard_proof",
@@ -68,13 +68,18 @@
       "name": "offer",
       "description": "What the viewer gets for acting",
       "example": "a free 15-minute consult"
+    },
+    {
+      "name": "disclosure",
+      "description": "Required fine print for the client's niche, copied from the matching pack in compliance/packs.json",
+      "example": "Attorney advertising. Past results do not guarantee a similar outcome."
     }
   ],
   "beats": [
     {
       "seconds": 3,
       "purpose": "hook: the split premise",
-      "on_screen_text": "A {{business_type}} in the brochure vs. our Tuesday",
+      "on_screen_text": "The brochure {{business_type}} vs. our Tuesday",
       "voiceover": "The brochure {{business_type}}. Versus our Tuesday.",
       "visual": {
         "tier": "still",
@@ -118,13 +123,13 @@
       "voiceover": "What doesn't change, Tuesday or not: {{the_standard}}.",
       "visual": {
         "tier": "still",
-        "prompt": "Vertical calm medium shot of a {{brand}} team member focused at their desk with a client file or phone, quiet focused light, the chaos softly blurred behind them, sincere mood"
+        "prompt": "Vertical calm medium shot of a team member from {{brand}} focused at their desk with a client file or phone, quiet focused light, the chaos softly blurred behind them, sincere mood"
       }
     },
     {
       "seconds": 3,
       "purpose": "tag plus CTA",
-      "on_screen_text": "{{callback_tag}} Book {{offer}}.",
+      "on_screen_text": "{{callback_tag}} Book {{offer}}. {{disclosure}}",
       "voiceover": "{{callback_tag}} Book {{offer}}.",
       "visual": {
         "tier": "text_only",
@@ -157,22 +162,22 @@
       },
       {
         "headline": "What never changes",
-        "body": "{{the_standard}}. Tuesday or not. {{standard_proof}}",
+        "body": "{{the_standard}}. Tuesday or not.",
         "visual_prompt": "Calm, focused {{brand}} team member at a desk, quiet light, sincere mood"
       },
       {
-        "headline": "Ask any {{business_type}} these 3 things",
-        "body": "1. Who picks up when I call? 2. How fast do you call back? 3. What will it cost before we start? Save this for your next consult.",
-        "visual_prompt": "Clean checklist card on {{brand}} brand color, three numbered questions in large type, small hand-drawn checkboxes"
+        "headline": "Receipts, not a brochure",
+        "body": "{{standard_proof}} Ask us for this month's number when you call.",
+        "visual_prompt": "Clean card on {{brand}} brand color showing a simple handwritten tally sheet of returned calls pinned to a corkboard, the number added as a large text overlay"
       },
       {
         "headline": "How to tell brochure from real",
-        "body": "Real offices show real staff, real names and a real phone number. Stock offices show a salad.",
-        "visual_prompt": "Side-by-side card: a glossy stock salad photo crossed out next to a candid {{brand}} staff photo with a name tag, brand colors"
+        "body": "Real offices show real staff, real names and a real phone number. Stock offices show models posing with props.",
+        "visual_prompt": "Side-by-side card: a glossy posed stock photo crossed out next to a candid {{brand}} staff photo with a name tag, brand colors"
       },
       {
         "headline": "Come see a real Tuesday",
-        "body": "Book {{offer}}.",
+        "body": "Book {{offer}}. {{disclosure}}",
         "visual_prompt": "Warm {{brand}} logo card on brand color with the offer in large type"
       }
     ]
@@ -190,7 +195,7 @@
   "compliance": [
     "Law firms: no outcome or settlement claims; the standard must be about service (response time), not results; label as attorney advertising where your state bar requires; no actors posing as clients without a disclaimer",
     "Financial advisors: no performance, return or income claims; follow SEC/FINRA marketing rules; include required firm disclosures in the caption",
-    "Med spa: show no treatments, before/after or results in this ad; any staff shown in a treatment room must be licensed for what is depicted",
+    "Med spa: show no treatments, before/after or results in this ad; results vary, so no outcome wording; any staff shown in a treatment room must be licensed for what is depicted",
     "Real estate: include brokerage name and license number where the state requires; avoid any wording about who a neighborhood is 'for' (fair housing)",
     "Remove client files, screens and documents from every frame before rendering or filming"
   ]

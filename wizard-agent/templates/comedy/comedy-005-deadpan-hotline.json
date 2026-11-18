@@ -61,8 +61,13 @@
     },
     {
       "name": "offer",
-      "description": "What the viewer gets for acting; starts with a capital letter (8 words or fewer)",
-      "example": "Same-day inspections. Book online."
+      "description": "What the viewer can book, with its article, no end punctuation",
+      "example": "a same-day inspection online"
+    },
+    {
+      "name": "disclosure",
+      "description": "Required fine print for the client's niche, copied from the matching pack in compliance/packs.json",
+      "example": "Not financial advice. Terms apply."
     }
   ],
   "beats": [
@@ -119,15 +124,15 @@
     {
       "seconds": 3,
       "purpose": "call to action",
-      "on_screen_text": "{{offer}}",
-      "voiceover": "{{offer}}.",
+      "on_screen_text": "Book {{offer}}. {{disclosure}}",
+      "voiceover": "Book {{offer}}.",
       "visual": {
         "tier": "text_only",
         "prompt": ""
       }
     }
   ],
-  "cta": "Call with a real question: {{offer}}. Weird ones welcome.",
+  "cta": "Call with a real question, or book {{offer}}. Weird ones welcome.",
   "craft": {
     "technique": "Deadpan straight-man with escalating absurd inputs",
     "notes": "Setup: the premise that these calls haven't happened, so the absurdity is the brand's imagination, not a customer's. Escalation: three questions climb from odd to silly to ridiculous while the answers stay flat and useful; the receptionist never reacts more than a blink. Turn: on question three the answer is a flat 'No.' followed by the real offer, which flips the joke into the pitch. Tag: 'Next caller.' returning to the opening framing, which implies there are more and invites comments. Timing: answer questions one and two with zero pause so the deadpan feels practiced; on question three hold the blink and coffee sip for about one second before the 'No.' That held sip is where the laugh lives."

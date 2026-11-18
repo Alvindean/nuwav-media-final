@@ -68,6 +68,11 @@
       "name": "offer",
       "description": "What the viewer gets for acting (8 words or fewer)",
       "example": "fresh at 7am, gone by 10"
+    },
+    {
+      "name": "disclosure",
+      "description": "Required fine print for the client's niche, copied from the matching pack in compliance/packs.json",
+      "example": "Results vary. These statements have not been evaluated by the FDA."
     }
   ],
   "beats": [
@@ -124,7 +129,7 @@
     {
       "seconds": 3,
       "purpose": "call to action",
-      "on_screen_text": "{{brand}}: {{offer}}",
+      "on_screen_text": "{{brand}}: {{offer}} {{disclosure}}",
       "voiceover": "Ruin yourself: {{offer}}.",
       "visual": {
         "tier": "text_only",
@@ -138,7 +143,7 @@
       {
         "headline": "The critic has reviewed our {{product}}",
         "body": "We're not okay. Swipe if you're brave.",
-        "visual_prompt": "Vertical stern fictional critic in {{critic_detail}} at a {{brand}} table, moody side light, deadpan"
+        "visual_prompt": "Vertical stern fictional critic in {{critic_detail}} at a table inside {{brand}}, moody side light, deadpan"
       },
       {
         "headline": "Presentation",
@@ -163,7 +168,7 @@
       {
         "headline": "The critic's one tip",
         "body": "{{critic_tip}}",
-        "visual_prompt": "Handwritten note card on a {{brand}} table beside the {{product}}, critic's reading glasses resting on it, warm light"
+        "visual_prompt": "Handwritten note card on a table at {{brand}} beside the {{product}}, critic's reading glasses resting on it, warm light"
       },
       {
         "headline": "When the critic shows up",
@@ -172,7 +177,7 @@
       },
       {
         "headline": "Get ruined responsibly",
-        "body": "Get yours: {{offer}}.",
+        "body": "Get yours: {{offer}}. {{disclosure}}",
         "visual_prompt": "Clean {{brand}} end card, logo, the {{product}} hero shot, offer in elegant serif type"
       }
     ]
@@ -188,7 +193,7 @@
     "Use the misdirection for claims you can't support (skincare: no 'fixed my skin' type results)"
   ],
   "compliance": [
-    "Skincare: the misdirection lines make no skin results, cure or treatment claims; no before/after images",
+    "Skincare: the misdirection lines make no skin results, cure or treatment claims; results vary, so no guarantee of any effect; no before/after images",
     "The critic is clearly fictional; never present the review as a real published review or show review-site logos",
     "Restaurants and food: any tip or time shown must match what the business actually serves"
   ]

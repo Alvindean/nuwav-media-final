@@ -1,0 +1,98 @@
+{
+  "version": 1,
+  "note": "General guidance for drafting ads, not legal advice. The client is responsible for their own industry and local rules. The Wizard Agent applies the pack that matches the CLIENT's niche to every ad, on top of each template's own compliance list. 'match' terms also drive the validator's regulated-niche check (plurals are matched automatically).",
+  "always": {
+    "id": "ai-and-platform",
+    "rules": [
+      "Label realistic AI-generated people or scenes using the platform's AI-content label (Meta 'AI info', TikTok AI-generated label).",
+      "Never show a generated face as a real customer, patient, employee or reviewer. Testimonials, before/after and real staff use real_photo beats only, with written consent.",
+      "Clones use only the client's own face and voice, with written consent on file.",
+      "No real person's likeness, real brand, real song lyrics or melody, or named-artist sound-alike.",
+      "Ask for comments only with a genuine question. No 'tag a friend', 'like if', or vote-bait lines (Meta demotes engagement bait).",
+      "Performance lines in why_it_works are the expected mechanism, not measured results; never present them to a client as proven numbers."
+    ]
+  },
+  "packs": [
+    {
+      "id": "legal",
+      "match": ["law", "law firm", "legal", "attorney", "lawyer", "personal injury", "paralegal", "notary"],
+      "rules": [
+        "Label as attorney advertising where the state bar requires it.",
+        "No guarantees or predictions of outcome; past results do not guarantee future results.",
+        "Not legal advice; no attorney-client relationship is formed by the ad.",
+        "No 'specialist' or 'expert' claims unless certified under state rules."
+      ]
+    },
+    {
+      "id": "medical",
+      "match": ["medical", "doctor", "physician", "clinic", "health", "healthcare", "hospital", "nurse", "dental", "dentist", "orthodontist", "dermatologist", "plastic surgeon", "med spa", "medspa", "chiropractor", "chiropractic", "physical therapist", "therapist", "therapy", "counselor", "pharmacy", "pharmacist", "optometrist", "veterinarian", "vet clinic"],
+      "rules": [
+        "No guaranteed results or cure claims; 'results vary' on screen next to any outcome.",
+        "Before/after only with real patients, written consent and a disclaimer; never generated.",
+        "No patient details or health information without written consent (HIPAA in the US).",
+        "No diagnosis in the ad; invite a consultation instead.",
+        "Licensed practitioner and practice name shown where required."
+      ]
+    },
+    {
+      "id": "financial",
+      "match": ["financial", "financial advisor", "wealth", "investment", "investing", "bank", "credit union", "loan", "loan officer", "lender", "mortgage", "mortgage broker", "insurance", "insurance agency", "tax preparer", "accountant", "crypto", "crypto exchange", "trading"],
+      "rules": [
+        "No promised returns, income or approval; past performance does not guarantee future results.",
+        "Any rate shown needs APR and key terms; show NMLS number for mortgage and lending.",
+        "Insurance: no guaranteed coverage or premiums; carrier and license details where required.",
+        "Required firm or regulator disclosures (SEC/FINRA/state) stay on screen long enough to read.",
+        "Crypto and trading: state the risk of loss plainly."
+      ]
+    },
+    {
+      "id": "real-estate",
+      "match": ["real estate", "realtor", "real estate agent", "brokerage", "property manager", "home builder"],
+      "rules": [
+        "Follow fair housing rules: no wording that prefers or excludes any protected group.",
+        "Show brokerage name and license number where required.",
+        "No guarantees on sale price, speed or appreciation.",
+        "Label virtually staged or AI-edited room images as such."
+      ]
+    },
+    {
+      "id": "body-and-wellness",
+      "match": ["supplement", "supplement brand", "nutrition", "nutritionist", "nutrition coach", "weight loss", "weight loss coach", "diet", "skincare", "skincare brand", "cosmetics", "beauty brand", "fitness", "fitness trainer", "personal trainer", "fitness studio", "gym", "wellness", "wellness coach"],
+      "rules": [
+        "Supplements: FDA disclaimer; no claims to diagnose, treat, cure or prevent disease.",
+        "No guaranteed weight loss, body or skin results; typical results stated if a result is shown.",
+        "Before/after only with real, consenting customers and a 'results vary' disclaimer.",
+        "No unrealistic body images or shaming language."
+      ]
+    },
+    {
+      "id": "age-restricted",
+      "match": ["bar", "brewery", "winery", "distillery", "liquor store", "alcohol", "cannabis", "dispensary", "cbd", "cbd shop", "vape", "smoke shop", "casino", "sportsbook", "betting"],
+      "rules": [
+        "Target only adults of legal age, using platform age-gating.",
+        "No appeal to minors; no actors who look under 25.",
+        "No health, performance or 'gets you' effect claims; follow local law on what may be advertised at all.",
+        "Gambling: show odds/terms and a responsible-gambling message where required."
+      ]
+    },
+    {
+      "id": "income-claims",
+      "match": ["business coach", "coach", "coaching", "online course", "course creator", "mentor", "trading course", "mlm", "network marketing"],
+      "rules": [
+        "No income, revenue or 'quit your job' promises; any results shown are labelled as not typical, with typical results stated.",
+        "Testimonials must be real, consented and representative."
+      ]
+    },
+    {
+      "id": "giveaway",
+      "match": [],
+      "triggered_by": "Any template that offers a prize, contest, giveaway or winner.",
+      "rules": [
+        "Official rules linked: eligibility, start and end dates, how the winner is picked, prize value.",
+        "No purchase necessary where the law requires it; void where prohibited.",
+        "Say the promotion is not sponsored or run by the platform.",
+        "Pick winners by the stated method only (random draw or judged), never by likes."
+      ]
+    }
+  ]
+}

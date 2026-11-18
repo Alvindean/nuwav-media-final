@@ -1,0 +1,35 @@
+{
+  "id": "songwriting-001-name-in-the-chorus",
+  "version": 1,
+  "name": "Name in the Chorus",
+  "category": "songwriting",
+  "format": "reel",
+  "goal": "awareness",
+  "duration_seconds": 15,
+  "aspect_ratio": "9:16",
+  "best_for": ["coffee shop", "barbershop", "food truck"],
+  "why_it_works": "A short sung hook with the brand name on the downbeat is easy to remember and easy to hum, so people repeat it without trying.",
+  "hook": {
+    "pattern": "Open on the sung brand name over one bold image.",
+    "examples": [
+      "{{brand}}, {{brand}}, the best part of the block",
+      "Say it with me: {{brand}}",
+      "This song is about {{brand}}"
+    ]
+  },
+  "variables": [
+    { "name": "brand", "description": "Business name, two or three syllables sings best", "example": "Harbor Joe" },
+    { "name": "signature_item", "description": "The one thing people come for", "example": "honey latte" },
+    { "name": "offer", "description": "What the viewer gets for coming in", "example": "free refill on Fridays" }
+  ],
+  "beats": [
+    { "seconds": 3, "purpose": "hook: sung brand name", "on_screen_text": "{{brand}}", "voiceover": "{{brand}}, {{brand}}", "visual": { "tier": "still", "prompt": "Storefront of {{brand}} at golden hour, warm light, vertical frame, sign readable" } },
+    { "seconds": 4, "purpose": "verse line about the signature item", "on_screen_text": "{{signature_item}}", "voiceover": "One sip of {{signature_item}}", "visual": { "tier": "clip_draft", "prompt": "Slow pour of {{signature_item}} into a cup, steam rising, close-up, vertical" } },
+    { "seconds": 4, "purpose": "chorus repeat with the name on the downbeat", "on_screen_text": "{{brand}}", "voiceover": "{{brand}}, best on the block", "visual": { "tier": "still", "prompt": "Regulars laughing at the counter of {{brand}}, candid, warm light, vertical" } },
+    { "seconds": 4, "purpose": "call to action sung as the tag", "on_screen_text": "{{offer}}", "voiceover": "Come get your {{offer}}", "visual": { "tier": "text_only", "prompt": "" } }
+  ],
+  "cta": "Come get your {{offer}}.",
+  "music": { "tier": "music", "bpm": 96, "feel": "upbeat acoustic pop, hand claps, bright guitar", "vocals": true },
+  "craft": { "technique": "Name on the downbeat", "notes": "Put the stressed syllable of the brand on beat one of the bar, repeat it twice in the hook and once in the tag, and keep every sung line to one breath." },
+  "do_not": ["Copy or imitate any real song or artist", "Pack more than one idea into a sung line"]
+}

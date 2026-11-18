@@ -1,0 +1,125 @@
+{
+  "id": "behind-the-scenes-004-the-real-receipt",
+  "version": 1,
+  "name": "The Real Receipt",
+  "category": "behind-the-scenes",
+  "format": "carousel",
+  "goal": "sales",
+  "aspect_ratio": "4:5",
+  "best_for": [
+    "jewelry designer",
+    "skincare brand",
+    "apparel brand",
+    "lowrider car club",
+    "custom auto shop"
+  ],
+  "why_it_works": "A price feels arbitrary until you see what it buys. An itemized receipt of hours, steps and materials turns the price into simple math the buyer can do themselves, and specific numbers read as honest.",
+  "hook": {
+    "pattern": "Frame the process as a receipt with one shocking total on slide one.",
+    "examples": [
+      "Receipt for one {{product}}: {{total_hours}} hours.",
+      "What one {{product}} really costs to make.",
+      "Itemized: everything that goes into one {{product}}."
+    ]
+  },
+  "variables": [
+    {
+      "name": "brand",
+      "description": "Business name",
+      "example": "Ojeda Customs"
+    },
+    {
+      "name": "product",
+      "description": "The item being itemized",
+      "example": "candy-paint trunk job"
+    },
+    {
+      "name": "total_hours",
+      "description": "Total hands-on hours",
+      "example": "62"
+    },
+    {
+      "name": "step_one",
+      "description": "First line item with a number",
+      "example": "9 hours of sanding to bare metal"
+    },
+    {
+      "name": "step_two",
+      "description": "Second line item with a number",
+      "example": "14 coats of paint and clear"
+    },
+    {
+      "name": "step_three",
+      "description": "Third line item with a number",
+      "example": "3 days of drying time between coats"
+    },
+    {
+      "name": "hidden_cost",
+      "description": "The cost nobody thinks about",
+      "example": "a dust-free booth we rebuilt twice"
+    },
+    {
+      "name": "offer",
+      "description": "How to buy or book, a full sentence starting with a capital",
+      "example": "DM 'RECEIPT' for a build slot"
+    },
+    {
+      "name": "disclosure",
+      "description": "Required fine print for the client's niche, from compliance/packs.json",
+      "example": "Results vary. These statements have not been evaluated by the FDA."
+    }
+  ],
+  "cta": "{{offer}}.",
+  "carousel": {
+    "slides": [
+      {
+        "headline": "The real receipt: {{total_hours}} hours",
+        "body": "Everything behind one {{product}} at {{brand}}.",
+        "visual_prompt": "Long paper receipt curling over a workbench, a finished {{product}} blurred behind it, warm shop light, 4:5"
+      },
+      {
+        "headline": "Line 1",
+        "body": "First: {{step_one}}.",
+        "visual_prompt": "Close-up of the first process step for the {{product}}, dust in the air, raking side light, 4:5"
+      },
+      {
+        "headline": "Line 2",
+        "body": "Then: {{step_two}}.",
+        "visual_prompt": "Detail of layered material or coats on the {{product}}, glossy reflections, 4:5"
+      },
+      {
+        "headline": "Line 3",
+        "body": "After that: {{step_three}}.",
+        "visual_prompt": "Workspace with the {{product}} resting under a cover, clock on the wall, quiet mood, 4:5"
+      },
+      {
+        "headline": "The line nobody sees",
+        "body": "Plus {{hidden_cost}}.",
+        "visual_prompt": "Wide shot of the {{brand}} workspace showing the hidden setup behind {{hidden_cost}}, 4:5"
+      },
+      {
+        "headline": "Total: {{total_hours}} hours of hands",
+        "body": "That's what the price pays for.",
+        "visual_prompt": "Finished {{product}} hero shot, clean background, receipt total overlaid in large type, 4:5"
+      },
+      {
+        "headline": "Want one?",
+        "body": "{{offer}}. {{disclosure}}",
+        "visual_prompt": "{{brand}} logo card on a dark textured background, offer in bold type, 4:5"
+      }
+    ]
+  },
+  "craft": {
+    "technique": "Itemized receipt",
+    "notes": "Every line item needs a number (hours, coats, days, grams). Style slides like a thermal receipt: monospace font, dotted dividers. Save the total for the first and last slide so it bookends the swipe."
+  },
+  "do_not": [
+    "Round numbers into vague claims like 'tons of hours'",
+    "Inflate hours; customers who order will ask",
+    "Turn it into a complaint about customers who say it is too expensive"
+  ],
+  "compliance": [
+    "Skincare: no guaranteed skin results or treatment claims; list process and ingredients only, and say results vary if any result is shown",
+    "Every hour, coat and day on the receipt must be true and match how the work is really done"
+  ]
+}

@@ -1,0 +1,184 @@
+{
+  "id": "mindset-009-the-creed",
+  "version": 1,
+  "name": "Say It Like a Creed",
+  "category": "mindset",
+  "format": "both",
+  "goal": "engagement",
+  "duration_seconds": 24,
+  "aspect_ratio": "9:16",
+  "best_for": [
+    "sports team",
+    "lowrider car club",
+    "coffee shop",
+    "apparel brand",
+    "fitness trainer"
+  ],
+  "why_it_works": "People don't just buy from brands; they join them. A short creed of 'We're the people who...' lines gives fans a shared identity they can repeat, quote and wear. Identity statements outlast offers because people defend who they are.",
+  "hook": {
+    "pattern": "Open on a single declarative identity line, spoken like a vow, with no product in sight.",
+    "examples": [
+      "We're the people who {{creed_line_one}}.",
+      "Not a slogan. A creed. Read along.",
+      "You {{creed_line_one}}? You're one of us."
+    ]
+  },
+  "variables": [
+    {
+      "name": "brand",
+      "description": "Team, club, shop or brand name",
+      "example": "Velvet Lows Car Club"
+    },
+    {
+      "name": "creed_line_one",
+      "description": "First identity line, an action starting with a lowercase verb, 5 words or fewer",
+      "example": "fix it ourselves first"
+    },
+    {
+      "name": "creed_line_two",
+      "description": "Second identity line, an action starting with a lowercase verb, 8 words or fewer",
+      "example": "wave at every lowrider, chrome or primer"
+    },
+    {
+      "name": "creed_line_three",
+      "description": "Third identity line, an action starting with a lowercase verb, 8 words or fewer",
+      "example": "bring the kids to every show"
+    },
+    {
+      "name": "refusal_line",
+      "description": "One thing the group never does, starting with 'never', 6 words or fewer",
+      "example": "never race on the street"
+    },
+    {
+      "name": "gathering",
+      "description": "Where fans can show up or belong, a proper name starting with a capital letter, 7 words or fewer",
+      "example": "Sunday cruise night on Mission Avenue"
+    },
+    {
+      "name": "disclosure",
+      "description": "Fine-print disclosure line for the client's regulated niche (use the matching compliance pack's disclosure line)",
+      "example": "Results vary. These statements have not been evaluated by the FDA."
+    }
+  ],
+  "beats": [
+    {
+      "seconds": 3,
+      "purpose": "hook: the first vow",
+      "on_screen_text": "We're the people who...",
+      "voiceover": "We're the people who {{creed_line_one}}.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Vertical 9:16 dramatic low-angle portrait of a member of {{brand}} in their usual spot, dusk sky, warm rim light, proud calm expression"
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "second line",
+      "on_screen_text": "Who {{creed_line_two}}.",
+      "voiceover": "Who {{creed_line_two}}.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Vertical 9:16 photo of several members of {{brand}} together in their usual spot, laughing, golden hour light, candid, community feel"
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "third line",
+      "on_screen_text": "Who {{creed_line_three}}.",
+      "voiceover": "Who {{creed_line_three}}.",
+      "visual": {
+        "tier": "clip_draft",
+        "prompt": "Vertical 9:16 slow tracking shot past families and members of {{brand}} at a gathering, kids in frame, warm evening light, joyful"
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "the refusal",
+      "on_screen_text": "We {{refusal_line}}.",
+      "voiceover": "And we {{refusal_line}}.",
+      "visual": {
+        "tier": "text_only",
+        "prompt": ""
+      }
+    },
+    {
+      "seconds": 5,
+      "purpose": "the gathering, in motion",
+      "on_screen_text": "{{gathering}}",
+      "voiceover": "You'll find us at {{gathering}}.",
+      "visual": {
+        "tier": "clip_standard",
+        "prompt": "Vertical 9:16 wide shot of the {{gathering}} for {{brand}}, people arriving, lights coming on, gentle camera rise, cinematic but natural"
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "invite into the identity",
+      "on_screen_text": "Sound like you? You're in. {{disclosure}}",
+      "voiceover": "Sound like you? You're already one of us.",
+      "visual": {
+        "tier": "text_only",
+        "prompt": ""
+      }
+    }
+  ],
+  "cta": "Sound like you? Find {{brand}} at {{gathering}}.",
+  "carousel": {
+    "slides": [
+      {
+        "headline": "The {{brand}} creed",
+        "body": "Read it. If it fits, you're in.",
+        "visual_prompt": "Bold title card styled like a printed banner in {{brand}} colors, textured paper"
+      },
+      {
+        "headline": "Line one",
+        "body": "We {{creed_line_one}}.",
+        "visual_prompt": "Member of {{brand}} standing proudly, dusk rim light, low angle"
+      },
+      {
+        "headline": "Line two",
+        "body": "We {{creed_line_two}}.",
+        "visual_prompt": "Group of {{brand}} members together, golden hour, candid"
+      },
+      {
+        "headline": "Line three",
+        "body": "We {{creed_line_three}}.",
+        "visual_prompt": "Families and kids together at the {{brand}} gathering, warm evening light"
+      },
+      {
+        "headline": "The line we never cross",
+        "body": "We {{refusal_line}}.",
+        "visual_prompt": "Simple bold type card, dark background, one line of text"
+      },
+      {
+        "headline": "Add your line below ours",
+        "body": "Start with a verb, the way we wrote {{creed_line_one}}. Say what you do, not what you are.",
+        "visual_prompt": "Hand writing a short line on a blank index card with a marker, {{brand}} colors, top-down"
+      },
+      {
+        "headline": "Your first night with {{brand}}",
+        "body": "Show up at {{gathering}}. Find one member. Ask how they joined.",
+        "visual_prompt": "Simple numbered checklist card in {{brand}} colors, bold type, textured paper"
+      },
+      {
+        "headline": "Where to find us",
+        "body": "{{gathering}}. {{disclosure}}",
+        "visual_prompt": "Wide shot of the {{gathering}} with lights on, people arriving"
+      }
+    ]
+  },
+  "craft": {
+    "technique": "Anaphora creed",
+    "notes": "Repeat the same opening ('Who...') so the lines feel like a chant and are easy to quote in comments. Every line must be an action, not an adjective: 'bring the kids' beats 'family-friendly'. The refusal line gives the creed teeth."
+  },
+  "do_not": [
+    "Use adjectives ('passionate', 'driven') instead of actions",
+    "Write lines that exclude people for who they are rather than what they do",
+    "Show street racing, unsafe stunts or alcohol with driving"
+  ],
+  "compliance": [
+    "Fitness trainers: creed lines describe habits, never weight, body or health results, and no guarantee of any result",
+    "Car clubs and teams: never show street racing, unsafe stunts or alcohol near driving",
+    "Any real member shown must be a real photo with their consent, never a generated stand-in"
+  ]
+}

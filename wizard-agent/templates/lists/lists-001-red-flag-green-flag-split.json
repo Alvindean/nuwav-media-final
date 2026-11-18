@@ -1,0 +1,195 @@
+{
+  "id": "lists-001-red-flag-green-flag-split",
+  "version": 1,
+  "name": "Red Flag, Green Flag Split Screen",
+  "category": "lists",
+  "format": "both",
+  "goal": "trust",
+  "duration_seconds": 23,
+  "aspect_ratio": "9:16",
+  "best_for": [
+    "law firm",
+    "auto shop",
+    "med spa",
+    "financial advisor",
+    "real estate agent"
+  ],
+  "why_it_works": "Buyers in high-stakes categories are scared of picking the wrong provider, not of the price. Naming the warning signs out loud makes {{brand}} the one who protects the viewer, and every green flag quietly describes how {{brand}} already works. People save these to check against the next provider they talk to.",
+  "hook": {
+    "pattern": "Promise to arm the viewer against a bad {{provider_type}} before they ever meet one.",
+    "examples": [
+      "Three red flags your {{provider_type}} hopes you never notice.",
+      "If your {{provider_type}} does this, walk out.",
+      "Red flag or green flag? Most people miss number two."
+    ]
+  },
+  "variables": [
+    {
+      "name": "brand",
+      "description": "Business name",
+      "example": "Ortega Auto Care"
+    },
+    {
+      "name": "provider_type",
+      "description": "The kind of provider the viewer is choosing",
+      "example": "mechanic"
+    },
+    {
+      "name": "red_flag_1",
+      "description": "First warning sign, concrete and observable; 5 words or fewer, starts with a verb",
+      "example": "quotes before seeing the car"
+    },
+    {
+      "name": "green_flag_1",
+      "description": "The healthy opposite of red flag 1; 5 words or fewer, starts with a verb",
+      "example": "inspects first, explains in writing"
+    },
+    {
+      "name": "red_flag_2",
+      "description": "Second warning sign; 5 words or fewer, starts with a verb",
+      "example": "hides the old part"
+    },
+    {
+      "name": "green_flag_2",
+      "description": "The healthy opposite of red flag 2; 5 words or fewer, starts with a verb",
+      "example": "hands you the old part"
+    },
+    {
+      "name": "red_flag_3",
+      "description": "Third warning sign, the pressure move; 5 words or fewer, starts with a verb",
+      "example": "pushes a decision today"
+    },
+    {
+      "name": "green_flag_3",
+      "description": "The healthy opposite of red flag 3; 5 words or fewer, starts with a verb",
+      "example": "tells you what can wait"
+    },
+    {
+      "name": "offer",
+      "description": "Low-risk next step",
+      "example": "free second-opinion inspection"
+    },
+    {
+      "name": "disclosure",
+      "description": "Required fine print for the client's niche, from compliance/packs.json",
+      "example": "Attorney advertising. Past results do not guarantee a similar outcome."
+    }
+  ],
+  "beats": [
+    {
+      "seconds": 3,
+      "purpose": "hook: threat the viewer wants to avoid",
+      "on_screen_text": "3 red flags your {{provider_type}} hides",
+      "voiceover": "Three red flags your {{provider_type}} hopes you never notice.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Vertical split frame: left half washed in red light, right half in green light, an empty customer chair in the middle of the {{brand}} waiting area, centered framing, 9:16"
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "red flag 1 vs green flag 1",
+      "on_screen_text": "RED: {{red_flag_1}} / GREEN: {{green_flag_1}}",
+      "voiceover": "Red: {{red_flag_1}}. Green: {{green_flag_1}}.",
+      "visual": {
+        "tier": "text_only",
+        "prompt": ""
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "red flag 2 vs green flag 2",
+      "on_screen_text": "RED: {{red_flag_2}} / GREEN: {{green_flag_2}}",
+      "voiceover": "Red: {{red_flag_2}}. Green: {{green_flag_2}}.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Close-up of hands passing a document or item across a counter at {{brand}}, warm practical light, green tint on the right edge, vertical 9:16"
+      }
+    },
+    {
+      "seconds": 5,
+      "purpose": "red flag 3: the pressure move, shown in motion",
+      "on_screen_text": "RED: {{red_flag_3}}",
+      "voiceover": "The biggest one: {{red_flag_3}}.",
+      "visual": {
+        "tier": "clip_draft",
+        "prompt": "Slow push-in on a wall clock and a pen resting on an unsigned form, red-tinted shadows, tense quiet office, vertical 9:16"
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "green flag 3 and the turn to the brand",
+      "on_screen_text": "GREEN: {{green_flag_3}}",
+      "voiceover": "Green flag: {{green_flag_3}}. That's {{brand}}.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Calm, well-lit {{brand}} workspace, a staff member explaining something to an out-of-focus customer, natural window light, vertical 9:16"
+      }
+    },
+    {
+      "seconds": 3,
+      "purpose": "call to action",
+      "on_screen_text": "{{offer}} {{disclosure}}",
+      "voiceover": "Green-flag opinion? Book your {{offer}}.",
+      "visual": {
+        "tier": "text_only",
+        "prompt": ""
+      }
+    }
+  ],
+  "cta": "Get a green-flag opinion: {{offer}}.",
+  "carousel": {
+    "slides": [
+      {
+        "headline": "3 red flags your {{provider_type}} hides",
+        "body": "Save this before your next appointment.",
+        "visual_prompt": "Bold title card split red and green, {{brand}} logo small in the corner"
+      },
+      {
+        "headline": "Red flag #1",
+        "body": "Red: {{red_flag_1}}. Green: {{green_flag_1}}.",
+        "visual_prompt": "Red-tinted still of an empty consultation desk, harsh overhead light"
+      },
+      {
+        "headline": "Red flag #2",
+        "body": "Red: {{red_flag_2}}. Green: {{green_flag_2}}.",
+        "visual_prompt": "Hands passing a document across a counter, green tint on one side"
+      },
+      {
+        "headline": "Red flag #3",
+        "body": "Red: {{red_flag_3}}. Green: {{green_flag_3}}.",
+        "visual_prompt": "Wall clock above an unsigned form, red shadows, quiet office"
+      },
+      {
+        "headline": "Test flag #2 at your next visit",
+        "body": "Ask your {{provider_type}} to show you what they found before you say yes. A green-flag {{provider_type}} says sure.",
+        "visual_prompt": "Close-up of a hand holding up a worn part or marked-up page across the {{brand}} counter, green accent light"
+      },
+      {
+        "headline": "The 24-hour test",
+        "body": "A good {{provider_type}} is still there tomorrow. If the deal dies overnight, it was pressure, not advice.",
+        "visual_prompt": "Minimal card with a calendar page flipping from today to tomorrow, calm green tones"
+      },
+      {
+        "headline": "Get a second opinion",
+        "body": "Book your {{offer}}. No pressure, no same-day deadline. {{disclosure}}",
+        "visual_prompt": "{{brand}} brand-color card with the offer in large type"
+      }
+    ]
+  },
+  "craft": {
+    "technique": "Paired contrast list",
+    "notes": "Every red flag gets its green twin in the same frame, so the list teaches instead of just scaring. Save the pressure tactic for last because it is the one viewers have personally felt, and it hands off naturally to the brand."
+  },
+  "do_not": [
+    "Describe a red flag so specifically that it points at a real local competitor",
+    "List green flags {{brand}} does not actually practice every time",
+    "Use fear without giving the viewer a way to check for themselves"
+  ],
+  "compliance": [
+    "Law firms: no guarantees or predictions of case outcomes; follow your state bar's advertising rules and include any required attorney-advertising label",
+    "Med spa: no treatment results or before/after claims in the flags; any medical claim needs a licensed provider's review",
+    "Financial advisor: no performance or return promises; flags describe process, not outcomes, and follow FINRA/SEC advertising rules",
+    "Real estate: include brokerage name and license info as your state requires; no promises about sale price or timeline"
+  ]
+}

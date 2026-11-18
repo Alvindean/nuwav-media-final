@@ -1,0 +1,152 @@
+{
+  "id": "comedy-001-wrong-answers-only",
+  "version": 1,
+  "name": "Wrong Answers Only: Staff Edition",
+  "category": "comedy",
+  "format": "reel",
+  "goal": "engagement",
+  "duration_seconds": 23,
+  "aspect_ratio": "9:16",
+  "best_for": [
+    "law firm",
+    "dental office",
+    "auto shop",
+    "insurance agency",
+    "podcast"
+  ],
+  "why_it_works": "\"Wrong answers only\" is an open invitation: viewers instantly start writing their own joke, which keeps them watching and pulls them into the comments. When the most serious person on the team finally gives the real answer, the relief of the straight line makes the brand look both human and competent.",
+  "hook": {
+    "pattern": "Put the 'wrong answers only' prompt on screen about the one service people misunderstand, asked to your own team.",
+    "examples": [
+      "Wrong answers only: what does our {{service}} actually do?",
+      "Our team explains the {{service}}. Wrong answers only.",
+      "Wrong answers only. Go. What happens during your {{service}}?"
+    ]
+  },
+  "variables": [
+    {
+      "name": "brand",
+      "description": "Business name",
+      "example": "Ridgeline Auto"
+    },
+    {
+      "name": "service",
+      "description": "The service people misunderstand",
+      "example": "brake inspection"
+    },
+    {
+      "name": "wrong_answer_1",
+      "description": "First wrong answer: mild, almost plausible (10 words or fewer, spoken, no end punctuation)",
+      "example": "We ask the brakes how they're feeling"
+    },
+    {
+      "name": "wrong_answer_2",
+      "description": "Second wrong answer: clearly silly (10 words or fewer, spoken, no end punctuation)",
+      "example": "We test them by yelling STOP really loud"
+    },
+    {
+      "name": "wrong_answer_3",
+      "description": "Third wrong answer: the biggest, most physical one, staged safely (10 words or fewer, spoken, no end punctuation)",
+      "example": "We hug each tire. It's a trust exercise"
+    },
+    {
+      "name": "real_answer",
+      "description": "The true, plain-language answer in one sentence (10 words or fewer, spoken, no end punctuation)",
+      "example": "We check pads, rotors and fluid in 20 minutes"
+    },
+    {
+      "name": "callback_tag",
+      "description": "A short callback to wrong answer three, said straight (4 words or fewer)",
+      "example": "No trust exercises."
+    },
+    {
+      "name": "offer",
+      "description": "What the viewer gets for acting",
+      "example": "free brake check this month"
+    },
+    {
+      "name": "disclosure",
+      "description": "Required fine print for the client's niche, copied from the matching pack in compliance/packs.json",
+      "example": "Attorney advertising. Past results do not guarantee a similar outcome."
+    }
+  ],
+  "beats": [
+    {
+      "seconds": 3,
+      "purpose": "hook: the prompt",
+      "on_screen_text": "Wrong answers only: what's our {{service}} for?",
+      "voiceover": "Wrong answers only. What does our {{service}} actually do?",
+      "visual": {
+        "tier": "still",
+        "prompt": "Vertical 9:16 photo inside {{brand}}, a team member holding a handwritten cardboard sign reading WRONG ANSWERS ONLY, workplace softly blurred behind, bright natural light, centered medium shot"
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "setup: wrong answer one, mild",
+      "on_screen_text": "{{wrong_answer_1}}",
+      "voiceover": "{{wrong_answer_1}}.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Vertical medium close-up of a smiling {{brand}} employee in uniform at their workstation, sincere expression as if giving a real answer, warm practical light, shallow depth of field"
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "escalate: wrong answer two, sillier",
+      "on_screen_text": "{{wrong_answer_2}}",
+      "voiceover": "{{wrong_answer_2}}.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Vertical shot of a second {{brand}} employee mid-gesture, eyebrows raised, holding a tool or prop from the {{service}} like a microphone, playful energy, same location, eye-level framing"
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "peak: wrong answer three, most absurd",
+      "on_screen_text": "{{wrong_answer_3}}",
+      "voiceover": "{{wrong_answer_3}}.",
+      "visual": {
+        "tier": "clip_draft",
+        "prompt": "Vertical 9:16 clip, two {{brand}} employees acting out an absurd, harmless version of the {{service}} with exaggerated seriousness, slow push-in, bright workplace light, safe and clearly staged"
+      }
+    },
+    {
+      "seconds": 5,
+      "purpose": "turn: the straight answer from the most serious person",
+      "on_screen_text": "Real answer: {{real_answer}}",
+      "voiceover": "{{real_answer}}.",
+      "visual": {
+        "tier": "clip_standard",
+        "prompt": "Vertical medium shot, the owner of {{brand}} walks into frame behind the team, unimpressed, then turns to camera and calmly explains, clean professional light, team frozen mid-joke in the background"
+      }
+    },
+    {
+      "seconds": 3,
+      "purpose": "tag: callback plus CTA",
+      "on_screen_text": "{{callback_tag}} {{brand}}: {{offer}}. {{disclosure}}",
+      "voiceover": "{{callback_tag}} Book now: {{offer}}.",
+      "visual": {
+        "tier": "text_only",
+        "prompt": ""
+      }
+    }
+  ],
+  "cta": "Drop your wrong answer in the comments, then book the right one: {{offer}}.",
+  "craft": {
+    "technique": "Rule of three escalation with a straight-man turn",
+    "notes": "Setup: the 'wrong answers only' prompt and three answers that climb from mild to silly to absurd (rule of three, the third is the biggest and most physical). Turn: the most serious person on the team delivers the real answer completely straight; the comedy is the tonal whiplash. Tag: the last line calls back to wrong answer three (the callback_tag, e.g. 'No trust exercises.') so the joke pays off twice. Timing: cut each wrong answer the instant the line ends, no reaction shots, so the rhythm speeds up; then hold a half-second of silence on the owner's unimpressed face before they speak. That pause is the laugh."
+  },
+  "do_not": [
+    "Make any wrong answer sound plausible enough to be taken as real advice",
+    "Let a wrong answer mock customers, their cars, teeth, or claims; the joke is the staff being goofy",
+    "Use more than three wrong answers; a fourth kills the rhythm",
+    "Bury the real answer in jargon; it must be one clear sentence"
+  ],
+  "compliance": [
+    "Law firms: the real answer must be general information, not legal advice; no outcome or settlement guarantees; label as attorney advertising where your state bar requires",
+    "Dental: the real answer must be accurate and general; do not promise 'painless' or specific results; any staff shown performing care must be licensed for it",
+    "Insurance: do not imply any coverage, price or claim outcome; add 'coverage varies by policy and state' to the caption",
+    "Wrong answers must never depict an unsafe act a viewer could copy (for auto: no one under or in front of a vehicle in the final render)"
+  ]
+}

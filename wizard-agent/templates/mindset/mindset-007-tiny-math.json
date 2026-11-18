@@ -1,0 +1,115 @@
+{
+  "id": "mindset-007-tiny-math",
+  "version": 1,
+  "name": "Tiny Math",
+  "category": "mindset",
+  "format": "carousel",
+  "goal": "trust",
+  "aspect_ratio": "4:5",
+  "best_for": [
+    "financial advisor",
+    "insurance agent",
+    "fitness trainer",
+    "podcast",
+    "coffee shop"
+  ],
+  "why_it_works": "Big goals feel impossible, but small numbers feel doable. Showing the plain arithmetic of a tiny daily or weekly habit makes the outcome feel inevitable instead of heroic, and doing the math in front of the viewer earns more trust than a slogan ever could.",
+  "hook": {
+    "pattern": "Open with one small, oddly specific number and promise to show what it adds up to.",
+    "examples": [
+      "{{small_unit}} a day. Watch it add up.",
+      "Do the math on {{small_unit}} with me.",
+      "{{small_unit}} sounds like nothing. Swipe."
+    ]
+  },
+  "variables": [
+    {
+      "name": "brand",
+      "description": "Business name",
+      "example": "Fieldstone Fitness"
+    },
+    {
+      "name": "small_unit",
+      "description": "The tiny daily or weekly amount",
+      "example": "10 minutes"
+    },
+    {
+      "name": "habit",
+      "description": "The habit the small unit goes into",
+      "example": "a walk after dinner"
+    },
+    {
+      "name": "week_total",
+      "description": "What it adds up to in a week, plainly stated",
+      "example": "70 minutes"
+    },
+    {
+      "name": "year_total",
+      "description": "What it adds up to in a year, plainly stated",
+      "example": "about 60 hours"
+    },
+    {
+      "name": "year_equivalent",
+      "description": "A relatable comparison for the year total, lowercase, 10 words or fewer",
+      "example": "a week and a half of full-time work"
+    },
+    {
+      "name": "first_step",
+      "description": "How the brand helps start, lowercase verb phrase, 7 words or fewer",
+      "example": "grab our free 4-week starter plan"
+    },
+    {
+      "name": "disclosure",
+      "description": "Fine-print disclosure line for the client's regulated niche (use the matching compliance pack's disclosure line)",
+      "example": "Not financial advice. Terms apply."
+    }
+  ],
+  "cta": "Start with one day: {{first_step}} from {{brand}}.",
+  "carousel": {
+    "slides": [
+      {
+        "headline": "{{small_unit}} sounds like nothing",
+        "body": "Let's do the math on {{habit}}.",
+        "visual_prompt": "Big bold numeral card, warm off-white background, {{brand}} accent color, minimal"
+      },
+      {
+        "headline": "One week",
+        "body": "{{small_unit}} a day is {{week_total}}.",
+        "visual_prompt": "Seven small identical objects in a row on a wooden table, top-down, soft daylight"
+      },
+      {
+        "headline": "One year",
+        "body": "That's {{year_total}}.",
+        "visual_prompt": "A tall neat stack of the same small objects, side light, shallow depth of field"
+      },
+      {
+        "headline": "Put another way",
+        "body": "Same as {{year_equivalent}}.",
+        "visual_prompt": "Calendar with many days quietly checked off in pencil, soft natural light"
+      },
+      {
+        "headline": "Big change is small math",
+        "body": "You don't need a new life. You need {{small_unit}}.",
+        "visual_prompt": "Bold type card in {{brand}} colors, lots of negative space"
+      },
+      {
+        "headline": "Start with one day",
+        "body": "Start here: {{first_step}} from {{brand}}. {{disclosure}}",
+        "visual_prompt": "Clean lifestyle photo of {{habit}}, early evening light, vertical 4:5, {{brand}} logo small in corner"
+      }
+    ]
+  },
+  "craft": {
+    "technique": "Visible arithmetic",
+    "notes": "One number per slide, growing slide by slide, so the swipe itself feels like compounding. Use plain addition the viewer can check in their head. The props repeat the same object in larger quantities so the math is visible even with the sound off."
+  },
+  "do_not": [
+    "Use made-up compound interest or return figures",
+    "Imply the habit guarantees a health or money outcome",
+    "Cram more than one number onto a slide"
+  ],
+  "compliance": [
+    "Financial advisors and insurance: show only simple arithmetic, never projected returns, growth rates or income promises; add the firm's required disclosure",
+    "Fitness: present time totals only, no weight-loss or health outcome guarantees"
+  ]
+}

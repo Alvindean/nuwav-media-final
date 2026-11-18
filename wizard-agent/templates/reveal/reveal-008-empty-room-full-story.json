@@ -1,0 +1,173 @@
+{
+  "id": "reveal-008-empty-room-full-story",
+  "version": 1,
+  "name": "Empty Room, Full Story",
+  "category": "reveal",
+  "format": "both",
+  "goal": "leads",
+  "duration_seconds": 22,
+  "aspect_ratio": "9:16",
+  "best_for": [
+    "real estate agent",
+    "home stager",
+    "interior designer",
+    "short-term rental host"
+  ],
+  "why_it_works": "An empty room is hard to love because people cannot picture living in it. Showing the bare space first, then the finished room, lets the viewer feel the jump from 'just walls' to 'my life here', and that feeling is what makes them book a visit.",
+  "hook": {
+    "pattern": "Open on the barest, least flattering room and ask whether the viewer would walk past it.",
+    "examples": [
+      "Would you have walked past this room?",
+      "Same {{property_type}}. Same square feet. Watch it change.",
+      "Empty rooms make people guess. Watch this one."
+    ]
+  },
+  "variables": [
+    {
+      "name": "agent_name",
+      "description": "Agent, stager or designer name",
+      "example": "Dana Whitlock, Coastline Realty"
+    },
+    {
+      "name": "property_type",
+      "description": "Type of property",
+      "example": "two-bed condo"
+    },
+    {
+      "name": "neighborhood",
+      "description": "Neighborhood or area",
+      "example": "Mission Hills"
+    },
+    {
+      "name": "standout_feature",
+      "description": "One real, permanent feature of the home, lowercase, 5 words or fewer",
+      "example": "floor-to-ceiling west windows"
+    },
+    {
+      "name": "next_step",
+      "description": "The next step with a date, starts with a capital letter, 5 words or fewer",
+      "example": "Open house Saturday 1-4pm"
+    },
+    {
+      "name": "disclosure",
+      "description": "Required fine print for the client's niche, from compliance/packs.json",
+      "example": "Equal Housing Opportunity. Bayline Realty, DRE #01234567."
+    }
+  ],
+  "beats": [
+    {
+      "seconds": 3,
+      "purpose": "hook: the bare room",
+      "on_screen_text": "Would you walk past this?",
+      "voiceover": "Would you have walked past this room?",
+      "visual": {
+        "tier": "real_photo",
+        "prompt": "Client-supplied listing photo of the real empty {{property_type}} living room, vertical crop"
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "second empty room",
+      "on_screen_text": "Empty. Echoing.",
+      "voiceover": "Empty rooms make people guess.",
+      "visual": {
+        "tier": "real_photo",
+        "prompt": "Client-supplied listing photo of the real empty bedroom in this {{property_type}}, vertical crop"
+      }
+    },
+    {
+      "seconds": 5,
+      "purpose": "the reveal walk-through",
+      "on_screen_text": "Same room. Virtually staged.",
+      "voiceover": "So we stopped making them guess.",
+      "visual": {
+        "tier": "clip_standard",
+        "prompt": "Virtual staging of the client's real living room photo: furniture and warm light added, walls, floors and views unchanged, slow push-in"
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "the detail that sells",
+      "on_screen_text": "The {{standout_feature}}. Virtually staged.",
+      "voiceover": "And the {{standout_feature}} finally gets the spotlight.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Close detail of {{standout_feature}} in the staged room, golden-hour light, shallow depth of field, vertical 9:16"
+      }
+    },
+    {
+      "seconds": 3,
+      "purpose": "the exterior close",
+      "on_screen_text": "{{neighborhood}}",
+      "voiceover": "In {{neighborhood}}.",
+      "visual": {
+        "tier": "real_photo",
+        "prompt": "Client-supplied twilight photo of the real {{property_type}} exterior, vertical crop"
+      }
+    },
+    {
+      "seconds": 3,
+      "purpose": "call to action",
+      "on_screen_text": "{{next_step}} {{disclosure}}",
+      "voiceover": "{{next_step}}. {{agent_name}}.",
+      "visual": {
+        "tier": "text_only",
+        "prompt": ""
+      }
+    }
+  ],
+  "cta": "{{next_step}}: message {{agent_name}} to book a time.",
+  "carousel": {
+    "slides": [
+      {
+        "headline": "Would you walk past this room?",
+        "body": "Swipe to see the same room, finished.",
+        "visual_prompt": "Empty {{property_type}} living room, bare walls, flat overcast light"
+      },
+      {
+        "headline": "Same room, staged",
+        "body": "Same corner, same height. Labeled as staged.",
+        "visual_prompt": "Same living room, same angle, furnished and warmly lit, small 'Staged' label in the corner"
+      },
+      {
+        "headline": "The {{standout_feature}}",
+        "body": "The detail the empty room was hiding.",
+        "visual_prompt": "Close detail of {{standout_feature}}, golden-hour light"
+      },
+      {
+        "headline": "Save this: stage these three first",
+        "body": "Living room, main bedroom, entry. That's where people decide.",
+        "visual_prompt": "Three-item checklist card with simple room icons, brand colors, 4:5"
+      },
+      {
+        "headline": "Five things to fix before photos",
+        "body": "Bulbs to one color. Blinds open. Counters clear. Beds made tight. One plant per room.",
+        "visual_prompt": "Clean numbered checklist card, warm neutral background, brand colors"
+      },
+      {
+        "headline": "{{neighborhood}}",
+        "body": "Come see the street in person.",
+        "visual_prompt": "Exterior at twilight with warm windows"
+      },
+      {
+        "headline": "{{next_step}}",
+        "body": "Message {{agent_name}} to book a time. {{disclosure}}",
+        "visual_prompt": "Clean branded card with agent name and date in large type"
+      }
+    ]
+  },
+  "craft": {
+    "technique": "Same-angle swap",
+    "notes": "Shoot or generate the empty and staged versions from the exact same corner and height so the change reads instantly. Lead with the worst room, not the best; the bigger the gap, the stronger the reveal."
+  },
+  "do_not": [
+    "Show AI or virtual staging without labeling it as staged",
+    "Alter permanent features (windows, views, room size, condition) in any image",
+    "Describe who the home is 'perfect for' by family status, religion, age or any protected class"
+  ],
+  "compliance": [
+    "Real estate: label every virtually staged image 'Virtually staged'; never change walls, flooring, views or defects",
+    "Real estate: include brokerage name and agent license number per state advertising rules; follow Fair Housing Act wording",
+    "Short-term rental: photos must match what guests will actually get"
+  ]
+}

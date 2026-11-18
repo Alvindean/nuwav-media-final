@@ -1,0 +1,135 @@
+{
+  "id": "songwriting-002-call-it-back",
+  "version": 1,
+  "name": "Call It Back Chant",
+  "category": "songwriting",
+  "format": "reel",
+  "goal": "engagement",
+  "duration_seconds": 18,
+  "aspect_ratio": "9:16",
+  "best_for": [
+    "sports team",
+    "lowrider car club",
+    "high school athletics",
+    "marching band",
+    "dance crew"
+  ],
+  "why_it_works": "Call-and-response turns the viewer into a participant: the gap after the call makes the brain fill in the answer. Once people answer once, they feel part of the crew and want to say it out loud at the game, the meet or the cruise.",
+  "hook": {
+    "pattern": "A single voice shouts the call to camera, then a beat of silence that dares the viewer to answer.",
+    "examples": [
+      "When I say {{call_word}}, you say {{response_word}}.",
+      "{{call_word}}! We can't hear you.",
+      "Only real {{crew_name}} fans know what comes next."
+    ]
+  },
+  "variables": [
+    {
+      "name": "crew_name",
+      "description": "Team, club or crew name",
+      "example": "Eastside Lowriders"
+    },
+    {
+      "name": "call_word",
+      "description": "The call the leader shouts: one or two punchy words, capitalized, 2 syllables or fewer",
+      "example": "Low and"
+    },
+    {
+      "name": "response_word",
+      "description": "The one-word answer the crowd shouts back, 1-2 syllables with an open vowel",
+      "example": "SLOW"
+    },
+    {
+      "name": "event",
+      "description": "Next game, meet, show or cruise night, 6 words or fewer",
+      "example": "Sunday cruise night"
+    },
+    {
+      "name": "event_date",
+      "description": "When it happens, 4 words or fewer",
+      "example": "this Sunday, 6 PM"
+    }
+  ],
+  "beats": [
+    {
+      "seconds": 3,
+      "purpose": "hook: the call",
+      "on_screen_text": "When I say {{call_word}}...",
+      "voiceover": "When I say {{call_word}}, you say {{response_word}}!",
+      "visual": {
+        "tier": "still",
+        "prompt": "Vertical 9:16 low-angle photo of the {{crew_name}} chant leader mid-shout to camera, fist raised, bright lights behind, high contrast night lighting"
+      }
+    },
+    {
+      "seconds": 2,
+      "purpose": "silent gap: viewer answers",
+      "on_screen_text": "Your turn.",
+      "voiceover": "",
+      "visual": {
+        "tier": "text_only",
+        "prompt": ""
+      }
+    },
+    {
+      "seconds": 3,
+      "purpose": "crowd response",
+      "on_screen_text": "{{response_word}}!",
+      "voiceover": "{{response_word}}!",
+      "visual": {
+        "tier": "clip_standard",
+        "prompt": "Vertical shot of the {{crew_name}} crowd throwing arms up and shouting together, handheld energy, colored rim lights, slight slow motion, 9:16"
+      }
+    },
+    {
+      "seconds": 3,
+      "purpose": "second call, a half step higher",
+      "on_screen_text": "{{call_word}}!",
+      "voiceover": "{{call_word}}!",
+      "visual": {
+        "tier": "still",
+        "prompt": "Tighter vertical close-up of the same leader shouting, sweat and grit, hard side light, {{crew_name}} colors on clothing"
+      }
+    },
+    {
+      "seconds": 3,
+      "purpose": "louder response, more voices",
+      "on_screen_text": "{{response_word}}! Louder!",
+      "voiceover": "{{response_word}}!",
+      "visual": {
+        "tier": "clip_draft",
+        "prompt": "Quick vertical push-in on the {{crew_name}} crowd, bigger cheer, confetti or flashing lights, 9:16"
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "tell them where to do it live",
+      "on_screen_text": "{{event}}: {{event_date}}",
+      "voiceover": "Say it loud at {{event}}, {{event_date}}.",
+      "visual": {
+        "tier": "text_only",
+        "prompt": ""
+      }
+    }
+  ],
+  "cta": "Bring the noise to {{event}}, {{event_date}}. What should our next chant be?",
+  "music": {
+    "tier": "music",
+    "bpm": 94,
+    "feel": "stomp-clap chant groove, marching snare and 808 stomp, no melody",
+    "vocals": true
+  },
+  "craft": {
+    "technique": "Call-and-response chant with a planted rest",
+    "notes": "The call is two stressed syllables aimed at beats 1 and 2; the response is one stressed syllable on beat 3, followed by a beat of silence so it rings. Repeat the pair twice, the second time a half step higher and with more voices: repetition plus escalation. Keep the response a single word that is easy to shout with an open vowel (O, A). Tempo/feel: 94 BPM stomp-clap, marching snare or 808 stomp, no melody needed, the chant IS the hook. Beat seconds are a guide (about ±1s): the edit is cut to the track, so aim the stresses at the downbeats rather than promising exact bar placement."
+  },
+  "do_not": [
+    "Use a real team's or school's existing chant",
+    "Pick a response word that's hard to shout or sounds like an insult to a rival",
+    "Fill the silent gap with music; the gap is the hook"
+  ],
+  "compliance": [
+    "School teams and bands: get the school's approval and parent consent before showing any student's face or name",
+    "Generated crowd shots are labelled as AI content and never presented as real fans at a real event"
+  ]
+}

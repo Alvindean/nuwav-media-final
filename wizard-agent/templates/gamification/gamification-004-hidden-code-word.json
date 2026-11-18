@@ -1,0 +1,132 @@
+{
+  "id": "gamification-004-hidden-code-word",
+  "version": 1,
+  "name": "The Hidden Code Word",
+  "category": "gamification",
+  "format": "reel",
+  "goal": "awareness",
+  "duration_seconds": 18,
+  "aspect_ratio": "9:16",
+  "best_for": [
+    "podcast",
+    "UGC creator",
+    "fitness trainer",
+    "independent musician",
+    "apparel brand"
+  ],
+  "why_it_works": "A plain giveaway gets 'me please' spam. Hiding the entry word inside the video means people must actually watch to enter, which lifts watch time, and anyone who spots it feels like an insider. The comment section fills with the same word, which makes strangers curious enough to rewatch.",
+  "hook": {
+    "pattern": "Tell them the entry word is hidden in the video and they only see it once.",
+    "examples": [
+      "The entry word is hidden here. It shows once.",
+      "Find the hidden word. Comment it. Win {{prize}}.",
+      "Blink and you miss the word. Don't blink."
+    ]
+  },
+  "variables": [
+    {
+      "name": "brand",
+      "description": "Creator, show or brand name",
+      "example": "Late Lap Podcast"
+    },
+    {
+      "name": "setting",
+      "description": "Where the video takes place",
+      "example": "the podcast studio with two mics and a neon sign"
+    },
+    {
+      "name": "code_word",
+      "description": "The single entry word, added in the edit as an on-screen overlay for one full second, never drawn by the video model",
+      "example": "OVERTIME"
+    },
+    {
+      "name": "hiding_spot",
+      "description": "The blank surface in frame where the word overlay is pinned",
+      "example": "the blank coffee mug on the desk"
+    },
+    {
+      "name": "prize",
+      "description": "What one winner gets, 3 words or fewer; prize value goes in the official rules",
+      "example": "a signed hoodie"
+    },
+    {
+      "name": "winner_date",
+      "description": "When the winner is picked",
+      "example": "Sunday night"
+    },
+    {
+      "name": "disclosure",
+      "description": "Required fine print: the giveaway line from compliance/packs.json, plus the client's niche line (fitness: results vary)",
+      "example": "No purchase necessary. Official rules at link. Results vary. These statements have not been evaluated by the FDA."
+    }
+  ],
+  "beats": [
+    {
+      "seconds": 3,
+      "purpose": "hook: the word is hidden",
+      "on_screen_text": "The entry word is hidden in this video.",
+      "voiceover": "The entry word is hidden here. It shows once.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Vertical 9:16 photo of {{prize}} laid out on a desk in {{setting}}, moody practical lighting, prize in sharp focus, background soft"
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "decoy scene, keep them scanning",
+      "on_screen_text": "Keep looking.",
+      "voiceover": "Keep looking. It's not here.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Wide vertical 9:16 shot of {{setting}}, warm lamps and colored accent light, several props and signs in frame but none with readable words"
+      }
+    },
+    {
+      "seconds": 3,
+      "purpose": "the one beat with the word, as an overlay",
+      "on_screen_text": "{{code_word}}",
+      "voiceover": "Did you see it?",
+      "visual": {
+        "tier": "clip_draft",
+        "prompt": "Quick handheld pan across {{setting}} that slows past {{hiding_spot}} for about one second, then keeps moving, no readable text anywhere in frame, vertical 9:16"
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "second decoy, plant doubt",
+      "on_screen_text": "Or did you miss it?",
+      "voiceover": "Or did you miss it?",
+      "visual": {
+        "tier": "still",
+        "prompt": "Close vertical 9:16 shot of a different corner of {{setting}}, a blank whiteboard and headphones on a hook, same warm light"
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "rules",
+      "on_screen_text": "Comment the word. Random draw {{winner_date}}. {{disclosure}}",
+      "voiceover": "Comment the word. One random winner, drawn {{winner_date}}.",
+      "visual": {
+        "tier": "text_only",
+        "prompt": ""
+      }
+    }
+  ],
+  "cta": "Comment the hidden word and follow {{brand}}. One random winner gets {{prize}}, drawn {{winner_date}}. Official rules in our bio.",
+  "craft": {
+    "technique": "Watch-to-enter",
+    "notes": "Put the word in the middle of the video, not the end, so people who bail early have to come back. The word is a text overlay pinned to the hiding spot in the edit for one full second, so it is always spelled right. The decoy beats after it plant doubt and trigger the rewatch. Never say the word out loud."
+  },
+  "do_not": [
+    "Say the code word in the voiceover or caption",
+    "Show the word overlay so briefly nobody can read it; one full second minimum",
+    "Pick a winner any way but the stated random draw; screen-record the draw",
+    "Ask the video model to draw the code word; it will misspell it"
+  ],
+  "compliance": [
+    "Official rules linked: eligibility (age and location), start and end dates, how the winner is picked (random draw from correct comments) and prize value",
+    "No purchase necessary; void where prohibited",
+    "Say the promotion is not sponsored or run by the platform, and follow its promotion rules (no tagging-to-enter where banned)",
+    "Fitness: results vary; no guarantee of body or weight-loss results with the prize or in the video"
+  ]
+}

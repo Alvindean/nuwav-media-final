@@ -1,0 +1,150 @@
+{
+  "id": "lists-004-diy-wait-or-call-a-pro",
+  "version": 1,
+  "name": "DIY, Wait or Call a Pro",
+  "category": "lists",
+  "format": "reel",
+  "goal": "trust",
+  "duration_seconds": 22,
+  "aspect_ratio": "9:16",
+  "best_for": [
+    "auto shop",
+    "plumber",
+    "barber shop",
+    "dental practice",
+    "lawn care"
+  ],
+  "why_it_works": "A pro who tells viewers which problems they can fix themselves sounds honest, not salesy. Giving away the easy fix first makes the one item that truly needs {{brand}} believable, and the three-bucket sort is simple enough to remember and save.",
+  "hook": {
+    "pattern": "Promise to sort common problems into three buckets: fix it yourself, let it wait, or call a pro now.",
+    "examples": [
+      "DIY, wait, or call a pro? Three {{profession}} problems.",
+      "Fix it, ignore it, or call? The {{profession}} sorts it.",
+      "Three problems, three buckets. Only one needs me."
+    ]
+  },
+  "variables": [
+    {
+      "name": "brand",
+      "description": "Business or practice name",
+      "example": "Ortega Auto Care"
+    },
+    {
+      "name": "profession",
+      "description": "The trade, in plain words; 2 words or fewer",
+      "example": "mechanic"
+    },
+    {
+      "name": "diy_item",
+      "description": "A common problem viewers can safely fix themselves; 5 words or fewer",
+      "example": "a dim headlight"
+    },
+    {
+      "name": "diy_fix",
+      "description": "The quick fix, read after \"Just\"; starts with a verb, 6 words or fewer",
+      "example": "swap the bulb, ten minutes"
+    },
+    {
+      "name": "wait_item",
+      "description": "A problem that looks scary but can safely wait and be watched; 6 words or fewer",
+      "example": "a squeaky belt on cold mornings"
+    },
+    {
+      "name": "call_item",
+      "description": "The problem that needs a pro now; 5 words or fewer",
+      "example": "a grinding noise when braking"
+    },
+    {
+      "name": "call_reason",
+      "description": "Why it cannot wait, read after \"because\"; 5 words or fewer",
+      "example": "metal-on-metal ruins rotors fast"
+    },
+    {
+      "name": "offer",
+      "description": "Low-risk next step; 6 words or fewer",
+      "example": "a free brake check this week"
+    },
+    {
+      "name": "disclosure",
+      "description": "Required fine print for the client's niche, from compliance/packs.json",
+      "example": "Results vary. Consult a licensed provider."
+    }
+  ],
+  "beats": [
+    {
+      "seconds": 3,
+      "purpose": "hook: promise the three-bucket sort",
+      "on_screen_text": "DIY, wait, or call a pro?",
+      "voiceover": "Three {{profession}} problems: DIY, wait, or call?",
+      "visual": {
+        "tier": "still",
+        "prompt": "Three labeled bins on the {{brand}} workbench reading DIY, WAIT and CALL, bright even light, centered framing, vertical 9:16"
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "bucket 1: the easy fix the viewer can do",
+      "on_screen_text": "DIY: {{diy_item}}",
+      "voiceover": "DIY: {{diy_item}}. Just {{diy_fix}}.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Close-up of everyday hands doing a simple at-home fix related to {{diy_item}}, green DIY tag in the corner, natural light, vertical"
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "bucket 2: the scary-looking thing that can wait",
+      "on_screen_text": "WAIT: {{wait_item}}",
+      "voiceover": "It can wait: {{wait_item}}. Watch it, don't panic.",
+      "visual": {
+        "tier": "text_only",
+        "prompt": ""
+      }
+    },
+    {
+      "seconds": 5,
+      "purpose": "bucket 3: the one that needs a pro, shown in motion",
+      "on_screen_text": "CALL NOW: {{call_item}}",
+      "voiceover": "Call a pro today: {{call_item}}, because {{call_reason}}.",
+      "visual": {
+        "tier": "clip_draft",
+        "prompt": "Slow push-in on the source of {{call_item}} in the {{brand}} work bay, red CALL tag sliding into frame, tense practical light, vertical 9:16"
+      }
+    },
+    {
+      "seconds": 3,
+      "purpose": "turn to the brand",
+      "on_screen_text": "Not sure which bucket?",
+      "voiceover": "Not sure which bucket? Ask {{brand}} first.",
+      "visual": {
+        "tier": "still",
+        "prompt": "The {{profession}} at the {{brand}} counter listening to a customer, relaxed, warm window light, vertical 9:16"
+      }
+    },
+    {
+      "seconds": 3,
+      "purpose": "call to action",
+      "on_screen_text": "{{offer}} {{disclosure}}",
+      "voiceover": "Start here: {{offer}}.",
+      "visual": {
+        "tier": "text_only",
+        "prompt": ""
+      }
+    }
+  ],
+  "cta": "Not sure which bucket? Start with {{offer}}.",
+  "craft": {
+    "technique": "Triage sort list",
+    "notes": "Three items, three buckets, always in the order DIY, wait, call. Giving away a real free fix first earns the right to say one thing is urgent. The call item must be genuinely urgent, or the whole sort reads as a sales trick."
+  },
+  "do_not": [
+    "Put anything unsafe or license-only in the DIY bucket",
+    "Make every item a call-a-pro item; the sort only works if two of three are free",
+    "Exaggerate the danger of the call item to scare viewers into booking"
+  ],
+  "compliance": [
+    "Dental: no diagnosis in the ad; the call-a-pro item invites a consultation, and DIY items stay within everyday home care",
+    "Healthcare providers: no claims of cures or guaranteed results, and no patient images without written consent",
+    "Dental and other health niches: results vary; show the required disclosure line on the final beat"
+  ]
+}

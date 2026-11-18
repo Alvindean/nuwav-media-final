@@ -1,0 +1,133 @@
+{
+  "id": "reveal-009-whats-in-the-envelope",
+  "version": 1,
+  "name": "What's in the Envelope",
+  "category": "reveal",
+  "format": "carousel",
+  "goal": "trust",
+  "aspect_ratio": "4:5",
+  "best_for": [
+    "law firm",
+    "financial advisor",
+    "insurance agent",
+    "mortgage broker",
+    "dental practice"
+  ],
+  "why_it_works": "A sealed envelope is a small mystery people want solved. Two clues let the reader guess what is inside, opening it slide by slide keeps them swiping, and the item itself is useful enough to save, which makes the expert feel helpful before any call.",
+  "hook": {
+    "pattern": "A sealed envelope labeled 'bring this to your appointment', two clues, and the item revealed only near the end.",
+    "examples": [
+      "What's in the envelope? Swipe to open it.",
+      "Bring this one thing to your {{appointment}}.",
+      "Two clues. One page. Guess what's inside."
+    ]
+  },
+  "variables": [
+    {
+      "name": "firm_name",
+      "description": "Firm or practice name",
+      "example": "Alder & Pine Law"
+    },
+    {
+      "name": "appointment",
+      "description": "The first meeting the reader is preparing for, lowercase, 4 words or fewer",
+      "example": "first injury consult"
+    },
+    {
+      "name": "clue_one",
+      "description": "First clue about the item, a full sentence starting with a capital letter, 8 words or fewer",
+      "example": "It fits on one sheet of paper"
+    },
+    {
+      "name": "clue_two",
+      "description": "Second clue, a full sentence starting with a capital letter, 8 words or fewer",
+      "example": "You can make it tonight at home"
+    },
+    {
+      "name": "hidden_item",
+      "description": "The item inside the envelope, starts with a capital letter, 8 words or fewer",
+      "example": "A dated timeline of what happened"
+    },
+    {
+      "name": "why_it_matters",
+      "description": "Why the item helps, a full sentence starting with a capital letter, general and accurate, 14 words or fewer",
+      "example": "Details fade within weeks, and a dated record keeps your story clear"
+    },
+    {
+      "name": "also_bring",
+      "description": "Two or three other things to bring, starts with a capital letter",
+      "example": "Photos, receipts and every letter you've received"
+    },
+    {
+      "name": "next_step",
+      "description": "The free, low-pressure next step, starts with a capital letter, 8 words or fewer",
+      "example": "Book a free 15-minute call"
+    },
+    {
+      "name": "disclosure",
+      "description": "Required fine print for the client's niche, from compliance/packs.json",
+      "example": "Attorney advertising. Past results do not guarantee a similar outcome."
+    }
+  ],
+  "carousel": {
+    "slides": [
+      {
+        "headline": "What's in the envelope?",
+        "body": "The one thing to bring to your {{appointment}}. Swipe to open it.",
+        "visual_prompt": "Sealed kraft envelope on a wooden desk labeled 'bring this', soft window light, coffee mug at the edge, 4:5"
+      },
+      {
+        "headline": "Clue one",
+        "body": "{{clue_one}}.",
+        "visual_prompt": "Same envelope, flap still sealed, a corner of one sheet of paper peeking out, same light and angle"
+      },
+      {
+        "headline": "Clue two",
+        "body": "{{clue_two}}.",
+        "visual_prompt": "Same envelope beside a kitchen table pen and notepad, evening lamp light, same angle"
+      },
+      {
+        "headline": "Got a guess?",
+        "body": "Most people show up without it. Swipe once more.",
+        "visual_prompt": "Hand lifting the envelope flap halfway, paper inside still hidden, shallow depth of field"
+      },
+      {
+        "headline": "It's this",
+        "body": "{{hidden_item}}.",
+        "visual_prompt": "The single sheet pulled from the envelope, neat handwritten dated list, bright daylight, top-down"
+      },
+      {
+        "headline": "Why it matters",
+        "body": "{{why_it_matters}}.",
+        "visual_prompt": "Close-up of the dated list with a few dates circled, warm desk lamp"
+      },
+      {
+        "headline": "Save this: bring these too",
+        "body": "{{also_bring}}. Put them in one envelope today.",
+        "visual_prompt": "Checklist card with three simple icons and tick boxes, calm brand colors, 4:5"
+      },
+      {
+        "headline": "Not sure what applies to you?",
+        "body": "{{next_step}} with {{firm_name}}. {{disclosure}}",
+        "visual_prompt": "{{firm_name}} logo card in calm brand colors with the next step in large type"
+      }
+    ]
+  },
+  "cta": "{{next_step}} with {{firm_name}}. This post is general information, not advice for your situation.",
+  "craft": {
+    "technique": "Sealed-object reveal",
+    "notes": "Keep the envelope, desk and angle identical on every slide so the only change is how far it opens. The clues should make the item guessable but not obvious, and the reveal must be something the reader can act on tonight."
+  },
+  "do_not": [
+    "Pick an item that only fits one rare situation",
+    "Turn the item or the reason into a promise of a result",
+    "Show a real client's documents or personal details on any slide"
+  ],
+  "compliance": [
+    "Law firm: no guarantees or predictions of case outcomes; label as attorney advertising where your state bar requires; include 'This is general information, not legal advice'",
+    "Financial advisor: no promises of returns or income; include required firm disclosures and 'not individual investment advice'",
+    "Insurance: do not state coverage as universal; say policies and state rules vary; include license number",
+    "Mortgage: no rate or approval promises; include NMLS number and equal housing language",
+    "Dental: no claims of painless or guaranteed results; keep clinical statements accurate and general"
+  ]
+}

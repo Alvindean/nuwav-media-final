@@ -1,0 +1,135 @@
+{
+  "id": "reveal-007-hear-it-before-you-see-it",
+  "version": 1,
+  "name": "Hear It Before You See It",
+  "category": "reveal",
+  "format": "reel",
+  "goal": "awareness",
+  "duration_seconds": 20,
+  "aspect_ratio": "9:16",
+  "best_for": [
+    "independent musician",
+    "record label",
+    "podcast",
+    "club DJ"
+  ],
+  "why_it_works": "Taking away the picture makes people listen harder to the client's real track, and the imagination fills the gap with its own image. When the cover art finally sharpens, it either matches what they pictured or surprises them, and both feel like a payoff.",
+  "hook": {
+    "pattern": "Black screen, sound first, and a line telling the viewer to turn the sound on before the art appears.",
+    "examples": [
+      "Sound on. You hear it before you see it.",
+      "Close your eyes for ten seconds. Then look.",
+      "New {{release_title}}. Ears first, eyes last."
+    ]
+  },
+  "variables": [
+    {
+      "name": "artist_name",
+      "description": "Artist, label, show or team name",
+      "example": "Nova Reyes"
+    },
+    {
+      "name": "release_title",
+      "description": "Name of the single, mix or episode, 4 words or fewer",
+      "example": "Low Tide"
+    },
+    {
+      "name": "release_date",
+      "description": "Release date",
+      "example": "Nov 28"
+    },
+    {
+      "name": "sound_words",
+      "description": "Three words that describe the sound, starts with a capital letter",
+      "example": "Warm, slow, late-night"
+    },
+    {
+      "name": "platform",
+      "description": "Where to listen or watch",
+      "example": "all streaming platforms"
+    },
+    {
+      "name": "audio_clip",
+      "description": "The client's own released audio (owned or licensed), the 15-20 seconds with the clearest drop or change",
+      "example": "the second chorus of Low Tide, 0:58 to 1:16"
+    }
+  ],
+  "beats": [
+    {
+      "seconds": 3,
+      "purpose": "hook: sound before picture; {{audio_clip}} starts here and runs under the whole reel",
+      "on_screen_text": "Sound on. Real track.",
+      "voiceover": "",
+      "visual": {
+        "tier": "still",
+        "prompt": "Vertical 9:16 almost black frame, a single thin glowing line in the center like a quiet audio waveform, deep shadow, subtle film grain"
+      }
+    },
+    {
+      "seconds": 5,
+      "purpose": "listen: abstract motion",
+      "on_screen_text": "{{sound_words}}",
+      "voiceover": "",
+      "visual": {
+        "tier": "clip_draft",
+        "prompt": "Abstract slow-moving light ribbons pulsing in deep blue and amber on black, smoke-like texture, vertical 9:16, no people, no text"
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "first glimpse: heavy blur",
+      "on_screen_text": "{{release_title}}",
+      "voiceover": "",
+      "visual": {
+        "tier": "still",
+        "prompt": "The {{release_title}} cover art heavily blurred, only colors and a rough shape visible, vignette, vertical 9:16"
+      }
+    },
+    {
+      "seconds": 3,
+      "purpose": "closer: light blur",
+      "on_screen_text": "{{artist_name}}",
+      "voiceover": "",
+      "visual": {
+        "tier": "still",
+        "prompt": "The same {{release_title}} cover art lightly blurred, main shape now clear, same framing, vertical 9:16"
+      }
+    },
+    {
+      "seconds": 3,
+      "purpose": "the reveal: art in focus, timed to the drop in the real track",
+      "on_screen_text": "{{release_title}} · {{release_date}}",
+      "voiceover": "",
+      "visual": {
+        "tier": "clip_standard",
+        "prompt": "The {{release_title}} cover art snapping into sharp focus with a slow parallax push-in and soft light sweep, vertical 9:16"
+      }
+    },
+    {
+      "seconds": 2,
+      "purpose": "call to action",
+      "on_screen_text": "Out {{release_date}} on {{platform}}",
+      "voiceover": "",
+      "visual": {
+        "tier": "text_only",
+        "prompt": ""
+      }
+    }
+  ],
+  "cta": "Pre-save {{release_title}} by {{artist_name}}; out {{release_date}} on {{platform}}.",
+  "craft": {
+    "technique": "Sensory withholding",
+    "notes": "Use the client's own track, not generated music: lay {{audio_clip}} under the whole reel and keep the screen nearly dark for the first half. Rack the art from blur to focus in steps, timed to the drop, so the eyes catch up to the ears."
+  },
+  "do_not": [
+    "Use any audio the client does not own or license, or swap in generated music; the real track is the point",
+    "Imitate a named artist's sound, voice or cover style",
+    "Put lyrics on screen that are not the artist's own",
+    "Choose a part of the track without a clear drop or change for the reveal to land on"
+  ],
+  "compliance": [
+    "Audio: the client must own or license the track, episode clip or mix used; keep the license or release record on file",
+    "No real artist's likeness, lyrics, melody or sound-alike other than the client's own work",
+    "Label the generated abstract visuals as AI-generated where the platform requires it"
+  ]
+}

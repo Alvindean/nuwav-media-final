@@ -1,0 +1,135 @@
+{
+  "id": "mindset-010-myth-funeral",
+  "version": 1,
+  "name": "Funeral for Later",
+  "category": "mindset",
+  "format": "reel",
+  "goal": "sales",
+  "duration_seconds": 23,
+  "aspect_ratio": "9:16",
+  "best_for": [
+    "auto shop",
+    "HVAC company",
+    "dental office",
+    "tax preparer",
+    "roofer"
+  ],
+  "why_it_works": "Most people don't say no to a service; they say 'later'. A deadpan funeral for the stalling phrase makes the delay visible and a little absurd, and the real bill that waiting ran up turns 'someday' into a price the viewer can feel. Burying it and naming today as the replacement gives them a clean, guilt-free reason to act now.",
+  "hook": {
+    "pattern": "Open on a tiny tombstone carved with the customer's stalling phrase and a solemn, deadpan farewell.",
+    "examples": [
+      "Today we bury \"{{stall_phrase}}\".",
+      "Rest in peace, \"{{stall_phrase}}\". You cost a lot.",
+      "Dearly beloved, we gather to bury \"{{stall_phrase}}\"."
+    ]
+  },
+  "variables": [
+    {
+      "name": "brand",
+      "description": "Business name",
+      "example": "Ironside Auto"
+    },
+    {
+      "name": "stall_phrase",
+      "description": "The exact phrase customers use to put it off, starting with a capital letter, 4 words or fewer",
+      "example": "Maybe next month"
+    },
+    {
+      "name": "task",
+      "description": "The job being put off, lowercase, 5 words or fewer",
+      "example": "getting that brake noise checked"
+    },
+    {
+      "name": "delay_cost",
+      "description": "What waiting typically turns into, from your own real jobs, lowercase, 10 words or fewer",
+      "example": "a $40 pad swap turned into a $400 brake job"
+    },
+    {
+      "name": "today_step",
+      "description": "One small thing to do today, starting with a capital-letter verb, 6 words or fewer",
+      "example": "Book a free 10-minute brake check"
+    },
+    {
+      "name": "disclosure",
+      "description": "Fine-print disclosure line for the client's regulated niche (use the matching compliance pack's disclosure line)",
+      "example": "Results vary. Consult a licensed provider."
+    }
+  ],
+  "beats": [
+    {
+      "seconds": 3,
+      "purpose": "hook: the tombstone",
+      "on_screen_text": "R.I.P. \"{{stall_phrase}}\"",
+      "voiceover": "Today we bury \"{{stall_phrase}}\".",
+      "visual": {
+        "tier": "still",
+        "prompt": "Vertical 9:16 close-up of a tiny grey stone tombstone engraved 'R.I.P.' on the front counter at {{brand}}, a single white lily beside it, moody side light, tongue-in-cheek solemn"
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "the life it lived",
+      "on_screen_text": "It delayed {{task}}.",
+      "voiceover": "It put off {{task}} for months.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Vertical 9:16 photo of a wall calendar with several months crossed out and a sticky note reading 'later', dim afternoon light, quiet mood, no people"
+      }
+    },
+    {
+      "seconds": 5,
+      "purpose": "the bill it left behind",
+      "on_screen_text": "Final bill: {{delay_cost}}",
+      "voiceover": "It left a final bill: {{delay_cost}}.",
+      "visual": {
+        "tier": "text_only",
+        "prompt": ""
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "the mourners, the deadpan punchline",
+      "on_screen_text": "Few will miss it.",
+      "voiceover": "It will not be missed.",
+      "visual": {
+        "tier": "clip_draft",
+        "prompt": "Vertical 9:16 comedic shot of the {{brand}} team in work clothes standing in a line, hands over hearts, deadpan faces, one person slowly lowers a tiny bouquet, slow push-in, practical workplace lighting"
+      }
+    },
+    {
+      "seconds": 3,
+      "purpose": "the replacement",
+      "on_screen_text": "In its place: today.",
+      "voiceover": "In its place: today.",
+      "visual": {
+        "tier": "text_only",
+        "prompt": ""
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "call to action",
+      "on_screen_text": "{{today_step}}. {{disclosure}}",
+      "voiceover": "{{today_step}} at {{brand}}.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Vertical 9:16 photo of the welcoming front desk at {{brand}}, open appointment book and a pen, warm daylight, the tiny tombstone in soft focus at the edge"
+      }
+    }
+  ],
+  "cta": "{{today_step}} at {{brand}}.",
+  "craft": {
+    "technique": "Mock eulogy for a delay",
+    "notes": "Play it completely straight: solemn voice, slow pace, one lily. The joke is the gap between a full ceremony and a three-word excuse. The bill beat is the turn, so use a real, typical figure from your own work, then end on a step small enough to do today."
+  },
+  "do_not": [
+    "Shame people who put things off; the viewer is one of them",
+    "Invent scary costs or worst cases you can't back with real jobs",
+    "Use real funeral imagery such as a cemetery, casket or hearse"
+  ],
+  "compliance": [
+    "Dental offices: no promises of pain-free care or specific outcomes; describe the visit and add 'results vary' next to any outcome",
+    "Tax preparers: no refund size, savings or penalty-avoidance promises; label any figure as an example",
+    "Cost examples must be real, typical figures from the business, labelled as examples, never a guaranteed price"
+  ]
+}

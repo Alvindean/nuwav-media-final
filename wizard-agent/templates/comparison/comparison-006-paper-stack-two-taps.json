@@ -1,0 +1,183 @@
+{
+  "id": "comparison-006-paper-stack-two-taps",
+  "version": 1,
+  "name": "Paper Stack vs Two Taps",
+  "category": "comparison",
+  "format": "both",
+  "goal": "leads",
+  "duration_seconds": 22,
+  "aspect_ratio": "9:16",
+  "best_for": [
+    "mortgage broker",
+    "insurance agency",
+    "tax preparer",
+    "moving company"
+  ],
+  "why_it_works": "Dreaded processes (paperwork, intake, appointments) stop people from even starting. Showing the old pile next to the new few-tap version shrinks the perceived effort, and lower effort is what turns 'someday' into 'today'.",
+  "hook": {
+    "pattern": "Open on a physical symbol of the old hassle next to the new shortcut, then count the steps.",
+    "examples": [
+      "Remember what {{process}} used to take?",
+      "Old way: a paper stack. New way: count taps.",
+      "Scared of {{process}}? That's the old way."
+    ]
+  },
+  "variables": [
+    {
+      "name": "brand",
+      "description": "Business name",
+      "example": "Keystone Home Lending"
+    },
+    {
+      "name": "process",
+      "description": "The dreaded process",
+      "example": "applying for a mortgage"
+    },
+    {
+      "name": "old_steps",
+      "description": "The old way in a few words",
+      "example": "a folder of printouts and three office visits"
+    },
+    {
+      "name": "new_steps",
+      "description": "Your way in a few words",
+      "example": "upload from your phone, one 20-minute call"
+    },
+    {
+      "name": "prep_list",
+      "description": "Three or four things to have ready before starting, in plain words",
+      "example": "photo ID, your last two pay stubs and two bank statements"
+    },
+    {
+      "name": "human_touch",
+      "description": "The person who still helps, to show it's not just an app (spoken; 8 words or fewer)",
+      "example": "a loan officer who calls back same day"
+    },
+    {
+      "name": "offer",
+      "description": "Low-friction start",
+      "example": "Start your pre-approval from your phone"
+    },
+    {
+      "name": "disclosure",
+      "description": "Required fine-print line for the client's regulated niche, shown small on screen",
+      "example": "Not financial advice. Terms apply."
+    }
+  ],
+  "beats": [
+    {
+      "seconds": 3,
+      "purpose": "hook: stack vs phone",
+      "on_screen_text": "Then vs now: {{process}}",
+      "voiceover": "Remember what {{process}} used to look like?",
+      "visual": {
+        "tier": "still",
+        "prompt": "Vertical 9:16 photo of a tall teetering stack of paper forms and folders next to a single smartphone on a clean desk, dramatic side light, the stack casting a long shadow over the phone"
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "the old way",
+      "on_screen_text": "Old way: {{old_steps}}",
+      "voiceover": "The old way: {{old_steps}}.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Vertical photo of a tired person at a kitchen table buried in paper forms, late evening lamp light, coffee mug, sticky notes everywhere, face partly hidden"
+      }
+    },
+    {
+      "seconds": 5,
+      "purpose": "the new way in motion",
+      "on_screen_text": "Now: {{new_steps}}",
+      "voiceover": "Now: {{new_steps}}.",
+      "visual": {
+        "tier": "clip_standard",
+        "prompt": "Vertical close-up of a thumb tapping through a simple clean upload flow on a phone screen with generic interface and {{brand}} colors, couch in soft daylight in the background, smooth natural motion"
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "the step count",
+      "on_screen_text": "Fewer steps. Same care.",
+      "voiceover": "Fewer steps. Same care.",
+      "visual": {
+        "tier": "text_only",
+        "prompt": ""
+      }
+    },
+    {
+      "seconds": 3,
+      "purpose": "a human is still there",
+      "on_screen_text": "Plus {{human_touch}}",
+      "voiceover": "Plus {{human_touch}}.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Vertical portrait of a friendly professional from {{brand}} on a phone call at a bright office desk, genuine smile, natural window light"
+      }
+    },
+    {
+      "seconds": 3,
+      "purpose": "call to action",
+      "on_screen_text": "{{offer}} {{disclosure}}",
+      "voiceover": "{{offer}}.",
+      "visual": {
+        "tier": "text_only",
+        "prompt": ""
+      }
+    }
+  ],
+  "cta": "{{offer}}. Skip the paper stack.",
+  "carousel": {
+    "slides": [
+      {
+        "headline": "Then vs now",
+        "body": "Then vs now: {{process}}. Swipe for what changed and what to have ready.",
+        "visual_prompt": "Tall stack of paper forms beside one smartphone, dramatic side light, clean desk"
+      },
+      {
+        "headline": "The old way",
+        "body": "Old way: {{old_steps}}.",
+        "visual_prompt": "Person at a kitchen table buried in forms, evening lamp light, face partly hidden"
+      },
+      {
+        "headline": "The new way",
+        "body": "Now: {{new_steps}}.",
+        "visual_prompt": "Thumb on a phone with a simple upload screen in {{brand}} colors, soft daylight"
+      },
+      {
+        "headline": "Have these ready first",
+        "body": "Have ready: {{prep_list}}. Five minutes of gathering saves a second call.",
+        "visual_prompt": "Neat checklist card on a desk with three tick boxes beside a phone, clean {{brand}} colors, top-down"
+      },
+      {
+        "headline": "Where the stack went",
+        "body": "Every page in that pile is still there, just as photos from your phone. Nothing skipped, no printer.",
+        "visual_prompt": "Paper forms dissolving into small photo thumbnails flowing onto a phone screen, clean desk, soft daylight, minimal style"
+      },
+      {
+        "headline": "Still a real person",
+        "body": "Plus {{human_touch}}.",
+        "visual_prompt": "Friendly {{brand}} professional on a phone call at a bright desk, natural light"
+      },
+      {
+        "headline": "Start from your couch",
+        "body": "{{offer}}. {{disclosure}}",
+        "visual_prompt": "{{brand}} logo card with the offer in large type, clean brand colors"
+      }
+    ]
+  },
+  "craft": {
+    "technique": "Effort shrink",
+    "notes": "The opening stack has to look physically heavy so the phone looks light. Always follow the tech beat with a human beat: in high-trust services people fear being left alone with an app more than they fear paperwork."
+  },
+  "do_not": [
+    "Promise speed you can't deliver every time (approval times, case timelines)",
+    "Show a real application, client file or personal data on screen",
+    "Imply the app replaces professional advice"
+  ],
+  "compliance": [
+    "Mortgage: no guarantees of approval, rates or closing times; show the company NMLS number and Equal Housing Opportunity logo",
+    "Insurance and tax services: show license name and number as your state requires; coverage, pricing and refunds vary by case",
+    "Never show a real application, client file or personal data on screen"
+  ]
+}

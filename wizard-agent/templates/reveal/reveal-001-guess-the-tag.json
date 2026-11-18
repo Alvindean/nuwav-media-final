@@ -1,0 +1,174 @@
+{
+  "id": "reveal-001-guess-the-tag",
+  "version": 1,
+  "name": "Guess the Tag Before It Flips",
+  "category": "reveal",
+  "format": "both",
+  "goal": "sales",
+  "duration_seconds": 18,
+  "aspect_ratio": "9:16",
+  "best_for": [
+    "jewelry brand",
+    "luxury brand",
+    "apparel brand",
+    "furniture maker",
+    "watch brand"
+  ],
+  "why_it_works": "Asking someone to guess a number makes them commit to an answer in their head. Once they have a guess, they have to stay to find out if they were right, and the gap between their guess and the real {{price}} is what they remember.",
+  "hook": {
+    "pattern": "Show the item, hide the price, and dare the viewer to guess before the tag flips.",
+    "examples": [
+      "Guess what this {{item}} costs.",
+      "Comment your guess before the tag flips.",
+      "Two clues, one tag. Lock in your guess."
+    ]
+  },
+  "variables": [
+    {
+      "name": "brand",
+      "description": "Business name",
+      "example": "Marlow & Finch"
+    },
+    {
+      "name": "item",
+      "description": "The thing whose price is hidden, 5 words or fewer",
+      "example": "solid gold tennis bracelet"
+    },
+    {
+      "name": "price",
+      "description": "The real price a buyer pays, shown last",
+      "example": "$1,450"
+    },
+    {
+      "name": "clue_one",
+      "description": "First detail that hints at value, lowercase, reads after 'It's', 8 words or fewer",
+      "example": "hand-set by one jeweler, not a machine"
+    },
+    {
+      "name": "clue_two",
+      "description": "Second detail that hints at value, lowercase, reads after 'It comes with', 6 words or fewer",
+      "example": "lifetime free resizing and cleaning"
+    },
+    {
+      "name": "offer",
+      "description": "What the viewer gets for acting, starts with a capital letter, 5 words or fewer",
+      "example": "Free engraving through Sunday"
+    },
+    {
+      "name": "price_terms",
+      "description": "What the shown price includes or leaves out, true for this client, starts with a capital, full sentence, 8 words or fewer",
+      "example": "Tax included. Free shipping in the US."
+    },
+    {
+      "name": "price_covers",
+      "description": "What the price pays for beyond the item itself, starts with a capital, full sentence, 10 words or fewer",
+      "example": "One jeweler's full day at the bench, start to finish."
+    }
+  ],
+  "beats": [
+    {
+      "seconds": 3,
+      "purpose": "hook: hidden price dare",
+      "on_screen_text": "Guess the price.",
+      "voiceover": "Guess what this {{item}} costs.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Vertical 9:16 product photo of the {{item}} on a dark velvet surface, single warm spotlight, a blank price tag face-down beside it, shallow depth of field"
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "clue one raises the stakes",
+      "on_screen_text": "Clue 1: {{clue_one}}",
+      "voiceover": "Clue one: it's {{clue_one}}.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Extreme close-up macro of the craft detail on the {{item}}, raking side light showing texture, dark background, vertical 9:16"
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "clue two lets them revise",
+      "on_screen_text": "Clue 2: {{clue_two}}",
+      "voiceover": "Clue two: {{clue_two}}. Changing your guess?",
+      "visual": {
+        "tier": "still",
+        "prompt": "The {{item}} resting in an open {{brand}} box with care card visible, soft window light from the left, top-down vertical 9:16"
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "the flip: price revealed",
+      "on_screen_text": "{{price}}",
+      "voiceover": "It's {{price}}.",
+      "visual": {
+        "tier": "clip_draft",
+        "prompt": "Hand flips the face-down price tag next to the {{item}} to reveal the number, slow motion, warm spotlight, locked-off vertical 9:16 camera"
+      }
+    },
+    {
+      "seconds": 3,
+      "purpose": "call to action",
+      "on_screen_text": "{{offer}}",
+      "voiceover": "Close? {{offer}} at {{brand}}.",
+      "visual": {
+        "tier": "text_only",
+        "prompt": ""
+      }
+    }
+  ],
+  "cta": "Comment your guess. {{offer}} at {{brand}}.",
+  "carousel": {
+    "slides": [
+      {
+        "headline": "Guess the price",
+        "body": "Write your guess down before you swipe.",
+        "visual_prompt": "{{item}} on dark velvet, single warm spotlight, blank face-down price tag, 4:5"
+      },
+      {
+        "headline": "Clue one",
+        "body": "It's {{clue_one}}.",
+        "visual_prompt": "Macro of the craft detail on the {{item}}, raking light, dark background"
+      },
+      {
+        "headline": "Clue two",
+        "body": "It comes with {{clue_two}}.",
+        "visual_prompt": "{{item}} in an open {{brand}} box with care card, soft window light, top-down"
+      },
+      {
+        "headline": "Last chance to change your guess",
+        "body": "Lock it in. The tag flips on the next slide.",
+        "visual_prompt": "The face-down tag in sharp focus, {{item}} blurred behind it"
+      },
+      {
+        "headline": "{{price}}",
+        "body": "{{price_terms}}",
+        "visual_prompt": "Price tag flipped face-up next to the {{item}}, bold number, warm light"
+      },
+      {
+        "headline": "What {{price}} actually covers",
+        "body": "{{price_covers}}",
+        "visual_prompt": "Clean itemized receipt-style card listing what the price includes, {{brand}} colors"
+      },
+      {
+        "headline": "Were you close?",
+        "body": "{{offer}}. Tell us your guess in the comments.",
+        "visual_prompt": "{{brand}} logo card on velvet with the offer in large clean type"
+      }
+    ]
+  },
+  "craft": {
+    "technique": "Commitment gap",
+    "notes": "Force a guess in the first line, then feed two value clues before the number so the guess drifts upward. The reveal lands best when the real price is lower than the clues made them expect."
+  },
+  "do_not": [
+    "Use this when the price is genuinely high and the clues cannot justify it; the reveal then reads as a rip-off",
+    "Hide fees, taxes or required add-ons behind the revealed number",
+    "Reveal the price in the caption or thumbnail and kill the tension"
+  ],
+  "compliance": [
+    "Any niche: the price shown must be the real price a buyer pays today, with tax, shipping or required add-ons stated",
+    "Any niche: the clues must be true, checkable details of this exact item, not of a premium version",
+    "Do not show a crossed-out compare-at price unless the item really sold at it recently"
+  ]
+}

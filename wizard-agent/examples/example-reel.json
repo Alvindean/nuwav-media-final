@@ -1,0 +1,146 @@
+{
+  "id": "comparison-001-what-you-pay-for",
+  "version": 1,
+  "name": "What You're Actually Paying For",
+  "category": "comparison",
+  "format": "both",
+  "goal": "sales",
+  "duration_seconds": 20,
+  "aspect_ratio": "9:16",
+  "best_for": [
+    "coffee shop",
+    "personal trainer",
+    "law firm",
+    "interior designer"
+  ],
+  "why_it_works": "People resist price until they see the hidden work behind it. Splitting the cheap option and the {{brand}} option side by side turns price into proof of value.",
+  "hook": {
+    "pattern": "Name the price objection out loud, then promise the reveal.",
+    "examples": [
+      "Why does our {{product}} cost more? Watch this.",
+      "Cheap {{product}} vs ours. Same name, different thing.",
+      "You're not paying for {{product}}. You're paying for this."
+    ]
+  },
+  "variables": [
+    {
+      "name": "brand",
+      "description": "Business name",
+      "example": "Harbor Coffee"
+    },
+    {
+      "name": "product",
+      "description": "The thing being compared",
+      "example": "latte"
+    },
+    {
+      "name": "hidden_step",
+      "description": "The unseen step that makes it better",
+      "example": "beans roasted this week, not this year"
+    },
+    {
+      "name": "offer",
+      "description": "What the viewer gets for acting now",
+      "example": "first latte free this Friday"
+    },
+    {
+      "name": "disclosure",
+      "description": "Required fine print for the client's niche, from compliance/packs.json",
+      "example": "Attorney advertising. Past results do not guarantee a similar outcome."
+    }
+  ],
+  "beats": [
+    {
+      "seconds": 3,
+      "purpose": "hook: say the objection",
+      "on_screen_text": "Why does our {{product}} cost more?",
+      "voiceover": "Why does our {{product}} cost more?",
+      "visual": {
+        "tier": "still",
+        "prompt": "Split-screen vertical photo: left a generic {{product}} in harsh light, right the {{brand}} {{product}} in warm light, clean background"
+      }
+    },
+    {
+      "seconds": 5,
+      "purpose": "show the cheap side",
+      "on_screen_text": "The cheap one",
+      "voiceover": "This one skips the step nobody sees.",
+      "visual": {
+        "tier": "clip_draft",
+        "prompt": "Slow push-in on the generic {{product}}, flat lighting, slightly dull colors, vertical 9:16"
+      }
+    },
+    {
+      "seconds": 5,
+      "purpose": "reveal the hidden step",
+      "on_screen_text": "{{hidden_step}}",
+      "voiceover": "Ours starts with {{hidden_step}}.",
+      "visual": {
+        "tier": "clip_standard",
+        "prompt": "Close-up hands doing the hidden craft step for {{product}}, warm light, shallow depth of field, vertical 9:16"
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "payoff: side-by-side result",
+      "on_screen_text": "Same name. Different thing.",
+      "voiceover": "Same name. Different thing.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Both versions of {{product}} side by side on a counter, the {{brand}} one clearly richer, top-down vertical"
+      }
+    },
+    {
+      "seconds": 3,
+      "purpose": "call to action",
+      "on_screen_text": "{{offer}} {{disclosure}}",
+      "voiceover": "Try the difference: {{offer}}.",
+      "visual": {
+        "tier": "text_only",
+        "prompt": ""
+      }
+    }
+  ],
+  "cta": "Try the difference: {{offer}}.",
+  "carousel": {
+    "slides": [
+      {
+        "headline": "Why ours costs more",
+        "body": "Short answer: you're paying for what you can't see.",
+        "visual_prompt": "Bold title slide, {{brand}} colors, single {{product}} hero photo"
+      },
+      {
+        "headline": "The cheap version",
+        "body": "Skips the slow step to save time.",
+        "visual_prompt": "Generic {{product}} in flat harsh light, muted colors"
+      },
+      {
+        "headline": "Our version",
+        "body": "Starts with {{hidden_step}}.",
+        "visual_prompt": "Close-up of the craft step for {{product}}, warm light"
+      },
+      {
+        "headline": "Side by side",
+        "body": "Same name. Different thing.",
+        "visual_prompt": "Both versions of {{product}} side by side, top-down"
+      },
+      {
+        "headline": "See for yourself",
+        "body": "Come in: {{offer}}. {{disclosure}}",
+        "visual_prompt": "{{brand}} storefront or logo card with the offer in large type"
+      }
+    ]
+  },
+  "craft": {
+    "technique": "Contrast pair",
+    "notes": "Show the worse option first so the viewer feels the gap before you explain it. Keep the cheap side honest, never insulting."
+  },
+  "do_not": [
+    "Name or mock a real competitor",
+    "Claim results you can't prove"
+  ],
+  "compliance": [
+    "Law firms: label as attorney advertising; no guarantee of any outcome",
+    "Personal trainers: results vary; never promise a body result"
+  ]
+}

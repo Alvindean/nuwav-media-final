@@ -1,0 +1,109 @@
+{
+  "id": "songwriting-006-three-word-anthem",
+  "version": 1,
+  "name": "Three-Word Anthem Build",
+  "category": "songwriting",
+  "format": "carousel",
+  "goal": "trust",
+  "aspect_ratio": "4:5",
+  "best_for": [
+    "sports team",
+    "supporters club",
+    "pro athlete",
+    "rec league"
+  ],
+  "why_it_works": "A slogan becomes an anthem when people can see where it comes from. Showing three words grow into a full chant, line by line, invites fans into the making of it, and anything people help build they defend and repeat.",
+  "hook": {
+    "pattern": "Lead with the three-word slogan alone on a slide, then promise to show how it becomes a stadium anthem.",
+    "examples": [
+      "Three words. One anthem. Swipe to watch it grow.",
+      "Every anthem starts as three words on a napkin.",
+      "{{slogan}}. Watch it become our anthem."
+    ]
+  },
+  "variables": [
+    {
+      "name": "brand",
+      "description": "Team, club or athlete name",
+      "example": "Harbor City FC"
+    },
+    {
+      "name": "slogan",
+      "description": "Three-word slogan, capitalized, with three strong stresses (one per word)",
+      "example": "Rise Together Now"
+    },
+    {
+      "name": "line_two",
+      "description": "Second chant line, capitalized, 3-5 words with three strong stresses, rhyming with the slogan's last word",
+      "example": "Hear the whole town"
+    },
+    {
+      "name": "line_three",
+      "description": "Third chant line naming who 'we' are, capitalized, 3-5 words with three strong stresses, same rhyme",
+      "example": "Every street, every crowd"
+    },
+    {
+      "name": "moment",
+      "description": "When fans will chant it, lowercase, with its own article if it needs one, 6 words or fewer",
+      "example": "the home opener, Saturday 7 PM"
+    },
+    {
+      "name": "disclosure",
+      "description": "Fine-print line from the compliance pack that matches the client's niche, shown small on screen",
+      "example": "Photos shared with parent permission."
+    }
+  ],
+  "carousel": {
+    "slides": [
+      {
+        "headline": "{{slogan}}",
+        "body": "Three words. Swipe to watch them become an anthem.",
+        "visual_prompt": "Bold 4:5 title slide, {{slogan}} in huge condensed type, {{brand}} colors, gritty texture"
+      },
+      {
+        "headline": "Step 1: stamp the beat",
+        "body": "Stomp once on each word: {{slogan}}. Three stomps, then rest on beat four.",
+        "visual_prompt": "Low-angle photo of boots stomping on concrete bleachers, dust in the light, 4:5"
+      },
+      {
+        "headline": "Step 2: add the answer",
+        "body": "{{line_two}}. Same rhythm, same open vowel, easy to shout.",
+        "visual_prompt": "Wide photo of a crowd silhouette with arms up against stadium lights, 4:5"
+      },
+      {
+        "headline": "Step 3: say who we are",
+        "body": "{{line_three}}. This line is for the people in the seats.",
+        "visual_prompt": "Client-supplied real photo collage of {{brand}} fans of all ages in team colors, shared with consent, warm light"
+      },
+      {
+        "headline": "Step 4: back to the top",
+        "body": "End where you started: {{slogan}}. Repetition is the anthem.",
+        "visual_prompt": "Close-up of a scarf or jersey with {{slogan}} stitched on it, dramatic side light"
+      },
+      {
+        "headline": "The full anthem",
+        "body": "{{slogan}} / {{line_two}} / {{line_three}} / {{slogan}}",
+        "visual_prompt": "Lyric-sheet style slide, four lines stacked in big type, {{brand}} crest at the bottom"
+      },
+      {
+        "headline": "Chant it with us",
+        "body": "See you at {{moment}}. Save this and learn it before then. {{disclosure}}",
+        "visual_prompt": "End card with {{brand}} logo, date in large type, stadium photo behind"
+      }
+    ]
+  },
+  "cta": "Save this, learn the words, and chant it with us at {{moment}}.",
+  "craft": {
+    "technique": "Bookended four-line chant (ABCA) built from a three-beat slogan",
+    "notes": "The slogan needs three strong stresses so each word gets a stomp: RISE to-GE-ther NOW puts the stresses on beats 1, 2 and 3, with beat 4 as a rest. Line two end-rhymes on the same open vowel (now / town), line three names the community and keeps the rhyme (crowd), and line four repeats the slogan: title placement at top and bottom. Suggested tempo/feel: 80-90 BPM stomp-stomp-stomp-rest, chanted not sung, low voices in unison."
+  },
+  "do_not": [
+    "Borrow a real club's chant or a real stadium song's rhythm and words",
+    "Pick a slogan with weak syllables on the beat (it won't chant)",
+    "Make it about beating a named rival; make it about who you are"
+  ],
+  "compliance": [
+    "Youth teams and rec leagues: show anyone under 18 only with a parent or guardian's written consent, and never aim the post at children under 13",
+    "Fan photos are real and client-supplied with consent; never a generated person shown as a real fan"
+  ]
+}

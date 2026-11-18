@@ -1,0 +1,126 @@
+{
+  "id": "comparison-003-cost-per-wear",
+  "version": 1,
+  "name": "Cost Per Wear Math",
+  "category": "comparison",
+  "format": "carousel",
+  "goal": "sales",
+  "aspect_ratio": "4:5",
+  "best_for": [
+    "jewelry brand",
+    "apparel brand",
+    "skincare brand",
+    "supplement brand",
+    "luxury leather goods"
+  ],
+  "why_it_works": "Sticker price is the only number most shoppers see. Dividing price by real uses reframes an expensive item as the cheaper one, and because the viewer can check the math on their own fingers, it feels like their conclusion, not a sales pitch.",
+  "hook": {
+    "pattern": "Lead with a price comparison that looks wrong, then prove it with simple division.",
+    "examples": [
+      "Cheap {{product}}: {{cheap_price}}. Ours: {{our_price}}. Ours is cheaper.",
+      "Cost per use: cheap {{product}} vs ours.",
+      "Price tag lies. Cost per use doesn't."
+    ]
+  },
+  "variables": [
+    {
+      "name": "brand",
+      "description": "Brand name",
+      "example": "Oro Lane"
+    },
+    {
+      "name": "product",
+      "description": "The item compared",
+      "example": "gold hoop earrings"
+    },
+    {
+      "name": "cheap_price",
+      "description": "Typical price of a low-cost version",
+      "example": "$18"
+    },
+    {
+      "name": "cheap_uses",
+      "description": "Honest number of uses before it fails",
+      "example": "about 10 wears before it tarnishes"
+    },
+    {
+      "name": "our_price",
+      "description": "Your price",
+      "example": "$120"
+    },
+    {
+      "name": "our_uses",
+      "description": "Honest, conservative number of uses",
+      "example": "300+ wears over years"
+    },
+    {
+      "name": "per_use_math",
+      "description": "The two per-use results side by side",
+      "example": "$1.80 a wear vs $0.40 a wear"
+    },
+    {
+      "name": "offer",
+      "description": "What the viewer gets for buying now",
+      "example": "free lifetime polish with every pair"
+    },
+    {
+      "name": "disclosure",
+      "description": "Required fine-print line for the client's regulated niche, shown small on screen",
+      "example": "Results vary. These statements have not been evaluated by the FDA."
+    }
+  ],
+  "carousel": {
+    "slides": [
+      {
+        "headline": "The cheap one costs more",
+        "body": "Cheap {{product}}: {{cheap_price}}. Ours: {{our_price}}. Swipe for the math.",
+        "visual_prompt": "Two {{product}} side by side on cream linen, each with a small blank price tag, soft daylight, 4:5 product flat lay, prices added as text overlay in the edit"
+      },
+      {
+        "headline": "Cheap: {{cheap_price}}",
+        "body": "Lasts {{cheap_uses}}.",
+        "visual_prompt": "Close-up of a worn low-cost {{product}} showing realistic wear, neutral background, honest even light, 4:5"
+      },
+      {
+        "headline": "Ours: {{our_price}}",
+        "body": "Lasts {{our_uses}}.",
+        "visual_prompt": "Close-up of the {{brand}} {{product}} looking new after long use, warm side light, macro detail, 4:5"
+      },
+      {
+        "headline": "Now divide",
+        "body": "Price divided by real uses.",
+        "visual_prompt": "Clean graphic slide with a big division sign between two blank number panels, {{brand}} colors, plenty of white space, numbers set as text overlay"
+      },
+      {
+        "headline": "The real numbers",
+        "body": "{{per_use_math}}",
+        "visual_prompt": "Two large empty number panels stacked, the {{brand}} one highlighted, minimal infographic style, 4:5, per-use figures set as text overlay"
+      },
+      {
+        "headline": "Plus the hidden cost",
+        "body": "Rebuying, returns, and the day it fails at the worst moment.",
+        "visual_prompt": "A small pile of replaced low-cost items in a drawer, top-down, muted light, 4:5"
+      },
+      {
+        "headline": "Buy once",
+        "body": "Order now and get {{offer}}. {{disclosure}}",
+        "visual_prompt": "{{brand}} packaging open with the {{product}} inside, gift-style styling, warm light, logo visible, 4:5"
+      }
+    ]
+  },
+  "cta": "Buy once: {{offer}}.",
+  "craft": {
+    "technique": "Unit-cost reframe",
+    "notes": "Slide 1 must state a claim that sounds backwards so people swipe to check it. Put the division on its own slide so the reveal of the per-use numbers feels like a payoff. Use conservative use counts so the math survives skeptics in the comments."
+  },
+  "do_not": [
+    "Inflate your own lifespan numbers; use the low end you can defend",
+    "Show or name a real competitor's product or packaging",
+    "Bury the per-use numbers in small text; they are the whole post"
+  ],
+  "compliance": [
+    "Supplements: compare cost per serving only; make no health, cure or treatment claims, and add 'These statements have not been evaluated by the FDA' if any benefit is mentioned",
+    "Skincare: no medical claims (treats, cures, heals); results language must be cosmetic and typical",
+    "Every price and lifespan number must be accurate and current at posting"
+  ]
+}

@@ -1,0 +1,125 @@
+{
+  "id": "gamification-007-rate-it-then-see-ours",
+  "version": 1,
+  "name": "Rate It, Then See Our Score",
+  "category": "gamification",
+  "format": "carousel",
+  "goal": "engagement",
+  "aspect_ratio": "4:5",
+  "best_for": [
+    "real estate agent",
+    "luxury brand",
+    "restaurant",
+    "auto shop",
+    "lowrider car club"
+  ],
+  "why_it_works": "Everyone is a judge when the scale is 1 to 10. Asking for a score is the lowest-effort comment possible, and saving your own scores for the last slide makes people swipe all the way to see if the pro agrees with them, then argue in the comments when they don't.",
+  "hook": {
+    "pattern": "Ask for a quick score on each slide and promise your verdict at the end.",
+    "examples": [
+      "Rate each one 1 to 10. Ours are last.",
+      "Be harsh. Score this {{item_type}} before you see ours.",
+      "Four {{item_type}} features. Your scores vs a pro's."
+    ]
+  },
+  "variables": [
+    {
+      "name": "brand",
+      "description": "Agent, brand, restaurant or shop name",
+      "example": "Cal Vega Realty"
+    },
+    {
+      "name": "item_type",
+      "description": "What is being rated",
+      "example": "kitchen"
+    },
+    {
+      "name": "feature_1",
+      "description": "First feature to rate",
+      "example": "waterfall quartz island"
+    },
+    {
+      "name": "feature_2",
+      "description": "Second feature to rate",
+      "example": "brass pendant lights"
+    },
+    {
+      "name": "feature_3",
+      "description": "Third feature to rate",
+      "example": "walk-in pantry with a hidden door"
+    },
+    {
+      "name": "feature_4",
+      "description": "Fourth feature to rate",
+      "example": "window over the sink facing the garden"
+    },
+    {
+      "name": "our_scores",
+      "description": "Your own four scores with one-line reasons",
+      "example": "9, 6, 10, 8: the pantry wins, the pendants are trendy"
+    },
+    {
+      "name": "tour_offer",
+      "description": "The next step for interested viewers",
+      "example": "DM 'TOUR' for a private showing this weekend"
+    },
+    {
+      "name": "disclosure",
+      "description": "Required fine print for the client's niche, from compliance/packs.json; leave it short for unregulated niches",
+      "example": "Equal Housing Opportunity. Bayline Realty, DRE #01234567."
+    }
+  ],
+  "carousel": {
+    "slides": [
+      {
+        "headline": "Rate it 1 to 10",
+        "body": "Score each slide in one comment, like '8 6 9 7'. Our scores are last.",
+        "visual_prompt": "Wide hero photo of the {{item_type}}, bright natural light, styled and clean, a small 1-10 scale graphic in {{brand}} colors at the bottom, 4:5"
+      },
+      {
+        "headline": "Score this: {{feature_1}}",
+        "body": "First number.",
+        "visual_prompt": "Close, well-lit photo of the {{feature_1}}, eye-level, natural light, 4:5"
+      },
+      {
+        "headline": "Score this: {{feature_2}}",
+        "body": "Second number.",
+        "visual_prompt": "Close, well-lit photo of the {{feature_2}}, slight low angle, natural light, 4:5"
+      },
+      {
+        "headline": "Score this: {{feature_3}}",
+        "body": "Third number.",
+        "visual_prompt": "Photo of the {{feature_3}}, shot to show scale, warm practical light, 4:5"
+      },
+      {
+        "headline": "Score this: {{feature_4}}",
+        "body": "Fourth number. Comment all four before you swipe.",
+        "visual_prompt": "Photo of the {{feature_4}}, shot from where a person would stand, soft daylight, 4:5"
+      },
+      {
+        "headline": "Our scores",
+        "body": "{{our_scores}}. Agree? Fight us in the comments.",
+        "visual_prompt": "Clean scorecard graphic in {{brand}} colors listing four features with large numbers, small thumbnails beside each"
+      },
+      {
+        "headline": "Want to see it in person?",
+        "body": "{{tour_offer}}. {{disclosure}}",
+        "visual_prompt": "Inviting doorway or entrance shot of the {{item_type}} space with {{brand}} logo card overlay"
+      }
+    ]
+  },
+  "cta": "Comment your four scores, then {{tour_offer}}.",
+  "craft": {
+    "technique": "Delayed expert verdict",
+    "notes": "Give one of your own scores a surprising low number with a short reason; disagreement is what fills the comments. Ask for all scores in a single comment so the thread stays readable and the format is easy to copy."
+  },
+  "do_not": [
+    "Rate anything you don't own or have permission to show",
+    "Score everything 9 or 10; it reads as an ad, not an opinion",
+    "Mock a customer's or seller's taste"
+  ],
+  "compliance": [
+    "Real estate: only show homes you have listed or sold with the owner's permission; show the brokerage name and follow your state's advertising rules",
+    "Real estate: rate features of the home only, never the neighborhood's people or 'type of buyer'; follow fair housing rules in captions and replies"
+  ]
+}

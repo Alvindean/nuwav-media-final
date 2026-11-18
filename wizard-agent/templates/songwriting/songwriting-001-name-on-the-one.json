@@ -1,0 +1,111 @@
+{
+  "id": "songwriting-001-name-on-the-one",
+  "version": 1,
+  "name": "Name on the One",
+  "category": "songwriting",
+  "format": "reel",
+  "goal": "awareness",
+  "duration_seconds": 15,
+  "aspect_ratio": "9:16",
+  "best_for": [
+    "coffee shop",
+    "barber shop",
+    "auto shop",
+    "restaurant",
+    "food truck"
+  ],
+  "why_it_works": "A name sung five times on a strong beat sticks without the viewer trying. The brain stores rhythm before meaning, so {{brand}} gets remembered as a sound, and people hum it later without knowing why.",
+  "hook": {
+    "pattern": "Open cold on the sung brand name over a hard downbeat, no intro, then the one-line promise.",
+    "examples": [
+      "{{brand}}! {{brand}}! You know the name now.",
+      "We wrote {{brand}} a theme song. Hum along.",
+      "Fifteen seconds. One song. You will hum {{brand}} tonight."
+    ]
+  },
+  "variables": [
+    {
+      "name": "brand",
+      "description": "Business name as sung, 2-3 syllables sings best (4 at most)",
+      "example": "Mel's Fade"
+    },
+    {
+      "name": "signature_item",
+      "description": "The one thing they are known for, capitalized because it opens a sung line, 4 syllables or fewer",
+      "example": "Hot towel fade"
+    },
+    {
+      "name": "rhyme_line",
+      "description": "Short lowercase phrase that rhymes with the signature item, 5 syllables or fewer so the whole line fits one breath",
+      "example": "fresh every day"
+    },
+    {
+      "name": "neighborhood",
+      "description": "Street or neighborhood people know, 5 syllables or fewer",
+      "example": "Fifth and Main"
+    },
+    {
+      "name": "offer",
+      "description": "Simple reason to come in this week, capitalized, 7 syllables or fewer because it is sung",
+      "example": "Walk-ins till eight on Fridays"
+    }
+  ],
+  "beats": [
+    {
+      "seconds": 3,
+      "purpose": "hook (line A): sung brand name twice on the downbeat",
+      "on_screen_text": "{{brand}}!",
+      "voiceover": "{{brand}}! {{brand}}!",
+      "visual": {
+        "tier": "still",
+        "prompt": "Vertical 9:16 photo of the {{brand}} storefront sign at golden hour, bold front-on framing, warm light, sign fills the upper third, street at {{neighborhood}} softly blurred"
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "line B: what they do, rhymed",
+      "on_screen_text": "{{signature_item}}",
+      "voiceover": "{{signature_item}}, {{rhyme_line}}.",
+      "visual": {
+        "tier": "clip_draft",
+        "prompt": "Close-up of hands at work on the signature service or dish at {{brand}}, quick rhythmic motion, warm practical light, shallow depth of field, vertical 9:16"
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "line A again: name twice plus the place",
+      "on_screen_text": "{{brand}} on {{neighborhood}}",
+      "voiceover": "{{brand}}, {{brand}}, down on {{neighborhood}}.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Vertical wide shot inside {{brand}}, regulars laughing together, bright natural window light, brand colors visible, eye-level framing"
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "line A button: last sung name plus offer",
+      "on_screen_text": "{{offer}}",
+      "voiceover": "{{brand}}! {{offer}}.",
+      "visual": {
+        "tier": "text_only",
+        "prompt": ""
+      }
+    }
+  ],
+  "cta": "{{offer}} at {{brand}}, down on {{neighborhood}}.",
+  "music": {
+    "tier": "music",
+    "bpm": 104,
+    "feel": "bright bouncy pop jingle, four-on-the-floor kick, handclaps on 2 and 4",
+    "vocals": true
+  },
+  "craft": {
+    "technique": "Name-on-the-downbeat jingle (A-B-A-A, title bookends)",
+    "notes": "Four sung lines in an A-B-A-A shape: A lines carry the name, the B line carries the signature item. Aim the stressed syllable of {{brand}} at the downbeat each time it is sung: five times in 15s (twice in the hook, twice in line three, once in the button). Title placement: the name is the first and last thing sung, so it bookends. The B line uses one end rhyme ({{signature_item}} / {{rhyme_line}}) so the ear has a reason to stay. Keep every sung line to one breath, about 8 syllables. Tempo/feel: 104 BPM, four-on-the-floor kick with handclaps on 2 and 4; leave a short rest before each sung name so it hits like a stamp. Beat seconds are a guide (about ±1s): the edit is cut to the track, so aim the stresses at the downbeats rather than promising exact bar placement."
+  },
+  "do_not": [
+    "Bury the brand name mid-line where it lands on a weak beat",
+    "Use a melody that sounds like a famous jingle or real song",
+    "Cram more than one selling point into 15 seconds"
+  ]
+}

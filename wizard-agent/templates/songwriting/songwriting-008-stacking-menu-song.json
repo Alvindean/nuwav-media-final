@@ -1,0 +1,173 @@
+{
+  "id": "songwriting-008-stacking-menu-song",
+  "version": 1,
+  "name": "The Stacking Menu Song",
+  "category": "songwriting",
+  "format": "both",
+  "goal": "sales",
+  "duration_seconds": 20,
+  "aspect_ratio": "9:16",
+  "best_for": [
+    "restaurant",
+    "food truck",
+    "taqueria",
+    "bakery",
+    "cafe"
+  ],
+  "why_it_works": "A cumulative song adds one item each round and repeats all the earlier ones, so by the end the viewer has heard the first item four times without being sold to. The growing list also builds anticipation: people stay to see how long it gets.",
+  "hook": {
+    "pattern": "Sing the first menu item alone, then promise the list keeps growing.",
+    "examples": [
+      "One {{item_one}}... wait, it gets longer.",
+      "We tried to sing our whole menu.",
+      "Every round adds one. Can you keep up?"
+    ]
+  },
+  "variables": [
+    {
+      "name": "brand",
+      "description": "Business name",
+      "example": "Abuela's Kitchen"
+    },
+    {
+      "name": "item_one",
+      "description": "Signature item, lowercase, 2-4 syllables so it sings fast",
+      "example": "birria"
+    },
+    {
+      "name": "item_two",
+      "description": "Second item, lowercase, 2-4 syllables",
+      "example": "elote"
+    },
+    {
+      "name": "item_three",
+      "description": "Third item, lowercase, 2-4 syllables",
+      "example": "horchata"
+    },
+    {
+      "name": "item_four",
+      "description": "Fourth item or the big closer, lowercase, 2-4 syllables",
+      "example": "family plate"
+    },
+    {
+      "name": "item_one_note",
+      "description": "What makes the signature item worth ordering, capitalized, 15 words or fewer, true",
+      "example": "Slow-braised beef, dipped in consomé and crisped on the grill."
+    },
+    {
+      "name": "separate_price",
+      "description": "The real total for all four items ordered separately",
+      "example": "$31"
+    },
+    {
+      "name": "offer",
+      "description": "Reason to order now, capitalized, 8 words or fewer because it is sung",
+      "example": "All four for $25 this weekend"
+    }
+  ],
+  "beats": [
+    {
+      "seconds": 3,
+      "purpose": "hook: round one",
+      "on_screen_text": "Round 1: {{item_one}}",
+      "voiceover": "One {{item_one}}!",
+      "visual": {
+        "tier": "still",
+        "prompt": "Vertical 9:16 overhead photo of a single {{item_one}} centered on a wooden table at {{brand}}, warm light, steam"
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "round two: add and repeat",
+      "on_screen_text": "Round 2: {{item_two}} + {{item_one}}",
+      "voiceover": "One {{item_two}}, and one {{item_one}}!",
+      "visual": {
+        "tier": "still",
+        "prompt": "Vertical overhead photo, the same table now with {{item_two}} added beside the {{item_one}}, warm light"
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "round three: faster",
+      "on_screen_text": "Round 3: {{item_three}} + {{item_two}} + {{item_one}}",
+      "voiceover": "One {{item_three}}, one {{item_two}}, and one {{item_one}}!",
+      "visual": {
+        "tier": "still",
+        "prompt": "Vertical overhead photo, table now holds {{item_three}}, {{item_two}} and {{item_one}}, slightly crowded, hands reaching in"
+      }
+    },
+    {
+      "seconds": 5,
+      "purpose": "round four: full stack, fastest",
+      "on_screen_text": "Round 4: all four!",
+      "voiceover": "One {{item_four}}, one {{item_three}}, one {{item_two}}, and one {{item_one}}!",
+      "visual": {
+        "tier": "clip_draft",
+        "prompt": "Vertical quick top-down stop-motion style of the full spread filling the table at {{brand}}, plates sliding in to the beat, 9:16"
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "CTA",
+      "on_screen_text": "{{offer}}",
+      "voiceover": "That's the song: {{offer}}.",
+      "visual": {
+        "tier": "text_only",
+        "prompt": ""
+      }
+    }
+  ],
+  "cta": "Order the whole song: {{offer}} at {{brand}}.",
+  "music": {
+    "tier": "music",
+    "bpm": 100,
+    "feel": "playful accordion and guitar polka-pop, steady kick on every beat",
+    "vocals": true
+  },
+  "carousel": {
+    "slides": [
+      {
+        "headline": "The {{brand}} menu song",
+        "body": "Four rounds, one more item each time. Sing along.",
+        "visual_prompt": "Title slide, playful hand-drawn music notes around {{brand}} logo, warm colors"
+      },
+      {
+        "headline": "The full lyric",
+        "body": "One {{item_four}}, one {{item_three}}, one {{item_two}}, and one {{item_one}}!",
+        "visual_prompt": "Full spread overhead, crowded table, joyful mess, lyric space at the top"
+      },
+      {
+        "headline": "Why every round ends on {{item_one}}",
+        "body": "{{item_one_note}}",
+        "visual_prompt": "Close-up of a single {{item_one}} on a plate, steam, warm side light, appetizing detail"
+      },
+      {
+        "headline": "Do the math",
+        "body": "All four ordered separately: {{separate_price}}. Ordered as the song: {{offer}}.",
+        "visual_prompt": "Clean price-comparison card, two columns with a hand-drawn arrow, warm brand colors"
+      },
+      {
+        "headline": "How to order it",
+        "body": "Ask for the whole song at the counter or in the online order notes.",
+        "visual_prompt": "Friendly counter scene with an order pad and a music-note doodle, warm light, no faces"
+      },
+      {
+        "headline": "Order the whole song",
+        "body": "{{offer}} at {{brand}}.",
+        "visual_prompt": "End card with {{brand}} logo and the offer in big type"
+      }
+    ]
+  },
+  "craft": {
+    "technique": "Cumulative (stacking) list song",
+    "notes": "Each round adds one new item at the front and repeats the rest in reverse order, always ending on 'and one {{item_one}}' so the signature item is the resolving title line every time. Keep each item 2-4 syllables and aim each item's stressed syllable at a beat. The track stays at a single tempo (100 BPM, the music.bpm value); each round feels faster because more items are packed into the same bars, so the last round lands like a tongue-twister win. If you want a real speed-up, do it in the edit, not in the music block. Beat seconds are a guide (about ±1s): the edit is cut to the track. Tempo/feel: 100 BPM, accordion, guitar or ukulele strum with a kick on every beat."
+  },
+  "do_not": [
+    "Use more than four items; the joke dies if the viewer can't keep up",
+    "Put prices in every round; save the money for the CTA",
+    "Copy a known traditional cumulative song's exact tune and words"
+  ],
+  "compliance": [
+    "Prices on the math slide must match what the register charges, and the offer states when it ends"
+  ]
+}

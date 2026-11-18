@@ -1,0 +1,198 @@
+{
+  "id": "behind-the-scenes-006-the-reject-pile",
+  "version": 1,
+  "name": "The Reject Pile",
+  "category": "behind-the-scenes",
+  "format": "both",
+  "goal": "sales",
+  "duration_seconds": 23,
+  "aspect_ratio": "9:16",
+  "best_for": [
+    "coffee roaster",
+    "jewelry brand",
+    "supplement brand",
+    "apparel brand",
+    "independent record label"
+  ],
+  "why_it_works": "What a brand throws away says more about its standards than anything it keeps. Showing the rejects makes quality concrete: the viewer sees the line, sees what failed it, and trusts what passed.",
+  "hook": {
+    "pattern": "Show a pile of rejects and say the reject rate out loud.",
+    "examples": [
+      "We threw all of this out this week.",
+      "{{reject_rate}} of our {{product}} never reach you.",
+      "This is our reject pile. Look closer."
+    ]
+  },
+  "variables": [
+    {
+      "name": "brand",
+      "description": "Business name",
+      "example": "Hollow Pine Roasters"
+    },
+    {
+      "name": "product",
+      "description": "What gets inspected",
+      "example": "coffee beans"
+    },
+    {
+      "name": "reject_rate",
+      "description": "Share that fails the check",
+      "example": "1 in 8"
+    },
+    {
+      "name": "check_step",
+      "description": "The quality check, starting with a verb ending in -ing",
+      "example": "hand-sorting on a light table"
+    },
+    {
+      "name": "reject_reason",
+      "description": "Why one fails",
+      "example": "a single chipped or underdeveloped bean"
+    },
+    {
+      "name": "offer",
+      "description": "How to buy, a full sentence starting with a capital",
+      "example": "Order this week's batch before Sunday"
+    },
+    {
+      "name": "batch_size",
+      "description": "Size of one typical batch",
+      "example": "500 lb"
+    },
+    {
+      "name": "batch_rejects",
+      "description": "How much of one batch gets rejected, worked out from the reject rate",
+      "example": "about 60 lb"
+    },
+    {
+      "name": "spot_tip",
+      "description": "One sign of a bad one buyers can check themselves, as a sentence",
+      "example": "Look for beans with uneven color or chips"
+    },
+    {
+      "name": "disclosure",
+      "description": "Required fine print for the client's niche, from compliance/packs.json",
+      "example": "Results vary. These statements have not been evaluated by the FDA."
+    }
+  ],
+  "beats": [
+    {
+      "seconds": 3,
+      "purpose": "hook: the pile",
+      "on_screen_text": "All of this? Rejected.",
+      "voiceover": "We threw all of this out this week.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Large messy pile of rejected {{product}} in a bin on the {{brand}} work table, overhead fluorescent light, honest and unstyled, vertical 9:16"
+      }
+    },
+    {
+      "seconds": 5,
+      "purpose": "the check in action",
+      "on_screen_text": "Check: {{check_step}}",
+      "voiceover": "Every batch gets checked by {{check_step}}.",
+      "visual": {
+        "tier": "clip_standard",
+        "prompt": "Close-up of hands {{check_step}} for {{product}}, sorting good from bad into two trays, bright even light, vertical 9:16"
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "show one reject up close",
+      "on_screen_text": "Fails for: {{reject_reason}}",
+      "voiceover": "This one fails for {{reject_reason}}.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Macro shot of one rejected {{product}} item held between two fingers showing {{reject_reason}}, clean white background, vertical 9:16"
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "the rate",
+      "on_screen_text": "{{reject_rate}} don't make it",
+      "voiceover": "{{reject_rate}} never make it to you.",
+      "visual": {
+        "tier": "text_only",
+        "prompt": ""
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "what passes",
+      "on_screen_text": "What's left is yours.",
+      "voiceover": "What's left is what you get.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Neat tray of perfect {{product}} beside the reject bin, {{brand}} label visible, warm light, vertical 9:16"
+      }
+    },
+    {
+      "seconds": 3,
+      "purpose": "call to action",
+      "on_screen_text": "{{offer}}. {{disclosure}}",
+      "voiceover": "{{offer}}.",
+      "visual": {
+        "tier": "text_only",
+        "prompt": ""
+      }
+    }
+  ],
+  "cta": "{{offer}}.",
+  "carousel": {
+    "slides": [
+      {
+        "headline": "Our reject pile this week",
+        "body": "All of this got thrown out at {{brand}}.",
+        "visual_prompt": "Messy bin of rejected {{product}}, overhead fluorescent light"
+      },
+      {
+        "headline": "How we check",
+        "body": "We check every batch by {{check_step}}.",
+        "visual_prompt": "Hands sorting {{product}} into pass and fail trays"
+      },
+      {
+        "headline": "Why this one failed",
+        "body": "It failed for {{reject_reason}}.",
+        "visual_prompt": "Macro of one rejected {{product}} showing the flaw"
+      },
+      {
+        "headline": "{{reject_rate}} never ship",
+        "body": "We'd rather lose it than send it.",
+        "visual_prompt": "Bold number slide in {{brand}} colors"
+      },
+      {
+        "headline": "The math on one batch",
+        "body": "One {{batch_size}} batch at {{reject_rate}} means {{batch_rejects}} we never sell.",
+        "visual_prompt": "Simple worked-number graphic on the {{brand}} scale display with a reject bin beside it"
+      },
+      {
+        "headline": "Check yours at home",
+        "body": "{{spot_tip}}. Save this for your next order.",
+        "visual_prompt": "Clean tip card showing one good and one bad {{product}} side by side"
+      },
+      {
+        "headline": "What makes it through",
+        "body": "This is the only part you ever see.",
+        "visual_prompt": "Neat tray of perfect {{product}} next to the reject bin"
+      },
+      {
+        "headline": "Get this week's batch",
+        "body": "{{offer}}. {{disclosure}}",
+        "visual_prompt": "{{brand}} product shot with offer in large type"
+      }
+    ]
+  },
+  "craft": {
+    "technique": "Standards made visible",
+    "notes": "The pile is the hook, so make it physically big and real. One reject shown up close teaches the viewer what to look for, which turns them into a judge who agrees with your standard."
+  },
+  "do_not": [
+    "Exaggerate the reject rate",
+    "Show waste in a way that looks careless; say what happens to rejects if they are donated or composted",
+    "Criticize other brands' quality"
+  ],
+  "compliance": [
+    "Supplements: quality-check claims must be true and documented; no claims that the product treats, cures or prevents any disease; include the FDA structure/function disclaimer if any benefit is mentioned",
+    "Do not imply third-party testing or certification you do not hold"
+  ]
+}

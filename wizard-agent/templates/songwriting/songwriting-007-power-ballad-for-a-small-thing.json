@@ -1,0 +1,142 @@
+{
+  "id": "songwriting-007-power-ballad-for-a-small-thing",
+  "version": 1,
+  "name": "Power Ballad for a Tiny Thing",
+  "category": "songwriting",
+  "format": "reel",
+  "goal": "sales",
+  "duration_seconds": 20,
+  "aspect_ratio": "9:16",
+  "best_for": [
+    "skincare brand",
+    "jewelry brand",
+    "coffee shop",
+    "supplement brand",
+    "candle shop"
+  ],
+  "why_it_works": "Overblown emotion aimed at a small everyday product is funny, and funny gets shared. Underneath the joke the ballad structure (quiet verse, huge chorus) does real work: the product gets the big moment, so the viewer remembers it as the hero.",
+  "hook": {
+    "pattern": "Start whisper-quiet and deadly serious, singing a love song to an ordinary object, then reveal the object.",
+    "examples": [
+      "This is a love song. To my {{product}}.",
+      "I wrote a power ballad about {{product}}. No regrets.",
+      "You've never heard your {{product}} sung like this."
+    ]
+  },
+  "variables": [
+    {
+      "name": "brand",
+      "description": "Brand name",
+      "example": "Lumen Skin"
+    },
+    {
+      "name": "product",
+      "description": "The product, lowercase, said the way customers say it, 3 syllables or fewer",
+      "example": "night cream"
+    },
+    {
+      "name": "small_moment",
+      "description": "The tiny daily moment the product shows up in, capitalized, sung in one breath, 8 syllables or fewer",
+      "example": "Ten p.m., just me and you"
+    },
+    {
+      "name": "ballad_line",
+      "description": "The over-the-top chorus line, capitalized, true to the product, 8 syllables or fewer, no result claims",
+      "example": "You stay with me while I sleep"
+    },
+    {
+      "name": "offer",
+      "description": "Purchase prompt, starting with a capital or a number, 8 words or fewer",
+      "example": "20% off your first jar this week"
+    },
+    {
+      "name": "disclosure",
+      "description": "Fine-print line from the compliance pack that matches the client's niche, shown small on screen",
+      "example": "Results vary. These statements have not been evaluated by the FDA."
+    }
+  ],
+  "beats": [
+    {
+      "seconds": 3,
+      "purpose": "hook: whispered first line",
+      "on_screen_text": "This is a love song.",
+      "voiceover": "This is a love song...",
+      "visual": {
+        "tier": "still",
+        "prompt": "Vertical 9:16 moody close-up of a person by a rain-streaked window, single candle light, deadly serious expression, cinematic"
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "quiet verse: the tiny moment",
+      "on_screen_text": "{{small_moment}}",
+      "voiceover": "{{small_moment}}...",
+      "visual": {
+        "tier": "still",
+        "prompt": "Vertical photo of the {{brand}} {{product}} in its everyday spot, soft warm light, romantic framing, shallow depth of field"
+      }
+    },
+    {
+      "seconds": 2,
+      "purpose": "one-word pre-chorus with a drum fill",
+      "on_screen_text": "And then...",
+      "voiceover": "And then...",
+      "visual": {
+        "tier": "text_only",
+        "prompt": ""
+      }
+    },
+    {
+      "seconds": 5,
+      "purpose": "the huge chorus, an octave up: product as hero",
+      "on_screen_text": "{{ballad_line}}",
+      "voiceover": "{{ballad_line}}!",
+      "visual": {
+        "tier": "clip_hero",
+        "prompt": "Vertical dramatic slow-motion hero shot of the {{brand}} {{product}} rotating on a pedestal, wind machine, sparks or petals flying, backlit glow, epic music-video style, 9:16"
+      }
+    },
+    {
+      "seconds": 3,
+      "purpose": "deadpan return",
+      "on_screen_text": "It's our {{product}}. We know.",
+      "voiceover": "It's our {{product}}. We know.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Vertical photo of the same person, now deadpan, holding the {{product}} next to their face, flat daylight, comic contrast"
+      }
+    },
+    {
+      "seconds": 3,
+      "purpose": "CTA",
+      "on_screen_text": "{{offer}} {{disclosure}}",
+      "voiceover": "{{offer}}.",
+      "visual": {
+        "tier": "text_only",
+        "prompt": ""
+      }
+    }
+  ],
+  "cta": "Write your own love song to it: {{offer}} at {{brand}}.",
+  "music": {
+    "tier": "music",
+    "bpm": 70,
+    "feel": "retro power ballad, piano and synth pad verse, gated snare and big guitar chorus",
+    "vocals": true
+  },
+  "craft": {
+    "technique": "Genre-parody structure: quiet verse, octave-up chorus, deadpan tag",
+    "notes": "Parody the STRUCTURE of a generic retro power ballad, not any real song: whispered verse, one-word pre-chorus ('And then...') over a drum fill, then the same melody sung a full octave up for the chorus, with no key change. Put the key word of {{ballad_line}} on the highest, longest note, aimed at the chorus downbeat. The chorus line uses an internal rhyme or vowel echo (me / sleep). Keep every sung line to one breath, about 8 syllables. The deadpan spoken tag is the comedy turn. Tempo/feel: 70 BPM, piano and synth pad verse, gated snare and big guitar chord on the chorus downbeat. Beat seconds are a guide (about ±1s): the edit is cut to the track, so aim the stresses at the downbeats rather than promising exact bar placement."
+  },
+  "do_not": [
+    "Use a recognizable real ballad melody or a named singer's style",
+    "Let the ballad line claim a result the product can't deliver",
+    "Spend the clip_hero on anything but the chorus hero shot"
+  ],
+  "compliance": [
+    "Supplements: no disease or cure claims; structure/function claims need the FDA disclaimer ('These statements have not been evaluated by the Food and Drug Administration...')",
+    "Skincare: no medical claims (heals, cures, treats acne/eczema) unless it is a regulated drug product with approved labeling; no before/after without a 'results vary' disclaimer",
+    "No unrealistic body or skin images and no shaming language; generated people are labelled as AI content",
+    "Show the {{disclosure}} fine print (results vary, plus the FDA line for supplements) on the CTA beat"
+  ]
+}

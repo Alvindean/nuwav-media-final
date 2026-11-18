@@ -1,0 +1,215 @@
+{
+  "id": "comedy-010-epic-trailer-boring-errand",
+  "version": 1,
+  "name": "Epic Trailer for a Boring Errand",
+  "category": "comedy",
+  "format": "both",
+  "goal": "awareness",
+  "duration_seconds": 25,
+  "aspect_ratio": "9:16",
+  "best_for": [
+    "auto shop",
+    "dental office",
+    "sports team",
+    "podcast",
+    "lowrider car club"
+  ],
+  "why_it_works": "Blockbuster-trailer language applied to a tiny errand is a classic scale mismatch: the bigger the drama, the funnier the small truth. Everyone knows the feeling of putting something off, so the trailer laughs at that shared habit, and the reveal makes the brand's errand feel easy and quick by comparison.",
+  "hook": {
+    "pattern": "Open like a movie trailer with a grand 'In a world...' line about a small, relatable thing people put off.",
+    "examples": [
+      "In a world... where nobody books {{errand}}.",
+      "This fall, one hero faces the unthinkable: {{errand}}.",
+      "They said it couldn't be done: {{errand}}."
+    ]
+  },
+  "variables": [
+    {
+      "name": "brand",
+      "description": "Business, team or show name",
+      "example": "Torque & Tone Garage"
+    },
+    {
+      "name": "errand",
+      "description": "The small thing people put off (4 words or fewer, spoken)",
+      "example": "an oil change"
+    },
+    {
+      "name": "months_waited",
+      "description": "Relatable, exaggerated amount of putting it off (4 words or fewer, spoken)",
+      "example": "eleven months"
+    },
+    {
+      "name": "true_time",
+      "description": "How long the errand actually takes at the brand (8 words or fewer, spoken)",
+      "example": "about 30 minutes, with free coffee"
+    },
+    {
+      "name": "movie_title",
+      "description": "Parody title card for the errand",
+      "example": "OIL CHANGE: THE RECKONING"
+    },
+    {
+      "name": "rating_joke",
+      "description": "A parody movie-rating line",
+      "example": "Rated F for Finally."
+    },
+    {
+      "name": "overdue_sign",
+      "description": "The everyday sign it's overdue, as a 'No more...' trailer line (5 words or fewer)",
+      "example": "No more warning lights."
+    },
+    {
+      "name": "runtime_breakdown",
+      "description": "The real visit, timed step by step from your own process (20 words or fewer)",
+      "example": "Check-in: 2 minutes. Oil and filter: 20 minutes. Coffee refills: unlimited."
+    },
+    {
+      "name": "pro_tip",
+      "description": "One save-worthy tip that makes the errand easier (15 words or fewer)",
+      "example": "Book the first slot of the day. Nobody is ahead of you."
+    },
+    {
+      "name": "offer",
+      "description": "What the viewer gets for acting; starts with a capital letter (6 words or fewer)",
+      "example": "Walk-ins welcome Saturdays"
+    },
+    {
+      "name": "disclosure",
+      "description": "Required fine print for the client's niche, copied from the matching pack in compliance/packs.json",
+      "example": "Results vary. Consult a licensed provider."
+    }
+  ],
+  "beats": [
+    {
+      "seconds": 2,
+      "purpose": "hook: the trailer opener",
+      "on_screen_text": "In a world without {{errand}}...",
+      "voiceover": "In a world...",
+      "visual": {
+        "tier": "still",
+        "prompt": "Vertical 9:16 cinematic wide shot of a lone silhouette standing in front of {{brand}} at dusk, heavy backlight and lens flare, haze in the air, teal and orange blockbuster color grade"
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "setup: the hero's struggle",
+      "on_screen_text": "One hero put off {{errand}}. For {{months_waited}}.",
+      "voiceover": "One hero... waited {{months_waited}}.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Vertical dramatic close-up of an everyday person staring at a reminder on their phone with grim determination, single hard side light, cinematic grain, sweat on brow played for drama"
+      }
+    },
+    {
+      "seconds": 5,
+      "purpose": "escalate: the slow-motion hero walk",
+      "on_screen_text": "This season... it's time.",
+      "voiceover": "This season... it's time.",
+      "visual": {
+        "tier": "clip_hero",
+        "prompt": "Vertical cinematic slow-motion clip, the everyday hero walks toward the {{brand}} entrance, wind, dust and sparks in the backlight, low-angle tracking shot, epic blockbuster grade"
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "escalate: rapid trailer cuts",
+      "on_screen_text": "No more excuses. {{overdue_sign}}",
+      "voiceover": "No more excuses.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Vertical dramatic photo of a team member from {{brand}} turning to camera in slow-motion style pose, tool or headset in hand, rim light, smoke, poster-like composition"
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "turn: the deadpan reveal",
+      "on_screen_text": "Actual runtime: {{true_time}}.",
+      "voiceover": "It takes {{true_time}}.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Vertical bright, flat, ordinary photo inside {{brand}}: the same hero relaxed in a waiting chair with a coffee, a team member giving a casual thumbs up, normal daylight, no drama at all"
+      }
+    },
+    {
+      "seconds": 3,
+      "purpose": "tag: parody title card",
+      "on_screen_text": "{{movie_title}}. {{rating_joke}}",
+      "voiceover": "{{movie_title}}. {{rating_joke}}",
+      "visual": {
+        "tier": "text_only",
+        "prompt": ""
+      }
+    },
+    {
+      "seconds": 3,
+      "purpose": "call to action",
+      "on_screen_text": "Now showing at {{brand}}: {{offer}} {{disclosure}}",
+      "voiceover": "Now showing: {{offer}}.",
+      "visual": {
+        "tier": "text_only",
+        "prompt": ""
+      }
+    }
+  ],
+  "cta": "Now showing at {{brand}}: {{offer}}. No sequel needed.",
+  "carousel": {
+    "slides": [
+      {
+        "headline": "In a world where nobody books {{errand}}",
+        "body": "Presented by {{brand}}.",
+        "visual_prompt": "Vertical blockbuster-style poster: lone silhouette in front of {{brand}} at dusk, lens flare, teal and orange grade"
+      },
+      {
+        "headline": "One hero waited {{months_waited}}",
+        "body": "The reminder kept reminding.",
+        "visual_prompt": "Dramatic close-up of a person staring at a phone reminder, hard side light, cinematic grain"
+      },
+      {
+        "headline": "This season, it's time",
+        "body": "No more excuses. {{overdue_sign}}",
+        "visual_prompt": "Low-angle poster shot of the hero walking toward {{brand}}, dust and backlight, epic grade"
+      },
+      {
+        "headline": "Critics are calling it 'fine'",
+        "body": "Actual runtime: {{true_time}}.",
+        "visual_prompt": "Bright ordinary photo of the hero relaxed with coffee in the {{brand}} waiting area, flat daylight"
+      },
+      {
+        "headline": "The runtime, scene by scene",
+        "body": "{{runtime_breakdown}}",
+        "visual_prompt": "Film-strip style card with three frames labelled with times, {{brand}} colors, clean bold trailer font"
+      },
+      {
+        "headline": "Director's tip",
+        "body": "{{pro_tip}}",
+        "visual_prompt": "Director's chair card with a clapperboard showing the tip, {{brand}} logo small, warm studio light"
+      },
+      {
+        "headline": "{{movie_title}}",
+        "body": "{{rating_joke}}",
+        "visual_prompt": "Parody movie title card in bold metallic trailer font on black, {{brand}} logo small at bottom"
+      },
+      {
+        "headline": "Now showing",
+        "body": "Now showing: {{offer}}. {{disclosure}}",
+        "visual_prompt": "Theater marquee style end card with {{brand}} name and the offer in light-bulb letters"
+      }
+    ]
+  },
+  "craft": {
+    "technique": "Scale mismatch parody (epic trailer voice on a mundane task)",
+    "notes": "Setup: full blockbuster grammar (the 'In a world' line, the struggling hero, slow-motion walk) applied to a small errand; the bigger the production, the bigger the eventual drop. Turn: a hard cut to flat daylight and a deadpan line stating the real, short runtime; the deflation is the laugh and also the selling point. Tag: a parody title card with a movie-rating pun, which extends the bit one last beat. Timing: the voiceover lines are cut to a few words (the hook is only 'In a world...') so the trailer voice can leave long dramatic gaps at the ellipses and each line feels heavier; then kill the music completely on the cut to daylight and deliver the runtime with no pause. This is the one template in the comedy set that earns a clip_hero shot: the joke only works if the fake trailer looks genuinely expensive."
+  },
+  "do_not": [
+    "Shame the viewer for procrastinating; the hero is lovable and the whole audience is in on it",
+    "Imitate a real movie, studio logo, franchise or a real trailer narrator's voice",
+    "Use the clip_hero shot without the client approving the spend",
+    "Exaggerate the danger of skipping the errand into a scare tactic"
+  ],
+  "compliance": [
+    "Dental: frame the errand as a routine visit; no clinical claims, no 'painless' promises, and no scare tactics about what happens if you wait; results vary, so make no guarantee about the visit",
+    "Auto: if the overdue sign mentions warning lights, it is a joke, not safety advice; do not suggest it is safe to ignore real warning lights",
+    "Podcasts and sports teams: no real movie, studio, franchise, league logo or narrator sound-alike"
+  ]
+}

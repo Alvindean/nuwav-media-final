@@ -1,0 +1,159 @@
+{
+  "id": "songwriting-003-finish-the-line",
+  "version": 1,
+  "name": "Finish the Line Karaoke",
+  "category": "songwriting",
+  "format": "both",
+  "goal": "engagement",
+  "duration_seconds": 17,
+  "aspect_ratio": "9:16",
+  "best_for": [
+    "independent musician",
+    "indie label",
+    "songwriter",
+    "band"
+  ],
+  "why_it_works": "An unfinished pattern is almost painful to leave. Lyrics on screen with a bouncing highlight let viewers sing along, then the last word drops out and their brain sings it for them. That small win drives replays and duets.",
+  "hook": {
+    "pattern": "Show the karaoke lyric bar and dare the viewer to finish the last word before it appears.",
+    "examples": [
+      "Sing the last word. Bet you already know it.",
+      "Finish this lyric before the beat comes back.",
+      "Duet this if you can finish the line."
+    ]
+  },
+  "variables": [
+    {
+      "name": "artist_name",
+      "description": "Artist or band name",
+      "example": "Juno Vale"
+    },
+    {
+      "name": "song_title",
+      "description": "Original song title, which is also the missing last word (1-3 syllables)",
+      "example": "Daylight"
+    },
+    {
+      "name": "line_one",
+      "description": "First lyric line, capitalized, one breath, 8 syllables or fewer, ending on the sound the title rhymes with",
+      "example": "You kept me up through the night"
+    },
+    {
+      "name": "line_two",
+      "description": "Second lyric line, capitalized, 7 syllables or fewer, stopping one word before the title",
+      "example": "Now I'm out here chasing"
+    },
+    {
+      "name": "listen_link",
+      "description": "Where to hear or buy it, 4 words or fewer",
+      "example": "link in bio"
+    }
+  ],
+  "beats": [
+    {
+      "seconds": 3,
+      "purpose": "hook: dare",
+      "on_screen_text": "Finish the line.",
+      "voiceover": "Finish the line. I'll wait.",
+      "visual": {
+        "tier": "real_photo",
+        "prompt": "Artist-supplied vertical photo of {{artist_name}} holding a mic toward the camera, moody purple and teal stage light"
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "karaoke line one with bouncing highlight",
+      "on_screen_text": "{{line_one}}",
+      "voiceover": "{{line_one}}",
+      "visual": {
+        "tier": "text_only",
+        "prompt": ""
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "line two stops before the title word",
+      "on_screen_text": "{{line_two}}...",
+      "voiceover": "{{line_two}}...",
+      "visual": {
+        "tier": "text_only",
+        "prompt": ""
+      }
+    },
+    {
+      "seconds": 2,
+      "purpose": "silent gap for viewer to sing",
+      "on_screen_text": "Your turn: sing it.",
+      "voiceover": "",
+      "visual": {
+        "tier": "text_only",
+        "prompt": ""
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "reveal title word plus where to hear it",
+      "on_screen_text": "{{song_title}}. Listen: {{listen_link}}",
+      "voiceover": "{{song_title}}. Full song: {{listen_link}}.",
+      "visual": {
+        "tier": "real_photo",
+        "prompt": "Real performance footage of {{artist_name}} singing the final word, lights blooming on the downbeat, vertical crop"
+      }
+    }
+  ],
+  "cta": "Duet this and finish the line. Full song '{{song_title}}': {{listen_link}}.",
+  "carousel": {
+    "slides": [
+      {
+        "headline": "Finish the line",
+        "body": "Swipe and sing. No peeking.",
+        "visual_prompt": "Bold title slide, {{artist_name}} name in big type, karaoke-style lyric bar graphic, dark background with neon accent"
+      },
+      {
+        "headline": "Line one",
+        "body": "{{line_one}}",
+        "visual_prompt": "Lyric slide, white words on black, first word highlighted in neon like a karaoke bounce"
+      },
+      {
+        "headline": "Line two",
+        "body": "{{line_two}}...",
+        "visual_prompt": "Lyric slide, highlight stops one word short, a blank glowing underline where the last word goes"
+      },
+      {
+        "headline": "{{song_title}}",
+        "body": "That's the one. You sang it before you read it.",
+        "visual_prompt": "Cover-art style slide with {{song_title}} in large type over an artist-supplied photo of {{artist_name}}"
+      },
+      {
+        "headline": "Why your brain knew it",
+        "body": "Line one ends on a sound, the title rhymes with it, and it lands on a strong beat. Your ear predicts the rhyme.",
+        "visual_prompt": "Simple diagram slide, the two lyric lines with the rhyming sounds circled and beat numbers above"
+      },
+      {
+        "headline": "Write your own ending",
+        "body": "Stitch this with your own last word. We ask before using any fan line, and credit you by name.",
+        "visual_prompt": "Blank lyric card with a pen and a glowing empty underline, dark background, neon accent"
+      },
+      {
+        "headline": "Hear it now",
+        "body": "{{song_title}}: {{listen_link}}",
+        "visual_prompt": "Clean end card with {{artist_name}} name and a play-button icon"
+      }
+    ]
+  },
+  "craft": {
+    "technique": "Withheld title word (missing-rhyme karaoke)",
+    "notes": "The artist's own master plays under all beats; nothing is generated, no AI vocal or backing track, and every sung voiceover line is the artist's real vocal from that master (the spoken hook is recorded by the artist). Title placement: the title is the last word of the couplet and the end-rhyme partner of line one, so the ear predicts it (night / daylight). Keep each sung line to one breath, about 8 syllables. Mute the master for the silent gap just before the title word, then bring it back on the reveal. Beat seconds are a guide (about ±1s): cut the edit to the master so the gap sits where the title would be sung. Best on half-time songs around 70-90 BPM with sparse arrangements, so the silence feels intentional."
+  },
+  "do_not": [
+    "Use someone else's lyrics, even a famous line people would know",
+    "Make the missing word guessable only if you already know the song",
+    "Let the highlight run ahead of the vocal; viewers lose the sing-along",
+    "Generate an AI version of the artist's face or voice; use real photos and footage"
+  ],
+  "compliance": [
+    "Fan duets and submitted lines: get a written release before reusing any fan's video, voice or lyric in the song or in ads",
+    "Credit every fan line used by name or handle, and say up front whether submissions can be used commercially and whether any pay applies",
+    "Photos and performance footage of the artist are real and artist-supplied; no AI likeness or voice clone"
+  ]
+}

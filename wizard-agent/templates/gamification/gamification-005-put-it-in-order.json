@@ -1,0 +1,204 @@
+{
+  "id": "gamification-005-put-it-in-order",
+  "version": 1,
+  "name": "Put It in Order",
+  "category": "gamification",
+  "format": "both",
+  "goal": "trust",
+  "duration_seconds": 24,
+  "aspect_ratio": "9:16",
+  "best_for": [
+    "dentist",
+    "law firm",
+    "insurance agent",
+    "auto shop",
+    "veterinarian"
+  ],
+  "why_it_works": "Sorting four shuffled steps is a small puzzle with one right answer, and most people are sure they know it. Committing four letters in the comments makes them care about the reveal, and when the order surprises them, the professional who knows it cold earns trust without selling.",
+  "hook": {
+    "pattern": "Name a stressful moment and dare the viewer to put four shuffled steps in the right order.",
+    "examples": [
+      "{{scenario}}. Put these in order.",
+      "Four steps. One right order. Most people miss it.",
+      "Sort these four before the answer shows."
+    ]
+  },
+  "variables": [
+    {
+      "name": "brand",
+      "description": "Practice, firm or shop name",
+      "example": "Reyes Family Dental"
+    },
+    {
+      "name": "scenario",
+      "description": "The stressful moment, a short sentence starting with a capital, 6 words or fewer",
+      "example": "You just chipped a front tooth"
+    },
+    {
+      "name": "step_1",
+      "description": "The step that truly comes first, starting with a capital, 5 words or fewer",
+      "example": "Find and save the piece"
+    },
+    {
+      "name": "step_2",
+      "description": "The second step, starting with a capital, 5 words or fewer",
+      "example": "Rinse with warm water"
+    },
+    {
+      "name": "step_3",
+      "description": "The third step, starting with a capital, 5 words or fewer",
+      "example": "Cold pack on your cheek"
+    },
+    {
+      "name": "step_4",
+      "description": "The last step, starting with a capital, 5 words or fewer",
+      "example": "Call your dentist"
+    },
+    {
+      "name": "surprise_step",
+      "description": "The step most people put in the wrong place, as a short sentence starting with a capital, 8 words or fewer",
+      "example": "Saving the piece comes before the call"
+    },
+    {
+      "name": "order_reason",
+      "description": "One or two plain sentences on why the order matters",
+      "example": "A saved piece can sometimes be bonded back, so it goes first. Rinsing clears debris, cold limits swelling, then you call."
+    },
+    {
+      "name": "consult_offer",
+      "description": "Low-pressure next step, starting with a capital, 5 words or fewer",
+      "example": "Book a same-week visit"
+    },
+    {
+      "name": "disclosure",
+      "description": "Required fine print for the client's niche, from compliance/packs.json",
+      "example": "Results vary. Consult a licensed provider."
+    }
+  ],
+  "beats": [
+    {
+      "seconds": 3,
+      "purpose": "hook: the moment and the dare",
+      "on_screen_text": "{{scenario}}. Put these in order.",
+      "voiceover": "{{scenario}}. What comes first?",
+      "visual": {
+        "tier": "still",
+        "prompt": "Vertical 9:16 clean desk at {{brand}} with four lettered index cards A B C D shuffled face-up, soft window light, no people"
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "cards A and B",
+      "on_screen_text": "A. {{step_3}} B. {{step_1}}",
+      "voiceover": "A. {{step_3}}. B. {{step_1}}.",
+      "visual": {
+        "tier": "text_only",
+        "prompt": ""
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "cards C and D",
+      "on_screen_text": "C. {{step_4}} D. {{step_2}}",
+      "voiceover": "C. {{step_4}}. D. {{step_2}}.",
+      "visual": {
+        "tier": "text_only",
+        "prompt": ""
+      }
+    },
+    {
+      "seconds": 3,
+      "purpose": "lock in before the reveal",
+      "on_screen_text": "Comment your order, like C A D B.",
+      "voiceover": "Comment your order. Four letters.",
+      "visual": {
+        "tier": "text_only",
+        "prompt": ""
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "reveal the order",
+      "on_screen_text": "Answer: B, D, A, C.",
+      "voiceover": "The right order is B, D, A, C.",
+      "visual": {
+        "tier": "clip_draft",
+        "prompt": "Top-down vertical 9:16 hands sliding four lettered index cards into a row on the {{brand}} desk, B then D then A then C, soft window light"
+      }
+    },
+    {
+      "seconds": 3,
+      "purpose": "the surprise",
+      "on_screen_text": "{{surprise_step}}.",
+      "voiceover": "{{surprise_step}}.",
+      "visual": {
+        "tier": "text_only",
+        "prompt": ""
+      }
+    },
+    {
+      "seconds": 3,
+      "purpose": "low-pressure next step",
+      "on_screen_text": "{{consult_offer}}. {{disclosure}}",
+      "voiceover": "Stuck on step one? {{consult_offer}}.",
+      "visual": {
+        "tier": "text_only",
+        "prompt": ""
+      }
+    }
+  ],
+  "cta": "Comment your four letters. {{consult_offer}} with {{brand}}.",
+  "carousel": {
+    "slides": [
+      {
+        "headline": "Put these in order",
+        "body": "{{scenario}}. Comment four letters before you swipe.",
+        "visual_prompt": "Four lettered index cards shuffled on a clean desk at {{brand}}, soft window light, 4:5"
+      },
+      {
+        "headline": "Cards A and B",
+        "body": "A. {{step_3}}. B. {{step_1}}.",
+        "visual_prompt": "Two index cards lettered A and B in {{brand}} colors on the desk"
+      },
+      {
+        "headline": "Cards C and D",
+        "body": "C. {{step_4}}. D. {{step_2}}.",
+        "visual_prompt": "Two index cards lettered C and D in {{brand}} colors on the desk"
+      },
+      {
+        "headline": "The order: B, D, A, C",
+        "body": "{{surprise_step}}.",
+        "visual_prompt": "Four index cards in a neat row B D A C with a green check above"
+      },
+      {
+        "headline": "Why this order",
+        "body": "{{order_reason}}",
+        "visual_prompt": "Simple numbered flow diagram with four boxes and arrows in {{brand}} colors"
+      },
+      {
+        "headline": "Save this checklist",
+        "body": "1. {{step_1}}. 2. {{step_2}}. 3. {{step_3}}. 4. {{step_4}}.",
+        "visual_prompt": "Clean printable checklist card with four numbered lines and tick boxes"
+      },
+      {
+        "headline": "Your situation is different",
+        "body": "General info only. {{consult_offer}} with {{brand}}. {{disclosure}}",
+        "visual_prompt": "{{brand}} logo card with the offer in large type over a calm office photo"
+      }
+    ]
+  },
+  "craft": {
+    "technique": "Shuffled sequence",
+    "notes": "The cards are always shown in the same fixed shuffle (step 3, 1, 4, 2) so the answer is always B, D, A, C and the copy never breaks. Put the step people rush to (usually the phone call) somewhere it looks like it should come first."
+  },
+  "do_not": [
+    "Use a sequence the pros themselves argue about",
+    "Shame people who got the order wrong in replies",
+    "Answer individual cases in the comments; move them to a private consult"
+  ],
+  "compliance": [
+    "Dental and veterinary: general first-aid information only, no diagnosis or guaranteed results; say to seek care promptly",
+    "Law firms: general information, not legal advice; label as attorney advertising where your state bar requires it",
+    "Insurance: never imply a claim will be paid; follow policy terms and show license number where required"
+  ]
+}

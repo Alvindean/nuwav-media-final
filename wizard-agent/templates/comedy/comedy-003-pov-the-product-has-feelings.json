@@ -1,0 +1,146 @@
+{
+  "id": "comedy-003-pov-the-product-has-feelings",
+  "version": 1,
+  "name": "POV: The Product Has Feelings",
+  "category": "comedy",
+  "format": "reel",
+  "goal": "engagement",
+  "duration_seconds": 23,
+  "aspect_ratio": "9:16",
+  "best_for": [
+    "coffee shop",
+    "jewelry brand",
+    "skincare brand",
+    "lowrider car club",
+    "auto detailing shop"
+  ],
+  "why_it_works": "Giving an object a dramatic inner voice is instant character comedy: viewers love an overdramatic narrator, and the product's 'fears' quietly teach the right way to use or care for it. The customer is the hero who does it right, so the joke is on the neurotic product, never the buyer.",
+  "hook": {
+    "pattern": "POV caption that names the product as the narrator, voiced like a nature documentary or a soap opera.",
+    "examples": [
+      "POV: you're the {{product}} and you have standards.",
+      "POV: you're the {{product}}. It's a lot.",
+      "This {{product}} has been through things."
+    ]
+  },
+  "variables": [
+    {
+      "name": "brand",
+      "description": "Business name",
+      "example": "Velvet Chrome Car Club"
+    },
+    {
+      "name": "product",
+      "description": "The object narrating (4 words or fewer)",
+      "example": "freshly chromed rim"
+    },
+    {
+      "name": "product_pride",
+      "description": "What the product is proudest of, as a dramatic brag (14 words or fewer, spoken)",
+      "example": "I have been hand polished for six hours. I reflect sunsets."
+    },
+    {
+      "name": "wrong_use",
+      "description": "The care mistake the product fears most, harmless and common (10 words or fewer, spoken)",
+      "example": "The gas station brush. The one with sand in it."
+    },
+    {
+      "name": "right_use",
+      "description": "The correct care step the customer does (8 words or fewer, spoken)",
+      "example": "pH-neutral soap and a microfiber mitt"
+    },
+    {
+      "name": "tag_line",
+      "description": "The product's final oddly specific thank-you line with one petty jab (12 words or fewer, spoken)",
+      "example": "Thank you to my polisher. Not you, car wash."
+    },
+    {
+      "name": "offer",
+      "description": "What the viewer gets for acting; starts with a capital letter (8 words or fewer)",
+      "example": "Sunday show and shine, free entry"
+    },
+    {
+      "name": "disclosure",
+      "description": "Required fine print for the client's niche, copied from the matching pack in compliance/packs.json",
+      "example": "Results vary. These statements have not been evaluated by the FDA."
+    }
+  ],
+  "beats": [
+    {
+      "seconds": 2,
+      "purpose": "hook: the POV caption",
+      "on_screen_text": "POV: you're the {{product}}",
+      "voiceover": "",
+      "visual": {
+        "tier": "still",
+        "prompt": "Vertical 9:16 dramatic hero close-up of the {{product}} at {{brand}}, low angle, single soft key light from the side, dark background, glossy and proud"
+      }
+    },
+    {
+      "seconds": 5,
+      "purpose": "setup: the product's pride",
+      "on_screen_text": "{{product_pride}}",
+      "voiceover": "{{product_pride}}",
+      "visual": {
+        "tier": "still",
+        "prompt": "Vertical extreme close-up detail of the {{product}} catching light, slow luxurious feel, rich color, shallow depth of field, editorial product photography"
+      }
+    },
+    {
+      "seconds": 5,
+      "purpose": "escalate: the product's deepest fear",
+      "on_screen_text": "My one fear: {{wrong_use}}",
+      "voiceover": "But I have one fear: {{wrong_use}}",
+      "visual": {
+        "tier": "clip_draft",
+        "prompt": "Vertical clip, ominous slow push-in toward a harmless everyday object representing {{wrong_use}}, cool desaturated light, mock horror-movie framing, nothing actually happens"
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "turn: the customer does it right",
+      "on_screen_text": "Then they used {{right_use}}.",
+      "voiceover": "And then. They used {{right_use}}.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Vertical close-up of a customer's hands caring for the {{product}} with {{right_use}}, warm golden light returns, gentle and careful, face out of frame"
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "tag: overly emotional acceptance speech",
+      "on_screen_text": "{{tag_line}}",
+      "voiceover": "{{tag_line}}",
+      "visual": {
+        "tier": "still",
+        "prompt": "Vertical shot of the {{product}} gleaming under a single spotlight like it just took home a trophy, faint sparkle in the air, dark backdrop, centered"
+      }
+    },
+    {
+      "seconds": 3,
+      "purpose": "call to action",
+      "on_screen_text": "{{offer}} {{disclosure}}",
+      "voiceover": "{{offer}}. Treat it right.",
+      "visual": {
+        "tier": "text_only",
+        "prompt": ""
+      }
+    }
+  ],
+  "cta": "{{offer}}. Your {{product}} will thank you, loudly.",
+  "craft": {
+    "technique": "Object POV character skit with deadpan melodrama",
+    "notes": "Setup: the product introduces itself with an overblown brag in a serious documentary voice; the gap between the grand voice and a small object is the base joke. Turn: it confesses its one fear, staged like a horror movie over something mundane, and then the customer calmly does the right thing, which flips horror into relief. Tag: an over-emotional awards-speech line that includes one tiny petty jab at the fear object. Timing: the voice must never break character or laugh; hold a full one-second silence on the push-in before naming the fear, and cut to warm light exactly on the word 'They' in the turn line."
+  },
+  "do_not": [
+    "Show the customer doing the wrong thing or make them look foolish; the customer is the hero",
+    "Name or show a real competitor, store or product as the fear object",
+    "Make the voice cartoonish; deadpan seriousness is funnier than a silly voice",
+    "Claim results for the care step that the brand can't stand behind"
+  ],
+  "compliance": [
+    "Skincare: the product's lines and the care step make no skin results, cure or treatment claims; no before/after images; results vary, and nothing may read as a guarantee",
+    "Jewelry: describe materials accurately (karat, plating, stone type); no implied investment value",
+    "The fear object must be a generic item, never a real competitor, store or branded product"
+  ]
+}

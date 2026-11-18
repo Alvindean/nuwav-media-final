@@ -1,0 +1,188 @@
+{
+  "id": "story-002-their-text-not-ours",
+  "version": 1,
+  "name": "Their Text, Not Ours",
+  "category": "story",
+  "format": "both",
+  "goal": "trust",
+  "duration_seconds": 19,
+  "aspect_ratio": "9:16",
+  "best_for": [
+    "auto shop",
+    "dental practice",
+    "chiropractor",
+    "med spa",
+    "real estate agent",
+    "insurance agency"
+  ],
+  "why_it_works": "A customer's own words, shown as a real-looking message, borrow trust the brand cannot claim for itself. Starting from the thank-you and rewinding makes viewers curious how the problem got solved, and the viewer sees their own problem in the before.",
+  "hook": {
+    "pattern": "Open on the customer's thank-you message on screen with no voiceover, then rewind to how they got there.",
+    "examples": [
+      "A customer sent us this. We asked to share it.",
+      "{{customer_first_name}} texted us this. We asked to share it.",
+      "\"{{customer_quote}}\" Read that again."
+    ]
+  },
+  "variables": [
+    {
+      "name": "brand",
+      "description": "Business name",
+      "example": "Eastside Auto Care"
+    },
+    {
+      "name": "customer_quote",
+      "description": "The customer's real message, used with written permission, 6 words or fewer",
+      "example": "You saved my road trip. Thank you."
+    },
+    {
+      "name": "customer_first_name",
+      "description": "Customer first name, with permission, or a stand-in like 'One driver'",
+      "example": "Dana"
+    },
+    {
+      "name": "problem",
+      "description": "The problem they arrived with, in plain words, spoken, 9 words or fewer",
+      "example": "a dashboard full of warning lights before a trip"
+    },
+    {
+      "name": "what_we_did",
+      "description": "The specific fix or service, plainly described, starting with a past-tense verb, 11 words or fewer",
+      "example": "found a loose sensor wire instead of replacing the whole unit"
+    },
+    {
+      "name": "after_state",
+      "description": "Where they are now, in their terms, 6 words or fewer",
+      "example": "800 miles later, not one light"
+    },
+    {
+      "name": "offer",
+      "description": "What the viewer gets for acting, a short phrase starting with a capital letter, 6 words or fewer",
+      "example": "Free check-up booked this month"
+    },
+    {
+      "name": "early_signs",
+      "description": "Three early warning signs of the same problem, as a short list",
+      "example": "a new noise, a warning light, or a smell when braking"
+    },
+    {
+      "name": "save_tip",
+      "description": "One practical tip that saves the viewer time or money before they book, a full sentence",
+      "example": "Snap a photo of the dashboard lights before you call; it saves a diagnosis step."
+    },
+    {
+      "name": "disclosure",
+      "description": "Required fine print for the client's niche, from compliance/packs.json, shown as small on-screen text",
+      "example": "Results vary. Consult a licensed provider."
+    }
+  ],
+  "beats": [
+    {
+      "seconds": 3,
+      "purpose": "hook: the customer's real text, verbatim",
+      "on_screen_text": "\"{{customer_quote}}\"",
+      "voiceover": "",
+      "visual": {
+        "tier": "real_photo",
+        "prompt": "Client-supplied screenshot of the real customer text message reading {{customer_quote}}, shared with written permission, phone number and surname blurred"
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "who they were and what was wrong",
+      "on_screen_text": "Before: {{problem}}",
+      "voiceover": "{{customer_first_name}} came in with {{problem}}.",
+      "visual": {
+        "tier": "real_photo",
+        "prompt": "Client-supplied photo of the real customer or their car, phone or paperwork at {{brand}}, used with written consent; no face if they asked for none"
+      }
+    },
+    {
+      "seconds": 5,
+      "purpose": "what we actually did",
+      "on_screen_text": "What we did: {{what_we_did}}",
+      "voiceover": "What we did: {{what_we_did}}.",
+      "visual": {
+        "tier": "clip_draft",
+        "prompt": "Close-up of a {{brand}} team member's hands doing {{what_we_did}}, clean bright workspace, shallow depth of field, vertical 9:16"
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "the turn: where they are now",
+      "on_screen_text": "Now: {{after_state}}",
+      "voiceover": "And now? {{after_state}}.",
+      "visual": {
+        "tier": "real_photo",
+        "prompt": "Client-supplied photo of the real customer after the fix, or the result itself, at {{brand}}, used with written consent"
+      }
+    },
+    {
+      "seconds": 3,
+      "purpose": "call to action",
+      "on_screen_text": "{{offer}} {{disclosure}}",
+      "voiceover": "Your turn. {{offer}}.",
+      "visual": {
+        "tier": "text_only",
+        "prompt": ""
+      }
+    }
+  ],
+  "cta": "Your turn. {{offer}}.",
+  "carousel": {
+    "slides": [
+      {
+        "headline": "\"{{customer_quote}}\"",
+        "body": "A real message we got from {{customer_first_name}}.",
+        "visual_prompt": "Client-supplied screenshot of the real customer message, {{brand}} colors framing it"
+      },
+      {
+        "headline": "How it started",
+        "body": "{{customer_first_name}} came in with {{problem}}.",
+        "visual_prompt": "Close-up of the problem itself at {{brand}}, no people, natural window light"
+      },
+      {
+        "headline": "What we did",
+        "body": "We {{what_we_did}}.",
+        "visual_prompt": "Close-up of hands doing the work at {{brand}}, bright clean workspace"
+      },
+      {
+        "headline": "Where they are now",
+        "body": "Now: {{after_state}}.",
+        "visual_prompt": "Clean result shot at {{brand}}, warm daylight, no customer face"
+      },
+      {
+        "headline": "Catch it early: three signs",
+        "body": "Watch for {{early_signs}}. Each one is easier to fix early.",
+        "visual_prompt": "Simple checklist graphic with three tick boxes in {{brand}} colors, clean flat layout"
+      },
+      {
+        "headline": "What {{customer_first_name}} wishes they knew",
+        "body": "{{save_tip}}",
+        "visual_prompt": "Flat-lay of a phone, notepad and pen on a clean desk at {{brand}}, soft daylight"
+      },
+      {
+        "headline": "Got the same problem?",
+        "body": "{{offer}}. {{disclosure}}",
+        "visual_prompt": "Clean {{brand}} logo card with the offer in large type"
+      }
+    ]
+  },
+  "craft": {
+    "technique": "Start at the ending, then rewind",
+    "notes": "The first frame is the payoff in the customer's own words, silent so people read it, from a real screenshot. Then rewind to the problem. The middle beat shows the work, not the staff smiling. Keep the after concrete: a number, a distance, a date. Every customer image is client-supplied, never generated."
+  },
+  "do_not": [
+    "Write a fake review or fake text message",
+    "Show a customer's face or name without written permission",
+    "Turn the middle beat into a sales pitch",
+    "Generate a face or photo to stand in for the real customer"
+  ],
+  "compliance": [
+    "Customer screenshots and photos are client-supplied real_photo only, with written consent; never a generated customer",
+    "Only use real customer messages with written permission; keep the permission on file",
+    "Dental, chiropractic and med spa: no patient names, faces or health details without a signed HIPAA-compliant authorization, and no promise that the viewer will get the same result",
+    "Med spa: any before/after mention needs 'Results vary' on screen",
+    "Insurance and real estate: no claim of guaranteed savings, coverage or sale price; include license number where your state requires it"
+  ]
+}

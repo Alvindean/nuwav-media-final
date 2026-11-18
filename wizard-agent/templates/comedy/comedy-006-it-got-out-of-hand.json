@@ -1,0 +1,161 @@
+{
+  "id": "comedy-006-it-got-out-of-hand",
+  "version": 1,
+  "name": "We Promised One Thing. It Got Out of Hand.",
+  "category": "comedy",
+  "format": "reel",
+  "goal": "awareness",
+  "duration_seconds": 24,
+  "aspect_ratio": "9:16",
+  "best_for": [
+    "barber shop",
+    "sports team",
+    "apparel brand",
+    "independent musician",
+    "fitness trainer"
+  ],
+  "why_it_works": "Escalation is a ladder the viewer climbs with you: each step is a little more ridiculous, so they keep watching to see how far it goes. Snapping back to the tiny, real promise at the end is the release, and it makes the brand's actual promise memorable because it was the starting point of the joke.",
+  "hook": {
+    "pattern": "State a small, ordinary promise, then announce that it went too far.",
+    "examples": [
+      "We promised {{small_promise}}. It got out of hand.",
+      "It started with {{small_promise}}. Then nobody stopped us.",
+      "Someone asked for {{small_promise}}. We overdid it."
+    ]
+  },
+  "variables": [
+    {
+      "name": "brand",
+      "description": "Business, team or artist name",
+      "example": "Eastside Hoops"
+    },
+    {
+      "name": "small_promise",
+      "description": "The small, real promise the brand makes, lowercase noun phrase (4 words or fewer, spoken)",
+      "example": "a louder crowd"
+    },
+    {
+      "name": "level_1",
+      "description": "Step one: reasonable (8 words or fewer, spoken; start with a capital letter)",
+      "example": "We handed out foam fingers."
+    },
+    {
+      "name": "level_2",
+      "description": "Step two: a bit much (8 words or fewer, spoken; start with a capital letter)",
+      "example": "Then a drumline in the parking lot."
+    },
+    {
+      "name": "level_3",
+      "description": "Step three: way too far (8 words or fewer, spoken; start with a capital letter)",
+      "example": "Then the drumline got its own drumline."
+    },
+    {
+      "name": "callback_tag",
+      "description": "A deadpan callback to one escalation step (4 words or fewer)",
+      "example": "Drumline not included."
+    },
+    {
+      "name": "absurd_peak",
+      "description": "The peak: biggest harmless image (12 words or fewer, spoken)",
+      "example": "The noise registered on a weather app."
+    },
+    {
+      "name": "offer",
+      "description": "What the viewer gets for acting",
+      "example": "$10 student tickets Friday"
+    },
+    {
+      "name": "disclosure",
+      "description": "Required fine print for the client's niche, copied from the matching pack in compliance/packs.json",
+      "example": "Results vary. These statements have not been evaluated by the FDA."
+    }
+  ],
+  "beats": [
+    {
+      "seconds": 3,
+      "purpose": "hook: the promise and the warning",
+      "on_screen_text": "We promised {{small_promise}}. It got out of hand.",
+      "voiceover": "We promised {{small_promise}}. It got out of hand.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Vertical 9:16 photo of a calm, ordinary scene at {{brand}} with one small hint of chaos at the edge of frame, bright daylight, documentary style, centered subject"
+      }
+    },
+    {
+      "seconds": 3,
+      "purpose": "escalation step one: reasonable",
+      "on_screen_text": "{{level_1}}",
+      "voiceover": "{{level_1}}",
+      "visual": {
+        "tier": "still",
+        "prompt": "Vertical photo illustrating {{level_1}} at {{brand}}, cheerful and normal, warm light, a few people, eye-level framing"
+      }
+    },
+    {
+      "seconds": 3,
+      "purpose": "escalation step two: a bit much",
+      "on_screen_text": "{{level_2}}",
+      "voiceover": "{{level_2}}",
+      "visual": {
+        "tier": "still",
+        "prompt": "Vertical photo illustrating {{level_2}}, noticeably bigger crowd or props, same location and color grade as before, energetic, slightly wider framing"
+      }
+    },
+    {
+      "seconds": 3,
+      "purpose": "escalation step three: way too far",
+      "on_screen_text": "{{level_3}}",
+      "voiceover": "{{level_3}}",
+      "visual": {
+        "tier": "still",
+        "prompt": "Vertical photo illustrating {{level_3}}, comically oversized version of the previous scene, wide angle, dramatic light, playful chaos but safe"
+      }
+    },
+    {
+      "seconds": 5,
+      "purpose": "peak: the absurd top of the ladder",
+      "on_screen_text": "{{absurd_peak}}",
+      "voiceover": "{{absurd_peak}}",
+      "visual": {
+        "tier": "clip_standard",
+        "prompt": "Vertical cinematic clip showing {{absurd_peak}} in a big, harmless, exaggerated way, camera slowly pulling back to reveal the scale, golden hour light, epic but goofy"
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "turn: snap back to deadpan",
+      "on_screen_text": "Anyway. As promised: {{small_promise}}.",
+      "voiceover": "Anyway. As promised: {{small_promise}}.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Vertical medium shot of one {{brand}} person standing alone in the now-quiet location, straight face to camera, confetti on the ground, calm flat light"
+      }
+    },
+    {
+      "seconds": 3,
+      "purpose": "tag plus CTA",
+      "on_screen_text": "{{offer}}. {{callback_tag}} {{disclosure}}",
+      "voiceover": "{{offer}}. We'll try to keep it reasonable.",
+      "visual": {
+        "tier": "text_only",
+        "prompt": ""
+      }
+    }
+  ],
+  "cta": "{{offer}}. We'll try to keep it reasonable. No promises.",
+  "craft": {
+    "technique": "Escalation ladder with a deadpan snap-back",
+    "notes": "Setup: one small, true promise, and the warning that it got out of hand, which tells the audience to expect a ladder. Escalation: four steps, each the same length and framing but bigger, from reasonable to a bit much to way too far to the absurd peak; the pace stays fixed so the size does the work. Turn: smash cut to silence and a single person delivering 'Anyway' straight to camera; the drop in scale is the laugh. Tag: a deadpan line that calls back to one escalation step (the callback_tag, e.g. 'Drumline not included.'). Timing: steps one to three are exactly 3 seconds each so the rhythm is a drumbeat; the peak gets 5 seconds to breathe; cut out the music on the frame before 'Anyway' and hold that silence for a half second."
+  },
+  "do_not": [
+    "Make any escalation step dangerous, illegal or something viewers would copy",
+    "Escalate at a rival team, artist or business; the ladder only climbs on the brand's own effort",
+    "Speed up the steps; the even rhythm is the joke",
+    "Forget to state the real promise again at the snap-back"
+  ],
+  "compliance": [
+    "Fitness trainers: no escalation step may show or promise a body, weight or performance result, and no step may involve unsafe exercise; results vary, and no step may read as a guarantee",
+    "Sports teams: no real league, rival team or player likeness without permission",
+    "Every escalation step must be safe and legal; nothing a viewer could copy that is dangerous"
+  ]
+}

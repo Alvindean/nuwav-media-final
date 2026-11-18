@@ -1,0 +1,151 @@
+{
+  "id": "lists-003-tier-list-tribunal",
+  "version": 1,
+  "name": "The Tier List Tribunal",
+  "category": "lists",
+  "format": "reel",
+  "goal": "engagement",
+  "duration_seconds": 21,
+  "aspect_ratio": "9:16",
+  "best_for": [
+    "fitness trainer",
+    "podcast",
+    "sports team",
+    "skincare brand",
+    "coffee shop",
+    "lowrider car club"
+  ],
+  "why_it_works": "Tier lists invite disagreement, and disagreement is comments. Placing a popular choice in a low tier gives viewers something to argue about, while the expert reasoning makes {{brand}} the authority. The format also rewards rewatching to see where each item landed.",
+  "hook": {
+    "pattern": "Start with a controversial placement already on the board, then defend it.",
+    "examples": [
+      "I put {{hot_take_item}} in D tier. Let me explain.",
+      "Every {{topic}}, ranked S to F. Disagree below.",
+      "Unpopular verdict: {{hot_take_item}} lands in D."
+    ]
+  },
+  "variables": [
+    {
+      "name": "brand",
+      "description": "Creator or business name",
+      "example": "Coach Dani Fitness"
+    },
+    {
+      "name": "topic",
+      "description": "What is being ranked",
+      "example": "cardio machine"
+    },
+    {
+      "name": "s_tier_item",
+      "description": "The top pick",
+      "example": "incline treadmill walk"
+    },
+    {
+      "name": "s_tier_reason",
+      "description": "Why it is S tier; reads after \"because it's\", 6 words or fewer",
+      "example": "low impact, easy to repeat daily"
+    },
+    {
+      "name": "a_tier_item",
+      "description": "A solid but not perfect pick",
+      "example": "rowing machine"
+    },
+    {
+      "name": "hot_take_item",
+      "description": "A popular choice you rank low; 3 words or fewer",
+      "example": "the elliptical"
+    },
+    {
+      "name": "hot_take_reason",
+      "description": "Why it ranks low, one honest line that reads after \"Honestly,\"; 8 words or fewer",
+      "example": "it feels hard but asks little of you"
+    },
+    {
+      "name": "f_tier_item",
+      "description": "The bottom pick",
+      "example": "vibration plates"
+    },
+    {
+      "name": "disclosure",
+      "description": "Required fine print for the client's niche, from compliance/packs.json",
+      "example": "Results vary. These statements have not been evaluated by the FDA."
+    }
+  ],
+  "beats": [
+    {
+      "seconds": 3,
+      "purpose": "hook: the controversial placement",
+      "on_screen_text": "D tier: {{hot_take_item}}.",
+      "voiceover": "I put {{hot_take_item}} in D tier. Let me explain.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Vertical tier list board with S, A, B, C, D, F rows in bold colors, a single card labeled {{hot_take_item}} already sitting in D, bright flat studio light, 9:16"
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "S tier",
+      "on_screen_text": "S: {{s_tier_item}}",
+      "voiceover": "S tier: {{s_tier_item}}, because it's {{s_tier_reason}}.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Clean vertical photo of {{s_tier_item}} in a real setting connected to {{brand}}, crisp light, gold S badge in the top corner"
+      }
+    },
+    {
+      "seconds": 3,
+      "purpose": "A tier",
+      "on_screen_text": "A: {{a_tier_item}}",
+      "voiceover": "A tier: {{a_tier_item}}. Great, with one catch.",
+      "visual": {
+        "tier": "text_only",
+        "prompt": ""
+      }
+    },
+    {
+      "seconds": 5,
+      "purpose": "the hot take defended",
+      "on_screen_text": "D tier: {{hot_take_item}}",
+      "voiceover": "And {{hot_take_item}}? Honestly, {{hot_take_reason}}.",
+      "visual": {
+        "tier": "clip_draft",
+        "prompt": "A card labeled {{hot_take_item}} slides down the tier board from A to D, simple motion graphic feel, bold colors, vertical 9:16"
+      }
+    },
+    {
+      "seconds": 3,
+      "purpose": "F tier",
+      "on_screen_text": "F: {{f_tier_item}}",
+      "voiceover": "F tier: {{f_tier_item}}. Skip it.",
+      "visual": {
+        "tier": "still",
+        "prompt": "{{f_tier_item}} on a plain gray background with a red F stamp, flat light, vertical"
+      }
+    },
+    {
+      "seconds": 3,
+      "purpose": "real question and call to action",
+      "on_screen_text": "Where would you put it? {{disclosure}}",
+      "voiceover": "Where would you put {{hot_take_item}}? Comment below.",
+      "visual": {
+        "tier": "text_only",
+        "prompt": ""
+      }
+    }
+  ],
+  "cta": "Drop your tier list in the comments and follow {{brand}} for part two.",
+  "craft": {
+    "technique": "Open on the verdict, then the trial",
+    "notes": "Show the most arguable placement in frame one so the viewer is already reacting before you speak. The reason for the low rank must be fair and specific; a cheap shot reads as clickbait, a sharp reason reads as expertise. End with a question, not a statement."
+  },
+  "do_not": [
+    "Put a named real brand or product in a low tier",
+    "Give the hot take no reason; it reads as rage bait",
+    "Rank more than five or six items in under 25 seconds"
+  ],
+  "compliance": [
+    "Skincare and fitness claims: no promises of medical or weight-loss results; rank on experience and ease, not health outcomes",
+    "Fitness: no unrealistic body images or shaming language about anyone who uses a low-tier option",
+    "Fitness and skincare: results vary; no guarantee of any body or skin result, no FDA-style treatment or disease claims, and show the disclosure line on screen"
+  ]
+}

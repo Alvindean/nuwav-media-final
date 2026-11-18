@@ -1,0 +1,142 @@
+{
+  "id": "gamification-010-decode-the-emojis",
+  "version": 1,
+  "name": "Decode the Emojis",
+  "category": "gamification",
+  "format": "reel",
+  "goal": "awareness",
+  "duration_seconds": 20,
+  "aspect_ratio": "9:16",
+  "best_for": [
+    "podcast",
+    "independent musician",
+    "sports team",
+    "UGC creator",
+    "bookstore"
+  ],
+  "why_it_works": "A row of emojis is a rebus anyone can try, and cracking it gives a quick hit of 'I got it'. Because the answer is the title of something coming next, every guess makes people think about the upcoming release, and the hint pulls them back for the reveal.",
+  "hook": {
+    "pattern": "Flash a row of emojis that spell out a coming title and dare viewers to decode it.",
+    "examples": [
+      "Decode these emojis. Name our next {{answer_type}}.",
+      "A few emojis. One title. Can you crack it?",
+      "{{emoji_clue}} Crack it before {{deadline}}."
+    ]
+  },
+  "variables": [
+    {
+      "name": "brand",
+      "description": "Show, artist, team or shop name",
+      "example": "Back Booth Radio"
+    },
+    {
+      "name": "emoji_clue",
+      "description": "Three to five emojis that spell out the title, added in the edit as an on-screen overlay; check they render on iPhone and Android",
+      "example": "🎙️ 5️⃣0️⃣ 🎉"
+    },
+    {
+      "name": "answer_type",
+      "description": "What the title belongs to, one word",
+      "example": "episode"
+    },
+    {
+      "name": "hint",
+      "description": "One fair hint, 6 words or fewer",
+      "example": "a big number for a small show"
+    },
+    {
+      "name": "feature_prize",
+      "description": "What the drawn winner gets, value stated in the official rules, 5 words or fewer",
+      "example": "a shout-out on Episode 50"
+    },
+    {
+      "name": "deadline",
+      "description": "When guesses close and the answer drops, 4 words or fewer",
+      "example": "Thursday at midnight"
+    },
+    {
+      "name": "disclosure",
+      "description": "Required fine print: the giveaway line from compliance/packs.json, plus the client's niche line if regulated",
+      "example": "No purchase necessary. Official rules at link."
+    }
+  ],
+  "beats": [
+    {
+      "seconds": 3,
+      "purpose": "hook: the emojis appear as an overlay",
+      "on_screen_text": "{{emoji_clue}}",
+      "voiceover": "Decode these emojis. Go.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Vertical 9:16 flat {{brand}} color background with soft paper texture, empty center left clear for the emoji overlay, no text or symbols"
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "what the answer is",
+      "on_screen_text": "It's our next {{answer_type}} title.",
+      "voiceover": "It's the title of our next {{answer_type}}.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Vertical 9:16 moody shot of the {{brand}} workspace, one warm practical lamp, a blank title card on the desk, soft haze"
+      }
+    },
+    {
+      "seconds": 3,
+      "purpose": "one fair hint",
+      "on_screen_text": "Hint: {{hint}}",
+      "voiceover": "One hint: {{hint}}.",
+      "visual": {
+        "tier": "text_only",
+        "prompt": ""
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "thinking time",
+      "on_screen_text": "{{emoji_clue}} Comment your guess.",
+      "voiceover": "Comment your full guess before {{deadline}}.",
+      "visual": {
+        "tier": "still",
+        "prompt": "The same flat {{brand}} color background with a faint question mark shape behind the overlay area, no text or emojis drawn, vertical 9:16"
+      }
+    },
+    {
+      "seconds": 3,
+      "purpose": "how the winner is picked",
+      "on_screen_text": "Right answers go in a random draw.",
+      "voiceover": "Every right answer goes in a random draw.",
+      "visual": {
+        "tier": "text_only",
+        "prompt": ""
+      }
+    },
+    {
+      "seconds": 3,
+      "purpose": "the prize",
+      "on_screen_text": "Prize: {{feature_prize}}. {{disclosure}}",
+      "voiceover": "The winner gets {{feature_prize}}.",
+      "visual": {
+        "tier": "text_only",
+        "prompt": ""
+      }
+    }
+  ],
+  "cta": "Comment your guess by {{deadline}}. One right answer, drawn at random, gets {{feature_prize}} from {{brand}}. Official rules in our bio.",
+  "craft": {
+    "technique": "Rebus decode",
+    "notes": "Aim for a puzzle about one in five people crack: one emoji should be literal, one a pun, one a number. The emojis are always a text overlay in the edit, never drawn by an image or video model. Post the answer and the screen-recorded draw together so the follow-up is its own piece of content."
+  },
+  "do_not": [
+    "Use emojis that only render on one kind of phone",
+    "Make it so obscure nobody gets it; nobody comments on a dead end",
+    "Pick the winner by likes, favorites or follower count"
+  ],
+  "compliance": [
+    "Contest rules: link official rules with eligibility, start and end dates, how the winner is picked (random draw from correct answers) and prize value",
+    "No purchase necessary; void where prohibited",
+    "Say the contest is not sponsored or run by the platform",
+    "Pick the winner by random draw only, never by likes, and screen-record the draw",
+    "Get the winner's permission before showing their name or handle"
+  ]
+}

@@ -1,0 +1,121 @@
+{
+  "id": "songwriting-004-chorus-before-hello",
+  "version": 1,
+  "name": "Chorus Before Hello",
+  "category": "songwriting",
+  "format": "reel",
+  "goal": "awareness",
+  "duration_seconds": 15,
+  "aspect_ratio": "9:16",
+  "best_for": [
+    "independent musician",
+    "indie label",
+    "songwriter",
+    "producer",
+    "worship leader"
+  ],
+  "why_it_works": "Most artist promos open with a pitch; this opens with the best eight seconds of the song. The ear decides in two seconds whether to stay, so leading with the chorus gives the song its only real chance, and the release date rides on a feeling already earned.",
+  "hook": {
+    "pattern": "Drop straight into the loudest line of the chorus, title in the first three seconds, no talking.",
+    "examples": [
+      "{{song_title}}. That's the whole pitch.",
+      "Chorus first, hello second: {{song_title}}.",
+      "Eight seconds of {{song_title}}. Out {{release_date}}."
+    ]
+  },
+  "variables": [
+    {
+      "name": "artist_name",
+      "description": "Artist or band name",
+      "example": "Rae Calder"
+    },
+    {
+      "name": "song_title",
+      "description": "Song title, as sung in the chorus",
+      "example": "Paper Crowns"
+    },
+    {
+      "name": "chorus_line",
+      "description": "The single best chorus line containing the title, capitalized, one breath, 10 syllables or fewer",
+      "example": "We wore paper crowns and called it gold"
+    },
+    {
+      "name": "story_line",
+      "description": "One honest spoken sentence about where the song came from, capitalized, 12 words or fewer",
+      "example": "Wrote it in my car after my last shift"
+    },
+    {
+      "name": "story_scene",
+      "description": "The place the song was written, as an object scene with no people",
+      "example": "a parked car at night with a notebook and phone on the dashboard"
+    },
+    {
+      "name": "release_date",
+      "description": "Release date, 4 words or fewer",
+      "example": "Friday, March 6"
+    }
+  ],
+  "beats": [
+    {
+      "seconds": 3,
+      "purpose": "hook: chorus already in, title on screen",
+      "on_screen_text": "{{song_title}}",
+      "voiceover": "",
+      "visual": {
+        "tier": "real_photo",
+        "prompt": "Real performance footage of {{artist_name}} singing full voice, single hard spotlight, vertical crop"
+      }
+    },
+    {
+      "seconds": 5,
+      "purpose": "chorus continues with lyric on screen",
+      "on_screen_text": "{{chorus_line}}",
+      "voiceover": "",
+      "visual": {
+        "tier": "real_photo",
+        "prompt": "Real close-up performance footage of {{artist_name}} mid-note, lyric space in the lower third"
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "music dips, one honest line",
+      "on_screen_text": "{{story_line}}",
+      "voiceover": "{{story_line}}.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Vertical quiet still-life photo of {{story_scene}}, soft practical light, film grain, real and unstaged"
+      }
+    },
+    {
+      "seconds": 3,
+      "purpose": "release card",
+      "on_screen_text": "{{song_title}} | {{release_date}}",
+      "voiceover": "{{song_title}}. {{release_date}}.",
+      "visual": {
+        "tier": "text_only",
+        "prompt": ""
+      }
+    }
+  ],
+  "cta": "Pre-save {{song_title}} by {{artist_name}}, out {{release_date}}.",
+  "music": {
+    "tier": "music",
+    "bpm": 110,
+    "feel": "filtered ambient pad bed under the spoken line, matched to the master's key and tempo",
+    "vocals": false
+  },
+  "craft": {
+    "technique": "Cold-open chorus (hook-first edit)",
+    "notes": "The chorus audio is the artist's own master; the music block only generates the short filtered pad under the spoken story line, so set bpm to the master's real tempo. Start the master just before the chorus downbeat so the first word the viewer hears is the title. Choose the chorus line where the title repeats or sits at the end of the phrase; a line with an internal rhyme (crowns / down, gold / told) gives the ear a second hook. Cut to the pad for the spoken line, then bring the master back for the release card. Beat seconds are a guide (about ±1s): the edit is cut to the master's phrasing, not to exact bars. Works best on 90-130 BPM tracks with a big chorus lift."
+  },
+  "do_not": [
+    "Open with 'Hey guys, new song coming out'",
+    "Use an intro or verse; only the strongest chorus line earns the first 3 seconds",
+    "Describe the song as sounding like a named famous artist",
+    "Use an AI-generated version of the artist; real performance footage only"
+  ],
+  "compliance": [
+    "Artist footage and photos are real and supplied by the artist; never generate the artist's face, body or voice",
+    "Use only a master the artist owns or has cleared for ads"
+  ]
+}

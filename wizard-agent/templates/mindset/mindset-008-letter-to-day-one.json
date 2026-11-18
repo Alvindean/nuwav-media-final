@@ -1,0 +1,135 @@
+{
+  "id": "mindset-008-letter-to-day-one",
+  "version": 1,
+  "name": "Letter to Day-One Me",
+  "category": "mindset",
+  "format": "reel",
+  "goal": "trust",
+  "duration_seconds": 27,
+  "aspect_ratio": "9:16",
+  "best_for": [
+    "restaurant",
+    "independent record label",
+    "UGC creator",
+    "apparel brand",
+    "barber"
+  ],
+  "why_it_works": "Advice addressed to your younger self is disarming: it lets an owner share hard lessons without bragging or preaching. Viewers who are early in their own journey see themselves as the reader, and everyone else gets an honest origin story, which builds loyalty faster than a list of wins.",
+  "hook": {
+    "pattern": "Open with a handwritten letter addressed to the owner on their first day, read aloud in their voice.",
+    "examples": [
+      "Dear day-one me: you're wrong about {{early_mistake}}.",
+      "A letter to me, the day {{brand}} opened.",
+      "If I could send one note back to {{start_year}}..."
+    ]
+  },
+  "variables": [
+    {
+      "name": "brand",
+      "description": "Business, label or creator name",
+      "example": "Low Tide Records"
+    },
+    {
+      "name": "start_year",
+      "description": "The year it started",
+      "example": "2019"
+    },
+    {
+      "name": "early_mistake",
+      "description": "The thing they believed at the start that turned out wrong, lowercase, 4 words or fewer",
+      "example": "chasing every playlist"
+    },
+    {
+      "name": "lesson_one",
+      "description": "First hard lesson, lowercase, 10 words or fewer",
+      "example": "ten real fans who show up beat ten thousand who scroll"
+    },
+    {
+      "name": "lesson_two",
+      "description": "Second hard lesson, lowercase, 10 words or fewer",
+      "example": "say no to deals you have to explain to yourself"
+    },
+    {
+      "name": "still_true",
+      "description": "The thing day-one them got right, lowercase, 10 words or fewer",
+      "example": "you were right to put the artist first"
+    },
+    {
+      "name": "invite",
+      "description": "The call to action, starting with a capital-letter verb, 6 words or fewer",
+      "example": "Come to the next listening night"
+    }
+  ],
+  "beats": [
+    {
+      "seconds": 3,
+      "purpose": "hook: the letter",
+      "on_screen_text": "Dear me, day one:",
+      "voiceover": "Dear me, on day one at {{brand}}.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Vertical 9:16 top-down photo of a handwritten letter on lined paper starting 'Dear me,' with a pen beside it on a worn workbench, warm desk lamp light, intimate mood"
+      }
+    },
+    {
+      "seconds": 5,
+      "purpose": "the early mistake",
+      "on_screen_text": "You're wrong about {{early_mistake}}.",
+      "voiceover": "You're wrong about {{early_mistake}}. I know. I was you.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Vertical 9:16 photo styled as an old snapshot from {{start_year}}: the early, scrappy version of {{brand}}, mismatched furniture, harsh flash, slightly faded colors, no faces in focus"
+      }
+    },
+    {
+      "seconds": 6,
+      "purpose": "lesson one",
+      "on_screen_text": "Lesson one: {{lesson_one}}",
+      "voiceover": "You'll learn it the hard way: {{lesson_one}}.",
+      "visual": {
+        "tier": "clip_draft",
+        "prompt": "Vertical 9:16 slow handheld shot inside today's {{brand}}, a small real crowd or customers engaged, warm practical lights, candid and imperfect"
+      }
+    },
+    {
+      "seconds": 5,
+      "purpose": "lesson two",
+      "on_screen_text": "Lesson two: {{lesson_two}}",
+      "voiceover": "Lesson two: {{lesson_two}}.",
+      "visual": {
+        "tier": "text_only",
+        "prompt": ""
+      }
+    },
+    {
+      "seconds": 5,
+      "purpose": "what they got right",
+      "on_screen_text": "But {{still_true}}.",
+      "voiceover": "But {{still_true}}. Keep that.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Vertical 9:16 portrait of the founder of {{brand}} today in their space, gentle smile, soft window light, looking slightly off camera, reflective"
+      }
+    },
+    {
+      "seconds": 3,
+      "purpose": "sign off and invite",
+      "on_screen_text": "{{invite}}",
+      "voiceover": "Signed, me. Now. {{invite}}.",
+      "visual": {
+        "tier": "text_only",
+        "prompt": ""
+      }
+    }
+  ],
+  "cta": "{{invite}} with {{brand}}.",
+  "craft": {
+    "technique": "Epistolary flashback",
+    "notes": "Write it in second person to the past self, never to the viewer, so the advice lands without preaching. Pair every lesson with a visual from 'then' or 'now' so the timeline is clear. The 'what you got right' beat keeps it from being a list of regrets."
+  },
+  "do_not": [
+    "Turn the letter into a humblebrag about revenue",
+    "Invent hardship that didn't happen",
+    "Use a real person's photo from the past without their consent"
+  ]
+}

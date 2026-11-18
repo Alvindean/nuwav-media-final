@@ -1,0 +1,113 @@
+{
+  "id": "story-009-keys-on-try-three",
+  "version": 1,
+  "name": "Keys on Try Three",
+  "category": "story",
+  "format": "carousel",
+  "goal": "leads",
+  "aspect_ratio": "4:5",
+  "best_for": [
+    "real estate agent",
+    "mortgage broker",
+    "financial advisor",
+    "insurance agency",
+    "credit union"
+  ],
+  "why_it_works": "Buyers who were turned down feel alone and ashamed. A story with two failures before the yes gives them permission to try again, and puts the professional in the role of the guide who kept going. Counting the tries makes progress visible.",
+  "hook": {
+    "pattern": "Slide one names the number of rejections before the keys, as a count.",
+    "examples": [
+      "Two no's. Then keys.",
+      "{{buyer_label}} heard no twice.",
+      "Try one. Try two. Try three: keys."
+    ]
+  },
+  "variables": [
+    {
+      "name": "brand",
+      "description": "Agent, team or company name",
+      "example": "Northline Home Group"
+    },
+    {
+      "name": "buyer_label",
+      "description": "How the buyers are described, anonymized or with consent",
+      "example": "A nurse and a first-time dad"
+    },
+    {
+      "name": "try_one",
+      "description": "What happened on the first try",
+      "example": "outbid by $22,000 on a house they loved"
+    },
+    {
+      "name": "try_two",
+      "description": "What happened on the second try",
+      "example": "the loan fell through a week before closing"
+    },
+    {
+      "name": "what_changed",
+      "description": "The concrete thing that changed before try three, a full sentence starting with a capital letter, no end punctuation",
+      "example": "We rebuilt the offer around a later move-in date the seller needed"
+    },
+    {
+      "name": "offer",
+      "description": "What viewers can do next, starting with a capital letter",
+      "example": "Book a free 20-minute buyer plan call"
+    },
+    {
+      "name": "disclosure",
+      "description": "Required fine print for the client's niche, from compliance/packs.json, shown as small on-screen text",
+      "example": "Equal Housing Opportunity. Bayline Realty, DRE #01234567."
+    }
+  ],
+  "cta": "{{offer}}.",
+  "carousel": {
+    "slides": [
+      {
+        "headline": "Two no's. Then keys.",
+        "body": "{{buyer_label}}. Their story in three tries.",
+        "visual_prompt": "4:5 close-up of a hand holding a new house key on a simple keyring, blurred front door behind, soft morning light"
+      },
+      {
+        "headline": "Try one",
+        "body": "First, {{try_one}}.",
+        "visual_prompt": "4:5 photo of a for-sale sign with a sold rider in front of a modest house, overcast sky, muted colors"
+      },
+      {
+        "headline": "Try two",
+        "body": "Then {{try_two}}.",
+        "visual_prompt": "4:5 photo of a kitchen table with paperwork and a closed laptop, evening light, two coffee mugs, quiet"
+      },
+      {
+        "headline": "What changed",
+        "body": "{{what_changed}}.",
+        "visual_prompt": "4:5 photo of an agent's hands pointing at a printed plan on a table, warm office light, no buyer faces"
+      },
+      {
+        "headline": "Try three",
+        "body": "Keys in hand.",
+        "visual_prompt": "Client-supplied photo of the real buyers at their new door, with written consent; for a composite story, an empty open front door in golden light, no people"
+      },
+      {
+        "headline": "On try one or two?",
+        "body": "{{offer}} with {{brand}}. {{disclosure}}",
+        "visual_prompt": "4:5 branded card in {{brand}} colors with the offer and license number in clear type"
+      }
+    ]
+  },
+  "craft": {
+    "technique": "Rule of three with a counted structure",
+    "notes": "Label each attempt as 'Try one', 'Try two' so the swipe has rhythm. Keep the failures specific and short. The 'what changed' slide is the professional's real value, shown as a decision, not a boast. The win slide is one word."
+  },
+  "do_not": [
+    "Promise approval or a winning bid",
+    "Shame the buyers for the failed tries",
+    "Show the buyers' faces or address without written consent"
+  ],
+  "compliance": [
+    "Real estate: include brokerage name and license number on the final slide as your state requires; follow fair housing rules, no language about who belongs in a neighborhood",
+    "Mortgage: no promise of approval or specific rates; include NMLS ID and Equal Housing Lender/Opportunity logo where required",
+    "Financial and insurance: no guarantee of outcomes or savings",
+    "Composite or anonymized stories must say so on the first or last slide",
+    "Real buyers appear only in client-supplied photos with written consent; never generate faces to stand in for them"
+  ]
+}

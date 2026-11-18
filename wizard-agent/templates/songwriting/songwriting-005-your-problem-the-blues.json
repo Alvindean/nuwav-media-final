@@ -1,0 +1,198 @@
+{
+  "id": "songwriting-005-your-problem-the-blues",
+  "version": 1,
+  "name": "Your Problem, the Blues",
+  "category": "songwriting",
+  "format": "both",
+  "goal": "leads",
+  "duration_seconds": 21,
+  "aspect_ratio": "9:16",
+  "best_for": [
+    "auto shop",
+    "insurance agency",
+    "mortgage broker",
+    "personal injury law firm",
+    "dental office"
+  ],
+  "why_it_works": "Everyone already sings about their problems in their head. Turning the customer's exact frustration into a slow blues makes them laugh and feel seen at once, and the blues shape (the problem, the problem again, then a worse twist) promises a resolution, which is where {{brand}} walks in.",
+  "hook": {
+    "pattern": "Sing the customer's everyday frustration in a dead-serious blues voice; the mismatch between drama and problem stops the scroll.",
+    "examples": [
+      "I got the {{pain_short}} blues.",
+      "A slow blues for anyone with {{pain_short}} trouble.",
+      "Every {{pain_short}} problem deserves a proper blues song."
+    ]
+  },
+  "variables": [
+    {
+      "name": "brand",
+      "description": "Business name as sung, 4 syllables or fewer (use a short form if needed)",
+      "example": "Ramos Auto"
+    },
+    {
+      "name": "pain_short",
+      "description": "Two-to-four-syllable lowercase label for the problem, used in 'the ___ blues'",
+      "example": "check-engine"
+    },
+    {
+      "name": "pain_point",
+      "description": "The everyday problem in the customer's words, capitalized, one breath, 8 syllables or fewer",
+      "example": "My check-engine light won't quit"
+    },
+    {
+      "name": "pain_detail",
+      "description": "A specific, relatable detail that makes it worse and rhymes with the pain point, capitalized, 9 syllables or fewer",
+      "example": "Last shop shrugged and charged me for it"
+    },
+    {
+      "name": "pain_scene",
+      "description": "The problem as one picture with no faces",
+      "example": "a glowing orange check-engine light on a dark dashboard"
+    },
+    {
+      "name": "fix_line",
+      "description": "The plain promise of what the business does, lowercase, true and provable, 8 words or fewer",
+      "example": "we show you the problem before we fix it"
+    },
+    {
+      "name": "pro_tip",
+      "description": "One save-worthy, general tip from the business, capitalized, 25 words or fewer, not personal advice",
+      "example": "A flashing check-engine light means pull over soon. A steady one means book a check this week."
+    },
+    {
+      "name": "offer",
+      "description": "Low-risk next step, capitalized, 6 words or fewer because it is spoken in 2 seconds",
+      "example": "Free diagnostic this month"
+    },
+    {
+      "name": "disclosure",
+      "description": "Fine-print line from the compliance pack that matches the client's niche, shown small on screen",
+      "example": "Not financial advice. Terms apply."
+    }
+  ],
+  "beats": [
+    {
+      "seconds": 3,
+      "purpose": "hook: three-beat pickup into bar 1",
+      "on_screen_text": "The {{pain_short}} blues",
+      "voiceover": "I got the {{pain_short}} blues.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Vertical 9:16 photo of a frustrated person slumped at a kitchen table at dawn, head in hands, cool blue light, moody and cinematic"
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "bar 1, line A: the pain",
+      "on_screen_text": "{{pain_point}}",
+      "voiceover": "{{pain_point}}.",
+      "visual": {
+        "tier": "clip_draft",
+        "prompt": "Vertical slow zoom on {{pain_scene}}, shallow focus, blue tint, 9:16"
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "bar 2, line A repeated, sung harder",
+      "on_screen_text": "{{pain_point}}. Again.",
+      "voiceover": "{{pain_point}}...",
+      "visual": {
+        "tier": "still",
+        "prompt": "Same person now dramatically singing to the ceiling, blues club spotlight gag in a plain kitchen, vertical"
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "bar 3, line B: the twist detail",
+      "on_screen_text": "{{pain_detail}}",
+      "voiceover": "{{pain_detail}}.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Vertical photo of an empty wallet held upside down, a single coin falling, warm desk lamp light"
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "bar 4, turnaround: the brand enters, chord goes major",
+      "on_screen_text": "{{brand}}: {{fix_line}}",
+      "voiceover": "Then I found {{brand}}.",
+      "visual": {
+        "tier": "real_photo",
+        "prompt": "Client-supplied photo of the real {{brand}} team helping someone, bright daylight, brand colors"
+      }
+    },
+    {
+      "seconds": 2,
+      "purpose": "ring-out: CTA over the held major chord (half a bar)",
+      "on_screen_text": "{{offer}} {{disclosure}}",
+      "voiceover": "{{offer}}.",
+      "visual": {
+        "tier": "text_only",
+        "prompt": ""
+      }
+    }
+  ],
+  "cta": "Stop singing the blues: {{offer}} at {{brand}}.",
+  "music": {
+    "tier": "music",
+    "bpm": 60,
+    "feel": "slow 12/8 blues shuffle, slide guitar and harmonica, bright major final chord",
+    "vocals": true
+  },
+  "carousel": {
+    "slides": [
+      {
+        "headline": "The {{pain_short}} blues",
+        "body": "A four-bar blues about a problem you know. Swipe if you've lived it.",
+        "visual_prompt": "Moody title slide, old blues record label design with the title, deep blue tones"
+      },
+      {
+        "headline": "Bars 1 and 2",
+        "body": "{{pain_point}}. Sing it twice, the second time harder.",
+        "visual_prompt": "Person staring at the problem in blue morning light, vertical, film grain"
+      },
+      {
+        "headline": "Bar 3: it gets worse",
+        "body": "{{pain_detail}}.",
+        "visual_prompt": "Empty wallet or stack of confusing paperwork on a table, warm lamp"
+      },
+      {
+        "headline": "Why the blues shape works",
+        "body": "Say the {{pain_short}} problem, say it again, then twist it. The repeat sets up the twist, so bar 3 stings twice as hard.",
+        "visual_prompt": "Blues lyric sheet on a worn music stand, lines one and two marked A and A, line three marked B in red ink, blue lamp light"
+      },
+      {
+        "headline": "One tip from {{brand}}",
+        "body": "{{pro_tip}}",
+        "visual_prompt": "Simple tip card with a lightbulb icon, brand colors, plenty of space for text"
+      },
+      {
+        "headline": "Bar 4: the chord goes major",
+        "body": "{{brand}}: {{fix_line}}.",
+        "visual_prompt": "Bright warm client-supplied photo of the {{brand}} team at work, brand colors"
+      },
+      {
+        "headline": "End the song",
+        "body": "{{offer}} at {{brand}}. {{disclosure}}",
+        "visual_prompt": "Clean end card with {{brand}} logo and the offer, brand colors"
+      }
+    ]
+  },
+  "craft": {
+    "technique": "Compressed 4-bar AAB blues with a major turnaround",
+    "notes": "The 12-bar AAB shape squeezed to one bar per line. At 60 BPM one bar of 4 is about 4 seconds: a three-beat pickup (3s) carries the hook, bar 1 states the problem (A), bar 2 repeats it harder (A), bar 3 twists it with a worse detail that rhymes with A (B), bar 4 is the turnaround where the brand enters and the chord goes from dominant to bright major, then the CTA rides a half-bar ring-out (2s): 3 + 16 + 2 = 21 seconds. Aim the pain word at the start of each bar and keep each sung line to one breath, about 8 syllables. Beat seconds are a guide (about ±1s): the edit is cut to the track. Tempo/feel: 60 BPM slow 12/8 shuffle, slide guitar or harmonica, a quick drum fill into the major bar."
+  },
+  "do_not": [
+    "Mock the customer; laugh at the problem, not the person",
+    "Name or imply a specific real competitor as the 'last shop'",
+    "Promise a fix, outcome or price you can't guarantee"
+  ],
+  "compliance": [
+    "Law firms: no guarantees or implied outcomes ('we'll win your case'); include required attorney-advertising disclaimer and follow your state bar rules",
+    "Insurance and mortgage: no promised rates, approvals or savings amounts; include license number (NMLS for mortgage) and 'terms and eligibility apply'",
+    "Dental: do not guarantee pain-free or specific results; pain points must not reveal any real patient's information",
+    "The tip slide is general information, not legal, financial or medical advice, and says so where the niche requires it",
+    "Team photos are real staff, client-supplied, with consent; never a generated person shown as staff",
+    "Show the {{disclosure}} fine print for the client's niche on the CTA beat and the last slide (financial, legal or medical pack line)"
+  ]
+}

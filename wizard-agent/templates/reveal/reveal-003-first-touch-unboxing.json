@@ -1,0 +1,125 @@
+{
+  "id": "reveal-003-first-touch-unboxing",
+  "version": 1,
+  "name": "The First-Touch Unboxing",
+  "category": "reveal",
+  "format": "reel",
+  "goal": "sales",
+  "duration_seconds": 18,
+  "aspect_ratio": "9:16",
+  "best_for": [
+    "jewelry brand",
+    "skincare brand",
+    "apparel brand",
+    "luxury brand",
+    "supplement brand"
+  ],
+  "why_it_works": "Unboxing lets the viewer borrow the feeling of receiving a gift. Slowing down each layer (ribbon, tissue, note) builds anticipation, and seeing the product touch skin or fabric at the end makes it feel already theirs.",
+  "hook": {
+    "pattern": "Open on the sealed package with a sensory sound and a promise about what is inside.",
+    "examples": [
+      "The box is half the gift. Look inside.",
+      "This is what {{brand}} sends when you order.",
+      "Unboxing our {{product}} like it's your first time."
+    ]
+  },
+  "variables": [
+    {
+      "name": "brand",
+      "description": "Brand name",
+      "example": "Sola Botanica"
+    },
+    {
+      "name": "product",
+      "description": "The product being unboxed",
+      "example": "overnight renewal serum"
+    },
+    {
+      "name": "packaging_detail",
+      "description": "The packaging touch that feels special",
+      "example": "a pressed-flower wax seal"
+    },
+    {
+      "name": "insert_note",
+      "description": "The short message printed inside the box",
+      "example": "Made in small batches, just for you"
+    },
+    {
+      "name": "offer",
+      "description": "First-order offer, starts with a capital letter, 6 words or fewer",
+      "example": "Free gift wrap on first orders"
+    },
+    {
+      "name": "disclosure",
+      "description": "Required fine print for the client's niche, from compliance/packs.json",
+      "example": "Results vary. These statements have not been evaluated by the FDA."
+    }
+  ],
+  "beats": [
+    {
+      "seconds": 2,
+      "purpose": "hook: sealed box",
+      "on_screen_text": "Wait for inside.",
+      "voiceover": "The box is half the gift.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Vertical 9:16 overhead shot of a closed {{brand}} box with {{packaging_detail}} on a linen tablecloth, soft morning window light, minimal props"
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "the slow open",
+      "on_screen_text": "",
+      "voiceover": "Every order ships like this.",
+      "visual": {
+        "tier": "clip_draft",
+        "prompt": "Hands slowly lifting the lid off the {{brand}} box and parting tissue paper, soft window light, overhead locked-off vertical 9:16"
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "the note",
+      "on_screen_text": "\"{{insert_note}}\"",
+      "voiceover": "There's always a note.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Close-up of a small printed card reading the brand note tucked into tissue, warm light, shallow depth of field, vertical 9:16"
+      }
+    },
+    {
+      "seconds": 5,
+      "purpose": "the first touch: product in use",
+      "on_screen_text": "{{product}}",
+      "voiceover": "And then the {{product}}.",
+      "visual": {
+        "tier": "clip_standard",
+        "prompt": "The {{product}} lifted from the box and used for the first time, close-up on hands and texture, soft natural light, slow motion, vertical 9:16"
+      }
+    },
+    {
+      "seconds": 3,
+      "purpose": "call to action",
+      "on_screen_text": "{{offer}} {{disclosure}}",
+      "voiceover": "Get yours. {{offer}}.",
+      "visual": {
+        "tier": "text_only",
+        "prompt": ""
+      }
+    }
+  ],
+  "cta": "Order from {{brand}} today. {{offer}}.",
+  "craft": {
+    "technique": "Layered delay",
+    "notes": "Each layer of packaging is a mini-reveal; give each its own beat and its own sound (crinkle, snap, slide). The product appears only in the final motion beat, in use, never sitting still on a white background."
+  },
+  "do_not": [
+    "Rush the open in one cut; the delay is the point",
+    "Show packaging that customers do not actually receive",
+    "Make skin, health or body claims in the note or voiceover"
+  ],
+  "compliance": [
+    "Supplements: no claims to diagnose, treat, cure or prevent any disease; include the standard FDA disclaimer when any benefit is stated",
+    "Supplements: no before/after body images or weight-loss numbers",
+    "Skincare: cosmetic claims only (looks, feels); no medical claims like 'heals' or 'treats acne' unless the product is approved for it"
+  ]
+}

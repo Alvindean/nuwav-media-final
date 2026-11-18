@@ -1,0 +1,130 @@
+{
+  "id": "reveal-010-silhouette-guest-drop",
+  "version": 1,
+  "name": "Silhouette Guest Drop",
+  "category": "reveal",
+  "format": "reel",
+  "goal": "engagement",
+  "duration_seconds": 18,
+  "aspect_ratio": "9:16",
+  "best_for": [
+    "podcast",
+    "sports team",
+    "independent musician",
+    "business coach",
+    "UGC creator"
+  ],
+  "why_it_works": "A shadow plus two clues turns an announcement into a guessing game, and guesses go in the comments. Every wrong guess is engagement, and the people who guessed right feel smart and share it.",
+  "hook": {
+    "pattern": "Show a backlit silhouette and ask 'Who's on {{show_name}} next?' with the clue count on screen.",
+    "examples": [
+      "Two clues. Guess who's on {{show_name}} next.",
+      "This shadow has a story you haven't heard.",
+      "Our next guest has never told this story on camera."
+    ]
+  },
+  "variables": [
+    {
+      "name": "show_name",
+      "description": "Podcast, team, channel or event name",
+      "example": "Late Shift Podcast"
+    },
+    {
+      "name": "guest_role",
+      "description": "What the guest is known for, no name",
+      "example": "the trainer behind three regional champions"
+    },
+    {
+      "name": "clue_one",
+      "description": "First clue",
+      "example": "went from walk-on to captain"
+    },
+    {
+      "name": "clue_two",
+      "description": "Second clue",
+      "example": "never gave a long interview until now"
+    },
+    {
+      "name": "guest_name",
+      "description": "The guest's name, revealed last (with their consent)",
+      "example": "Coach Renata Vale"
+    },
+    {
+      "name": "air_date",
+      "description": "When it airs or drops",
+      "example": "Thursday 7pm"
+    },
+    {
+      "name": "disclosure",
+      "description": "Required fine print for the client's niche, from compliance/packs.json",
+      "example": "Results not typical. No income is guaranteed."
+    }
+  ],
+  "beats": [
+    {
+      "seconds": 3,
+      "purpose": "hook: the silhouette",
+      "on_screen_text": "Who's next on {{show_name}}?",
+      "voiceover": "Two clues. Guess who's next.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Vertical 9:16 photo of a person in full silhouette against a bright backlit studio wall, haze in the air, no facial features visible, microphone stand in foreground"
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "clue one",
+      "on_screen_text": "Clue 1: {{clue_one}}",
+      "voiceover": "Clue one: {{clue_one}}.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Same silhouette from a slightly lower angle, a single prop hinting at the guest's world, rim light only, vertical 9:16"
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "clue two",
+      "on_screen_text": "Clue 2: {{clue_two}}",
+      "voiceover": "Clue two: {{clue_two}}. Comment your guess.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Tight shot of the silhouette's hands on a desk with a mic, backlight, haze, vertical 9:16"
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "the lights come up",
+      "on_screen_text": "{{guest_name}}",
+      "voiceover": "It's {{guest_name}}, {{guest_role}}.",
+      "visual": {
+        "tier": "real_photo",
+        "prompt": "The guest's own approved photo or footage seated at the mic, lights-up reveal made in the edit with a brightness ramp and slow push-in"
+      }
+    },
+    {
+      "seconds": 3,
+      "purpose": "call to action",
+      "on_screen_text": "{{air_date}} {{disclosure}}",
+      "voiceover": "Full episode {{air_date}}. Follow {{show_name}}.",
+      "visual": {
+        "tier": "text_only",
+        "prompt": ""
+      }
+    }
+  ],
+  "cta": "Comment your guess, then catch {{guest_name}} on {{show_name}} {{air_date}}.",
+  "craft": {
+    "technique": "Shadow and clues",
+    "notes": "Clues should go from vague to specific, and the second clue should make a few viewers certain. Post the reel a day early and pin the first correct comment so the guessing keeps going."
+  },
+  "do_not": [
+    "Generate a face for a real guest; use their own approved photo or footage for the reveal frame",
+    "Tease a guest who has not agreed to the announcement",
+    "Make clues so obscure no one can guess; zero right answers kills the comments"
+  ],
+  "compliance": [
+    "Guests: written consent for their name, face and the announcement date before posting",
+    "Business coaches: no income, revenue or results promises in the clues or the guest intro; any result named is labelled not typical",
+    "Label the generated silhouette scenes as AI-generated where the platform requires it; never generate the guest's face"
+  ]
+}

@@ -1,0 +1,130 @@
+{
+  "id": "reveal-002-primer-to-candy",
+  "version": 1,
+  "name": "Primer to Candy Paint",
+  "category": "reveal",
+  "format": "reel",
+  "goal": "leads",
+  "duration_seconds": 24,
+  "aspect_ratio": "9:16",
+  "best_for": [
+    "lowrider car club",
+    "custom auto body shop",
+    "auto detailing shop",
+    "wheel and paint shop"
+  ],
+  "why_it_works": "A dull, beat-up starting point makes people root for the car. Showing the ugly middle stages proves the work is real and earns the right to the big finish, so the final shine feels deserved instead of staged.",
+  "hook": {
+    "pattern": "Open on the worst angle of the car and state how long it took to fix.",
+    "examples": [
+      "This {{vehicle}} came in rusted. Watch the last shot.",
+      "{{hours}} hours of primer, tape and paint.",
+      "Rust on day one. Watch where it ends."
+    ]
+  },
+  "variables": [
+    {
+      "name": "shop_name",
+      "description": "Shop or club name",
+      "example": "Eastside Kustoms"
+    },
+    {
+      "name": "vehicle",
+      "description": "Year and model, or a plain description",
+      "example": "1964 hardtop"
+    },
+    {
+      "name": "finish",
+      "description": "The final paint or finish",
+      "example": "candy apple red with gold leaf pinstripes"
+    },
+    {
+      "name": "hours",
+      "description": "Real hours spent on the build",
+      "example": "212"
+    },
+    {
+      "name": "offer",
+      "description": "What the viewer can book",
+      "example": "free paint consult this month"
+    }
+  ],
+  "beats": [
+    {
+      "seconds": 3,
+      "purpose": "hook: the sad before",
+      "on_screen_text": "{{hours}} hours. Watch.",
+      "voiceover": "This {{vehicle}} came in like this.",
+      "visual": {
+        "tier": "real_photo",
+        "prompt": "Client-supplied photo of this real {{vehicle}} as it arrived, faded and rust-spotted, vertical"
+      }
+    },
+    {
+      "seconds": 5,
+      "purpose": "the grind: real work",
+      "on_screen_text": "Stripped to metal",
+      "voiceover": "First we took it back to bare metal.",
+      "visual": {
+        "tier": "real_photo",
+        "prompt": "Client-supplied footage of the real sanding work on this {{vehicle}}, sparks and dust, vertical"
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "the ugly middle",
+      "on_screen_text": "Primer stage",
+      "voiceover": "Then primer. This is the part nobody posts.",
+      "visual": {
+        "tier": "real_photo",
+        "prompt": "Client-supplied photo of the same {{vehicle}} in grey primer with masking lines, vertical"
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "the build-up of layers",
+      "on_screen_text": "Coat after coat",
+      "voiceover": "Then coat after coat of {{finish}}.",
+      "visual": {
+        "tier": "real_photo",
+        "prompt": "Client-supplied photo of the painter spraying this {{vehicle}} in the paint booth, vertical"
+      }
+    },
+    {
+      "seconds": 5,
+      "purpose": "the reveal",
+      "on_screen_text": "{{finish}}",
+      "voiceover": "",
+      "visual": {
+        "tier": "real_photo",
+        "prompt": "Client-supplied footage of the finished {{vehicle}} in {{finish}} rolling out of the shop, vertical"
+      }
+    },
+    {
+      "seconds": 3,
+      "purpose": "call to action",
+      "on_screen_text": "{{shop_name}}: {{offer}}",
+      "voiceover": "Book your {{offer}} at {{shop_name}}.",
+      "visual": {
+        "tier": "text_only",
+        "prompt": ""
+      }
+    }
+  ],
+  "cta": "Book your {{offer}} at {{shop_name}}; link in bio.",
+  "craft": {
+    "technique": "Earned payoff",
+    "notes": "Spend the middle on the unglamorous stages (bare metal, primer, tape) so the viewer feels the labor. Keep the reveal silent with only the engine or music; talking over the money shot weakens it."
+  },
+  "do_not": [
+    "Use another shop's car or a stock photo as the 'before'",
+    "Show license plates or VINs of a customer car without permission",
+    "Skip the middle and jump straight from rust to shine; it looks fake",
+    "Spend the clip_hero credits before the client approves the still of the final car",
+    "Generate a fake before or after of a job the shop did not do"
+  ],
+  "compliance": [
+    "Proof of work: every before, in-progress and finished shot is the shop's own real photo or footage of this exact job, never generated",
+    "Only show a customer's car and plate with the owner's written permission"
+  ]
+}

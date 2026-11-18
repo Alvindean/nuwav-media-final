@@ -1,0 +1,131 @@
+{
+  "id": "story-004-the-2am-call",
+  "version": 1,
+  "name": "The 2 A.M. Call",
+  "category": "story",
+  "format": "reel",
+  "goal": "leads",
+  "duration_seconds": 20,
+  "aspect_ratio": "9:16",
+  "best_for": [
+    "law firm",
+    "insurance agency",
+    "financial advisor",
+    "mortgage broker",
+    "auto shop"
+  ],
+  "why_it_works": "Everyone has had a phone call that split life into before and after. A late-night time stamp drops the viewer into that fear instantly. The brand doesn't play hero by promising outcomes; it plays the calm first step, which is what a scared person actually wants to buy.",
+  "hook": {
+    "pattern": "A clock time and 'unknown number' on a glowing phone. Dread first, words second.",
+    "examples": [
+      "At {{call_time}}, an unknown number lit up.",
+      "The worst calls come at {{call_time}}",
+      "Good news never calls at {{call_time}}"
+    ]
+  },
+  "variables": [
+    {
+      "name": "brand",
+      "description": "Firm or agency name",
+      "example": "Ramos & Hale"
+    },
+    {
+      "name": "call_time",
+      "description": "The time of the call as a phone shows it, e.g. 2:14 AM; never followed by a period in the script",
+      "example": "2:14 AM"
+    },
+    {
+      "name": "caller_situation",
+      "description": "A composite, anonymized line describing their crisis, starting with a capital letter, spoken, 10 words or fewer",
+      "example": "My son crashed and the other driver blames him"
+    },
+    {
+      "name": "first_step",
+      "description": "The calm, concrete first step you took, spoken, 8 words or fewer",
+      "example": "told her what not to say before morning"
+    },
+    {
+      "name": "morning_after",
+      "description": "How things felt the next morning, no outcome claims, spoken, 9 words or fewer",
+      "example": "she had a plan and a name to call"
+    },
+    {
+      "name": "cta_line",
+      "description": "How to reach you, plainly, starting with a capital letter, 6 words or fewer",
+      "example": "Free consultation, day or night"
+    },
+    {
+      "name": "disclosure",
+      "description": "Required fine print for the client's niche, from compliance/packs.json, shown as small on-screen text",
+      "example": "Attorney advertising. Past results do not guarantee a similar outcome."
+    }
+  ],
+  "beats": [
+    {
+      "seconds": 3,
+      "purpose": "hook: the time on the phone",
+      "on_screen_text": "{{call_time}} | Unknown number",
+      "voiceover": "{{call_time}}, unknown number",
+      "visual": {
+        "tier": "still",
+        "prompt": "Vertical 9:16 close-up of a phone lighting up on a dark nightstand showing an incoming call at {{call_time}}, cold blue screen glow, everything else in shadow"
+      }
+    },
+    {
+      "seconds": 5,
+      "purpose": "the caller's situation",
+      "on_screen_text": "\"{{caller_situation}}\"",
+      "voiceover": "On the line: {{caller_situation}}.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Vertical photo of an anonymous person sitting at a dim kitchen table, phone to ear, head down, single overhead pendant light, face in shadow"
+      }
+    },
+    {
+      "seconds": 5,
+      "purpose": "what happened next",
+      "on_screen_text": "First step: {{first_step}}",
+      "voiceover": "That night, one thing: {{first_step}}.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Vertical photo of a desk at {{brand}} at night, a single lamp on, a notepad with a checklist, coffee cup, calm and orderly"
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "the turn: the morning after",
+      "on_screen_text": "By morning, {{morning_after}}.",
+      "voiceover": "By morning, {{morning_after}}.",
+      "visual": {
+        "tier": "clip_draft",
+        "prompt": "Slow push-in through a window as sunrise light fills an ordinary kitchen, steam from a mug, calm, vertical 9:16"
+      }
+    },
+    {
+      "seconds": 3,
+      "purpose": "call to action",
+      "on_screen_text": "{{cta_line}} {{disclosure}}",
+      "voiceover": "Your {{call_time}}? {{cta_line}}.",
+      "visual": {
+        "tier": "text_only",
+        "prompt": ""
+      }
+    }
+  ],
+  "cta": "Your {{call_time}}? Call us. {{cta_line}}.",
+  "craft": {
+    "technique": "Inciting call, then the first calm step",
+    "notes": "Keep the caller anonymous and lit in shadow. The turn is relief, not victory: a plan, not a verdict. Use silence and dark frames in the first half, then let sunrise light do the emotional work in the clip."
+  },
+  "do_not": [
+    "Promise or hint at a case result, payout or approval",
+    "Use a real client's story without written consent",
+    "Make it a fear-sell with sirens and crash footage"
+  ],
+  "compliance": [
+    "Law firms: no guarantees or implications of outcome; label the story 'Dramatization. Composite story.' on screen; follow your state bar's advertising rules, including required disclaimers and attorney responsibility statements",
+    "Law firms: do not imply a specialist certification you do not hold",
+    "Insurance, mortgage and financial: no promise of approval, coverage, savings or returns; show your license or NMLS number where required",
+    "Do not depict a real crash, injury or identifiable person"
+  ]
+}

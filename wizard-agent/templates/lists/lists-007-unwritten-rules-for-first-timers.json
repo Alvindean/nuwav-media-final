@@ -1,0 +1,209 @@
+{
+  "id": "lists-007-unwritten-rules-for-first-timers",
+  "version": 1,
+  "name": "Unwritten Rules for First-Timers",
+  "category": "lists",
+  "format": "both",
+  "goal": "awareness",
+  "duration_seconds": 24,
+  "aspect_ratio": "9:16",
+  "best_for": [
+    "lowrider car club",
+    "barber shop",
+    "independent musician",
+    "coffee shop",
+    "sports team"
+  ],
+  "why_it_works": "First-timers stay away from a scene because they are afraid of doing something wrong in front of regulars. Naming the unwritten rules removes that fear, makes {{brand}} the friendly host, and gives regulars a list they recognize and want to share with newcomers.",
+  "hook": {
+    "pattern": "Speak to a nervous first-timer and promise the rules regulars never say out loud.",
+    "examples": [
+      "First {{scene}}? Four unwritten rules.",
+      "Rules regulars never say out loud. Learn them here.",
+      "Rule four is the one every newcomer breaks."
+    ]
+  },
+  "variables": [
+    {
+      "name": "brand",
+      "description": "Business, club or artist name",
+      "example": "Southside Bounce Car Club"
+    },
+    {
+      "name": "scene",
+      "description": "The place or event a first-timer is nervous about; 4 words or fewer",
+      "example": "lowrider car show"
+    },
+    {
+      "name": "rule_1",
+      "description": "First unwritten rule, the easiest one; starts with a verb, 7 words or fewer",
+      "example": "ask before you touch a car"
+    },
+    {
+      "name": "why_1",
+      "description": "Why rule 1 matters, one plain sentence that starts with a capital letter",
+      "example": "Some of these paint jobs took three years."
+    },
+    {
+      "name": "rule_2",
+      "description": "Second unwritten rule; starts with a verb, 7 words or fewer",
+      "example": "park outside the show rows"
+    },
+    {
+      "name": "why_2",
+      "description": "Why rule 2 matters, one plain sentence that starts with a capital letter",
+      "example": "Those spots are saved for cars on display."
+    },
+    {
+      "name": "rule_3",
+      "description": "Third unwritten rule; starts with a verb, 7 words or fewer",
+      "example": "compliment the build, not the price"
+    },
+    {
+      "name": "why_3",
+      "description": "Why rule 3 matters, one plain sentence that starts with a capital letter",
+      "example": "Owners love talking about the work, not the cost."
+    },
+    {
+      "name": "rule_4",
+      "description": "The rule newcomers break most often; starts with a verb, 7 words or fewer",
+      "example": "step back when a car hops"
+    },
+    {
+      "name": "why_4",
+      "description": "Why rule 4 matters, one plain sentence that starts with a capital letter",
+      "example": "A hopping car can land a foot from where it started."
+    },
+    {
+      "name": "bring_list",
+      "description": "What a first-timer should bring, as a short comma list that starts with a capital letter",
+      "example": "A folding chair, water, cash for the food trucks"
+    },
+    {
+      "name": "first_move",
+      "description": "The best thing to do in the first ten minutes, one sentence that starts with a capital letter",
+      "example": "Find a club tent and ask who built what."
+    },
+    {
+      "name": "event",
+      "description": "Where to try the rules in person; 6 words or fewer",
+      "example": "our Sunday meet at Elm Park"
+    }
+  ],
+  "beats": [
+    {
+      "seconds": 3,
+      "purpose": "hook: speak to the nervous first-timer",
+      "on_screen_text": "4 unwritten rules at your first {{scene}}",
+      "voiceover": "First {{scene}}? Four unwritten rules.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Vertical photo from the edge of the {{scene}}, regulars gathered in soft focus, a first-timer's point of view, warm rim light, 9:16"
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "rule 1, the easy one",
+      "on_screen_text": "Rule 1: {{rule_1}}",
+      "voiceover": "Rule one: {{rule_1}}.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Close detail shot at the {{scene}} that shows rule one in action, shallow depth of field, golden light, vertical"
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "rule 2",
+      "on_screen_text": "Rule 2: {{rule_2}}",
+      "voiceover": "Rule two: {{rule_2}}.",
+      "visual": {
+        "tier": "text_only",
+        "prompt": ""
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "rule 3",
+      "on_screen_text": "Rule 3: {{rule_3}}",
+      "voiceover": "Rule three: {{rule_3}}.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Two people chatting warmly beside the centerpiece of the {{scene}}, candid, natural light, vertical 9:16"
+      }
+    },
+    {
+      "seconds": 5,
+      "purpose": "rule 4, the one newcomers break, shown in motion",
+      "on_screen_text": "Rule 4: {{rule_4}}",
+      "voiceover": "Rule four, the one newcomers break: {{rule_4}}.",
+      "visual": {
+        "tier": "clip_draft",
+        "prompt": "Energetic moment at the {{scene}} that shows why rule four exists, crowd stepping back and reacting, handheld feel, golden hour, vertical 9:16"
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "invite the first-timer in",
+      "on_screen_text": "First-timers welcome: {{event}}",
+      "voiceover": "Try them out at {{event}}. First-timers welcome.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Welcoming group of {{brand}} members waving the camera in at {{event}}, candid, golden light, vertical"
+      }
+    }
+  ],
+  "cta": "First time? Come say hi at {{event}}.",
+  "carousel": {
+    "slides": [
+      {
+        "headline": "4 unwritten rules at your first {{scene}}",
+        "body": "Save this before your first visit.",
+        "visual_prompt": "Golden-hour view of the {{scene}} from the entrance, people in soft focus, bold title text"
+      },
+      {
+        "headline": "Rule 1: {{rule_1}}",
+        "body": "{{why_1}}",
+        "visual_prompt": "Close detail shot that shows rule one in action at the {{scene}}, shallow depth of field"
+      },
+      {
+        "headline": "Rule 2: {{rule_2}}",
+        "body": "{{why_2}}",
+        "visual_prompt": "Wide shot of the layout of the {{scene}} with the right spot highlighted"
+      },
+      {
+        "headline": "Rule 3: {{rule_3}}",
+        "body": "{{why_3}}",
+        "visual_prompt": "Two people chatting warmly beside the centerpiece of the {{scene}}"
+      },
+      {
+        "headline": "Rule 4: {{rule_4}}",
+        "body": "{{why_4}} This is the one newcomers break.",
+        "visual_prompt": "Action moment at the {{scene}} with the crowd stepping back"
+      },
+      {
+        "headline": "What to bring",
+        "body": "{{bring_list}}. Screenshot this before you leave home.",
+        "visual_prompt": "Flat-lay checklist of first-timer essentials on a table, {{brand}} colors, top-down"
+      },
+      {
+        "headline": "Your first ten minutes",
+        "body": "{{first_move}} Regulars would rather explain than watch you guess.",
+        "visual_prompt": "A newcomer being welcomed at the {{brand}} table, warm candid light"
+      },
+      {
+        "headline": "Try the rules for real",
+        "body": "First-timers welcome at {{event}}.",
+        "visual_prompt": "Group of {{brand}} members waving the viewer in, warm candid light"
+      }
+    ]
+  },
+  "craft": {
+    "technique": "Etiquette list with a common-mistake finale",
+    "notes": "Order the rules from easiest to the one newcomers break, so the last rule pays off the hook. Keep the tone of a friendly host, never a gatekeeper; every rule should make the viewer more likely to show up, not less."
+  },
+  "do_not": [
+    "Make rules that sound like the scene does not want newcomers",
+    "Invent rules regulars would not recognize; they will correct you publicly",
+    "Use slang or customs from a culture the brand is not part of"
+  ]
+}

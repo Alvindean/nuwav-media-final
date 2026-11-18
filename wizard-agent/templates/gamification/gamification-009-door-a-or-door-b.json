@@ -1,0 +1,230 @@
+{
+  "id": "gamification-009-door-a-or-door-b",
+  "version": 1,
+  "name": "Your Move: Door A or Door B",
+  "category": "gamification",
+  "format": "both",
+  "goal": "leads",
+  "duration_seconds": 26,
+  "aspect_ratio": "9:16",
+  "best_for": [
+    "financial advisor",
+    "mortgage lender",
+    "insurance agent",
+    "real estate agent",
+    "business coach"
+  ],
+  "why_it_works": "A realistic dilemma with two reasonable choices puts the viewer inside the decision before they know they're learning. Committing to A or B in the comments makes them invested in the outcome, and seeing where each path leads shows the advisor's judgment better than any credential could.",
+  "hook": {
+    "pattern": "Drop the viewer into a common money or life decision and ask what they'd do.",
+    "examples": [
+      "{{scenario}}. Door A or B?",
+      "Two choices. Both sound smart. One ages better.",
+      "Your move. Which door, and why?"
+    ]
+  },
+  "variables": [
+    {
+      "name": "brand",
+      "description": "Advisor, lender, agency or coach name",
+      "example": "Northline Mortgage"
+    },
+    {
+      "name": "scenario",
+      "description": "The situation, starting with a capital letter, 6 words or fewer",
+      "example": "Surprise $10k bonus, 6% car loan"
+    },
+    {
+      "name": "choice_a",
+      "description": "Option A, starting with a capital, 6 words or fewer",
+      "example": "Pay off the car loan"
+    },
+    {
+      "name": "choice_b",
+      "description": "Option B, starting with a capital, 6 words or fewer",
+      "example": "Build a 3-month emergency fund first"
+    },
+    {
+      "name": "outcome_a",
+      "description": "Honest, hypothetical result of A, starting with a capital, 8 words or fewer",
+      "example": "No car payment, but surprises hit a card"
+    },
+    {
+      "name": "outcome_b",
+      "description": "Honest, hypothetical result of B, starting with a capital, 8 words or fewer",
+      "example": "Loan stays, but a job gap isn't debt"
+    },
+    {
+      "name": "deciding_factor",
+      "description": "The one question that decides which is right, lowercase, 5 words or fewer",
+      "example": "how stable your income is"
+    },
+    {
+      "name": "worked_number",
+      "description": "One worked example with real arithmetic, labelled hypothetical, 2 sentences or fewer",
+      "example": "$10k at 6% is about $600 a year in interest. A $1,000 surprise on a 24% card is about $240 a year."
+    },
+    {
+      "name": "offer",
+      "description": "Low-pressure next step, starting with a capital, 5 words or fewer",
+      "example": "Book a free 20-minute review"
+    },
+    {
+      "name": "flip_fact",
+      "description": "The one fact that flips the answer to the other door, a short sentence starting with a capital, 9 words or fewer",
+      "example": "If your job feels shaky, door B ages better."
+    },
+    {
+      "name": "disclosure",
+      "description": "Required fine print for the client's niche, from compliance/packs.json",
+      "example": "Not financial advice. Terms apply."
+    }
+  ],
+  "beats": [
+    {
+      "seconds": 3,
+      "purpose": "hook: the dilemma",
+      "on_screen_text": "{{scenario}}. Door A or B?",
+      "voiceover": "{{scenario}}. Your move?",
+      "visual": {
+        "tier": "still",
+        "prompt": "Vertical 9:16 kitchen table at night, a laptop, a coffee mug and a stack of envelopes under a warm pendant light, hands resting on the table, face out of frame"
+      }
+    },
+    {
+      "seconds": 3,
+      "purpose": "door A",
+      "on_screen_text": "A: {{choice_a}}",
+      "voiceover": "Door A. {{choice_a}}.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Vertical 9:16 hallway with two doors, the left door labeled A glowing softly in warm light, the right door in shadow, clean minimal style"
+      }
+    },
+    {
+      "seconds": 3,
+      "purpose": "door B",
+      "on_screen_text": "B: {{choice_b}}",
+      "voiceover": "Door B. {{choice_b}}.",
+      "visual": {
+        "tier": "still",
+        "prompt": "The same vertical 9:16 hallway with two doors, now the right door labeled B glowing in cool light and the left door in shadow"
+      }
+    },
+    {
+      "seconds": 3,
+      "purpose": "lock in",
+      "on_screen_text": "Pick one in your head. Keep watching.",
+      "voiceover": "Pick one in your head. Keep watching.",
+      "visual": {
+        "tier": "text_only",
+        "prompt": ""
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "where A leads",
+      "on_screen_text": "If you picked A: {{outcome_a}}",
+      "voiceover": "If you picked A: {{outcome_a}}.",
+      "visual": {
+        "tier": "clip_draft",
+        "prompt": "Slow push through the open door A into a warm, tidy room, vertical 9:16, soft cinematic light"
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "where B leads",
+      "on_screen_text": "If you picked B: {{outcome_b}}",
+      "voiceover": "If you picked B: {{outcome_b}}.",
+      "visual": {
+        "tier": "clip_draft",
+        "prompt": "Slow push through the open door B into a calm, cool-toned room, vertical 9:16, soft cinematic light"
+      }
+    },
+    {
+      "seconds": 3,
+      "purpose": "the real answer",
+      "on_screen_text": "It depends on {{deciding_factor}}.",
+      "voiceover": "It depends on {{deciding_factor}}.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Both doors open side by side in the vertical 9:16 hallway, a simple balance scale icon floating between them, soft even light"
+      }
+    },
+    {
+      "seconds": 3,
+      "purpose": "low-pressure next step",
+      "on_screen_text": "{{offer}}. {{disclosure}}",
+      "voiceover": "Find your door. {{offer}}.",
+      "visual": {
+        "tier": "text_only",
+        "prompt": ""
+      }
+    }
+  ],
+  "cta": "Which door was yours? {{offer}} with {{brand}} to find out.",
+  "carousel": {
+    "slides": [
+      {
+        "headline": "Your move",
+        "body": "{{scenario}}. Pick a door before you swipe.",
+        "visual_prompt": "Kitchen table at night with bills and a laptop under a warm pendant light, hands only, 4:5"
+      },
+      {
+        "headline": "Door A",
+        "body": "{{choice_a}}",
+        "visual_prompt": "Hallway with the left door labeled A glowing warm, right door in shadow"
+      },
+      {
+        "headline": "Door B",
+        "body": "{{choice_b}}",
+        "visual_prompt": "Same hallway with the right door labeled B glowing cool, left door in shadow"
+      },
+      {
+        "headline": "Which door?",
+        "body": "No changing your answer after this slide.",
+        "visual_prompt": "Bold type card in {{brand}} colors with A and B in two large circles"
+      },
+      {
+        "headline": "Behind door A",
+        "body": "{{outcome_a}}",
+        "visual_prompt": "Open door A revealing a warm, tidy room, soft light"
+      },
+      {
+        "headline": "Behind door B",
+        "body": "{{outcome_b}}",
+        "visual_prompt": "Open door B revealing a calm, cool-toned room, soft light"
+      },
+      {
+        "headline": "Run the numbers",
+        "body": "{{worked_number}} Hypothetical example, not personal advice.",
+        "visual_prompt": "Clean worked-math card in {{brand}} colors with two short calculations side by side"
+      },
+      {
+        "headline": "What flips the answer",
+        "body": "{{flip_fact}} Same bonus, different door.",
+        "visual_prompt": "The two-door hallway with a small toggle switch icon between doors A and B, {{brand}} colors"
+      },
+      {
+        "headline": "The honest answer",
+        "body": "It depends on {{deciding_factor}}. Next step: {{offer}} with {{brand}}. {{disclosure}}",
+        "visual_prompt": "Both doors open side by side with a balance scale icon and the {{brand}} logo small"
+      }
+    ]
+  },
+  "craft": {
+    "technique": "Choose-your-path with no wrong door",
+    "notes": "Make both doors genuinely reasonable so the comments split close to 50/50; a one-sided dilemma gets no debate. The payoff is 'it depends on one thing', which naturally leads to the consult without a hard sell."
+  },
+  "do_not": [
+    "Make one door obviously stupid",
+    "State outcomes as certainties or use real client numbers without consent",
+    "Give individual advice in comment replies"
+  ],
+  "compliance": [
+    "Financial advisors: label scenarios as hypothetical and educational, not personalized advice; no return, income or savings promises; run through your firm's compliance review",
+    "Mortgage: no guaranteed rates or approvals; show your NMLS ID and Equal Housing Opportunity where required",
+    "Insurance: never imply a claim will be paid or coverage applies without checking policy terms; show license number where required",
+    "Real estate: show the brokerage name, follow fair housing rules, and don't predict home values"
+  ]
+}

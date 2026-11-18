@@ -1,0 +1,135 @@
+{
+  "id": "education-003-thirty-second-fix",
+  "version": 1,
+  "name": "Thirty-Second Fix",
+  "category": "education",
+  "format": "reel",
+  "goal": "engagement",
+  "duration_seconds": 26,
+  "aspect_ratio": "9:16",
+  "best_for": [
+    "auto shop",
+    "lowrider car club",
+    "barber",
+    "apparel brand",
+    "jewelry brand"
+  ],
+  "why_it_works": "Watching a small problem get solved in real time is deeply satisfying, and the viewer walks away able to do it themselves. That gift of competence makes people save and share, and it proves the brand knows its craft without a single boast.",
+  "hook": {
+    "pattern": "Show the annoying problem up close and promise it is fixed before the video ends.",
+    "examples": [
+      "{{problem}}? Fixed in 30 seconds.",
+      "Don't pay someone for this. Do it yourself.",
+      "Everyone has this problem. Watch it disappear."
+    ]
+  },
+  "variables": [
+    {
+      "name": "brand",
+      "description": "Business or crew name",
+      "example": "Southside Customs"
+    },
+    {
+      "name": "problem",
+      "description": "The small, common problem, as people describe it, starting with a capital letter, 5 words or fewer",
+      "example": "Foggy, yellow headlights"
+    },
+    {
+      "name": "tool",
+      "description": "The everyday tool or product used",
+      "example": "a headlight restoration kit"
+    },
+    {
+      "name": "step_1",
+      "description": "First step, short and visual, 10 words or fewer",
+      "example": "Tape off the paint around the lens"
+    },
+    {
+      "name": "step_2",
+      "description": "Second step, the one with the most motion, 10 words or fewer",
+      "example": "Wet-sand in straight lines, coarse to fine grit"
+    },
+    {
+      "name": "step_3",
+      "description": "Third step, the finish, 10 words or fewer",
+      "example": "Wipe clean and seal with UV clear coat"
+    },
+    {
+      "name": "result",
+      "description": "What the viewer gets, in plain words, 12 words or fewer",
+      "example": "Clear lenses and brighter night driving"
+    }
+  ],
+  "beats": [
+    {
+      "seconds": 3,
+      "purpose": "hook: the problem up close",
+      "on_screen_text": "{{problem}}? 30-second fix.",
+      "voiceover": "{{problem}}? Let's fix it in thirty seconds.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Vertical 9:16 extreme close-up of {{problem}}, harsh raking light that shows every flaw, work surface background softly blurred"
+      }
+    },
+    {
+      "seconds": 5,
+      "purpose": "step 1",
+      "on_screen_text": "1. {{step_1}}",
+      "voiceover": "Step one: {{step_1}}.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Vertical overhead photo of hands doing '{{step_1}}' with {{tool}} visible, clean work surface, even soft light"
+      }
+    },
+    {
+      "seconds": 5,
+      "purpose": "step 2, the motion step",
+      "on_screen_text": "2. {{step_2}}",
+      "voiceover": "Step two: {{step_2}}.",
+      "visual": {
+        "tier": "clip_standard",
+        "prompt": "Vertical 9:16 close-up of hands performing '{{step_2}}' in smooth steady motion, even soft light, shallow depth of field, real texture and detail"
+      }
+    },
+    {
+      "seconds": 5,
+      "purpose": "step 3",
+      "on_screen_text": "3. {{step_3}}",
+      "voiceover": "Step three: {{step_3}}.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Vertical close-up photo of the finishing touch '{{step_3}}', glossy surface catching a soft highlight, clean background"
+      }
+    },
+    {
+      "seconds": 5,
+      "purpose": "the result reveal",
+      "on_screen_text": "{{result}}",
+      "voiceover": "Done. {{result}}.",
+      "visual": {
+        "tier": "clip_draft",
+        "prompt": "Vertical 9:16 slow pull-back revealing the fixed item looking like new, warm golden light, {{brand}} workspace softly visible behind"
+      }
+    },
+    {
+      "seconds": 3,
+      "purpose": "call to action",
+      "on_screen_text": "Follow {{brand}} for the next fix",
+      "voiceover": "Try it, then follow {{brand}} for more.",
+      "visual": {
+        "tier": "text_only",
+        "prompt": ""
+      }
+    }
+  ],
+  "cta": "Save this, try it this weekend, and follow {{brand}} for the next fix.",
+  "craft": {
+    "technique": "Problem-steps-reveal with a held result",
+    "notes": "Light the problem harshly and the result warmly so the change reads instantly. Each step gets one short instruction on screen; the viewer should be able to pause and follow along. Hold the result shot a full beat longer than feels necessary."
+  },
+  "do_not": [
+    "Show any unsafe shortcut, like skipping eye protection, gloves or proper supports",
+    "Teach a fix that legally or safely needs a certified pro, like brakes, electrical or structural work",
+    "Speed-ramp through the steps so fast nobody can follow them"
+  ]
+}

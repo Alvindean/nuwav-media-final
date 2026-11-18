@@ -1,0 +1,164 @@
+{
+  "id": "mindset-006-permission-slip",
+  "version": 1,
+  "name": "Permission Slip",
+  "category": "mindset",
+  "format": "both",
+  "goal": "sales",
+  "duration_seconds": 20,
+  "aspect_ratio": "9:16",
+  "best_for": [
+    "dental office",
+    "med spa",
+    "skincare brand",
+    "fitness trainer",
+    "chiropractor"
+  ],
+  "why_it_works": "Many buyers want the thing but feel embarrassed, guilty or late. A permission statement removes the shame directly: it says the hesitation is normal and that starting now is allowed. Relief is a strong motivator, and the brand that gives it becomes the safe place to start.",
+  "hook": {
+    "pattern": "Start with 'You're allowed to...' followed by the exact thing the viewer feels guilty about.",
+    "examples": [
+      "You're allowed to {{guilty_wish}}.",
+      "Permission granted: you can {{guilty_wish}}.",
+      "It's been {{time_gap}}? You're still allowed to come back."
+    ]
+  },
+  "variables": [
+    {
+      "name": "brand",
+      "description": "Business name",
+      "example": "Brightwater Dental"
+    },
+    {
+      "name": "guilty_wish",
+      "description": "What the customer wants but feels bad about, lowercase verb phrase, 6 words or fewer",
+      "example": "book a cleaning after years away"
+    },
+    {
+      "name": "time_gap",
+      "description": "How long people typically stay away, lowercase, 3 words or fewer",
+      "example": "five years"
+    },
+    {
+      "name": "shame_thought",
+      "description": "The embarrassing thought they have",
+      "example": "they'll judge me the second I sit down"
+    },
+    {
+      "name": "what_actually_happens",
+      "description": "The calm truth of the first visit, starting with a capital letter, 10 words or fewer",
+      "example": "We ask two questions, then we just get started"
+    },
+    {
+      "name": "offer",
+      "description": "The low-pressure way in, lowercase, 5 words or fewer",
+      "example": "a no-lecture first visit"
+    },
+    {
+      "name": "disclosure",
+      "description": "Fine-print disclosure line for the client's regulated niche (use the matching compliance pack's disclosure line)",
+      "example": "Results vary. Consult a licensed provider."
+    }
+  ],
+  "beats": [
+    {
+      "seconds": 3,
+      "purpose": "hook: grant permission",
+      "on_screen_text": "You're allowed to {{guilty_wish}}.",
+      "voiceover": "You're allowed to {{guilty_wish}}.",
+      "visual": {
+        "tier": "text_only",
+        "prompt": ""
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "name the shame",
+      "on_screen_text": "\"{{shame_thought}}\"",
+      "voiceover": "We know the thought: {{shame_thought}}.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Vertical 9:16 photo of a person sitting in a car outside {{brand}}, hands on the wheel, hesitant expression, soft overcast light through the windshield"
+      }
+    },
+    {
+      "seconds": 5,
+      "purpose": "what actually happens",
+      "on_screen_text": "{{what_actually_happens}}",
+      "voiceover": "What actually happens? {{what_actually_happens}}.",
+      "visual": {
+        "tier": "clip_draft",
+        "prompt": "Vertical 9:16 gentle shot of a friendly staff member at {{brand}} greeting a client at the front desk, warm natural light, relaxed smiles, slow camera drift"
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "the belief",
+      "on_screen_text": "Late is still on time.",
+      "voiceover": "Late is still on time.",
+      "visual": {
+        "tier": "text_only",
+        "prompt": ""
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "call to action",
+      "on_screen_text": "Start with {{offer}}. {{disclosure}}",
+      "voiceover": "Start with {{offer}} at {{brand}}.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Vertical 9:16 photo of the calm, clean waiting area at {{brand}}, plants, daylight, an empty comfortable chair facing camera"
+      }
+    }
+  ],
+  "cta": "Start with {{offer}} at {{brand}}.",
+  "carousel": {
+    "slides": [
+      {
+        "headline": "Your permission slip",
+        "body": "You're allowed to {{guilty_wish}}.",
+        "visual_prompt": "Paper permission slip on a clipboard, pen beside it, soft daylight, {{brand}} colors"
+      },
+      {
+        "headline": "We know the thought",
+        "body": "\"{{shame_thought}}\"",
+        "visual_prompt": "Person sitting in a parked car outside {{brand}}, hesitant, overcast light"
+      },
+      {
+        "headline": "Here's what really happens",
+        "body": "{{what_actually_happens}}.",
+        "visual_prompt": "Friendly staff greeting a client at the {{brand}} front desk, warm light"
+      },
+      {
+        "headline": "Nobody here keeps score",
+        "body": "Being away {{time_gap}} is common. We see it every week.",
+        "visual_prompt": "Calendar pages loosely fanned on a table, soft focus, calm tones"
+      },
+      {
+        "headline": "What to say at the desk",
+        "body": "Just this: \"It's been {{time_gap}}.\" That's all we need to start.",
+        "visual_prompt": "Friendly front desk at {{brand}} with a small welcome card, soft daylight, nobody in frame"
+      },
+      {
+        "headline": "Signed. Now book it.",
+        "body": "Book {{offer}} at {{brand}}. {{disclosure}}",
+        "visual_prompt": "Signed permission slip with {{brand}} logo stamp, top-down"
+      }
+    ]
+  },
+  "craft": {
+    "technique": "Shame release",
+    "notes": "Quote the embarrassing thought in the customer's own words; if it feels too honest, it's right. Never lecture in the 'what actually happens' beat. The permission slip is a physical prop on the carousel so the metaphor is literal and shareable."
+  },
+  "do_not": [
+    "Turn permission into pressure ('so book now or else')",
+    "Shame people who wait, even jokingly",
+    "Promise pain-free or guaranteed results"
+  ],
+  "compliance": [
+    "Dental and chiropractic: no promises of pain-free treatment or specific outcomes; describe the visit, not the result",
+    "Med spa and skincare: no before/after claims without 'individual results vary'; treatments must be described as performed by licensed providers where required",
+    "Fitness trainers: no weight-loss or body-change guarantees"
+  ]
+}

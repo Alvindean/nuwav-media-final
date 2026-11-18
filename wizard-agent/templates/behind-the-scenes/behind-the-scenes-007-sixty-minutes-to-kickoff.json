@@ -1,0 +1,139 @@
+{
+  "id": "behind-the-scenes-007-sixty-minutes-to-kickoff",
+  "version": 1,
+  "name": "Sixty Minutes to Kickoff",
+  "category": "behind-the-scenes",
+  "format": "reel",
+  "goal": "engagement",
+  "duration_seconds": 21,
+  "aspect_ratio": "9:16",
+  "best_for": [
+    "sports team",
+    "athlete",
+    "fitness trainer",
+    "independent musician",
+    "podcast"
+  ],
+  "why_it_works": "Fans want access to the moment before the moment. A countdown structure creates built-in suspense, every beat is closer to the start, and the pre-game ritual details make the audience feel like insiders.",
+  "hook": {
+    "pattern": "Put a countdown on screen and start inside the locker room or green room.",
+    "examples": [
+      "60 minutes to {{event}}. Come with us.",
+      "What the hour before {{event}} actually looks like.",
+      "Phones off in 60. Come see what happens first."
+    ]
+  },
+  "variables": [
+    {
+      "name": "team_name",
+      "description": "Team, athlete or act",
+      "example": "Westside Hawks"
+    },
+    {
+      "name": "event",
+      "description": "What they are counting down to",
+      "example": "kickoff"
+    },
+    {
+      "name": "ritual",
+      "description": "A real pre-game ritual",
+      "example": "taping ankles in the same order every game"
+    },
+    {
+      "name": "playlist_vibe",
+      "description": "Mood of the warm-up music (no real songs)",
+      "example": "slow-building drums"
+    },
+    {
+      "name": "last_words",
+      "description": "What gets said right before",
+      "example": "Play for the person next to you"
+    },
+    {
+      "name": "offer",
+      "description": "Fan action, a full sentence starting with a capital, 7 words or fewer",
+      "example": "Grab tickets for Saturday's home game"
+    },
+    {
+      "name": "disclosure",
+      "description": "Required fine print for the client's niche, from compliance/packs.json",
+      "example": "Results vary. These statements have not been evaluated by the FDA."
+    }
+  ],
+  "beats": [
+    {
+      "seconds": 3,
+      "purpose": "hook: T-minus 60",
+      "on_screen_text": "T-60:00",
+      "voiceover": "Sixty minutes to {{event}}.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Empty locker room or green room for {{team_name}}, gear laid out on benches, fluorescent light, quiet before the storm, vertical 9:16"
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "T-45: the ritual",
+      "on_screen_text": "T-45:00 · {{ritual}}",
+      "voiceover": "Forty-five out: {{ritual}}.",
+      "visual": {
+        "tier": "real_photo",
+        "prompt": "Real phone footage close-up of {{team_name}} hands {{ritual}}, focused, locker room light, filmed with consent, vertical 9:16"
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "T-30: headphones on",
+      "on_screen_text": "T-30:00",
+      "voiceover": "Thirty. Headphones on, {{playlist_vibe}}.",
+      "visual": {
+        "tier": "real_photo",
+        "prompt": "Real photo of the {{team_name}} member seated, eyes closed, headphones on, back to the lockers, shared with consent, vertical 9:16"
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "T-10: huddle",
+      "on_screen_text": "T-10:00",
+      "voiceover": "Ten minutes.",
+      "visual": {
+        "tier": "real_photo",
+        "prompt": "Real phone footage of the {{team_name}} huddle from the center looking up, arms locked, tunnel light behind, vertical 9:16"
+      }
+    },
+    {
+      "seconds": 3,
+      "purpose": "T-1: last words",
+      "on_screen_text": "\"{{last_words}}\"",
+      "voiceover": "{{last_words}}.",
+      "visual": {
+        "tier": "real_photo",
+        "prompt": "Real footage of {{team_name}} walking down the tunnel toward bright stadium or stage light, silhouettes, vertical 9:16"
+      }
+    },
+    {
+      "seconds": 3,
+      "purpose": "call to action",
+      "on_screen_text": "{{offer}}. {{disclosure}}",
+      "voiceover": "See minute zero. {{offer}}.",
+      "visual": {
+        "tier": "text_only",
+        "prompt": ""
+      }
+    }
+  ],
+  "cta": "Be there for minute zero. {{offer}}.",
+  "craft": {
+    "technique": "Countdown structure",
+    "notes": "Each beat opens with a bigger-to-smaller timer so tension builds on its own. Use the team's own real footage for every beat with people in it. Cut faster as the clock drops and stop before the event itself so fans have to show up."
+  },
+  "do_not": [
+    "Use a real copyrighted song as the warm-up track",
+    "Film minors without guardian consent",
+    "Show playbooks, injuries or anything a coach has not cleared"
+  ],
+  "compliance": [
+    "Fitness trainers: no guaranteed body or performance results, results vary, no unrealistic body images or shaming language",
+    "Real team members only, filmed with consent; guardian consent for anyone under 18"
+  ]
+}

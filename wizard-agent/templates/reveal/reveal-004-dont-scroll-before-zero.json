@@ -1,0 +1,110 @@
+{
+  "id": "reveal-004-dont-scroll-before-zero",
+  "version": 1,
+  "name": "Don't Scroll Before Zero",
+  "category": "reveal",
+  "format": "reel",
+  "goal": "engagement",
+  "duration_seconds": 15,
+  "aspect_ratio": "9:16",
+  "best_for": [
+    "coffee shop",
+    "restaurant",
+    "barber shop",
+    "bakery",
+    "sports team"
+  ],
+  "why_it_works": "A visible countdown turns watching into a small game with a clear finish line. The brain hates leaving something unfinished, so a timer on screen keeps people until zero, and watch-through is what the algorithm rewards.",
+  "hook": {
+    "pattern": "Put a ticking timer on screen and tell the viewer the good part happens at zero.",
+    "examples": [
+      "Don't scroll before zero.",
+      "Ten seconds. The last one is worth it.",
+      "Watch the timer, not the {{creation}}."
+    ]
+  },
+  "variables": [
+    {
+      "name": "brand",
+      "description": "Business or team name",
+      "example": "Sixth Street Coffee"
+    },
+    {
+      "name": "creation",
+      "description": "What is being made or revealed",
+      "example": "oat milk rosetta latte"
+    },
+    {
+      "name": "final_detail",
+      "description": "The detail that appears at zero, 6 words or fewer",
+      "example": "a perfect rosetta in one pour"
+    },
+    {
+      "name": "offer",
+      "description": "What the viewer can do next, 6 words or fewer",
+      "example": "$1 off with this video today"
+    }
+  ],
+  "beats": [
+    {
+      "seconds": 3,
+      "purpose": "hook: timer starts",
+      "on_screen_text": "Don't scroll before zero. 10",
+      "voiceover": "Don't scroll before zero.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Vertical 9:16 close-up of the starting point of the {{creation}} on a {{brand}} counter, moody side light, empty space at top for a large timer overlay"
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "the process, sped up",
+      "on_screen_text": "7... 6... 5...",
+      "voiceover": "Watch the hands.",
+      "visual": {
+        "tier": "clip_draft",
+        "prompt": "Fast close-up of hands making the {{creation}}, steady overhead angle, warm practical light, vertical 9:16, motion slightly sped up"
+      }
+    },
+    {
+      "seconds": 3,
+      "purpose": "the almost: hold back",
+      "on_screen_text": "4... 3...",
+      "voiceover": "Almost.",
+      "visual": {
+        "tier": "still",
+        "prompt": "The {{creation}} a moment before finishing, the key detail just out of frame, shallow depth of field, warm light, vertical 9:16"
+      }
+    },
+    {
+      "seconds": 3,
+      "purpose": "zero: the reveal",
+      "on_screen_text": "Zero.",
+      "voiceover": "",
+      "visual": {
+        "tier": "clip_standard",
+        "prompt": "Slow push-in on the finished {{creation}} showing {{final_detail}}, warm light, steam or texture visible, vertical 9:16"
+      }
+    },
+    {
+      "seconds": 2,
+      "purpose": "call to action",
+      "on_screen_text": "{{offer}}",
+      "voiceover": "{{offer}}.",
+      "visual": {
+        "tier": "text_only",
+        "prompt": ""
+      }
+    }
+  ],
+  "cta": "Come see it live at {{brand}}: {{offer}}.",
+  "craft": {
+    "technique": "Visible timer loop",
+    "notes": "Burn the countdown into the frame in big numbers, and make the timer reach zero exactly as the reveal lands. Cut the last frame so it loops cleanly back to the first, which drives replays."
+  },
+  "do_not": [
+    "Let the reveal happen before zero; it breaks the promise",
+    "Use a reveal that is not visually obvious on a phone screen",
+    "Pad the timer past 10 seconds; long countdowns feel like a trick"
+  ]
+}

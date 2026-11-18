@@ -1,0 +1,170 @@
+{
+  "id": "behind-the-scenes-010-what-we-got-wrong",
+  "version": 1,
+  "name": "What We Got Wrong Last Week",
+  "category": "behind-the-scenes",
+  "format": "both",
+  "goal": "trust",
+  "duration_seconds": 19,
+  "aspect_ratio": "9:16",
+  "best_for": [
+    "restaurant",
+    "med spa",
+    "financial advisor",
+    "coach",
+    "podcast"
+  ],
+  "why_it_works": "Admitting a mistake is rare in ads, so it stops the scroll. Owning a small, real error and showing the exact fix proves the business pays attention, which builds more trust than any claim of perfection.",
+  "hook": {
+    "pattern": "Open with a plain admission of a specific recent mistake.",
+    "examples": [
+      "We messed up last week. This is what happened.",
+      "A customer caught our mistake. They were right.",
+      "Our worst {{mistake_area}} moment this month, and the fix."
+    ]
+  },
+  "variables": [
+    {
+      "name": "brand",
+      "description": "Business name",
+      "example": "Fig & Ember Kitchen"
+    },
+    {
+      "name": "mistake_area",
+      "description": "Where it went wrong",
+      "example": "Friday night"
+    },
+    {
+      "name": "mistake",
+      "description": "What happened, plainly",
+      "example": "tables waited 40 minutes for entrees"
+    },
+    {
+      "name": "cause",
+      "description": "The real behind-the-scenes cause, written as a sentence starting with a capital",
+      "example": "One ticket printer silently jammed"
+    },
+    {
+      "name": "fix",
+      "description": "What changed, written as a sentence starting with a capital",
+      "example": "A backup screen and a five-minute ticket check"
+    },
+    {
+      "name": "offer",
+      "description": "Make-good or next step, a full sentence starting with a capital, 6 words or fewer",
+      "example": "Dessert's on us this week"
+    },
+    {
+      "name": "disclosure",
+      "description": "Required fine print for the client's niche, from compliance/packs.json",
+      "example": "Results vary. Consult a licensed provider."
+    }
+  ],
+  "beats": [
+    {
+      "seconds": 3,
+      "purpose": "hook: the admission",
+      "on_screen_text": "We messed up.",
+      "voiceover": "We messed up last week.",
+      "visual": {
+        "tier": "real_photo",
+        "prompt": "Real phone footage of the {{brand}} owner speaking straight to camera in their own words after close, honest flat light, chest-up, vertical 9:16"
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "what happened",
+      "on_screen_text": "{{mistake}}",
+      "voiceover": "On {{mistake_area}}, {{mistake}}.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Candid shot of the {{brand}} workspace during a busy rush, work piling up, motion blur, no faces, practical light, vertical 9:16"
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "the real cause",
+      "on_screen_text": "Why: {{cause}}",
+      "voiceover": "The cause? {{cause}}.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Close-up of the piece of equipment or step behind {{cause}}, flat work light, slightly gritty, vertical 9:16"
+      }
+    },
+    {
+      "seconds": 5,
+      "purpose": "the fix in action",
+      "on_screen_text": "Fix: {{fix}}",
+      "voiceover": "The fix? {{fix}}.",
+      "visual": {
+        "tier": "clip_standard",
+        "prompt": "Close-up of hands using the new fix at {{brand}}, {{fix}}, no faces, steady handheld shot, clean bright light, vertical 9:16"
+      }
+    },
+    {
+      "seconds": 3,
+      "purpose": "call to action",
+      "on_screen_text": "{{offer}}. {{disclosure}}",
+      "voiceover": "Thanks for telling us. {{offer}}.",
+      "visual": {
+        "tier": "text_only",
+        "prompt": ""
+      }
+    }
+  ],
+  "cta": "Thanks for telling us: {{offer}}.",
+  "carousel": {
+    "slides": [
+      {
+        "headline": "We got it wrong",
+        "body": "Here's exactly what happened at {{brand}}.",
+        "visual_prompt": "Empty {{brand}} workspace after close, chairs up, honest flat light, no people"
+      },
+      {
+        "headline": "What happened",
+        "body": "On {{mistake_area}}, {{mistake}}.",
+        "visual_prompt": "Busy back-of-house rush scene, tickets piling up"
+      },
+      {
+        "headline": "The real cause",
+        "body": "{{cause}}.",
+        "visual_prompt": "Close-up of the equipment or step that failed"
+      },
+      {
+        "headline": "What we changed",
+        "body": "{{fix}}.",
+        "visual_prompt": "Close-up of the new fix in place in a bright clean workspace, no faces"
+      },
+      {
+        "headline": "How we tested the fix",
+        "body": "We ran it on the very next {{mistake_area}} and watched it work.",
+        "visual_prompt": "Clipboard on the {{brand}} counter with the new check ticked off, no faces, bright light"
+      },
+      {
+        "headline": "Who told us",
+        "body": "A customer flagged it first. Their note is now step one of the {{brand}} checklist.",
+        "visual_prompt": "Handwritten customer note clipped to a printed checklist, no names readable, top-down"
+      },
+      {
+        "headline": "Thank you for telling us",
+        "body": "{{offer}}. {{disclosure}}",
+        "visual_prompt": "{{brand}} logo card with a handwritten-style thank-you note"
+      }
+    ]
+  },
+  "craft": {
+    "technique": "Owned mistake with a mechanism",
+    "notes": "The trust comes from the specific cause and the specific fix, not the apology. Keep the mistake small and real, name it in under ten words, and spend more seconds on the fix than on the error."
+  },
+  "do_not": [
+    "Blame a staff member or a customer by name",
+    "Invent a mistake for content",
+    "Admit to anything with legal or safety implications without advice first"
+  ],
+  "compliance": [
+    "Med spa: never discuss a patient's treatment or complication publicly, and share nothing without written consent (HIPAA); keep mistakes to operations (booking, wait times); no before/after or results claims, results vary",
+    "Financial advisor: do not discuss any client's account or losses; no income or return promises; include required firm disclosures",
+    "Restaurants: any food-safety issue goes to your health department process first, not to social media",
+    "Coaches: no income or results promises; any result shown is labelled as not typical"
+  ]
+}

@@ -1,0 +1,179 @@
+{
+  "id": "behind-the-scenes-002-the-ugly-first-draft",
+  "version": 1,
+  "name": "The Ugly First Draft",
+  "category": "behind-the-scenes",
+  "format": "both",
+  "goal": "engagement",
+  "duration_seconds": 22,
+  "aspect_ratio": "9:16",
+  "best_for": [
+    "UGC creator",
+    "podcast",
+    "apparel brand",
+    "jewelry designer",
+    "independent musician"
+  ],
+  "why_it_works": "People love seeing that good work started bad. Showing the embarrassing first version lowers the creator off the pedestal, makes the final feel earned, and invites comments about which version people prefer.",
+  "hook": {
+    "pattern": "Show the worst early version first and call it out bluntly.",
+    "examples": [
+      "This is version one of our {{product}}. It's bad.",
+      "You weren't supposed to see this {{product}} draft.",
+      "Draft one vs draft {{draft_count}}. Be honest."
+    ]
+  },
+  "variables": [
+    {
+      "name": "brand",
+      "description": "Business or creator name",
+      "example": "Low Tide Studio"
+    },
+    {
+      "name": "product",
+      "description": "The thing that went through drafts",
+      "example": "hoodie"
+    },
+    {
+      "name": "draft_count",
+      "description": "How many versions it took",
+      "example": "11"
+    },
+    {
+      "name": "first_problem",
+      "description": "What was wrong with version one",
+      "example": "the logo cracked after one wash"
+    },
+    {
+      "name": "turning_change",
+      "description": "The change that fixed it",
+      "example": "switching to a heavier 400gsm cotton"
+    },
+    {
+      "name": "offer",
+      "description": "What to do now, a full sentence starting with a capital, 8 words or fewer",
+      "example": "The final version drops Friday at noon"
+    },
+    {
+      "name": "test_routine",
+      "description": "How every draft gets tested, 12 words or fewer",
+      "example": "Wear it for a week, wash it five times, check the print"
+    }
+  ],
+  "beats": [
+    {
+      "seconds": 3,
+      "purpose": "hook: show the ugly version",
+      "on_screen_text": "Version 1. It's bad.",
+      "voiceover": "This is version one. It's bad.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Rough first prototype of the {{product}} on a cluttered work table, harsh overhead fluorescent light, visible flaws, phone-photo realism, vertical 9:16"
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "name the flaw",
+      "on_screen_text": "{{first_problem}}",
+      "voiceover": "Problem one: {{first_problem}}.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Close-up of the flaw on the early {{product}}: {{first_problem}}, macro detail, flat light, vertical 9:16"
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "the grind: drafts piling up",
+      "on_screen_text": "{{draft_count}} versions later...",
+      "voiceover": "We made {{draft_count}} versions.",
+      "visual": {
+        "tier": "clip_draft",
+        "prompt": "Overhead time-lapse style shot of many {{product}} prototypes being laid out in a row on a studio floor, each slightly better, vertical 9:16"
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "the fix",
+      "on_screen_text": "The fix: {{turning_change}}",
+      "voiceover": "What changed it: {{turning_change}}.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Hands holding the key material or tool behind {{turning_change}} next to the {{product}}, warm daylight from a window, vertical 9:16"
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "final reveal side by side",
+      "on_screen_text": "Draft 1 vs final",
+      "voiceover": "Draft one, final. Which one would you buy?",
+      "visual": {
+        "tier": "still",
+        "prompt": "Side-by-side of the first {{product}} prototype and the polished final from {{brand}}, same table, clean even light, vertical 9:16"
+      }
+    },
+    {
+      "seconds": 3,
+      "purpose": "call to action",
+      "on_screen_text": "{{offer}}",
+      "voiceover": "{{offer}}.",
+      "visual": {
+        "tier": "text_only",
+        "prompt": ""
+      }
+    }
+  ],
+  "cta": "Which draft would you have kept? {{offer}}.",
+  "carousel": {
+    "slides": [
+      {
+        "headline": "Version 1 was bad",
+        "body": "This is the first {{product}} we made. We almost quit.",
+        "visual_prompt": "Rough first {{product}} prototype on a messy table, harsh light"
+      },
+      {
+        "headline": "What went wrong",
+        "body": "Version one failed because {{first_problem}}.",
+        "visual_prompt": "Macro shot of the flaw on the early {{product}}"
+      },
+      {
+        "headline": "{{draft_count}} drafts later",
+        "body": "Every one a little less wrong.",
+        "visual_prompt": "Row of {{product}} prototypes laid out on the floor, overhead"
+      },
+      {
+        "headline": "The one change",
+        "body": "The fix was {{turning_change}}.",
+        "visual_prompt": "Hands holding the material or tool behind the fix"
+      },
+      {
+        "headline": "How every draft gets tested",
+        "body": "{{test_routine}}. Fail one step, it's back to the table.",
+        "visual_prompt": "Handwritten test checklist pinned above a work table, the {{product}} prototype beside it, daylight"
+      },
+      {
+        "headline": "Steal this rule",
+        "body": "Change one thing per draft, so you always know what fixed it.",
+        "visual_prompt": "Clean typographic tip card in {{brand}} colors with a small sketch of two drafts"
+      },
+      {
+        "headline": "Draft 1 vs final",
+        "body": "Swipe back and compare. Be honest.",
+        "visual_prompt": "Side-by-side first and final {{product}}, clean light"
+      },
+      {
+        "headline": "Get the final one",
+        "body": "{{offer}}.",
+        "visual_prompt": "{{brand}} logo card with the drop date in bold type"
+      }
+    ]
+  },
+  "craft": {
+    "technique": "Worst-first reveal",
+    "notes": "Lead with the flaw, not the win. The audience has to feel slight cringe in the first frame so the final version reads as a payoff. Ask a binary question at the end to pull comments."
+  },
+  "do_not": [
+    "Stage a fake bad draft; viewers can tell when the flaw is manufactured",
+    "Skip the specific fix; vague 'we worked hard' kills the payoff",
+    "Show more than one flaw per beat"
+  ]
+}

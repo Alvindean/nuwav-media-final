@@ -1,0 +1,178 @@
+{
+  "id": "education-007-wrong-way-right-way",
+  "version": 1,
+  "name": "Wrong Way, Right Way Split",
+  "category": "education",
+  "format": "both",
+  "goal": "engagement",
+  "duration_seconds": 22,
+  "aspect_ratio": "9:16",
+  "best_for": [
+    "fitness trainer",
+    "skincare brand",
+    "coffee shop",
+    "jewelry brand",
+    "barber"
+  ],
+  "why_it_works": "People check themselves against the wrong side first: 'wait, that's how I do it.' That flash of self-recognition is the hook. Seeing the right way next to it makes the difference obvious without a lecture, and viewers comment to confess which side they were on.",
+  "hook": {
+    "pattern": "Split the screen, mark one side with an X and one with a check, and ask which one the viewer does.",
+    "examples": [
+      "Left or right: how do you {{task}}?",
+      "You're probably doing the left one.",
+      "Two ways to {{task}}. One ruins it."
+    ]
+  },
+  "variables": [
+    {
+      "name": "brand",
+      "description": "Business name",
+      "example": "Kettle & Crumb Coffee"
+    },
+    {
+      "name": "task",
+      "description": "The everyday task, as a lowercase verb phrase, 4 words or fewer",
+      "example": "store coffee beans"
+    },
+    {
+      "name": "wrong_way",
+      "description": "The common wrong way, starting with a capital letter, 10 words or fewer",
+      "example": "In a clear jar by the window"
+    },
+    {
+      "name": "right_way",
+      "description": "The right way, starting with a capital letter, 10 words or fewer",
+      "example": "In an opaque airtight bag, away from light and heat"
+    },
+    {
+      "name": "why_difference",
+      "description": "Why the right way wins, one sentence, 15 words or fewer",
+      "example": "Light and air stale beans within days, flattening the flavor you paid for"
+    },
+    {
+      "name": "self_check",
+      "description": "A yes/no question viewers can ask themselves to spot the wrong way, 12 words or fewer",
+      "example": "Can you see your beans right now? Then light can too."
+    },
+    {
+      "name": "pro_tip",
+      "description": "One save-worthy tip the reel does not cover, 15 words or fewer",
+      "example": "Buy only what you will brew in two weeks, and check the roast date."
+    },
+    {
+      "name": "offer",
+      "description": "Next step or product tie-in, starting with a verb, 6 words or fewer",
+      "example": "Ask for this week's roast date"
+    },
+    {
+      "name": "disclosure",
+      "description": "Required fine print for the client's niche, from the matching pack in compliance/packs.json",
+      "example": "Results vary. These statements have not been evaluated by the FDA."
+    }
+  ],
+  "beats": [
+    {
+      "seconds": 3,
+      "purpose": "hook: split screen, X and check",
+      "on_screen_text": "Which one do you do?",
+      "voiceover": "Be honest. Which way do you {{task}}?",
+      "visual": {
+        "tier": "still",
+        "prompt": "Vertical 9:16 split-screen photo: left side shows '{{wrong_way}}' with a red X, right side shows '{{right_way}}' with a green check, matching angle and framing on both sides, clean neutral background"
+      }
+    },
+    {
+      "seconds": 5,
+      "purpose": "the wrong way and its cost",
+      "on_screen_text": "Wrong: {{wrong_way}}",
+      "voiceover": "Most people do this: {{wrong_way}}.",
+      "visual": {
+        "tier": "clip_draft",
+        "prompt": "Vertical 9:16 slow push-in on someone doing '{{wrong_way}}', cool flat light, slightly desaturated, eye-level mid shot"
+      }
+    },
+    {
+      "seconds": 5,
+      "purpose": "the right way",
+      "on_screen_text": "Right: {{right_way}}",
+      "voiceover": "Do this instead: {{right_way}}.",
+      "visual": {
+        "tier": "clip_standard",
+        "prompt": "Vertical 9:16 smooth close-up of hands doing '{{right_way}}', warm natural light, rich color, shallow depth of field, confident unhurried motion"
+      }
+    },
+    {
+      "seconds": 6,
+      "purpose": "why the difference matters",
+      "on_screen_text": "Why: {{why_difference}}",
+      "voiceover": "The reason: {{why_difference}}.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Vertical side-by-side result photo: the outcome of the wrong way next to the outcome of the right way, top-down, same light, clear visible difference"
+      }
+    },
+    {
+      "seconds": 3,
+      "purpose": "call to action",
+      "on_screen_text": "Which side were you on? {{disclosure}}",
+      "voiceover": "Which side were you? {{offer}}.",
+      "visual": {
+        "tier": "text_only",
+        "prompt": ""
+      }
+    }
+  ],
+  "cta": "Tell us which side you were on, then switch. {{offer}}.",
+  "carousel": {
+    "slides": [
+      {
+        "headline": "Left or right?",
+        "body": "How do you {{task}}? Be honest.",
+        "visual_prompt": "Split-screen photo with '{{wrong_way}}' on the left marked with a red X and '{{right_way}}' on the right marked with a green check"
+      },
+      {
+        "headline": "The wrong way",
+        "body": "{{wrong_way}}",
+        "visual_prompt": "Photo of '{{wrong_way}}' in cool flat light, slightly desaturated, red X in the corner"
+      },
+      {
+        "headline": "Why it fails",
+        "body": "{{why_difference}}",
+        "visual_prompt": "Close-up showing the damage or poor result from the wrong way, natural light, detail visible"
+      },
+      {
+        "headline": "The right way",
+        "body": "{{right_way}}",
+        "visual_prompt": "Photo of hands doing '{{right_way}}' in warm natural light, green check in the corner"
+      },
+      {
+        "headline": "Quick self-check",
+        "body": "{{self_check}}",
+        "visual_prompt": "Simple question card in {{brand}} colors with a large question mark and a yes/no tick box"
+      },
+      {
+        "headline": "Save this tip",
+        "body": "{{pro_tip}}",
+        "visual_prompt": "Clean tip card in {{brand}} colors with a bookmark icon and one bold line of text"
+      },
+      {
+        "headline": "Switch sides today",
+        "body": "{{offer}}. {{disclosure}}",
+        "visual_prompt": "Clean {{brand}} logo card with the offer in large type"
+      }
+    ]
+  },
+  "craft": {
+    "technique": "Mirror framing",
+    "notes": "Shoot both sides at the identical angle, distance and framing, changing only the light and the action. When everything else matches, the eye goes straight to the one difference. Cool, flat light on wrong; warm light on right. The carousel adds a self-check and a tip the reel skips."
+  },
+  "do_not": [
+    "Make the wrong way look absurd; it has to be what normal people actually do",
+    "Show a wrong way that risks injury (bad lifting form, hot tools on skin) without a clear safety caption",
+    "Pick a 'right way' that is only a matter of taste"
+  ],
+  "compliance": [
+    "Skincare: cosmetic claims only; never say a routine treats acne, eczema or any condition unless the product is approved for it",
+    "Fitness: add 'Consult a professional before starting a new exercise' when showing form corrections; no guaranteed body results"
+  ]
+}

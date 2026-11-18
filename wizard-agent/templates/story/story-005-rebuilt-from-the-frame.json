@@ -1,0 +1,116 @@
+{
+  "id": "story-005-rebuilt-from-the-frame",
+  "version": 1,
+  "name": "Rebuilt From the Frame",
+  "category": "story",
+  "format": "carousel",
+  "goal": "engagement",
+  "aspect_ratio": "4:5",
+  "best_for": [
+    "lowrider car club",
+    "auto shop",
+    "motorcycle shop",
+    "classic car restorer",
+    "furniture restorer"
+  ],
+  "why_it_works": "A restoration is a redemption arc in object form: wreck, labor, glory. Swiping slide by slide feels like turning pages of a build log, and the reveal on the last slides rewards the swipe. People share builds because the before shot is so far from the after.",
+  "hook": {
+    "pattern": "Slide one shows the wreck at its worst with the price paid or the place it was found.",
+    "examples": [
+      "We paid {{price_paid}} for this. Swipe.",
+      "Found {{found_condition}}. Chapter one.",
+      "Everybody said scrap it. {{build_hours}} hours later:"
+    ]
+  },
+  "variables": [
+    {
+      "name": "brand",
+      "description": "Shop, club or brand name",
+      "example": "Southside Kings CC"
+    },
+    {
+      "name": "project_name",
+      "description": "The car, piece or project",
+      "example": "the 1964 hardtop we call La Viuda"
+    },
+    {
+      "name": "found_condition",
+      "description": "Where and how it was found",
+      "example": "rusted through in a field outside town"
+    },
+    {
+      "name": "price_paid",
+      "description": "The real price paid for the wreck, as written (or 'nothing' if it was free)",
+      "example": "$400"
+    },
+    {
+      "name": "hardest_part",
+      "description": "The worst moment of the build",
+      "example": "the frame cracked on the first lift"
+    },
+    {
+      "name": "build_hours",
+      "description": "Real hours or months spent",
+      "example": "1,100"
+    },
+    {
+      "name": "finish_detail",
+      "description": "The signature finishing detail",
+      "example": "hand-laid gold leaf pinstripes"
+    },
+    {
+      "name": "offer",
+      "description": "What viewers can do next, starting with a capital letter",
+      "example": "See it live at our Sunday cruise night"
+    }
+  ],
+  "cta": "{{offer}}.",
+  "carousel": {
+    "slides": [
+      {
+        "headline": "Everybody said scrap it",
+        "body": "This was {{project_name}}, {{found_condition}}. We paid {{price_paid}}.",
+        "visual_prompt": "4:5 photo of a rusted vehicle or worn piece in an overgrown lot, harsh noon sun, wide shot, honest and ugly"
+      },
+      {
+        "headline": "Chapter 1: Stripped to nothing",
+        "body": "Every piece off. Every bolt counted.",
+        "visual_prompt": "4:5 overhead shot of parts laid out on a garage floor in rows, single shop light, organized chaos"
+      },
+      {
+        "headline": "Chapter 2: The worst day",
+        "body": "Then {{hardest_part}}. We almost quit.",
+        "visual_prompt": "4:5 close-up of the crack or broken part, dim garage, a single work lamp, grease on the floor"
+      },
+      {
+        "headline": "Chapter 3: {{build_hours}} hours",
+        "body": "Nights, weekends, borrowed tools.",
+        "visual_prompt": "4:5 photo of hands sanding or welding with sparks, warm orange light, motion blur on sparks"
+      },
+      {
+        "headline": "Chapter 4: The detail",
+        "body": "Finished with {{finish_detail}}.",
+        "visual_prompt": "4:5 macro photo of {{finish_detail}} catching light, deep reflections, black background"
+      },
+      {
+        "headline": "The reveal",
+        "body": "Meet {{project_name}}. Rebuilt from the frame.",
+        "visual_prompt": "4:5 hero photo of the finished build at golden hour on a city street, low angle, glossy reflections, {{brand}} plaque visible"
+      },
+      {
+        "headline": "Come see it",
+        "body": "{{offer}}. Built by {{brand}}.",
+        "visual_prompt": "4:5 branded card in {{brand}} colors with the event details in large type"
+      }
+    ]
+  },
+  "craft": {
+    "technique": "Chaptered build log",
+    "notes": "Number the chapters so the swipe feels like reading. Put the lowest point in the middle (chapter 2), not the start, so there is a second dip before the climb. The reveal slide must be the best-lit image in the set."
+  },
+  "do_not": [
+    "Show the finished build on slide one",
+    "Use another club's car or plaque",
+    "Skip the hard part; the dip is what makes the reveal land"
+  ]
+}

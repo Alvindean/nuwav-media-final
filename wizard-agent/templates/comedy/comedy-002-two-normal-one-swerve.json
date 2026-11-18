@@ -1,0 +1,145 @@
+{
+  "id": "comedy-002-two-normal-one-swerve",
+  "version": 1,
+  "name": "Two Normal Things and a Swerve",
+  "category": "comedy",
+  "format": "reel",
+  "goal": "awareness",
+  "duration_seconds": 20,
+  "aspect_ratio": "9:16",
+  "best_for": [
+    "barber shop",
+    "coffee shop",
+    "fitness trainer",
+    "podcast",
+    "apparel brand"
+  ],
+  "why_it_works": "A list of three makes the brain predict the pattern. Two sensible items lock the prediction in, so a ridiculous third item breaks it and triggers a laugh of surprise. The deadpan justification afterwards makes the viewer replay it, and the brand item sits right next to the laugh.",
+  "hook": {
+    "pattern": "Promise a practical checklist of exactly three things for a moment the audience cares about.",
+    "examples": [
+      "Three things you need before {{occasion}}.",
+      "The three-item checklist for {{occasion}}. Read carefully.",
+      "Before {{occasion}}, you need exactly three things."
+    ]
+  },
+  "variables": [
+    {
+      "name": "brand",
+      "description": "Business name",
+      "example": "Southside Cuts"
+    },
+    {
+      "name": "occasion",
+      "description": "A relatable moment the audience prepares for",
+      "example": "a first date"
+    },
+    {
+      "name": "normal_1",
+      "description": "First sensible item, ideally the brand's product or service (5 words or fewer, spoken)",
+      "example": "a fresh fade"
+    },
+    {
+      "name": "normal_2",
+      "description": "Second sensible item (5 words or fewer, spoken)",
+      "example": "clean white sneakers"
+    },
+    {
+      "name": "swerve",
+      "description": "Third item: absurd, harmless, oddly specific (9 words or fewer, spoken)",
+      "example": "a laminated list of your three best jokes"
+    },
+    {
+      "name": "swerve_reason",
+      "description": "Deadpan justification for the absurd item, ending back on the brand (12 words or fewer, spoken)",
+      "example": "We can't fix the jokes. We can fix the fade."
+    },
+    {
+      "name": "offer",
+      "description": "What the viewer gets for acting; starts with a capital letter (8 words or fewer)",
+      "example": "Friday chairs open at 9am"
+    },
+    {
+      "name": "disclosure",
+      "description": "Required fine print for the client's niche, copied from the matching pack in compliance/packs.json",
+      "example": "Results vary. These statements have not been evaluated by the FDA."
+    }
+  ],
+  "beats": [
+    {
+      "seconds": 3,
+      "purpose": "hook: promise the list",
+      "on_screen_text": "3 things you need before {{occasion}}",
+      "voiceover": "Three things you need before {{occasion}}.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Vertical 9:16 flat-lay on a wooden counter at {{brand}}: three empty numbered cards 1, 2, 3, warm overhead light, clean negative space for text"
+      }
+    },
+    {
+      "seconds": 3,
+      "purpose": "setup: item one, sensible",
+      "on_screen_text": "1. {{normal_1}}",
+      "voiceover": "Number one: {{normal_1}}.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Vertical close-up showing {{normal_1}} at {{brand}}, crisp detail, warm practical light, confident and polished, eye-level"
+      }
+    },
+    {
+      "seconds": 3,
+      "purpose": "setup: item two, sensible, locks the pattern",
+      "on_screen_text": "2. {{normal_2}}",
+      "voiceover": "Number two: {{normal_2}}.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Vertical product-style photo of {{normal_2}} on the same counter, matching warm light and color grade, centered, clean background"
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "turn: item three swerves",
+      "on_screen_text": "3. {{swerve}}",
+      "voiceover": "Number three: {{swerve}}.",
+      "visual": {
+        "tier": "clip_draft",
+        "prompt": "Vertical clip, a hand slowly slides {{swerve}} into frame on the same counter with total seriousness, slow push-in, same warm light, played completely straight"
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "tag: deadpan justification back to the brand",
+      "on_screen_text": "{{swerve_reason}}",
+      "voiceover": "{{swerve_reason}}",
+      "visual": {
+        "tier": "still",
+        "prompt": "Vertical medium shot of a team member from {{brand}} looking straight into the lens, arms crossed, zero smile, shop behind them softly lit"
+      }
+    },
+    {
+      "seconds": 3,
+      "purpose": "call to action",
+      "on_screen_text": "{{brand}}: {{offer}} {{disclosure}}",
+      "voiceover": "{{offer}}.",
+      "visual": {
+        "tier": "text_only",
+        "prompt": ""
+      }
+    }
+  ],
+  "cta": "{{brand}}: {{offer}}. What would your item three be?",
+  "craft": {
+    "technique": "Rule of three with a swerve (pattern break)",
+    "notes": "Setup: two sensible list items, read in the exact same cadence and framing, so the audience locks onto the pattern. Turn: item three is read in that same flat cadence but is absurd; the comedy is that nothing in the delivery changes. Tag: a deadpan justification that admits the brand can't help with item three but can with item one, which lands the brand on the laugh. Timing: give items one and two identical three-second beats so the rhythm becomes predictable; then pause one beat of silence after 'Number three' before revealing the swerve, and cut straight from the swerve to the unsmiling face with no music sting."
+  },
+  "do_not": [
+    "Make the swerve mean or about someone's looks, body or money",
+    "Signal the joke with a wink, laugh track or sound effect before the swerve lands",
+    "Change the camera framing on item three; the sameness is what sells it",
+    "Let the swerve be random with no link back; the tag must return to the brand"
+  ],
+  "compliance": [
+    "Fitness trainers: the swerve and the tag must never joke about bodies, weight or appearance, and no item may promise a body or fitness result; results vary, so never imply a guaranteed look or fitness result",
+    "Keep the swerve harmless and legal; nothing a viewer could copy that is unsafe"
+  ]
+}

@@ -19,8 +19,8 @@
     "pattern": "Open on the rejection itself, with an age, before any context.",
     "examples": [
       "I got cut at {{cut_age}}. This is the list.",
-      "My name wasn't on this roster.",
-      "Coach said I was too small. Watch."
+      "At {{cut_age}}, my name wasn't on the list.",
+      "Cut at {{cut_age}}. Here's what I did next."
     ]
   },
   "variables": [
@@ -31,7 +31,7 @@
     },
     {
       "name": "low_point",
-      "description": "The concrete low point after the cut, a full spoken sentence, 12 words or fewer",
+      "description": "The concrete low point after the cut, a full spoken sentence starting with a capital letter, no end punctuation, 12 words or fewer",
       "example": "I stopped telling people I played"
     },
     {
@@ -53,6 +53,11 @@
       "name": "offer",
       "description": "What viewers can do next, starting with a capital letter, spoken, 4 words or fewer",
       "example": "First training session free"
+    },
+    {
+      "name": "disclosure",
+      "description": "Required fine print for the client's niche, from compliance/packs.json, shown as small on-screen text",
+      "example": "Results vary. These statements have not been evaluated by the FDA."
     }
   ],
   "beats": [
@@ -99,7 +104,7 @@
     {
       "seconds": 3,
       "purpose": "call to action",
-      "on_screen_text": "{{offer}}",
+      "on_screen_text": "{{offer}} {{disclosure}}",
       "voiceover": "Your cut isn't your story. {{offer}}.",
       "visual": {
         "tier": "text_only",

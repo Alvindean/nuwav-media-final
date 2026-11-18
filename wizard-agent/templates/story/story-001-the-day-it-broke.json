@@ -54,6 +54,11 @@
       "name": "offer",
       "description": "What the viewer gets for coming in, a short phrase starting with a capital letter, 6 words or fewer",
       "example": "First cup on us this week"
+    },
+    {
+      "name": "disclosure",
+      "description": "Required fine print for the client's niche, from compliance/packs.json, shown as small on-screen text",
+      "example": "Results vary. These statements have not been evaluated by the FDA."
     }
   ],
   "beats": [
@@ -110,7 +115,7 @@
     {
       "seconds": 3,
       "purpose": "call to action",
-      "on_screen_text": "{{offer}}",
+      "on_screen_text": "{{offer}} {{disclosure}}",
       "voiceover": "See what it built. {{offer}}.",
       "visual": {
         "tier": "text_only",

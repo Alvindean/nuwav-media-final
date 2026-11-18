@@ -53,6 +53,11 @@
       "name": "air_date",
       "description": "When it airs or drops",
       "example": "Thursday 7pm"
+    },
+    {
+      "name": "disclosure",
+      "description": "Required fine print for the client's niche, from compliance/packs.json",
+      "example": "Results not typical. No income is guaranteed."
     }
   ],
   "beats": [
@@ -99,7 +104,7 @@
     {
       "seconds": 3,
       "purpose": "call to action",
-      "on_screen_text": "{{air_date}}",
+      "on_screen_text": "{{air_date}} {{disclosure}}",
       "voiceover": "Full episode {{air_date}}. Follow {{show_name}}.",
       "visual": {
         "tier": "text_only",

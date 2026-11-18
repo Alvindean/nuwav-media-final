@@ -7,7 +7,13 @@
   "goal": "trust",
   "duration_seconds": 18,
   "aspect_ratio": "9:16",
-  "best_for": ["financial advisor", "insurance agent", "personal trainer", "podcast", "dental practice"],
+  "best_for": [
+    "financial advisor",
+    "insurance agent",
+    "personal trainer",
+    "podcast",
+    "dental practice"
+  ],
   "why_it_works": "A single surprising number on a blank screen is a puzzle the brain wants to solve: 'what is that the number of?' Withholding the meaning for one beat buys attention, and one memorable fact is far easier to repeat to a friend than a list of tips.",
   "hook": {
     "pattern": "Put one big number alone on screen with no context, then make the viewer wait one beat to learn what it measures.",
@@ -18,23 +24,104 @@
     ]
   },
   "variables": [
-    { "name": "brand", "description": "Business or show name", "example": "Northline Wealth Partners" },
-    { "name": "topic", "description": "The subject area, lowercase, 4 words or fewer", "example": "saving for retirement" },
-    { "name": "big_number", "description": "The surprising, verifiable number", "example": "$0.79" },
-    { "name": "what_it_measures", "description": "What the number is, lowercase so it follows 'It's', 10 words or fewer", "example": "what $1 buys after 20 years of 3% inflation" },
-    { "name": "why_it_matters", "description": "Why the viewer should care, tied to their life, 12 words or fewer", "example": "Cash sitting still quietly loses buying power every year" },
-    { "name": "action", "description": "One small thing the viewer can do today, starting with a verb, 6 words or fewer", "example": "Check which savings earn nothing" },
-    { "name": "source", "description": "Where the number comes from, 6 words or fewer", "example": "3% yearly inflation assumption" }
+    {
+      "name": "brand",
+      "description": "Business or show name",
+      "example": "Northline Wealth Partners"
+    },
+    {
+      "name": "topic",
+      "description": "The subject area, lowercase, 4 words or fewer",
+      "example": "saving for retirement"
+    },
+    {
+      "name": "big_number",
+      "description": "The surprising, verifiable number",
+      "example": "$0.79"
+    },
+    {
+      "name": "what_it_measures",
+      "description": "What the number is, lowercase so it follows 'It's', 10 words or fewer",
+      "example": "what $1 buys after 20 years of 3% inflation"
+    },
+    {
+      "name": "why_it_matters",
+      "description": "Why the viewer should care, tied to their life, 12 words or fewer",
+      "example": "Cash sitting still quietly loses buying power every year"
+    },
+    {
+      "name": "action",
+      "description": "One small thing the viewer can do today, starting with a verb, 6 words or fewer",
+      "example": "Check which savings earn nothing"
+    },
+    {
+      "name": "source",
+      "description": "Where the number comes from, 6 words or fewer",
+      "example": "3% yearly inflation assumption"
+    },
+    {
+      "name": "disclosure",
+      "description": "Required fine print for the client's niche, from the matching pack in compliance/packs.json",
+      "example": "Not financial advice. Terms apply."
+    }
   ],
   "beats": [
-    { "seconds": 3, "purpose": "hook: the number alone", "on_screen_text": "{{big_number}}", "voiceover": "{{big_number}}. Remember that number.", "visual": { "tier": "text_only", "prompt": "" } },
-    { "seconds": 4, "purpose": "reveal what it measures", "on_screen_text": "It's {{what_it_measures}}", "voiceover": "That's {{what_it_measures}}.", "visual": { "tier": "still", "prompt": "Vertical 9:16 minimalist photo of an everyday object that represents '{{what_it_measures}}' on a plain surface, single soft side light, lots of negative space for text" } },
-    { "seconds": 5, "purpose": "why it matters to the viewer", "on_screen_text": "{{why_it_matters}}", "voiceover": "Why it matters: {{why_it_matters}}.", "visual": { "tier": "still", "prompt": "Vertical candid photo of a person at a kitchen table thinking about {{topic}}, laptop or paperwork, warm evening lamp light, mid shot" } },
-    { "seconds": 3, "purpose": "the one action", "on_screen_text": "Today: {{action}}", "voiceover": "Today: {{action}}.", "visual": { "tier": "text_only", "prompt": "" } },
-    { "seconds": 3, "purpose": "call to action with source", "on_screen_text": "Source: {{source}}", "voiceover": "Follow {{brand}} for one number a week.", "visual": { "tier": "text_only", "prompt": "" } }
+    {
+      "seconds": 3,
+      "purpose": "hook: the number alone",
+      "on_screen_text": "{{big_number}}",
+      "voiceover": "{{big_number}}. Remember that number.",
+      "visual": {
+        "tier": "text_only",
+        "prompt": ""
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "reveal what it measures",
+      "on_screen_text": "It's {{what_it_measures}}",
+      "voiceover": "That's {{what_it_measures}}.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Vertical 9:16 minimalist photo of an everyday object that represents '{{what_it_measures}}' on a plain surface, single soft side light, lots of negative space for text"
+      }
+    },
+    {
+      "seconds": 5,
+      "purpose": "why it matters to the viewer",
+      "on_screen_text": "{{why_it_matters}}",
+      "voiceover": "Why it matters: {{why_it_matters}}.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Vertical candid photo of a person at a kitchen table thinking about {{topic}}, laptop or paperwork, warm evening lamp light, mid shot"
+      }
+    },
+    {
+      "seconds": 3,
+      "purpose": "the one action",
+      "on_screen_text": "Today: {{action}}",
+      "voiceover": "Today: {{action}}.",
+      "visual": {
+        "tier": "text_only",
+        "prompt": ""
+      }
+    },
+    {
+      "seconds": 3,
+      "purpose": "call to action with source",
+      "on_screen_text": "Source: {{source}} {{disclosure}}",
+      "voiceover": "Follow {{brand}} for one number a week.",
+      "visual": {
+        "tier": "text_only",
+        "prompt": ""
+      }
+    }
   ],
   "cta": "Follow {{brand}} for one number a week that changes how you see {{topic}}.",
-  "craft": { "technique": "Withheld context", "notes": "The number gets the whole screen and the whole first beat, with nothing else in frame. Choose a number that is surprising but checkable, and put the source on screen at the end so the surprise reads as fact, not clickbait." },
+  "craft": {
+    "technique": "Withheld context",
+    "notes": "The number gets the whole screen and the whole first beat, with nothing else in frame. Choose a number that is surprising but checkable, and put the source on screen at the end so the surprise reads as fact, not clickbait."
+  },
   "do_not": [
     "Use a number you cannot source or recalculate",
     "Stack several numbers; one number per reel or it stops being memorable",

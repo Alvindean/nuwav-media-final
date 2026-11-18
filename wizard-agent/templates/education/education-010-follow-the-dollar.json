@@ -7,7 +7,14 @@
   "goal": "trust",
   "duration_seconds": 25,
   "aspect_ratio": "9:16",
-  "best_for": ["independent musician", "record label", "podcast", "coffee shop", "sports team", "luxury brand"],
+  "best_for": [
+    "independent musician",
+    "record label",
+    "podcast",
+    "coffee shop",
+    "sports team",
+    "luxury brand"
+  ],
   "why_it_works": "People quietly wonder whether a price is fair, and almost nobody shows them. Opening the books on one purchase feels honest and a little forbidden, which keeps people watching. Once they see how little is left at the end, the price stops feeling like a markup and starts feeling like support.",
   "hook": {
     "pattern": "Hold up the price of one purchase and promise to show exactly where every part of it goes.",
@@ -18,41 +25,178 @@
     ]
   },
   "variables": [
-    { "name": "brand", "description": "Artist, label or business name", "example": "Velvet Static Records" },
-    { "name": "product", "description": "The single purchase being broken down, lowercase, 3 words or fewer", "example": "vinyl record" },
-    { "name": "price", "description": "What the customer pays, as a dollar figure", "example": "$30" },
-    { "name": "slice_1_label", "description": "Biggest cost, starting with a capital letter, 4 words or fewer", "example": "Pressing and jacket" },
-    { "name": "slice_1_amount", "description": "Real amount for slice 1, from your own books, as a dollar figure", "example": "$9" },
-    { "name": "slice_2_label", "description": "Second cost, starting with a capital letter, 4 words or fewer", "example": "Shipping and packaging" },
-    { "name": "slice_2_amount", "description": "Real amount for slice 2, as a dollar figure", "example": "$7" },
-    { "name": "slice_3_label", "description": "Third cost, often the surprising one, starting with a capital letter, 4 words or fewer", "example": "Store and platform fees" },
-    { "name": "slice_3_amount", "description": "Real amount for slice 3, as a dollar figure", "example": "$8" },
-    { "name": "what_we_keep", "description": "What is left for the maker, as a dollar figure", "example": "$6" },
-    { "name": "free_support", "description": "A no-cost way to help, starting with a verb, 10 words or fewer", "example": "Share this post and add us to your playlists" },
-    { "name": "offer", "description": "The way to support most directly, starting with a verb, 6 words or fewer", "example": "Buy direct from our site" }
+    {
+      "name": "brand",
+      "description": "Artist, label or business name",
+      "example": "Velvet Static Records"
+    },
+    {
+      "name": "product",
+      "description": "The single purchase being broken down, lowercase, 3 words or fewer",
+      "example": "vinyl record"
+    },
+    {
+      "name": "price",
+      "description": "What the customer pays, as a dollar figure",
+      "example": "$30"
+    },
+    {
+      "name": "slice_1_label",
+      "description": "Biggest cost, starting with a capital letter, 4 words or fewer",
+      "example": "Pressing and jacket"
+    },
+    {
+      "name": "slice_1_amount",
+      "description": "Real amount for slice 1, from your own books, as a dollar figure",
+      "example": "$9"
+    },
+    {
+      "name": "slice_2_label",
+      "description": "Second cost, starting with a capital letter, 4 words or fewer",
+      "example": "Shipping and packaging"
+    },
+    {
+      "name": "slice_2_amount",
+      "description": "Real amount for slice 2, as a dollar figure",
+      "example": "$7"
+    },
+    {
+      "name": "slice_3_label",
+      "description": "Third cost, often the surprising one, starting with a capital letter, 4 words or fewer",
+      "example": "Store and platform fees"
+    },
+    {
+      "name": "slice_3_amount",
+      "description": "Real amount for slice 3, as a dollar figure",
+      "example": "$8"
+    },
+    {
+      "name": "what_we_keep",
+      "description": "What is left for the maker, as a dollar figure",
+      "example": "$6"
+    },
+    {
+      "name": "free_support",
+      "description": "A no-cost way to help, starting with a verb, 10 words or fewer",
+      "example": "Share this post and add us to your playlists"
+    },
+    {
+      "name": "offer",
+      "description": "The way to support most directly, starting with a verb, 6 words or fewer",
+      "example": "Buy direct from our site"
+    }
   ],
   "beats": [
-    { "seconds": 3, "purpose": "hook: the price in hand", "on_screen_text": "{{price}}. Where does it go?", "voiceover": "You paid {{price}} for this {{product}}. Follow it.", "visual": { "tier": "still", "prompt": "Vertical 9:16 photo of a hand holding a {{product}} with cash for {{price}} tucked beside it, warm moody light, {{brand}} workspace softly blurred behind" } },
-    { "seconds": 5, "purpose": "slice 1, the biggest cost", "on_screen_text": "{{slice_1_label}}: {{slice_1_amount}}", "voiceover": "{{slice_1_amount}} of it: {{slice_1_label}}.", "visual": { "tier": "still", "prompt": "Vertical photo representing '{{slice_1_label}}' for a {{product}}, real workshop or production setting, natural light, mid shot, no logos" } },
-    { "seconds": 5, "purpose": "slice 2", "on_screen_text": "{{slice_2_label}}: {{slice_2_amount}}", "voiceover": "Next {{slice_2_amount}}: {{slice_2_label}}.", "visual": { "tier": "still", "prompt": "Vertical photo representing '{{slice_2_label}}' for a {{product}}, everyday work setting, overhead warm light, no logos" } },
-    { "seconds": 4, "purpose": "slice 3, the surprise", "on_screen_text": "{{slice_3_label}}: {{slice_3_amount}}", "voiceover": "Then {{slice_3_amount}}: {{slice_3_label}}.", "visual": { "tier": "still", "prompt": "Vertical photo of a laptop screen showing a generic, unbranded checkout or fee summary, desk at night, cool screen glow" } },
-    { "seconds": 5, "purpose": "what is left: animated bar shrinking to the remainder", "on_screen_text": "What we keep: {{what_we_keep}}", "voiceover": "Which leaves {{what_we_keep}} for {{brand}}.", "visual": { "tier": "text_only", "prompt": "" } },
-    { "seconds": 3, "purpose": "call to action", "on_screen_text": "{{offer}}", "voiceover": "Want more to reach us? {{offer}}.", "visual": { "tier": "text_only", "prompt": "" } }
+    {
+      "seconds": 3,
+      "purpose": "hook: the price in hand",
+      "on_screen_text": "{{price}}. Where does it go?",
+      "voiceover": "You paid {{price}} for this {{product}}. Follow it.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Vertical 9:16 photo of a hand holding the {{product}} with cash for {{price}} tucked beside it, warm moody light, {{brand}} workspace softly blurred behind"
+      }
+    },
+    {
+      "seconds": 5,
+      "purpose": "slice 1, the biggest cost",
+      "on_screen_text": "{{slice_1_label}}: {{slice_1_amount}}",
+      "voiceover": "{{slice_1_amount}} of it: {{slice_1_label}}.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Vertical photo representing '{{slice_1_label}}' for the {{product}}, real workshop or production setting, natural light, mid shot, no logos"
+      }
+    },
+    {
+      "seconds": 5,
+      "purpose": "slice 2",
+      "on_screen_text": "{{slice_2_label}}: {{slice_2_amount}}",
+      "voiceover": "Next {{slice_2_amount}}: {{slice_2_label}}.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Vertical photo representing '{{slice_2_label}}' for the {{product}}, everyday work setting, overhead warm light, no logos"
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "slice 3, the surprise",
+      "on_screen_text": "{{slice_3_label}}: {{slice_3_amount}}",
+      "voiceover": "Then {{slice_3_amount}}: {{slice_3_label}}.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Vertical photo of a laptop screen showing a generic, unbranded checkout or fee summary, desk at night, cool screen glow"
+      }
+    },
+    {
+      "seconds": 5,
+      "purpose": "what is left: animated bar shrinking to the remainder",
+      "on_screen_text": "What we keep: {{what_we_keep}}",
+      "voiceover": "Which leaves {{what_we_keep}} for {{brand}}.",
+      "visual": {
+        "tier": "text_only",
+        "prompt": ""
+      }
+    },
+    {
+      "seconds": 3,
+      "purpose": "call to action",
+      "on_screen_text": "{{offer}}",
+      "voiceover": "Want more to reach us? {{offer}}.",
+      "visual": {
+        "tier": "text_only",
+        "prompt": ""
+      }
+    }
   ],
   "cta": "{{offer}}. Every {{product}} bought that way keeps the lights on.",
   "carousel": {
     "slides": [
-      { "headline": "Where your {{price}} goes", "body": "One {{product}}, every dollar accounted for.", "visual_prompt": "Hand holding a {{product}} with cash beside it, warm moody light, {{brand}} workspace blurred behind" },
-      { "headline": "{{slice_1_label}}", "body": "{{slice_1_amount}} of your {{price}}.", "visual_prompt": "Production photo representing '{{slice_1_label}}', natural light, with a large stacked bar graphic showing this slice" },
-      { "headline": "{{slice_2_label}}", "body": "{{slice_2_amount}} of your {{price}}.", "visual_prompt": "Photo representing '{{slice_2_label}}', overhead warm light, stacked bar graphic shows the second slice" },
-      { "headline": "{{slice_3_label}}", "body": "{{slice_3_amount}}. The part nobody talks about.", "visual_prompt": "Laptop showing a generic unbranded fee summary at night, stacked bar graphic shows the third slice" },
-      { "headline": "The full math", "body": "{{slice_1_amount}} + {{slice_2_amount}} + {{slice_3_amount}} + {{what_we_keep}} = {{price}}. Check it yourself.", "visual_prompt": "Clean receipt-style graphic in {{brand}} colors with four lines adding up to one bold total" },
-      { "headline": "What we keep", "body": "{{what_we_keep}} of your {{price}}.", "visual_prompt": "Stacked bar graphic in {{brand}} colors with only a thin final sliver highlighted, minimal clean background" },
-      { "headline": "Help for free", "body": "{{free_support}}", "visual_prompt": "Friendly tip card in {{brand}} colors with a share icon and a bookmark icon" },
-      { "headline": "Want more to reach us?", "body": "{{offer}}", "visual_prompt": "Clean {{brand}} logo card with the offer in large type" }
+      {
+        "headline": "Where your {{price}} goes",
+        "body": "One {{product}}, every dollar accounted for.",
+        "visual_prompt": "Hand holding the {{product}} with cash beside it, warm moody light, {{brand}} workspace blurred behind"
+      },
+      {
+        "headline": "{{slice_1_label}}",
+        "body": "{{slice_1_amount}} of your {{price}}.",
+        "visual_prompt": "Production photo representing '{{slice_1_label}}', natural light, with a large stacked bar graphic showing this slice"
+      },
+      {
+        "headline": "{{slice_2_label}}",
+        "body": "{{slice_2_amount}} of your {{price}}.",
+        "visual_prompt": "Photo representing '{{slice_2_label}}', overhead warm light, stacked bar graphic shows the second slice"
+      },
+      {
+        "headline": "{{slice_3_label}}",
+        "body": "{{slice_3_amount}}. The part nobody talks about.",
+        "visual_prompt": "Laptop showing a generic unbranded fee summary at night, stacked bar graphic shows the third slice"
+      },
+      {
+        "headline": "The full math",
+        "body": "{{slice_1_amount}} + {{slice_2_amount}} + {{slice_3_amount}} + {{what_we_keep}} = {{price}}. Check it yourself.",
+        "visual_prompt": "Clean receipt-style graphic in {{brand}} colors with four lines adding up to one bold total"
+      },
+      {
+        "headline": "What we keep",
+        "body": "{{what_we_keep}} of your {{price}}.",
+        "visual_prompt": "Stacked bar graphic in {{brand}} colors with only a thin final sliver highlighted, minimal clean background"
+      },
+      {
+        "headline": "Help for free",
+        "body": "{{free_support}}",
+        "visual_prompt": "Friendly tip card in {{brand}} colors with a share icon and a bookmark icon"
+      },
+      {
+        "headline": "Want more to reach us?",
+        "body": "{{offer}}",
+        "visual_prompt": "Clean {{brand}} logo card with the offer in large type"
+      }
     ]
   },
-  "craft": { "technique": "Open-books breakdown", "notes": "One purchase, three cost slices, then the remainder. Build the edit around a single stacked bar that loses a chunk on every beat, so the shrinking is the story. Round numbers to whole dollars and make sure the slices plus what you keep add up exactly to the price. The carousel shows the full sum and a free way to help." },
+  "craft": {
+    "technique": "Open-books breakdown",
+    "notes": "One purchase, three cost slices, then the remainder. Build the edit around a single stacked bar that loses a chunk on every beat, so the shrinking is the story. Round numbers to whole dollars and make sure the slices plus what you keep add up exactly to the price. The carousel shows the full sum and a free way to help."
+  },
   "do_not": [
     "Use numbers that are not from your own books; viewers will do the math",
     "Name or blame a real platform, distributor or store; describe the fee type instead",

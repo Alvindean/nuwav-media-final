@@ -53,6 +53,11 @@
       "name": "offer",
       "description": "Make-good or next step, a full sentence starting with a capital, 6 words or fewer",
       "example": "Dessert's on us this week"
+    },
+    {
+      "name": "disclosure",
+      "description": "Required fine print for the client's niche, from compliance/packs.json",
+      "example": "Results vary. Consult a licensed provider."
     }
   ],
   "beats": [
@@ -99,7 +104,7 @@
     {
       "seconds": 3,
       "purpose": "call to action",
-      "on_screen_text": "{{offer}}",
+      "on_screen_text": "{{offer}}. {{disclosure}}",
       "voiceover": "Thanks for telling us. {{offer}}.",
       "visual": {
         "tier": "text_only",
@@ -131,18 +136,18 @@
         "visual_prompt": "Close-up of the new fix in place in a bright clean workspace, no faces"
       },
       {
-        "headline": "Our 3-question review",
-        "body": "What broke? Why did it break? What check stops it next time?",
-        "visual_prompt": "Simple checklist card in {{brand}} colors with three numbered questions"
+        "headline": "How we tested the fix",
+        "body": "We ran it on the very next {{mistake_area}} and watched it work.",
+        "visual_prompt": "Clipboard on the {{brand}} counter with the new check ticked off, no faces, bright light"
       },
       {
-        "headline": "Steal this habit",
-        "body": "Write the cause down before the fix. Fixes without causes come back.",
-        "visual_prompt": "Notebook open on a counter with a handwritten cause and fix, top-down"
+        "headline": "Who told us",
+        "body": "A customer flagged it first. Their note is now step one of the {{brand}} checklist.",
+        "visual_prompt": "Handwritten customer note clipped to a printed checklist, no names readable, top-down"
       },
       {
         "headline": "Thank you for telling us",
-        "body": "{{offer}}.",
+        "body": "{{offer}}. {{disclosure}}",
         "visual_prompt": "{{brand}} logo card with a handwritten-style thank-you note"
       }
     ]
@@ -157,7 +162,7 @@
     "Admit to anything with legal or safety implications without advice first"
   ],
   "compliance": [
-    "Med spa: never discuss a patient's treatment or complication publicly; keep mistakes to operations (booking, wait times); no before/after or results claims",
+    "Med spa: never discuss a patient's treatment or complication publicly, and share nothing without written consent (HIPAA); keep mistakes to operations (booking, wait times); no before/after or results claims, results vary",
     "Financial advisor: do not discuss any client's account or losses; no income or return promises; include required firm disclosures",
     "Restaurants: any food-safety issue goes to your health department process first, not to social media",
     "Coaches: no income or results promises; any result shown is labelled as not typical"

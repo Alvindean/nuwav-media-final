@@ -1,7 +1,7 @@
 {
-  "id": "story-003-haircut-number",
+  "id": "story-003-the-regulars-count",
   "version": 1,
-  "name": "Haircut Number Two Hundred",
+  "name": "The Regular's Count",
   "category": "story",
   "format": "reel",
   "goal": "trust",
@@ -20,7 +20,7 @@
     "examples": [
       "This is {{regular_name}}'s {{visit_noun}} number {{visit_count}}.",
       "Visit #1 to visit #{{visit_count}}. Same {{constant_spot}}.",
-      "We've seen him through three jobs and two kids."
+      "{{regular_name}}: {{visit_count}} visits, one {{constant_spot}}."
     ]
   },
   "variables": [
@@ -100,7 +100,7 @@
       "seconds": 5,
       "purpose": "the turn: the chair as a constant",
       "on_screen_text": "Same {{constant_spot}}. Every time.",
-      "voiceover": "Jobs changed. Neighborhoods changed. The {{constant_spot}} didn't.",
+      "voiceover": "Life changed around {{regular_name}}. The {{constant_spot}} didn't.",
       "visual": {
         "tier": "clip_draft",
         "prompt": "Slow orbit around the empty {{constant_spot}} at {{brand}} at closing time, warm light, slight haze, no people, vertical 9:16"
@@ -119,7 +119,7 @@
   ],
   "cta": "Start your count. {{offer}}.",
   "craft": {
-    "technique": "Longitudinal portrait (one person, many years)",
+    "technique": "Longitudinal portrait (one regular, many visits)",
     "notes": "Use the regular's real photos from across the years so time passing is visible at a glance. The constant spot carries the theme; the people change around it. End on the empty {{constant_spot}} so the viewer imagines sitting in it."
   },
   "do_not": [

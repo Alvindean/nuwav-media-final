@@ -41,8 +41,8 @@
     },
     {
       "name": "check_step",
-      "description": "The quality check",
-      "example": "hand-sorting every batch on a light table"
+      "description": "The quality check, starting with a verb ending in -ing",
+      "example": "hand-sorting on a light table"
     },
     {
       "name": "reject_reason",
@@ -68,6 +68,11 @@
       "name": "spot_tip",
       "description": "One sign of a bad one buyers can check themselves, as a sentence",
       "example": "Look for beans with uneven color or chips"
+    },
+    {
+      "name": "disclosure",
+      "description": "Required fine print for the client's niche, from compliance/packs.json",
+      "example": "Results vary. These statements have not been evaluated by the FDA."
     }
   ],
   "beats": [
@@ -78,14 +83,14 @@
       "voiceover": "We threw all of this out this week.",
       "visual": {
         "tier": "still",
-        "prompt": "Large messy pile of rejected {{product}} in a bin on a {{brand}} work table, overhead fluorescent light, honest and unstyled, vertical 9:16"
+        "prompt": "Large messy pile of rejected {{product}} in a bin on the {{brand}} work table, overhead fluorescent light, honest and unstyled, vertical 9:16"
       }
     },
     {
       "seconds": 5,
       "purpose": "the check in action",
-      "on_screen_text": "{{check_step}}",
-      "voiceover": "Every batch: {{check_step}}.",
+      "on_screen_text": "Check: {{check_step}}",
+      "voiceover": "Every batch gets checked by {{check_step}}.",
       "visual": {
         "tier": "clip_standard",
         "prompt": "Close-up of hands {{check_step}} for {{product}}, sorting good from bad into two trays, bright even light, vertical 9:16"
@@ -124,7 +129,7 @@
     {
       "seconds": 3,
       "purpose": "call to action",
-      "on_screen_text": "{{offer}}",
+      "on_screen_text": "{{offer}}. {{disclosure}}",
       "voiceover": "{{offer}}.",
       "visual": {
         "tier": "text_only",
@@ -142,12 +147,12 @@
       },
       {
         "headline": "How we check",
-        "body": "{{check_step}}.",
+        "body": "We check every batch by {{check_step}}.",
         "visual_prompt": "Hands sorting {{product}} into pass and fail trays"
       },
       {
         "headline": "Why this one failed",
-        "body": "{{reject_reason}}.",
+        "body": "It failed for {{reject_reason}}.",
         "visual_prompt": "Macro of one rejected {{product}} showing the flaw"
       },
       {
@@ -157,8 +162,8 @@
       },
       {
         "headline": "The math on one batch",
-        "body": "A {{batch_size}} batch at {{reject_rate}} means {{batch_rejects}} we never sell.",
-        "visual_prompt": "Simple worked-number graphic on a {{brand}} scale display with a reject bin beside it"
+        "body": "One {{batch_size}} batch at {{reject_rate}} means {{batch_rejects}} we never sell.",
+        "visual_prompt": "Simple worked-number graphic on the {{brand}} scale display with a reject bin beside it"
       },
       {
         "headline": "Check yours at home",
@@ -172,7 +177,7 @@
       },
       {
         "headline": "Get this week's batch",
-        "body": "{{offer}}.",
+        "body": "{{offer}}. {{disclosure}}",
         "visual_prompt": "{{brand}} product shot with offer in large type"
       }
     ]

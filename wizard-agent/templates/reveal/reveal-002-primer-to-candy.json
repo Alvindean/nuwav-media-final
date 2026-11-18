@@ -104,7 +104,7 @@
       "seconds": 3,
       "purpose": "call to action",
       "on_screen_text": "{{shop_name}}: {{offer}}",
-      "voiceover": "Book a {{offer}} at {{shop_name}}.",
+      "voiceover": "Book your {{offer}} at {{shop_name}}.",
       "visual": {
         "tier": "text_only",
         "prompt": ""

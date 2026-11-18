@@ -18,9 +18,9 @@
   "hook": {
     "pattern": "A clock time and 'unknown number' on a glowing phone. Dread first, words second.",
     "examples": [
-      "2:14 a.m. Unknown number. She picked up.",
-      "The worst calls come at {{call_time}}.",
-      "Good news never calls at {{call_time}}."
+      "At {{call_time}}, an unknown number lit up.",
+      "The worst calls come at {{call_time}}",
+      "Good news never calls at {{call_time}}"
     ]
   },
   "variables": [
@@ -31,8 +31,8 @@
     },
     {
       "name": "call_time",
-      "description": "The time of the call, as shown on a phone",
-      "example": "2:14 a.m."
+      "description": "The time of the call as a phone shows it, e.g. 2:14 AM; never followed by a period in the script",
+      "example": "2:14 AM"
     },
     {
       "name": "caller_situation",
@@ -53,14 +53,19 @@
       "name": "cta_line",
       "description": "How to reach you, plainly, starting with a capital letter, 6 words or fewer",
       "example": "Free consultation, day or night"
+    },
+    {
+      "name": "disclosure",
+      "description": "Required fine print for the client's niche, from compliance/packs.json, shown as small on-screen text",
+      "example": "Attorney advertising. Past results do not guarantee a similar outcome."
     }
   ],
   "beats": [
     {
       "seconds": 3,
       "purpose": "hook: the time on the phone",
-      "on_screen_text": "{{call_time}}. Unknown number.",
-      "voiceover": "{{call_time}}. Unknown number.",
+      "on_screen_text": "{{call_time}} | Unknown number",
+      "voiceover": "{{call_time}}, unknown number",
       "visual": {
         "tier": "still",
         "prompt": "Vertical 9:16 close-up of a phone lighting up on a dark nightstand showing an incoming call at {{call_time}}, cold blue screen glow, everything else in shadow"
@@ -99,7 +104,7 @@
     {
       "seconds": 3,
       "purpose": "call to action",
-      "on_screen_text": "{{cta_line}}",
+      "on_screen_text": "{{cta_line}} {{disclosure}}",
       "voiceover": "Your {{call_time}}? {{cta_line}}.",
       "visual": {
         "tier": "text_only",

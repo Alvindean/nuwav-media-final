@@ -47,6 +47,11 @@
       "name": "next_step",
       "description": "The next step with a date, starts with a capital letter, 5 words or fewer",
       "example": "Open house Saturday 1-4pm"
+    },
+    {
+      "name": "disclosure",
+      "description": "Required fine print for the client's niche, from compliance/packs.json",
+      "example": "Equal Housing Opportunity. Brokerage and license # shown."
     }
   ],
   "beats": [
@@ -103,7 +108,7 @@
     {
       "seconds": 3,
       "purpose": "call to action",
-      "on_screen_text": "{{next_step}}",
+      "on_screen_text": "{{next_step}} {{disclosure}}",
       "voiceover": "{{next_step}}. {{agent_name}}.",
       "visual": {
         "tier": "text_only",
@@ -146,7 +151,7 @@
       },
       {
         "headline": "{{next_step}}",
-        "body": "Message {{agent_name}} to book a time.",
+        "body": "Message {{agent_name}} to book a time. {{disclosure}}",
         "visual_prompt": "Clean branded card with agent name and date in large type"
       }
     ]

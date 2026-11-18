@@ -18,9 +18,9 @@
   "hook": {
     "pattern": "Show the literal first receipt or order number, then reveal who it came from.",
     "examples": [
-      "Order #0001. It came from my grandma.",
-      "Our first sale was $14 and I screamed.",
-      "This packing slip hangs framed above our desk."
+      "Order #0001 was one {{product}}. Here's the story.",
+      "Our first sale was {{first_sale_amount}}. I screamed.",
+      "{{brand}} started with one packing slip."
     ]
   },
   "variables": [
@@ -33,6 +33,11 @@
       "name": "product",
       "description": "The product in that first order",
       "example": "lavender balm"
+    },
+    {
+      "name": "first_sale_amount",
+      "description": "The real total of the first order, as written",
+      "example": "$14"
     },
     {
       "name": "first_customer",
@@ -63,6 +68,11 @@
       "name": "use_tip",
       "description": "One practical how-to-use tip for the product, a full sentence",
       "example": "Warm a pea-sized amount between your fingers before you apply it."
+    },
+    {
+      "name": "disclosure",
+      "description": "Required fine print for the client's niche, from compliance/packs.json, shown as small on-screen text",
+      "example": "Results vary. These statements have not been evaluated by the FDA."
     }
   ],
   "beats": [
@@ -70,7 +80,7 @@
       "seconds": 3,
       "purpose": "hook: the first order",
       "on_screen_text": "Order #0001.",
-      "voiceover": "This was order number one.",
+      "voiceover": "Order number one. {{first_sale_amount}}.",
       "visual": {
         "tier": "still",
         "prompt": "Vertical 9:16 close-up of a printed order receipt or packing slip reading Order #0001 next to a hand-packed {{product}}, kitchen table, warm lamp light"
@@ -109,7 +119,7 @@
     {
       "seconds": 3,
       "purpose": "call to action",
-      "on_screen_text": "{{offer}}",
+      "on_screen_text": "{{offer}} {{disclosure}}",
       "voiceover": "Every order still gets a note. {{offer}}.",
       "visual": {
         "tier": "text_only",
@@ -122,12 +132,12 @@
     "slides": [
       {
         "headline": "Order #0001",
-        "body": "The first thing anyone ever bought from {{brand}}: {{product}}.",
+        "body": "The first thing anyone bought from {{brand}}: {{product}}, for {{first_sale_amount}}.",
         "visual_prompt": "Close-up of a packing slip reading Order #0001 next to a hand-packed {{product}}, warm lamp light"
       },
       {
-        "headline": "It came from {{first_customer}}",
-        "body": "We still remember the notification.",
+        "headline": "Who placed it",
+        "body": "It came from {{first_customer}}. We still remember the notification.",
         "visual_prompt": "Phone order notification on a cluttered kitchen counter at night"
       },
       {
@@ -147,12 +157,12 @@
       },
       {
         "headline": "Get the most from your {{product}}",
-        "body": "{{use_tip}} Save this for when yours arrives.",
+        "body": "{{use_tip}}",
         "visual_prompt": "Close-up of hands using {{product}} the right way, soft natural light, clean background"
       },
       {
         "headline": "Every order still gets a note",
-        "body": "{{offer}}.",
+        "body": "{{offer}}. {{disclosure}}",
         "visual_prompt": "{{brand}} package with handwritten card on top, clean light background"
       }
     ]

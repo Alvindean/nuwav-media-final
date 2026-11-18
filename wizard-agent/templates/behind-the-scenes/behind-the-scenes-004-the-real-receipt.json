@@ -17,8 +17,8 @@
   "hook": {
     "pattern": "Frame the process as a receipt with one shocking total on slide one.",
     "examples": [
-      "The real receipt for one {{product}}: {{total_hours}} hours.",
-      "What one {{product}} actually costs us to make.",
+      "Receipt for one {{product}}: {{total_hours}} hours.",
+      "What one {{product}} really costs to make.",
       "Itemized: everything that goes into one {{product}}."
     ]
   },
@@ -51,7 +51,7 @@
     {
       "name": "step_three",
       "description": "Third line item with a number",
-      "example": "3 days of cure time between coats"
+      "example": "3 days of drying time between coats"
     },
     {
       "name": "hidden_cost",
@@ -62,6 +62,11 @@
       "name": "offer",
       "description": "How to buy or book, a full sentence starting with a capital",
       "example": "DM 'RECEIPT' for a build slot"
+    },
+    {
+      "name": "disclosure",
+      "description": "Required fine print for the client's niche, from compliance/packs.json",
+      "example": "Results vary. These statements have not been evaluated by the FDA."
     }
   ],
   "cta": "{{offer}}.",
@@ -74,22 +79,22 @@
       },
       {
         "headline": "Line 1",
-        "body": "{{step_one}}.",
-        "visual_prompt": "Close-up of the first process step for a {{product}}, dust in the air, raking side light, 4:5"
+        "body": "First: {{step_one}}.",
+        "visual_prompt": "Close-up of the first process step for the {{product}}, dust in the air, raking side light, 4:5"
       },
       {
         "headline": "Line 2",
-        "body": "{{step_two}}.",
-        "visual_prompt": "Detail of layered material or coats on a {{product}}, glossy reflections, 4:5"
+        "body": "Then: {{step_two}}.",
+        "visual_prompt": "Detail of layered material or coats on the {{product}}, glossy reflections, 4:5"
       },
       {
         "headline": "Line 3",
-        "body": "{{step_three}}.",
-        "visual_prompt": "Workspace with a {{product}} resting under a cover, clock on the wall, quiet mood, 4:5"
+        "body": "After that: {{step_three}}.",
+        "visual_prompt": "Workspace with the {{product}} resting under a cover, clock on the wall, quiet mood, 4:5"
       },
       {
         "headline": "The line nobody sees",
-        "body": "{{hidden_cost}}.",
+        "body": "Plus {{hidden_cost}}.",
         "visual_prompt": "Wide shot of the {{brand}} workspace showing the hidden setup behind {{hidden_cost}}, 4:5"
       },
       {
@@ -99,7 +104,7 @@
       },
       {
         "headline": "Want one?",
-        "body": "{{offer}}.",
+        "body": "{{offer}}. {{disclosure}}",
         "visual_prompt": "{{brand}} logo card on a dark textured background, offer in bold type, 4:5"
       }
     ]

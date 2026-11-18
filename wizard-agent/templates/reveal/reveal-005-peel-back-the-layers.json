@@ -52,6 +52,11 @@
       "name": "launch_date",
       "description": "When it drops",
       "example": "Friday at 10am"
+    },
+    {
+      "name": "disclosure",
+      "description": "Required fine print for the client's niche, from compliance/packs.json",
+      "example": "Results vary. These statements have not been evaluated by the FDA."
     }
   ],
   "carousel": {
@@ -88,7 +93,7 @@
       },
       {
         "headline": "Drops {{launch_date}}",
-        "body": "Save this so you don't miss it.",
+        "body": "Save this so you don't miss it. {{disclosure}}",
         "visual_prompt": "{{brand}} logo and the launch date in large type over a blurred version of the hero shot"
       }
     ]

@@ -56,8 +56,13 @@
     },
     {
       "name": "offer",
-      "description": "How to start, lowercase, reads after 'Start with a', 4 words or fewer",
+      "description": "How to start, lowercase, reads after 'Start yours:' and 'Book your', 4 words or fewer",
       "example": "free 20-minute assessment"
+    },
+    {
+      "name": "disclosure",
+      "description": "Required fine print for the client's niche, from compliance/packs.json",
+      "example": "Results vary. Consult a licensed provider."
     }
   ],
   "beats": [
@@ -114,7 +119,7 @@
     {
       "seconds": 2,
       "purpose": "call to action",
-      "on_screen_text": "Start with a {{offer}}",
+      "on_screen_text": "Start yours: {{offer}} {{disclosure}}",
       "voiceover": "Start yours: {{offer}}.",
       "visual": {
         "tier": "text_only",
@@ -122,7 +127,7 @@
       }
     }
   ],
-  "cta": "Book a {{offer}} with {{brand}}. Results vary, and we'll tell you what's realistic for you.",
+  "cta": "Book your {{offer}} with {{brand}}. Results vary, and we'll tell you what's realistic for you.",
   "carousel": {
     "slides": [
       {
@@ -157,12 +162,12 @@
       },
       {
         "headline": "Your first week, step by step",
-        "body": "Book the assessment. Pick one habit, not three. Take your day-one photo.",
+        "body": "Book your {{offer}}. Pick one habit, not three. Take your day-one photo.",
         "visual_prompt": "Three numbered steps on a clean card, small icons, {{brand}} colors, 4:5"
       },
       {
         "headline": "Your day one",
-        "body": "Start with a {{offer}}. Results vary from person to person.",
+        "body": "Start yours: {{offer}}. {{disclosure}}",
         "visual_prompt": "{{brand}} logo card with the offer in large type"
       }
     ]

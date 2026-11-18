@@ -67,6 +67,11 @@
       "name": "offer",
       "description": "Lead action, written as a sentence starting with a capital",
       "example": "Send us your questions before you apply"
+    },
+    {
+      "name": "disclosure",
+      "description": "Required fine print for the client's niche, from compliance/packs.json",
+      "example": "Not financial advice. Terms apply."
     }
   ],
   "cta": "{{offer}}.",
@@ -104,7 +109,7 @@
       },
       {
         "headline": "Ask before you start",
-        "body": "{{offer}}.",
+        "body": "{{offer}}. {{disclosure}}",
         "visual_prompt": "{{brand}} logo card with a friendly handwritten-style note, 4:5"
       }
     ]

@@ -18,9 +18,9 @@
   "hook": {
     "pattern": "Silent first frame of a voice memo timestamp, then the rough memo audio plays under the next beat.",
     "examples": [
-      "This voice memo is from 3:12 a.m.",
-      "I almost deleted this. It's now our single.",
-      "The first take of {{song_title}} was 40 seconds long."
+      "This voice memo is from {{memo_time}}",
+      "I almost deleted {{song_title}}. Here's why.",
+      "The first take of {{song_title}} was a voice memo."
     ]
   },
   "variables": [
@@ -36,7 +36,7 @@
     },
     {
       "name": "memo_time",
-      "description": "The timestamp on the original memo",
+      "description": "The timestamp on the original memo, e.g. 3:12 a.m.; never followed by a period in the script",
       "example": "3:12 a.m."
     },
     {
@@ -59,7 +59,7 @@
     {
       "seconds": 3,
       "purpose": "hook: the voice memo",
-      "on_screen_text": "Voice memo. {{memo_time}}.",
+      "on_screen_text": "Voice memo, {{memo_time}}",
       "voiceover": "",
       "visual": {
         "tier": "still",

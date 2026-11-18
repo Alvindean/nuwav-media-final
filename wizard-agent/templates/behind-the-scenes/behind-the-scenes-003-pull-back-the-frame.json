@@ -53,6 +53,11 @@
       "name": "offer",
       "description": "Next step for the viewer, a full sentence starting with a capital, 7 words or fewer",
       "example": "Book a listing consult this week"
+    },
+    {
+      "name": "disclosure",
+      "description": "Required fine print for the client's niche, from compliance/packs.json",
+      "example": "Equal Housing Opportunity. Brokerage and license # shown."
     }
   ],
   "beats": [
@@ -93,13 +98,13 @@
       "voiceover": "The trick? {{craft_detail}}.",
       "visual": {
         "tier": "real_photo",
-        "prompt": "Real photo of a {{brand}} crew member checking the camera monitor on set, back to camera, shared with consent, vertical 9:16"
+        "prompt": "Real photo of the {{brand}} crew member checking the camera monitor on set, back to camera, shared with consent, vertical 9:16"
       }
     },
     {
       "seconds": 3,
       "purpose": "call to action",
-      "on_screen_text": "{{offer}}",
+      "on_screen_text": "{{offer}}. {{disclosure}}",
       "voiceover": "Want that care? {{offer}}.",
       "visual": {
         "tier": "text_only",

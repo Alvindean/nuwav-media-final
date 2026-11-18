@@ -1,5 +1,5 @@
 {
-  "id": "reveal-009-sticky-note-myth",
+  "id": "reveal-009-whats-in-the-envelope",
   "version": 1,
   "name": "What's in the Envelope",
   "category": "reveal",
@@ -62,6 +62,11 @@
       "name": "next_step",
       "description": "The free, low-pressure next step, starts with a capital letter, 8 words or fewer",
       "example": "Book a free 15-minute call"
+    },
+    {
+      "name": "disclosure",
+      "description": "Required fine print for the client's niche, from compliance/packs.json",
+      "example": "Attorney advertising. Past results do not guarantee a similar outcome."
     }
   ],
   "carousel": {
@@ -103,7 +108,7 @@
       },
       {
         "headline": "Not sure what applies to you?",
-        "body": "{{next_step}} with {{firm_name}}.",
+        "body": "{{next_step}} with {{firm_name}}. {{disclosure}}",
         "visual_prompt": "{{firm_name}} logo card in calm brand colors with the next step in large type"
       }
     ]

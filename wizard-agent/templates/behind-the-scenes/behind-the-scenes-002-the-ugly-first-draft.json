@@ -68,7 +68,7 @@
       "voiceover": "This is version one. It's bad.",
       "visual": {
         "tier": "still",
-        "prompt": "Rough first prototype of a {{product}} on a cluttered work table, harsh overhead fluorescent light, visible flaws, phone-photo realism, vertical 9:16"
+        "prompt": "Rough first prototype of the {{product}} on a cluttered work table, harsh overhead fluorescent light, visible flaws, phone-photo realism, vertical 9:16"
       }
     },
     {
@@ -98,7 +98,7 @@
       "voiceover": "What changed it: {{turning_change}}.",
       "visual": {
         "tier": "still",
-        "prompt": "Hands holding the key material or tool behind {{turning_change}} next to a {{product}}, warm daylight from a window, vertical 9:16"
+        "prompt": "Hands holding the key material or tool behind {{turning_change}} next to the {{product}}, warm daylight from a window, vertical 9:16"
       }
     },
     {
@@ -132,7 +132,7 @@
       },
       {
         "headline": "What went wrong",
-        "body": "{{first_problem}}.",
+        "body": "Version one failed because {{first_problem}}.",
         "visual_prompt": "Macro shot of the flaw on the early {{product}}"
       },
       {
@@ -142,13 +142,13 @@
       },
       {
         "headline": "The one change",
-        "body": "{{turning_change}}.",
+        "body": "The fix was {{turning_change}}.",
         "visual_prompt": "Hands holding the material or tool behind the fix"
       },
       {
         "headline": "How every draft gets tested",
         "body": "{{test_routine}}. Fail one step, it's back to the table.",
-        "visual_prompt": "Handwritten test checklist pinned above a work table, a {{product}} prototype beside it, daylight"
+        "visual_prompt": "Handwritten test checklist pinned above a work table, the {{product}} prototype beside it, daylight"
       },
       {
         "headline": "Steal this rule",

@@ -6,7 +6,13 @@
   "format": "carousel",
   "goal": "sales",
   "aspect_ratio": "4:5",
-  "best_for": ["supplement brand", "skincare brand", "coffee roaster", "jewelry brand", "apparel brand"],
+  "best_for": [
+    "supplement brand",
+    "skincare brand",
+    "coffee roaster",
+    "jewelry brand",
+    "apparel brand"
+  ],
   "why_it_works": "Shoppers feel tricked by labels and tags, so teaching them where to look hands them power. Once they know what a good label says, they hold every competitor to that standard, and the brand that taught them passes its own test.",
   "hook": {
     "pattern": "Show a real-looking label with three zones circled and promise the viewer will never shop the same way again.",
@@ -17,30 +23,106 @@
     ]
   },
   "variables": [
-    { "name": "brand", "description": "Brand name", "example": "Golden Hour Jewelry Co." },
-    { "name": "product_type", "description": "The product category", "example": "gold necklace" },
-    { "name": "label_zone_1", "description": "First spot to check", "example": "The stamp near the clasp" },
-    { "name": "zone_1_tip", "description": "What to look for there", "example": "14K or 585 means solid gold. 'GP' or 'GF' means plated or filled." },
-    { "name": "label_zone_2", "description": "Second spot to check", "example": "The product description" },
-    { "name": "zone_2_tip", "description": "What to look for there", "example": "'Gold tone' means no gold at all. Look for the karat and the word 'solid'." },
-    { "name": "label_zone_3", "description": "Third spot to check", "example": "The weight in grams" },
-    { "name": "zone_3_tip", "description": "What to look for there", "example": "Price per gram lets you compare two chains that look identical." },
-    { "name": "red_flag", "description": "The one phrase that should make shoppers walk away", "example": "'Gold' with no karat number anywhere" },
-    { "name": "offer", "description": "Purchase-oriented next step", "example": "Every piece we sell lists karat and grams, shop the solid gold edit" }
+    {
+      "name": "brand",
+      "description": "Brand name",
+      "example": "Golden Hour Jewelry Co."
+    },
+    {
+      "name": "product_type",
+      "description": "The product category",
+      "example": "gold necklace"
+    },
+    {
+      "name": "label_zone_1",
+      "description": "First spot to check",
+      "example": "The stamp near the clasp"
+    },
+    {
+      "name": "zone_1_tip",
+      "description": "What to look for there",
+      "example": "14K or 585 means solid gold. 'GP' or 'GF' means plated or filled."
+    },
+    {
+      "name": "label_zone_2",
+      "description": "Second spot to check",
+      "example": "The product description"
+    },
+    {
+      "name": "zone_2_tip",
+      "description": "What to look for there",
+      "example": "'Gold tone' means no gold at all. Look for the karat and the word 'solid'."
+    },
+    {
+      "name": "label_zone_3",
+      "description": "Third spot to check",
+      "example": "The weight in grams"
+    },
+    {
+      "name": "zone_3_tip",
+      "description": "What to look for there",
+      "example": "Price per gram lets you compare two chains that look identical."
+    },
+    {
+      "name": "red_flag",
+      "description": "The one phrase that should make shoppers walk away",
+      "example": "'Gold' with no karat number anywhere"
+    },
+    {
+      "name": "offer",
+      "description": "Purchase-oriented next step",
+      "example": "Shop our solid gold edit, with karat and grams on every tag"
+    },
+    {
+      "name": "disclosure",
+      "description": "Required fine print for the client's niche, from the matching pack in compliance/packs.json",
+      "example": "Results vary. These statements have not been evaluated by the FDA."
+    }
   ],
   "cta": "Save this for your next purchase. {{offer}}.",
   "carousel": {
     "slides": [
-      { "headline": "Stop reading the front", "body": "3 spots on any {{product_type}} that tell the truth.", "visual_prompt": "4:5 close-up photo of a {{product_type}} with its tag or label, three spots circled in bright marker, soft daylight on a neutral linen surface" },
-      { "headline": "Spot 1: {{label_zone_1}}", "body": "{{zone_1_tip}}", "visual_prompt": "4:5 macro photo of {{label_zone_1}} on a {{product_type}}, crisp focus, soft studio light, a single circle highlight" },
-      { "headline": "Spot 2: {{label_zone_2}}", "body": "{{zone_2_tip}}", "visual_prompt": "4:5 macro photo of {{label_zone_2}} on a {{product_type}} label, crisp focus, soft studio light, a single underline highlight" },
-      { "headline": "Spot 3: {{label_zone_3}}", "body": "{{zone_3_tip}}", "visual_prompt": "4:5 macro photo of {{label_zone_3}} on a {{product_type}}, crisp focus, soft studio light, a single arrow highlight" },
-      { "headline": "Red flag: walk away", "body": "{{red_flag}}", "visual_prompt": "4:5 photo of an unbranded generic {{product_type}} tag with the vague wording circled in red, cool flat light" },
-      { "headline": "Now check ours", "body": "Every spot, answered right on the {{brand}} label.", "visual_prompt": "4:5 hero photo of the {{brand}} {{product_type}} with its label facing camera, all three spots circled in green, warm premium light" },
-      { "headline": "Shop with your eyes open", "body": "{{offer}}", "visual_prompt": "4:5 clean {{brand}} logo card with the offer in large type and a save bookmark icon" }
+      {
+        "headline": "Stop reading the front",
+        "body": "3 spots on any {{product_type}} that tell the truth.",
+        "visual_prompt": "4:5 close-up photo of the {{product_type}} with its tag or label, three spots circled in bright marker, soft daylight on a neutral linen surface"
+      },
+      {
+        "headline": "Spot 1: {{label_zone_1}}",
+        "body": "{{zone_1_tip}}",
+        "visual_prompt": "4:5 macro photo of {{label_zone_1}} on the {{product_type}}, crisp focus, soft studio light, a single circle highlight"
+      },
+      {
+        "headline": "Spot 2: {{label_zone_2}}",
+        "body": "{{zone_2_tip}}",
+        "visual_prompt": "4:5 macro photo of {{label_zone_2}} on the {{product_type}} label, crisp focus, soft studio light, a single underline highlight"
+      },
+      {
+        "headline": "Spot 3: {{label_zone_3}}",
+        "body": "{{zone_3_tip}}",
+        "visual_prompt": "4:5 macro photo of {{label_zone_3}} on the {{product_type}}, crisp focus, soft studio light, a single arrow highlight"
+      },
+      {
+        "headline": "Red flag: walk away",
+        "body": "{{red_flag}}",
+        "visual_prompt": "4:5 photo of an unbranded generic {{product_type}} tag with the vague wording circled in red, cool flat light"
+      },
+      {
+        "headline": "Now check ours",
+        "body": "Every spot is answered on our own label. See for yourself.",
+        "visual_prompt": "4:5 hero photo of the {{brand}} {{product_type}} with its label facing camera, all three spots circled in green, warm premium light"
+      },
+      {
+        "headline": "Shop with your eyes open",
+        "body": "{{offer}}. {{disclosure}}",
+        "visual_prompt": "4:5 clean {{brand}} logo card with the offer in large type and a save bookmark icon"
+      }
     ]
   },
-  "craft": { "technique": "Teach the test, then pass it", "notes": "Spend five slides teaching a neutral, brand-free inspection method, and only then show your own label passing it. The order matters: if the brand appears first, the lesson reads as an ad. Use the same circle, underline and arrow graphics throughout so the zones feel like a system." },
+  "craft": {
+    "technique": "Teach the test, then pass it",
+    "notes": "Spend five slides teaching a neutral, brand-free inspection method, and only then show your own label passing it. The order matters: if the brand appears first, the lesson reads as an ad. Use the same circle, underline and arrow graphics throughout so the zones feel like a system."
+  },
   "do_not": [
     "Show or name a real competitor's label; use an unbranded generic for the red flag",
     "Teach a check your own product fails",

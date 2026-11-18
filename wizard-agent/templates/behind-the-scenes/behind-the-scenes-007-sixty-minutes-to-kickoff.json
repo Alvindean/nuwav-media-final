@@ -53,6 +53,11 @@
       "name": "offer",
       "description": "Fan action, a full sentence starting with a capital, 7 words or fewer",
       "example": "Grab tickets for Saturday's home game"
+    },
+    {
+      "name": "disclosure",
+      "description": "Required fine print for the client's niche, from compliance/packs.json",
+      "example": "Results vary. These statements have not been evaluated by the FDA."
     }
   ],
   "beats": [
@@ -83,7 +88,7 @@
       "voiceover": "Thirty. Headphones on, {{playlist_vibe}}.",
       "visual": {
         "tier": "real_photo",
-        "prompt": "Real photo of a {{team_name}} member seated, eyes closed, headphones on, back to the lockers, shared with consent, vertical 9:16"
+        "prompt": "Real photo of the {{team_name}} member seated, eyes closed, headphones on, back to the lockers, shared with consent, vertical 9:16"
       }
     },
     {
@@ -109,7 +114,7 @@
     {
       "seconds": 3,
       "purpose": "call to action",
-      "on_screen_text": "{{offer}}",
+      "on_screen_text": "{{offer}}. {{disclosure}}",
       "voiceover": "See minute zero. {{offer}}.",
       "visual": {
         "tier": "text_only",
@@ -128,7 +133,7 @@
     "Show playbooks, injuries or anything a coach has not cleared"
   ],
   "compliance": [
-    "Fitness trainers: no promised body or performance results, no unrealistic body images or shaming language",
+    "Fitness trainers: no guaranteed body or performance results, results vary, no unrealistic body images or shaming language",
     "Real team members only, filmed with consent; guardian consent for anyone under 18"
   ]
 }

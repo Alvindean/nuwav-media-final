@@ -48,6 +48,11 @@
       "name": "offer",
       "description": "First-order offer, starts with a capital letter, 6 words or fewer",
       "example": "Free gift wrap on first orders"
+    },
+    {
+      "name": "disclosure",
+      "description": "Required fine print for the client's niche, from compliance/packs.json",
+      "example": "Results vary. These statements have not been evaluated by the FDA."
     }
   ],
   "beats": [
@@ -94,7 +99,7 @@
     {
       "seconds": 3,
       "purpose": "call to action",
-      "on_screen_text": "{{offer}}",
+      "on_screen_text": "{{offer}} {{disclosure}}",
       "voiceover": "Get yours. {{offer}}.",
       "visual": {
         "tier": "text_only",

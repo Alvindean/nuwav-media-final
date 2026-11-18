@@ -18,8 +18,8 @@
     "pattern": "Slide one names the number of rejections before the keys, as a count.",
     "examples": [
       "Two no's. Then keys.",
-      "They lost two bids before this door opened.",
-      "Try one: outbid. Try two: denied. Try three: swipe."
+      "{{buyer_label}} heard no twice.",
+      "Try one. Try two. Try three: keys."
     ]
   },
   "variables": [
@@ -45,13 +45,18 @@
     },
     {
       "name": "what_changed",
-      "description": "The concrete thing that changed before try three, a full sentence starting with a capital letter",
+      "description": "The concrete thing that changed before try three, a full sentence starting with a capital letter, no end punctuation",
       "example": "We rebuilt the offer around a later move-in date the seller needed"
     },
     {
       "name": "offer",
       "description": "What viewers can do next, starting with a capital letter",
       "example": "Book a free 20-minute buyer plan call"
+    },
+    {
+      "name": "disclosure",
+      "description": "Required fine print for the client's niche, from compliance/packs.json, shown as small on-screen text",
+      "example": "Equal Housing Opportunity. Brokerage and license # shown."
     }
   ],
   "cta": "{{offer}}.",
@@ -84,7 +89,7 @@
       },
       {
         "headline": "On try one or two?",
-        "body": "{{offer}} with {{brand}}.",
+        "body": "{{offer}} with {{brand}}. {{disclosure}}",
         "visual_prompt": "4:5 branded card in {{brand}} colors with the offer and license number in clear type"
       }
     ]

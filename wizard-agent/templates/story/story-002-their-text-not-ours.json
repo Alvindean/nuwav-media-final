@@ -20,7 +20,7 @@
     "pattern": "Open on the customer's thank-you message on screen with no voiceover, then rewind to how they got there.",
     "examples": [
       "A customer sent us this. We asked to share it.",
-      "This text came in at 11pm last night.",
+      "{{customer_first_name}} texted us this. We asked to share it.",
       "\"{{customer_quote}}\" Read that again."
     ]
   },
@@ -69,6 +69,11 @@
       "name": "save_tip",
       "description": "One practical tip that saves the viewer time or money before they book, a full sentence",
       "example": "Snap a photo of the dashboard lights before you call; it saves a diagnosis step."
+    },
+    {
+      "name": "disclosure",
+      "description": "Required fine print for the client's niche, from compliance/packs.json, shown as small on-screen text",
+      "example": "Results vary. Consult a licensed provider."
     }
   ],
   "beats": [
@@ -115,7 +120,7 @@
     {
       "seconds": 3,
       "purpose": "call to action",
-      "on_screen_text": "{{offer}}",
+      "on_screen_text": "{{offer}} {{disclosure}}",
       "voiceover": "Your turn. {{offer}}.",
       "visual": {
         "tier": "text_only",
@@ -148,17 +153,17 @@
       },
       {
         "headline": "Catch it early: three signs",
-        "body": "Watch for {{early_signs}}. Save this for later.",
+        "body": "Watch for {{early_signs}}. Each one is easier to fix early.",
         "visual_prompt": "Simple checklist graphic with three tick boxes in {{brand}} colors, clean flat layout"
       },
       {
-        "headline": "Before you book: one tip",
+        "headline": "What {{customer_first_name}} wishes they knew",
         "body": "{{save_tip}}",
         "visual_prompt": "Flat-lay of a phone, notepad and pen on a clean desk at {{brand}}, soft daylight"
       },
       {
         "headline": "Got the same problem?",
-        "body": "{{offer}}.",
+        "body": "{{offer}}. {{disclosure}}",
         "visual_prompt": "Clean {{brand}} logo card with the offer in large type"
       }
     ]

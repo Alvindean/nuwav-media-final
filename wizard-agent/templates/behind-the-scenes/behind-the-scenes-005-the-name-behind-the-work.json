@@ -58,6 +58,11 @@
       "name": "offer",
       "description": "Next step for the viewer, a full sentence starting with a capital, 7 words or fewer",
       "example": "Call for a free 15-minute consult"
+    },
+    {
+      "name": "disclosure",
+      "description": "Required fine print for the client's niche, from compliance/packs.json",
+      "example": "Attorney advertising. Past results do not guarantee a similar outcome."
     }
   ],
   "beats": [
@@ -104,8 +109,8 @@
     {
       "seconds": 3,
       "purpose": "call to action",
-      "on_screen_text": "{{offer}}",
-      "voiceover": "{{staff_name}}'s on your side. {{offer}}.",
+      "on_screen_text": "{{offer}}. {{disclosure}}",
+      "voiceover": "On your side: {{offer}}.",
       "visual": {
         "tier": "text_only",
         "prompt": ""

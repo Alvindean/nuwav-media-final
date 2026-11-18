@@ -17,8 +17,8 @@
   "hook": {
     "pattern": "Slide one shows the wreck at its worst with the price paid or the place it was found.",
     "examples": [
-      "We paid $400 for this. Swipe.",
-      "Found in a field behind a church. Chapter one.",
+      "We paid {{price_paid}} for this. Swipe.",
+      "Found {{found_condition}}. Chapter one.",
       "Everybody said scrap it. {{build_hours}} hours later:"
     ]
   },
@@ -37,6 +37,11 @@
       "name": "found_condition",
       "description": "Where and how it was found",
       "example": "rusted through in a field outside town"
+    },
+    {
+      "name": "price_paid",
+      "description": "The real price paid for the wreck, as written (or 'nothing' if it was free)",
+      "example": "$400"
     },
     {
       "name": "hardest_part",
@@ -64,7 +69,7 @@
     "slides": [
       {
         "headline": "Everybody said scrap it",
-        "body": "This was {{project_name}}, {{found_condition}}.",
+        "body": "This was {{project_name}}, {{found_condition}}. We paid {{price_paid}}.",
         "visual_prompt": "4:5 photo of a rusted vehicle or worn piece in an overgrown lot, harsh noon sun, wide shot, honest and ugly"
       },
       {

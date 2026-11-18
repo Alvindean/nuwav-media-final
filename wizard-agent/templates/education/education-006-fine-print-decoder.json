@@ -6,42 +6,128 @@
   "format": "carousel",
   "goal": "trust",
   "aspect_ratio": "4:5",
-  "best_for": ["law firm", "mortgage broker", "insurance agent", "auto shop", "independent musician"],
+  "best_for": [
+    "law firm",
+    "mortgage broker",
+    "insurance agent",
+    "auto shop",
+    "independent musician"
+  ],
   "why_it_works": "Jargon makes people feel shut out, and a little embarrassed to ask. Translating the scary words on a document they already hold gives instant relief, and people save a decoder to use later, which keeps the brand in their camera roll right when the document shows up.",
   "hook": {
     "pattern": "Name a document people get but never understand, and promise to translate the words that matter.",
     "examples": [
       "4 words on your {{document_name}} nobody explains.",
       "Your {{document_name}}, translated into plain English.",
-      "Signing a {{document_name}}? Read these 4 words first."
+      "Signing your {{document_name}}? Read these 4 words first."
     ]
   },
   "variables": [
-    { "name": "brand", "description": "Business name", "example": "Cedar Lane Mortgage" },
-    { "name": "document_name", "description": "The confusing document", "example": "Loan Estimate" },
-    { "name": "term_1", "description": "First jargon term", "example": "APR" },
-    { "name": "meaning_1", "description": "Plain-language meaning of term 1, one or two sentences", "example": "The yearly cost of the loan including fees, not just the interest rate. Compare this number between lenders." },
-    { "name": "term_2", "description": "Second jargon term", "example": "Escrow" },
-    { "name": "meaning_2", "description": "Plain-language meaning of term 2", "example": "An account that holds money for your property taxes and insurance, paid with your monthly payment." },
-    { "name": "term_3", "description": "Third jargon term", "example": "Points" },
-    { "name": "meaning_3", "description": "Plain-language meaning of term 3", "example": "Fees you can pay upfront to lower your rate. Worth it only if you keep the loan long enough." },
-    { "name": "term_4", "description": "Fourth jargon term, ideally the one that surprises people", "example": "Prepayment penalty" },
-    { "name": "meaning_4", "description": "Plain-language meaning of term 4", "example": "A charge for paying the loan off early. Ask if your loan has one before you sign." },
-    { "name": "offer", "description": "Next step", "example": "Send us your Loan Estimate and we'll review it free" }
+    {
+      "name": "brand",
+      "description": "Business name",
+      "example": "Cedar Lane Mortgage"
+    },
+    {
+      "name": "document_name",
+      "description": "The confusing document",
+      "example": "Loan Estimate"
+    },
+    {
+      "name": "term_1",
+      "description": "First jargon term",
+      "example": "APR"
+    },
+    {
+      "name": "meaning_1",
+      "description": "Plain-language meaning of term 1, one or two sentences",
+      "example": "The yearly cost of the loan including fees, not just the interest rate. Compare this number between lenders."
+    },
+    {
+      "name": "term_2",
+      "description": "Second jargon term",
+      "example": "Escrow"
+    },
+    {
+      "name": "meaning_2",
+      "description": "Plain-language meaning of term 2",
+      "example": "An account that holds money for your property taxes and insurance, paid with your monthly payment."
+    },
+    {
+      "name": "term_3",
+      "description": "Third jargon term",
+      "example": "Points"
+    },
+    {
+      "name": "meaning_3",
+      "description": "Plain-language meaning of term 3",
+      "example": "Fees you can pay upfront to lower your rate. Worth it only if you keep the loan long enough."
+    },
+    {
+      "name": "term_4",
+      "description": "Fourth jargon term, ideally the one that surprises people",
+      "example": "Prepayment penalty"
+    },
+    {
+      "name": "meaning_4",
+      "description": "Plain-language meaning of term 4",
+      "example": "A charge for paying the loan off early. Ask if your loan has one before you sign."
+    },
+    {
+      "name": "offer",
+      "description": "Next step",
+      "example": "Send us your Loan Estimate and we'll review it free"
+    },
+    {
+      "name": "disclosure",
+      "description": "Required fine print for the client's niche, from the matching pack in compliance/packs.json",
+      "example": "Not financial advice. Terms apply. NMLS # shown."
+    }
   ],
   "cta": "Save this for when your {{document_name}} arrives. {{offer}}.",
   "carousel": {
     "slides": [
-      { "headline": "Your {{document_name}}, decoded", "body": "4 words that matter. Save this before you sign.", "visual_prompt": "4:5 overhead photo of a printed {{document_name}} on a wooden desk with a pen and reading glasses, soft window light, a magnifying glass over one line" },
-      { "headline": "{{term_1}}", "body": "{{meaning_1}}", "visual_prompt": "4:5 dictionary-style card in {{brand}} colors with the word '{{term_1}}' large and a highlighted line on a blurred document behind" },
-      { "headline": "{{term_2}}", "body": "{{meaning_2}}", "visual_prompt": "4:5 dictionary-style card in {{brand}} colors with the word '{{term_2}}' large and a highlighted line on a blurred document behind" },
-      { "headline": "{{term_3}}", "body": "{{meaning_3}}", "visual_prompt": "4:5 dictionary-style card in {{brand}} colors with the word '{{term_3}}' large and a highlighted line on a blurred document behind" },
-      { "headline": "{{term_4}}: the one people miss", "body": "{{meaning_4}}", "visual_prompt": "4:5 dictionary-style card with the word '{{term_4}}' large and a red underline, a warning-yellow highlight on a blurred document behind" },
-      { "headline": "Still confused? That's normal.", "body": "Most fine print is written for whoever drafted it, not for you.", "visual_prompt": "4:5 candid photo of a person at a kitchen table reading a {{document_name}} with a relieved expression, warm lamp light" },
-      { "headline": "Get a second set of eyes", "body": "{{offer}}", "visual_prompt": "4:5 clean {{brand}} logo card with the offer in large type and a save bookmark icon" }
+      {
+        "headline": "Your {{document_name}}, decoded",
+        "body": "4 words that matter. Save this before you sign.",
+        "visual_prompt": "4:5 overhead photo of a printed {{document_name}} on a wooden desk with a pen and reading glasses, soft window light, a magnifying glass over one line"
+      },
+      {
+        "headline": "{{term_1}}",
+        "body": "{{meaning_1}}",
+        "visual_prompt": "4:5 dictionary-style card in {{brand}} colors with the word '{{term_1}}' large and a highlighted line on a blurred document behind"
+      },
+      {
+        "headline": "{{term_2}}",
+        "body": "{{meaning_2}}",
+        "visual_prompt": "4:5 dictionary-style card in {{brand}} colors with the word '{{term_2}}' large and a highlighted line on a blurred document behind"
+      },
+      {
+        "headline": "{{term_3}}",
+        "body": "{{meaning_3}}",
+        "visual_prompt": "4:5 dictionary-style card in {{brand}} colors with the word '{{term_3}}' large and a highlighted line on a blurred document behind"
+      },
+      {
+        "headline": "{{term_4}}: the one people miss",
+        "body": "{{meaning_4}}",
+        "visual_prompt": "4:5 dictionary-style card with the word '{{term_4}}' large and a red underline, a warning-yellow highlight on a blurred document behind"
+      },
+      {
+        "headline": "Still confused? That's normal.",
+        "body": "Most fine print is written for whoever drafted it, not for you.",
+        "visual_prompt": "4:5 candid photo of a person at a kitchen table reading the {{document_name}} with a relieved expression, warm lamp light"
+      },
+      {
+        "headline": "Get a second set of eyes",
+        "body": "{{offer}}. {{disclosure}}",
+        "visual_prompt": "4:5 clean {{brand}} logo card with the offer in large type and a save bookmark icon"
+      }
     ]
   },
-  "craft": { "technique": "Glossary card system", "notes": "Every term slide uses the identical layout so the swipe rhythm feels like flipping flashcards. Order terms from familiar to surprising, and put the one that costs people money last so the swipe has a payoff. Each meaning ends with a 'what to do' clause, not just a definition." },
+  "craft": {
+    "technique": "Glossary card system",
+    "notes": "Every term slide uses the identical layout so the swipe rhythm feels like flipping flashcards. Order terms from familiar to surprising, and put the one that costs people money last so the swipe has a payoff. Each meaning ends with a 'what to do' clause, not just a definition."
+  },
   "do_not": [
     "Give a definition so lawyerly it needs its own decoder",
     "Choose terms nobody actually sees on the real document",

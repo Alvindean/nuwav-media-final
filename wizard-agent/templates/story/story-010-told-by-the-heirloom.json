@@ -18,9 +18,9 @@
   "hook": {
     "pattern": "The product speaks in first person with a specific lifetime fact.",
     "examples": [
-      "I've been worn to 11 weddings.",
-      "Three generations have checked the time on me.",
-      "I spent 30 years in a drawer. Then this happened."
+      "I've been worn to {{events_count}} weddings.",
+      "My first owner was {{first_owner}}.",
+      "I spent {{drawer_years}} years in a drawer."
     ]
   },
   "variables": [
@@ -36,7 +36,7 @@
     },
     {
       "name": "events_count",
-      "description": "How many weddings or milestones it has seen",
+      "description": "How many weddings it has been worn to, a real figure",
       "example": "11"
     },
     {
@@ -48,6 +48,11 @@
       "name": "hard_chapter",
       "description": "A quiet or hard period in its life, a full spoken sentence in the object's voice, 9 words or fewer",
       "example": "When he passed, nobody could bear to wear me"
+    },
+    {
+      "name": "drawer_years",
+      "description": "How many years it sat unworn, a real figure",
+      "example": "30"
     },
     {
       "name": "new_owner",
@@ -95,7 +100,7 @@
       "seconds": 4,
       "purpose": "the hard chapter",
       "on_screen_text": "{{hard_chapter}}",
-      "voiceover": "{{hard_chapter}}. I waited.",
+      "voiceover": "{{hard_chapter}}. I waited {{drawer_years}} years.",
       "visual": {
         "tier": "still",
         "prompt": "Vertical photo of a closed wooden drawer slightly open, {{heirloom_item}} inside in shadow, a thin beam of light across it, quiet and still"
@@ -147,7 +152,7 @@
       },
       {
         "headline": "The quiet years",
-        "body": "{{hard_chapter}}.",
+        "body": "{{hard_chapter}}. {{drawer_years}} years in a drawer.",
         "visual_prompt": "Wooden drawer slightly open with {{heirloom_item}} in shadow, thin beam of light"
       },
       {
@@ -167,7 +172,7 @@
       },
       {
         "headline": "Keep yours for the next generation",
-        "body": "{{care_tip}} Save this.",
+        "body": "{{care_tip}} That's how I lasted.",
         "visual_prompt": "Soft cloth pouch beside {{heirloom_item}} on a wooden tray, gentle daylight"
       },
       {

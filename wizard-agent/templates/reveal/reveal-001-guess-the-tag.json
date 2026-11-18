@@ -10,9 +10,9 @@
   "best_for": [
     "jewelry brand",
     "luxury brand",
-    "real estate agent",
-    "custom auto shop",
-    "apparel brand"
+    "apparel brand",
+    "furniture maker",
+    "watch brand"
   ],
   "why_it_works": "Asking someone to guess a number makes them commit to an answer in their head. Once they have a guess, they have to stay to find out if they were right, and the gap between their guess and the real {{price}} is what they remember.",
   "hook": {
@@ -20,7 +20,7 @@
     "examples": [
       "Guess what this {{item}} costs.",
       "Comment your guess before the tag flips.",
-      "Everyone guesses double. Let's see if you do."
+      "Two clues, one tag. Lock in your guess."
     ]
   },
   "variables": [
@@ -53,6 +53,16 @@
       "name": "offer",
       "description": "What the viewer gets for acting, starts with a capital letter, 5 words or fewer",
       "example": "Free engraving through Sunday"
+    },
+    {
+      "name": "price_terms",
+      "description": "What the shown price includes or leaves out, true for this client, starts with a capital, full sentence, 8 words or fewer",
+      "example": "Tax included. Free shipping in the US."
+    },
+    {
+      "name": "price_covers",
+      "description": "What the price pays for beyond the item itself, starts with a capital, full sentence, 10 words or fewer",
+      "example": "One jeweler's full day at the bench, start to finish."
     }
   ],
   "beats": [
@@ -127,23 +137,18 @@
       },
       {
         "headline": "Last chance to change your guess",
-        "body": "Most people guess about double.",
+        "body": "Lock it in. The tag flips on the next slide.",
         "visual_prompt": "The face-down tag in sharp focus, {{item}} blurred behind it"
       },
       {
         "headline": "{{price}}",
-        "body": "That's the real number. No catch.",
+        "body": "{{price_terms}}",
         "visual_prompt": "Price tag flipped face-up next to the {{item}}, bold number, warm light"
       },
       {
         "headline": "What {{price}} actually covers",
-        "body": "The {{item}}, {{clue_two}}, and no fees added at checkout.",
+        "body": "{{price_covers}}",
         "visual_prompt": "Clean itemized receipt-style card listing what the price includes, {{brand}} colors"
-      },
-      {
-        "headline": "Save this: how to judge any price",
-        "body": "Ask three things. What is it made of? Who made it? What do you get after you buy?",
-        "visual_prompt": "Simple three-item checklist card with small icons, warm neutral background, 4:5"
       },
       {
         "headline": "Were you close?",
@@ -162,8 +167,8 @@
     "Reveal the price in the caption or thumbnail and kill the tension"
   ],
   "compliance": [
-    "Real estate: the revealed price must be the current list price; include brokerage name and license number on screen per state rules",
-    "Real estate: follow Fair Housing rules; describe the property, never the kind of buyer it suits",
-    "Any niche: the price shown must be the real price a buyer pays, with required fees stated"
+    "Any niche: the price shown must be the real price a buyer pays today, with tax, shipping or required add-ons stated",
+    "Any niche: the clues must be true, checkable details of this exact item, not of a premium version",
+    "Do not show a crossed-out compare-at price unless the item really sold at it recently"
   ]
 }

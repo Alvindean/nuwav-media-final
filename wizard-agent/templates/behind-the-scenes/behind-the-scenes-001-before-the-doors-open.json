@@ -1,0 +1,135 @@
+{
+  "id": "behind-the-scenes-001-before-the-doors-open",
+  "version": 1,
+  "name": "Before the Doors Open",
+  "category": "behind-the-scenes",
+  "format": "reel",
+  "goal": "trust",
+  "duration_seconds": 21,
+  "aspect_ratio": "9:16",
+  "best_for": [
+    "coffee shop",
+    "restaurant",
+    "barber",
+    "bakery",
+    "fitness trainer"
+  ],
+  "why_it_works": "Customers only ever see the finished room. Showing the dark, quiet hours before opening, with real clock times on screen, proves effort without bragging. Timestamps feel like evidence, and the early hour earns quiet respect.",
+  "hook": {
+    "pattern": "Open on a real early clock time and one unglamorous task, no greeting.",
+    "examples": [
+      "{{open_time}}. Nobody's here yet. This is where your {{signature_item}} starts.",
+      "You walk in at nine. We walked in at {{open_time}}.",
+      "The part of {{brand}} you never get to see."
+    ]
+  },
+  "variables": [
+    {
+      "name": "brand",
+      "description": "Business name",
+      "example": "Ironside Coffee"
+    },
+    {
+      "name": "open_time",
+      "description": "The real time the first person arrives",
+      "example": "4:47 AM"
+    },
+    {
+      "name": "signature_item",
+      "description": "The thing customers come in for",
+      "example": "morning croissant"
+    },
+    {
+      "name": "prep_task",
+      "description": "The slow prep job nobody sees",
+      "example": "laminating butter into dough by hand"
+    },
+    {
+      "name": "staff_role",
+      "description": "Who opens up",
+      "example": "our head baker"
+    },
+    {
+      "name": "doors_time",
+      "description": "When the public walks in",
+      "example": "7:00 AM"
+    },
+    {
+      "name": "offer",
+      "description": "Reason to come in",
+      "example": "first 20 customers get a free drip coffee"
+    }
+  ],
+  "beats": [
+    {
+      "seconds": 3,
+      "purpose": "hook: clock time + empty room",
+      "on_screen_text": "{{open_time}}",
+      "voiceover": "{{open_time}}. Nobody's here yet.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Dark empty {{brand}} interior before opening, one overhead light on, chairs still stacked on tables, phone-shot realism, vertical 9:16"
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "first task: lights and machines on",
+      "on_screen_text": "Lights on. Machines warming.",
+      "voiceover": "{{staff_role}} gets the lights on first.",
+      "visual": {
+        "tier": "clip_draft",
+        "prompt": "Hand flipping a wall light switch, room lighting up row by row, slight handheld shake, cool blue pre-dawn light through windows, vertical 9:16"
+      }
+    },
+    {
+      "seconds": 5,
+      "purpose": "the slow prep job",
+      "on_screen_text": "{{prep_task}}",
+      "voiceover": "Then the slow part: {{prep_task}}.",
+      "visual": {
+        "tier": "clip_standard",
+        "prompt": "Close-up of hands doing {{prep_task}} for the {{signature_item}} on a floured steel counter, warm work light, shallow depth of field, vertical 9:16"
+      }
+    },
+    {
+      "seconds": 3,
+      "purpose": "proof of grind: small detail",
+      "on_screen_text": "Same routine. Every day.",
+      "voiceover": "Same routine, every single day.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Detail shot of a worn handwritten prep checklist taped to a wall in a {{brand}} back room, coffee ring stain, tungsten light, vertical 9:16"
+      }
+    },
+    {
+      "seconds": 3,
+      "purpose": "time jump to doors open",
+      "on_screen_text": "{{doors_time}}",
+      "voiceover": "By {{doors_time}}, it looks easy.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Same {{brand}} room now bright and full, {{signature_item}} lined up in the display case, morning sun, vertical 9:16"
+      }
+    },
+    {
+      "seconds": 3,
+      "purpose": "call to action",
+      "on_screen_text": "{{offer}}",
+      "voiceover": "Come see what the early hours made. {{offer}}.",
+      "visual": {
+        "tier": "text_only",
+        "prompt": ""
+      }
+    }
+  ],
+  "cta": "Come see what the early hours made: {{offer}}.",
+  "craft": {
+    "technique": "Timestamp spine",
+    "notes": "Every beat gets a real clock time or a time cue so the edit reads as a log, not an ad. Keep the dark-to-bright light change as the visual arc: the room literally wakes up."
+  },
+  "do_not": [
+    "Fake an early time you do not actually keep",
+    "Glamorize the room with perfect light in the pre-open beats; the dimness is the proof",
+    "Show staff who have not agreed to be filmed"
+  ]
+}

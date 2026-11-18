@@ -1,0 +1,128 @@
+{
+  "id": "behind-the-scenes-008-where-your-file-goes",
+  "version": 1,
+  "name": "Where Your File Goes",
+  "category": "behind-the-scenes",
+  "format": "carousel",
+  "goal": "leads",
+  "aspect_ratio": "4:5",
+  "best_for": [
+    "mortgage broker",
+    "insurance agency",
+    "financial advisor",
+    "law firm",
+    "chiropractor"
+  ],
+  "why_it_works": "Paperwork-heavy services feel like a black box, and the unknown makes people anxious and slow to commit. Walking through every desk a client's file visits replaces anxiety with a map and makes the firm feel organized and safe.",
+  "hook": {
+    "pattern": "Follow the client's file like a character on a journey through the office.",
+    "examples": [
+      "What happens to your file after you hit submit.",
+      "Your {{file_type}} visits {{desk_count}} desks. Here's each one.",
+      "The {{turnaround}} between 'apply' and 'approved', explained."
+    ]
+  },
+  "variables": [
+    {
+      "name": "brand",
+      "description": "Firm name",
+      "example": "Keystone Home Loans"
+    },
+    {
+      "name": "file_type",
+      "description": "What the client hands over",
+      "example": "loan application"
+    },
+    {
+      "name": "desk_count",
+      "description": "How many steps it passes through",
+      "example": "5"
+    },
+    {
+      "name": "step_one",
+      "description": "First stop",
+      "example": "a processor checks every document is there"
+    },
+    {
+      "name": "step_two",
+      "description": "Second stop",
+      "example": "we order the appraisal and title"
+    },
+    {
+      "name": "step_three",
+      "description": "Third stop",
+      "example": "underwriting reviews income and credit"
+    },
+    {
+      "name": "step_four",
+      "description": "Fourth stop",
+      "example": "we clear any conditions with you"
+    },
+    {
+      "name": "turnaround",
+      "description": "Typical time span, stated honestly",
+      "example": "about 30 days"
+    },
+    {
+      "name": "offer",
+      "description": "Lead action",
+      "example": "send us your questions before you apply"
+    }
+  ],
+  "cta": "{{offer}}.",
+  "carousel": {
+    "slides": [
+      {
+        "headline": "Where your file goes next",
+        "body": "Your {{file_type}} visits {{desk_count}} desks at {{brand}}.",
+        "visual_prompt": "A single manila folder on a clean desk in a bright office, labeled with a sticky note, overhead angle, 4:5"
+      },
+      {
+        "headline": "Desk 1",
+        "body": "{{step_one}}.",
+        "visual_prompt": "Hands sorting documents into a folder at a tidy desk, soft daylight, 4:5"
+      },
+      {
+        "headline": "Desk 2",
+        "body": "{{step_two}}.",
+        "visual_prompt": "Phone and laptop on a desk with a calendar showing scheduled dates, no readable personal data, 4:5"
+      },
+      {
+        "headline": "Desk 3",
+        "body": "{{step_three}}.",
+        "visual_prompt": "Reviewer reading paperwork with a pen, face out of frame, warm desk lamp, 4:5"
+      },
+      {
+        "headline": "Desk 4",
+        "body": "{{step_four}}.",
+        "visual_prompt": "Two people at a small table reviewing a checklist together, faces out of frame, 4:5"
+      },
+      {
+        "headline": "Typical timeline: {{turnaround}}",
+        "body": "Every file is different. We tell you where yours is.",
+        "visual_prompt": "Simple timeline graphic in {{brand}} colors with desk icons, 4:5"
+      },
+      {
+        "headline": "Ask before you start",
+        "body": "{{offer}}.",
+        "visual_prompt": "{{brand}} logo card with a friendly handwritten-style note, 4:5"
+      }
+    ]
+  },
+  "craft": {
+    "technique": "Object-as-protagonist journey",
+    "notes": "The file is the hero, so keep the same folder visible on every slide. Faces stay out of frame so it feels like the viewer's own file. State the timeline as typical, never promised."
+  },
+  "do_not": [
+    "Show any real client document, number or name",
+    "Promise a closing date or approval",
+    "Overload slides with jargon; one plain sentence per desk"
+  ],
+  "compliance": [
+    "Mortgage: include NMLS ID and Equal Housing Lender notice; do not promise approval, rates or a closing date; timelines must be labeled typical",
+    "Insurance: do not imply guaranteed coverage or claim payment; include license number where required",
+    "Financial advisor: no performance or income promises; include required firm disclosures",
+    "Law firm: no outcome guarantees; label as attorney advertising where your state bar requires",
+    "Chiropractor: no claims that care cures conditions; describe process only"
+  ]
+}

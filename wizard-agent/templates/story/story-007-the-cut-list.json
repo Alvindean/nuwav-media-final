@@ -1,0 +1,120 @@
+{
+  "id": "story-007-the-cut-list",
+  "version": 1,
+  "name": "The Cut List",
+  "category": "story",
+  "format": "reel",
+  "goal": "awareness",
+  "duration_seconds": 20,
+  "aspect_ratio": "9:16",
+  "best_for": [
+    "sports team",
+    "athlete",
+    "fitness trainer",
+    "coach",
+    "sports podcast"
+  ],
+  "why_it_works": "Almost everyone has been left off some list. Opening on the rejection hooks that old sting, and the hidden training montage gives the viewer a picture of the effort they wish they had made. The payoff feels earned because we saw the cost.",
+  "hook": {
+    "pattern": "Open on the rejection itself, with an age, before any context.",
+    "examples": [
+      "I got cut at 15. Here's the list.",
+      "My name wasn't on this roster.",
+      "Coach said I was too small. Watch."
+    ]
+  },
+  "variables": [
+    {
+      "name": "cut_age",
+      "description": "Age when the athlete was cut",
+      "example": "15"
+    },
+    {
+      "name": "low_point",
+      "description": "The concrete low point after the cut",
+      "example": "I stopped telling people I played"
+    },
+    {
+      "name": "daily_work",
+      "description": "The unseen daily routine that followed",
+      "example": "5 a.m. sprints before school, 300 shots after"
+    },
+    {
+      "name": "payoff_moment",
+      "description": "The moment it paid off, real and specific",
+      "example": "the first varsity start, two years later"
+    },
+    {
+      "name": "team_colors",
+      "description": "Team or brand colors for the hero shot",
+      "example": "navy and gold"
+    },
+    {
+      "name": "offer",
+      "description": "What viewers can do next",
+      "example": "train with us: first session free"
+    }
+  ],
+  "beats": [
+    {
+      "seconds": 3,
+      "purpose": "hook: the rejection",
+      "on_screen_text": "Cut. {{cut_age}} years old.",
+      "voiceover": "I got cut at {{cut_age}}.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Vertical 9:16 photo of a printed team roster pinned to a corkboard in a school hallway, one name missing, harsh fluorescent light, shallow focus"
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "the low point",
+      "on_screen_text": "{{low_point}}",
+      "voiceover": "{{low_point}}.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Vertical photo of a young athlete alone on an empty court or field at dusk, sitting on the ground with gear beside them, long shadows, cold color"
+      }
+    },
+    {
+      "seconds": 5,
+      "purpose": "the work nobody saw",
+      "on_screen_text": "{{daily_work}}",
+      "voiceover": "So every day: {{daily_work}}.",
+      "visual": {
+        "tier": "clip_standard",
+        "prompt": "Vertical 9:16 tracking shot of an athlete training alone before sunrise, breath visible, streetlights still on, gritty handheld feel"
+      }
+    },
+    {
+      "seconds": 5,
+      "purpose": "the turn: the moment it paid off",
+      "on_screen_text": "{{payoff_moment}}",
+      "voiceover": "Then came {{payoff_moment}}.",
+      "visual": {
+        "tier": "clip_hero",
+        "prompt": "Vertical 9:16 slow-motion shot of an athlete in {{team_colors}} at the peak of a decisive play under stadium lights, crowd blurred behind, dramatic rim light"
+      }
+    },
+    {
+      "seconds": 3,
+      "purpose": "call to action",
+      "on_screen_text": "{{offer}}",
+      "voiceover": "Your cut isn't your story. {{offer}}.",
+      "visual": {
+        "tier": "text_only",
+        "prompt": ""
+      }
+    }
+  ],
+  "cta": "Your cut isn't your story. {{offer}}.",
+  "craft": {
+    "technique": "Rejection, solitude, montage, peak",
+    "notes": "The rejection should be an object (the roster), not a speech. Keep the training beat lonely and early-morning so it reads as sacrifice. Spend the one hero clip on the payoff only; everything before it stays cheap and cold so the hero moment pops."
+  },
+  "do_not": [
+    "Use a real league's logos or a real player's likeness",
+    "Promise viewers they will go pro",
+    "Let the montage run long; one strong training shot beats five"
+  ]
+}

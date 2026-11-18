@@ -1,0 +1,161 @@
+{
+  "id": "story-002-their-text-not-ours",
+  "version": 1,
+  "name": "Their Text, Not Ours",
+  "category": "story",
+  "format": "both",
+  "goal": "trust",
+  "duration_seconds": 19,
+  "aspect_ratio": "9:16",
+  "best_for": [
+    "auto shop",
+    "dental practice",
+    "chiropractor",
+    "med spa",
+    "real estate agent",
+    "insurance agency"
+  ],
+  "why_it_works": "A customer's own words, shown as a real-looking message, borrow trust the brand cannot claim for itself. Starting from the thank-you and rewinding makes viewers curious how the problem got solved, and the viewer sees their own problem in the before.",
+  "hook": {
+    "pattern": "Open on the customer's thank-you message on screen with no voiceover, then rewind to how they got there.",
+    "examples": [
+      "\"I cried in the parking lot.\" Here's why.",
+      "This text came in at 11pm last night.",
+      "\"{{customer_quote}}\" We had to share this one."
+    ]
+  },
+  "variables": [
+    {
+      "name": "brand",
+      "description": "Business name",
+      "example": "Eastside Auto Care"
+    },
+    {
+      "name": "customer_quote",
+      "description": "The customer's real message, short, used with written permission",
+      "example": "You saved my road trip. Thank you."
+    },
+    {
+      "name": "customer_first_name",
+      "description": "Customer first name, with permission, or a stand-in like 'One driver'",
+      "example": "Dana"
+    },
+    {
+      "name": "problem",
+      "description": "The problem they arrived with, in plain words",
+      "example": "a dashboard full of warning lights two days before a trip"
+    },
+    {
+      "name": "what_we_did",
+      "description": "The specific fix or service, plainly described",
+      "example": "found a loose sensor wire instead of replacing the whole unit"
+    },
+    {
+      "name": "after_state",
+      "description": "Where they are now, in their terms",
+      "example": "800 miles later, not one light"
+    },
+    {
+      "name": "offer",
+      "description": "What the viewer gets for acting",
+      "example": "free check-up booked this month"
+    }
+  ],
+  "beats": [
+    {
+      "seconds": 3,
+      "purpose": "hook: the customer's text, verbatim",
+      "on_screen_text": "\"{{customer_quote}}\"",
+      "voiceover": "",
+      "visual": {
+        "tier": "still",
+        "prompt": "Vertical 9:16 phone screen mockup showing a text message bubble that reads {{customer_quote}}, blurred {{brand}} interior behind, soft daylight"
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "who they were and what was wrong",
+      "on_screen_text": "{{customer_first_name}} came in with {{problem}}",
+      "voiceover": "{{customer_first_name}} came to us with {{problem}}.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Vertical portrait of a customer, face partly turned away, sitting in the waiting area of {{brand}}, natural window light, honest worried expression"
+      }
+    },
+    {
+      "seconds": 5,
+      "purpose": "what we actually did",
+      "on_screen_text": "What we did: {{what_we_did}}",
+      "voiceover": "Here is what we actually did: {{what_we_did}}.",
+      "visual": {
+        "tier": "clip_draft",
+        "prompt": "Close-up of a {{brand}} team member's hands doing {{what_we_did}}, clean bright workspace, shallow depth of field, vertical 9:16"
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "the turn: where they are now",
+      "on_screen_text": "Now: {{after_state}}",
+      "voiceover": "And now? {{after_state}}.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Vertical photo of the same customer from behind, walking out of {{brand}} into sunlight, relaxed shoulders, warm tones"
+      }
+    },
+    {
+      "seconds": 3,
+      "purpose": "call to action",
+      "on_screen_text": "{{offer}}",
+      "voiceover": "Your turn. {{offer}}.",
+      "visual": {
+        "tier": "text_only",
+        "prompt": ""
+      }
+    }
+  ],
+  "cta": "Your turn. {{offer}}.",
+  "carousel": {
+    "slides": [
+      {
+        "headline": "\"{{customer_quote}}\"",
+        "body": "A message we got from {{customer_first_name}}.",
+        "visual_prompt": "Phone screen mockup with the customer message bubble, {{brand}} colors in the background"
+      },
+      {
+        "headline": "How it started",
+        "body": "{{customer_first_name}} came in with {{problem}}.",
+        "visual_prompt": "Customer seated in the {{brand}} waiting area, natural window light, face turned away"
+      },
+      {
+        "headline": "What we did",
+        "body": "{{what_we_did}}.",
+        "visual_prompt": "Close-up of hands doing the work at {{brand}}, bright clean workspace"
+      },
+      {
+        "headline": "Where they are now",
+        "body": "{{after_state}}.",
+        "visual_prompt": "Customer walking out into sunlight, warm tones, seen from behind"
+      },
+      {
+        "headline": "Got the same problem?",
+        "body": "{{offer}}.",
+        "visual_prompt": "Clean {{brand}} logo card with the offer in large type"
+      }
+    ]
+  },
+  "craft": {
+    "technique": "Start at the ending, then rewind",
+    "notes": "The first frame is the payoff in the customer's own words, silent so people read it. Then rewind to the problem. The middle beat shows the work, not the staff smiling. Keep the after concrete: a number, a distance, a date."
+  },
+  "do_not": [
+    "Write a fake review or fake text message",
+    "Show a customer's face or name without written permission",
+    "Turn the middle beat into a sales pitch"
+  ],
+  "compliance": [
+    "Only use real customer messages with written permission; keep the permission on file",
+    "Dental, chiropractic and med spa: no patient names, faces or health details without a signed HIPAA-compliant authorization, and no promise that the viewer will get the same result",
+    "Med spa: any before/after mention needs 'Results vary' on screen",
+    "Insurance and real estate: no claim of guaranteed savings, coverage or sale price; include license number where your state requires it"
+  ]
+}

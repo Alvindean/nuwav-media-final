@@ -1,0 +1,120 @@
+{
+  "id": "story-003-haircut-number",
+  "version": 1,
+  "name": "Haircut Number Two Hundred",
+  "category": "story",
+  "format": "reel",
+  "goal": "trust",
+  "duration_seconds": 19,
+  "aspect_ratio": "9:16",
+  "best_for": [
+    "barber shop",
+    "coffee shop",
+    "restaurant",
+    "lowrider car club",
+    "auto shop"
+  ],
+  "why_it_works": "A visit count is loyalty made visible. Watching one regular across years makes the place feel like a home, not a transaction, and newcomers want to belong to something that lasts. The number in the hook is oddly specific, so people stop to read it.",
+  "hook": {
+    "pattern": "Lead with a large, specific visit number for one regular, then jump back to visit one.",
+    "examples": [
+      "This is Marcus's 214th haircut in this chair.",
+      "Visit #1 to visit #{{visit_count}}. Same guy. Same chair.",
+      "We've cut his hair through three jobs and two kids."
+    ]
+  },
+  "variables": [
+    {
+      "name": "brand",
+      "description": "Business name",
+      "example": "Fade Theory Barbers"
+    },
+    {
+      "name": "regular_name",
+      "description": "First name of the regular, with permission",
+      "example": "Marcus"
+    },
+    {
+      "name": "visit_count",
+      "description": "Their visit number, a real figure",
+      "example": "214"
+    },
+    {
+      "name": "first_visit_detail",
+      "description": "What the first visit looked like",
+      "example": "he wanted a fade for prom"
+    },
+    {
+      "name": "life_moment",
+      "description": "A life moment the shop was part of",
+      "example": "the cut before his wedding"
+    },
+    {
+      "name": "offer",
+      "description": "What a new customer gets",
+      "example": "first cut 20% off, Tuesdays"
+    }
+  ],
+  "beats": [
+    {
+      "seconds": 3,
+      "purpose": "hook: the count",
+      "on_screen_text": "Haircut #{{visit_count}}.",
+      "voiceover": "This is {{regular_name}}'s haircut number {{visit_count}}.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Vertical 9:16 photo of a regular customer in the chair at {{brand}}, mirror reflection, warm tungsten light, barber's hands mid-cut, candid"
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "the first visit",
+      "on_screen_text": "Visit #1: {{first_visit_detail}}",
+      "voiceover": "First time in, {{first_visit_detail}}.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Vertical photo styled like an old snapshot, slightly faded film look, the same chair at {{brand}} years ago, younger customer, flash photography"
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "the middle: life happened",
+      "on_screen_text": "{{life_moment}}",
+      "voiceover": "We were here for {{life_moment}}.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Vertical photo inside {{brand}}, a celebratory or tender moment between barber and customer, a handshake or hug, soft window light"
+      }
+    },
+    {
+      "seconds": 5,
+      "purpose": "the turn: the chair as a constant",
+      "on_screen_text": "Same chair. Every time.",
+      "voiceover": "Jobs changed. Neighborhoods changed. The chair didn't.",
+      "visual": {
+        "tier": "clip_draft",
+        "prompt": "Slow orbit around an empty barber chair at {{brand}} at closing time, warm light, slight haze, vertical 9:16"
+      }
+    },
+    {
+      "seconds": 3,
+      "purpose": "call to action",
+      "on_screen_text": "Start your count: {{offer}}",
+      "voiceover": "Start your count. {{offer}}.",
+      "visual": {
+        "tier": "text_only",
+        "prompt": ""
+      }
+    }
+  ],
+  "cta": "Start your count. {{offer}}.",
+  "craft": {
+    "technique": "Longitudinal portrait (one person, many years)",
+    "notes": "Shoot or generate the past as an old snapshot so time passing is visible at a glance. The constant object (the chair) carries the theme; the people change around it. End on the empty chair so the viewer imagines sitting in it."
+  },
+  "do_not": [
+    "Use a regular without asking them",
+    "Make up a visit count",
+    "Overload with every life event; pick one"
+  ]
+}

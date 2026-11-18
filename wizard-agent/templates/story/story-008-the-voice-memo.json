@@ -1,0 +1,120 @@
+{
+  "id": "story-008-the-voice-memo",
+  "version": 1,
+  "name": "The Voice Memo That Almost Got Deleted",
+  "category": "story",
+  "format": "reel",
+  "goal": "awareness",
+  "duration_seconds": 20,
+  "aspect_ratio": "9:16",
+  "best_for": [
+    "independent musician",
+    "record label",
+    "music producer",
+    "podcast",
+    "songwriter"
+  ],
+  "why_it_works": "A raw voice memo is intimate: it feels like being let into a private moment. Fans crave the before of a song they will hear, and the almost-deleted stake makes them feel lucky the song exists. That gratitude turns into a stream and a save.",
+  "hook": {
+    "pattern": "Silent first frame of a voice memo timestamp, then the rough memo audio plays under the next beat.",
+    "examples": [
+      "This voice memo is from 3:12 a.m.",
+      "I almost deleted this. It's now our single.",
+      "The first take of {{song_title}} was 40 seconds long."
+    ]
+  },
+  "variables": [
+    {
+      "name": "artist",
+      "description": "Artist or band name",
+      "example": "Velvet Arcade"
+    },
+    {
+      "name": "song_title",
+      "description": "The original song's title",
+      "example": "Low Beams"
+    },
+    {
+      "name": "memo_time",
+      "description": "The timestamp on the original memo",
+      "example": "3:12 a.m."
+    },
+    {
+      "name": "where_written",
+      "description": "Where the song started",
+      "example": "in my car outside my old job"
+    },
+    {
+      "name": "almost_quit",
+      "description": "Why it almost got deleted",
+      "example": "I thought the chorus was too simple"
+    },
+    {
+      "name": "offer",
+      "description": "Where to listen or what to do",
+      "example": "stream it now, link in bio"
+    }
+  ],
+  "beats": [
+    {
+      "seconds": 3,
+      "purpose": "hook: the voice memo",
+      "on_screen_text": "Voice memo. {{memo_time}}.",
+      "voiceover": "",
+      "visual": {
+        "tier": "still",
+        "prompt": "Vertical 9:16 close-up of a phone screen showing a voice memo app with a single recording titled with a timestamp {{memo_time}}, dark bedroom, screen glow on a hand"
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "where it came from",
+      "on_screen_text": "Written {{where_written}}",
+      "voiceover": "I wrote this {{where_written}}.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Vertical photo of an artist sitting in a parked car at night, notebook on the steering wheel, dashboard light on the face, rain on the windshield"
+      }
+    },
+    {
+      "seconds": 5,
+      "purpose": "why it almost died",
+      "on_screen_text": "{{almost_quit}}",
+      "voiceover": "And I almost deleted it, because {{almost_quit}}.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Vertical photo of a cluttered home studio desk, laptop open on a session, cold blue monitor glow, crumpled lyric sheets, empty chair"
+      }
+    },
+    {
+      "seconds": 5,
+      "purpose": "the turn: the finished song",
+      "on_screen_text": "{{song_title}}. Out now.",
+      "voiceover": "Now it's called {{song_title}}.",
+      "visual": {
+        "tier": "clip_standard",
+        "prompt": "Vertical 9:16 slow push-in on {{artist}} performing on a small stage, warm amber spotlight, haze, crowd silhouettes in the foreground"
+      }
+    },
+    {
+      "seconds": 3,
+      "purpose": "call to action",
+      "on_screen_text": "{{offer}}",
+      "voiceover": "Hear what that memo became. {{offer}}.",
+      "visual": {
+        "tier": "text_only",
+        "prompt": ""
+      }
+    }
+  ],
+  "cta": "Hear what that memo became. {{offer}}.",
+  "craft": {
+    "technique": "Rough-to-finished audio reveal",
+    "notes": "Play the real rough voice memo under beats 2 and 3, then hard-cut to the finished master on the turn. The contrast in sound quality is the reveal. Keep the visuals dark and small until the stage shot."
+  },
+  "do_not": [
+    "Use another artist's song, melody or lyrics in the memo",
+    "Imitate a named artist's voice or style",
+    "Polish the memo audio; it must sound rough"
+  ]
+}

@@ -1,0 +1,130 @@
+{
+  "id": "behind-the-scenes-007-sixty-minutes-to-kickoff",
+  "version": 1,
+  "name": "Sixty Minutes to Kickoff",
+  "category": "behind-the-scenes",
+  "format": "reel",
+  "goal": "engagement",
+  "duration_seconds": 21,
+  "aspect_ratio": "9:16",
+  "best_for": [
+    "sports team",
+    "athlete",
+    "fitness trainer",
+    "independent musician",
+    "podcast"
+  ],
+  "why_it_works": "Fans want access to the moment before the moment. A countdown structure creates built-in suspense, every beat is closer to the start, and the pre-game ritual details make the audience feel like insiders.",
+  "hook": {
+    "pattern": "Put a countdown on screen and start inside the locker room or green room.",
+    "examples": [
+      "60 minutes to {{event}}. Come with us.",
+      "What the hour before {{event}} actually looks like.",
+      "Phones off in 60. Here's everything before that."
+    ]
+  },
+  "variables": [
+    {
+      "name": "team_name",
+      "description": "Team, athlete or act",
+      "example": "Westside Hawks"
+    },
+    {
+      "name": "event",
+      "description": "What they are counting down to",
+      "example": "kickoff"
+    },
+    {
+      "name": "ritual",
+      "description": "A real pre-game ritual",
+      "example": "taping ankles in the same order every game"
+    },
+    {
+      "name": "playlist_vibe",
+      "description": "Mood of the warm-up music (no real songs)",
+      "example": "slow-building drums"
+    },
+    {
+      "name": "last_words",
+      "description": "What gets said right before",
+      "example": "Play for the person next to you"
+    },
+    {
+      "name": "offer",
+      "description": "Fan action",
+      "example": "grab tickets for Saturday's home game"
+    }
+  ],
+  "beats": [
+    {
+      "seconds": 3,
+      "purpose": "hook: T-minus 60",
+      "on_screen_text": "T-60:00",
+      "voiceover": "Sixty minutes to {{event}}.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Empty locker room or green room for {{team_name}}, gear laid out on benches, fluorescent light, quiet before the storm, vertical 9:16"
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "T-45: the ritual",
+      "on_screen_text": "T-45:00 · {{ritual}}",
+      "voiceover": "Forty-five out. {{ritual}}.",
+      "visual": {
+        "tier": "clip_draft",
+        "prompt": "Close-up of hands {{ritual}}, focused, shallow depth of field, cool locker room light, vertical 9:16"
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "T-30: headphones on",
+      "on_screen_text": "T-30:00",
+      "voiceover": "Thirty. Headphones on. {{playlist_vibe}}.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Athlete or performer seated, eyes closed, big headphones on, back to a wall of lockers, moody side light, vertical 9:16"
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "T-10: huddle",
+      "on_screen_text": "T-10:00",
+      "voiceover": "Ten minutes.",
+      "visual": {
+        "tier": "clip_standard",
+        "prompt": "Tight huddle of {{team_name}} members seen from the center looking up, arms locked, low angle, tunnel light behind, vertical 9:16"
+      }
+    },
+    {
+      "seconds": 3,
+      "purpose": "T-1: last words",
+      "on_screen_text": "\"{{last_words}}\"",
+      "voiceover": "{{last_words}}.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Silhouette of the group walking down a dark tunnel toward bright stadium or stage light, vertical 9:16"
+      }
+    },
+    {
+      "seconds": 3,
+      "purpose": "call to action",
+      "on_screen_text": "{{offer}}",
+      "voiceover": "Be there for minute zero. {{offer}}.",
+      "visual": {
+        "tier": "text_only",
+        "prompt": ""
+      }
+    }
+  ],
+  "cta": "Be there for minute zero: {{offer}}.",
+  "craft": {
+    "technique": "Countdown structure",
+    "notes": "Each beat opens with a bigger-to-smaller timer so tension builds on its own. Cut faster as the clock drops. End on the walk toward the light and stop before the event itself so fans have to show up to see it."
+  },
+  "do_not": [
+    "Use a real copyrighted song as the warm-up track",
+    "Film minors without guardian consent",
+    "Show playbooks, injuries or anything a coach has not cleared"
+  ]
+}

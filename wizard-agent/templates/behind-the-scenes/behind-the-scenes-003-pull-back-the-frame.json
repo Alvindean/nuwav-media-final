@@ -1,0 +1,125 @@
+{
+  "id": "behind-the-scenes-003-pull-back-the-frame",
+  "version": 1,
+  "name": "Pull Back the Frame",
+  "category": "behind-the-scenes",
+  "format": "reel",
+  "goal": "awareness",
+  "duration_seconds": 19,
+  "aspect_ratio": "9:16",
+  "best_for": [
+    "real estate agent",
+    "luxury brand",
+    "med spa",
+    "podcast",
+    "jewelry brand"
+  ],
+  "why_it_works": "Polished content trains people to distrust polish. Opening on the perfect shot and then pulling back to reveal the clamps, tape, and crew behind it gives a jolt of surprise and makes the brand feel honest and self-aware.",
+  "hook": {
+    "pattern": "Start on the flawless final frame, then announce the pull-back.",
+    "examples": [
+      "Perfect, right? Now look what's just out of frame.",
+      "This {{shot_subject}} took {{crew_count}} people. Pull back.",
+      "What the camera usually cuts out at {{brand}}."
+    ]
+  },
+  "variables": [
+    {
+      "name": "brand",
+      "description": "Business name",
+      "example": "Marlow Estates"
+    },
+    {
+      "name": "shot_subject",
+      "description": "What the polished shot shows",
+      "example": "living room listing photo"
+    },
+    {
+      "name": "crew_count",
+      "description": "How many people were behind it",
+      "example": "four"
+    },
+    {
+      "name": "hidden_mess",
+      "description": "The funniest real mess just out of frame",
+      "example": "a stack of the seller's laundry on the dryer"
+    },
+    {
+      "name": "craft_detail",
+      "description": "One real technique used",
+      "example": "waiting 40 minutes for the sun to hit the windows"
+    },
+    {
+      "name": "offer",
+      "description": "Next step for the viewer",
+      "example": "book a listing consult this week"
+    }
+  ],
+  "beats": [
+    {
+      "seconds": 3,
+      "purpose": "hook: the perfect frame",
+      "on_screen_text": "Perfect, right?",
+      "voiceover": "Perfect, right?",
+      "visual": {
+        "tier": "still",
+        "prompt": "Flawless styled {{shot_subject}} for {{brand}}, golden-hour light, magazine composition, vertical 9:16"
+      }
+    },
+    {
+      "seconds": 5,
+      "purpose": "the pull-back reveal",
+      "on_screen_text": "Now pull back.",
+      "voiceover": "Now look what's just out of frame.",
+      "visual": {
+        "tier": "clip_hero",
+        "prompt": "Slow continuous camera dolly backward from the styled {{shot_subject}} revealing light stands, tape marks on the floor, a crew of {{crew_count}}, and {{hidden_mess}} at the edge, natural light, vertical 9:16"
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "name the mess",
+      "on_screen_text": "{{hidden_mess}}",
+      "voiceover": "Yes, that's {{hidden_mess}}.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Candid close-up of {{hidden_mess}} sitting just outside the set, flat practical light, phone-photo realism, vertical 9:16"
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "the real craft",
+      "on_screen_text": "The trick: {{craft_detail}}",
+      "voiceover": "The real trick? {{craft_detail}}.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Crew member checking a camera monitor on set at {{brand}}, back to camera, warm window light, vertical 9:16"
+      }
+    },
+    {
+      "seconds": 3,
+      "purpose": "call to action",
+      "on_screen_text": "{{offer}}",
+      "voiceover": "Want it done this carefully? {{offer}}.",
+      "visual": {
+        "tier": "text_only",
+        "prompt": ""
+      }
+    }
+  ],
+  "cta": "Want it done this carefully? {{offer}}.",
+  "craft": {
+    "technique": "Reverse dolly reveal",
+    "notes": "The one hero clip is the pull-back itself; everything else is stills. Frame the opening still so the edges are tight, then the reveal widens to show the mess. Keep the mess funny, never gross or private."
+  },
+  "do_not": [
+    "Reveal anything private about a client or their home without consent",
+    "Use the hero clip for anything but the reveal",
+    "Imply listing photos misrepresent the property"
+  ],
+  "compliance": [
+    "Real estate: listing visuals must not misrepresent the property; never imply edits hide defects, and include brokerage name per your state's advertising rules",
+    "Med spa: do not show patients or treatment areas without written consent; no results claims in this format",
+    "Fair housing: no language or imagery that signals a preferred type of buyer or renter"
+  ]
+}

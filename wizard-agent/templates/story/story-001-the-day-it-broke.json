@@ -1,0 +1,131 @@
+{
+  "id": "story-001-the-day-it-broke",
+  "version": 1,
+  "name": "The Day It All Broke",
+  "category": "story",
+  "format": "reel",
+  "goal": "trust",
+  "duration_seconds": 24,
+  "aspect_ratio": "9:16",
+  "best_for": [
+    "coffee shop",
+    "barber shop",
+    "restaurant",
+    "independent musician",
+    "podcast",
+    "fitness trainer"
+  ],
+  "why_it_works": "A specific date makes a story feel true before a single detail lands. People root for anyone who hit bottom and chose something; the business becomes the proof of that choice, so buying from it feels like joining the comeback.",
+  "hook": {
+    "pattern": "Open on a real date and the word 'broke'. A date promises a true story; 'broke' promises stakes.",
+    "examples": [
+      "March 3rd, 2019. The day it all broke.",
+      "One Tuesday in {{turning_date}} changed everything here.",
+      "I can tell you the exact day I almost quit."
+    ]
+  },
+  "variables": [
+    {
+      "name": "brand",
+      "description": "Business or artist name",
+      "example": "Low Tide Coffee"
+    },
+    {
+      "name": "turning_date",
+      "description": "The real date things broke, as people say it",
+      "example": "March 3rd, 2019"
+    },
+    {
+      "name": "old_life",
+      "description": "What the founder was doing before, in a few words",
+      "example": "pulling double shifts at a job I hated"
+    },
+    {
+      "name": "breaking_point",
+      "description": "The concrete moment it broke",
+      "example": "they cut my hours with a text message"
+    },
+    {
+      "name": "decision",
+      "description": "The single decision that followed",
+      "example": "I spent my last savings on a used espresso machine"
+    },
+    {
+      "name": "offer",
+      "description": "What the viewer gets for coming in",
+      "example": "first cup on us this week"
+    }
+  ],
+  "beats": [
+    {
+      "seconds": 3,
+      "purpose": "hook: the date stamp",
+      "on_screen_text": "{{turning_date}}. The day it all broke.",
+      "voiceover": "{{turning_date}}. The day it all broke.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Vertical 9:16 photo of a wall calendar or phone lock screen showing {{turning_date}}, inside {{brand}}'s empty space before opening, cold blue morning light, shallow focus on the date"
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "set the character and the before",
+      "on_screen_text": "Before: {{old_life}}",
+      "voiceover": "Back then, I was {{old_life}}.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Vertical portrait of the founder of {{brand}} from behind, in the old setting of {{old_life}}, muted desaturated tones, overhead fluorescent light, slightly tired posture"
+      }
+    },
+    {
+      "seconds": 5,
+      "purpose": "the break: what went wrong",
+      "on_screen_text": "{{breaking_point}}",
+      "voiceover": "Then {{breaking_point}}.",
+      "visual": {
+        "tier": "clip_draft",
+        "prompt": "Slow push-in on a single object that captures {{breaking_point}}, dim room, one hard side light, dust in the air, vertical 9:16"
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "the decision",
+      "on_screen_text": "So I made one call.",
+      "voiceover": "So I made one decision: {{decision}}.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Close-up of the founder's hands doing the first act of {{decision}}, such as signing a lease or unlocking a door, warm practical light, vertical framing"
+      }
+    },
+    {
+      "seconds": 5,
+      "purpose": "the turn: what it became",
+      "on_screen_text": "Now: {{brand}}",
+      "voiceover": "That decision became {{brand}}. And it still runs on that day.",
+      "visual": {
+        "tier": "clip_standard",
+        "prompt": "Vertical 9:16 wide shot inside {{brand}} today, busy and warm, golden hour light through the windows, camera slowly drifts forward past customers"
+      }
+    },
+    {
+      "seconds": 3,
+      "purpose": "call to action",
+      "on_screen_text": "{{offer}}",
+      "voiceover": "Come see what that day built. {{offer}}.",
+      "visual": {
+        "tier": "text_only",
+        "prompt": ""
+      }
+    }
+  ],
+  "cta": "Come see what that day built. {{offer}}.",
+  "craft": {
+    "technique": "Date-stamped origin with a single turn",
+    "notes": "Use one true date and one physical object for the breaking point. Keep the before short and dull in color so the warm present-day shot feels like a release. Only one decision, never a list."
+  },
+  "do_not": [
+    "Invent hardship that did not happen",
+    "Spend more than 4 seconds on the sad part",
+    "Bury the business name until the last frame"
+  ]
+}

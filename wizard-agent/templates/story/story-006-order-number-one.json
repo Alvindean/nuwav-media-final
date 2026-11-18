@@ -1,0 +1,154 @@
+{
+  "id": "story-006-order-number-one",
+  "version": 1,
+  "name": "Order Number One",
+  "category": "story",
+  "format": "both",
+  "goal": "sales",
+  "duration_seconds": 20,
+  "aspect_ratio": "9:16",
+  "best_for": [
+    "skincare brand",
+    "supplement brand",
+    "apparel brand",
+    "jewelry brand",
+    "UGC creator"
+  ],
+  "why_it_works": "Order #0001 turns a faceless online store into a person at a kitchen table. Viewers love being early to something, and seeing how much the first sale meant makes their own order feel like it matters too. That feeling beats a discount.",
+  "hook": {
+    "pattern": "Show the literal first receipt or order number, then reveal who it came from.",
+    "examples": [
+      "Order #0001. It came from my grandma.",
+      "Our first sale was $14 and I screamed.",
+      "This packing slip is framed in our office. Here's why."
+    ]
+  },
+  "variables": [
+    {
+      "name": "brand",
+      "description": "Store name",
+      "example": "Marigold Botanics"
+    },
+    {
+      "name": "product",
+      "description": "The product in that first order",
+      "example": "lavender balm"
+    },
+    {
+      "name": "first_customer",
+      "description": "Who placed the first order, as specific as is fair to share",
+      "example": "a stranger in Ohio who found us on a hashtag"
+    },
+    {
+      "name": "struggle",
+      "description": "The real struggle at that stage",
+      "example": "we had sold zero for 41 days and I was about to shut it down"
+    },
+    {
+      "name": "why_it_mattered",
+      "description": "What the first order meant",
+      "example": "someone we'd never met believed it was worth paying for"
+    },
+    {
+      "name": "offer",
+      "description": "What the viewer gets now",
+      "example": "free shipping on your first order this week"
+    }
+  ],
+  "beats": [
+    {
+      "seconds": 3,
+      "purpose": "hook: the first order",
+      "on_screen_text": "Order #0001.",
+      "voiceover": "This was order number one.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Vertical 9:16 close-up of a printed order receipt or packing slip reading Order #0001 next to a hand-packed {{product}}, kitchen table, warm lamp light"
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "who placed it",
+      "on_screen_text": "It was from {{first_customer}}.",
+      "voiceover": "And it came from {{first_customer}}.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Vertical photo of a phone notification of a new order on a cluttered kitchen counter, late night, single lamp, sticky notes around"
+      }
+    },
+    {
+      "seconds": 5,
+      "purpose": "the struggle",
+      "on_screen_text": "{{struggle}}",
+      "voiceover": "Truth is, {{struggle}}.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Vertical photo of the founder of {{brand}} packing boxes on a living room floor, tape gun, stacks of mailers, tired but determined, overhead light"
+      }
+    },
+    {
+      "seconds": 5,
+      "purpose": "the turn: why it mattered",
+      "on_screen_text": "{{why_it_mattered}}",
+      "voiceover": "That one order meant {{why_it_mattered}}.",
+      "visual": {
+        "tier": "clip_draft",
+        "prompt": "Slow push-in on hands writing a thank-you note on a small card and sliding it into a {{brand}} package, warm light, vertical 9:16"
+      }
+    },
+    {
+      "seconds": 3,
+      "purpose": "call to action",
+      "on_screen_text": "{{offer}}",
+      "voiceover": "Every order still gets a note. {{offer}}.",
+      "visual": {
+        "tier": "text_only",
+        "prompt": ""
+      }
+    }
+  ],
+  "cta": "Every order still gets a note. {{offer}}.",
+  "carousel": {
+    "slides": [
+      {
+        "headline": "Order #0001",
+        "body": "The first thing anyone ever bought from {{brand}}: {{product}}.",
+        "visual_prompt": "Close-up of a packing slip reading Order #0001 next to a hand-packed {{product}}, warm lamp light"
+      },
+      {
+        "headline": "It came from {{first_customer}}",
+        "body": "We still remember the notification.",
+        "visual_prompt": "Phone order notification on a cluttered kitchen counter at night"
+      },
+      {
+        "headline": "Before that order",
+        "body": "{{struggle}}.",
+        "visual_prompt": "Founder packing boxes on a living room floor, overhead light"
+      },
+      {
+        "headline": "Why it mattered",
+        "body": "{{why_it_mattered}}.",
+        "visual_prompt": "Hands writing a thank-you card into a {{brand}} package"
+      },
+      {
+        "headline": "Every order still gets a note",
+        "body": "{{offer}}.",
+        "visual_prompt": "{{brand}} package with handwritten card on top, clean light background"
+      }
+    ]
+  },
+  "craft": {
+    "technique": "Artifact-led origin story",
+    "notes": "Build the whole story around one physical artifact, the first receipt. The struggle beat should include a real number (days, dollars, followers) so it feels true. Close on a ritual that continues today, so the viewer can take part in the story by ordering."
+  },
+  "do_not": [
+    "Fake an order number or invent the first customer",
+    "Make product claims inside the emotional story",
+    "Show a customer's full name or address on the slip"
+  ],
+  "compliance": [
+    "Supplements: no disease or treatment claims; any structure/function claim needs the FDA disclaimer 'These statements have not been evaluated by the Food and Drug Administration'",
+    "Skincare: no claims that the product cures or treats skin conditions",
+    "Blur names and addresses on any real order slip shown"
+  ]
+}

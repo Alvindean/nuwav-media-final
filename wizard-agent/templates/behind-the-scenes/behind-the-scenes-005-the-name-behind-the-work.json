@@ -1,0 +1,131 @@
+{
+  "id": "behind-the-scenes-005-the-name-behind-the-work",
+  "version": 1,
+  "name": "The Name Behind the Work",
+  "category": "behind-the-scenes",
+  "format": "reel",
+  "goal": "trust",
+  "duration_seconds": 19,
+  "aspect_ratio": "9:16",
+  "best_for": [
+    "law firm",
+    "dental office",
+    "restaurant",
+    "sports team",
+    "insurance agency"
+  ],
+  "why_it_works": "Clients trust people, not logos. Spotlighting the staff member who does the invisible work (the paralegal, the hygienist, the dishwasher, the equipment manager) makes the business feel human and shows the client who is really taking care of them.",
+  "hook": {
+    "pattern": "Name the person and the invisible job in one line, as a tease.",
+    "examples": [
+      "You've never met {{staff_name}}. {{staff_name}} has met your file.",
+      "The most important person at {{brand}} isn't on the sign.",
+      "{{staff_name}} does the job nobody claps for."
+    ]
+  },
+  "variables": [
+    {
+      "name": "brand",
+      "description": "Business or team name",
+      "example": "Reyes & Cole Law"
+    },
+    {
+      "name": "staff_name",
+      "description": "First name of the staff member (with consent)",
+      "example": "Dana"
+    },
+    {
+      "name": "staff_role",
+      "description": "Their actual title",
+      "example": "senior paralegal"
+    },
+    {
+      "name": "invisible_task",
+      "description": "The behind-the-scenes job they do",
+      "example": "checks every filing deadline twice"
+    },
+    {
+      "name": "years",
+      "description": "Years on the team",
+      "example": "9"
+    },
+    {
+      "name": "quirk",
+      "description": "One human detail they agreed to share",
+      "example": "keeps a cactus named Judge on the desk"
+    },
+    {
+      "name": "offer",
+      "description": "Next step for the viewer",
+      "example": "call for a free 15-minute consult"
+    }
+  ],
+  "beats": [
+    {
+      "seconds": 3,
+      "purpose": "hook: tease the person",
+      "on_screen_text": "You've never met {{staff_name}}.",
+      "voiceover": "You've never met {{staff_name}}.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Back-of-head shot of a {{staff_role}} at a desk in the {{brand}} office, warm desk lamp, files stacked, quiet early morning light, vertical 9:16"
+      }
+    },
+    {
+      "seconds": 5,
+      "purpose": "what they actually do",
+      "on_screen_text": "{{invisible_task}}",
+      "voiceover": "{{staff_name}} is our {{staff_role}}. {{staff_name}} {{invisible_task}}.",
+      "visual": {
+        "tier": "talking_head",
+        "prompt": "{{staff_name}}, the {{brand}} {{staff_role}}, speaking to camera at their own desk, natural office light, chest-up framing, vertical 9:16"
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "the human detail",
+      "on_screen_text": "{{quirk}}",
+      "voiceover": "Also, {{staff_name}} {{quirk}}.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Close-up desk detail at {{brand}}: {{quirk}}, soft window light, shallow depth of field, vertical 9:16"
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "time served",
+      "on_screen_text": "{{years}} years here",
+      "voiceover": "{{years}} years of doing it right when nobody's watching.",
+      "visual": {
+        "tier": "still",
+        "prompt": "{{staff_role}} at work, hands on keyboard and paperwork, candid side angle, {{brand}} office, vertical 9:16"
+      }
+    },
+    {
+      "seconds": 3,
+      "purpose": "call to action",
+      "on_screen_text": "{{offer}}",
+      "voiceover": "That's who's on your side. {{offer}}.",
+      "visual": {
+        "tier": "text_only",
+        "prompt": ""
+      }
+    }
+  ],
+  "cta": "That's who's on your side: {{offer}}.",
+  "craft": {
+    "technique": "Unsung hero spotlight",
+    "notes": "Open without showing the face so the hook works as a tease, then let the person speak in their own voice. The quirk beat is what makes it shareable; pick one that is warm and specific, never a joke at their expense."
+  },
+  "do_not": [
+    "Feature anyone without their written consent to be filmed and cloned",
+    "Show any client name, file or screen",
+    "Script words the staff member would not say themselves"
+  ],
+  "compliance": [
+    "Law firms: do not show case files or client info; no outcome guarantees; include required attorney advertising disclaimers per your state bar",
+    "Dental: no patient faces or charts on screen without HIPAA-compliant written authorization",
+    "Insurance: do not imply coverage or claim outcomes; include agency license info where required",
+    "Talking head uses the staff member's own face and voice only, with signed consent"
+  ]
+}

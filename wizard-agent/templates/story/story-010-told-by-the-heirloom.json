@@ -1,0 +1,169 @@
+{
+  "id": "story-010-told-by-the-heirloom",
+  "version": 1,
+  "name": "Told by the Heirloom",
+  "category": "story",
+  "format": "both",
+  "goal": "sales",
+  "duration_seconds": 23,
+  "aspect_ratio": "9:16",
+  "best_for": [
+    "jewelry brand",
+    "luxury watch dealer",
+    "luxury brand",
+    "bespoke tailor",
+    "leather goods maker"
+  ],
+  "why_it_works": "Telling the story from the object's point of view is unexpected, so people keep watching to see who is talking. It reframes a high price as a cost per generation, and luxury buyers are buying meaning and permanence more than metal.",
+  "hook": {
+    "pattern": "The product speaks in first person with a specific lifetime fact.",
+    "examples": [
+      "I've been worn to 11 weddings.",
+      "Three generations have checked the time on me.",
+      "I spent 30 years in a drawer. Then this happened."
+    ]
+  },
+  "variables": [
+    {
+      "name": "brand",
+      "description": "Brand, jeweler or atelier name",
+      "example": "Maison Corvo"
+    },
+    {
+      "name": "heirloom_item",
+      "description": "The piece, described visually",
+      "example": "a gold signet ring with a worn crest"
+    },
+    {
+      "name": "events_count",
+      "description": "How many weddings or milestones it has seen",
+      "example": "11"
+    },
+    {
+      "name": "first_owner",
+      "description": "The first owner, described without real names if needed",
+      "example": "a railway clerk in 1952"
+    },
+    {
+      "name": "hard_chapter",
+      "description": "A quiet or hard period in its life",
+      "example": "When he passed, nobody could bear to wear me"
+    },
+    {
+      "name": "new_owner",
+      "description": "Who wears it today",
+      "example": "his great-granddaughter, on her wedding day"
+    },
+    {
+      "name": "offer",
+      "description": "What viewers can do next",
+      "example": "book a private restoration consultation"
+    }
+  ],
+  "beats": [
+    {
+      "seconds": 3,
+      "purpose": "hook: the object speaks",
+      "on_screen_text": "I've been worn to {{events_count}} weddings.",
+      "voiceover": "I've been worn to {{events_count}} weddings.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Vertical 9:16 macro photo of {{heirloom_item}} resting on dark velvet, single soft spotlight, deep shadows, rich reflections"
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "first owner",
+      "on_screen_text": "First: {{first_owner}}",
+      "voiceover": "The first hands that held me belonged to {{first_owner}}.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Vertical photo styled as a vintage sepia portrait, a figure's hands wearing {{heirloom_item}}, period clothing, soft film grain"
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "the hard chapter",
+      "on_screen_text": "{{hard_chapter}}",
+      "voiceover": "{{hard_chapter}}. I waited in a drawer.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Vertical photo of a closed wooden drawer slightly open, {{heirloom_item}} inside in shadow, a thin beam of light across it, quiet and still"
+      }
+    },
+    {
+      "seconds": 5,
+      "purpose": "the turn: restored and passed on",
+      "on_screen_text": "Restored at {{brand}}",
+      "voiceover": "Then {{brand}} brought me back.",
+      "visual": {
+        "tier": "clip_standard",
+        "prompt": "Vertical 9:16 close-up of a craftsperson's hands polishing {{heirloom_item}} at a bench, loupe and fine tools, warm focused light, slow rotation of the piece"
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "now",
+      "on_screen_text": "Now: {{new_owner}}",
+      "voiceover": "Now I belong to {{new_owner}}.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Vertical photo of a young person's hand wearing {{heirloom_item}} at a modern celebration, soft bokeh lights, warm and elegant"
+      }
+    },
+    {
+      "seconds": 3,
+      "purpose": "call to action",
+      "on_screen_text": "{{offer}}",
+      "voiceover": "Some things are made to outlast us. {{offer}}.",
+      "visual": {
+        "tier": "text_only",
+        "prompt": ""
+      }
+    }
+  ],
+  "cta": "Some things are made to outlast us. {{offer}}.",
+  "carousel": {
+    "slides": [
+      {
+        "headline": "I've been to {{events_count}} weddings",
+        "body": "A story told by {{heirloom_item}}.",
+        "visual_prompt": "Macro photo of {{heirloom_item}} on dark velvet, single soft spotlight"
+      },
+      {
+        "headline": "My first owner",
+        "body": "{{first_owner}}.",
+        "visual_prompt": "Vintage sepia-toned photo of hands wearing {{heirloom_item}}, film grain"
+      },
+      {
+        "headline": "The quiet years",
+        "body": "{{hard_chapter}}.",
+        "visual_prompt": "Wooden drawer slightly open with {{heirloom_item}} in shadow, thin beam of light"
+      },
+      {
+        "headline": "Brought back by {{brand}}",
+        "body": "Cleaned, repaired, made whole by hand.",
+        "visual_prompt": "Craftsperson's hands polishing {{heirloom_item}} at a bench, loupe, warm light"
+      },
+      {
+        "headline": "Who wears me now",
+        "body": "{{new_owner}}.",
+        "visual_prompt": "Young hand wearing {{heirloom_item}} at a celebration, soft bokeh"
+      },
+      {
+        "headline": "Made to outlast us",
+        "body": "{{offer}}.",
+        "visual_prompt": "Minimal {{brand}} card, cream background, gold type, generous white space"
+      }
+    ]
+  },
+  "craft": {
+    "technique": "Object narrator (first-person product POV)",
+    "notes": "Write every line as the object. Keep it calm, never salesy: an heirloom does not shout. Use one sentence per era. The restoration beat is the only clip, because the hands and the slow turn of the piece show craft better than any still."
+  },
+  "do_not": [
+    "Make the object sound cute or jokey; luxury needs restraint",
+    "Show or imitate another luxury house's logo or signature design",
+    "Invent a provenance the client cannot back up"
+  ]
+}

@@ -1,0 +1,140 @@
+{
+  "id": "behind-the-scenes-009-sound-on-guess-the-shop",
+  "version": 1,
+  "name": "Sound On, Guess the Shop",
+  "category": "behind-the-scenes",
+  "format": "reel",
+  "goal": "engagement",
+  "duration_seconds": 25,
+  "aspect_ratio": "9:16",
+  "best_for": [
+    "barber",
+    "coffee shop",
+    "lowrider car club",
+    "custom auto shop",
+    "independent musician"
+  ],
+  "why_it_works": "Sound is the most ignored part of a process and the most satisfying. Asking viewers to guess from sound alone turns watching into a game, keeps them listening to the end for the answer, and the guesses fill the comments.",
+  "hook": {
+    "pattern": "Black screen, a real process sound, and a guessing challenge.",
+    "examples": [
+      "Sound on. Guess what we're making.",
+      "Three sounds. One {{finished_thing}}. Guess before the reveal.",
+      "If you know this sound, you know {{brand}}."
+    ]
+  },
+  "variables": [
+    {
+      "name": "brand",
+      "description": "Business or artist name",
+      "example": "Clean Fade Barbershop"
+    },
+    {
+      "name": "finished_thing",
+      "description": "What the sounds add up to",
+      "example": "skin fade"
+    },
+    {
+      "name": "sound_one",
+      "description": "First process sound",
+      "example": "clippers clicking on"
+    },
+    {
+      "name": "sound_two",
+      "description": "Second process sound",
+      "example": "the foil shaver buzzing close"
+    },
+    {
+      "name": "sound_three",
+      "description": "Third process sound",
+      "example": "the hot towel snapping open"
+    },
+    {
+      "name": "offer",
+      "description": "Next step",
+      "example": "book your chair this week"
+    }
+  ],
+  "beats": [
+    {
+      "seconds": 3,
+      "purpose": "hook: black screen, first sound",
+      "on_screen_text": "Sound on. Guess.",
+      "voiceover": "",
+      "visual": {
+        "tier": "text_only",
+        "prompt": ""
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "sound one, extreme close-up",
+      "on_screen_text": "Sound 1: {{sound_one}}",
+      "voiceover": "",
+      "visual": {
+        "tier": "clip_draft",
+        "prompt": "Extreme macro of the tool making {{sound_one}} at {{brand}}, abstract and hard to identify, single hard light, dark background, vertical 9:16"
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "sound two",
+      "on_screen_text": "Sound 2: {{sound_two}}",
+      "voiceover": "",
+      "visual": {
+        "tier": "clip_draft",
+        "prompt": "Extreme macro of {{sound_two}}, texture and motion only, no wide context, moody side light, vertical 9:16"
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "sound three",
+      "on_screen_text": "Sound 3: {{sound_three}}",
+      "voiceover": "",
+      "visual": {
+        "tier": "clip_draft",
+        "prompt": "Extreme macro of {{sound_three}}, slow and tactile, steam or particles in the light, vertical 9:16"
+      }
+    },
+    {
+      "seconds": 3,
+      "purpose": "comment prompt before reveal",
+      "on_screen_text": "Guess in the comments.",
+      "voiceover": "Got it yet?",
+      "visual": {
+        "tier": "text_only",
+        "prompt": ""
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "the reveal",
+      "on_screen_text": "A {{finished_thing}}.",
+      "voiceover": "A {{finished_thing}}, start to finish.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Clean, proud wide shot of the finished {{finished_thing}} at {{brand}}, warm light, the tools from the macro shots visible nearby, vertical 9:16"
+      }
+    },
+    {
+      "seconds": 3,
+      "purpose": "call to action",
+      "on_screen_text": "{{offer}}",
+      "voiceover": "{{offer}}.",
+      "visual": {
+        "tier": "text_only",
+        "prompt": ""
+      }
+    }
+  ],
+  "cta": "Drop your guess, then {{offer}}.",
+  "craft": {
+    "technique": "Audio-first guessing game",
+    "notes": "Record the real sounds clean and loud; the AI clips are just texture under them, so keep the visuals macro and ambiguous. Withhold the wide shot until the reveal. No voiceover until the comment prompt."
+  },
+  "do_not": [
+    "Use stock sound effects instead of the real process audio",
+    "Show a wide shot early and give the answer away",
+    "Use any copyrighted music under the sounds"
+  ]
+}

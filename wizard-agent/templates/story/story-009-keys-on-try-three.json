@@ -1,0 +1,107 @@
+{
+  "id": "story-009-keys-on-try-three",
+  "version": 1,
+  "name": "Keys on Try Three",
+  "category": "story",
+  "format": "carousel",
+  "goal": "leads",
+  "aspect_ratio": "4:5",
+  "best_for": [
+    "real estate agent",
+    "mortgage broker",
+    "financial advisor",
+    "insurance agency",
+    "credit union"
+  ],
+  "why_it_works": "Buyers who were turned down feel alone and ashamed. A story with two failures before the yes gives them permission to try again, and puts the professional in the role of the guide who kept going. Counting the tries makes progress visible.",
+  "hook": {
+    "pattern": "Slide one names the number of rejections before the keys, as a count.",
+    "examples": [
+      "Two no's. Then keys.",
+      "They lost two bids before this door opened.",
+      "Try one: outbid. Try two: denied. Try three: swipe."
+    ]
+  },
+  "variables": [
+    {
+      "name": "brand",
+      "description": "Agent, team or company name",
+      "example": "Northline Home Group"
+    },
+    {
+      "name": "buyer_label",
+      "description": "How the buyers are described, anonymized or with consent",
+      "example": "A nurse and a first-time dad"
+    },
+    {
+      "name": "try_one",
+      "description": "What happened on the first try",
+      "example": "outbid by $22,000 on a house they loved"
+    },
+    {
+      "name": "try_two",
+      "description": "What happened on the second try",
+      "example": "the loan fell through a week before closing"
+    },
+    {
+      "name": "what_changed",
+      "description": "The concrete thing that changed before try three",
+      "example": "we rebuilt the offer around a later move-in date the seller needed"
+    },
+    {
+      "name": "offer",
+      "description": "What viewers can do next",
+      "example": "book a free 20-minute buyer plan call"
+    }
+  ],
+  "cta": "{{offer}}.",
+  "carousel": {
+    "slides": [
+      {
+        "headline": "Two no's. Then keys.",
+        "body": "{{buyer_label}}. Their story in three tries.",
+        "visual_prompt": "4:5 close-up of a hand holding a new house key on a simple keyring, blurred front door behind, soft morning light"
+      },
+      {
+        "headline": "Try one",
+        "body": "{{try_one}}.",
+        "visual_prompt": "4:5 photo of a for-sale sign with a sold rider in front of a modest house, overcast sky, muted colors"
+      },
+      {
+        "headline": "Try two",
+        "body": "{{try_two}}.",
+        "visual_prompt": "4:5 photo of a kitchen table with paperwork and a closed laptop, evening light, two coffee mugs, quiet"
+      },
+      {
+        "headline": "What changed",
+        "body": "{{what_changed}}.",
+        "visual_prompt": "4:5 photo of an agent and buyers at a table pointing at a printed plan, warm office light, faces turned away"
+      },
+      {
+        "headline": "Try three",
+        "body": "Keys.",
+        "visual_prompt": "4:5 photo of two people from behind stepping through an open front door into a bright empty living room, golden light"
+      },
+      {
+        "headline": "On try one or two?",
+        "body": "{{offer}} with {{brand}}.",
+        "visual_prompt": "4:5 branded card in {{brand}} colors with the offer and license number in clear type"
+      }
+    ]
+  },
+  "craft": {
+    "technique": "Rule of three with a counted structure",
+    "notes": "Label each attempt as 'Try one', 'Try two' so the swipe has rhythm. Keep the failures specific and short. The 'what changed' slide is the professional's real value, shown as a decision, not a boast. The win slide is one word."
+  },
+  "do_not": [
+    "Promise approval or a winning bid",
+    "Shame the buyers for the failed tries",
+    "Show the buyers' faces or address without written consent"
+  ],
+  "compliance": [
+    "Real estate: include brokerage name and license number on the final slide as your state requires; follow fair housing rules, no language about who belongs in a neighborhood",
+    "Mortgage: no promise of approval or specific rates; include NMLS ID and Equal Housing Lender/Opportunity logo where required",
+    "Financial and insurance: no guarantee of outcomes or savings",
+    "Composite or anonymized stories must say so on the first or last slide"
+  ]
+}

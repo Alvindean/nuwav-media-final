@@ -45,7 +45,7 @@
     },
     {
       "name": "right_fit",
-      "description": "Who you are actually for",
+      "description": "Who you are actually for, lowercase, 12 words or fewer",
       "example": "people who want one piece they'll keep for forty years"
     },
     {
@@ -55,8 +55,8 @@
     },
     {
       "name": "next_step",
-      "description": "How a good fit gets in touch",
-      "example": "request a private consultation"
+      "description": "How a good fit gets in touch, starting with a capital-letter verb, 5 words or fewer",
+      "example": "Request a private consultation"
     }
   ],
   "cta": "Sound like you? {{next_step}} with {{brand}}.",
@@ -89,7 +89,7 @@
       },
       {
         "headline": "Who we're for",
-        "body": "{{right_fit}}.",
+        "body": "For {{right_fit}}.",
         "visual_prompt": "Elegant lifestyle shot of a client admiring a finished {{brand}} piece, soft window light, face out of frame"
       },
       {
@@ -110,6 +110,7 @@
   ],
   "compliance": [
     "Med spa: only say you turn away unsuitable candidates if a licensed provider makes that call; no before/after or result claims without a clear 'individual results vary' disclaimer",
-    "Law firms: declining a case is fine, but don't imply a case has no merit; follow your state bar's advertising rules"
+    "Law firms: declining a case is fine, but don't imply a case has no merit; follow your state bar's advertising rules",
+    "Coaches: no income or results promises; any result shown is labelled not typical"
   ]
 }

@@ -18,8 +18,8 @@
   "hook": {
     "pattern": "Split the screen: what people imagine your kind of business looks like vs. a real, slightly chaotic day.",
     "examples": [
-      "What you think a {{business_type}} looks like vs. our Tuesday.",
-      "The brochure version of {{brand}} vs. the real one.",
+      "A {{business_type}} in the brochure vs. our Tuesday.",
+      "{{brand}}: brochure vs. real life.",
       "Stock photo {{business_type}} vs. actual {{business_type}}."
     ]
   },
@@ -36,28 +36,33 @@
     },
     {
       "name": "brochure_cliche",
-      "description": "The glossy stock-photo cliche of the industry",
+      "description": "The glossy stock-photo cliche of the industry (10 words or fewer, spoken)",
       "example": "five people laughing at one salad in a glass boardroom"
     },
     {
       "name": "tuesday_reality_1",
-      "description": "A harmless, self-deprecating real detail",
+      "description": "A harmless, self-deprecating real detail (11 words or fewer, spoken)",
       "example": "the printer has jammed. The printer has a name. It's Gerald."
     },
     {
       "name": "tuesday_reality_2",
-      "description": "A second real detail, slightly bigger",
+      "description": "A second real detail, slightly bigger (11 words or fewer, spoken)",
       "example": "a 20-minute team debate about which lunch place is 'close'"
     },
     {
       "name": "callback_tag",
-      "description": "A short callback to the first Tuesday detail",
+      "description": "A short callback to the first Tuesday detail (4 words or fewer)",
       "example": "Gerald is still jammed."
     },
     {
       "name": "the_standard",
-      "description": "The one thing that never slips, stated as a process, not a result",
+      "description": "The one thing that never slips, stated as a process, not a result (9 words or fewer, spoken)",
       "example": "every client call returned the same business day"
+    },
+    {
+      "name": "standard_proof",
+      "description": "A real, checkable number from your own records that backs the standard (12 words or fewer); never invent it",
+      "example": "Last month: 214 client calls, 214 returned the same day."
     },
     {
       "name": "offer",
@@ -70,7 +75,7 @@
       "seconds": 3,
       "purpose": "hook: the split premise",
       "on_screen_text": "A {{business_type}} in the brochure vs. our Tuesday",
-      "voiceover": "What you think a {{business_type}} looks like. Versus our Tuesday.",
+      "voiceover": "The brochure {{business_type}}. Versus our Tuesday.",
       "visual": {
         "tier": "still",
         "prompt": "Vertical 9:16 split screen: top half a glossy, overlit stock-photo style office with posed smiling professionals, bottom half the real {{brand}} office, lived-in, warm natural light, coffee cups on desks"
@@ -119,7 +124,7 @@
     {
       "seconds": 3,
       "purpose": "tag plus CTA",
-      "on_screen_text": "{{callback_tag}} {{offer}}.",
+      "on_screen_text": "{{callback_tag}} Book {{offer}}.",
       "voiceover": "{{callback_tag}} Book {{offer}}.",
       "visual": {
         "tier": "text_only",
@@ -152,12 +157,22 @@
       },
       {
         "headline": "What never changes",
-        "body": "{{the_standard}}. Tuesday or not.",
+        "body": "{{the_standard}}. Tuesday or not. {{standard_proof}}",
         "visual_prompt": "Calm, focused {{brand}} team member at a desk, quiet light, sincere mood"
       },
       {
+        "headline": "Ask any {{business_type}} these 3 things",
+        "body": "1. Who picks up when I call? 2. How fast do you call back? 3. What will it cost before we start? Save this for your next consult.",
+        "visual_prompt": "Clean checklist card on {{brand}} brand color, three numbered questions in large type, small hand-drawn checkboxes"
+      },
+      {
+        "headline": "How to tell brochure from real",
+        "body": "Real offices show real staff, real names and a real phone number. Stock offices show a salad.",
+        "visual_prompt": "Side-by-side card: a glossy stock salad photo crossed out next to a candid {{brand}} staff photo with a name tag, brand colors"
+      },
+      {
         "headline": "Come see a real Tuesday",
-        "body": "{{offer}}.",
+        "body": "Book {{offer}}.",
         "visual_prompt": "Warm {{brand}} logo card on brand color with the offer in large type"
       }
     ]

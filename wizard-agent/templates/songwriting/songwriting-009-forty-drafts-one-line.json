@@ -9,44 +9,58 @@
   "best_for": [
     "independent musician",
     "songwriter",
-    "podcast host",
-    "business coach",
-    "copywriter"
+    "indie label",
+    "band"
   ],
   "why_it_works": "People trust craft they can see. Showing the bad drafts of one lyric before the final line proves the work and lets readers judge each version, and feeling smart about which line is better makes them invested in the finished song.",
   "hook": {
     "pattern": "Show the finished line crossed out with a big draft count, then promise to walk through how it got there.",
     "examples": [
       "This one line took me {{draft_count}} drafts.",
-      "Draft one was terrible. Swipe for the line that made the song.",
+      "Draft one was flat. Draft {{draft_count}} made the song.",
       "Which draft would you have kept?"
     ]
   },
   "variables": [
     {
       "name": "artist_name",
-      "description": "Writer, artist or creator name",
+      "description": "Writer, artist or band name",
       "example": "Theo Marsh"
     },
     {
       "name": "draft_count",
-      "description": "How many drafts it really took",
+      "description": "How many drafts it really took (a real number)",
       "example": "41"
     },
     {
+      "name": "middle_draft_number",
+      "description": "The real draft number of the middle draft shown",
+      "example": "12"
+    },
+    {
       "name": "draft_one",
-      "description": "An honest early, flat version of the line",
+      "description": "An honest early, flat version of the line, capitalized",
       "example": "I miss you when you're gone"
     },
     {
       "name": "draft_two",
-      "description": "A better but still weak middle draft",
-      "example": "the house is quiet since you left"
+      "description": "A better but still weak middle draft, capitalized",
+      "example": "The house is quiet since you left"
     },
     {
       "name": "final_line",
-      "description": "The finished lyric line",
-      "example": "your coffee cup still keeps the shape of morning"
+      "description": "The finished lyric line, capitalized, sung in one breath, 10 syllables or fewer",
+      "example": "Your cup still keeps the shape of morning"
+    },
+    {
+      "name": "key_object",
+      "description": "The concrete object at the center of the final line",
+      "example": "coffee cup"
+    },
+    {
+      "name": "echo_words",
+      "description": "The words inside the final line that echo each other in sound",
+      "example": "cup / keeps / shape"
     },
     {
       "name": "song_title",
@@ -55,7 +69,7 @@
     },
     {
       "name": "listen_link",
-      "description": "Where to hear it",
+      "description": "Where to hear it, 4 words or fewer",
       "example": "link in bio"
     }
   ],
@@ -72,14 +86,14 @@
         "visual_prompt": "Notebook close-up with the first line written then crossed out in red"
       },
       {
-        "headline": "Draft 12",
+        "headline": "Draft {{middle_draft_number}}",
         "body": "\"{{draft_two}}\". Better. There's a picture now, but no surprise.",
         "visual_prompt": "Close-up of a second line written neater, half crossed out, pencil resting on it"
       },
       {
         "headline": "The rule that fixed it",
         "body": "Show one object, not the feeling. Stress the object on the downbeat.",
-        "visual_prompt": "Single object photo on an empty table in morning window light, still life, 4:5"
+        "visual_prompt": "Single {{key_object}} on an empty table in morning window light, still life, 4:5"
       },
       {
         "headline": "Draft {{draft_count}}",
@@ -88,20 +102,20 @@
       },
       {
         "headline": "Why it works",
-        "body": "Concrete object, internal echo (cup / shape), and the key word lands on beat one.",
+        "body": "Concrete object, internal echo ({{echo_words}}), and the key word lands on beat one.",
         "visual_prompt": "Simple diagram slide: the lyric with stressed syllables in bold and beat numbers above"
       },
       {
         "headline": "Hear it in the song",
         "body": "{{song_title}} by {{artist_name}}. {{listen_link}}",
-        "visual_prompt": "Cover-art end card, {{song_title}} title over a photo of a coffee cup in window light"
+        "visual_prompt": "Cover-art end card, {{song_title}} title over a photo of a {{key_object}} in window light"
       }
     ]
   },
-  "cta": "Hear the line in '{{song_title}}': {{listen_link}}. Comment which draft you'd have kept.",
+  "cta": "Hear the line in '{{song_title}}': {{listen_link}}. Which draft would you have kept?",
   "craft": {
     "technique": "Draft ladder (show the rewrite, teach the device)",
-    "notes": "The finished line should beat the drafts on three visible devices: a concrete image instead of an abstract feeling, an internal echo (consonance or assonance inside the line, e.g. cup / keeps / shape), and the most important word on a stressed downbeat. Spell those out on the 'Why it works' slide so readers learn something. Suggested tempo/feel if posted with audio: 70-80 BPM, solo acoustic guitar or piano, the final line sung once over the last slide."
+    "notes": "The finished line should beat the drafts on three visible devices: a concrete image ({{key_object}}) instead of an abstract feeling, an internal echo (consonance or assonance inside the line, here {{echo_words}}), and the most important word on a stressed downbeat. Keep the final line singable in one breath, about 8-10 syllables. Spell the devices out on the 'Why it works' slide so readers learn something. Suggested tempo/feel if posted with audio: 70-80 BPM, solo acoustic guitar or piano, the final line sung once over the last slide."
   },
   "do_not": [
     "Invent a fake draft count; use the real number or say 'dozens'",

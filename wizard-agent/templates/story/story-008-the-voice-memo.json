@@ -51,8 +51,8 @@
     },
     {
       "name": "offer",
-      "description": "Where to listen or what to do",
-      "example": "stream it now, link in bio"
+      "description": "Where to listen or what to do, starting with a capital letter, spoken, 6 words or fewer",
+      "example": "Stream it now, link in bio"
     }
   ],
   "beats": [
@@ -73,7 +73,7 @@
       "voiceover": "I wrote this {{where_written}}.",
       "visual": {
         "tier": "still",
-        "prompt": "Vertical photo of an artist sitting in a parked car at night, notebook on the steering wheel, dashboard light on the face, rain on the windshield"
+        "prompt": "Vertical photo of a figure seen from behind in a parked car at night, notebook on the steering wheel, dashboard glow, rain on the windshield, face not visible"
       }
     },
     {
@@ -92,15 +92,15 @@
       "on_screen_text": "{{song_title}}. Out now.",
       "voiceover": "Now it's called {{song_title}}.",
       "visual": {
-        "tier": "clip_standard",
-        "prompt": "Vertical 9:16 slow push-in on {{artist}} performing on a small stage, warm amber spotlight, haze, crowd silhouettes in the foreground"
+        "tier": "real_photo",
+        "prompt": "Client-supplied live footage or photo of {{artist}} performing {{song_title}}, warm amber stage light, with the finished master playing"
       }
     },
     {
       "seconds": 3,
       "purpose": "call to action",
       "on_screen_text": "{{offer}}",
-      "voiceover": "Hear what that memo became. {{offer}}.",
+      "voiceover": "Hear what it became. {{offer}}.",
       "visual": {
         "tier": "text_only",
         "prompt": ""
@@ -110,11 +110,21 @@
   "cta": "Hear what that memo became. {{offer}}.",
   "craft": {
     "technique": "Rough-to-finished audio reveal",
-    "notes": "Play the real rough voice memo under beats 2 and 3, then hard-cut to the finished master on the turn. The contrast in sound quality is the reveal. Keep the visuals dark and small until the stage shot."
+    "notes": "Play the real rough voice memo under beats 2 and 3 over the quiet instrumental bed from the music block, then hard-cut to the artist's own finished master on the turn. The contrast in sound quality is the reveal. Keep the visuals dark and small until the real stage shot."
   },
   "do_not": [
     "Use another artist's song, melody or lyrics in the memo",
     "Imitate a named artist's voice or style",
-    "Polish the memo audio; it must sound rough"
+    "Polish the memo audio; it must sound rough",
+    "Generate a stand-in for the artist's real song or performance"
+  ],
+  "music": {
+    "tier": "music",
+    "bpm": 84,
+    "feel": "sparse lo-fi piano bed, soft room tone",
+    "vocals": false
+  },
+  "compliance": [
+    "The finished song and stage shot are the artist's own real recording and footage; the generated music is only an instrumental bed, never the song itself"
   ]
 }

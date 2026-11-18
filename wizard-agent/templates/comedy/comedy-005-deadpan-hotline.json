@@ -7,33 +7,125 @@
   "goal": "leads",
   "duration_seconds": 24,
   "aspect_ratio": "9:16",
-  "best_for": ["auto shop", "insurance agency", "chiropractor", "mortgage broker", "coffee shop"],
+  "best_for": [
+    "auto shop",
+    "insurance agency",
+    "chiropractor",
+    "mortgage broker",
+    "coffee shop"
+  ],
   "why_it_works": "Absurd questions answered with a completely straight face create comedy from contrast, and each straight answer smuggles in a real fact or policy. Because the questions are clearly invented ('calls we haven't gotten yet'), nobody feels mocked, and the viewer leaves knowing exactly how to reach you.",
   "hook": {
     "pattern": "Frame it as calls the front desk hasn't gotten yet, then answer the first ridiculous one immediately.",
     "examples": [
-      "Calls our front desk is fully prepared for. Just in case.",
+      "Calls our front desk is ready for. Just in case.",
       "Questions nobody has asked {{brand}}. Yet. We have answers.",
       "Our receptionist rehearses for these calls. Nobody has made them."
     ]
   },
   "variables": [
-    { "name": "brand", "description": "Business name", "example": "Corner Garage" },
-    { "name": "absurd_question_1", "description": "First invented question: odd but harmless", "example": "Can you fix a car that's just sad?" },
-    { "name": "real_answer_1", "description": "Straight answer that slips in a real fact", "example": "Yes. Full diagnostic in 30 minutes. Sadness included." },
-    { "name": "absurd_question_2", "description": "Second invented question: sillier", "example": "Can my car wait in the lobby with snacks?" },
-    { "name": "real_answer_2", "description": "Straight answer with a second real fact", "example": "You can. Free coffee and Wi-Fi. The car stays in bay 2." },
-    { "name": "absurd_question_3", "description": "Third invented question: the biggest", "example": "Can you make my minivan look like it's going fast?" },
-    { "name": "real_answer_3", "description": "Straight answer that pivots to the main offer", "example": "No. But we can get it to pass inspection on the same day." },
-    { "name": "offer", "description": "What the viewer gets for acting", "example": "same-day inspections, book online" }
+    {
+      "name": "brand",
+      "description": "Business name",
+      "example": "Corner Garage"
+    },
+    {
+      "name": "absurd_question_1",
+      "description": "First invented question: odd but harmless (8 words or fewer, spoken)",
+      "example": "Can you fix a car that's just sad?"
+    },
+    {
+      "name": "real_answer_1",
+      "description": "Straight answer that slips in a real fact (8 words or fewer, spoken)",
+      "example": "Yes. Full diagnostic in 30 minutes. Sadness included."
+    },
+    {
+      "name": "absurd_question_2",
+      "description": "Second invented question: sillier (8 words or fewer, spoken)",
+      "example": "Can my car wait in the lobby?"
+    },
+    {
+      "name": "real_answer_2",
+      "description": "Straight answer with a second real fact (8 words or fewer, spoken)",
+      "example": "You get the coffee. It gets bay 2."
+    },
+    {
+      "name": "absurd_question_3",
+      "description": "Third invented question: the biggest (8 words or fewer, spoken)",
+      "example": "Can you make my minivan look fast?"
+    },
+    {
+      "name": "real_answer_3",
+      "description": "Straight answer that pivots to the main offer (8 words or fewer, spoken)",
+      "example": "No. But it can pass inspection today."
+    },
+    {
+      "name": "offer",
+      "description": "What the viewer gets for acting; starts with a capital letter (8 words or fewer)",
+      "example": "Same-day inspections. Book online."
+    }
   ],
   "beats": [
-    { "seconds": 3, "purpose": "hook: the premise", "on_screen_text": "Calls we haven't gotten yet. We're ready.", "voiceover": "Calls we haven't gotten yet. We're ready.", "visual": { "tier": "still", "prompt": "Vertical 9:16 medium shot of a receptionist at the {{brand}} front desk wearing a headset, perfectly composed, hands folded, neutral face, clean bright reception light, centered" } },
-    { "seconds": 5, "purpose": "setup: question one, straight answer", "on_screen_text": "\"{{absurd_question_1}}\" / {{real_answer_1}}", "voiceover": "{{absurd_question_1}} {{real_answer_1}}", "visual": { "tier": "still", "prompt": "Vertical close-up of the {{brand}} receptionist speaking into the headset with total seriousness, a phone-call caption bubble area at top of frame, soft office light" } },
-    { "seconds": 5, "purpose": "escalate: question two, still straight", "on_screen_text": "\"{{absurd_question_2}}\" / {{real_answer_2}}", "voiceover": "{{absurd_question_2}} {{real_answer_2}}", "visual": { "tier": "still", "prompt": "Vertical shot from behind the {{brand}} receptionist toward the lobby, the receptionist calmly pointing at the waiting area while on the call, inviting warm light, everyday details" } },
-    { "seconds": 5, "purpose": "peak and turn: question three pivots to the offer", "on_screen_text": "\"{{absurd_question_3}}\" / {{real_answer_3}}", "voiceover": "{{absurd_question_3}} {{real_answer_3}}", "visual": { "tier": "clip_standard", "prompt": "Vertical clip, the {{brand}} receptionist hears the question, blinks once, slowly takes a sip of coffee, then answers without any expression, slow push-in, steady office light" } },
-    { "seconds": 3, "purpose": "tag: next caller", "on_screen_text": "Next caller.", "voiceover": "Next caller.", "visual": { "tier": "still", "prompt": "Vertical medium shot of the {{brand}} receptionist pressing the headset button, already looking at the next line, one eyebrow slightly raised, same framing as the opening shot" } },
-    { "seconds": 3, "purpose": "call to action", "on_screen_text": "{{offer}}", "voiceover": "{{offer}}.", "visual": { "tier": "text_only", "prompt": "" } }
+    {
+      "seconds": 3,
+      "purpose": "hook: the premise",
+      "on_screen_text": "Calls we haven't gotten yet. We're ready.",
+      "voiceover": "Calls we haven't gotten yet. We're ready.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Vertical 9:16 medium shot of a receptionist at the {{brand}} front desk wearing a headset, perfectly composed, hands folded, neutral face, clean bright reception light, centered"
+      }
+    },
+    {
+      "seconds": 5,
+      "purpose": "setup: question one, straight answer",
+      "on_screen_text": "\"{{absurd_question_1}}\" / {{real_answer_1}}",
+      "voiceover": "{{absurd_question_1}} {{real_answer_1}}",
+      "visual": {
+        "tier": "still",
+        "prompt": "Vertical close-up of the {{brand}} receptionist speaking into the headset with total seriousness, a phone-call caption bubble area at top of frame, soft office light"
+      }
+    },
+    {
+      "seconds": 5,
+      "purpose": "escalate: question two, still straight",
+      "on_screen_text": "\"{{absurd_question_2}}\" / {{real_answer_2}}",
+      "voiceover": "{{absurd_question_2}} {{real_answer_2}}",
+      "visual": {
+        "tier": "still",
+        "prompt": "Vertical shot from behind the {{brand}} receptionist toward the lobby, the receptionist calmly pointing at the waiting area while on the call, inviting warm light, everyday details"
+      }
+    },
+    {
+      "seconds": 5,
+      "purpose": "peak and turn: question three pivots to the offer",
+      "on_screen_text": "\"{{absurd_question_3}}\" / {{real_answer_3}}",
+      "voiceover": "{{absurd_question_3}} {{real_answer_3}}",
+      "visual": {
+        "tier": "clip_standard",
+        "prompt": "Vertical clip, the {{brand}} receptionist hears the question, blinks once, slowly takes a sip of coffee, then answers without any expression, slow push-in, steady office light"
+      }
+    },
+    {
+      "seconds": 3,
+      "purpose": "tag: next caller",
+      "on_screen_text": "Next caller.",
+      "voiceover": "Next caller.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Vertical medium shot of the {{brand}} receptionist pressing the headset button, already looking at the next line, one eyebrow slightly raised, same framing as the opening shot"
+      }
+    },
+    {
+      "seconds": 3,
+      "purpose": "call to action",
+      "on_screen_text": "{{offer}}",
+      "voiceover": "{{offer}}.",
+      "visual": {
+        "tier": "text_only",
+        "prompt": ""
+      }
+    }
   ],
   "cta": "Call with a real question: {{offer}}. Weird ones welcome.",
   "craft": {

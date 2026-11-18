@@ -3,7 +3,7 @@ name: wizard-agent
 description: NU WAV Wizard Agent. Turns a brand + niche into finished short-form ads and carousels from the 100-template library. Best model writes the creative (hooks, scripts, comedy, lyrics); cheap Higgsfield models render it; Canva builds carousels. Use when asked to "make ads", "run the wizard", "make 10 reels for <client>", "turn this into a carousel", or "remix this viral video".
 ---
 
-# Wizard Agent (v2)
+# Wizard Agent (v3)
 
 One agent, every step: **brief → pick templates → write → quote → one yes → render cheap → carousel → check → deliver.**
 House rule: **the best model thinks, the cheap model renders.** Build every ad mostly from stills (pan and zoom are added in the edit for free); generate motion only for the beats that need it.
@@ -19,7 +19,10 @@ Brand name, niche, offer, audience, goal (awareness / engagement / leads / sales
 If they already gave it, don't ask again. Missing optional answers: use sensible defaults and say which.
 
 ## 2. Pick templates and the client's compliance pack
-- Find the client's pack in `compliance/packs.json` by their niche (its `match` terms). Apply that pack **and** the `always` rules to every ad, on top of each template's own `compliance` list. A template's `best_for` list is a guide, not a lock, so the client's pack is what keeps the rules attached.
+- Find the client's pack in `compliance/packs.json` by their niche (its `match` terms; `exclude` lists look-alikes such as juice bar or vocal coach). Apply that pack **and** the `always` rules to every ad, on top of each template's own `compliance` list. A template's `best_for` list is a guide, not a lock, so the client's pack is what keeps the rules attached.
+- Fill `{{disclosure}}` with the pack's `disclosure` line (join two lines if two packs match). Every regulated template shows it on screen.
+- Read the pack's `platform` note before any paid campaign (for example housing, credit and employment are Meta Special Ad Categories with limited targeting; cannabis and firearms ads are banned). Platform rules change, so check the current policy.
+- **If the client's niche looks regulated (health, money, legal, housing, jobs, kids, alcohol, weapons, claims about bodies or income) but no pack matches, stop and ask a human before writing anything.**
 - Filter `templates/` by `goal`, then by `best_for` closest to the niche.
 - Mix categories across a batch (no more than 3 from one category per 10 ads).
 - Comedy and songwriting are NU WAV's edge: include at least one of each in every batch of 5+, unless the brand says no humor or the niche's pack rules out the format.
@@ -35,7 +38,7 @@ Fill every `{{variable}}` for the brand. Then rewrite hooks and lines so they so
 
 ## 4. Quote everything, then get ONE yes
 Nothing that costs credits runs before this step, including stills.
-1. List every paid call for the batch: stills (`estimate_image_cost`), clips (`estimate_video_cost` with **duration always set**: `kling_4_0_flash` defaults to 10s and 30 credits), music (`estimate_audio_cost`), talking heads (quote with the real voice recording), draft previews and their final re-renders, vidIQ calls that cost credits (for example a transcript is 5 credits), and any Canva AI features.
+1. List every paid call for the batch: stills (`estimate_image_cost`), clips (`estimate_video_cost` with **duration always set** as a whole number of seconds: `kling_4_0_flash` defaults to 10s and 30 credits), music (`estimate_audio_cost`), talking heads (quote with the real voice recording), draft previews and their final re-renders, upscales, reframes and background removal, vidIQ calls that cost credits (transcripts, voiceover, music, video generation), and any Canva AI features.
 2. Show the total and the per-ad breakdown in plain words.
 3. Wait for a clear yes. No yes, no spend. If the plan changes, re-quote.
 
@@ -53,6 +56,9 @@ Per beat, use the tier in the template and the model in `model-routing.json`:
 | `music` | `elevenlabs_music_v2_5` (custom lyrics) | about 0.145 per second |
 
 Order of work: stills first and get a yes on the look, then clips from those stills, then music, then the edit.
+- Songs: generate the music first, then cut the visuals to the track. Template beat seconds are a guide (about ±1s) so lines land on the music; never claim exact bar placement the cut can't hit.
+- Any words, prices or numbers that must be readable are added as overlays in the edit, never drawn by a video model.
+- Stills get pan and zoom in the edit (for example CapCut or the remotion-edit skill); that edit step has not been run end to end yet.
 
 ## 6. Carousels (Canva)
 For `carousel` and `both` templates: send the filled `carousel.slides` to Canva (`create-design`, or `autofill-design` with the client's brand kit). Slide art reuses the stills already made, so carousels cost no extra video credits. Make sure at least two slides add something the reel doesn't (a checklist, a worked number, something worth saving).
@@ -63,6 +69,8 @@ For `carousel` and `both` templates: send the filled `carousel.slides` to Canva 
 - Realistic AI people or scenes carry the platform's AI-content label. Testimonials, before/after, real staff and real customers are real photos with written consent, never generated.
 - No real competitor named or mocked; no real person's face or voice without written consent (clones are the client's own face and voice only).
 - No engagement bait ("tag a friend", "like if"). Contests and giveaways carry official rules.
+- The `{{disclosure}}` line is on screen long enough to read.
+- Commercial rights: confirm the provider's current terms allow commercial use and resale for each tier used (see `commercial_rights` in `model-routing.json`).
 - Output list: each ad's file, its template id, credits spent.
 
 ## 8. Remix a viral video (optional)
@@ -74,4 +82,7 @@ Given a link: quote the vidIQ transcript call first (step 4), get the structure,
 - `talking_head` cost is a 10-credit reserve until a real voice recording is quoted.
 - `why_it_works` describes the expected mechanism; no template's performance has been measured.
 - "Comedy and songwriting are NU WAV's edge" is the intent; it has not been tested against other libraries.
-- Compliance packs are general guidance for drafting, not legal advice.
+- Compliance packs are general guidance for drafting, not legal advice; platform notes may be out of date.
+- The spend gate is an instruction to the agent, not a code lock: nothing technically blocks a generate call. Keep Claude Code's permission prompts on for generation tools if you want a hard stop.
+- Commercial-use terms for Higgsfield, ElevenLabs and Suno output have not been checked.
+- The validator reads text patterns; it cannot tell whether a claim is true for a client. A person still reviews regulated ads.

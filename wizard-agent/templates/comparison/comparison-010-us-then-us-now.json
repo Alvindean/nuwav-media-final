@@ -7,45 +7,180 @@
   "goal": "engagement",
   "duration_seconds": 21,
   "aspect_ratio": "9:16",
-  "best_for": ["independent musician", "record label", "coffee shop", "apparel brand", "sports team", "life coach"],
+  "best_for": [
+    "independent musician",
+    "record label",
+    "coffee shop",
+    "apparel brand",
+    "sports team"
+  ],
   "why_it_works": "Comparing yourself to your own past is the only comparison that never insults anyone. Showing the rough first version earns sympathy, the glow-up proves growth, and long-time fans feel ownership because they were there for the 'then'.",
   "hook": {
     "pattern": "Open on your own embarrassing first version and own it before anyone can laugh.",
     "examples": [
-      "This was our first {{first_thing}}. Yes, really.",
+      "Our first {{first_thing}}. Yes, really.",
       "{{brand}} in {{then_year}} vs {{brand}} today.",
-      "If you liked us back then, you have to see this."
+      "Liked us back then? You need to see this."
     ]
   },
   "variables": [
-    { "name": "brand", "description": "Brand, artist or team name", "example": "Velvet Static" },
-    { "name": "first_thing", "description": "The first version being shown", "example": "single, recorded in a closet" },
-    { "name": "then_year", "description": "When it started", "example": "2019" },
-    { "name": "then_detail", "description": "An honest detail about the rough start", "example": "one mic, a borrowed laptop, 14 streams" },
-    { "name": "now_detail", "description": "What it looks like now", "example": "a full band in a real studio" },
-    { "name": "what_stayed", "description": "The thing that never changed", "example": "every song still starts on the same cheap guitar" },
-    { "name": "offer", "description": "What the viewer should do", "example": "New single out Friday, pre-save now" }
+    {
+      "name": "brand",
+      "description": "Brand, artist or team name",
+      "example": "Velvet Static"
+    },
+    {
+      "name": "first_thing",
+      "description": "The first version being shown",
+      "example": "single, recorded in a closet"
+    },
+    {
+      "name": "then_year",
+      "description": "When it started",
+      "example": "2019"
+    },
+    {
+      "name": "then_detail",
+      "description": "An honest detail about the rough start",
+      "example": "one mic, a borrowed laptop, 14 streams"
+    },
+    {
+      "name": "now_detail",
+      "description": "What it looks like now",
+      "example": "a full band in a real studio"
+    },
+    {
+      "name": "what_stayed",
+      "description": "The thing that never changed",
+      "example": "every song still starts on the same cheap guitar"
+    },
+    {
+      "name": "growth_numbers",
+      "description": "Honest, checkable then-vs-now numbers",
+      "example": "14 streams on the first single, 40,000 on the latest"
+    },
+    {
+      "name": "lesson",
+      "description": "One practical tip you'd give your early self",
+      "example": "Finish the song before you buy more gear."
+    },
+    {
+      "name": "offer",
+      "description": "What the viewer should do",
+      "example": "New single out Friday, pre-save now"
+    }
   ],
   "beats": [
-    { "seconds": 3, "purpose": "hook: own the rough start", "on_screen_text": "Our first {{first_thing}}. Yes, really.", "voiceover": "This was our first {{first_thing}}.", "visual": { "tier": "still", "prompt": "Vertical 9:16 photo styled as an old phone snapshot from {{then_year}}: grainy, slightly overexposed, cramped room with makeshift setup, honest and charming, faded colors" } },
-    { "seconds": 4, "purpose": "then", "on_screen_text": "{{then_year}}: {{then_detail}}", "voiceover": "Back in {{then_year}}: {{then_detail}}.", "visual": { "tier": "still", "prompt": "Vertical grainy photo of a makeshift early setup for {{brand}}, borrowed gear, tangled cables, warm lamp light, documentary feel" } },
-    { "seconds": 5, "purpose": "now, in motion", "on_screen_text": "Now: {{now_detail}}", "voiceover": "Now: {{now_detail}}.", "visual": { "tier": "clip_standard", "prompt": "Vertical cinematic slow push-in on {{now_detail}} for {{brand}}, professional lighting, crisp modern color grade, confident energy, no text" } },
-    { "seconds": 4, "purpose": "what stayed the same", "on_screen_text": "What didn't change: {{what_stayed}}", "voiceover": "What didn't change: {{what_stayed}}.", "visual": { "tier": "text_only", "prompt": "" } },
-    { "seconds": 2, "purpose": "thank the early ones", "on_screen_text": "If you were here then, thank you.", "voiceover": "", "visual": { "tier": "still", "prompt": "Vertical warm photo of a small crowd or community of supporters around {{brand}}, candid smiles, golden light, faces softly blurred" } },
-    { "seconds": 3, "purpose": "call to action", "on_screen_text": "{{offer}}", "voiceover": "{{offer}}.", "visual": { "tier": "text_only", "prompt": "" } }
+    {
+      "seconds": 3,
+      "purpose": "hook: own the rough start",
+      "on_screen_text": "Our first {{first_thing}}. Yes, really.",
+      "voiceover": "This was our first {{first_thing}}.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Vertical 9:16 photo styled as an old phone snapshot from {{then_year}}: grainy, slightly overexposed, cramped room with makeshift setup, honest and charming, faded colors"
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "then",
+      "on_screen_text": "{{then_year}}: {{then_detail}}",
+      "voiceover": "Back in {{then_year}}: {{then_detail}}.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Vertical grainy photo of a makeshift early setup for {{brand}}, borrowed gear, tangled cables, warm lamp light, documentary feel"
+      }
+    },
+    {
+      "seconds": 5,
+      "purpose": "now, in motion",
+      "on_screen_text": "Now: {{now_detail}}",
+      "voiceover": "Now: {{now_detail}}.",
+      "visual": {
+        "tier": "clip_standard",
+        "prompt": "Vertical cinematic slow push-in on {{now_detail}} for {{brand}}, professional lighting, crisp modern color grade, confident energy, no text"
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "what stayed the same",
+      "on_screen_text": "What didn't change: {{what_stayed}}",
+      "voiceover": "What didn't change: {{what_stayed}}.",
+      "visual": {
+        "tier": "text_only",
+        "prompt": ""
+      }
+    },
+    {
+      "seconds": 2,
+      "purpose": "thank the early ones",
+      "on_screen_text": "If you were here then, thank you.",
+      "voiceover": "",
+      "visual": {
+        "tier": "real_photo",
+        "prompt": "Real photo of your actual early supporters around {{brand}}, used with their permission, candid smiles, golden light"
+      }
+    },
+    {
+      "seconds": 3,
+      "purpose": "call to action",
+      "on_screen_text": "{{offer}}",
+      "voiceover": "{{offer}}.",
+      "visual": {
+        "tier": "text_only",
+        "prompt": ""
+      }
+    }
   ],
   "cta": "Be here for the next chapter: {{offer}}.",
   "carousel": {
     "slides": [
-      { "headline": "Us then vs us now", "body": "Our first {{first_thing}}. Yes, really.", "visual_prompt": "Grainy old-phone-style photo of a cramped makeshift setup, faded colors, honest charm" },
-      { "headline": "{{then_year}}", "body": "{{then_detail}}.", "visual_prompt": "Documentary-style grainy photo of early borrowed gear and tangled cables, warm lamp light" },
-      { "headline": "Today", "body": "{{now_detail}}.", "visual_prompt": "Crisp professional photo of {{now_detail}} for {{brand}}, modern color grade" },
-      { "headline": "What never changed", "body": "{{what_stayed}}.", "visual_prompt": "Close-up still life of the one object or ritual that stayed the same, soft window light" },
-      { "headline": "If you were here then", "body": "Thank you. This is yours too.", "visual_prompt": "Warm candid photo of supporters around {{brand}}, golden light, faces softly blurred" },
-      { "headline": "Next chapter", "body": "{{offer}}", "visual_prompt": "{{brand}} logo card with the offer in bold type, brand colors" }
+      {
+        "headline": "Us then vs us now",
+        "body": "Our first {{first_thing}}. Yes, really.",
+        "visual_prompt": "Grainy old-phone-style photo of a cramped makeshift setup, faded colors, honest charm"
+      },
+      {
+        "headline": "{{then_year}}",
+        "body": "Back then: {{then_detail}}.",
+        "visual_prompt": "Documentary-style grainy photo of early borrowed gear and tangled cables, warm lamp light"
+      },
+      {
+        "headline": "Today",
+        "body": "Now: {{now_detail}}.",
+        "visual_prompt": "Crisp professional photo of {{now_detail}} for {{brand}}, modern color grade"
+      },
+      {
+        "headline": "The numbers, then and now",
+        "body": "{{growth_numbers}}. Every one of those started with you.",
+        "visual_prompt": "Minimal two-number infographic, small faded number on the left, bold number on the right, {{brand}} colors"
+      },
+      {
+        "headline": "What never changed",
+        "body": "Still true: {{what_stayed}}.",
+        "visual_prompt": "Close-up still life of the one object or ritual that stayed the same, soft window light"
+      },
+      {
+        "headline": "What we'd tell our {{then_year}} selves",
+        "body": "{{lesson}} Save this if you're at the start.",
+        "visual_prompt": "Handwritten note pinned to a corkboard above a simple early setup, warm lamp light, documentary feel"
+      },
+      {
+        "headline": "If you were here then",
+        "body": "Thank you. This is yours too.",
+        "visual_prompt": "Real photo of actual early supporters around {{brand}}, used with permission, golden light"
+      },
+      {
+        "headline": "Next chapter",
+        "body": "{{offer}}",
+        "visual_prompt": "{{brand}} logo card with the offer in bold type, brand colors"
+      }
     ]
   },
-  "craft": { "technique": "Self-comparison glow-up", "notes": "The 'then' must be genuinely rough; a fake-humble start reads as a flex. The 'what stayed' beat is the emotional anchor: it tells fans the growth didn't cost you your identity. Ask in the caption for people to say when they found you." },
+  "craft": {
+    "technique": "Self-comparison glow-up",
+    "notes": "The 'then' must be genuinely rough; a fake-humble start reads as a flex. The 'what stayed' beat is the emotional anchor: it tells fans the growth didn't cost you your identity. Ask in the caption for people to say when they found you."
+  },
   "do_not": [
     "Stage a fake 'then' photo; use real early material or recreate it honestly and say so",
     "Mock your earlier self so hard that early fans feel mocked too",

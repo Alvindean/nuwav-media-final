@@ -18,9 +18,9 @@
   "hook": {
     "pattern": "Announce a ranked countdown of your own lineup and tease that number one surprises people.",
     "examples": [
-      "Our five best sellers, ranked. Number one is not what you think.",
-      "Ranking everything we sell. The winner beat our signature.",
-      "Five to one: what regulars actually order at {{brand}}."
+      "Our five best sellers, ranked. Number one surprises everyone.",
+      "Ranking our whole lineup. Second place always stings.",
+      "Five to one: what regulars order at {{brand}}."
     ]
   },
   "variables": [
@@ -51,18 +51,18 @@
     },
     {
       "name": "number_one",
-      "description": "The actual winner",
+      "description": "The actual number one item",
       "example": "brown butter cortado"
     },
     {
       "name": "winner_reason",
-      "description": "One concrete reason it wins",
+      "description": "One concrete reason it tops the list; 8 words or fewer, reads as a full sentence",
       "example": "regulars order it twice a day"
     },
     {
       "name": "offer",
-      "description": "Reason to come try number one",
-      "example": "half off the cortado before 9am this week"
+      "description": "Reason to come try number one; 6 words or fewer",
+      "example": "half-off cortados before 9am"
     }
   ],
   "beats": [
@@ -70,7 +70,7 @@
       "seconds": 3,
       "purpose": "hook: tease the surprise",
       "on_screen_text": "Our top 5, ranked. #1 isn't what you think.",
-      "voiceover": "Our five best sellers, ranked. Number one is not what you think.",
+      "voiceover": "Our five best sellers, ranked. Number one surprises everyone.",
       "visual": {
         "tier": "still",
         "prompt": "Five {{brand}} products lined up on a wooden counter, the end spot covered by a folded cloth, warm morning light, low angle, vertical 9:16"
@@ -108,7 +108,7 @@
     },
     {
       "seconds": 3,
-      "purpose": "number 2: the expected winner loses",
+      "purpose": "number 2: the expected favorite loses",
       "on_screen_text": "#2 {{item_2}}",
       "voiceover": "Two is {{item_2}}. Everyone guesses this one.",
       "visual": {
@@ -129,8 +129,8 @@
     {
       "seconds": 4,
       "purpose": "why it won",
-      "on_screen_text": "{{winner_reason}}",
-      "voiceover": "Why? {{winner_reason}}.",
+      "on_screen_text": "Why it wins: {{winner_reason}}",
+      "voiceover": "Why it wins: {{winner_reason}}.",
       "visual": {
         "tier": "still",
         "prompt": "A regular customer's hands holding {{number_one}} at a {{brand}} table, candid, natural light, vertical"
@@ -147,7 +147,7 @@
       }
     }
   ],
-  "cta": "Taste number one: {{offer}}.",
+  "cta": "Try number one: {{offer}}.",
   "craft": {
     "technique": "Descending countdown with a subverted favorite",
     "notes": "Lower slots move fast (2 seconds each) so the pace accelerates toward the top. Number two must be the thing people expect to win; dethroning it is what makes number one feel like news. Spend the one motion beat on the reveal and nowhere else."

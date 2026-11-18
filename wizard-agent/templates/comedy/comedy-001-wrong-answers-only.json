@@ -19,7 +19,7 @@
     "pattern": "Put the 'wrong answers only' prompt on screen about the one service people misunderstand, asked to your own team.",
     "examples": [
       "Wrong answers only: what does a {{service}} actually do?",
-      "We asked our team what a {{service}} is. Wrong answers only.",
+      "Our team explains a {{service}}. Wrong answers only.",
       "Wrong answers only. Go. What happens at a {{service}}?"
     ]
   },
@@ -36,27 +36,27 @@
     },
     {
       "name": "wrong_answer_1",
-      "description": "First wrong answer: mild, almost plausible",
+      "description": "First wrong answer: mild, almost plausible (10 words or fewer, spoken)",
       "example": "We ask the brakes how they're feeling"
     },
     {
       "name": "wrong_answer_2",
-      "description": "Second wrong answer: clearly silly",
+      "description": "Second wrong answer: clearly silly (10 words or fewer, spoken)",
       "example": "We test them by yelling STOP really loud"
     },
     {
       "name": "wrong_answer_3",
-      "description": "Third wrong answer: the biggest, most physical one",
-      "example": "Two of us lie in front of the car. Trust exercise."
+      "description": "Third wrong answer: the biggest, most physical one, staged safely (10 words or fewer, spoken)",
+      "example": "We hug each tire until it feels supported. Trust exercise."
     },
     {
       "name": "real_answer",
-      "description": "The true, plain-language answer in one sentence",
-      "example": "We measure pad thickness and check rotors and fluid in about 20 minutes"
+      "description": "The true, plain-language answer in one sentence (10 words or fewer, spoken)",
+      "example": "We check pads, rotors and fluid in 20 minutes"
     },
     {
       "name": "callback_tag",
-      "description": "A short callback to wrong answer three, said straight",
+      "description": "A short callback to wrong answer three, said straight (4 words or fewer)",
       "example": "No trust exercises."
     },
     {
@@ -109,7 +109,7 @@
     {
       "seconds": 5,
       "purpose": "turn: the straight answer from the most serious person",
-      "on_screen_text": "Actual answer: {{real_answer}}",
+      "on_screen_text": "Real answer: {{real_answer}}",
       "voiceover": "{{real_answer}}.",
       "visual": {
         "tier": "clip_standard",
@@ -119,8 +119,8 @@
     {
       "seconds": 3,
       "purpose": "tag: callback plus CTA",
-      "on_screen_text": "{{callback_tag}} {{offer}} at {{brand}}.",
-      "voiceover": "{{callback_tag}} {{offer}}.",
+      "on_screen_text": "{{callback_tag}} {{brand}}: {{offer}}.",
+      "voiceover": "{{callback_tag}} Book now: {{offer}}.",
       "visual": {
         "tier": "text_only",
         "prompt": ""

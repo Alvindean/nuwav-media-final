@@ -7,32 +7,106 @@
   "goal": "leads",
   "duration_seconds": 20,
   "aspect_ratio": "9:16",
-  "best_for": ["fitness trainer", "life coach", "skincare brand", "supplement brand", "podcast"],
+  "best_for": [
+    "fitness trainer",
+    "life coach",
+    "skincare brand",
+    "supplement brand",
+    "podcast"
+  ],
   "why_it_works": "A tiny daily task with a visible streak taps the same pull as a game's login bonus: missing a day feels like losing progress. Commenting 'DAY 1' is a public promise, and people keep promises they make in front of others far more than private ones.",
   "hook": {
     "pattern": "Name a task so small it feels silly not to try, and attach a 7-day streak.",
     "examples": [
-      "Seven days. Five minutes. Comment DAY 1 if you're in.",
+      "Seven days of {{daily_task}}. You in?",
       "This challenge is too easy to fail. That's the point.",
-      "I bet you can't do {{daily_task}} for seven days straight."
+      "Bet you can't keep this up seven days straight."
     ]
   },
   "variables": [
-    { "name": "brand", "description": "Coach, creator or brand name", "example": "Iron Lane Fitness" },
-    { "name": "daily_task", "description": "The small daily action", "example": "a 5-minute walk after dinner" },
-    { "name": "why_task", "description": "One honest reason the task matters", "example": "it's the habit that makes every other habit easier" },
-    { "name": "streak_reward", "description": "What finishers get on day 7", "example": "a free week of coached workouts" },
-    { "name": "start_day", "description": "When the streak starts", "example": "Monday" }
+    {
+      "name": "brand",
+      "description": "Coach, creator or brand name",
+      "example": "Iron Lane Fitness"
+    },
+    {
+      "name": "daily_task",
+      "description": "The small daily action, 6 words or fewer, lowercase so it reads mid-sentence",
+      "example": "a 5-minute walk after dinner"
+    },
+    {
+      "name": "why_task",
+      "description": "One honest reason the task matters, 9 words or fewer, lowercase so it follows 'Because'",
+      "example": "it's the habit that makes every other habit easier"
+    },
+    {
+      "name": "streak_reward",
+      "description": "What finishers get on day 7, 6 words or fewer",
+      "example": "a free week of coached workouts"
+    },
+    {
+      "name": "start_day",
+      "description": "When the streak starts",
+      "example": "Monday"
+    }
   ],
   "beats": [
-    { "seconds": 3, "purpose": "hook: the dare", "on_screen_text": "7 days. {{daily_task}}. You in?", "voiceover": "Seven days. {{daily_task}}. That's it.", "visual": { "tier": "still", "prompt": "Vertical 9:16 photo of a wall calendar with seven empty boxes circled in marker, morning light, a pair of sneakers or a product on the table in front, {{brand}} colors in the props" } },
-    { "seconds": 4, "purpose": "why it matters", "on_screen_text": "Why? {{why_task}}.", "voiceover": "Why this? Because {{why_task}}.", "visual": { "tier": "still", "prompt": "Vertical 9:16 candid lifestyle shot of a person doing {{daily_task}}, natural light, relaxed and real, not posed, face partly turned away" } },
-    { "seconds": 5, "purpose": "show the streak filling in", "on_screen_text": "Check a box every day.", "voiceover": "Every day, you check a box.", "visual": { "tier": "clip_draft", "prompt": "Top-down vertical 9:16 hand marking check marks into seven calendar boxes one after another, quick stop-motion feel, warm morning light" } },
-    { "seconds": 4, "purpose": "the rules", "on_screen_text": "Comment DAY 1 on {{start_day}}. Post your day number daily.", "voiceover": "Comment DAY 1 on {{start_day}}. Then your day number, every day.", "visual": { "tier": "text_only", "prompt": "" } },
-    { "seconds": 4, "purpose": "reward for finishers", "on_screen_text": "Hit DAY 7: {{streak_reward}}.", "voiceover": "Make it to day seven and you get {{streak_reward}}.", "visual": { "tier": "still", "prompt": "Vertical 9:16 photo of the calendar with all seven boxes checked, a small gold star sticker on day seven, celebratory warm light" } }
+    {
+      "seconds": 3,
+      "purpose": "hook: the dare",
+      "on_screen_text": "7 days of {{daily_task}}. You in?",
+      "voiceover": "Seven days of {{daily_task}}. That's it.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Vertical 9:16 photo of a wall calendar with seven empty boxes circled in marker, morning light, a pair of sneakers or a product on the table in front, {{brand}} colors in the props"
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "why it matters",
+      "on_screen_text": "Why? Because {{why_task}}.",
+      "voiceover": "Why this? Because {{why_task}}.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Vertical 9:16 candid lifestyle shot of a person doing {{daily_task}}, natural light, relaxed and real, not posed, face partly turned away"
+      }
+    },
+    {
+      "seconds": 5,
+      "purpose": "show the streak filling in",
+      "on_screen_text": "Check a box every day.",
+      "voiceover": "Every day, you check a box.",
+      "visual": {
+        "tier": "clip_draft",
+        "prompt": "Top-down vertical 9:16 hand marking check marks into seven calendar boxes one after another, quick stop-motion feel, warm morning light"
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "the rules",
+      "on_screen_text": "Comment DAY 1 on {{start_day}}. Post your day number daily.",
+      "voiceover": "Comment DAY 1 on {{start_day}}. Then your day number, every day.",
+      "visual": {
+        "tier": "text_only",
+        "prompt": ""
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "reward for finishers",
+      "on_screen_text": "Hit DAY 7: {{streak_reward}}.",
+      "voiceover": "Reach day seven, get {{streak_reward}}.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Vertical 9:16 photo of the calendar with all seven boxes checked, a small gold star sticker on day seven, celebratory warm light"
+      }
+    }
   ],
   "cta": "Comment DAY 1 on {{start_day}} and follow {{brand}} for the daily check-in.",
-  "craft": { "technique": "Public commitment plus streak", "notes": "The task must be smaller than people expect, so the only reason to skip is laziness, not difficulty. Post a short daily check-in reel so the comment thread becomes the scoreboard and late joiners can still start." },
+  "craft": {
+    "technique": "Public commitment plus streak",
+    "notes": "The task must be smaller than people expect, so the only reason to skip is laziness, not difficulty. Post a short daily check-in reel so the comment thread becomes the scoreboard and late joiners can still start."
+  },
   "do_not": [
     "Pick a task that needs equipment, money or an hour a day",
     "Promise physical or skin results from seven days",
@@ -41,6 +115,7 @@
   "compliance": [
     "Supplements: no claims to diagnose, treat, cure or prevent disease; any structure/function claim needs the FDA disclaimer and real support",
     "Skincare: cosmetic claims only (look, feel); no medical claims like 'heals' or 'cures acne', and no before/after photos without a 'results vary' disclaimer",
-    "Fitness challenges: tell people to check with a doctor before starting if they have health conditions; no weight-loss promises"
+    "Fitness challenges: tell people to check with a doctor before starting if they have health conditions; no weight-loss promises",
+    "Life coaches: no income, career or life-change promises; any result shown is labelled typical or not typical"
   ]
 }

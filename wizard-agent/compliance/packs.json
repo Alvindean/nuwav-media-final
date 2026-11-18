@@ -1,6 +1,6 @@
 {
-  "version": 1,
-  "note": "General guidance for drafting ads, not legal advice. The client is responsible for their own industry and local rules. The Wizard Agent applies the pack that matches the CLIENT's niche to every ad, on top of each template's own compliance list. 'match' terms also drive the validator's regulated-niche check (plurals are matched automatically).",
+  "version": 2,
+  "note": "General guidance for drafting ads, not legal advice, and platform policies change: check the current Meta and TikTok ad policies before a paid campaign. The Wizard Agent applies the pack that matches the CLIENT's niche to every ad, on top of each template's own compliance list. 'match' terms drive the validator's regulated-niche check (plurals including -ies are matched); 'exclude' terms are innocent look-alikes. 'key_phrases': a template matched to a pack must carry at least one compliance rule containing one of these phrases. 'disclosure': the on-screen line the ad itself must show (as {{disclosure}} in a beat or slide). If a client's niche looks regulated but no pack matches, the agent stops and asks a human.",
   "always": {
     "id": "ai-and-platform",
     "rules": [
@@ -9,79 +9,318 @@
       "Clones use only the client's own face and voice, with written consent on file.",
       "No real person's likeness, real brand, real song lyrics or melody, or named-artist sound-alike.",
       "Ask for comments only with a genuine question. No 'tag a friend', 'like if', or vote-bait lines (Meta demotes engagement bait).",
-      "Performance lines in why_it_works are the expected mechanism, not measured results; never present them to a client as proven numbers."
+      "Performance lines in why_it_works are the expected mechanism, not measured results; never present them to a client as proven numbers.",
+      "Paid partnerships and creator posts carry the platform's paid-partnership label or #ad (FTC endorsement rules).",
+      "No ads aimed at children under 13; anyone under 18 shown only with a parent or guardian's written consent.",
+      "Text that must be readable (words, prices, numbers) is added as an overlay in the edit, never left to a video model to draw."
     ]
   },
   "packs": [
     {
       "id": "legal",
-      "match": ["law", "law firm", "legal", "attorney", "lawyer", "personal injury", "paralegal", "notary"],
+      "match": [
+        "attorney",
+        "bail bonds",
+        "immigration consultant",
+        "immigration lawyer",
+        "law",
+        "law firm",
+        "law office",
+        "lawyer",
+        "legal",
+        "notary",
+        "paralegal",
+        "personal injury"
+      ],
       "rules": [
         "Label as attorney advertising where the state bar requires it.",
         "No guarantees or predictions of outcome; past results do not guarantee future results.",
         "Not legal advice; no attorney-client relationship is formed by the ad.",
         "No 'specialist' or 'expert' claims unless certified under state rules."
-      ]
+      ],
+      "key_phrases": [
+        "attorney advertising",
+        "outcome",
+        "not legal advice",
+        "guarantee"
+      ],
+      "disclosure": "Attorney advertising. Past results do not guarantee a similar outcome.",
+      "platform": "Meta and TikTok allow legal services ads; state bar rules apply."
     },
     {
       "id": "medical",
-      "match": ["medical", "doctor", "physician", "clinic", "health", "healthcare", "hospital", "nurse", "dental", "dentist", "orthodontist", "dermatologist", "plastic surgeon", "med spa", "medspa", "chiropractor", "chiropractic", "physical therapist", "therapist", "therapy", "counselor", "pharmacy", "pharmacist", "optometrist", "veterinarian", "vet clinic"],
+      "match": [
+        "addiction treatment",
+        "botox",
+        "chiropractic",
+        "chiropractor",
+        "clinic",
+        "cosmetic surgery",
+        "counseling",
+        "counselor",
+        "dental",
+        "dentist",
+        "dentistry",
+        "dermatologist",
+        "dermatology",
+        "doctor",
+        "health",
+        "healthcare",
+        "hearing aid",
+        "hospital",
+        "iv hydration",
+        "lasik",
+        "med spa",
+        "medical",
+        "medspa",
+        "mental health",
+        "nurse",
+        "optometrist",
+        "orthodontics",
+        "orthodontist",
+        "pharmacist",
+        "pharmacy",
+        "physical therapist",
+        "physician",
+        "plastic surgeon",
+        "plastic surgery",
+        "psychiatrist",
+        "psychologist",
+        "rehab center",
+        "therapist",
+        "therapy",
+        "urgent care",
+        "vet clinic",
+        "veterinarian"
+      ],
       "rules": [
         "No guaranteed results or cure claims; 'results vary' on screen next to any outcome.",
         "Before/after only with real patients, written consent and a disclaimer; never generated.",
         "No patient details or health information without written consent (HIPAA in the US).",
         "No diagnosis in the ad; invite a consultation instead.",
-        "Licensed practitioner and practice name shown where required."
-      ]
+        "Licensed practitioner and practice name shown where required.",
+        "Cosmetic procedures: no \"painless\", \"risk-free\" or \"permanent\" claims; state that results vary."
+      ],
+      "key_phrases": [
+        "results vary",
+        "consent",
+        "hipaa",
+        "guarantee",
+        "diagnos",
+        "cure"
+      ],
+      "disclosure": "Results vary. Consult a licensed provider.",
+      "platform": "Health ads face extra review; Meta restricts before/after images and negative self-perception in health and weight ads. Addiction treatment needs platform certification (e.g. LegitScript). Check current policy."
     },
     {
       "id": "financial",
-      "match": ["financial", "financial advisor", "wealth", "investment", "investing", "bank", "credit union", "loan", "loan officer", "lender", "mortgage", "mortgage broker", "insurance", "insurance agency", "tax preparer", "accountant", "crypto", "crypto exchange", "trading"],
+      "match": [
+        "accountant",
+        "accounting",
+        "accounting firm",
+        "bank",
+        "bookkeeper",
+        "buy now pay later",
+        "car title loan",
+        "cpa",
+        "cpa firm",
+        "credit repair",
+        "credit union",
+        "crypto",
+        "crypto exchange",
+        "debt relief",
+        "financial",
+        "financial advisor",
+        "insurance",
+        "insurance agency",
+        "investing",
+        "investment",
+        "lender",
+        "loan",
+        "loan officer",
+        "mortgage",
+        "mortgage broker",
+        "payday loan",
+        "tax preparer",
+        "tax service",
+        "trading",
+        "wealth"
+      ],
       "rules": [
         "No promised returns, income or approval; past performance does not guarantee future results.",
         "Any rate shown needs APR and key terms; show NMLS number for mortgage and lending.",
         "Insurance: no guaranteed coverage or premiums; carrier and license details where required.",
         "Required firm or regulator disclosures (SEC/FINRA/state) stay on screen long enough to read.",
         "Crypto and trading: state the risk of loss plainly."
-      ]
+      ],
+      "key_phrases": [
+        "apr",
+        "nmls",
+        "guarantee",
+        "past performance",
+        "returns",
+        "risk of loss",
+        "disclosure"
+      ],
+      "disclosure": "Not financial advice. Terms apply.",
+      "platform": "Credit, loans and financial products are a Meta Special Ad Category: no targeting by age, gender or ZIP. Payday and some crypto ads are restricted or banned. Check current policy."
     },
     {
       "id": "real-estate",
-      "match": ["real estate", "realtor", "real estate agent", "brokerage", "property manager", "home builder"],
+      "match": [
+        "apartment",
+        "apartment complex",
+        "brokerage",
+        "home builder",
+        "homebuilder",
+        "property management",
+        "property manager",
+        "real estate",
+        "real estate agent",
+        "real estate team",
+        "realtor",
+        "realty"
+      ],
       "rules": [
         "Follow fair housing rules: no wording that prefers or excludes any protected group.",
         "Show brokerage name and license number where required.",
         "No guarantees on sale price, speed or appreciation.",
         "Label virtually staged or AI-edited room images as such."
-      ]
+      ],
+      "key_phrases": [
+        "fair housing",
+        "license",
+        "guarantee",
+        "virtually staged"
+      ],
+      "disclosure": "Equal Housing Opportunity. Brokerage and license # shown.",
+      "platform": "Housing is a Meta Special Ad Category: no targeting by age, gender or ZIP."
     },
     {
       "id": "body-and-wellness",
-      "match": ["supplement", "supplement brand", "nutrition", "nutritionist", "nutrition coach", "weight loss", "weight loss coach", "diet", "skincare", "skincare brand", "cosmetics", "beauty brand", "fitness", "fitness trainer", "personal trainer", "fitness studio", "gym", "wellness", "wellness coach"],
+      "match": [
+        "beauty brand",
+        "bootcamp",
+        "cosmetic",
+        "cosmetics",
+        "crossfit",
+        "diet",
+        "fitness",
+        "fitness studio",
+        "fitness trainer",
+        "gym",
+        "hemp",
+        "kratom",
+        "medspa facial",
+        "nutrition",
+        "nutrition coach",
+        "nutritionist",
+        "personal trainer",
+        "pilates",
+        "protein",
+        "skincare",
+        "skincare brand",
+        "supplement",
+        "supplement brand",
+        "weight loss",
+        "weight loss clinic",
+        "weight loss coach",
+        "wellness",
+        "wellness coach",
+        "yoga studio"
+      ],
       "rules": [
         "Supplements: FDA disclaimer; no claims to diagnose, treat, cure or prevent disease.",
         "No guaranteed weight loss, body or skin results; typical results stated if a result is shown.",
         "Before/after only with real, consenting customers and a 'results vary' disclaimer.",
         "No unrealistic body images or shaming language."
-      ]
+      ],
+      "key_phrases": [
+        "fda",
+        "results vary",
+        "typical",
+        "disease",
+        "guarantee"
+      ],
+      "disclosure": "Results vary. These statements have not been evaluated by the FDA.",
+      "platform": "Meta and TikTok restrict before/after images and weight-loss claims; no targeting under 18 for weight-loss products. Check current policy."
     },
     {
       "id": "age-restricted",
-      "match": ["bar", "brewery", "winery", "distillery", "liquor store", "alcohol", "cannabis", "dispensary", "cbd", "cbd shop", "vape", "smoke shop", "casino", "sportsbook", "betting"],
+      "match": [
+        "alcohol",
+        "bar",
+        "betting",
+        "brewery",
+        "cannabis",
+        "casino",
+        "cbd",
+        "cbd shop",
+        "cigar shop",
+        "dispensary",
+        "distillery",
+        "firearms",
+        "gun shop",
+        "hookah lounge",
+        "liquor store",
+        "lottery",
+        "lounge",
+        "nightclub",
+        "poker",
+        "pub",
+        "shooting range",
+        "smoke shop",
+        "sportsbook",
+        "tobacco shop",
+        "vape",
+        "winery"
+      ],
       "rules": [
         "Target only adults of legal age, using platform age-gating.",
         "No appeal to minors; no actors who look under 25.",
         "No health, performance or 'gets you' effect claims; follow local law on what may be advertised at all.",
         "Gambling: show odds/terms and a responsible-gambling message where required."
-      ]
+      ],
+      "key_phrases": [
+        "legal age",
+        "21",
+        "minors",
+        "age-gat"
+      ],
+      "disclosure": "For adults of legal age only. Please enjoy responsibly.",
+      "platform": "Alcohol ads must be age-gated; cannabis, tobacco and firearms ads are banned or heavily restricted on Meta and TikTok. Check current policy before any paid ad."
     },
     {
       "id": "income-claims",
-      "match": ["business coach", "coach", "coaching", "online course", "course creator", "mentor", "trading course", "mlm", "network marketing"],
+      "match": [
+        "business coach",
+        "business coaching",
+        "coach",
+        "coaching",
+        "course creator",
+        "crypto course",
+        "dropshipping course",
+        "ecommerce course",
+        "mentor",
+        "mlm",
+        "network marketing",
+        "online course",
+        "real estate investing course",
+        "sales coach",
+        "trading course"
+      ],
       "rules": [
         "No income, revenue or 'quit your job' promises; any results shown are labelled as not typical, with typical results stated.",
         "Testimonials must be real, consented and representative."
-      ]
+      ],
+      "key_phrases": [
+        "income",
+        "typical",
+        "not typical",
+        "earnings"
+      ],
+      "disclosure": "Results not typical. No income is guaranteed.",
+      "platform": "Meta and TikTok restrict ads that promise income or \"get rich\" results."
     },
     {
       "id": "giveaway",
@@ -92,7 +331,100 @@
         "No purchase necessary where the law requires it; void where prohibited.",
         "Say the promotion is not sponsored or run by the platform.",
         "Pick winners by the stated method only (random draw or judged), never by likes."
+      ],
+      "key_phrases": [
+        "official rules",
+        "no purchase necessary"
+      ],
+      "disclosure": "No purchase necessary. Official rules at link.",
+      "platform": "Not sponsored or run by the platform; follow Meta Promotions Guidelines."
+    },
+    {
+      "id": "employment",
+      "match": [
+        "staffing agency",
+        "recruiter",
+        "recruiting",
+        "hiring",
+        "job fair",
+        "temp agency"
+      ],
+      "key_phrases": [
+        "equal opportunity",
+        "eeo",
+        "job"
+      ],
+      "disclosure": "Equal opportunity employer.",
+      "platform": "Employment is a Meta Special Ad Category: no targeting by age, gender or ZIP.",
+      "rules": [
+        "No wording that prefers or excludes any protected group.",
+        "State real pay ranges where the law requires them."
+      ]
+    },
+    {
+      "id": "auto-dealer",
+      "match": [
+        "car dealer",
+        "car dealership",
+        "auto dealer",
+        "used car lot",
+        "motorcycle dealer"
+      ],
+      "key_phrases": [
+        "apr",
+        "price",
+        "fees",
+        "terms"
+      ],
+      "disclosure": "Plus tax, title and fees. See dealer for details.",
+      "platform": "Auto loan offers fall under Meta's credit Special Ad Category.",
+      "rules": [
+        "Advertised prices include all fees except tax and title, or say what is excluded.",
+        "Financing offers show APR, term and credit requirements."
+      ]
+    },
+    {
+      "id": "children",
+      "match": [
+        "daycare",
+        "childcare",
+        "preschool",
+        "tutoring",
+        "youth sports",
+        "kids camp",
+        "rec league",
+        "youth league"
+      ],
+      "key_phrases": [
+        "parent",
+        "guardian",
+        "consent",
+        "minor"
+      ],
+      "disclosure": "Photos shared with parent permission.",
+      "platform": "No ads targeted at children under 13; minors' images need parental consent.",
+      "rules": [
+        "Only show children with written parent or guardian consent; never generate a realistic child as a real customer.",
+        "Speak to parents, not to the children."
       ]
     }
+  ],
+  "exclude": [
+    "juice bar",
+    "coffee bar",
+    "salad bar",
+    "sushi bar",
+    "brow bar",
+    "nail bar",
+    "snack bar",
+    "raw bar",
+    "food bank",
+    "vocal coach",
+    "voice coach",
+    "acting coach",
+    "trading card",
+    "trading card shop",
+    "health food store",
+    "bar mitzvah"
   ]
 }

@@ -18,8 +18,8 @@
   "hook": {
     "pattern": "Open on the confession: name the specific habit you stopped, then hint it cost you money.",
     "examples": [
-      "I stopped {{old_habit}}. It cost me customers at first.",
-      "We quit {{old_habit}} last year. Here's what happened.",
+      "I stopped {{old_habit}}. It cost me.",
+      "We quit {{old_habit}}. Watch what happened.",
       "Every {{trade}} does {{old_habit}}. We stopped."
     ]
   },
@@ -31,28 +31,28 @@
     },
     {
       "name": "trade",
-      "description": "What kind of business this is, in plain words",
+      "description": "What kind of business this is, in plain words, 2 words or fewer",
       "example": "barbershop"
     },
     {
       "name": "old_habit",
-      "description": "The common industry habit the owner quit",
-      "example": "double-booking chairs to squeeze in walk-ins"
+      "description": "The common industry habit the owner quit, lowercase, 5 words or fewer",
+      "example": "double-booking chairs for walk-ins"
     },
     {
       "name": "cost_of_quitting",
-      "description": "What quitting cost them at first",
+      "description": "What quitting cost them at first, lowercase, 10 words or fewer",
       "example": "we turned away about ten walk-ins a week"
     },
     {
       "name": "what_changed",
-      "description": "The concrete result after quitting",
+      "description": "The concrete result after quitting, lowercase, 12 words or fewer",
       "example": "nobody waits past their slot, and regulars rebook before they leave"
     },
     {
       "name": "offer",
-      "description": "What the viewer can do now",
-      "example": "book a slot that actually starts on time"
+      "description": "What the viewer can do now, starting with a capital-letter verb, 7 words or fewer",
+      "example": "Book a slot that starts on time"
     }
   ],
   "beats": [
@@ -89,7 +89,7 @@
     {
       "seconds": 5,
       "purpose": "what changed, shown not told",
-      "on_screen_text": "{{what_changed}}",
+      "on_screen_text": "Now {{what_changed}}.",
       "voiceover": "But now {{what_changed}}.",
       "visual": {
         "tier": "clip_draft",
@@ -126,5 +126,10 @@
     "Pick a habit nobody actually does, or the confession has no stakes",
     "Insult other shops that still do it; the contrast is implied",
     "Claim a result you cannot show on camera or back with a number"
+  ],
+  "compliance": [
+    "Fitness trainers: no weight, body or health result claims; if a result is shown, state typical results",
+    "Coaches: no income, revenue or 'quit your job' promises; any result shown is labelled not typical",
+    "The cost and result numbers must be real figures from the business, not estimates dressed as facts"
   ]
 }

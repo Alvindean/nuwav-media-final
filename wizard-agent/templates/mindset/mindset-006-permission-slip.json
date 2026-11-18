@@ -31,12 +31,12 @@
     },
     {
       "name": "guilty_wish",
-      "description": "What the customer wants but feels bad about",
-      "example": "book a cleaning after five years away"
+      "description": "What the customer wants but feels bad about, lowercase verb phrase, 6 words or fewer",
+      "example": "book a cleaning after years away"
     },
     {
       "name": "time_gap",
-      "description": "How long people typically stay away",
+      "description": "How long people typically stay away, lowercase, 3 words or fewer",
       "example": "five years"
     },
     {
@@ -46,12 +46,12 @@
     },
     {
       "name": "what_actually_happens",
-      "description": "The calm truth of the first visit",
-      "example": "we ask two questions, then we just get started"
+      "description": "The calm truth of the first visit, starting with a capital letter, 10 words or fewer",
+      "example": "We ask two questions, then we just get started"
     },
     {
       "name": "offer",
-      "description": "The low-pressure way in",
+      "description": "The low-pressure way in, lowercase, 5 words or fewer",
       "example": "a no-lecture first visit"
     }
   ],
@@ -99,7 +99,7 @@
     {
       "seconds": 4,
       "purpose": "call to action",
-      "on_screen_text": "{{offer}}",
+      "on_screen_text": "Start with {{offer}}",
       "voiceover": "Start with {{offer}} at {{brand}}.",
       "visual": {
         "tier": "still",
@@ -127,13 +127,13 @@
       },
       {
         "headline": "Nobody here keeps score",
-        "body": "{{time_gap}} away is common. We see it every week.",
+        "body": "Being away {{time_gap}} is common. We see it every week.",
         "visual_prompt": "Calendar pages loosely fanned on a table, soft focus, calm tones"
       },
       {
-        "headline": "Late is still on time",
-        "body": "The best day to start is the one you pick.",
-        "visual_prompt": "Bold type card in {{brand}} colors"
+        "headline": "What to say at the desk",
+        "body": "Just this: \"It's been {{time_gap}}.\" That's all we need to start.",
+        "visual_prompt": "Friendly front desk at {{brand}} with a small welcome card, soft daylight, nobody in frame"
       },
       {
         "headline": "Signed. Now book it.",

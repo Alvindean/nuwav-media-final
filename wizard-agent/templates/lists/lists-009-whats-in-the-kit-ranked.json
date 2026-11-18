@@ -18,7 +18,7 @@
   "hook": {
     "pattern": "Open the bag on camera and promise the ranking will surprise.",
     "examples": [
-      "Everything in my {{kit_name}}, ranked by how often I use it.",
+      "My {{kit_name}}, ranked by how often I grab it.",
       "My most-used piece of gear cost {{cheap_price}}.",
       "Dumping my {{kit_name}}. Number one will embarrass me."
     ]
@@ -51,7 +51,7 @@
     },
     {
       "name": "item_1",
-      "description": "Most-used item, ideally cheap or humble",
+      "description": "Most-used item, ideally cheap or humble; 4 words or fewer",
       "example": "a plastic pick tin"
     },
     {
@@ -60,14 +60,19 @@
       "example": "$3"
     },
     {
+      "name": "kit_total",
+      "description": "Rough total cost of everything in the kit",
+      "example": "$1,400"
+    },
+    {
       "name": "item_1_story",
-      "description": "Why it is used the most, one line",
-      "example": "every set, every rehearsal, never left behind"
+      "description": "How often it gets used, read after \"I use it\"; 5 words or fewer",
+      "example": "every set, every rehearsal"
     },
     {
       "name": "next_step",
-      "description": "Where to see the kit in action",
-      "example": "the next show at The Lantern, Friday"
+      "description": "Where to see the kit in action; 6 words or fewer",
+      "example": "Friday's show at The Lantern"
     }
   ],
   "beats": [
@@ -75,7 +80,7 @@
       "seconds": 3,
       "purpose": "hook: the bag dump",
       "on_screen_text": "My {{kit_name}}, ranked by use",
-      "voiceover": "Everything in my {{kit_name}}, ranked by how often I use it.",
+      "voiceover": "My {{kit_name}}, ranked by how often I grab it.",
       "visual": {
         "tier": "clip_draft",
         "prompt": "Overhead shot of a {{kit_name}} being unzipped and its contents spilled onto a wooden floor, hard top light, vertical 9:16"
@@ -85,7 +90,7 @@
       "seconds": 3,
       "purpose": "number 4",
       "on_screen_text": "#4 {{item_4}}",
-      "voiceover": "Four: {{item_4}}. Rarely, but when I need it, I need it.",
+      "voiceover": "Four: {{item_4}}. Rare, but essential.",
       "visual": {
         "tier": "still",
         "prompt": "{{item_4}} isolated on a wooden floor, top-down, hard light, a small number 4 tag beside it, vertical"
@@ -113,9 +118,9 @@
     },
     {
       "seconds": 5,
-      "purpose": "number 1, the humble winner",
+      "purpose": "number 1, the humble favorite",
       "on_screen_text": "#1 {{item_1}} ({{cheap_price}})",
-      "voiceover": "Number one costs {{cheap_price}}. {{item_1}}. {{item_1_story}}.",
+      "voiceover": "Number one costs {{cheap_price}}: {{item_1}}. I use it {{item_1_story}}.",
       "visual": {
         "tier": "still",
         "prompt": "Hand holding {{item_1}} up to the camera, worn and well used, everything else blurred on the floor behind, warm light, vertical 9:16"
@@ -124,15 +129,15 @@
     {
       "seconds": 3,
       "purpose": "call to action",
-      "on_screen_text": "See it in action: {{next_step}}",
-      "voiceover": "See it all in action: {{next_step}}.",
+      "on_screen_text": "Catch it live: {{next_step}}",
+      "voiceover": "Catch it live: {{next_step}}.",
       "visual": {
         "tier": "still",
         "prompt": "{{brand}} in action using the kit, candid moment, dramatic stage or field light, vertical"
       }
     }
   ],
-  "cta": "See the kit in action: {{next_step}}. Follow {{brand}}.",
+  "cta": "Catch the kit live: {{next_step}}.",
   "carousel": {
     "slides": [
       {
@@ -157,12 +162,22 @@
       },
       {
         "headline": "#1 {{item_1}}, {{cheap_price}}",
-        "body": "{{item_1_story}}.",
+        "body": "I use it {{item_1_story}}.",
         "visual_prompt": "Worn {{item_1}} held up to camera, everything else blurred behind"
       },
       {
+        "headline": "The math nobody expects",
+        "body": "The whole kit cost about {{kit_total}}. The {{cheap_price}} item does the most work.",
+        "visual_prompt": "Clean number card comparing the full kit total with the tiny price of item one, {{brand}} colors"
+      },
+      {
+        "headline": "Starting out? Buy these first",
+        "body": "Get {{item_1}} and {{item_2}} before anything else. Add the rest only when you miss it.",
+        "visual_prompt": "Two items set apart from the rest of the spilled kit, top-down, soft spotlight on them"
+      },
+      {
         "headline": "See it in action",
-        "body": "{{next_step}}.",
+        "body": "Catch it live: {{next_step}}.",
         "visual_prompt": "{{brand}} using the kit in a candid moment, dramatic light"
       }
     ]
@@ -175,5 +190,9 @@
     "Turn the list into undisclosed sponsored placements; disclose any paid or gifted gear",
     "Show real brand logos prominently on the gear",
     "Rank by price; it kills the twist"
+  ],
+  "compliance": [
+    "Fitness and athletes: no claims that any gear guarantees weight loss, strength or body results",
+    "Disclose any paid, gifted or affiliate gear clearly, following FTC endorsement rules"
   ]
 }

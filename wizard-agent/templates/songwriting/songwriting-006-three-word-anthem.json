@@ -8,10 +8,9 @@
   "aspect_ratio": "4:5",
   "best_for": [
     "sports team",
+    "supporters club",
     "pro athlete",
-    "apparel brand",
-    "luxury brand",
-    "record label"
+    "rec league"
   ],
   "why_it_works": "A slogan becomes an anthem when people can see where it comes from. Showing three words grow into a full chant, line by line, invites fans into the making of it, and anything people help build they defend and repeat.",
   "hook": {
@@ -19,33 +18,33 @@
     "examples": [
       "Three words. One anthem. Swipe to hear it grow.",
       "Every anthem starts as three words on a napkin.",
-      "{{slogan}}. Here's how it became our anthem."
+      "{{slogan}}. Watch it become our anthem."
     ]
   },
   "variables": [
     {
       "name": "brand",
-      "description": "Team, athlete or brand name",
+      "description": "Team, club or athlete name",
       "example": "Harbor City FC"
     },
     {
       "name": "slogan",
-      "description": "Three-word slogan, stressed-unstressed-stressed if possible",
+      "description": "Three-word slogan, capitalized, with three strong stresses (one per word)",
       "example": "Rise Together Now"
     },
     {
       "name": "line_two",
-      "description": "Second line that rhymes or echoes the slogan",
-      "example": "Hear the harbor roar"
+      "description": "Second chant line, capitalized, 3-5 words with three strong stresses, rhyming with the slogan's last word",
+      "example": "Hear the whole town"
     },
     {
       "name": "line_three",
-      "description": "Third line: who 'we' are",
-      "example": "Every street, every shore"
+      "description": "Third chant line naming who 'we' are, capitalized, 3-5 words with three strong stresses, same rhyme",
+      "example": "Every street, every crowd"
     },
     {
       "name": "moment",
-      "description": "When fans will chant it",
+      "description": "When fans will chant it, lowercase, 6 words or fewer",
       "example": "home opener, Saturday 7 PM"
     }
   ],
@@ -58,12 +57,12 @@
       },
       {
         "headline": "Step 1: stamp the beat",
-        "body": "Say it with a stomp on each word: {{slogan}}. Three hits. Stomp, stomp, clap.",
+        "body": "Stomp once on each word: {{slogan}}. Three stomps, then rest on beat four.",
         "visual_prompt": "Low-angle photo of boots stomping on concrete bleachers, dust in the light, 4:5"
       },
       {
         "headline": "Step 2: add the answer",
-        "body": "{{line_two}}. Same rhythm, new vowel, easier to shout.",
+        "body": "{{line_two}}. Same rhythm, same open vowel, easy to shout.",
         "visual_prompt": "Wide photo of a crowd silhouette with arms up against stadium lights, 4:5"
       },
       {
@@ -83,7 +82,7 @@
       },
       {
         "headline": "Chant it with us",
-        "body": "{{moment}}. Save this and learn it before kickoff.",
+        "body": "See you at the {{moment}}. Save this and learn it before then.",
         "visual_prompt": "End card with {{brand}} logo, date in large type, stadium photo behind"
       }
     ]
@@ -91,7 +90,7 @@
   "cta": "Save this, learn the words, and chant it with us at the {{moment}}.",
   "craft": {
     "technique": "Bookended four-line chant (ABCA) built from a three-beat slogan",
-    "notes": "The slogan should have three strong stresses so each word gets a stomp (RISE to-GE-ther NOW works because the stressed syllables fall on 1, 2 and 3 with beat 4 as a rest). Line two echoes the vowel or end-rhymes (now / roar keeps the open O), line three names the community, and line four repeats the slogan: title placement at top and bottom. Suggested tempo/feel: 80-90 BPM stomp-stomp-clap, chanted not sung, low male and female voices in unison."
+    "notes": "The slogan needs three strong stresses so each word gets a stomp: RISE to-GE-ther NOW puts the stresses on beats 1, 2 and 3, with beat 4 as a rest. Line two end-rhymes on the same open vowel (now / town), line three names the community and keeps the rhyme (crowd), and line four repeats the slogan: title placement at top and bottom. Suggested tempo/feel: 80-90 BPM stomp-stomp-stomp-rest, chanted not sung, low voices in unison."
   },
   "do_not": [
     "Borrow a real club's chant or a real stadium song's rhythm and words",

@@ -52,7 +52,7 @@ const cases = [
   ["4-slide carousel fails", () => { const t = clone(); t.carousel.slides.pop(); return run(t); }, 1],
   ["carousel-only with beats fails", () => { const t = clone(); t.format = "carousel"; return run(t); }, 1],
   ["carousel-only clean passes", () => run(carouselOnly()), 0],
-  ["empty folder fails", () => { const dir = fs.mkdtempSync(path.join(os.tmpdir(), "wiz-")); const r = spawnSync(process.execPath, [VALIDATOR, dir]).status; fs.rmSync(dir, { recursive: true }); return r; }, 1],
+  ["empty folder is a usage error", () => { const dir = fs.mkdtempSync(path.join(os.tmpdir(), "wiz-")); const r = spawnSync(process.execPath, [VALIDATOR, dir]).status; fs.rmSync(dir, { recursive: true }); return r; }, 2],
 
   // ---- blindside round 1: technical ----
   ["junk template (hi/x/qqqq) fails", () => { const t = clone(); t.hook.examples = ["hi", "hi", "hi"]; t.cta = "x"; t.beats.forEach((b) => { b.visual.prompt = "qqqqqqqqqqqqqqq"; }); return run(t); }, 1],
@@ -84,6 +84,49 @@ const cases = [
   ["prize without official rules fails", () => { const t = clone(); t.cta = "Comment your guess to win a free latte"; return run(t); }, 1],
   ["prize with official rules passes", () => { const t = clone(); t.cta = "Comment your guess to win a free latte"; t.compliance.push("Giveaway: official rules linked, no purchase necessary, not run by the platform"); return run(t); }, 0],
   ["tag-a-friend bait fails", () => { const t = clone(); t.cta = "Tag a friend who needs this latte"; return run(t); }, 1],
+
+  // ---- blindside round 2: technical ----
+  ["one-letter-word junk fails", () => { const t = clone(); t.why_it_works = "a a a a a a a a {{brand}}"; t.craft.notes = "b b b b b b b b"; return run(t); }, 1],
+  ["low-variety filler fails", () => { const t = clone(); t.why_it_works = "very very very very very very good good good"; return run(t); }, 1],
+  ["hyphen-chained long hook fails", () => { const t = clone(); t.hook.examples[0] = "Why-does-our-latte-cost-more-than-the-chain-store across-the-street watch this"; return run(t); }, 1],
+  ["dot-chained voiceover fails", () => { const t = clone(); t.beats[0].voiceover = "Why.does.our.latte.cost.more.than.the.chain.store.across.the.street"; return run(t); }, 1],
+  ["long CJK voiceover fails timing", () => { const t = clone(); t.beats[0].voiceover = "为什么我们的拿铁比街对面的连锁店贵这么多呢你一定想知道答案吧"; return run(t); }, 1],
+  ["filled carousel headline over 10 words fails", () => { const t = clone(); t.carousel.slides[2].headline = "{{hidden_step}} {{hidden_step}}"; return run(t); }, 1],
+  ["fractional clip seconds fail", () => { const t = clone(); t.beats[1].seconds = 4.5; t.beats[2].seconds = 5.5; return run(t); }, 1],
+  ["clip longer than the model allows fails", () => { const t = clone(); t.beats[1].seconds = 16; t.duration_seconds = 31; return run(t); }, 1],
+  ["near-copy with one word changed fails", () => { const a = clone(); const b = clone(); b.id = "comparison-002-near-copy"; b.name = "Another Name"; b.hook.pattern += " Now."; return runFiles([{ t: a }, { t: b }]); }, 1],
+  ["digits-only beat text passes", () => { const t = clone(); t.beats[3].on_screen_text = "$49 → $19"; t.beats[3].voiceover = ""; return run(t); }, 0],
+  ["--expect 1e2 is a usage error", () => runFiles([{ t: clone() }], ["--expect", "1e2"]), 2],
+  ["prize hidden in a variable example fails", () => { const t = clone(); t.variables.find((v) => v.name === "offer").example = "a chance to win a free latte"; return run(t); }, 1],
+  ["bait hidden in a variable example fails", () => { const t = clone(); t.variables.find((v) => v.name === "offer").example = "Tag someone who needs coffee"; return run(t); }, 1],
+  ["-ies plural niche needs a pack rule", () => { const t = clone(); t.best_for = ["breweries", "pharmacies", "bakery"]; return run(t); }, 1],
+  ["juice bar is not age-restricted", () => { const t = clone(); t.best_for = ["juice bar", "coffee shop", "bakery"]; t.compliance = ["Keep claims true for this brand always"]; t.variables = t.variables.filter((v) => v.name !== "disclosure"); t.beats[4].on_screen_text = "{{offer}}"; t.carousel.slides[4].body = "Come in: {{offer}}."; return run(t); }, 0],
+  ["vocal coach is not an income-claims niche", () => { const t = clone(); t.best_for = ["vocal coach", "coffee shop", "bakery"]; t.compliance = ["Keep claims true for this brand always"]; t.variables = t.variables.filter((v) => v.name !== "disclosure"); t.beats[4].on_screen_text = "{{offer}}"; t.carousel.slides[4].body = "Come in: {{offer}}."; return run(t); }, 0],
+  ["junk compliance rule for a regulated niche fails", () => { const t = clone(); t.compliance = ["Be nice to everyone always"]; return run(t); }, 1],
+  ["new pack niches are matched (car dealership)", () => { const t = clone(); t.best_for = ["car dealership", "coffee shop", "bakery"]; t.compliance = ["Keep claims true for this brand always"]; return run(t); }, 1],
+
+  // ---- blindside round 2: business ----
+  ["generated weight-loss before/after fails", () => { const t = clone(); t.beats[3].purpose = "Day 90 reveal"; t.beats[3].on_screen_text = "Day 90: minus 30 lbs"; return run(t); }, 1],
+  ["'Before & after' on a generated clip fails", () => { const t = clone(); t.beats[2].purpose = "Before & after"; return run(t); }, 1],
+  ["'What our customers say' on a still fails", () => { const t = clone(); t.beats[3].purpose = "What our customers say"; return run(t); }, 1],
+  ["5-star review slide with a generated face fails", () => { const t = clone(); t.carousel.slides[3].headline = "5-star review"; t.carousel.slides[3].visual_prompt = "photorealistic generated woman smiling holding a latte"; return run(t); }, 1],
+  ["guarantee claim in a law-firm ad fails", () => { const t = clone(); t.beats[3].voiceover = "We win your case. Guaranteed."; return run(t); }, 1],
+  ["negated guarantee passes", () => { const t = clone(); t.beats[3].voiceover = "No guarantees. Just honest work."; return run(t); }, 0],
+  ["regulated template without on-screen disclosure fails", () => { const t = clone(); t.beats[4].on_screen_text = "{{offer}}"; return run(t); }, 1],
+  ["sound-alike music feel fails", () => { const t = clone(goodSong); t.music.feel = "pop that sounds exactly like a famous hit"; return run(t); }, 1],
+  ["comparison to a named brand fails", () => { const t = clone(); t.cta = "Way better than Starbucks, honestly."; return run(t); }, 1],
+  ["'comment YES for part 2' bait fails", () => { const t = clone(); t.cta = "Comment YES for part 2"; return run(t); }, 1],
+  ["'lucky commenter' prize without rules fails", () => { const t = clone(); t.cta = "We pick one lucky commenter for a free month"; return run(t); }, 1],
+
+  // ---- blindside round 2: creative ----
+  ["story hook with a hard-coded fact fails", () => { const t = clone(); t.category = "story"; t.id = "story-001-fact"; t.hook.examples[0] = "2:14 a.m. Unknown number. She picked up."; return run(t, { category: "story", fileName: "story-001-fact" }); }, 1],
+  ["'a AC tune-up' reads wrong", () => { const t = clone(); t.beats[1].voiceover = "This is a AC tune-up."; return run(t); }, 1],
+  ["double period reads wrong", () => { const t = clone(); t.beats[1].voiceover = "Trust exercise.."; return run(t); }, 1],
+  ["lowercase after a sentence end reads wrong", () => { const t = clone(); t.beats[1].voiceover = "Come see us. first coffee is free."; return run(t); }, 1],
+  ["'Option A or B' is not an article", () => { const t = clone(); t.beats[1].voiceover = "Pick option A or B."; return run(t); }, 0],
+  ["numbered list items may start lowercase", () => { const t = clone(); t.beats[1].on_screen_text = "1. a fresh fade"; return run(t); }, 0],
+  ["'link in bio' after a period reads wrong", () => { const t = clone(); t.beats[4].voiceover = "Daylight. link in bio"; return run(t); }, 1],
+  ["'a.m.' followed by lowercase is fine", () => { const t = clone(); t.beats[1].voiceover = "Open at 6 a.m. every day."; return run(t); }, 0],
 ];
 
 let pass = 0;

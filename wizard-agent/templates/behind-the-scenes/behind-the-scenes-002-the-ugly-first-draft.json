@@ -18,8 +18,8 @@
   "hook": {
     "pattern": "Show the worst early version first and call it out bluntly.",
     "examples": [
-      "This is version one of our {{product}}. It's bad. Watch.",
-      "Nobody was supposed to see this {{product}} draft.",
+      "This is version one of our {{product}}. It's bad.",
+      "You weren't supposed to see this {{product}} draft.",
       "Draft one vs draft {{draft_count}}. Be honest."
     ]
   },
@@ -51,8 +51,13 @@
     },
     {
       "name": "offer",
-      "description": "What to do now",
-      "example": "the final version drops Friday at noon"
+      "description": "What to do now, a full sentence starting with a capital, 8 words or fewer",
+      "example": "The final version drops Friday at noon"
+    },
+    {
+      "name": "test_routine",
+      "description": "How every draft gets tested, 12 words or fewer",
+      "example": "Wear it for a week, wash it five times, check the print"
     }
   ],
   "beats": [
@@ -117,7 +122,7 @@
       }
     }
   ],
-  "cta": "Comment which draft you'd have kept, then catch the drop: {{offer}}.",
+  "cta": "Which draft would you have kept? {{offer}}.",
   "carousel": {
     "slides": [
       {
@@ -139,6 +144,16 @@
         "headline": "The one change",
         "body": "{{turning_change}}.",
         "visual_prompt": "Hands holding the material or tool behind the fix"
+      },
+      {
+        "headline": "How every draft gets tested",
+        "body": "{{test_routine}}. Fail one step, it's back to the table.",
+        "visual_prompt": "Handwritten test checklist pinned above a work table, a {{product}} prototype beside it, daylight"
+      },
+      {
+        "headline": "Steal this rule",
+        "body": "Change one thing per draft, so you always know what fixed it.",
+        "visual_prompt": "Clean typographic tip card in {{brand}} colors with a small sketch of two drafts"
       },
       {
         "headline": "Draft 1 vs final",

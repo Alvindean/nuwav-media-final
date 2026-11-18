@@ -7,32 +7,106 @@
   "goal": "engagement",
   "duration_seconds": 20,
   "aspect_ratio": "9:16",
-  "best_for": ["coffee shop", "restaurant", "independent musician", "record label", "bakery"],
+  "best_for": [
+    "coffee shop",
+    "restaurant",
+    "independent musician",
+    "record label",
+    "bakery"
+  ],
   "why_it_works": "A blind test removes the brand, so the result feels earned instead of claimed. Viewers instinctively pick a side before the reveal and stay to see if they were right, and people who guessed wrong comment to argue.",
   "hook": {
     "pattern": "Show two unlabeled options and ask the viewer to pick before strangers do.",
     "examples": [
-      "Cup A or cup B? Pick before you scroll.",
+      "Option A or B? Pick before you scroll.",
       "We took the labels off. Strangers picked. You pick too.",
       "Two {{product}}s, no names. Only one is ours."
     ]
   },
   "variables": [
-    { "name": "brand", "description": "Business or artist name", "example": "Lantern Roasters" },
-    { "name": "product", "description": "What is being tested", "example": "cold brew" },
-    { "name": "option_b", "description": "The other option, described generically, never a named brand", "example": "a standard grocery-store cold brew" },
-    { "name": "result", "description": "The real tally from the test", "example": "9 out of 12 picked cup B" },
-    { "name": "offer", "description": "Invitation to try it", "example": "Come take the blind test, free sample this weekend" }
+    {
+      "name": "brand",
+      "description": "Business or artist name",
+      "example": "Lantern Roasters"
+    },
+    {
+      "name": "product",
+      "description": "What is being tested",
+      "example": "cold brew"
+    },
+    {
+      "name": "option_b",
+      "description": "The other option, described generically, never a named brand",
+      "example": "a standard grocery-store cold brew"
+    },
+    {
+      "name": "result",
+      "description": "The real tally from the test",
+      "example": "9 out of 12 picked cup B"
+    },
+    {
+      "name": "offer",
+      "description": "Invitation to try it",
+      "example": "Come take the blind test, free sample this weekend"
+    }
   ],
   "beats": [
-    { "seconds": 3, "purpose": "hook: pick a side", "on_screen_text": "A or B? Pick now.", "voiceover": "A or B. Pick before you scroll.", "visual": { "tier": "still", "prompt": "Vertical 9:16 photo of two identical unmarked {{product}} samples labeled only A and B on a wooden counter, clean even light, centered symmetrical framing, slight shallow depth of field" } },
-    { "seconds": 5, "purpose": "strangers test it", "on_screen_text": "No labels. No hints.", "voiceover": "We asked people on the street. No labels, no hints.", "visual": { "tier": "clip_standard", "prompt": "Vertical handheld street-interview style shot, a person tries sample A then sample B, thoughtful expression, natural daylight, casual urban background, no logos visible" } },
-    { "seconds": 4, "purpose": "the tally", "on_screen_text": "{{result}}", "voiceover": "The count: {{result}}.", "visual": { "tier": "text_only", "prompt": "" } },
-    { "seconds": 5, "purpose": "reveal", "on_screen_text": "B was {{brand}}. A was {{option_b}}.", "voiceover": "B was {{brand}}. A was {{option_b}}.", "visual": { "tier": "still", "prompt": "Vertical photo of a hand lifting a card under sample B to reveal the {{brand}} logo, warm spotlight on B, sample A slightly out of focus" } },
-    { "seconds": 3, "purpose": "call to action", "on_screen_text": "Did you pick right?", "voiceover": "Did you pick right? {{offer}}.", "visual": { "tier": "text_only", "prompt": "" } }
+    {
+      "seconds": 3,
+      "purpose": "hook: pick a side",
+      "on_screen_text": "A or B? Pick now.",
+      "voiceover": "A or B. Pick before you scroll.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Vertical 9:16 photo of two identical unmarked {{product}} samples labeled only A and B on a wooden counter, clean even light, centered symmetrical framing, slight shallow depth of field"
+      }
+    },
+    {
+      "seconds": 5,
+      "purpose": "real people test it",
+      "on_screen_text": "No labels. No hints.",
+      "voiceover": "We asked people on the street. No labels, no hints.",
+      "visual": {
+        "tier": "real_photo",
+        "prompt": "Real photo from your actual blind test: a participant who signed a release trying sample A then sample B, thoughtful expression, natural daylight, no logos visible"
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "the tally",
+      "on_screen_text": "{{result}}",
+      "voiceover": "The count: {{result}}.",
+      "visual": {
+        "tier": "text_only",
+        "prompt": ""
+      }
+    },
+    {
+      "seconds": 5,
+      "purpose": "reveal",
+      "on_screen_text": "B was {{brand}}. A was {{option_b}}.",
+      "voiceover": "B was {{brand}}. A was {{option_b}}.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Vertical photo of a hand lifting a card under sample B to reveal the {{brand}} logo, warm spotlight on B, sample A slightly out of focus"
+      }
+    },
+    {
+      "seconds": 3,
+      "purpose": "call to action",
+      "on_screen_text": "Did you pick right?",
+      "voiceover": "{{offer}}.",
+      "visual": {
+        "tier": "text_only",
+        "prompt": ""
+      }
+    }
   ],
   "cta": "Comment A or B, then: {{offer}}.",
-  "craft": { "technique": "Blind test with viewer bet", "notes": "Ask the viewer to commit in the first second so they have a stake. Hold the tally before the reveal so the number builds suspense. For musicians, swap cups for two audio clips: rough demo vs final mix, both your own." },
+  "craft": {
+    "technique": "Blind test with viewer bet",
+    "notes": "Ask the viewer to commit in the first second so they have a stake. Hold the tally before the reveal so the number builds suspense. For musicians, swap cups for two audio clips: rough demo vs final mix, both your own."
+  },
   "do_not": [
     "Rig or stage the result; run a real test and report the real count, even if it is close",
     "Name or show a real competitor's brand as option A",

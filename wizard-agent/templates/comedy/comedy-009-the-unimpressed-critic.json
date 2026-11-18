@@ -7,52 +7,189 @@
   "goal": "sales",
   "duration_seconds": 23,
   "aspect_ratio": "9:16",
-  "best_for": ["restaurant", "coffee shop", "jewelry brand", "luxury fashion brand", "skincare brand"],
+  "best_for": [
+    "restaurant",
+    "coffee shop",
+    "jewelry brand",
+    "luxury fashion brand",
+    "skincare brand"
+  ],
   "why_it_works": "A snobby, fictional critic sounds like they are about to tear the product apart, so viewers lean in for the takedown. The misdirection flips: every 'complaint' is secretly the highest praise. That surprise makes the compliment funny instead of braggy, which is the only way a brand can brag and still get a laugh.",
   "hook": {
     "pattern": "Introduce a famously hard-to-please (fictional) critic who just tried your product, framed like bad news.",
     "examples": [
-      "A very serious critic tried our {{product}}. It did not go well.",
-      "We let the harshest critic in town review our {{product}}. Oops.",
+      "The critic tried our {{product}}. It went badly.",
+      "The harshest critic in town reviewed our {{product}}.",
       "Bad news. The critic tried the {{product}}."
     ]
   },
   "variables": [
-    { "name": "brand", "description": "Business name", "example": "Maison Ruelle" },
-    { "name": "product", "description": "The product being reviewed", "example": "croissant" },
-    { "name": "critic_detail", "description": "One visual detail that makes the fictional critic over-serious", "example": "a velvet blazer, reading glasses on a chain and a tiny notebook" },
-    { "name": "ruined_line", "description": "The complaint that sounds like a takedown", "example": "Frankly, it has ruined me." },
-    { "name": "misdirect_reveal", "description": "The reveal that the complaint is praise", "example": "I can no longer enjoy any other croissant. My life is worse now." },
-    { "name": "tag_action", "description": "The critic's small hypocritical action that tags the joke", "example": "quietly slips a second croissant into the blazer pocket" },
-    { "name": "offer", "description": "What the viewer gets for acting", "example": "fresh at 7am, gone by 10" }
+    {
+      "name": "brand",
+      "description": "Business name",
+      "example": "Maison Ruelle"
+    },
+    {
+      "name": "product",
+      "description": "The product being reviewed",
+      "example": "croissant"
+    },
+    {
+      "name": "critic_detail",
+      "description": "One visual detail that makes the fictional critic over-serious",
+      "example": "a velvet blazer, reading glasses on a chain and a tiny notebook"
+    },
+    {
+      "name": "ruined_line",
+      "description": "The complaint that sounds like a takedown (8 words or fewer, spoken)",
+      "example": "Frankly, it has ruined me."
+    },
+    {
+      "name": "misdirect_reveal",
+      "description": "The reveal that the complaint is praise (13 words or fewer, spoken)",
+      "example": "I can no longer enjoy any other croissant. My life is worse now."
+    },
+    {
+      "name": "tag_action",
+      "description": "The critic's small hypocritical action that tags the joke, shown in motion (10 words or fewer)",
+      "example": "quietly slips a second croissant into the blazer pocket"
+    },
+    {
+      "name": "critic_tip",
+      "description": "A real, save-worthy tip for getting the most out of the product (15 words or fewer)",
+      "example": "Warm it 3 minutes at 350°F. Never the microwave. The critic insists."
+    },
+    {
+      "name": "best_time",
+      "description": "When to come or order for the best version, from your real schedule (10 words or fewer)",
+      "example": "Tuesday to Friday, 7 to 8am: first tray, no line."
+    },
+    {
+      "name": "offer",
+      "description": "What the viewer gets for acting (8 words or fewer)",
+      "example": "fresh at 7am, gone by 10"
+    }
   ],
   "beats": [
-    { "seconds": 3, "purpose": "hook: bad-news framing", "on_screen_text": "The critic tried our {{product}}.", "voiceover": "Bad news. The critic tried our {{product}}.", "visual": { "tier": "still", "prompt": "Vertical 9:16 photo of a fictional stern critic wearing {{critic_detail}}, seated alone at a small table at {{brand}}, the {{product}} in front of them, moody side light, deadpan expression" } },
-    { "seconds": 4, "purpose": "setup: the inspection", "on_screen_text": "Expression: unreadable.", "voiceover": "The critic inspects. The critic says nothing.", "visual": { "tier": "still", "prompt": "Vertical extreme close-up of the critic holding the {{product}} up to the light like a gemstone, squinting, reading glasses low, dramatic rim light, shallow depth of field" } },
-    { "seconds": 5, "purpose": "misdirection: the takedown line", "on_screen_text": "\"{{ruined_line}}\"", "voiceover": "{{ruined_line}}", "visual": { "tier": "clip_draft", "prompt": "Vertical clip, the critic slowly sets down the {{product}}, removes their glasses and stares into the distance, slow push-in, moody cinematic light, total seriousness" } },
-    { "seconds": 4, "purpose": "turn: the complaint is praise", "on_screen_text": "\"{{misdirect_reveal}}\"", "voiceover": "{{misdirect_reveal}}", "visual": { "tier": "still", "prompt": "Vertical medium shot of the critic writing furiously in a tiny notebook, a single tear of joy, the {{product}} half-finished on the plate, warmer light creeping in" } },
-    { "seconds": 4, "purpose": "tag: hypocrisy", "on_screen_text": "Review: zero stars. Also:", "voiceover": "", "visual": { "tier": "still", "prompt": "Vertical candid shot of the critic, glancing around, as they {{tag_action}}, exaggerated sneaky body language, {{brand}} interior behind, bright warm light" } },
-    { "seconds": 3, "purpose": "call to action", "on_screen_text": "{{brand}}: {{offer}}", "voiceover": "Ruin yourself. {{offer}}.", "visual": { "tier": "text_only", "prompt": "" } }
+    {
+      "seconds": 3,
+      "purpose": "hook: bad-news framing",
+      "on_screen_text": "The critic tried our {{product}}.",
+      "voiceover": "Bad news. The critic tried our {{product}}.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Vertical 9:16 photo of a fictional stern critic wearing {{critic_detail}}, seated alone at a small table at {{brand}}, the {{product}} in front of them, moody side light, deadpan expression"
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "setup: the inspection",
+      "on_screen_text": "Expression: unreadable.",
+      "voiceover": "The critic inspects. The critic says nothing.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Vertical extreme close-up of the critic holding the {{product}} up to the light like a gemstone, squinting, reading glasses low, dramatic rim light, shallow depth of field"
+      }
+    },
+    {
+      "seconds": 5,
+      "purpose": "misdirection: the takedown line",
+      "on_screen_text": "\"{{ruined_line}}\"",
+      "voiceover": "{{ruined_line}}",
+      "visual": {
+        "tier": "clip_draft",
+        "prompt": "Vertical clip, the critic slowly sets down the {{product}}, removes their glasses and stares into the distance, slow push-in, moody cinematic light, total seriousness"
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "turn: the complaint is praise",
+      "on_screen_text": "\"{{misdirect_reveal}}\"",
+      "voiceover": "{{misdirect_reveal}}",
+      "visual": {
+        "tier": "still",
+        "prompt": "Vertical medium shot of the critic writing furiously in a tiny notebook, a single tear of joy, the {{product}} half-finished on the plate, warmer light creeping in"
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "tag: hypocrisy in motion",
+      "on_screen_text": "Zero stars. Pocket: one {{product}}.",
+      "voiceover": "Zero stars.",
+      "visual": {
+        "tier": "clip_draft",
+        "prompt": "Vertical 9:16 clip, the critic glances left and right, then {{tag_action}}, exaggerated sneaky body language, quick and clear action, {{brand}} interior behind, bright warm light"
+      }
+    },
+    {
+      "seconds": 3,
+      "purpose": "call to action",
+      "on_screen_text": "{{brand}}: {{offer}}",
+      "voiceover": "Ruin yourself: {{offer}}.",
+      "visual": {
+        "tier": "text_only",
+        "prompt": ""
+      }
+    }
   ],
   "cta": "Come get ruined: {{offer}} at {{brand}}.",
   "carousel": {
     "slides": [
-      { "headline": "The critic has reviewed our {{product}}", "body": "We're not okay. Swipe if you're brave.", "visual_prompt": "Vertical stern fictional critic in {{critic_detail}} at a {{brand}} table, moody side light, deadpan" },
-      { "headline": "Presentation", "body": "\"Suspiciously beautiful. I don't trust it.\"", "visual_prompt": "Extreme close-up of the {{product}} held up to the light, dramatic rim light, editorial" },
-      { "headline": "Overall", "body": "\"{{ruined_line}}\"", "visual_prompt": "Critic removing their glasses, staring into the distance, cinematic moody light" },
-      { "headline": "Long-term effects", "body": "\"{{misdirect_reveal}}\"", "visual_prompt": "Critic writing furiously in a tiny notebook beside a half-finished {{product}}, warmer light" },
-      { "headline": "Final rating: zero stars", "body": "Critic seen leaving. Pockets: suspicious.", "visual_prompt": "Critic who {{tag_action}}, sneaky body language, bright {{brand}} interior" },
-      { "headline": "Get ruined responsibly", "body": "{{offer}}.", "visual_prompt": "Clean {{brand}} end card, logo, the {{product}} hero shot, offer in elegant serif type" }
+      {
+        "headline": "The critic has reviewed our {{product}}",
+        "body": "We're not okay. Swipe if you're brave.",
+        "visual_prompt": "Vertical stern fictional critic in {{critic_detail}} at a {{brand}} table, moody side light, deadpan"
+      },
+      {
+        "headline": "Presentation",
+        "body": "\"Suspiciously beautiful. I don't trust it.\"",
+        "visual_prompt": "Extreme close-up of the {{product}} held up to the light, dramatic rim light, editorial"
+      },
+      {
+        "headline": "Overall",
+        "body": "\"{{ruined_line}}\"",
+        "visual_prompt": "Critic removing their glasses, staring into the distance, cinematic moody light"
+      },
+      {
+        "headline": "Long-term effects",
+        "body": "\"{{misdirect_reveal}}\"",
+        "visual_prompt": "Critic writing furiously in a tiny notebook beside a half-finished {{product}}, warmer light"
+      },
+      {
+        "headline": "Final rating: zero stars",
+        "body": "Critic seen leaving. Pockets: suspicious.",
+        "visual_prompt": "Critic who {{tag_action}}, sneaky body language, bright {{brand}} interior"
+      },
+      {
+        "headline": "The critic's one tip",
+        "body": "{{critic_tip}}",
+        "visual_prompt": "Handwritten note card on a {{brand}} table beside the {{product}}, critic's reading glasses resting on it, warm light"
+      },
+      {
+        "headline": "When the critic shows up",
+        "body": "{{best_time}}",
+        "visual_prompt": "Simple schedule card in {{brand}} colors with a small clock doodle and the {{product}} hero shot"
+      },
+      {
+        "headline": "Get ruined responsibly",
+        "body": "Get yours: {{offer}}.",
+        "visual_prompt": "Clean {{brand}} end card, logo, the {{product}} hero shot, offer in elegant serif type"
+      }
     ]
   },
   "craft": {
     "technique": "Misdirection: a takedown that turns into praise, with a hypocrisy tag",
-    "notes": "Setup: bad-news framing and a fictional critic played completely straight, so the audience expects a negative review. Turn: the line that sounds like a takedown ('it ruined me') is followed by the reveal that 'ruined' means nothing else compares; the praise arrives disguised as a complaint. Tag: the critic gives zero stars, then sneaks a second one into their pocket; the action contradicts the words, which is the final laugh. Timing: hold the push-in on the glasses coming off for a full second of silence before the ruined line, and in the tag let the on-screen 'Also:' sit for half a beat before we see the pocket. Never let the critic smile."
+    "notes": "Setup: bad-news framing and a fictional critic played completely straight, so the audience expects a negative review. Turn: the line that sounds like a takedown ('it ruined me') is followed by the reveal that 'ruined' means nothing else compares; the praise arrives disguised as a complaint. Tag: the critic gives zero stars, then sneaks a second one into their pocket; the action contradicts the words, which is the final laugh. Timing: hold the push-in on the glasses coming off for a full second of silence before the ruined line, and in the tag let 'Zero stars.' land, then show the pocket move in one short clip so the action reads without words. Never let the critic smile."
   },
   "do_not": [
     "Base the critic on a real, recognizable reviewer, chef or celebrity",
     "Show fake star ratings or review-site logos that could look like real reviews",
     "Let the critic insult other businesses or customers",
     "Use the misdirection for claims you can't support (skincare: no 'fixed my skin' type results)"
+  ],
+  "compliance": [
+    "Skincare: the misdirection lines make no skin results, cure or treatment claims; no before/after images",
+    "The critic is clearly fictional; never present the review as a real published review or show review-site logos",
+    "Restaurants and food: any tip or time shown must match what the business actually serves"
   ]
 }

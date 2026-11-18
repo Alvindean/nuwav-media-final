@@ -7,31 +7,101 @@
   "goal": "engagement",
   "duration_seconds": 18,
   "aspect_ratio": "9:16",
-  "best_for": ["barber shop", "auto shop", "lowrider car club", "real estate agent", "interior designer"],
+  "best_for": [
+    "barber shop",
+    "auto shop",
+    "lowrider car club",
+    "real estate agent",
+    "interior designer"
+  ],
   "why_it_works": "Spot-the-difference is a tiny puzzle with a clear right answer, so people rewatch until they find it, and every rewatch counts. Finding it feels smart, which makes people want to prove it in the comments before the reveal shows up.",
   "hook": {
     "pattern": "Show a detailed scene and say one thing will change. Give them a time limit.",
     "examples": [
       "Watch close. One thing changes. Five seconds to find it.",
-      "Ninety percent of people miss what changes in this shop.",
+      "Most people miss what changes. Do you?",
       "Same photo twice. One detail is different. Go."
     ]
   },
   "variables": [
-    { "name": "brand", "description": "Business or club name", "example": "Southside Fade Co." },
-    { "name": "scene", "description": "The busy, detail-rich space or object", "example": "the barber station at chair three" },
-    { "name": "changed_detail", "description": "The one small detail swapped in the second image", "example": "the comb in the jar turns from black to gold" },
-    { "name": "reward", "description": "What people who get it right receive", "example": "$5 off your next cut" }
+    {
+      "name": "brand",
+      "description": "Business or club name",
+      "example": "Southside Fade Co."
+    },
+    {
+      "name": "scene",
+      "description": "The busy, detail-rich space or object",
+      "example": "the barber station at chair three"
+    },
+    {
+      "name": "changed_detail",
+      "description": "The one small detail swapped in the second image, a short sentence starting with a capital, 8 words or fewer",
+      "example": "The comb in the jar turned gold"
+    },
+    {
+      "name": "reward",
+      "description": "What people who get it right receive, 5 words or fewer",
+      "example": "$5 off your next cut"
+    }
   ],
   "beats": [
-    { "seconds": 3, "purpose": "hook: set the challenge on image A", "on_screen_text": "One thing changes. Find it.", "voiceover": "Watch close. One thing changes.", "visual": { "tier": "still", "prompt": "Vertical 9:16 wide, sharp, evenly lit photo of {{scene}} at {{brand}}, lots of small objects and texture in frame, no people, deep focus front to back" } },
-    { "seconds": 4, "purpose": "swap to image B", "on_screen_text": "Now. What's different?", "voiceover": "Now. What's different?", "visual": { "tier": "still", "prompt": "The exact same vertical 9:16 photo of {{scene}} at {{brand}}, identical framing and light, with one change only: {{changed_detail}}" } },
-    { "seconds": 4, "purpose": "countdown to drive comments", "on_screen_text": "Comment it before the answer. 3... 2... 1...", "voiceover": "Comment it before the answer.", "visual": { "tier": "text_only", "prompt": "" } },
-    { "seconds": 4, "purpose": "reveal with a push-in", "on_screen_text": "{{changed_detail}}", "voiceover": "Got it? {{changed_detail}}.", "visual": { "tier": "clip_draft", "prompt": "Slow push-in from the full image B of {{scene}} down to {{changed_detail}}, a thin circle drawing around it, vertical 9:16" } },
-    { "seconds": 3, "purpose": "reward and call to action", "on_screen_text": "Got it right? {{reward}}.", "voiceover": "Got it right? Show us your comment for {{reward}}.", "visual": { "tier": "text_only", "prompt": "" } }
+    {
+      "seconds": 3,
+      "purpose": "hook: set the challenge on image A",
+      "on_screen_text": "One thing changes. Find it.",
+      "voiceover": "Watch close. One thing changes.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Vertical 9:16 wide, sharp, evenly lit photo of {{scene}} at {{brand}}, lots of small objects and texture in frame, no people, deep focus front to back"
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "swap to image B",
+      "on_screen_text": "Now. What's different?",
+      "voiceover": "Now. What's different?",
+      "visual": {
+        "tier": "still",
+        "prompt": "The exact same vertical 9:16 photo of {{scene}} at {{brand}}, identical framing and light, with one change only: {{changed_detail}}"
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "countdown to drive comments",
+      "on_screen_text": "Comment it before the answer. 3... 2... 1...",
+      "voiceover": "Comment it before the answer.",
+      "visual": {
+        "tier": "text_only",
+        "prompt": ""
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "reveal with a push-in",
+      "on_screen_text": "{{changed_detail}}",
+      "voiceover": "Got it? {{changed_detail}}.",
+      "visual": {
+        "tier": "clip_draft",
+        "prompt": "Slow push-in from the full image B of {{scene}} down to {{changed_detail}}, a thin circle drawing around it, vertical 9:16"
+      }
+    },
+    {
+      "seconds": 3,
+      "purpose": "reward and call to action",
+      "on_screen_text": "Got it right? {{reward}}.",
+      "voiceover": "Show your comment for {{reward}}.",
+      "visual": {
+        "tier": "text_only",
+        "prompt": ""
+      }
+    }
   ],
   "cta": "Comment the change before the reveal, then show your comment at {{brand}} for {{reward}}.",
-  "craft": { "technique": "Controlled single variable", "notes": "Generate image B by editing image A, not by prompting a new image, or a dozen things will drift and the game breaks. The change should be findable in about four seconds: obvious once seen, invisible at first glance." },
+  "craft": {
+    "technique": "Controlled single variable",
+    "notes": "Generate image B by editing image A, not by prompting a new image, or a dozen things will drift and the game breaks. The change should be findable in about four seconds: obvious once seen, invisible at first glance."
+  },
   "do_not": [
     "Let anything besides the one detail shift between images; people will call it rigged",
     "Make the change so tiny it needs a zoom; frustration kills the replay",
@@ -39,6 +109,7 @@
   ],
   "compliance": [
     "Real estate: only alter removable staging props, never walls, fixtures, views or anything that changes how the property is represented",
-    "Real estate: show the brokerage name and follow your state's advertising rules on every listing post"
+    "Real estate: show the brokerage name and follow your state's advertising rules on every listing post",
+    "Rewards: state any limits (one per person, end date) and that no purchase is needed to play"
   ]
 }

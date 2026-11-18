@@ -18,7 +18,7 @@
   "hook": {
     "pattern": "Open on the rejection itself, with an age, before any context.",
     "examples": [
-      "I got cut at 15. Here's the list.",
+      "I got cut at {{cut_age}}. This is the list.",
       "My name wasn't on this roster.",
       "Coach said I was too small. Watch."
     ]
@@ -31,17 +31,17 @@
     },
     {
       "name": "low_point",
-      "description": "The concrete low point after the cut",
+      "description": "The concrete low point after the cut, a full spoken sentence, 12 words or fewer",
       "example": "I stopped telling people I played"
     },
     {
       "name": "daily_work",
-      "description": "The unseen daily routine that followed",
+      "description": "The unseen daily routine that followed, spoken, 12 words or fewer",
       "example": "5 a.m. sprints before school, 300 shots after"
     },
     {
       "name": "payoff_moment",
-      "description": "The moment it paid off, real and specific",
+      "description": "The moment it paid off, real and specific, spoken, 10 words or fewer",
       "example": "the first varsity start, two years later"
     },
     {
@@ -51,8 +51,8 @@
     },
     {
       "name": "offer",
-      "description": "What viewers can do next",
-      "example": "train with us: first session free"
+      "description": "What viewers can do next, starting with a capital letter, spoken, 4 words or fewer",
+      "example": "First training session free"
     }
   ],
   "beats": [
@@ -89,7 +89,7 @@
     {
       "seconds": 5,
       "purpose": "the turn: the moment it paid off",
-      "on_screen_text": "{{payoff_moment}}",
+      "on_screen_text": "Then: {{payoff_moment}}",
       "voiceover": "Then came {{payoff_moment}}.",
       "visual": {
         "tier": "clip_hero",
@@ -116,5 +116,10 @@
     "Use a real league's logos or a real player's likeness",
     "Promise viewers they will go pro",
     "Let the montage run long; one strong training shot beats five"
+  ],
+  "compliance": [
+    "Fitness trainers and coaches: no promise of going pro, scholarships, or body and performance results; this is one athlete's story, not a typical result",
+    "Label realistic AI-generated athlete or game footage with the platform's AI-content label; never present it as real game footage",
+    "No real league, school or team logos without permission"
   ]
 }

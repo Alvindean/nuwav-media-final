@@ -46,7 +46,7 @@
     },
     {
       "name": "hard_chapter",
-      "description": "A quiet or hard period in its life",
+      "description": "A quiet or hard period in its life, a full spoken sentence in the object's voice, 9 words or fewer",
       "example": "When he passed, nobody could bear to wear me"
     },
     {
@@ -56,8 +56,18 @@
     },
     {
       "name": "offer",
-      "description": "What viewers can do next",
-      "example": "book a private restoration consultation"
+      "description": "What viewers can do next, starting with a capital letter, spoken, 5 words or fewer",
+      "example": "Book a private restoration consultation"
+    },
+    {
+      "name": "care_tip",
+      "description": "One practical care tip for this kind of piece, a full sentence",
+      "example": "Store it alone in soft cloth and wipe it after every wear."
+    },
+    {
+      "name": "worked_number",
+      "description": "The price worked out per year of wear, as a real calculation",
+      "example": "$2,400 over 70 years is about $34 a year"
     }
   ],
   "beats": [
@@ -85,7 +95,7 @@
       "seconds": 4,
       "purpose": "the hard chapter",
       "on_screen_text": "{{hard_chapter}}",
-      "voiceover": "{{hard_chapter}}. I waited in a drawer.",
+      "voiceover": "{{hard_chapter}}. I waited.",
       "visual": {
         "tier": "still",
         "prompt": "Vertical photo of a closed wooden drawer slightly open, {{heirloom_item}} inside in shadow, a thin beam of light across it, quiet and still"
@@ -115,7 +125,7 @@
       "seconds": 3,
       "purpose": "call to action",
       "on_screen_text": "{{offer}}",
-      "voiceover": "Some things are made to outlast us. {{offer}}.",
+      "voiceover": "Made to outlast us. {{offer}}.",
       "visual": {
         "tier": "text_only",
         "prompt": ""
@@ -132,7 +142,7 @@
       },
       {
         "headline": "My first owner",
-        "body": "{{first_owner}}.",
+        "body": "First worn by {{first_owner}}.",
         "visual_prompt": "Vintage sepia-toned photo of hands wearing {{heirloom_item}}, film grain"
       },
       {
@@ -147,8 +157,18 @@
       },
       {
         "headline": "Who wears me now",
-        "body": "{{new_owner}}.",
+        "body": "Now: {{new_owner}}.",
         "visual_prompt": "Young hand wearing {{heirloom_item}} at a celebration, soft bokeh"
+      },
+      {
+        "headline": "The real price of forever",
+        "body": "{{worked_number}}.",
+        "visual_prompt": "Minimal {{brand}} card with a simple handwritten calculation in gold ink, cream paper"
+      },
+      {
+        "headline": "Keep yours for the next generation",
+        "body": "{{care_tip}} Save this.",
+        "visual_prompt": "Soft cloth pouch beside {{heirloom_item}} on a wooden tray, gentle daylight"
       },
       {
         "headline": "Made to outlast us",

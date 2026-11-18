@@ -7,32 +7,106 @@
   "goal": "awareness",
   "duration_seconds": 18,
   "aspect_ratio": "9:16",
-  "best_for": ["restaurant", "barber shop", "lowrider car club", "luxury boutique hotel", "apparel brand"],
+  "best_for": [
+    "restaurant",
+    "barber shop",
+    "lowrider car club",
+    "luxury boutique hotel",
+    "apparel brand"
+  ],
   "why_it_works": "Everyone knows the expectation-vs-reality meme ends in disappointment, so the brain braces for a letdown. When the reality beats the expectation instead, the broken pattern creates surprise, and surprise is what people remember and share.",
   "hook": {
     "pattern": "Borrow the familiar meme setup so viewers expect a letdown, then promise the opposite.",
     "examples": [
       "Expectation vs reality, except the reality wins this time.",
       "You've seen this meme go wrong. Watch it go right.",
-      "What you expect from {{experience}} vs what actually happens here."
+      "Expecting {{experience}}? This time the reality wins."
     ]
   },
   "variables": [
-    { "name": "brand", "description": "Business or club name", "example": "Southside Low Society" },
-    { "name": "experience", "description": "What the customer comes for", "example": "a Sunday cruise night" },
-    { "name": "expectation_line", "description": "The modest thing people assume they'll get", "example": "a few cars in a parking lot" },
-    { "name": "reality_detail", "description": "The vivid, true thing they actually get", "example": "forty candy-paint rides hitting switches under the streetlights" },
-    { "name": "offer", "description": "Next step for the viewer", "example": "Pull up this Sunday at 7, spectators free" }
+    {
+      "name": "brand",
+      "description": "Business or club name",
+      "example": "Southside Low Society"
+    },
+    {
+      "name": "experience",
+      "description": "What the customer comes for",
+      "example": "a Sunday cruise night"
+    },
+    {
+      "name": "expectation_line",
+      "description": "The modest thing people assume they'll get",
+      "example": "a few cars in a parking lot"
+    },
+    {
+      "name": "reality_detail",
+      "description": "The vivid, true thing they actually get",
+      "example": "forty candy-paint rides hitting switches under the streetlights"
+    },
+    {
+      "name": "offer",
+      "description": "Next step for the viewer",
+      "example": "Pull up this Sunday at 7, spectators free"
+    }
   ],
   "beats": [
-    { "seconds": 3, "purpose": "hook: set up the meme", "on_screen_text": "Expectation vs reality", "voiceover": "Expectation versus reality. You know how this usually ends.", "visual": { "tier": "still", "prompt": "Vertical 9:16 split frame with bold labels EXPECTATION and REALITY, left half a plain grey placeholder, right half covered by a torn paper strip, clean graphic style, {{brand}} accent color" } },
-    { "seconds": 4, "purpose": "show the modest expectation", "on_screen_text": "Expectation: {{expectation_line}}", "voiceover": "You walk in expecting {{expectation_line}}.", "visual": { "tier": "still", "prompt": "Deliberately ordinary vertical photo of {{expectation_line}}, flat overcast light, eye-level phone snapshot framing, slightly muted colors, nothing wrong but nothing special" } },
-    { "seconds": 5, "purpose": "the reality beats it", "on_screen_text": "Reality:", "voiceover": "Then you get {{reality_detail}}.", "visual": { "tier": "clip_hero", "prompt": "Cinematic vertical 9:16 slow dolly forward into {{reality_detail}} at {{brand}}, golden hour or warm practical lights, rich saturated color, shallow depth of field, real-world textures, no text" } },
-    { "seconds": 3, "purpose": "payoff: name the flip", "on_screen_text": "The meme was wrong.", "voiceover": "The meme was wrong about {{experience}}.", "visual": { "tier": "still", "prompt": "Vertical close-up of a real guest's delighted reaction at {{brand}}, warm light, candid moment, background softly blurred" } },
-    { "seconds": 3, "purpose": "call to action", "on_screen_text": "{{offer}}", "voiceover": "See it yourself. {{offer}}.", "visual": { "tier": "text_only", "prompt": "" } }
+    {
+      "seconds": 3,
+      "purpose": "hook: set up the meme",
+      "on_screen_text": "Expectation vs reality",
+      "voiceover": "Expectation versus reality. You know how this usually ends.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Vertical 9:16 split frame with bold labels EXPECTATION and REALITY, left half plain flat grey, right half covered by a torn paper strip, clean graphic style, {{brand}} accent color"
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "show the modest expectation",
+      "on_screen_text": "Expectation: {{expectation_line}}",
+      "voiceover": "You walk in expecting {{expectation_line}}.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Deliberately ordinary vertical photo of {{expectation_line}}, flat overcast light, eye-level phone snapshot framing, slightly muted colors, nothing wrong but nothing special"
+      }
+    },
+    {
+      "seconds": 5,
+      "purpose": "the reality beats it",
+      "on_screen_text": "Reality:",
+      "voiceover": "Then you get {{reality_detail}}.",
+      "visual": {
+        "tier": "clip_hero",
+        "prompt": "Cinematic vertical 9:16 slow dolly forward into {{reality_detail}} at {{brand}}, golden hour or warm practical lights, rich saturated color, shallow depth of field, real-world textures, no text"
+      }
+    },
+    {
+      "seconds": 3,
+      "purpose": "payoff: name the flip with a real guest",
+      "on_screen_text": "The meme was wrong.",
+      "voiceover": "The meme was wrong about {{experience}}.",
+      "visual": {
+        "tier": "real_photo",
+        "prompt": "Real photo of an actual guest's delighted reaction at {{brand}}, taken on the night with their permission, warm light, candid, background softly blurred"
+      }
+    },
+    {
+      "seconds": 3,
+      "purpose": "call to action",
+      "on_screen_text": "{{offer}}",
+      "voiceover": "Come see. {{offer}}.",
+      "visual": {
+        "tier": "text_only",
+        "prompt": ""
+      }
+    }
   ],
   "cta": "See the reality yourself: {{offer}}.",
-  "craft": { "technique": "Meme inversion", "notes": "Hold the expectation shot long enough to feel mildly disappointing, then cut hard on the word 'Reality' into the best motion shot you have. The hero clip only earns its spend here because the whole ad rides on that one cut." },
+  "craft": {
+    "technique": "Meme inversion",
+    "notes": "Hold the expectation shot long enough to feel mildly disappointing, then cut hard on the word 'Reality' into the best motion shot you have. The hero clip only earns its spend here because the whole ad rides on that one cut."
+  },
   "do_not": [
     "Show a reality that isn't true on a normal day; regulars will call it out in the comments",
     "Make the expectation shot look like a real competitor's place",

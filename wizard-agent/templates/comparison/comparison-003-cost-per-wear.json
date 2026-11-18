@@ -6,39 +6,108 @@
   "format": "carousel",
   "goal": "sales",
   "aspect_ratio": "4:5",
-  "best_for": ["jewelry brand", "apparel brand", "skincare brand", "supplement brand", "luxury leather goods"],
+  "best_for": [
+    "jewelry brand",
+    "apparel brand",
+    "skincare brand",
+    "supplement brand",
+    "luxury leather goods"
+  ],
   "why_it_works": "Sticker price is the only number most shoppers see. Dividing price by real uses reframes an expensive item as the cheaper one, and because the viewer can check the math on their own fingers, it feels like their conclusion, not a sales pitch.",
   "hook": {
     "pattern": "Lead with a price comparison that looks wrong, then prove it with simple division.",
     "examples": [
-      "The {{cheap_price}} {{product}} costs more than ours. Here's the math.",
-      "Cheap {{product}} vs ours, divided by how often you use it.",
+      "Cheap {{product}}: {{cheap_price}}. Ours: {{our_price}}. Ours is cheaper.",
+      "Cost per use: cheap {{product}} vs ours.",
       "Price tag lies. Cost per use doesn't."
     ]
   },
   "variables": [
-    { "name": "brand", "description": "Brand name", "example": "Oro Lane" },
-    { "name": "product", "description": "The item compared", "example": "gold hoop earrings" },
-    { "name": "cheap_price", "description": "Typical price of a low-cost version", "example": "$18" },
-    { "name": "cheap_uses", "description": "Honest number of uses before it fails", "example": "about 10 wears before it tarnishes" },
-    { "name": "our_price", "description": "Your price", "example": "$120" },
-    { "name": "our_uses", "description": "Honest, conservative number of uses", "example": "300+ wears over years" },
-    { "name": "per_use_math", "description": "The two per-use results side by side", "example": "$1.80 a wear vs $0.40 a wear" },
-    { "name": "offer", "description": "What the viewer gets for buying now", "example": "free lifetime polish with every pair" }
+    {
+      "name": "brand",
+      "description": "Brand name",
+      "example": "Oro Lane"
+    },
+    {
+      "name": "product",
+      "description": "The item compared",
+      "example": "gold hoop earrings"
+    },
+    {
+      "name": "cheap_price",
+      "description": "Typical price of a low-cost version",
+      "example": "$18"
+    },
+    {
+      "name": "cheap_uses",
+      "description": "Honest number of uses before it fails",
+      "example": "about 10 wears before it tarnishes"
+    },
+    {
+      "name": "our_price",
+      "description": "Your price",
+      "example": "$120"
+    },
+    {
+      "name": "our_uses",
+      "description": "Honest, conservative number of uses",
+      "example": "300+ wears over years"
+    },
+    {
+      "name": "per_use_math",
+      "description": "The two per-use results side by side",
+      "example": "$1.80 a wear vs $0.40 a wear"
+    },
+    {
+      "name": "offer",
+      "description": "What the viewer gets for buying now",
+      "example": "free lifetime polish with every pair"
+    }
   ],
   "carousel": {
     "slides": [
-      { "headline": "The cheap one costs more", "body": "A {{cheap_price}} {{product}} vs our {{our_price}} pair. Swipe for the math.", "visual_prompt": "Two {{product}} side by side on cream linen, the left with a small bright price tag reading {{cheap_price}}, the right tagged {{our_price}}, soft daylight, 4:5 product flat lay" },
-      { "headline": "Cheap: {{cheap_price}}", "body": "Lasts {{cheap_uses}}.", "visual_prompt": "Close-up of a worn low-cost {{product}} showing realistic wear, neutral background, honest even light, 4:5" },
-      { "headline": "Ours: {{our_price}}", "body": "Lasts {{our_uses}}.", "visual_prompt": "Close-up of the {{brand}} {{product}} looking new after long use, warm side light, macro detail, 4:5" },
-      { "headline": "Now divide", "body": "Price divided by real uses.", "visual_prompt": "Clean graphic slide with a big division sign between the two prices, {{brand}} colors, plenty of white space" },
-      { "headline": "The real numbers", "body": "{{per_use_math}}", "visual_prompt": "Two large numbers stacked in bold type, the {{brand}} one highlighted, minimal infographic style, 4:5" },
-      { "headline": "Plus the hidden cost", "body": "Rebuying, returns, and the day it fails at the worst moment.", "visual_prompt": "A small pile of replaced low-cost items in a drawer, top-down, muted light, 4:5" },
-      { "headline": "Buy once", "body": "{{offer}}", "visual_prompt": "{{brand}} packaging open with the {{product}} inside, gift-style styling, warm light, logo visible, 4:5" }
+      {
+        "headline": "The cheap one costs more",
+        "body": "A {{cheap_price}} {{product}} vs ours at {{our_price}}. Swipe for the math.",
+        "visual_prompt": "Two {{product}} side by side on cream linen, the left with a small bright price tag reading {{cheap_price}}, the right tagged {{our_price}}, soft daylight, 4:5 product flat lay"
+      },
+      {
+        "headline": "Cheap: {{cheap_price}}",
+        "body": "Lasts {{cheap_uses}}.",
+        "visual_prompt": "Close-up of a worn low-cost {{product}} showing realistic wear, neutral background, honest even light, 4:5"
+      },
+      {
+        "headline": "Ours: {{our_price}}",
+        "body": "Lasts {{our_uses}}.",
+        "visual_prompt": "Close-up of the {{brand}} {{product}} looking new after long use, warm side light, macro detail, 4:5"
+      },
+      {
+        "headline": "Now divide",
+        "body": "Price divided by real uses.",
+        "visual_prompt": "Clean graphic slide with a big division sign between the two prices, {{brand}} colors, plenty of white space"
+      },
+      {
+        "headline": "The real numbers",
+        "body": "{{per_use_math}}",
+        "visual_prompt": "Two large numbers stacked in bold type, the {{brand}} one highlighted, minimal infographic style, 4:5"
+      },
+      {
+        "headline": "Plus the hidden cost",
+        "body": "Rebuying, returns, and the day it fails at the worst moment.",
+        "visual_prompt": "A small pile of replaced low-cost items in a drawer, top-down, muted light, 4:5"
+      },
+      {
+        "headline": "Buy once",
+        "body": "Order now and get {{offer}}.",
+        "visual_prompt": "{{brand}} packaging open with the {{product}} inside, gift-style styling, warm light, logo visible, 4:5"
+      }
     ]
   },
   "cta": "Buy once: {{offer}}.",
-  "craft": { "technique": "Unit-cost reframe", "notes": "Slide 1 must state a claim that sounds backwards so people swipe to check it. Put the division on its own slide so the reveal of the per-use numbers feels like a payoff. Use conservative use counts so the math survives skeptics in the comments." },
+  "craft": {
+    "technique": "Unit-cost reframe",
+    "notes": "Slide 1 must state a claim that sounds backwards so people swipe to check it. Put the division on its own slide so the reveal of the per-use numbers feels like a payoff. Use conservative use counts so the math survives skeptics in the comments."
+  },
   "do_not": [
     "Inflate your own lifespan numbers; use the low end you can defend",
     "Show or name a real competitor's product or packaging",

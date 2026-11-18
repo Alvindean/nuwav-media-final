@@ -12,7 +12,7 @@
     "supplement brand",
     "apparel brand",
     "jewelry brand",
-    "UGC creator"
+    "candle maker"
   ],
   "why_it_works": "Order #0001 turns a faceless online store into a person at a kitchen table. Viewers love being early to something, and seeing how much the first sale meant makes their own order feel like it matters too. That feeling beats a discount.",
   "hook": {
@@ -20,7 +20,7 @@
     "examples": [
       "Order #0001. It came from my grandma.",
       "Our first sale was $14 and I screamed.",
-      "This packing slip is framed in our office. Here's why."
+      "This packing slip hangs framed above our desk."
     ]
   },
   "variables": [
@@ -36,23 +36,33 @@
     },
     {
       "name": "first_customer",
-      "description": "Who placed the first order, as specific as is fair to share",
-      "example": "a stranger in Ohio who found us on a hashtag"
+      "description": "Who placed the first order, as specific as is fair to share, spoken, 9 words or fewer",
+      "example": "a stranger in Ohio who found our hashtag"
     },
     {
       "name": "struggle",
-      "description": "The real struggle at that stage",
-      "example": "we had sold zero for 41 days and I was about to shut it down"
+      "description": "The real struggle at that stage, with a real number, spoken, 11 words or fewer",
+      "example": "zero sales in 41 days, and I almost shut it down"
     },
     {
       "name": "why_it_mattered",
-      "description": "What the first order meant",
+      "description": "What the first order meant, spoken, 10 words or fewer",
       "example": "someone we'd never met believed it was worth paying for"
     },
     {
       "name": "offer",
-      "description": "What the viewer gets now",
-      "example": "free shipping on your first order this week"
+      "description": "What the viewer gets now, starting with a capital letter, spoken, 4 words or fewer",
+      "example": "Free shipping this week"
+    },
+    {
+      "name": "order_count",
+      "description": "The real number of orders shipped so far",
+      "example": "3,412"
+    },
+    {
+      "name": "use_tip",
+      "description": "One practical how-to-use tip for the product, a full sentence",
+      "example": "Warm a pea-sized amount between your fingers before you apply it."
     }
   ],
   "beats": [
@@ -69,8 +79,8 @@
     {
       "seconds": 4,
       "purpose": "who placed it",
-      "on_screen_text": "It was from {{first_customer}}.",
-      "voiceover": "And it came from {{first_customer}}.",
+      "on_screen_text": "From {{first_customer}}.",
+      "voiceover": "It came from {{first_customer}}.",
       "visual": {
         "tier": "still",
         "prompt": "Vertical photo of a phone notification of a new order on a cluttered kitchen counter, late night, single lamp, sticky notes around"
@@ -79,8 +89,8 @@
     {
       "seconds": 5,
       "purpose": "the struggle",
-      "on_screen_text": "{{struggle}}",
-      "voiceover": "Truth is, {{struggle}}.",
+      "on_screen_text": "Truth is: {{struggle}}",
+      "voiceover": "Truth is: {{struggle}}.",
       "visual": {
         "tier": "still",
         "prompt": "Vertical photo of the founder of {{brand}} packing boxes on a living room floor, tape gun, stacks of mailers, tired but determined, overhead light"
@@ -89,7 +99,7 @@
     {
       "seconds": 5,
       "purpose": "the turn: why it mattered",
-      "on_screen_text": "{{why_it_mattered}}",
+      "on_screen_text": "It meant {{why_it_mattered}}",
       "voiceover": "That one order meant {{why_it_mattered}}.",
       "visual": {
         "tier": "clip_draft",
@@ -122,13 +132,23 @@
       },
       {
         "headline": "Before that order",
-        "body": "{{struggle}}.",
+        "body": "Truth is: {{struggle}}.",
         "visual_prompt": "Founder packing boxes on a living room floor, overhead light"
       },
       {
         "headline": "Why it mattered",
-        "body": "{{why_it_mattered}}.",
+        "body": "It meant {{why_it_mattered}}.",
         "visual_prompt": "Hands writing a thank-you card into a {{brand}} package"
+      },
+      {
+        "headline": "Order #{{order_count}} ships today",
+        "body": "Order #0001 to #{{order_count}}: still packed by hand, still with a note.",
+        "visual_prompt": "Neat stack of {{brand}} mailers with handwritten cards on a packing table, daylight"
+      },
+      {
+        "headline": "Get the most from your {{product}}",
+        "body": "{{use_tip}} Save this for when yours arrives.",
+        "visual_prompt": "Close-up of hands using {{product}} the right way, soft natural light, clean background"
       },
       {
         "headline": "Every order still gets a note",
@@ -149,6 +169,7 @@
   "compliance": [
     "Supplements: no disease or treatment claims; any structure/function claim needs the FDA disclaimer 'These statements have not been evaluated by the Food and Drug Administration'",
     "Skincare: no claims that the product cures or treats skin conditions",
-    "Blur names and addresses on any real order slip shown"
+    "Blur names and addresses on any real order slip shown",
+    "No guaranteed skin or body results from the product; label AI-generated founder or scene images with the platform's AI-content label"
   ]
 }

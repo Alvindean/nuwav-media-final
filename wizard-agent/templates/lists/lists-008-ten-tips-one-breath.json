@@ -36,27 +36,27 @@
     },
     {
       "name": "tips_1_to_3",
-      "description": "Tips 1-3 as short phrases, separated by slashes",
-      "example": "pat, don't rub / sunscreen is the last step / two fingers of SPF for your face"
+      "description": "Tips 1-3 as short phrases separated by slashes, each starting with a capital letter; 15 words or fewer in total",
+      "example": "Pat, don't rub / Sunscreen goes last / Two fingers of SPF for your face"
     },
     {
       "name": "tips_4_to_6",
-      "description": "Tips 4-6",
-      "example": "wash pillowcases weekly / one new product at a time / patch test behind the ear"
+      "description": "Tips 4-6, same style; 15 words or fewer in total",
+      "example": "Wash pillowcases weekly / One new product at a time / Patch test first"
     },
     {
       "name": "tips_7_to_9",
-      "description": "Tips 7-9",
-      "example": "moisturize damp skin / don't skip your neck / retinol at night only"
+      "description": "Tips 7-9, same style; 15 words or fewer in total",
+      "example": "Moisturize damp skin / Don't skip your neck / Retinol at night only"
     },
     {
       "name": "tip_10",
-      "description": "The tenth tip, the one that matters most",
-      "example": "consistency beats expensive"
+      "description": "The tenth tip, the one that matters most; starts with a capital letter, 6 words or fewer",
+      "example": "Consistency beats expensive"
     },
     {
       "name": "lead_magnet",
-      "description": "Free full version to send people to",
+      "description": "Free full version to send people to; 5 words or fewer",
       "example": "the free printable routine card"
     }
   ],
@@ -65,7 +65,7 @@
       "seconds": 2,
       "purpose": "hook: the dare",
       "on_screen_text": "10 {{topic}} tips. 20 seconds.",
-      "voiceover": "Ten {{topic}} tips in twenty seconds. Keep up.",
+      "voiceover": "Ten {{topic}} tips, twenty seconds. Go.",
       "visual": {
         "tier": "still",
         "prompt": "Creator from {{brand}} facing camera mid-inhale, a stopwatch held up beside their face, bright ring light, plain wall, tight vertical 9:16"
@@ -105,7 +105,7 @@
       "seconds": 3,
       "purpose": "tip 10 lands slow",
       "on_screen_text": "10. {{tip_10}}",
-      "voiceover": "And ten... {{tip_10}}.",
+      "voiceover": "And ten: {{tip_10}}.",
       "visual": {
         "tier": "still",
         "prompt": "Same creator exhaling, relaxed smile, stopwatch lowered, soft light, vertical 9:16"
@@ -115,7 +115,7 @@
       "seconds": 3,
       "purpose": "call to action",
       "on_screen_text": "Missed one? Save this.",
-      "voiceover": "Missed one? Save this, or grab {{lead_magnet}} at the link.",
+      "voiceover": "Missed one? Grab {{lead_magnet}}.",
       "visual": {
         "tier": "text_only",
         "prompt": ""

@@ -1,45 +1,137 @@
 {
   "id": "gamification-010-finish-the-line",
   "version": 1,
-  "name": "Finish the Line, Get Featured",
+  "name": "Decode the Emojis",
   "category": "gamification",
   "format": "reel",
   "goal": "awareness",
-  "duration_seconds": 18,
+  "duration_seconds": 20,
   "aspect_ratio": "9:16",
-  "best_for": ["podcast", "independent musician", "life coach", "sports team", "UGC creator"],
-  "why_it_works": "An unfinished sentence nags at the brain until someone completes it. Offering to feature the best answer turns a throwaway comment into a shot at being seen, so people write real, funny, specific answers, and the best ones become free content for the next post.",
+  "best_for": [
+    "podcast",
+    "independent musician",
+    "sports team",
+    "UGC creator",
+    "bookstore"
+  ],
+  "why_it_works": "A row of emojis is a rebus anyone can try, and cracking it gives a quick hit of 'I got it'. Because the answer is the title of something coming next, every guess makes people think about the upcoming release, and the hint pulls them back for the reveal.",
   "hook": {
-    "pattern": "Put an unfinished line on screen with a blank, and promise the best ending gets featured.",
+    "pattern": "Flash a row of emojis that spell out a coming title and dare viewers to decode it.",
     "examples": [
-      "{{opening_line}} ... Finish it. Best answer gets featured.",
-      "Fill in the blank. The winner goes on {{feature_prize}}.",
-      "I started the sentence. You finish it."
+      "Decode these emojis. Name our next {{answer_type}}.",
+      "A few emojis. One title. Can you crack it?",
+      "{{emoji_clue}} Crack it before {{deadline}}."
     ]
   },
   "variables": [
-    { "name": "brand", "description": "Show, artist, coach or team name", "example": "Back Booth Radio" },
-    { "name": "opening_line", "description": "The open-ended sentence with a blank at the end", "example": "The worst advice I ever got was ___" },
-    { "name": "host_example", "description": "Your own answer, to show the bar", "example": "'Just wing the first episode.' I did. It's still online." },
-    { "name": "feature_prize", "description": "How the winning answer gets featured", "example": "read out loud on Episode 50" },
-    { "name": "deadline", "description": "When comments close", "example": "Thursday at midnight" }
+    {
+      "name": "brand",
+      "description": "Show, artist, team or shop name",
+      "example": "Back Booth Radio"
+    },
+    {
+      "name": "emoji_clue",
+      "description": "Three to five emojis that spell out the title; check they render on iPhone and Android",
+      "example": "🎙️ 5️⃣0️⃣ 🎉"
+    },
+    {
+      "name": "answer_type",
+      "description": "What the title belongs to, one word",
+      "example": "episode"
+    },
+    {
+      "name": "hint",
+      "description": "One fair hint, 6 words or fewer",
+      "example": "a big number for a small show"
+    },
+    {
+      "name": "feature_prize",
+      "description": "What the drawn winner gets, value stated in the official rules, 5 words or fewer",
+      "example": "a shout-out on Episode 50"
+    },
+    {
+      "name": "deadline",
+      "description": "When guesses close and the answer drops, 4 words or fewer",
+      "example": "Thursday at midnight"
+    }
   ],
   "beats": [
-    { "seconds": 3, "purpose": "hook: the unfinished line", "on_screen_text": "{{opening_line}}", "voiceover": "Finish this sentence.", "visual": { "tier": "still", "prompt": "Vertical 9:16 moody studio shot of an empty microphone on a boom arm, one warm practical lamp, deep shadows, haze in the light, {{brand}} sign soft in the background" } },
-    { "seconds": 4, "purpose": "show your own answer to set the bar", "on_screen_text": "Mine: {{host_example}}", "voiceover": "Here's mine. {{host_example}}", "visual": { "tier": "clip_draft", "prompt": "Slow push-in on the microphone in the same moody studio, lamp flickering gently, vertical 9:16" } },
-    { "seconds": 4, "purpose": "challenge them to beat it", "on_screen_text": "Yours is better. Prove it.", "voiceover": "Yours is better. Prove it.", "visual": { "tier": "text_only", "prompt": "" } },
-    { "seconds": 4, "purpose": "the prize", "on_screen_text": "Most-liked answer: {{feature_prize}}.", "voiceover": "The most-liked answer gets {{feature_prize}}.", "visual": { "tier": "still", "prompt": "Vertical 9:16 shot of a phone on a stand showing a blurred comment, next to the studio mic, spotlight on the phone, warm haze" } },
-    { "seconds": 3, "purpose": "deadline and call to action", "on_screen_text": "Comments close {{deadline}}.", "voiceover": "Comments close {{deadline}}. Go.", "visual": { "tier": "text_only", "prompt": "" } }
+    {
+      "seconds": 3,
+      "purpose": "hook: the emojis appear",
+      "on_screen_text": "{{emoji_clue}}",
+      "voiceover": "Decode these emojis. Go.",
+      "visual": {
+        "tier": "clip_draft",
+        "prompt": "Vertical 9:16 bold graphic where the emojis {{emoji_clue}} pop in one by one, huge, on a flat {{brand}} color background"
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "what the answer is",
+      "on_screen_text": "It's our next {{answer_type}} title.",
+      "voiceover": "It's the title of our next {{answer_type}}.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Vertical 9:16 moody shot of the {{brand}} workspace, one warm practical lamp, a blank title card on the desk, soft haze"
+      }
+    },
+    {
+      "seconds": 3,
+      "purpose": "one fair hint",
+      "on_screen_text": "Hint: {{hint}}",
+      "voiceover": "One hint: {{hint}}.",
+      "visual": {
+        "tier": "text_only",
+        "prompt": ""
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "thinking time",
+      "on_screen_text": "Comment your guess.",
+      "voiceover": "Comment your full guess before {{deadline}}.",
+      "visual": {
+        "tier": "still",
+        "prompt": "The emojis {{emoji_clue}} large on the {{brand}} color background with a faint question mark behind them, vertical 9:16"
+      }
+    },
+    {
+      "seconds": 3,
+      "purpose": "how the winner is picked",
+      "on_screen_text": "Right answers go in a random draw.",
+      "voiceover": "Every right answer goes in a random draw.",
+      "visual": {
+        "tier": "text_only",
+        "prompt": ""
+      }
+    },
+    {
+      "seconds": 3,
+      "purpose": "the prize",
+      "on_screen_text": "Prize: {{feature_prize}}.",
+      "voiceover": "The winner gets {{feature_prize}}.",
+      "visual": {
+        "tier": "text_only",
+        "prompt": ""
+      }
+    }
   ],
-  "cta": "Finish the line in the comments. The most-liked answer gets {{feature_prize}} on {{brand}}. Closes {{deadline}}.",
-  "craft": { "technique": "Open loop with a status prize", "notes": "Your own answer must be specific and a little self-deprecating so people feel safe to be honest. Let likes pick the winner: it doubles engagement because people come back to like their favorites." },
+  "cta": "Comment your guess by {{deadline}}. One right answer, drawn at random, gets {{feature_prize}} from {{brand}}. Official rules in our bio.",
+  "craft": {
+    "technique": "Rebus decode",
+    "notes": "Aim for a puzzle about one in five people crack: one emoji should be literal, one a pun, one a number. Post the answer and the screen-recorded draw together so the follow-up is its own piece of content."
+  },
   "do_not": [
-    "Use a line that invites cruelty about a real person or group",
-    "Feature a commenter's answer without asking first",
-    "For musicians: drop a fan's line into a released song without a written OK"
+    "Use emojis that only render on one kind of phone",
+    "Make it so obscure nobody gets it; nobody comments on a dead end",
+    "Pick the winner by likes, favorites or follower count"
   ],
   "compliance": [
-    "Get the commenter's permission and credit them before featuring their words on air, on screen or in a song",
-    "Musicians: if a fan's line goes into a released track, get a short written release covering credit and any songwriting share"
+    "Contest rules: link official rules with eligibility, start and end dates, how the winner is picked (random draw from correct answers) and prize value",
+    "No purchase necessary; void where prohibited",
+    "Say the contest is not sponsored or run by the platform",
+    "Pick the winner by random draw only, never by likes, and screen-record the draw",
+    "Get the winner's permission before showing their name or handle"
   ]
 }

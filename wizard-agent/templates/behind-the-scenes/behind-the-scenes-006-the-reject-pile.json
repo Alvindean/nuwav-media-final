@@ -19,8 +19,8 @@
     "pattern": "Show a pile of rejects and say the reject rate out loud.",
     "examples": [
       "We threw all of this out this week.",
-      "{{reject_rate}} of our {{product}} never makes it to you.",
-      "This is our reject pile. Here's why."
+      "{{reject_rate}} of our {{product}} never reach you.",
+      "This is our reject pile. Look closer."
     ]
   },
   "variables": [
@@ -51,8 +51,23 @@
     },
     {
       "name": "offer",
-      "description": "How to buy",
-      "example": "order this week's batch before Sunday"
+      "description": "How to buy, a full sentence starting with a capital",
+      "example": "Order this week's batch before Sunday"
+    },
+    {
+      "name": "batch_size",
+      "description": "Size of one typical batch",
+      "example": "500 lb"
+    },
+    {
+      "name": "batch_rejects",
+      "description": "How much of one batch gets rejected, worked out from the reject rate",
+      "example": "about 60 lb"
+    },
+    {
+      "name": "spot_tip",
+      "description": "One sign of a bad one buyers can check themselves, as a sentence",
+      "example": "Look for beans with uneven color or chips"
     }
   ],
   "beats": [
@@ -139,6 +154,16 @@
         "headline": "{{reject_rate}} never ship",
         "body": "We'd rather lose it than send it.",
         "visual_prompt": "Bold number slide in {{brand}} colors"
+      },
+      {
+        "headline": "The math on one batch",
+        "body": "A {{batch_size}} batch at {{reject_rate}} means {{batch_rejects}} we never sell.",
+        "visual_prompt": "Simple worked-number graphic on a {{brand}} scale display with a reject bin beside it"
+      },
+      {
+        "headline": "Check yours at home",
+        "body": "{{spot_tip}}. Save this for your next order.",
+        "visual_prompt": "Clean tip card showing one good and one bad {{product}} side by side"
       },
       {
         "headline": "What makes it through",

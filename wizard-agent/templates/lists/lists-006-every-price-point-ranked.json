@@ -19,7 +19,7 @@
     "examples": [
       "What every price of {{product_category}} actually gets you.",
       "Our cheapest and priciest {{product_category}}, ranked honestly.",
-      "Most people should skip our top tier. Here's why."
+      "Skip our top tier. Most people don't need it."
     ]
   },
   "variables": [
@@ -94,22 +94,22 @@
       },
       {
         "headline": "{{tier_1_price}}: the honest entry",
-        "body": "{{tier_1_gets}}.",
+        "body": "You get: {{tier_1_gets}}.",
         "visual_prompt": "Single entry-tier {{product_category}} on plain linen, clean natural light, macro detail"
       },
       {
         "headline": "{{tier_2_price}}: where value jumps",
-        "body": "{{tier_2_gets}}.",
+        "body": "Adds: {{tier_2_gets}}.",
         "visual_prompt": "Mid-tier {{product_category}} with a small gold star marker, close macro detail"
       },
       {
         "headline": "{{tier_3_price}}: diminishing returns start",
-        "body": "{{tier_3_gets}}. Nice, not necessary.",
+        "body": "Adds: {{tier_3_gets}}. Nice, not necessary.",
         "visual_prompt": "Upper-tier {{product_category}} on dark velvet, focused spotlight"
       },
       {
         "headline": "{{tier_4_price}}: not for most people",
-        "body": "{{tier_4_gets}}.",
+        "body": "Adds: {{tier_4_gets}}.",
         "visual_prompt": "Top-tier {{product_category}} in a dramatic low-key spotlight, black background"
       },
       {
@@ -119,7 +119,7 @@
       },
       {
         "headline": "Not sure? Ask us.",
-        "body": "{{offer}}.",
+        "body": "Next step: {{offer}}.",
         "visual_prompt": "{{brand}} logo card on linen texture with the offer in serif type"
       }
     ]

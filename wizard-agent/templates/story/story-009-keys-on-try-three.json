@@ -45,13 +45,13 @@
     },
     {
       "name": "what_changed",
-      "description": "The concrete thing that changed before try three",
-      "example": "we rebuilt the offer around a later move-in date the seller needed"
+      "description": "The concrete thing that changed before try three, a full sentence starting with a capital letter",
+      "example": "We rebuilt the offer around a later move-in date the seller needed"
     },
     {
       "name": "offer",
-      "description": "What viewers can do next",
-      "example": "book a free 20-minute buyer plan call"
+      "description": "What viewers can do next, starting with a capital letter",
+      "example": "Book a free 20-minute buyer plan call"
     }
   ],
   "cta": "{{offer}}.",
@@ -64,23 +64,23 @@
       },
       {
         "headline": "Try one",
-        "body": "{{try_one}}.",
+        "body": "First, {{try_one}}.",
         "visual_prompt": "4:5 photo of a for-sale sign with a sold rider in front of a modest house, overcast sky, muted colors"
       },
       {
         "headline": "Try two",
-        "body": "{{try_two}}.",
+        "body": "Then {{try_two}}.",
         "visual_prompt": "4:5 photo of a kitchen table with paperwork and a closed laptop, evening light, two coffee mugs, quiet"
       },
       {
         "headline": "What changed",
         "body": "{{what_changed}}.",
-        "visual_prompt": "4:5 photo of an agent and buyers at a table pointing at a printed plan, warm office light, faces turned away"
+        "visual_prompt": "4:5 photo of an agent's hands pointing at a printed plan on a table, warm office light, no buyer faces"
       },
       {
         "headline": "Try three",
-        "body": "Keys.",
-        "visual_prompt": "4:5 photo of two people from behind stepping through an open front door into a bright empty living room, golden light"
+        "body": "Keys in hand.",
+        "visual_prompt": "Client-supplied photo of the real buyers at their new door, with written consent; for a composite story, an empty open front door in golden light, no people"
       },
       {
         "headline": "On try one or two?",
@@ -102,6 +102,7 @@
     "Real estate: include brokerage name and license number on the final slide as your state requires; follow fair housing rules, no language about who belongs in a neighborhood",
     "Mortgage: no promise of approval or specific rates; include NMLS ID and Equal Housing Lender/Opportunity logo where required",
     "Financial and insurance: no guarantee of outcomes or savings",
-    "Composite or anonymized stories must say so on the first or last slide"
+    "Composite or anonymized stories must say so on the first or last slide",
+    "Real buyers appear only in client-supplied photos with written consent; never generate faces to stand in for them"
   ]
 }

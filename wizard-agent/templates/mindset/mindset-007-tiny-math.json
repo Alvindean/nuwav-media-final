@@ -17,8 +17,8 @@
   "hook": {
     "pattern": "Open with one small, oddly specific number and promise to show what it adds up to.",
     "examples": [
-      "{{small_unit}} a day. Here's the math.",
-      "Nobody does this math on {{small_unit}}.",
+      "{{small_unit}} a day. Watch it add up.",
+      "Do the math on {{small_unit}} with me.",
       "{{small_unit}} sounds like nothing. Swipe."
     ]
   },
@@ -50,12 +50,12 @@
     },
     {
       "name": "year_equivalent",
-      "description": "A relatable comparison for the year total",
+      "description": "A relatable comparison for the year total, lowercase, 10 words or fewer",
       "example": "a week and a half of full-time work"
     },
     {
       "name": "first_step",
-      "description": "How the brand helps start",
+      "description": "How the brand helps start, lowercase verb phrase, 7 words or fewer",
       "example": "grab our free 4-week starter plan"
     }
   ],
@@ -79,7 +79,7 @@
       },
       {
         "headline": "Put another way",
-        "body": "{{year_equivalent}}.",
+        "body": "Same as {{year_equivalent}}.",
         "visual_prompt": "Calendar with many days quietly checked off in pencil, soft natural light"
       },
       {
@@ -89,7 +89,7 @@
       },
       {
         "headline": "Start with one day",
-        "body": "{{first_step}} from {{brand}}.",
+        "body": "Start here: {{first_step}} from {{brand}}.",
         "visual_prompt": "Clean lifestyle photo of {{habit}}, early evening light, vertical 4:5, {{brand}} logo small in corner"
       }
     ]

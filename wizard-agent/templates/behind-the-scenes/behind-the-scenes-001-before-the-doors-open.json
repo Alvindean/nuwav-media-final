@@ -11,15 +11,14 @@
     "coffee shop",
     "restaurant",
     "barber",
-    "bakery",
-    "fitness trainer"
+    "bakery"
   ],
   "why_it_works": "Customers only ever see the finished room. Showing the dark, quiet hours before opening, with real clock times on screen, proves effort without bragging. Timestamps feel like evidence, and the early hour earns quiet respect.",
   "hook": {
     "pattern": "Open on a real early clock time and one unglamorous task, no greeting.",
     "examples": [
-      "{{open_time}}. Nobody's here yet. This is where your {{signature_item}} starts.",
-      "You walk in at nine. We walked in at {{open_time}}.",
+      "{{open_time}}. Empty room. Your {{signature_item}} starts here.",
+      "You walk in later. We started at {{open_time}}.",
       "The part of {{brand}} you never get to see."
     ]
   },
@@ -46,8 +45,8 @@
     },
     {
       "name": "staff_role",
-      "description": "Who opens up",
-      "example": "our head baker"
+      "description": "Who opens up, written to start a sentence",
+      "example": "Our head baker"
     },
     {
       "name": "doors_time",
@@ -56,8 +55,8 @@
     },
     {
       "name": "offer",
-      "description": "Reason to come in",
-      "example": "first 20 customers get a free drip coffee"
+      "description": "Reason to come in, a full sentence starting with a capital, 8 words or fewer",
+      "example": "First 20 customers get a free coffee"
     }
   ],
   "beats": [
@@ -65,7 +64,7 @@
       "seconds": 3,
       "purpose": "hook: clock time + empty room",
       "on_screen_text": "{{open_time}}",
-      "voiceover": "{{open_time}}. Nobody's here yet.",
+      "voiceover": "{{open_time}}. Lights still off.",
       "visual": {
         "tier": "still",
         "prompt": "Dark empty {{brand}} interior before opening, one overhead light on, chairs still stacked on tables, phone-shot realism, vertical 9:16"
@@ -88,7 +87,7 @@
       "voiceover": "Then the slow part: {{prep_task}}.",
       "visual": {
         "tier": "clip_standard",
-        "prompt": "Close-up of hands doing {{prep_task}} for the {{signature_item}} on a floured steel counter, warm work light, shallow depth of field, vertical 9:16"
+        "prompt": "Close-up of hands doing {{prep_task}} for the {{signature_item}} on a worn work counter, warm work light, shallow depth of field, vertical 9:16"
       }
     },
     {
@@ -108,21 +107,21 @@
       "voiceover": "By {{doors_time}}, it looks easy.",
       "visual": {
         "tier": "still",
-        "prompt": "Same {{brand}} room now bright and full, {{signature_item}} lined up in the display case, morning sun, vertical 9:16"
+        "prompt": "Same {{brand}} room now bright and open, {{signature_item}} ready for the first customers, morning sun, vertical 9:16"
       }
     },
     {
       "seconds": 3,
       "purpose": "call to action",
       "on_screen_text": "{{offer}}",
-      "voiceover": "Come see what the early hours made. {{offer}}.",
+      "voiceover": "Come early. {{offer}}.",
       "visual": {
         "tier": "text_only",
         "prompt": ""
       }
     }
   ],
-  "cta": "Come see what the early hours made: {{offer}}.",
+  "cta": "Come see what the early hours made. {{offer}}.",
   "craft": {
     "technique": "Timestamp spine",
     "notes": "Every beat gets a real clock time or a time cue so the edit reads as a log, not an ad. Keep the dark-to-bright light change as the visual arc: the room literally wakes up."

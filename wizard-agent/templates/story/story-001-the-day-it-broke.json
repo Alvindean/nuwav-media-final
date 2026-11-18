@@ -19,8 +19,8 @@
   "hook": {
     "pattern": "Open on a real date and the word 'broke'. A date promises a true story; 'broke' promises stakes.",
     "examples": [
-      "March 3rd, 2019. The day it all broke.",
-      "One Tuesday in {{turning_date}} changed everything here.",
+      "{{turning_date}}. The day it all broke.",
+      "Everything here started on {{turning_date}}.",
       "I can tell you the exact day I almost quit."
     ]
   },
@@ -37,23 +37,23 @@
     },
     {
       "name": "old_life",
-      "description": "What the founder was doing before, in a few words",
+      "description": "What the founder was doing before, spoken after 'I was', 10 words or fewer",
       "example": "pulling double shifts at a job I hated"
     },
     {
       "name": "breaking_point",
-      "description": "The concrete moment it broke",
+      "description": "The concrete moment it broke, spoken after 'Then', 10 words or fewer",
       "example": "they cut my hours with a text message"
     },
     {
       "name": "decision",
-      "description": "The single decision that followed",
+      "description": "The single decision that followed, spoken, 10 words or fewer",
       "example": "I spent my last savings on a used espresso machine"
     },
     {
       "name": "offer",
-      "description": "What the viewer gets for coming in",
-      "example": "first cup on us this week"
+      "description": "What the viewer gets for coming in, a short phrase starting with a capital letter, 6 words or fewer",
+      "example": "First cup on us this week"
     }
   ],
   "beats": [
@@ -80,7 +80,7 @@
     {
       "seconds": 5,
       "purpose": "the break: what went wrong",
-      "on_screen_text": "{{breaking_point}}",
+      "on_screen_text": "Then {{breaking_point}}.",
       "voiceover": "Then {{breaking_point}}.",
       "visual": {
         "tier": "clip_draft",
@@ -91,7 +91,7 @@
       "seconds": 4,
       "purpose": "the decision",
       "on_screen_text": "So I made one call.",
-      "voiceover": "So I made one decision: {{decision}}.",
+      "voiceover": "One decision: {{decision}}.",
       "visual": {
         "tier": "still",
         "prompt": "Close-up of the founder's hands doing the first act of {{decision}}, such as signing a lease or unlocking a door, warm practical light, vertical framing"
@@ -111,14 +111,14 @@
       "seconds": 3,
       "purpose": "call to action",
       "on_screen_text": "{{offer}}",
-      "voiceover": "Come see what that day built. {{offer}}.",
+      "voiceover": "See what it built. {{offer}}.",
       "visual": {
         "tier": "text_only",
         "prompt": ""
       }
     }
   ],
-  "cta": "Come see what that day built. {{offer}}.",
+  "cta": "See what that day built. {{offer}}.",
   "craft": {
     "technique": "Date-stamped origin with a single turn",
     "notes": "Use one true date and one physical object for the breaking point. Keep the before short and dull in color so the warm present-day shot feels like a release. Only one decision, never a list."
@@ -127,5 +127,10 @@
     "Invent hardship that did not happen",
     "Spend more than 4 seconds on the sad part",
     "Bury the business name until the last frame"
+  ],
+  "compliance": [
+    "Fitness trainers: no guaranteed body, weight or performance results; any client result shown needs real, consented photos and 'results vary'",
+    "Label realistic AI-generated founder or scene images with the platform's AI-content label",
+    "Tell only hardship that really happened; the founder approves the final script"
   ]
 }

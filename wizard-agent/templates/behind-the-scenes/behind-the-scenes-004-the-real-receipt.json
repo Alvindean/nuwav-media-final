@@ -60,7 +60,7 @@
     },
     {
       "name": "offer",
-      "description": "How to buy or book",
+      "description": "How to buy or book, a full sentence starting with a capital",
       "example": "DM 'RECEIPT' for a build slot"
     }
   ],
@@ -112,5 +112,9 @@
     "Round numbers into vague claims like 'tons of hours'",
     "Inflate hours; customers who order will ask",
     "Turn it into a complaint about customers who say it is too expensive"
+  ],
+  "compliance": [
+    "Skincare: no guaranteed skin results or treatment claims; list process and ingredients only, and say results vary if any result is shown",
+    "Every hour, coat and day on the receipt must be true and match how the work is really done"
   ]
 }

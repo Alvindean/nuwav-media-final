@@ -6,7 +6,13 @@
   "format": "carousel",
   "goal": "engagement",
   "aspect_ratio": "4:5",
-  "best_for": ["restaurant", "coffee shop", "apparel brand", "sports team", "independent musician"],
+  "best_for": [
+    "restaurant",
+    "coffee shop",
+    "apparel brand",
+    "sports team",
+    "independent musician"
+  ],
   "why_it_works": "A bracket turns taste into a tournament, and people defend their favorite like it's their team. Giving the vote real stakes (the winner stays, gets a discount, or gets played live) makes every comment feel like it changes something, and the follow-up final pulls the same people back.",
   "hook": {
     "pattern": "Announce a head-to-head tournament with a real consequence for the loser.",
@@ -17,30 +23,95 @@
     ]
   },
   "variables": [
-    { "name": "brand", "description": "Business, team or artist name", "example": "Ojo Taqueria" },
-    { "name": "item_category", "description": "What is competing, plural", "example": "tacos" },
-    { "name": "option_1", "description": "Contender 1", "example": "al pastor" },
-    { "name": "option_2", "description": "Contender 2", "example": "birria" },
-    { "name": "option_3", "description": "Contender 3", "example": "carnitas" },
-    { "name": "option_4", "description": "Contender 4", "example": "grilled cauliflower" },
-    { "name": "stakes", "description": "What happens to the winner", "example": "stays half price all next week" },
-    { "name": "final_day", "description": "When the final round posts", "example": "Thursday" }
+    {
+      "name": "brand",
+      "description": "Business, team or artist name",
+      "example": "Ojo Taqueria"
+    },
+    {
+      "name": "item_category",
+      "description": "What is competing, plural",
+      "example": "tacos"
+    },
+    {
+      "name": "option_1",
+      "description": "Contender 1",
+      "example": "al pastor"
+    },
+    {
+      "name": "option_2",
+      "description": "Contender 2",
+      "example": "birria"
+    },
+    {
+      "name": "option_3",
+      "description": "Contender 3",
+      "example": "carnitas"
+    },
+    {
+      "name": "option_4",
+      "description": "Contender 4",
+      "example": "grilled cauliflower"
+    },
+    {
+      "name": "stakes",
+      "description": "What happens to the winner",
+      "example": "stays half price all next week"
+    },
+    {
+      "name": "final_day",
+      "description": "When the final round posts",
+      "example": "Thursday"
+    }
   ],
   "carousel": {
     "slides": [
-      { "headline": "Four enter. One stays.", "body": "The {{item_category}} bracket is open. The winner {{stakes}}.", "visual_prompt": "Bold tournament bracket graphic in {{brand}} colors with four photo slots for {{item_category}}, sports-poster energy, 4:5" },
-      { "headline": "Matchup 1: {{option_1}} vs {{option_2}}", "body": "Comment 1 or 2.", "visual_prompt": "Split vertical layout, {{option_1}} on the left and {{option_2}} on the right, each shot top-down on the same dark surface, a big VS in the center" },
-      { "headline": "Matchup 2: {{option_3}} vs {{option_4}}", "body": "Comment 3 or 4.", "visual_prompt": "Split vertical layout, {{option_3}} on the left and {{option_4}} on the right, same lighting and surface as matchup 1, a big VS in the center" },
-      { "headline": "How to vote", "body": "One comment, two picks. Example: '1 and 4'. Most comments wins each round.", "visual_prompt": "Clean instruction card in {{brand}} colors with a sample comment bubble reading two numbers" },
-      { "headline": "The final drops {{final_day}}", "body": "The two winners go head to head. Then it's settled.", "visual_prompt": "Empty final bracket slot glowing under a spotlight, two blurred silhouettes of the contenders on either side" },
-      { "headline": "Defend your pick", "body": "Tag the friend who's voting wrong.", "visual_prompt": "Playful card with two comment bubbles arguing, {{brand}} logo small in the corner" }
+      {
+        "headline": "Four enter. One stays.",
+        "body": "The {{item_category}} bracket is open. The winner {{stakes}}.",
+        "visual_prompt": "Bold tournament bracket graphic in {{brand}} colors with four photo slots for {{item_category}}, sports-poster energy, 4:5"
+      },
+      {
+        "headline": "Matchup 1: {{option_1}} vs {{option_2}}",
+        "body": "Comment 1 or 2.",
+        "visual_prompt": "Split vertical layout, {{option_1}} on the left and {{option_2}} on the right, each shot top-down on the same dark surface, a big VS in the center"
+      },
+      {
+        "headline": "Matchup 2: {{option_3}} vs {{option_4}}",
+        "body": "Comment 3 or 4.",
+        "visual_prompt": "Split vertical layout, {{option_3}} on the left and {{option_4}} on the right, same lighting and surface as matchup 1, a big VS in the center"
+      },
+      {
+        "headline": "How to vote",
+        "body": "One comment, two picks. Example: '1 and 4'. Most comments wins each round.",
+        "visual_prompt": "Clean instruction card in {{brand}} colors with a sample comment bubble reading two numbers"
+      },
+      {
+        "headline": "The final drops {{final_day}}",
+        "body": "The two winners go head to head. Then it's settled.",
+        "visual_prompt": "Empty final bracket slot glowing under a spotlight, two blurred silhouettes of the contenders on either side"
+      },
+      {
+        "headline": "Make your case",
+        "body": "Which matchup is the real upset? Tell us why in one line.",
+        "visual_prompt": "Playful card with two comment bubbles debating, {{brand}} logo small in the corner"
+      }
     ]
   },
-  "cta": "Comment your two picks and tag the friend who's voting wrong. The final drops {{final_day}}.",
-  "craft": { "technique": "Bracket with real stakes", "notes": "Pair a crowd favorite against a sleeper in each matchup so neither round is a blowout; close races drive more comments. Keep the photos identically lit so the vote is about the thing, not the photo." },
+  "cta": "Comment your two picks and one reason why. The final drops {{final_day}}.",
+  "craft": {
+    "technique": "Bracket with real stakes",
+    "notes": "Pair a crowd favorite against a sleeper in each matchup so neither round is a blowout; close races drive more comments. Keep the photos identically lit so the vote is about the thing, not the photo."
+  },
   "do_not": [
     "Put two near-identical options in one matchup; nobody has a strong opinion",
     "Ignore the vote result; if the loser wins the bracket, honor it publicly",
     "Run more than four contenders in one carousel; the rules stop fitting on one slide"
+  ],
+  "compliance": [
+    "Official rules: if any voter gets a prize, link official rules with eligibility, dates, how the winner is picked and prize value",
+    "No purchase necessary to vote or win; void where prohibited",
+    "Say the bracket is not sponsored or run by the platform",
+    "The vote picks an item, not a person; any voter prize goes by random draw, never by likes"
   ]
 }

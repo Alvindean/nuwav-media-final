@@ -20,7 +20,7 @@
     "examples": [
       "Three red flags your {{provider_type}} hopes you never notice.",
       "If your {{provider_type}} does this, walk out.",
-      "Red flag or green flag? Most people get number two wrong."
+      "Red flag or green flag? Most people miss number two."
     ]
   },
   "variables": [
@@ -36,33 +36,33 @@
     },
     {
       "name": "red_flag_1",
-      "description": "First warning sign, concrete and observable",
-      "example": "quotes the price before looking at the car"
+      "description": "First warning sign, concrete and observable; 5 words or fewer, starts with a verb",
+      "example": "quotes before seeing the car"
     },
     {
       "name": "green_flag_1",
-      "description": "The healthy opposite of red flag 1",
-      "example": "inspects first, then explains in writing"
+      "description": "The healthy opposite of red flag 1; 5 words or fewer, starts with a verb",
+      "example": "inspects first, explains in writing"
     },
     {
       "name": "red_flag_2",
-      "description": "Second warning sign",
-      "example": "won't show you the old part"
+      "description": "Second warning sign; 5 words or fewer, starts with a verb",
+      "example": "hides the old part"
     },
     {
       "name": "green_flag_2",
-      "description": "The healthy opposite of red flag 2",
-      "example": "hands you the old part without being asked"
+      "description": "The healthy opposite of red flag 2; 5 words or fewer, starts with a verb",
+      "example": "hands you the old part"
     },
     {
       "name": "red_flag_3",
-      "description": "Third warning sign",
+      "description": "Third warning sign, the pressure move; 5 words or fewer, starts with a verb",
       "example": "pushes a decision today"
     },
     {
       "name": "green_flag_3",
-      "description": "The healthy opposite of red flag 3",
-      "example": "tells you what can safely wait"
+      "description": "The healthy opposite of red flag 3; 5 words or fewer, starts with a verb",
+      "example": "tells you what can wait"
     },
     {
       "name": "offer",
@@ -85,7 +85,7 @@
       "seconds": 4,
       "purpose": "red flag 1 vs green flag 1",
       "on_screen_text": "RED: {{red_flag_1}} / GREEN: {{green_flag_1}}",
-      "voiceover": "Red flag: {{red_flag_1}}. Green flag: {{green_flag_1}}.",
+      "voiceover": "Red: {{red_flag_1}}. Green: {{green_flag_1}}.",
       "visual": {
         "tier": "text_only",
         "prompt": ""
@@ -95,7 +95,7 @@
       "seconds": 4,
       "purpose": "red flag 2 vs green flag 2",
       "on_screen_text": "RED: {{red_flag_2}} / GREEN: {{green_flag_2}}",
-      "voiceover": "Red flag: {{red_flag_2}}. Green flag: {{green_flag_2}}.",
+      "voiceover": "Red: {{red_flag_2}}. Green: {{green_flag_2}}.",
       "visual": {
         "tier": "still",
         "prompt": "Close-up of hands passing a document or item across a counter at {{brand}}, warm practical light, green tint on the right edge, vertical 9:16"
@@ -115,7 +115,7 @@
       "seconds": 4,
       "purpose": "green flag 3 and the turn to the brand",
       "on_screen_text": "GREEN: {{green_flag_3}}",
-      "voiceover": "A good {{provider_type}} {{green_flag_3}}. That's how we work at {{brand}}.",
+      "voiceover": "Green flag: {{green_flag_3}}. That's {{brand}}.",
       "visual": {
         "tier": "still",
         "prompt": "Calm, well-lit {{brand}} workspace, a staff member explaining something to an out-of-focus customer, natural window light, vertical 9:16"
@@ -142,23 +142,28 @@
       },
       {
         "headline": "Red flag #1",
-        "body": "{{red_flag_1}}. Green flag: {{green_flag_1}}.",
+        "body": "Red: {{red_flag_1}}. Green: {{green_flag_1}}.",
         "visual_prompt": "Red-tinted still of an empty consultation desk, harsh overhead light"
       },
       {
         "headline": "Red flag #2",
-        "body": "{{red_flag_2}}. Green flag: {{green_flag_2}}.",
+        "body": "Red: {{red_flag_2}}. Green: {{green_flag_2}}.",
         "visual_prompt": "Hands passing a document across a counter, green tint on one side"
       },
       {
         "headline": "Red flag #3",
-        "body": "{{red_flag_3}}. Green flag: {{green_flag_3}}.",
+        "body": "Red: {{red_flag_3}}. Green: {{green_flag_3}}.",
         "visual_prompt": "Wall clock above an unsigned form, red shadows, quiet office"
       },
       {
-        "headline": "What green flags look like here",
-        "body": "At {{brand}}, all three are standard, not extras.",
-        "visual_prompt": "Bright, tidy {{brand}} workspace with a staff member mid-explanation"
+        "headline": "Three questions to ask out loud",
+        "body": "Can I get that in writing? Can I see what you found? What can safely wait?",
+        "visual_prompt": "Clean checklist card with three numbered questions, red and green accents, {{brand}} colors"
+      },
+      {
+        "headline": "The 24-hour test",
+        "body": "A good {{provider_type}} is still there tomorrow. If the deal dies overnight, it was pressure, not advice.",
+        "visual_prompt": "Minimal card with a calendar page flipping from today to tomorrow, calm green tones"
       },
       {
         "headline": "Get a second opinion",

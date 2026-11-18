@@ -20,7 +20,7 @@
     "examples": [
       "60 minutes to {{event}}. Come with us.",
       "What the hour before {{event}} actually looks like.",
-      "Phones off in 60. Here's everything before that."
+      "Phones off in 60. Come see what happens first."
     ]
   },
   "variables": [
@@ -51,8 +51,8 @@
     },
     {
       "name": "offer",
-      "description": "Fan action",
-      "example": "grab tickets for Saturday's home game"
+      "description": "Fan action, a full sentence starting with a capital, 7 words or fewer",
+      "example": "Grab tickets for Saturday's home game"
     }
   ],
   "beats": [
@@ -70,20 +70,20 @@
       "seconds": 4,
       "purpose": "T-45: the ritual",
       "on_screen_text": "T-45:00 · {{ritual}}",
-      "voiceover": "Forty-five out. {{ritual}}.",
+      "voiceover": "Forty-five out: {{ritual}}.",
       "visual": {
-        "tier": "clip_draft",
-        "prompt": "Close-up of hands {{ritual}}, focused, shallow depth of field, cool locker room light, vertical 9:16"
+        "tier": "real_photo",
+        "prompt": "Real phone footage close-up of {{team_name}} hands {{ritual}}, focused, locker room light, filmed with consent, vertical 9:16"
       }
     },
     {
       "seconds": 4,
       "purpose": "T-30: headphones on",
       "on_screen_text": "T-30:00",
-      "voiceover": "Thirty. Headphones on. {{playlist_vibe}}.",
+      "voiceover": "Thirty. Headphones on, {{playlist_vibe}}.",
       "visual": {
-        "tier": "still",
-        "prompt": "Athlete or performer seated, eyes closed, big headphones on, back to a wall of lockers, moody side light, vertical 9:16"
+        "tier": "real_photo",
+        "prompt": "Real photo of a {{team_name}} member seated, eyes closed, headphones on, back to the lockers, shared with consent, vertical 9:16"
       }
     },
     {
@@ -92,8 +92,8 @@
       "on_screen_text": "T-10:00",
       "voiceover": "Ten minutes.",
       "visual": {
-        "tier": "clip_standard",
-        "prompt": "Tight huddle of {{team_name}} members seen from the center looking up, arms locked, low angle, tunnel light behind, vertical 9:16"
+        "tier": "real_photo",
+        "prompt": "Real phone footage of the {{team_name}} huddle from the center looking up, arms locked, tunnel light behind, vertical 9:16"
       }
     },
     {
@@ -102,29 +102,33 @@
       "on_screen_text": "\"{{last_words}}\"",
       "voiceover": "{{last_words}}.",
       "visual": {
-        "tier": "still",
-        "prompt": "Silhouette of the group walking down a dark tunnel toward bright stadium or stage light, vertical 9:16"
+        "tier": "real_photo",
+        "prompt": "Real footage of {{team_name}} walking down the tunnel toward bright stadium or stage light, silhouettes, vertical 9:16"
       }
     },
     {
       "seconds": 3,
       "purpose": "call to action",
       "on_screen_text": "{{offer}}",
-      "voiceover": "Be there for minute zero. {{offer}}.",
+      "voiceover": "See minute zero. {{offer}}.",
       "visual": {
         "tier": "text_only",
         "prompt": ""
       }
     }
   ],
-  "cta": "Be there for minute zero: {{offer}}.",
+  "cta": "Be there for minute zero. {{offer}}.",
   "craft": {
     "technique": "Countdown structure",
-    "notes": "Each beat opens with a bigger-to-smaller timer so tension builds on its own. Cut faster as the clock drops. End on the walk toward the light and stop before the event itself so fans have to show up to see it."
+    "notes": "Each beat opens with a bigger-to-smaller timer so tension builds on its own. Use the team's own real footage for every beat with people in it. Cut faster as the clock drops and stop before the event itself so fans have to show up."
   },
   "do_not": [
     "Use a real copyrighted song as the warm-up track",
     "Film minors without guardian consent",
     "Show playbooks, injuries or anything a coach has not cleared"
+  ],
+  "compliance": [
+    "Fitness trainers: no promised body or performance results, no unrealistic body images or shaming language",
+    "Real team members only, filmed with consent; guardian consent for anyone under 18"
   ]
 }

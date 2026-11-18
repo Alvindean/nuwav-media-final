@@ -1,55 +1,133 @@
 {
   "id": "comedy-007-jargon-to-human-dictionary",
   "version": 1,
-  "name": "The Jargon-to-Human Dictionary",
+  "name": "If We Talked Like This Everywhere",
   "category": "comedy",
   "format": "carousel",
   "goal": "trust",
   "aspect_ratio": "4:5",
-  "best_for": ["mortgage broker", "law firm", "financial advisor", "insurance agency", "independent record label"],
-  "why_it_works": "Industry jargon makes people feel shut out. A mock dictionary that gives the stiff official definition and then the honest human one makes viewers laugh with relief and feel smarter, and it positions the brand as the translator on their side. People save and share 'finally someone said it' slides.",
+  "best_for": [
+    "mortgage broker",
+    "law firm",
+    "financial advisor",
+    "insurance agency",
+    "independent record label"
+  ],
+  "why_it_works": "Putting stiff industry talk into an everyday moment like ordering coffee is a register clash: the wrong voice in the wrong room is instantly funny, and viewers recognize how jargon made them feel. Ending with the promise to speak plainly makes the brand the one pro who doesn't talk like that to you.",
   "hook": {
-    "pattern": "Promise to translate the words your industry uses to confuse people, in dictionary format.",
+    "pattern": "Show your team using industry jargon in ordinary places where it plainly does not belong.",
     "examples": [
-      "{{industry}} words, translated into human.",
-      "What your {{industry}} pro says vs. what they mean.",
-      "A dictionary for every {{industry}} word that made you nod politely."
+      "If we talked like {{industry}} people everywhere.",
+      "We tried {{industry}} talk at a coffee shop. Bad idea.",
+      "What {{industry}} jargon sounds like in real life."
     ]
   },
   "variables": [
-    { "name": "brand", "description": "Business name", "example": "Keystone Home Loans" },
-    { "name": "industry", "description": "The field, as customers say it", "example": "mortgage" },
-    { "name": "term_1", "description": "First jargon term", "example": "Escrow" },
-    { "name": "plain_1", "description": "Honest plain-language meaning, with a light joke", "example": "A neutral middle person holds the money so nobody has to trust anybody yet. Romantic." },
-    { "name": "term_2", "description": "Second jargon term", "example": "Pre-approval" },
-    { "name": "plain_2", "description": "Honest meaning of term two", "example": "A lender looked at your paperwork and said 'probably.' It's a strong probably." },
-    { "name": "term_3", "description": "Third jargon term", "example": "Points" },
-    { "name": "plain_3", "description": "Honest meaning of term three", "example": "Paying more now to pay less later. Like buying the big pack of paper towels." },
-    { "name": "inside_term", "description": "A harmless made-up phrase the team uses internally (self-deprecating)", "example": "A Tuesday Folder" },
-    { "name": "inside_meaning", "description": "What the made-up phrase means", "example": "The file our team double-checks so many times it gets its own coffee." },
-    { "name": "offer", "description": "What the viewer gets for acting", "example": "a free 20-minute plain-English rate review" }
+    {
+      "name": "brand",
+      "description": "Business name",
+      "example": "Keystone Home Loans"
+    },
+    {
+      "name": "industry",
+      "description": "The field, as customers say it (2 words or fewer)",
+      "example": "mortgage"
+    },
+    {
+      "name": "jargon_coffee",
+      "description": "Ordering coffee, said entirely in industry jargon; must still use the terms correctly (18 words or fewer)",
+      "example": "One latte, please. Pending final underwriting of the oat milk. I'll lock the price for 30 days."
+    },
+    {
+      "name": "jargon_date",
+      "description": "A first-date line said in industry jargon, harmless and not about the other person's body or money habits (18 words or fewer)",
+      "example": "Before dessert, I'll need two years of your favorite movies and a full playlist history."
+    },
+    {
+      "name": "jargon_party",
+      "description": "A kid's birthday party line in jargon, the biggest of the three (18 words or fewer)",
+      "example": "The cake is pre-approved. Candles are subject to appraisal. Closing on the piñata is Saturday."
+    },
+    {
+      "name": "jargon_self_own",
+      "description": "The team using jargon on itself at the office, self-deprecating (18 words or fewer)",
+      "example": "Lunch is in escrow until Dave confirms the order. Dave has not confirmed the order."
+    },
+    {
+      "name": "plain_promise",
+      "description": "The real, plain-language promise to clients, as a process not a result (15 words or fewer)",
+      "example": "Every word in your paperwork explained before you sign. Every time."
+    },
+    {
+      "name": "decoder_term",
+      "description": "One jargon word the viewer will actually hear from you",
+      "example": "Rate lock"
+    },
+    {
+      "name": "decoder_meaning",
+      "description": "Its correct plain meaning plus what to ask about it (20 words or fewer)",
+      "example": "Your rate is held for a set number of days. Ask how many, and what happens after."
+    },
+    {
+      "name": "offer",
+      "description": "What the viewer gets for acting (10 words or fewer)",
+      "example": "a free 20-minute plain-English rate review"
+    }
   ],
   "carousel": {
     "slides": [
-      { "headline": "{{industry}} words, translated into human", "body": "Swipe. You'll never nod politely at these again.", "visual_prompt": "4:5 vintage dictionary page aesthetic, cream paper texture, bold serif title in {{brand}} colors, a single bookmark ribbon" },
-      { "headline": "{{term_1}}", "body": "Official: a very serious definition you'd skim. Human: {{plain_1}}", "visual_prompt": "4:5 dictionary entry layout with the word {{term_1}} in large bold serif, phonetic spelling, a small hand-drawn doodle in the margin, cream paper" },
-      { "headline": "{{term_2}}", "body": "Official: also very serious. Human: {{plain_2}}", "visual_prompt": "4:5 dictionary entry layout for {{term_2}}, same cream paper and serif style, a tiny hand-drawn thumbs-up doodle in the margin" },
-      { "headline": "{{term_3}}", "body": "Official: you guessed it. Human: {{plain_3}}", "visual_prompt": "4:5 dictionary entry layout for {{term_3}}, same style, margin doodle that visually illustrates the plain-language meaning" },
-      { "headline": "Bonus: a word we made up", "body": "{{inside_term}}: {{inside_meaning}}", "visual_prompt": "4:5 dictionary entry layout with a red 'NOT A REAL WORD' rubber stamp over {{inside_term}}, same cream paper, playful" },
-      { "headline": "Still nodding politely? That's fine.", "body": "Asking what a word means is the smartest question in {{industry}}. We answer it all day.", "visual_prompt": "4:5 warm candid photo of a {{brand}} team member explaining a printed page to someone across a desk, natural light, faces friendly" },
-      { "headline": "Get the human version", "body": "{{offer}} from {{brand}}. No nodding required.", "visual_prompt": "4:5 clean end card on {{brand}} brand color, logo, offer text in large serif type, dictionary ribbon motif" }
+      {
+        "headline": "If we talked like this everywhere",
+        "body": "A {{brand}} public service announcement. Swipe carefully.",
+        "visual_prompt": "4:5 bold title card in {{brand}} colors, a serious office memo look with a big red stamp reading OFF THE CLOCK"
+      },
+      {
+        "headline": "At the coffee shop",
+        "body": "\"{{jargon_coffee}}\"",
+        "visual_prompt": "4:5 candid photo of a person in business clothes ordering at a coffee counter with total seriousness, the barista blinking, warm cafe light"
+      },
+      {
+        "headline": "On a first date",
+        "body": "\"{{jargon_date}}\"",
+        "visual_prompt": "4:5 photo of a candlelit restaurant table, one person sliding a neat folder of forms across to their puzzled date, warm romantic light"
+      },
+      {
+        "headline": "At a kid's birthday party",
+        "body": "\"{{jargon_party}}\"",
+        "visual_prompt": "4:5 bright backyard birthday party, an adult in a blazer holding a clipboard next to the cake, balloons, kids laughing in soft focus"
+      },
+      {
+        "headline": "At our own office",
+        "body": "\"{{jargon_self_own}}\" We do it to each other too.",
+        "visual_prompt": "4:5 candid photo inside {{brand}}, team members around a desk staring at an empty lunch order screen, natural office light, playful"
+      },
+      {
+        "headline": "With you, we switch it off",
+        "body": "{{plain_promise}}",
+        "visual_prompt": "4:5 warm candid photo of a {{brand}} team member explaining a printed page to a client across a desk, both smiling, natural light"
+      },
+      {
+        "headline": "The one word worth knowing",
+        "body": "{{decoder_term}}: {{decoder_meaning}} Save this for your first meeting.",
+        "visual_prompt": "4:5 clean note card with the word in bold serif type and a short plain explanation, {{brand}} accent color, save-worthy layout"
+      },
+      {
+        "headline": "Talk to a human",
+        "body": "Book {{offer}} with {{brand}}.",
+        "visual_prompt": "4:5 clean end card on {{brand}} brand color, logo, offer text in large friendly type, a small speech bubble icon"
+      }
     ]
   },
-  "cta": "Save this for your next meeting. Then book {{offer}}.",
+  "cta": "Which word has confused you most? Ask us, then book {{offer}}.",
   "craft": {
-    "technique": "Mock dictionary: official vs. human definition (incongruity) with a self-own bonus",
-    "notes": "Setup: the dictionary format and the stiff 'Official:' line on every slide set up a formal pattern. Turn: each 'Human:' line breaks the formality with an honest, slightly cheeky meaning, and it ends on an unexpected small comparison (paper towels, romance) as the punch word. Tag: the bonus slide turns the joke on the brand itself with a made-up internal word, which is the self-deprecating tag that earns trust. Timing in a carousel lives in the swipe: put the punch word as the very last words on each slide so the 'pause' is the moment before the next swipe, and keep the 'Official:' lines short so the reader gets to the turn fast."
+    "technique": "Register clash: industry jargon used in everyday places (fish-out-of-water)",
+    "notes": "Setup: the title card frames it as a public service announcement, so the reader expects one thing and gets jargon in a coffee shop. Escalation: three everyday rooms climb from coffee to a date to a kid's party, each line delivered with total seriousness; the jargon must be used correctly, because accurate words in the wrong room is the joke. Turn: the team turns the jargon on itself at the office ('Dave has not confirmed the order'), a self-own that earns trust. Tag: the switch-off slide states the plain promise, and the decoder slide gives one useful word so the carousel is worth saving. Timing in a carousel lives in the swipe: put the most absurd word last in each line so the swipe is the pause."
   },
   "do_not": [
-    "Make a 'human' definition inaccurate just to get a laugh; it must still be correct",
-    "Joke about people who didn't know the word; the joke is on the jargon",
-    "Use more than three real terms before the bonus slide",
-    "Give personalized advice in a definition"
+    "Use a jargon term incorrectly just to get a laugh; the terms must stay accurate",
+    "Make any line about the other person's looks, money habits or credit",
+    "Mock clients who didn't know a word; the joke is on the jargon and the team",
+    "Give personalized advice in any slide"
   ],
   "compliance": [
     "Mortgage: definitions are general education, not a rate offer; no rate, payment or approval promises; show NMLS ID and Equal Housing Opportunity on the end card",

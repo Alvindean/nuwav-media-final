@@ -19,7 +19,7 @@
     "pattern": "Promise the opposite of a highlight reel: say outright that this is the dull part, and dare them to watch.",
     "examples": [
       "This is the boring part. It's also the whole secret.",
-      "Nobody posts this part of {{craft_name}}.",
+      "You never see this part of {{craft_name}}.",
       "{{repetition_count}} times. Same thing. Watch."
     ]
   },
@@ -46,13 +46,13 @@
     },
     {
       "name": "highlight_moment",
-      "description": "The payoff the work leads to",
+      "description": "The payoff the work leads to, lowercase, 8 words or fewer",
       "example": "the last-minute winner on Saturday"
     },
     {
       "name": "follow_line",
-      "description": "Why to follow or show up",
-      "example": "come see what two hundred reps look like live"
+      "description": "Why to follow or show up, starting with a capital letter, 9 words or fewer",
+      "example": "Come see what two hundred reps look like live"
     }
   ],
   "beats": [
@@ -99,7 +99,7 @@
     {
       "seconds": 5,
       "purpose": "the payoff",
-      "on_screen_text": "{{highlight_moment}}",
+      "on_screen_text": "Then: {{highlight_moment}}.",
       "voiceover": "That's how you get {{highlight_moment}}.",
       "visual": {
         "tier": "clip_hero",

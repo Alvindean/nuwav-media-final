@@ -14,7 +14,7 @@
     "custom auto shop",
     "independent musician"
   ],
-  "why_it_works": "Sound is the most ignored part of a process and the most satisfying. Asking viewers to guess from sound alone turns watching into a game, keeps them listening to the end for the answer, and the guesses fill the comments.",
+  "why_it_works": "Sound is the most ignored part of a process and the most satisfying. Asking viewers to guess from the real sounds alone turns watching into a game and keeps them listening to the end for the answer.",
   "hook": {
     "pattern": "Black screen, a real process sound, and a guessing challenge.",
     "examples": [
@@ -36,8 +36,8 @@
     },
     {
       "name": "sound_one",
-      "description": "First process sound",
-      "example": "clippers clicking on"
+      "description": "First process sound, 5 words or fewer, as a phrase starting with a capital",
+      "example": "Clippers clicking on"
     },
     {
       "name": "sound_two",
@@ -51,8 +51,8 @@
     },
     {
       "name": "offer",
-      "description": "Next step",
-      "example": "book your chair this week"
+      "description": "Next step, a full sentence starting with a capital",
+      "example": "Book your chair this week"
     }
   ],
   "beats": [
@@ -68,32 +68,32 @@
     },
     {
       "seconds": 4,
-      "purpose": "sound one, extreme close-up",
-      "on_screen_text": "Sound 1: {{sound_one}}",
+      "purpose": "sound one: the real recorded audio is the track",
+      "on_screen_text": "Sound 1. Any guesses?",
       "voiceover": "",
       "visual": {
-        "tier": "clip_draft",
-        "prompt": "Extreme macro of the tool making {{sound_one}} at {{brand}}, abstract and hard to identify, single hard light, dark background, vertical 9:16"
+        "tier": "real_photo",
+        "prompt": "Real phone footage at {{brand}}, extreme close-up of {{sound_one}}, framed tight so it is hard to identify, recorded with its own live sound, vertical 9:16"
       }
     },
     {
       "seconds": 4,
-      "purpose": "sound two",
-      "on_screen_text": "Sound 2: {{sound_two}}",
+      "purpose": "sound two: the real recorded audio is the track",
+      "on_screen_text": "Sound 2. Any guesses?",
       "voiceover": "",
       "visual": {
-        "tier": "clip_draft",
-        "prompt": "Extreme macro of {{sound_two}}, texture and motion only, no wide context, moody side light, vertical 9:16"
+        "tier": "real_photo",
+        "prompt": "Real phone footage at {{brand}}, extreme close-up of {{sound_two}}, framed tight so it is hard to identify, recorded with its own live sound, vertical 9:16"
       }
     },
     {
       "seconds": 4,
-      "purpose": "sound three",
-      "on_screen_text": "Sound 3: {{sound_three}}",
+      "purpose": "sound three: the real recorded audio is the track",
+      "on_screen_text": "Sound 3. Any guesses?",
       "voiceover": "",
       "visual": {
-        "tier": "clip_draft",
-        "prompt": "Extreme macro of {{sound_three}}, slow and tactile, steam or particles in the light, vertical 9:16"
+        "tier": "real_photo",
+        "prompt": "Real phone footage at {{brand}}, extreme close-up of {{sound_three}}, framed tight so it is hard to identify, recorded with its own live sound, vertical 9:16"
       }
     },
     {
@@ -110,10 +110,10 @@
       "seconds": 4,
       "purpose": "the reveal",
       "on_screen_text": "A {{finished_thing}}.",
-      "voiceover": "A {{finished_thing}}, start to finish.",
+      "voiceover": "A {{finished_thing}}. {{sound_one}}, then the rest.",
       "visual": {
-        "tier": "still",
-        "prompt": "Clean, proud wide shot of the finished {{finished_thing}} at {{brand}}, warm light, the tools from the macro shots visible nearby, vertical 9:16"
+        "tier": "real_photo",
+        "prompt": "Real photo of the finished {{finished_thing}} at {{brand}}, warm light, tools from the close-ups nearby, any customer shown with consent, vertical 9:16"
       }
     },
     {
@@ -127,10 +127,10 @@
       }
     }
   ],
-  "cta": "Drop your guess, then {{offer}}.",
+  "cta": "Drop your guess below. {{offer}}.",
   "craft": {
     "technique": "Audio-first guessing game",
-    "notes": "Record the real sounds clean and loud; the AI clips are just texture under them, so keep the visuals macro and ambiguous. Withhold the wide shot until the reveal. No voiceover until the comment prompt."
+    "notes": "The track is the real process audio recorded clean and loud on the client's own footage, with no music bed. Keep the close-ups tight and ambiguous, withhold the wide shot until the reveal, and add no voiceover until the comment prompt."
   },
   "do_not": [
     "Use stock sound effects instead of the real process audio",

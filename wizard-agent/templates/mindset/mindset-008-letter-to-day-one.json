@@ -18,8 +18,8 @@
   "hook": {
     "pattern": "Open with a handwritten letter addressed to the owner on their first day, read aloud in their voice.",
     "examples": [
-      "Dear me, on day one at {{brand}}: you're wrong about {{early_mistake}}.",
-      "A letter to the version of me who opened {{brand}}.",
+      "Dear day-one me: you're wrong about {{early_mistake}}.",
+      "A letter to me, the day {{brand}} opened.",
       "If I could send one note back to {{start_year}}..."
     ]
   },
@@ -36,28 +36,28 @@
     },
     {
       "name": "early_mistake",
-      "description": "The thing they believed at the start that turned out wrong",
+      "description": "The thing they believed at the start that turned out wrong, lowercase, 4 words or fewer",
       "example": "chasing every playlist"
     },
     {
       "name": "lesson_one",
-      "description": "First hard lesson",
+      "description": "First hard lesson, lowercase, 10 words or fewer",
       "example": "ten real fans who show up beat ten thousand who scroll"
     },
     {
       "name": "lesson_two",
-      "description": "Second hard lesson",
+      "description": "Second hard lesson, lowercase, 10 words or fewer",
       "example": "say no to deals you have to explain to yourself"
     },
     {
       "name": "still_true",
-      "description": "The thing day-one them got right",
+      "description": "The thing day-one them got right, lowercase, 10 words or fewer",
       "example": "you were right to put the artist first"
     },
     {
       "name": "invite",
-      "description": "The call to action",
-      "example": "come to the next listening night"
+      "description": "The call to action, starting with a capital-letter verb, 6 words or fewer",
+      "example": "Come to the next listening night"
     }
   ],
   "beats": [
@@ -84,8 +84,8 @@
     {
       "seconds": 6,
       "purpose": "lesson one",
-      "on_screen_text": "{{lesson_one}}",
-      "voiceover": "Here's what you'll learn the hard way: {{lesson_one}}.",
+      "on_screen_text": "Lesson one: {{lesson_one}}",
+      "voiceover": "You'll learn it the hard way: {{lesson_one}}.",
       "visual": {
         "tier": "clip_draft",
         "prompt": "Vertical 9:16 slow handheld shot inside today's {{brand}}, a small real crowd or customers engaged, warm practical lights, candid and imperfect"
@@ -94,8 +94,8 @@
     {
       "seconds": 5,
       "purpose": "lesson two",
-      "on_screen_text": "{{lesson_two}}",
-      "voiceover": "And {{lesson_two}}.",
+      "on_screen_text": "Lesson two: {{lesson_two}}",
+      "voiceover": "Lesson two: {{lesson_two}}.",
       "visual": {
         "tier": "text_only",
         "prompt": ""

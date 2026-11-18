@@ -20,7 +20,7 @@
     "examples": [
       "2:14 a.m. Unknown number. She picked up.",
       "The worst calls come at {{call_time}}.",
-      "Nobody calls at 2 a.m. with good news."
+      "Good news never calls at {{call_time}}."
     ]
   },
   "variables": [
@@ -36,22 +36,22 @@
     },
     {
       "name": "caller_situation",
-      "description": "A composite, anonymized line describing their crisis",
-      "example": "my son was in a crash and the other driver is blaming him"
+      "description": "A composite, anonymized line describing their crisis, starting with a capital letter, spoken, 10 words or fewer",
+      "example": "My son crashed and the other driver blames him"
     },
     {
       "name": "first_step",
-      "description": "The calm, concrete first step you took",
-      "example": "told her exactly what not to say to anyone before morning"
+      "description": "The calm, concrete first step you took, spoken, 8 words or fewer",
+      "example": "told her what not to say before morning"
     },
     {
       "name": "morning_after",
-      "description": "How things felt the next morning, no outcome claims",
+      "description": "How things felt the next morning, no outcome claims, spoken, 9 words or fewer",
       "example": "she had a plan and a name to call"
     },
     {
       "name": "cta_line",
-      "description": "How to reach you, plainly",
+      "description": "How to reach you, plainly, starting with a capital letter, 6 words or fewer",
       "example": "Free consultation, day or night"
     }
   ],
@@ -70,17 +70,17 @@
       "seconds": 5,
       "purpose": "the caller's situation",
       "on_screen_text": "\"{{caller_situation}}\"",
-      "voiceover": "The voice on the other end said: {{caller_situation}}.",
+      "voiceover": "On the line: {{caller_situation}}.",
       "visual": {
         "tier": "still",
-        "prompt": "Vertical photo of a person sitting on the edge of a bed in a dim kitchen, phone to ear, head down, single overhead pendant light, face in shadow so they are anonymous"
+        "prompt": "Vertical photo of an anonymous person sitting at a dim kitchen table, phone to ear, head down, single overhead pendant light, face in shadow"
       }
     },
     {
       "seconds": 5,
       "purpose": "what happened next",
       "on_screen_text": "First step: {{first_step}}",
-      "voiceover": "We didn't fix everything that night. We did one thing: {{first_step}}.",
+      "voiceover": "That night, one thing: {{first_step}}.",
       "visual": {
         "tier": "still",
         "prompt": "Vertical photo of a desk at {{brand}} at night, a single lamp on, a notepad with a checklist, coffee cup, calm and orderly"
@@ -89,7 +89,7 @@
     {
       "seconds": 4,
       "purpose": "the turn: the morning after",
-      "on_screen_text": "{{morning_after}}",
+      "on_screen_text": "By morning, {{morning_after}}.",
       "voiceover": "By morning, {{morning_after}}.",
       "visual": {
         "tier": "clip_draft",
@@ -100,14 +100,14 @@
       "seconds": 3,
       "purpose": "call to action",
       "on_screen_text": "{{cta_line}}",
-      "voiceover": "If it's your {{call_time}}, call us. {{cta_line}}.",
+      "voiceover": "Your {{call_time}}? {{cta_line}}.",
       "visual": {
         "tier": "text_only",
         "prompt": ""
       }
     }
   ],
-  "cta": "If it's your {{call_time}}, call us. {{cta_line}}.",
+  "cta": "Your {{call_time}}? Call us. {{cta_line}}.",
   "craft": {
     "technique": "Inciting call, then the first calm step",
     "notes": "Keep the caller anonymous and lit in shadow. The turn is relief, not victory: a plan, not a verdict. Use silence and dark frames in the first half, then let sunrise light do the emotional work in the clip."

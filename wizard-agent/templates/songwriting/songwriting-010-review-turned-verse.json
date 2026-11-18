@@ -5,7 +5,7 @@
   "category": "songwriting",
   "format": "both",
   "goal": "trust",
-  "duration_seconds": 21,
+  "duration_seconds": 18,
   "aspect_ratio": "9:16",
   "best_for": [
     "dental office",
@@ -37,64 +37,69 @@
     },
     {
       "name": "review_line_one",
-      "description": "First phrase of the real review, unedited",
+      "description": "A full sentence from the real review, unedited; pick one that starts with a capital and sings in one breath (10 syllables or fewer)",
       "example": "I used to dread the dentist"
     },
     {
       "name": "review_line_two",
-      "description": "Second phrase of the real review, unedited",
-      "example": "now I actually look forward to my cleanings"
+      "description": "Another full sentence from the same review, unedited, 10 syllables or fewer",
+      "example": "Now I look forward to it"
     },
     {
       "name": "review_hook",
-      "description": "The most singable 3-6 words from the review",
-      "example": "look forward to it"
+      "description": "The most singable 3-6 words lifted unchanged from the review, capitalized, 7 syllables or fewer",
+      "example": "I look forward to it"
+    },
+    {
+      "name": "first_visit_steps",
+      "description": "What a new customer's first visit really looks like, capitalized, 25 words or fewer",
+      "example": "Check-in takes five minutes, then a gentle cleaning, then a written plan with prices before anything else starts."
     },
     {
       "name": "offer",
-      "description": "Next step for new customers",
-      "example": "book a new-patient visit online"
+      "description": "Next step for new customers, capitalized, 6 words or fewer because it is spoken",
+      "example": "Book a new-patient visit online"
     }
   ],
   "beats": [
     {
       "seconds": 3,
-      "purpose": "hook: review on screen",
+      "purpose": "hook: the real review on screen",
       "on_screen_text": "★★★★★ from {{reviewer_first_name}}",
       "voiceover": "{{reviewer_first_name}} left us a review. So we sang it.",
       "visual": {
-        "tier": "still",
-        "prompt": "Vertical 9:16 photo of a phone in a hand showing a five-star review screen, blurred warm interior of {{brand}} behind, soft light"
+        "tier": "real_photo",
+        "prompt": "Real screenshot of the actual five-star review, shown with written permission, vertical crop"
       }
     },
     {
-      "seconds": 5,
+      "seconds": 4,
       "purpose": "verse: line one sung",
       "on_screen_text": "\"{{review_line_one}}\"",
       "voiceover": "{{review_line_one}}...",
       "visual": {
         "tier": "clip_draft",
-        "prompt": "Vertical slow push-in on a singer at a vintage mic in a warm, empty studio, soft amber light, eyes closed, 9:16"
+        "prompt": "Vertical slow push-in on a vintage microphone in a warm empty studio, soft amber light, no people, 9:16"
       }
     },
     {
-      "seconds": 5,
+      "seconds": 4,
       "purpose": "verse: line two sung",
       "on_screen_text": "\"{{review_line_two}}\"",
       "voiceover": "{{review_line_two}}...",
       "visual": {
-        "tier": "still",
-        "prompt": "Vertical photo of the welcoming front desk at {{brand}}, staff smiling, natural daylight, no customer faces"
+        "tier": "real_photo",
+        "prompt": "Client-supplied photo of the welcoming entrance of {{brand}}, real staff with consent, natural daylight"
       }
     },
     {
-      "seconds": 5,
+      "seconds": 4,
       "purpose": "chorus: the review hook repeated",
       "on_screen_text": "{{review_hook}}",
       "voiceover": "{{review_hook}}, {{review_hook}}...",
       "visual": {
         "tier": "still",
-        "prompt": "Vertical close-up of the singer smiling mid-note, gold backlight, lyric space in the lower third"
+        "prompt": "Vertical close-up of a gold-lit vintage microphone with floating music notes, lyric space in the lower third"
       }
     },
     {
@@ -109,6 +114,12 @@
     }
   ],
   "cta": "Write the next verse: {{offer}} with {{brand}}.",
+  "music": {
+    "tier": "music",
+    "bpm": 76,
+    "feel": "warm soul gospel-lite, Rhodes piano, brushed snare, harmony on the hook",
+    "vocals": true
+  },
   "carousel": {
     "slides": [
       {
@@ -124,12 +135,22 @@
       {
         "headline": "Verse two",
         "body": "\"{{review_line_two}}\"",
-        "visual_prompt": "Lyric slide, same style, a photo of the {{brand}} front desk faded behind"
+        "visual_prompt": "Lyric slide, same style, soft blurred warm interior behind the words"
       },
       {
         "headline": "The chorus",
         "body": "{{review_hook}}. {{review_hook}}.",
         "visual_prompt": "Big type chorus slide, words repeated, music notes accent"
+      },
+      {
+        "headline": "How we found the hook",
+        "body": "No rewrites. We looped the words {{reviewer_first_name}} already stressed, so the rhythm was hers.",
+        "visual_prompt": "Simple diagram slide, the hook words with stressed syllables in bold and beat numbers above"
+      },
+      {
+        "headline": "What your first visit looks like",
+        "body": "{{first_visit_steps}}",
+        "visual_prompt": "Clean three-step timeline graphic with icons, warm brand colors, plenty of space for text"
       },
       {
         "headline": "Your words could be next",
@@ -140,17 +161,19 @@
   },
   "craft": {
     "technique": "Found-lyric chorus (lift the hook from the customer's own words)",
-    "notes": "Keep the reviewer's words exactly; the songwriting is in phrasing, not rewriting. Pick the 3-6 words that already carry a natural stress pattern (look FOR-ward TO it) and loop them as the chorus so the title is the customer's phrase. Sing the verse lines rubato with the last stressed syllable held over the bar line, then lock to a steady groove for the chorus. Suggested tempo/feel: 72-80 BPM soul or gospel-lite, Rhodes piano, brushed snare, warm harmony on the repeated hook."
+    "notes": "Keep the reviewer's words exactly; the songwriting is in phrasing, not rewriting. Pick short sentences that sing in one breath, about 8 syllables, and the 3-6 words that already carry a natural stress pattern (i LOOK for-WARD to it), then loop them as the chorus so the title is the customer's phrase. Sing the verse lines rubato with the last stressed syllable held over the bar line, then lock to a steady groove for the chorus. Tempo/feel: 76 BPM soul or gospel-lite, Rhodes piano, brushed snare, warm harmony on the repeated hook."
   },
   "do_not": [
     "Edit, combine or invent review words; it must be a real, unpaid, verifiable review",
     "Show a reviewer's face or full name without written consent",
-    "Pick a review that mentions a specific medical or financial result"
+    "Pick a review that mentions a specific medical or financial result",
+    "Present the singer as the reviewer"
   ],
   "compliance": [
     "All niches: use only real reviews with the reviewer's written permission; disclose if the reviewer received anything of value (FTC endorsement guides)",
     "Dental and chiropractor: never reveal patient health information beyond what the patient authorized in writing (HIPAA); no claims of guaranteed or typical results",
     "Financial advisor: testimonials must follow the SEC Marketing Rule (disclose whether the person is a client and any compensation); no performance or income claims",
-    "Real estate: include brokerage name and license info per state rules; no implied guaranteed sale price or timeline"
+    "Real estate: include brokerage name and license info per state rules; no implied guaranteed sale price or timeline",
+    "The review screenshot and staff photos are real and client-supplied; never a generated reviewer, customer or staff member"
   ]
 }

@@ -7,7 +7,13 @@
   "goal": "trust",
   "duration_seconds": 25,
   "aspect_ratio": "9:16",
-  "best_for": ["barber shop", "med spa", "chiropractor", "financial advisor", "dental office"],
+  "best_for": [
+    "barber shop",
+    "med spa",
+    "chiropractor",
+    "financial advisor",
+    "dental office"
+  ],
   "why_it_works": "People pick service providers by how the appointment feels, not by credentials. Putting the viewer in the chair from first-person view lets them feel the rushed appointment and the attentive one in their own body, so trust is felt before any claim is made.",
   "hook": {
     "pattern": "First-person POV: you sit down twice, in two chairs, and feel the difference in the first ten seconds.",
@@ -18,23 +24,104 @@
     ]
   },
   "variables": [
-    { "name": "brand", "description": "Business name", "example": "Fade District Barbers" },
-    { "name": "appointment", "description": "The service", "example": "a haircut" },
-    { "name": "rushed_moment", "description": "What a rushed appointment feels like", "example": "clippers on before you finish your sentence" },
-    { "name": "first_question", "description": "The question you always ask first", "example": "How do you want it to look in two weeks, not today?" },
-    { "name": "detail_list", "description": "Three small things you always do", "example": "consult, hot towel, mirror check from the back" },
-    { "name": "offer", "description": "Booking step", "example": "Book Chair B online" }
+    {
+      "name": "brand",
+      "description": "Business name",
+      "example": "Fade District Barbers"
+    },
+    {
+      "name": "appointment",
+      "description": "The service",
+      "example": "a haircut"
+    },
+    {
+      "name": "rushed_moment",
+      "description": "What a rushed appointment feels like",
+      "example": "clippers on before you finish your sentence"
+    },
+    {
+      "name": "first_question",
+      "description": "The question you always ask first (spoken; 12 words or fewer)",
+      "example": "How do you want it to look in two weeks, not today?"
+    },
+    {
+      "name": "detail_list",
+      "description": "Three small things you always do",
+      "example": "consult, hot towel, mirror check from the back"
+    },
+    {
+      "name": "offer",
+      "description": "Booking step",
+      "example": "Book Chair B online"
+    }
   ],
   "beats": [
-    { "seconds": 3, "purpose": "hook: POV two chairs", "on_screen_text": "POV: two chairs", "voiceover": "Same {{appointment}}. Two chairs.", "visual": { "tier": "still", "prompt": "First-person POV vertical 9:16 photo looking at two empty service chairs side by side, left under harsh flat light labeled A, right under warm soft light labeled B, inviting {{brand}} interior" } },
-    { "seconds": 5, "purpose": "Chair A: rushed", "on_screen_text": "Chair A: {{rushed_moment}}", "voiceover": "Chair A: {{rushed_moment}}.", "visual": { "tier": "clip_draft", "prompt": "First-person POV vertical shot from a service chair, a provider's hands moving quickly into frame, glancing at a phone, harsh overhead light, slightly hurried camera shake, faces cropped out" } },
-    { "seconds": 5, "purpose": "Chair B: attentive", "on_screen_text": "Chair B asks first", "voiceover": "Chair B asks: {{first_question}}", "visual": { "tier": "clip_standard", "prompt": "First-person POV vertical shot from a service chair at {{brand}}, a provider leans in at eye level and listens, warm soft light, calm steady camera, genuine attentive expression" } },
-    { "seconds": 5, "purpose": "the small details", "on_screen_text": "{{detail_list}}", "voiceover": "Then the small stuff: {{detail_list}}.", "visual": { "tier": "still", "prompt": "Vertical close-up detail photo of a careful finishing step during {{appointment}} at {{brand}}, warm light, tidy tools in soft focus, premium feel" } },
-    { "seconds": 4, "purpose": "the feeling", "on_screen_text": "You felt that, right?", "voiceover": "You felt the difference before anything happened.", "visual": { "tier": "still", "prompt": "First-person POV vertical photo looking into a mirror at {{brand}}, the provider smiling behind, relaxed atmosphere, warm light, face of the client out of frame" } },
-    { "seconds": 3, "purpose": "call to action", "on_screen_text": "{{offer}}", "voiceover": "{{offer}}.", "visual": { "tier": "text_only", "prompt": "" } }
+    {
+      "seconds": 3,
+      "purpose": "hook: POV two chairs",
+      "on_screen_text": "POV: two chairs",
+      "voiceover": "Same {{appointment}}. Two chairs.",
+      "visual": {
+        "tier": "still",
+        "prompt": "First-person POV vertical 9:16 photo looking at two empty service chairs side by side, left under harsh flat light labeled A, right under warm soft light labeled B, inviting {{brand}} interior"
+      }
+    },
+    {
+      "seconds": 5,
+      "purpose": "Chair A: rushed",
+      "on_screen_text": "Chair A: {{rushed_moment}}",
+      "voiceover": "Chair A: {{rushed_moment}}.",
+      "visual": {
+        "tier": "clip_draft",
+        "prompt": "First-person POV vertical shot from a service chair, a provider's hands moving quickly into frame, glancing at a phone, harsh overhead light, slightly hurried camera shake, faces cropped out"
+      }
+    },
+    {
+      "seconds": 5,
+      "purpose": "Chair B: attentive",
+      "on_screen_text": "Chair B asks first",
+      "voiceover": "Chair B asks: {{first_question}}",
+      "visual": {
+        "tier": "clip_standard",
+        "prompt": "First-person POV vertical shot from a service chair at {{brand}}, a provider leans in at eye level and listens, warm soft light, calm steady camera, genuine attentive expression"
+      }
+    },
+    {
+      "seconds": 5,
+      "purpose": "the small details",
+      "on_screen_text": "Always: {{detail_list}}",
+      "voiceover": "Then the small stuff: {{detail_list}}.",
+      "visual": {
+        "tier": "still",
+        "prompt": "Vertical close-up detail photo of a careful finishing step during {{appointment}} at {{brand}}, warm light, tidy tools in soft focus, premium feel"
+      }
+    },
+    {
+      "seconds": 4,
+      "purpose": "the feeling",
+      "on_screen_text": "You felt that, right?",
+      "voiceover": "You felt the difference before anything happened.",
+      "visual": {
+        "tier": "still",
+        "prompt": "First-person POV vertical photo looking into a mirror at {{brand}}, the provider smiling behind, relaxed atmosphere, warm light, face of the client out of frame"
+      }
+    },
+    {
+      "seconds": 3,
+      "purpose": "call to action",
+      "on_screen_text": "{{offer}}",
+      "voiceover": "{{offer}}.",
+      "visual": {
+        "tier": "text_only",
+        "prompt": ""
+      }
+    }
   ],
   "cta": "{{offer}} at {{brand}}.",
-  "craft": { "technique": "Embodied POV contrast", "notes": "Keep the camera at seated eye height the whole time so the viewer is the customer. Chair A should be normal-busy, not villainous: one rushed moment is enough. The first question in Chair B is the line people will quote back to you." },
+  "craft": {
+    "technique": "Embodied POV contrast",
+    "notes": "Keep the camera at seated eye height the whole time so the viewer is the customer. Chair A should be normal-busy, not villainous: one rushed moment is enough. The first question in Chair B is the line people will quote back to you."
+  },
   "do_not": [
     "Make Chair A look like a specific real local business",
     "Show a patient's or client's face, chart or account details without written consent",

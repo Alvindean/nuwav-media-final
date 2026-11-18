@@ -18,9 +18,9 @@
   "hook": {
     "pattern": "State the limiting belief in the customer's own words, then cross it out on screen.",
     "examples": [
-      "\"I'll {{action}} when I {{false_condition}}.\" That's backwards.",
+      "\"I'll {{action}} later.\" Later never comes.",
       "You don't need to {{false_condition}} first.",
-      "The sentence keeping people from {{action}}: \"{{old_belief}}\""
+      "\"{{old_belief}}\" Let's cross that out."
     ]
   },
   "variables": [
@@ -31,27 +31,27 @@
     },
     {
       "name": "action",
-      "description": "What the customer keeps putting off",
-      "example": "talk to a planner"
+      "description": "What the customer keeps putting off, lowercase verb phrase, 3 words or fewer",
+      "example": "call a planner"
     },
     {
       "name": "false_condition",
-      "description": "The condition they think must come first",
-      "example": "have more money saved"
+      "description": "The condition they think must come first, lowercase verb phrase, 3 words or fewer",
+      "example": "have more saved"
     },
     {
       "name": "old_belief",
-      "description": "The full limiting belief as a customer would say it",
-      "example": "Planning is for people who are already rich"
+      "description": "The limiting belief as a customer would say it, starting with a capital letter, 6 words or fewer",
+      "example": "Planning is only for rich people"
     },
     {
       "name": "new_belief",
-      "description": "The truer replacement belief",
+      "description": "The truer replacement belief, starting with a capital letter, 7 words or fewer",
       "example": "Planning is how people stop guessing"
     },
     {
       "name": "first_step",
-      "description": "A small, low-risk first step",
+      "description": "A small, low-risk first step, lowercase, 5 words or fewer",
       "example": "a free 20-minute first call"
     }
   ],
@@ -60,7 +60,7 @@
       "seconds": 3,
       "purpose": "hook: the belief, quoted",
       "on_screen_text": "\"{{old_belief}}\"",
-      "voiceover": "\"{{old_belief}}.\" We hear it every week.",
+      "voiceover": "\"{{old_belief}}.\" We hear it weekly.",
       "visual": {
         "tier": "text_only",
         "prompt": ""
@@ -70,7 +70,7 @@
       "seconds": 4,
       "purpose": "cross it out",
       "on_screen_text": "{{old_belief}}",
-      "voiceover": "Here's the problem with that.",
+      "voiceover": "Look closer at that.",
       "visual": {
         "tier": "still",
         "prompt": "Vertical 4:5 graphic card: the sentence '{{old_belief}}' handwritten in marker on cream paper, a single bold red line striking through it, soft overhead daylight, flat lay"
@@ -80,7 +80,7 @@
       "seconds": 5,
       "purpose": "why the belief is backwards",
       "on_screen_text": "You don't need to {{false_condition}} first.",
-      "voiceover": "You don't need to {{false_condition}} before you {{action}}. That's what the first step is for.",
+      "voiceover": "You don't need to {{false_condition}} before you {{action}}.",
       "visual": {
         "tier": "still",
         "prompt": "Vertical 4:5 photo of a calm professional at {{brand}} across a small table from a client, open notebook, warm window light, friendly not salesy, faces softly lit"
@@ -116,9 +116,9 @@
         "visual_prompt": "Cream paper card with '{{old_belief}}' handwritten in marker, flat lay, soft daylight"
       },
       {
-        "headline": "It sounds sensible",
-        "body": "It feels like waiting is the responsible choice.",
-        "visual_prompt": "Person looking at a closed laptop, hesitant, soft window light, vertical 4:5"
+        "headline": "Catch it in your own words",
+        "body": "Hear yourself say 'once I...' or 'when I...'? That's the belief talking, not the facts.",
+        "visual_prompt": "Speech bubble cut from paper reading 'once I...' pinned to a corkboard, soft daylight, vertical 4:5"
       },
       {
         "headline": "It's backwards",
@@ -132,12 +132,17 @@
       },
       {
         "headline": "What the first step looks like",
-        "body": "A plain conversation. No pressure, no homework.",
+        "body": "It's {{first_step}}. Bring one question, leave with one next step. No homework.",
         "visual_prompt": "Calm consultation scene at {{brand}}, two people at a small table, warm light"
       },
       {
+        "headline": "Save this swap",
+        "body": "Old: \"{{old_belief}}\" New: \"{{new_belief}}\" Read it next time you stall.",
+        "visual_prompt": "Two index cards side by side, the left crossed out in red, the right circled, flat lay"
+      },
+      {
         "headline": "Your move",
-        "body": "{{first_step}} with {{brand}}.",
+        "body": "Start small: {{first_step}} with {{brand}}.",
         "visual_prompt": "Logo card for {{brand}} with the first step in large type"
       }
     ]
@@ -154,6 +159,7 @@
   "compliance": [
     "Financial advisors and mortgage brokers: no promises of returns, savings, income or approval; add required firm disclosures and registration details",
     "Dental and chiropractic: no promises of pain-free care or specific outcomes; describe the first visit, not results",
-    "Mark any free consultation clearly with its real terms and any limits"
+    "Mark any free consultation clearly with its real terms and any limits",
+    "Coaches: no income or results promises; any result shown is labelled not typical"
   ]
 }

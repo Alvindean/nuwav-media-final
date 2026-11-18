@@ -18,7 +18,7 @@
   "hook": {
     "pattern": "Open with a plain admission of a specific recent mistake.",
     "examples": [
-      "We messed up last week. Here's exactly what happened.",
+      "We messed up last week. This is what happened.",
       "A customer caught our mistake. They were right.",
       "Our worst {{mistake_area}} moment this month, and the fix."
     ]
@@ -41,18 +41,18 @@
     },
     {
       "name": "cause",
-      "description": "The real behind-the-scenes cause",
-      "example": "one ticket printer silently jammed"
+      "description": "The real behind-the-scenes cause, written as a sentence starting with a capital",
+      "example": "One ticket printer silently jammed"
     },
     {
       "name": "fix",
-      "description": "What changed",
-      "example": "a backup screen on the line and a five-minute ticket check"
+      "description": "What changed, written as a sentence starting with a capital",
+      "example": "A backup screen and a five-minute ticket check"
     },
     {
       "name": "offer",
-      "description": "Make-good or next step",
-      "example": "come back this week and dessert is on us"
+      "description": "Make-good or next step, a full sentence starting with a capital, 6 words or fewer",
+      "example": "Dessert's on us this week"
     }
   ],
   "beats": [
@@ -62,8 +62,8 @@
       "on_screen_text": "We messed up.",
       "voiceover": "We messed up last week.",
       "visual": {
-        "tier": "talking_head",
-        "prompt": "Owner of {{brand}} speaking straight to camera in the empty back of house after close, honest flat light, chest-up framing, vertical 9:16"
+        "tier": "real_photo",
+        "prompt": "Real phone footage of the {{brand}} owner speaking straight to camera in their own words after close, honest flat light, chest-up, vertical 9:16"
       }
     },
     {
@@ -73,14 +73,14 @@
       "voiceover": "On {{mistake_area}}, {{mistake}}.",
       "visual": {
         "tier": "still",
-        "prompt": "Candid back-of-house scene at {{brand}} during a rush, tickets piling up, motion blur on staff, practical light, vertical 9:16"
+        "prompt": "Candid shot of the {{brand}} workspace during a busy rush, work piling up, motion blur, no faces, practical light, vertical 9:16"
       }
     },
     {
       "seconds": 4,
       "purpose": "the real cause",
       "on_screen_text": "Why: {{cause}}",
-      "voiceover": "Here's why: {{cause}}.",
+      "voiceover": "The cause? {{cause}}.",
       "visual": {
         "tier": "still",
         "prompt": "Close-up of the piece of equipment or step behind {{cause}}, flat work light, slightly gritty, vertical 9:16"
@@ -90,10 +90,10 @@
       "seconds": 5,
       "purpose": "the fix in action",
       "on_screen_text": "Fix: {{fix}}",
-      "voiceover": "So now: {{fix}}.",
+      "voiceover": "The fix? {{fix}}.",
       "visual": {
         "tier": "clip_standard",
-        "prompt": "Staff member at {{brand}} using the new fix, {{fix}}, steady handheld shot, clean bright light, vertical 9:16"
+        "prompt": "Close-up of hands using the new fix at {{brand}}, {{fix}}, no faces, steady handheld shot, clean bright light, vertical 9:16"
       }
     },
     {
@@ -113,7 +113,7 @@
       {
         "headline": "We got it wrong",
         "body": "Here's exactly what happened at {{brand}}.",
-        "visual_prompt": "Owner of {{brand}} seated in an empty back room after close, honest light"
+        "visual_prompt": "Empty {{brand}} workspace after close, chairs up, honest flat light, no people"
       },
       {
         "headline": "What happened",
@@ -128,7 +128,17 @@
       {
         "headline": "What we changed",
         "body": "{{fix}}.",
-        "visual_prompt": "Staff using the new fix in a bright clean workspace"
+        "visual_prompt": "Close-up of the new fix in place in a bright clean workspace, no faces"
+      },
+      {
+        "headline": "Our 3-question review",
+        "body": "What broke? Why did it break? What check stops it next time?",
+        "visual_prompt": "Simple checklist card in {{brand}} colors with three numbered questions"
+      },
+      {
+        "headline": "Steal this habit",
+        "body": "Write the cause down before the fix. Fixes without causes come back.",
+        "visual_prompt": "Notebook open on a counter with a handwritten cause and fix, top-down"
       },
       {
         "headline": "Thank you for telling us",
@@ -149,6 +159,7 @@
   "compliance": [
     "Med spa: never discuss a patient's treatment or complication publicly; keep mistakes to operations (booking, wait times); no before/after or results claims",
     "Financial advisor: do not discuss any client's account or losses; no income or return promises; include required firm disclosures",
-    "Restaurants: any food-safety issue goes to your health department process first, not to social media"
+    "Restaurants: any food-safety issue goes to your health department process first, not to social media",
+    "Coaches: no income or results promises; any result shown is labelled as not typical"
   ]
 }

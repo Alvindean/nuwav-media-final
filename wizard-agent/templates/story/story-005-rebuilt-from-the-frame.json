@@ -9,9 +9,9 @@
   "best_for": [
     "lowrider car club",
     "auto shop",
-    "apparel brand",
-    "jewelry maker",
-    "independent musician"
+    "motorcycle shop",
+    "classic car restorer",
+    "furniture restorer"
   ],
   "why_it_works": "A restoration is a redemption arc in object form: wreck, labor, glory. Swiping slide by slide feels like turning pages of a build log, and the reveal on the last slides rewards the swipe. People share builds because the before shot is so far from the after.",
   "hook": {
@@ -19,7 +19,7 @@
     "examples": [
       "We paid $400 for this. Swipe.",
       "Found in a field behind a church. Chapter one.",
-      "Everybody said scrap it. Here's what {{build_hours}} hours did."
+      "Everybody said scrap it. {{build_hours}} hours later:"
     ]
   },
   "variables": [
@@ -55,8 +55,8 @@
     },
     {
       "name": "offer",
-      "description": "What viewers can do next",
-      "example": "see it live at our Sunday cruise night"
+      "description": "What viewers can do next, starting with a capital letter",
+      "example": "See it live at our Sunday cruise night"
     }
   ],
   "cta": "{{offer}}.",
@@ -74,7 +74,7 @@
       },
       {
         "headline": "Chapter 2: The worst day",
-        "body": "{{hardest_part}}. We almost quit.",
+        "body": "Then {{hardest_part}}. We almost quit.",
         "visual_prompt": "4:5 close-up of the crack or broken part, dim garage, a single work lamp, grease on the floor"
       },
       {
@@ -84,12 +84,12 @@
       },
       {
         "headline": "Chapter 4: The detail",
-        "body": "{{finish_detail}}.",
+        "body": "Finished with {{finish_detail}}.",
         "visual_prompt": "4:5 macro photo of {{finish_detail}} catching light, deep reflections, black background"
       },
       {
         "headline": "The reveal",
-        "body": "{{project_name}}. Rebuilt from the frame.",
+        "body": "Meet {{project_name}}. Rebuilt from the frame.",
         "visual_prompt": "4:5 hero photo of the finished build at golden hour on a city street, low angle, glossy reflections, {{brand}} plaque visible"
       },
       {

@@ -19,8 +19,8 @@
     "pattern": "Lead with a short opinion most of your industry would argue with, said flatly with no hedging.",
     "examples": [
       "Unpopular opinion: {{contrarian_take}}.",
-      "Most {{industry}} pros won't say this: {{contrarian_take}}.",
-      "I'll get comments for this. {{contrarian_take}}."
+      "Most {{industry}} won't say it: {{contrarian_take}}.",
+      "This will get comments: {{contrarian_take}}."
     ]
   },
   "variables": [
@@ -31,33 +31,33 @@
     },
     {
       "name": "industry",
-      "description": "The industry or field",
+      "description": "The people in the field, plural, 1 word",
       "example": "lawyers"
     },
     {
       "name": "contrarian_take",
-      "description": "The short opinion others would argue with",
-      "example": "you shouldn't hire the lawyer with the most billboards"
+      "description": "The short opinion others would argue with, lowercase, 5 words or fewer",
+      "example": "billboards don't make better lawyers"
     },
     {
       "name": "reason_one",
-      "description": "First plain reason",
+      "description": "First plain reason, lowercase, 10 words or fewer",
       "example": "billboards measure ad budget, not trial experience"
     },
     {
       "name": "reason_two",
-      "description": "Second plain reason",
+      "description": "Second plain reason, lowercase, 10 words or fewer",
       "example": "big-volume firms often hand your case to whoever is free"
     },
     {
       "name": "reason_three",
-      "description": "Third plain reason",
-      "example": "the right question is who will actually work your file"
+      "description": "Third plain reason, the strongest, lowercase, 10 words or fewer",
+      "example": "ask who will actually work your file"
     },
     {
       "name": "discussion_prompt",
-      "description": "A question that invites comments",
-      "example": "What did you wish you'd asked before hiring?"
+      "description": "A genuine question that invites comments, starting with a capital letter, 7 words or fewer",
+      "example": "What do you ask before hiring?"
     }
   ],
   "beats": [
@@ -74,7 +74,7 @@
     {
       "seconds": 3,
       "purpose": "restate it on screen",
-      "on_screen_text": "{{contrarian_take}}",
+      "on_screen_text": "The take: {{contrarian_take}}",
       "voiceover": "",
       "visual": {
         "tier": "text_only",
@@ -105,7 +105,7 @@
       "seconds": 5,
       "purpose": "reason three, the real point",
       "on_screen_text": "3. {{reason_three}}",
-      "voiceover": "Three, and this is the real one: {{reason_three}}.",
+      "voiceover": "Three, the real one: {{reason_three}}.",
       "visual": {
         "tier": "clip_draft",
         "prompt": "Vertical 9:16 slow push-in on the host of {{brand}} leaning forward toward camera, same dark wall and side light, serious calm expression"

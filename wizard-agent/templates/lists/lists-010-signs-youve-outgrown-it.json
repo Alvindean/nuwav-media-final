@@ -20,7 +20,7 @@
     "pattern": "Ask the viewer to keep score of how many signs apply to them.",
     "examples": [
       "Count how many of these apply to you.",
-      "Four signs you've outgrown your {{current_setup}}. Three means it's time.",
+      "Four signs you've outgrown your {{current_setup}}. Keep score.",
       "If number three made you wince, we need to talk."
     ]
   },
@@ -32,38 +32,38 @@
     },
     {
       "name": "current_setup",
-      "description": "What the viewer has outgrown",
+      "description": "What the viewer has outgrown; 4 words or fewer",
       "example": "bedroom recording setup"
     },
     {
       "name": "sign_1",
-      "description": "First, mild sign",
-      "example": "you re-record vocals because of the neighbor's dog"
+      "description": "First, mild sign; a full sentence starting with a capital letter, 8 words or fewer",
+      "example": "You re-record vocals because of the neighbor's dog"
     },
     {
       "name": "sign_2",
-      "description": "Second sign",
-      "example": "your mixes sound different in the car every time"
+      "description": "Second sign; same style, 8 words or fewer",
+      "example": "Your mixes sound different in the car"
     },
     {
       "name": "sign_3",
-      "description": "Third, the painful one",
-      "example": "you turned down a feature because you couldn't deliver stems"
+      "description": "Third, the painful one; same style, 7 words or fewer",
+      "example": "You turned down a paid feature"
     },
     {
       "name": "sign_4",
-      "description": "Fourth, the ambition sign",
-      "example": "you're already planning the next project before this one is out"
+      "description": "Fourth, the ambition sign; same style, 8 words or fewer",
+      "example": "You're already planning the next project"
     },
     {
       "name": "upgrade",
-      "description": "What the brand offers as the next step",
-      "example": "a day of studio time with an engineer"
+      "description": "What the brand offers as the next step; 5 words or fewer",
+      "example": "studio time with an engineer"
     },
     {
       "name": "offer",
-      "description": "Low-friction way to start",
-      "example": "free 15-minute studio tour"
+      "description": "Low-friction way to start; 6 words or fewer",
+      "example": "a free 15-minute studio tour"
     }
   ],
   "beats": [
@@ -138,7 +138,7 @@
       }
     }
   ],
-  "cta": "Scored three or more? Start with a {{offer}}.",
+  "cta": "Scored three or more? Start here: {{offer}}.",
   "craft": {
     "technique": "Self-scoring checklist with a threshold",
     "notes": "Giving a threshold (three or more) before the list starts turns passive watching into counting. Order the signs mild, mild, painful, aspirational: the painful one creates the need and the aspirational one leaves the viewer feeling capable, not ashamed, right before the offer."

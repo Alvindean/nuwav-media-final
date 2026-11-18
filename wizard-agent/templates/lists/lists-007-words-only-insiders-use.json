@@ -1,7 +1,7 @@
 {
   "id": "lists-007-words-only-insiders-use",
   "version": 1,
-  "name": "Five Words Only Insiders Use",
+  "name": "Unwritten Rules for First-Timers",
   "category": "lists",
   "format": "both",
   "goal": "awareness",
@@ -14,13 +14,13 @@
     "coffee shop",
     "sports team"
   ],
-  "why_it_works": "Insider vocabulary signals belonging. Teaching outsiders the words makes them feel let in, and makes insiders proud and eager to share or correct you in the comments. {{brand}} becomes the gatekeeper who opens the gate.",
+  "why_it_works": "First-timers stay away from a scene because they are afraid of doing something wrong in front of regulars. Naming the unwritten rules removes that fear, makes {{brand}} the friendly host, and gives regulars a list they recognize and want to share with newcomers.",
   "hook": {
-    "pattern": "Promise the secret language of a scene, and hint the viewer will sound like a local after.",
+    "pattern": "Speak to a nervous first-timer and promise the rules regulars never say out loud.",
     "examples": [
-      "Five words you'll only hear inside a {{scene}}.",
-      "If you know word number five, you're one of us.",
-      "Say these at a {{scene}} and people will think you're a regular."
+      "First {{scene}}? Four unwritten rules.",
+      "Rules regulars never say out loud. Learn them here.",
+      "Rule four is the one every newcomer breaks."
     ]
   },
   "variables": [
@@ -31,184 +31,179 @@
     },
     {
       "name": "scene",
-      "description": "The world the words belong to",
+      "description": "The place or event a first-timer is nervous about; 4 words or fewer",
       "example": "lowrider car show"
     },
     {
-      "name": "word_1",
-      "description": "First insider word",
-      "example": "three-wheel motion"
+      "name": "rule_1",
+      "description": "First unwritten rule, the easiest one; starts with a verb, 7 words or fewer",
+      "example": "ask before you touch a car"
     },
     {
-      "name": "meaning_1",
-      "description": "Plain meaning",
-      "example": "a car lifted so one wheel hangs in the air"
+      "name": "why_1",
+      "description": "Why rule 1 matters, one plain sentence that starts with a capital letter",
+      "example": "Some of these paint jobs took three years."
     },
     {
-      "name": "word_2",
-      "description": "Second insider word",
-      "example": "juice"
+      "name": "rule_2",
+      "description": "Second unwritten rule; starts with a verb, 7 words or fewer",
+      "example": "park outside the show rows"
     },
     {
-      "name": "meaning_2",
-      "description": "Plain meaning",
-      "example": "the hydraulic setup"
+      "name": "why_2",
+      "description": "Why rule 2 matters, one plain sentence that starts with a capital letter",
+      "example": "Those spots are saved for cars on display."
     },
     {
-      "name": "word_3",
-      "description": "Third insider word",
-      "example": "laid out"
+      "name": "rule_3",
+      "description": "Third unwritten rule; starts with a verb, 7 words or fewer",
+      "example": "compliment the build, not the price"
     },
     {
-      "name": "meaning_3",
-      "description": "Plain meaning",
-      "example": "dropped all the way to the ground"
+      "name": "why_3",
+      "description": "Why rule 3 matters, one plain sentence that starts with a capital letter",
+      "example": "Owners love talking about the work, not the cost."
     },
     {
-      "name": "word_4",
-      "description": "Fourth insider word",
-      "example": "candy"
+      "name": "rule_4",
+      "description": "The rule newcomers break most often; starts with a verb, 7 words or fewer",
+      "example": "step back when a car hops"
     },
     {
-      "name": "meaning_4",
-      "description": "Plain meaning",
-      "example": "deep, layered translucent paint"
+      "name": "why_4",
+      "description": "Why rule 4 matters, one plain sentence that starts with a capital letter",
+      "example": "A hopping car can land a foot from where it started."
     },
     {
-      "name": "word_5",
-      "description": "The deepest-cut word, saved for last",
-      "example": "the hop pit"
+      "name": "bring_list",
+      "description": "What a first-timer should bring, as a short comma list that starts with a capital letter",
+      "example": "A folding chair, water, cash for the food trucks"
     },
     {
-      "name": "meaning_5",
-      "description": "Plain meaning",
-      "example": "where cars compete to jump highest"
+      "name": "first_move",
+      "description": "The best thing to do in the first ten minutes, one sentence that starts with a capital letter",
+      "example": "Find a club tent and ask who built what."
     },
     {
       "name": "event",
-      "description": "Where to hear the words in person",
+      "description": "Where to try the rules in person; 6 words or fewer",
       "example": "our Sunday meet at Elm Park"
     }
   ],
   "beats": [
     {
       "seconds": 3,
-      "purpose": "hook: the secret language",
-      "on_screen_text": "5 words only {{scene}} people use",
-      "voiceover": "Five words you'll only hear inside a {{scene}}.",
+      "purpose": "hook: speak to the nervous first-timer",
+      "on_screen_text": "4 unwritten rules at a {{scene}}",
+      "voiceover": "First {{scene}}? Four unwritten rules.",
       "visual": {
         "tier": "still",
-        "prompt": "Vertical photo inside a {{scene}} at golden hour, people gathered in soft focus, one detail in sharp focus in the foreground, warm rim light, 9:16"
+        "prompt": "Vertical photo from the edge of a {{scene}}, regulars gathered in soft focus, a first-timer's point of view, warm rim light, 9:16"
       }
     },
     {
-      "seconds": 3,
-      "purpose": "word 1",
-      "on_screen_text": "{{word_1}} = {{meaning_1}}",
-      "voiceover": "{{word_1}}: {{meaning_1}}.",
+      "seconds": 4,
+      "purpose": "rule 1, the easy one",
+      "on_screen_text": "Rule 1: {{rule_1}}",
+      "voiceover": "Rule one: {{rule_1}}.",
       "visual": {
         "tier": "still",
-        "prompt": "Close detail shot illustrating {{word_1}} at a {{scene}}, shallow depth of field, golden light, vertical"
+        "prompt": "Close detail shot at a {{scene}} that shows rule one in action, shallow depth of field, golden light, vertical"
       }
     },
     {
-      "seconds": 3,
-      "purpose": "word 2",
-      "on_screen_text": "{{word_2}} = {{meaning_2}}",
-      "voiceover": "{{word_2}}: {{meaning_2}}.",
-      "visual": {
-        "tier": "still",
-        "prompt": "Close detail shot illustrating {{word_2}}, gritty texture, hard side light, vertical"
-      }
-    },
-    {
-      "seconds": 3,
-      "purpose": "word 3",
-      "on_screen_text": "{{word_3}} = {{meaning_3}}",
-      "voiceover": "{{word_3}}: {{meaning_3}}.",
+      "seconds": 4,
+      "purpose": "rule 2",
+      "on_screen_text": "Rule 2: {{rule_2}}",
+      "voiceover": "Rule two: {{rule_2}}.",
       "visual": {
         "tier": "text_only",
         "prompt": ""
       }
     },
     {
-      "seconds": 3,
-      "purpose": "word 4",
-      "on_screen_text": "{{word_4}} = {{meaning_4}}",
-      "voiceover": "{{word_4}}: {{meaning_4}}.",
+      "seconds": 4,
+      "purpose": "rule 3",
+      "on_screen_text": "Rule 3: {{rule_3}}",
+      "voiceover": "Rule three: {{rule_3}}.",
       "visual": {
         "tier": "still",
-        "prompt": "Extreme close-up illustrating {{word_4}}, rich color, glossy reflections, vertical"
+        "prompt": "Two people chatting warmly beside the centerpiece of a {{scene}}, candid, natural light, vertical 9:16"
       }
     },
     {
       "seconds": 5,
-      "purpose": "word 5, the deep cut, in motion",
-      "on_screen_text": "{{word_5}} = {{meaning_5}}",
-      "voiceover": "And if you know {{word_5}}, you're one of us. {{meaning_5}}.",
+      "purpose": "rule 4, the one newcomers break, shown in motion",
+      "on_screen_text": "Rule 4: {{rule_4}}",
+      "voiceover": "Rule four, the one newcomers break: {{rule_4}}.",
       "visual": {
-        "tier": "clip_standard",
-        "prompt": "Energetic wide shot of {{word_5}} in action at a {{scene}}, crowd reacting in the background, handheld feel, golden hour, vertical 9:16"
+        "tier": "clip_draft",
+        "prompt": "Energetic moment at a {{scene}} that shows why rule four exists, crowd stepping back and reacting, handheld feel, golden hour, vertical 9:16"
       }
     },
     {
       "seconds": 4,
-      "purpose": "invite them in",
-      "on_screen_text": "Hear them live: {{event}}",
-      "voiceover": "Come hear them for real at {{event}}. Bring a friend who doesn't know yet.",
+      "purpose": "invite the first-timer in",
+      "on_screen_text": "First-timers welcome: {{event}}",
+      "voiceover": "Try them out at {{event}}. First-timers welcome.",
       "visual": {
         "tier": "still",
         "prompt": "Welcoming group of {{brand}} members waving the camera in at {{event}}, candid, golden light, vertical"
       }
     }
   ],
-  "cta": "Hear them live at {{event}}. Follow {{brand}} and tag a friend who needs the dictionary.",
+  "cta": "First time? Come say hi at {{event}}.",
   "carousel": {
     "slides": [
       {
-        "headline": "5 words only {{scene}} people use",
-        "body": "Learn these and you'll sound like a regular.",
-        "visual_prompt": "Golden-hour scene of a {{scene}} with people in soft focus, bold title text"
+        "headline": "4 unwritten rules at a {{scene}}",
+        "body": "Save this before your first visit.",
+        "visual_prompt": "Golden-hour view of a {{scene}} from the entrance, people in soft focus, bold title text"
       },
       {
-        "headline": "{{word_1}}",
-        "body": "{{meaning_1}}.",
-        "visual_prompt": "Close detail shot illustrating {{word_1}}, shallow depth of field"
+        "headline": "Rule 1: {{rule_1}}",
+        "body": "{{why_1}}",
+        "visual_prompt": "Close detail shot that shows rule one in action at a {{scene}}, shallow depth of field"
       },
       {
-        "headline": "{{word_2}}",
-        "body": "{{meaning_2}}.",
-        "visual_prompt": "Close detail shot illustrating {{word_2}}, gritty texture"
+        "headline": "Rule 2: {{rule_2}}",
+        "body": "{{why_2}}",
+        "visual_prompt": "Wide shot of the layout of a {{scene}} with the right spot highlighted"
       },
       {
-        "headline": "{{word_3}}",
-        "body": "{{meaning_3}}.",
-        "visual_prompt": "Detail shot illustrating {{word_3}}, low angle"
+        "headline": "Rule 3: {{rule_3}}",
+        "body": "{{why_3}}",
+        "visual_prompt": "Two people chatting warmly beside the centerpiece of a {{scene}}"
       },
       {
-        "headline": "{{word_4}}",
-        "body": "{{meaning_4}}.",
-        "visual_prompt": "Glossy extreme close-up illustrating {{word_4}}"
+        "headline": "Rule 4: {{rule_4}}",
+        "body": "{{why_4}} This is the one newcomers break.",
+        "visual_prompt": "Action moment at a {{scene}} with the crowd stepping back"
       },
       {
-        "headline": "{{word_5}}: the deep cut",
-        "body": "{{meaning_5}}. Know this one and you're in.",
-        "visual_prompt": "Wide action shot illustrating {{word_5}} with a crowd reacting"
+        "headline": "What to bring",
+        "body": "{{bring_list}}. Screenshot this before you leave home.",
+        "visual_prompt": "Flat-lay checklist of first-timer essentials on a table, {{brand}} colors, top-down"
       },
       {
-        "headline": "Hear them for real",
-        "body": "{{event}}. Bring a friend.",
+        "headline": "Your first ten minutes",
+        "body": "{{first_move}} Regulars would rather explain than watch you guess.",
+        "visual_prompt": "A newcomer being welcomed at a {{brand}} table, warm candid light"
+      },
+      {
+        "headline": "Try the rules for real",
+        "body": "First-timers welcome at {{event}}.",
         "visual_prompt": "Group of {{brand}} members waving the viewer in, warm candid light"
       }
     ]
   },
   "craft": {
-    "technique": "Glossary with a gatekeeper finale",
-    "notes": "Order the words from easiest to deepest cut, so insiders nod along early and outsiders feel the payoff at the end. The last word is framed as a membership test, which drives comments from insiders adding words you left out."
+    "technique": "Etiquette list with a common-mistake finale",
+    "notes": "Order the rules from easiest to the one newcomers break, so the last rule pays off the hook. Keep the tone of a friendly host, never a gatekeeper; every rule should make the viewer more likely to show up, not less."
   },
   "do_not": [
-    "Use slang that belongs to a culture the brand is not part of",
-    "Define a word wrong; insiders will correct you publicly and not kindly",
-    "Include words with offensive or gang-related meanings"
+    "Make rules that sound like the scene does not want newcomers",
+    "Invent rules regulars would not recognize; they will correct you publicly",
+    "Use slang or customs from a culture the brand is not part of"
   ]
 }

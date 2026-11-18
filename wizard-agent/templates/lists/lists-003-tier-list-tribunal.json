@@ -20,8 +20,8 @@
     "pattern": "Start with a controversial placement already on the board, then defend it.",
     "examples": [
       "I put {{hot_take_item}} in D tier. Let me explain.",
-      "Ranking every {{topic}} from S to F. Fight me in the comments.",
-      "{{hot_take_item}} is overrated. Here's the whole tier list."
+      "Every {{topic}}, ranked S to F. Disagree below.",
+      "Unpopular verdict: {{hot_take_item}} lands in D."
     ]
   },
   "variables": [
@@ -42,7 +42,7 @@
     },
     {
       "name": "s_tier_reason",
-      "description": "Why it is S tier, one line",
+      "description": "Why it is S tier; reads after \"because it's\", 6 words or fewer",
       "example": "low impact, easy to repeat daily"
     },
     {
@@ -52,12 +52,12 @@
     },
     {
       "name": "hot_take_item",
-      "description": "A popular choice you rank low",
+      "description": "A popular choice you rank low; 3 words or fewer",
       "example": "the elliptical"
     },
     {
       "name": "hot_take_reason",
-      "description": "Why it ranks low, one honest line",
+      "description": "Why it ranks low, one honest line that reads after \"Honestly,\"; 8 words or fewer",
       "example": "it feels hard but asks little of you"
     },
     {
@@ -70,7 +70,7 @@
     {
       "seconds": 3,
       "purpose": "hook: the controversial placement",
-      "on_screen_text": "{{hot_take_item}}: D tier.",
+      "on_screen_text": "D tier: {{hot_take_item}}.",
       "voiceover": "I put {{hot_take_item}} in D tier. Let me explain.",
       "visual": {
         "tier": "still",
@@ -81,7 +81,7 @@
       "seconds": 4,
       "purpose": "S tier",
       "on_screen_text": "S: {{s_tier_item}}",
-      "voiceover": "S tier: {{s_tier_item}}. {{s_tier_reason}}.",
+      "voiceover": "S tier: {{s_tier_item}}, because it's {{s_tier_reason}}.",
       "visual": {
         "tier": "still",
         "prompt": "Clean vertical photo of {{s_tier_item}} in a real setting connected to {{brand}}, crisp light, gold S badge in the top corner"
@@ -100,8 +100,8 @@
     {
       "seconds": 5,
       "purpose": "the hot take defended",
-      "on_screen_text": "D: {{hot_take_item}}",
-      "voiceover": "And {{hot_take_item}}? {{hot_take_reason}}.",
+      "on_screen_text": "D tier: {{hot_take_item}}",
+      "voiceover": "And {{hot_take_item}}? Honestly, {{hot_take_reason}}.",
       "visual": {
         "tier": "clip_draft",
         "prompt": "A card labeled {{hot_take_item}} slides down the tier board from A to D, simple motion graphic feel, bold colors, vertical 9:16"
@@ -119,9 +119,9 @@
     },
     {
       "seconds": 3,
-      "purpose": "comment bait and call to action",
+      "purpose": "real question and call to action",
       "on_screen_text": "Where would you put it?",
-      "voiceover": "Where would you put {{hot_take_item}}? Tell me, and follow {{brand}} for part two.",
+      "voiceover": "Where would you put {{hot_take_item}}? Comment below.",
       "visual": {
         "tier": "text_only",
         "prompt": ""
@@ -139,6 +139,7 @@
     "Rank more than five or six items in under 25 seconds"
   ],
   "compliance": [
-    "Skincare and fitness claims: no promises of medical or weight-loss results; rank on experience and ease, not health outcomes"
+    "Skincare and fitness claims: no promises of medical or weight-loss results; rank on experience and ease, not health outcomes",
+    "Fitness: no unrealistic body images or shaming language about anyone who uses a low-tier option"
   ]
 }

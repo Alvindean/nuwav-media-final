@@ -18,8 +18,8 @@
     "pattern": "Follow the client's file like a character on a journey through the office.",
     "examples": [
       "What happens to your file after you hit submit.",
-      "Your {{file_type}} visits {{desk_count}} desks. Here's each one.",
-      "The {{turnaround}} between 'apply' and 'approved', explained."
+      "Your {{file_type}} visits {{desk_count}} desks. Here they are.",
+      "The {{turnaround}} between hello and done, explained."
     ]
   },
   "variables": [
@@ -40,23 +40,23 @@
     },
     {
       "name": "step_one",
-      "description": "First stop",
-      "example": "a processor checks every document is there"
+      "description": "First stop, written as a sentence starting with a capital",
+      "example": "A processor checks every document is there"
     },
     {
       "name": "step_two",
-      "description": "Second stop",
-      "example": "we order the appraisal and title"
+      "description": "Second stop, written as a sentence starting with a capital",
+      "example": "We order the appraisal and title"
     },
     {
       "name": "step_three",
-      "description": "Third stop",
-      "example": "underwriting reviews income and credit"
+      "description": "Third stop, written as a sentence starting with a capital",
+      "example": "Underwriting reviews income and credit"
     },
     {
       "name": "step_four",
-      "description": "Fourth stop",
-      "example": "we clear any conditions with you"
+      "description": "Fourth stop, written as a sentence starting with a capital",
+      "example": "We clear any conditions with you"
     },
     {
       "name": "turnaround",
@@ -65,8 +65,8 @@
     },
     {
       "name": "offer",
-      "description": "Lead action",
-      "example": "send us your questions before you apply"
+      "description": "Lead action, written as a sentence starting with a capital",
+      "example": "Send us your questions before you apply"
     }
   ],
   "cta": "{{offer}}.",

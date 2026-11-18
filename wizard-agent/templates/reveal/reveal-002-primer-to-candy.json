@@ -56,8 +56,8 @@
       "on_screen_text": "{{hours}} hours. Watch.",
       "voiceover": "This {{vehicle}} came in like this.",
       "visual": {
-        "tier": "still",
-        "prompt": "Vertical 9:16 photo of a faded, rust-spotted {{vehicle}} in a garage bay, flat fluorescent light, low three-quarter angle, dust in the air"
+        "tier": "real_photo",
+        "prompt": "Client-supplied photo of this real {{vehicle}} as it arrived, faded and rust-spotted, vertical"
       }
     },
     {
@@ -66,8 +66,8 @@
       "on_screen_text": "Stripped to metal",
       "voiceover": "First we took it back to bare metal.",
       "visual": {
-        "tier": "clip_draft",
-        "prompt": "Close-up of a sanding disc moving across a car panel, sparks and dust, harsh work light, handheld vertical 9:16"
+        "tier": "real_photo",
+        "prompt": "Client-supplied footage of the real sanding work on this {{vehicle}}, sparks and dust, vertical"
       }
     },
     {
@@ -76,8 +76,8 @@
       "on_screen_text": "Primer stage",
       "voiceover": "Then primer. This is the part nobody posts.",
       "visual": {
-        "tier": "still",
-        "prompt": "The {{vehicle}} in grey primer with masking tape lines, garage bay, cool overhead light, wide vertical 9:16"
+        "tier": "real_photo",
+        "prompt": "Client-supplied photo of the same {{vehicle}} in grey primer with masking lines, vertical"
       }
     },
     {
@@ -86,8 +86,8 @@
       "on_screen_text": "Coat after coat",
       "voiceover": "Then coat after coat of {{finish}}.",
       "visual": {
-        "tier": "still",
-        "prompt": "Painter in a respirator spraying a glossy color layer inside a paint booth, mist catching the light, side angle, vertical 9:16"
+        "tier": "real_photo",
+        "prompt": "Client-supplied photo of the painter spraying this {{vehicle}} in the paint booth, vertical"
       }
     },
     {
@@ -96,8 +96,8 @@
       "on_screen_text": "{{finish}}",
       "voiceover": "",
       "visual": {
-        "tier": "clip_hero",
-        "prompt": "The finished {{vehicle}} in {{finish}} rolling out of a dark garage into golden-hour light, slow low tracking shot, reflections sliding across the paint, vertical 9:16"
+        "tier": "real_photo",
+        "prompt": "Client-supplied footage of the finished {{vehicle}} in {{finish}} rolling out of the shop, vertical"
       }
     },
     {
@@ -120,6 +120,11 @@
     "Use another shop's car or a stock photo as the 'before'",
     "Show license plates or VINs of a customer car without permission",
     "Skip the middle and jump straight from rust to shine; it looks fake",
-    "Spend the clip_hero credits before the client approves the still of the final car"
+    "Spend the clip_hero credits before the client approves the still of the final car",
+    "Generate a fake before or after of a job the shop did not do"
+  ],
+  "compliance": [
+    "Proof of work: every before, in-progress and finished shot is the shop's own real photo or footage of this exact job, never generated",
+    "Only show a customer's car and plate with the owner's written permission"
   ]
 }

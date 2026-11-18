@@ -56,7 +56,7 @@
     {
       "name": "disclosure",
       "description": "Required fine print for the client's niche, from compliance/packs.json, shown as small on-screen text",
-      "example": "Equal Housing Opportunity. Brokerage and license # shown."
+      "example": "Equal Housing Opportunity. Bayline Realty, DRE #01234567."
     }
   ],
   "cta": "{{offer}}.",

@@ -57,7 +57,7 @@
     {
       "name": "disclosure",
       "description": "Required fine print: the giveaway line from compliance/packs.json, plus the client's niche line (fitness: results vary)",
-      "example": "No purchase necessary. Official rules at link. Results vary."
+      "example": "No purchase necessary. Official rules at link. Results vary. These statements have not been evaluated by the FDA."
     }
   ],
   "beats": [

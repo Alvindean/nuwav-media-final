@@ -78,17 +78,17 @@
       },
       {
         "headline": "Matchup 1: {{option_1}} vs {{option_2}}",
-        "body": "Comment 1 or 2.",
+        "body": "Which one, and why?",
         "visual_prompt": "Split vertical layout, {{option_1}} on the left and {{option_2}} on the right, each shot top-down on the same dark surface, a big VS in the center"
       },
       {
         "headline": "Matchup 2: {{option_3}} vs {{option_4}}",
-        "body": "Comment 3 or 4.",
+        "body": "Now this pair. Which one?",
         "visual_prompt": "Split vertical layout, {{option_3}} on the left and {{option_4}} on the right, same lighting and surface as matchup 1, a big VS in the center"
       },
       {
         "headline": "How to vote",
-        "body": "One comment, two picks. Example: '1 and 4'. Most comments wins each round. {{disclosure}}",
+        "body": "Tell us your two picks and why. We read every reason. {{disclosure}}",
         "visual_prompt": "Clean instruction card in {{brand}} colors with a sample comment bubble reading two numbers"
       },
       {

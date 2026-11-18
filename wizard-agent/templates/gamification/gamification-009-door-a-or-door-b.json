@@ -20,7 +20,7 @@
     "examples": [
       "{{scenario}}. Door A or B?",
       "Two choices. Both sound smart. One ages better.",
-      "Your move. Comment A or B before the answer."
+      "Your move. Which door, and why?"
     ]
   },
   "variables": [
@@ -114,8 +114,8 @@
     {
       "seconds": 3,
       "purpose": "lock in",
-      "on_screen_text": "Comment A or B. Then keep watching.",
-      "voiceover": "Comment A or B. Then keep watching.",
+      "on_screen_text": "Pick one in your head. Keep watching.",
+      "voiceover": "Pick one in your head. Keep watching.",
       "visual": {
         "tier": "text_only",
         "prompt": ""
@@ -162,7 +162,7 @@
       }
     }
   ],
-  "cta": "Comment A or B. {{offer}} with {{brand}} to find your door.",
+  "cta": "Which door was yours? {{offer}} with {{brand}} to find out.",
   "carousel": {
     "slides": [
       {
@@ -181,7 +181,7 @@
         "visual_prompt": "Same hallway with the right door labeled B glowing cool, left door in shadow"
       },
       {
-        "headline": "Comment A or B",
+        "headline": "Which door?",
         "body": "No changing your answer after this slide.",
         "visual_prompt": "Bold type card in {{brand}} colors with A and B in two large circles"
       },

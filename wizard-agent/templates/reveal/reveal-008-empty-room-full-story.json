@@ -51,7 +51,7 @@
     {
       "name": "disclosure",
       "description": "Required fine print for the client's niche, from compliance/packs.json",
-      "example": "Equal Housing Opportunity. Brokerage and license # shown."
+      "example": "Equal Housing Opportunity. Bayline Realty, DRE #01234567."
     }
   ],
   "beats": [
@@ -61,8 +61,8 @@
       "on_screen_text": "Would you walk past this?",
       "voiceover": "Would you have walked past this room?",
       "visual": {
-        "tier": "still",
-        "prompt": "Vertical 9:16 wide photo of an empty {{property_type}} living room, bare walls, flat overcast light, plain floor, slightly cold color"
+        "tier": "real_photo",
+        "prompt": "Client-supplied listing photo of the real empty {{property_type}} living room, vertical crop"
       }
     },
     {
@@ -71,24 +71,24 @@
       "on_screen_text": "Empty. Echoing.",
       "voiceover": "Empty rooms make people guess.",
       "visual": {
-        "tier": "still",
-        "prompt": "Empty bedroom in the same {{property_type}}, bare window, cool flat light, wide vertical 9:16"
+        "tier": "real_photo",
+        "prompt": "Client-supplied listing photo of the real empty bedroom in this {{property_type}}, vertical crop"
       }
     },
     {
       "seconds": 5,
       "purpose": "the reveal walk-through",
-      "on_screen_text": "Same room. Staged.",
+      "on_screen_text": "Same room. Virtually staged.",
       "voiceover": "So we stopped making them guess.",
       "visual": {
         "tier": "clip_standard",
-        "prompt": "Smooth walk-through of the same living room now furnished and warmly lit, sofa, rug, plants, {{standout_feature}} glowing with late sun, gimbal move, vertical 9:16"
+        "prompt": "Virtual staging of the client's real living room photo: furniture and warm light added, walls, floors and views unchanged, slow push-in"
       }
     },
     {
       "seconds": 4,
       "purpose": "the detail that sells",
-      "on_screen_text": "The {{standout_feature}}",
+      "on_screen_text": "The {{standout_feature}}. Virtually staged.",
       "voiceover": "And the {{standout_feature}} finally gets the spotlight.",
       "visual": {
         "tier": "still",
@@ -101,8 +101,8 @@
       "on_screen_text": "{{neighborhood}}",
       "voiceover": "In {{neighborhood}}.",
       "visual": {
-        "tier": "still",
-        "prompt": "Exterior of the {{property_type}} at blue-hour twilight with warm interior lights on, street-level angle, vertical 9:16"
+        "tier": "real_photo",
+        "prompt": "Client-supplied twilight photo of the real {{property_type}} exterior, vertical crop"
       }
     },
     {

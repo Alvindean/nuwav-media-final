@@ -46,7 +46,7 @@
     {
       "name": "disclosure",
       "description": "Required fine print for the client's niche, from compliance/packs.json",
-      "example": "Attorney advertising. Results vary."
+      "example": "Attorney advertising. Past results do not guarantee a similar outcome."
     }
   ],
   "beats": [

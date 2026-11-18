@@ -81,7 +81,7 @@
     {
       "name": "disclosure",
       "description": "Required fine print for the client's niche, from the matching pack in compliance/packs.json",
-      "example": "Not financial advice. Terms apply. NMLS # shown."
+      "example": "Not financial advice. Terms apply. NMLS #123456."
     }
   ],
   "cta": "Save this for when your {{document_name}} arrives. {{offer}}.",

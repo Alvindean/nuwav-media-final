@@ -42,12 +42,15 @@ const termRe = (t) => {
   const alt = /[^aeiou]y$/i.test(t) ? `|${esc(t.slice(0, -1)).replace(/ /g, "[\\s-]+")}ies` : "";
   return `(?:${base}(?:s|es)?${alt})`;
 };
-const PACK_RES = PACKS.packs.filter((p) => p.match.length).map((p) => ({ ...p, re: new RegExp(`\\b(${p.match.map(termRe).join("|")})\\b`, "i") }));
-const EXCLUDE = new RegExp(`\\b(${(PACKS.exclude || []).map(termRe).join("|")})\\b`, "i");
+const PACK_RES = PACKS.packs.filter((p) => p.match.length).map((p) => ({
+  ...p,
+  re: new RegExp(`\\b(${p.match.map(termRe).join("|")})\\b`, "i"),
+  ex: (p.exclude || []).length ? new RegExp(`\\b(${p.exclude.map(termRe).join("|")})\\b`, "gi") : null,
+  banned: (p.banned_phrases || []).map((b) => new RegExp(b, "i")),
+}));
 function packsFor(niche) {
   if (typeof niche !== "string") return [];
-  const n = niche.replace(EXCLUDE, " ");
-  return PACK_RES.filter((p) => p.re.test(n));
+  return PACK_RES.filter((p) => p.re.test(p.ex ? niche.replace(p.ex, " ") : niche));
 }
 const GIVEAWAY = PACKS.packs.find((p) => p.id === "giveaway");
 const OUTCOME_PACKS = new Set(["legal", "medical", "financial", "body-and-wellness", "income-claims", "real-estate", "auto-dealer"]);
@@ -64,36 +67,49 @@ const REAL_ONLY = new RegExp([
   "(?:customer|client|patient)\\s+quotes?", "real\\s+(?:customers?|clients?|patients?|people|results?)",
   "actual\\s+(?:customers?|clients?|patients?)", "transformations?", "happy\\s+(?:customers|clients|patients)",
 ].map((s) => `\\b${s}`).join("|"), "i");
-const BODY_RESULT = /\bday\s*\d+\b[^.]*\b(lbs?|pounds|kg|kilos|weight|skin|results?|inches|body)\b|\b(lose|lost|losing|minus|down|drop(?:ped)?)\s+\d+\s*(lbs?|pounds|kg|kilos|sizes?|inches)\b/i;
-const OUTCOME = /\b(guarantee[sd]?|win your case|cure[sd]?|painless|risk[- ]free|get rich|pre-?approved|approved in|\d{2,3}\s?%\s*(?:returns?|success|approval|win)|double your (?:money|income|revenue))\b/i;
+const BODY_RESULT = /\bday\s*\d+\b[^.]*\b(lbs?|pounds|kg|kilos|weight|skin|results?|inches|body)\b|\b(lose|lost|losing|minus|down|drop(?:ped)?)\s+(?:\d+|one|two|three|four|five|ten)\s*(lbs?|pounds|kg|kilos|dress sizes?|sizes?|inches)\b/i;
+const OUTCOME = /\b(guarantee[sd]?|win your case|cure[sd]?|painless|risk[- ]free|get rich|pre-?approved|approved in|always win|\d{2,3}\s?%\s*(?:returns?|success|approval|win|results|satisfaction)|double your (?:money|income|revenue))\b/i;
 const NEGATION = /\b(no|not|never|can't|cannot|can not|don't|won't|without|zero)\b[\w\s,'’-]{0,24}$/i;
-const PRIZE = /\b(giveaways?|prizes?|contests?|sweepstakes|raffles?|winners?|to win|win (?:a|an|the|free|one|two|this)|lucky (?:winner|commenter|follower|fan|customer)|(?:we|we'll|we will|i'll)\s+pick\s+(?:one|a|two|three)|free \w+(?: \w+)? for (?:one|a|two|three) (?:lucky|random))\b/i;
+const PRIZE = /\b(giveaways?|giving away|prizes?|contests?|sweepstakes|raffles?|prize drawings?|(?:enter|join) (?:our|the|a) drawing|drawing for|winners?|to win|\d+(?:st|nd|rd|th) (?:caller|follower|customer|visitor|commenter)|random (?:follower|commenter|winner|customer)|win (?:a|an|the|free|one|two|this)|lucky (?:winner|commenter|follower|fan|customer)|(?:we|we'll|we will|i'll)\s+pick\s+(?:one|a|two|three)|free \w+(?: \w+)? for (?:one|a|two|three) (?:lucky|random))\b/i;
 const PRIZE_RULES = /official rules|no purchase necessary/i;
-const BAIT = /\btag (?:a|your|the|one|two|that|this|someone|somebody|anyone|everyone)?\s*(?:friend|buddy|bestie|person|someone|somebody)?\b(?=.*\b(?:who|that|needs|would|will|this)\b)|\btag someone\b|\bcomment ["“']?(?:yes|me|\w+)["”']? (?:for|to get|and)\b|\bshare (?:this )?with (?:your|a|the)\b|\bsend this to\b|\blike if\b|\bdouble[- ]tap if\b|\bvote (?:with|using) (?:a )?(?:like|reaction)/i;
-const SOUNDALIKE = /\b(sounds? (?:just |exactly )?like|in the style of|style of|soundalike|sound-alike|type beat|cover of|remix of)\b/i;
-const NAMED_COMPARE = /\b(?:better|cheaper|faster|tastier) than [A-Z][\w'’&]+/;
+const BAIT = new RegExp([
+  "\\btag (?:a |your |the |one |two |that |this )?(?:friend|buddy|bestie|someone|somebody|person|mom|dad|partner|bff)\\b",
+  "\\btag someone\\b",
+  "\\bcomment (?!below\\b|here\\b|down\\b|your\\b|a\\b|an\\b|any\\b|with\\b|what\\b|which\\b|how\\b|why\\b)[\"“']?[^\\s\"”']{1,12}[\"”']?(?: [A-Z0-9]{1,8})? (?:for|to get|and we|and i|to vote|to enter)\\b",
+  "\\bcomment [\"“']?(?:[A-D1-4])[\"”']? or [\"“']?(?:[A-D1-4])\\b",
+  "\\b(?:drop|type|reply|comment) (?:a |an |the |your )?[^\\s]{1,12} (?:if|for part)\\b",
+  "\\breply (?:with )?yes\\b",
+  "\\bdouble[- ]tap\\b",
+  "\\bshare (?:this|it) with (?:a|your|every|that) (?:friend|bestie|buddy|group chat|someone)\\b",
+  "\\bsend this to (?:a|your|every|that) (?:friend|bestie|buddy|group chat|someone)\\b",
+  "(?:^|[.!?]\\s*)like if\\b",
+  "\\bvote (?:with|using) (?:a )?(?:like|reaction)",
+].join("|"), "iu");
+const SOUNDALIKE = /\b(sounds? (?:just |exactly )?like|in the style of|style of|soundalike|sound-alike|type beat|cover of|remix of|vibes?)\b|\w-(?:style|esque|ish|inspired)\b/i;
+const NAMED_COMPARE = /\b(?:(?:[Bb]etter|[Cc]heaper|[Ff]aster|[Tt]astier|[Ff]resher|[Ss]tronger)|[Mm]ore \w+) than [A-Z][\w'’&]+|\b[Uu]nlike [A-Z][\w'’&]+|\b[Bb]eats [A-Z][a-z][\w'’&]*/;
 
 // ---------- args ----------
 const args = process.argv.slice(2);
-const KNOWN = new Set(["--expect", "--json"]);
-let expect = null, asJson = false; const targets = [];
+const KNOWN = new Set(["--expect", "--json", "--niche"]);
+let expect = null, asJson = false; const targets = []; const clientNiches = [];
 for (let i = 0; i < args.length; i++) {
   const a = args[i];
   if (a.startsWith("--")) {
     if (!KNOWN.has(a)) usage(`unknown option ${a}`);
     if (a === "--json") asJson = true;
+    if (a === "--niche") { const v = args[++i]; if (!v || v.startsWith("--")) usage("--niche needs the client's niche, e.g. --niche \"personal injury law firm\""); clientNiches.push(v); }
     if (a === "--expect") { const v = args[++i]; if (!/^\d+$/.test(v || "") || Number(v) < 1) usage("--expect needs a whole number, e.g. --expect 100"); expect = Number(v); }
   } else targets.push(a);
 }
-function usage(msg) { console.error(`validate: ${msg}\nUsage: node validate.mjs [--expect N] [--json] [file-or-folder ...]`); process.exit(2); }
-function collect(p) {
+function usage(msg) { console.error(`validate: ${msg}\nUsage: node validate.mjs [--expect N] [--json] [--niche "client niche"] [file-or-folder ...]`); process.exit(2); }
+function collect(p, top = true) {
   let st;
   try { st = fs.lstatSync(p); } catch { usage(`not found: ${p}`); }
-  if (st.isSymbolicLink()) return [];
+  if (st.isSymbolicLink()) { if (!top) return []; try { st = fs.statSync(p); } catch { usage(`broken link: ${p}`); } }
   if (st.isFile()) return p.endsWith(".json") ? [p] : [];
-  return fs.readdirSync(p).sort().flatMap((f) => collect(path.join(p, f)));
+  return fs.readdirSync(p).sort().flatMap((f) => collect(path.join(p, f), false));
 }
-const files = (targets.length ? targets : [path.join(ROOT, "templates")]).flatMap(collect);
+const files = [...new Map((targets.length ? targets : [path.join(ROOT, "templates")]).flatMap((t) => collect(t)).map((f) => [fs.realpathSync(f), f])).values()];
 if (files.length === 0) usage(`no template .json files found in ${targets.join(", ") || "templates/"}`);
 
 // ---------- helpers ----------
@@ -145,19 +161,23 @@ function hitsOutcome(s) {
   if (!m) return null;
   return NEGATION.test(s.slice(0, m.index)) ? null : m[0];
 }
-const A_OK = /^(uni|use|usu|usa|uk\b|one|once|eu|ewe|ur[aio]|u\.)/i;
-const AN_OK = /^(hour|honest|honou?r|heir|herb|[fhlmnrsx]\b|[fhlmnrsx][A-Z0-9])/;
+const A_OK = /^(uni|use|usu|usa|uti|uku|ufo|uk\b|one|once|eu|ewe|ur[aio]|u\.|u-)/i;
+const AN_OK = /^(hour|honest|honou?r|heir|herb)/i;
+const ACRONYM = /^[A-Z][A-Z0-9]{1,}s?$/;
+const anForAcronym = (w) => /^[AEFHILMNORSX]/.test(w); // letter names that start with a vowel sound: "an MRI", "an SUV", "a USB"
+const ABBREV = /^(a\.m\.|p\.m\.|vs\.|etc\.|e\.g\.|i\.e\.|approx\.|no\.|st\.|dr\.|mr\.|mrs\.|ms\.|jr\.|sr\.|inc\.|co\.|ltd\.|corp\.|llc\.|ave\.|blvd\.|rd\.|mt\.|ft\.|oz\.|lbs?\.|hrs?\.|mins?\.|secs?\.|est\.|dept\.|(mon|tue|tues|wed|thu|thur|thurs|fri|sat|sun)\.|(jan|feb|mar|apr|jun|jul|aug|sep|sept|oct|nov|dec)\.|\.\.\.|…)$/i;
 function readingErrors(s, sentence = false) {
   const out = [];
   const t = s.trim();
   if (!t) return out;
   const isArticle = (m) => m[1][0] === "a" || m.index === 0 || /[.!?:]\s+$/.test(t.slice(0, m.index)); // a capital "A" mid-sentence is a label ("Option A or B")
-  for (const m of t.matchAll(/\b([Aa])\s+([A-Za-z][\w]*)/g)) if (isArticle(m) && /^[aeiouAEIOU]/.test(m[2]) && !A_OK.test(m[2])) out.push(`"${m[0]}" should be "an ${m[2]}"`);
-  for (const m of t.matchAll(/\b([Aa]n)\s+([A-Za-z][\w]*)/g)) if (isArticle(m) && !/^[aeiouAEIOU]/.test(m[2]) && !AN_OK.test(m[2])) out.push(`"${m[0]}" should be "a ${m[2]}"`);
+  const wantsAn = (w) => (ACRONYM.test(w) ? anForAcronym(w) : AN_OK.test(w) || (/^[aeiou]/i.test(w) && !A_OK.test(w)));
+  for (const m of t.matchAll(/\b([Aa])\s+([A-Za-z][\w]*)/g)) if (isArticle(m) && wantsAn(m[2])) out.push(`"${m[0]}" should be "an ${m[2]}"`);
+  for (const m of t.matchAll(/\b([Aa]n)\s+([A-Za-z][\w]*)/g)) if (isArticle(m) && !wantsAn(m[2])) out.push(`"${m[0]}" should be "a ${m[2]}"`);
   if (/(?<!\.)\.\.(?!\.)|[!?]\.(?!\.)|,[.!?]|\s[.,!?](?=\s|$)/.test(t)) out.push(`double or loose punctuation in "${t.slice(0, 50)}"`);
-  if (sentence && /^[a-z]/.test(t) && !/^(https?:|www\.|[a-z0-9-]+\.(com|net|org|co|io|app)\b|e\.g\.|i\.e\.|vs\.?\s)/.test(t)) out.push(`starts with a lowercase letter: "${t.slice(0, 40)}"`);
+  if (sentence && /^[a-z]/.test(t) && !/^[a-z][A-Z]/.test(t) && !/^(https?:|www\.|[a-z0-9-]+\.(com|net|org|co|io|app)\b|e\.g\.|i\.e\.|vs\.?\s)/.test(t)) out.push(`starts with a lowercase letter: "${t.slice(0, 40)}"`);
   for (const m of t.matchAll(/(\S+)\s+(?=[a-z])/g)) {
-    if (/[.!?]$/.test(m[1]) && !/^\d+\.$/.test(m[1]) && !/^(a\.m\.|p\.m\.|vs\.|etc\.|e\.g\.|i\.e\.|approx\.|no\.|st\.|dr\.|mr\.|mrs\.|ms\.|\.\.\.|…)$/i.test(m[1]) && !/\.\.\.$/.test(m[1])) { out.push(`lowercase letter after a sentence end in "${t.slice(0, 50)}"`); break; }
+    if (/[.!?]$/.test(m[1]) && !/^\d+\.$/.test(m[1]) && !ABBREV.test(m[1].replace(/^[("“']+/, '')) && !/\.\.\.$/.test(m[1])) { out.push(`lowercase letter after a sentence end in "${t.slice(0, 50)}"`); break; }
   }
   return out;
 }
@@ -189,9 +209,10 @@ function check(file, t) {
   if (!Array.isArray(t.variables)) e.push("variables must be a list (use [] if none)");
   else t.variables.forEach((v, i) => {
     unknownKeys(v, KEYS.variable, `variables[${i}]`, e);
-    const ok = v && /^[a-z][a-z0-9_]*$/.test(v.name || "") && isStr(v.description) && isStr(v.example);
+    const ok = v && /^[a-z][a-z0-9_]*$/.test(v.name || "") && isStr(v.description) && (isStr(v.example) || (v.name === "disclosure" && v.example === ""));
     need(ok, `variables[${i}] needs snake_case name, description and example`);
     if (ok) { need(!declared.has(v.name), `variable "${v.name}" declared twice`); declared.set(v.name, 0); fill[v.name] = v.example; }
+    if (v && v.name === "disclosure" && v.example === "") need(clientNiches.length > 0, "an empty disclosure is only allowed when checking a client copy with --niche (and no pack matches)");
   });
   const filled = (s) => String(s || "").replace(/\{\{\s*([a-z0-9_]+)\s*\}\}/g, (m, n) => fill[n] ?? m);
   const noDisclosure = (s) => String(s || "").replace(/\{\{\s*disclosure\s*\}\}/g, " ");
@@ -222,10 +243,12 @@ function check(file, t) {
 
   // regulated niches -> packs: key phrase + disclosure
   const matched = new Map();
-  if (Array.isArray(t.best_for)) for (const n of t.best_for) for (const p of packsFor(n)) { if (!matched.has(p.id)) matched.set(p.id, { pack: p, niches: [] }); matched.get(p.id).niches.push(n); }
+  const addPacks = (n, src) => { for (const p of packsFor(n)) { if (!matched.has(p.id)) matched.set(p.id, { pack: p, niches: [], client: false }); matched.get(p.id).niches.push(n); if (src === "client") matched.get(p.id).client = true; } };
+  if (Array.isArray(t.best_for)) for (const n of t.best_for) addPacks(n, "template");
+  for (const n of clientNiches) addPacks(n, "client");
   for (const { pack, niches } of matched.values()) {
     const keys = pack.key_phrases || [];
-    need(rules.some((r) => keys.some((k) => r.toLowerCase().includes(k.toLowerCase()))), `compliance needs a ${pack.id} rule (mentioning one of: ${keys.join(", ")}) because best_for includes ${niches.join(", ")}`);
+    need(rules.some((r) => keys.some((k) => r.toLowerCase().includes(k.toLowerCase()))), `compliance needs a ${pack.id} rule (mentioning one of: ${keys.join(", ")}) because it targets ${niches.join(", ")}`);
   }
 
   // placeholders + junk
@@ -253,7 +276,10 @@ function check(file, t) {
   if (allFilled.some((s) => PRIZE.test(s))) need(rules.some((c) => PRIZE_RULES.test(c)) && visibleRaw.some((s) => /\{\{\s*disclosure\s*\}\}/.test(s)), `this template offers a prize or contest, so compliance must include official rules / no purchase necessary, and a beat or slide must show {{disclosure}} (giveaway line: "${GIVEAWAY.disclosure}")`);
   for (const s of visible) { const m = s.match(BODY_RESULT); if (m) e.push(`numeric body or weight result claim ("${m[0]}") is not allowed in ad copy`); }
   if ([...matched.keys()].some((id) => OUTCOME_PACKS.has(id))) for (const s of visible) { const h = hitsOutcome(s); if (h) e.push(`outcome claim "${h}" is not allowed for a regulated niche (${[...matched.keys()].join(", ")})`); }
-  for (const s of visibleRaw) { const m = s.match(NAMED_COMPARE); if (m) e.push(`comparison against a named brand ("${m[0]}") is not allowed`); }
+  for (const { pack } of matched.values()) for (const re of pack.banned) for (const s of visible) { const m = s.match(re); if (m && !NEGATION.test(s.slice(0, m.index))) e.push(`"${m[0]}" is not allowed for ${pack.id} ads (compliance/packs.json banned_phrases)`); }
+  const OWN = /^(brand|business|business_name|shop|shop_name|company|company_name|studio|firm|firm_name|practice|practice_name|team|team_name|artist|artist_name|band|band_name|venue|club|club_name|restaurant|store|store_name)$/;
+  const fillOthers = (x) => String(x || "").replace(/\{\{\s*([a-z0-9_]+)\s*\}\}/g, (m, n) => (OWN.test(n) ? m : fill[n] ?? m));
+  for (const s of [...visibleRaw, ...visibleRaw.map(fillOthers)]) { const m = s.match(NAMED_COMPARE); if (m) { e.push(`comparison against a named brand ("${m[0]}") is not allowed`); break; } }
   const sentences = new Set([filled(t.cta), ...(t.carousel && Array.isArray(t.carousel.slides) ? t.carousel.slides.map((sl) => filled(sl && sl.body)) : [])]);
   for (const s of new Set(visible)) for (const r of readingErrors(s, sentences.has(s))) e.push(`reads wrong once filled: ${r}`);
 
@@ -265,7 +291,16 @@ function check(file, t) {
     const inSlides = t.carousel && Array.isArray(t.carousel.slides) && t.carousel.slides.some((s) => s && /\{\{\s*disclosure\s*\}\}/.test(`${s.headline} ${s.body}`));
     if (t.format === "reel" || t.format === "both") need(inBeats, "the reel must show {{disclosure}} in a beat's on_screen_text");
     if (t.format === "carousel" || t.format === "both") need(inSlides, "the carousel must show {{disclosure}} in a slide");
+    const disc = String(fill.disclosure ?? "").toLowerCase();
+    const lineOf = (p) => p.disclosure.toLowerCase().replace(/[.]+$/, "");
+    if (clientNiches.length) {
+      for (const { pack } of needsDisclosure.filter((x) => x.client)) need(disc.includes(lineOf(pack)), `the disclosure must include the ${pack.id} line "${pack.disclosure}" for this client`);
+    } else {
+      need(needsDisclosure.some(({ pack }) => disc.includes(lineOf(pack))), `the disclosure example must be a real pack line (one of: ${needsDisclosure.map((x) => `"${x.pack.disclosure}"`).join(", ")})`);
+    }
+    need(words(String(fill.disclosure ?? "")) <= 24, "the disclosure example is over 24 words; keep fine print short");
   }
+  if (clientNiches.length && [...matched.values()].some((x) => x.client && x.pack.human_required)) e.push("this client's niche needs a human to approve before writing (political or social-issue ads)");
 
   // beats
   let credits = 0, clips = 0, hero = 0;

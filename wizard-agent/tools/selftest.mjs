@@ -29,6 +29,8 @@ function runFiles(list, extraArgs = []) {
 const run = (t, o = {}) => runFiles([{ t, ...o }]);
 // reel = 0.25 + 15 (hero 5s) + 13.5 (standard 9s) + 0.25 + 0 = 29 credits; 10 slides add 2.5 -> 31.5
 const nearCap = () => { const t = clone(); t.beats[1].visual.tier = "clip_hero"; t.beats[1].seconds = 5; t.beats[2].visual.tier = "clip_standard"; t.beats[2].seconds = 9; t.duration_seconds = 24; t.carousel.slides = Array.from({ length: 10 }, (_, i) => ({ headline: `Point ${i + 1}`, body: "Short supporting line here.", visual_prompt: "Bold title slide with the product photo" })); return t; };
+// the good example re-aimed at unregulated niches only (no packs, no disclosure)
+const coffeeOnly = () => { const t = clone(); t.best_for = ["coffee shop", "bakery", "florist"]; t.compliance = ["Keep claims true for this brand always"]; t.variables = t.variables.filter((v) => v.name !== "disclosure"); t.beats[4].on_screen_text = "{{offer}}"; t.carousel.slides[4].body = "Come in: {{offer}}."; return t; };
 const carouselOnly = () => { const t = clone(); t.format = "carousel"; delete t.beats; delete t.duration_seconds; return t; };
 
 const cases = [
@@ -126,6 +128,46 @@ const cases = [
   ["'Option A or B' is not an article", () => { const t = clone(); t.beats[1].voiceover = "Pick option A or B."; return run(t); }, 0],
   ["numbered list items may start lowercase", () => { const t = clone(); t.beats[1].on_screen_text = "1. a fresh fade"; return run(t); }, 0],
   ["'link in bio' after a period reads wrong", () => { const t = clone(); t.beats[4].voiceover = "Daylight. link in bio"; return run(t); }, 1],
+  // ---- blindside round 3: client niche (--niche) ----
+  ["law-firm claim in a coffee template fails with --niche", () => { const t = coffeeOnly(); t.beats[3].voiceover = "We win your case. Guaranteed."; return runFiles([{ t }], ["--niche", "personal injury law firm"]); }, 1],
+  ["same copy without --niche passes (shows why --niche matters)", () => { const t = coffeeOnly(); t.beats[3].voiceover = "We win your case. Guaranteed."; return run(t); }, 0],
+  ["--niche client needs that pack's disclosure line", () => runFiles([{ t: coffeeOnly() }], ["--niche", "dentist"]), 1],
+  ["--niche bakery with empty disclosure passes", () => { const t = clone(); t.best_for = ["coffee shop", "bakery", "florist"]; t.compliance = ["Keep claims true for this brand always"]; t.variables.find((v) => v.name === "disclosure").example = ""; return runFiles([{ t }], ["--niche", "bakery"]); }, 0],
+  ["empty disclosure without --niche fails", () => { const t = clone(); t.variables.find((v) => v.name === "disclosure").example = ""; return run(t); }, 1],
+  ["junk disclosure text fails", () => { const t = clone(); t.variables.find((v) => v.name === "disclosure").example = "Have a great day."; return run(t); }, 1],
+  ["dentist 'pain-free implants' fails with --niche", () => { const t = clone(); t.beats[3].voiceover = "Pain-free implants, same day."; t.variables.find((v) => v.name === "disclosure").example = "Attorney advertising. Past results do not guarantee a similar outcome. Results vary. Consult a licensed provider."; return runFiles([{ t }], ["--niche", "dentist"]); }, 1],
+  ["political client needs a human", () => runFiles([{ t: coffeeOnly() }], ["--niche", "candidate for mayor"]), 1],
+  ["--niche without a value is a usage error", () => spawnSync(process.execPath, [VALIDATOR, path.join(ROOT, "examples"), "--niche"]).status, 2],
+
+  // ---- blindside round 3: false positives that must PASS ----
+  ["'an MRI' and 'a USB' read fine", () => { const t = clone(); t.beats[1].voiceover = "Need an MRI or a USB?"; return run(t); }, 0],
+  ["'Acme Inc. makes' reads fine", () => { const t = clone(); t.beats[1].voiceover = "Acme Inc. makes it simple."; return run(t); }, 0],
+  ["'Mon. through Fri.' reads fine", () => { const t = clone(); t.beats[1].voiceover = "Open Mon. through Fri. daily."; return run(t); }, 0],
+  ["CTA starting 'iPhone' reads fine", () => { const t = clone(); t.cta = "iPhone cracked? Book today."; return run(t); }, 0],
+  ["'Comment below and tell us' is a real question", () => { const t = clone(); t.cta = "Comment below and tell us your worst coffee."; return run(t); }, 0],
+  ["'We send this to the lab' is not bait", () => { const t = clone(); t.beats[1].voiceover = "We send this to the lab."; return run(t); }, 0],
+  ["'price tag that will hurt' is not bait", () => { const t = clone(); t.beats[1].voiceover = "A price tag that will hurt."; return run(t); }, 0],
+  ["own brand in 'DIY vs {{brand}}' passes", () => { const t = clone(); t.beats[1].on_screen_text = "DIY vs {{brand}}"; return run(t); }, 0],
+  ["juice bar and nail bar are not age-restricted", () => { const t = coffeeOnly(); t.best_for = ["juice bar, nail bar", "coffee shop", "bakery"]; return run(t); }, 0],
+  ["soccer coach is not an income-claims niche", () => { const t = coffeeOnly(); t.best_for = ["soccer coach", "coffee shop", "bakery"]; return run(t); }, 0],
+
+  // ---- blindside round 3: misses that must FAIL ----
+  ["'Drop a 🔥 if you agree' fails", () => { const t = clone(); t.cta = "Drop a 🔥 if you agree."; return run(t); }, 1],
+  ["'Reply YES below' fails", () => { const t = clone(); t.cta = "Reply YES below for the list."; return run(t); }, 1],
+  ["'Double tap for part 2' fails", () => { const t = clone(); t.cta = "Double tap for part 2."; return run(t); }, 1],
+  ["'Comment A or B' vote bait fails", () => { const t = clone(); t.cta = "Comment A or B before the reveal."; return run(t); }, 1],
+  ["'giving away 3 free haircuts' needs rules", () => { const t = coffeeOnly(); t.cta = "We're giving away 3 free lattes."; return run(t); }, 1],
+  ["'100th follower' prize needs rules", () => { const t = coffeeOnly(); t.cta = "Free latte for the 100th follower."; return run(t); }, 1],
+  ["'Unlike Starbucks' fails", () => { const t = clone(); t.cta = "Unlike Starbucks, we roast weekly."; return run(t); }, 1],
+  ["'Better than {{rival}}' filled with a brand fails", () => { const t = clone(); t.variables.push({ name: "rival", description: "a rival", example: "Starbucks" }); t.beats[3].on_screen_text = "Better than {{rival}}"; return run(t); }, 1],
+  ["'Drake-style' music feel fails", () => { const t = clone(goodSong); t.music.feel = "Drake-style moody trap"; return run(t); }, 1],
+  ["'lose two dress sizes' fails", () => { const t = clone(); t.beats[3].voiceover = "Lose two dress sizes fast."; return run(t); }, 1],
+  ["'Zero pain, 100% results' fails for medical", () => { const t = clone(); t.best_for = ["dentist", "coffee shop", "bakery"]; t.compliance = ["Dental: results vary, no guarantee of outcome"]; t.variables.find((v) => v.name === "disclosure").example = "Results vary. Consult a licensed provider."; t.beats[3].voiceover = "Zero pain, 100% results."; return run(t); }, 1],
+
+  // ---- blindside round 3: paths ----
+  ["same folder passed twice is not a duplicate", () => { const dir = fs.mkdtempSync(path.join(os.tmpdir(), "wiz-")); fs.mkdirSync(path.join(dir, "comparison")); fs.writeFileSync(path.join(dir, "comparison", `${good.id}.json`), JSON.stringify(good)); const r = spawnSync(process.execPath, [VALIDATOR, dir, dir]).status; fs.rmSync(dir, { recursive: true }); return r; }, 0],
+  ["symlinked templates folder is followed", () => { const dir = fs.mkdtempSync(path.join(os.tmpdir(), "wiz-")); fs.mkdirSync(path.join(dir, "real", "comparison"), { recursive: true }); fs.writeFileSync(path.join(dir, "real", "comparison", `${good.id}.json`), JSON.stringify(good)); fs.symlinkSync(path.join(dir, "real"), path.join(dir, "link")); const r = spawnSync(process.execPath, [VALIDATOR, path.join(dir, "link")]).status; fs.rmSync(dir, { recursive: true }); return r; }, 0],
+
   ["'a.m.' followed by lowercase is fine", () => { const t = clone(); t.beats[1].voiceover = "Open at 6 a.m. every day."; return run(t); }, 0],
 ];
 
